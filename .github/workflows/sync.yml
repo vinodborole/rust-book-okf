@@ -1,0 +1,26 @@
+name: sync
+on:
+  schedule: [{cron: "0 6 * * 1"}]   # Mondays 06:00 UTC
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install okf-kit
+      - name: Sync the bundle
+        run: okf sync rust-book
+      - name: Commit the delta
+        run: |
+          git config user.name okf-bot
+          git config user.email okf-bot@users.noreply.github.com
+          git add -A && git commit -m "sync: $(date -u +%F)" && git push || echo "no changes"
+      - name: Re-package the release zip
+        env: {GH_TOKEN: "${{ github.token }}"}
+        run: |
+          okf zip rust-book -o rust-book-okf.zip
+          gh release upload v0.1.0 rust-book-okf.zip --clobber

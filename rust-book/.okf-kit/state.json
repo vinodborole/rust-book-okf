@@ -1,0 +1,433 @@
+{
+  "generator": "okf-kit",
+  "okf_version": "0.1",
+  "root_url": "https://doc.rust-lang.org/book",
+  "updated_at": "2026-07-06T08:05:31.069040+00:00",
+  "config": {
+    "max_depth": 2,
+    "max_pages": 25,
+    "fetcher": "http",
+    "respect_robots": true
+  },
+  "page_count": 24,
+  "pages": [
+    {
+      "path": "pages/cargo/reference/publishing.md",
+      "url": "https://doc.rust-lang.org/cargo/reference/publishing.html",
+      "title": "Publishing on crates.io - The Cargo Book",
+      "hash": "29a3f60c83f9352d87d930888c9aa4cf9dd3ebbdd3557e796441b9a71dea56a4"
+    },
+    {
+      "path": "pages/stable/book.md",
+      "url": "https://doc.rust-lang.org/stable/book",
+      "title": "The Rust Programming Language - The Rust Programming Language",
+      "hash": "5d74849a1c0e84a6b77a9607966969a5d98d8fb56b15a3763b9a7b10b622d191"
+    },
+    {
+      "path": "pages/stable/book/appendix-05-editions.md",
+      "url": "https://doc.rust-lang.org/stable/book/appendix-05-editions.html",
+      "title": "E - Editions - The Rust Programming Language",
+      "hash": "6266fcb96eb82e954f4b3263b71fd057cb6c27db289fa00629ae1b67e5ba2807"
+    },
+    {
+      "path": "pages/stable/book/appendix-06-translation.md",
+      "url": "https://doc.rust-lang.org/stable/book/appendix-06-translation.html",
+      "title": "F - Translations of the Book - The Rust Programming Language",
+      "hash": "6da9c277b63d9d7e495005d1bdb40a6111124347b7a1bbc02697f276c8c9667b"
+    },
+    {
+      "path": "pages/stable/book/ch01-01-installation.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch01-01-installation.html",
+      "title": "Installation - The Rust Programming Language",
+      "hash": "eec5cdce6fd0ef3502ca740ba696d3116d299d346015711730bced41d583b659"
+    },
+    {
+      "path": "pages/stable/book/foreword.md",
+      "url": "https://doc.rust-lang.org/stable/book/foreword.html",
+      "title": "Foreword - The Rust Programming Language",
+      "hash": "de7587220cb5b720ed335fa7a490775cea05ce1d83e5860eaff8b106ab8057ac"
+    },
+    {
+      "path": "pages/stable/book/print.md",
+      "url": "https://doc.rust-lang.org/stable/book/print.html",
+      "title": "The Rust Programming Language",
+      "hash": "52d3ddf9d88264e74536e0e410a8ab3253ae21e0c8f29c6aa2e8cfeb9b77e518"
+    },
+    {
+      "path": "pages/stable/cargo.md",
+      "url": "https://doc.rust-lang.org/stable/cargo",
+      "title": "Introduction - The Cargo Book",
+      "hash": "e70f2c2dd13b4eb8f1db594e9281ee4406a6dc40daad8e9086c892614837fc79"
+    },
+    {
+      "path": "pages/stable/nomicon/vec/vec.md",
+      "url": "https://doc.rust-lang.org/stable/nomicon/vec/vec.html",
+      "title": "Implementing Vec - The Rustonomicon",
+      "hash": "a1a8913ecf523992d9b6591e49dc9e9b3329218331ee836aeb07043755d4b8e8"
+    },
+    {
+      "path": "pages/stable/reference/attributes.md",
+      "url": "https://doc.rust-lang.org/stable/reference/attributes.html",
+      "title": "Attributes - The Rust Reference",
+      "hash": "980dbdecef0b25bc5392ea97e80ae1706603ed33121da19555adf56d40e16522"
+    },
+    {
+      "path": "pages/stable/reference/const_eval.md",
+      "url": "https://doc.rust-lang.org/stable/reference/const_eval.html",
+      "title": "Constant evaluation - The Rust Reference",
+      "hash": "7d6f6e90472f3cac52df8834100a182d3390b752710df3575be4f234ba1d82d8"
+    },
+    {
+      "path": "pages/stable/reference/trait-bounds.md",
+      "url": "https://doc.rust-lang.org/stable/reference/trait-bounds.html",
+      "title": "Trait and lifetime bounds - The Rust Reference",
+      "hash": "c9d03a216038750c7e0b93fbf1b0594a9b76daf712f85c6f59d9dabde1500885"
+    },
+    {
+      "path": "pages/stable/std/collections/home.md",
+      "url": "https://doc.rust-lang.org/stable/std/collections/index.html",
+      "title": "std::collections - Rust",
+      "hash": "2b74436538080f8866c7bedc37a49747541e4b8a1369558e8363f3f603268520"
+    },
+    {
+      "path": "pages/stable/std/io/struct.md",
+      "url": "https://doc.rust-lang.org/stable/std/io/struct.Stdin.html",
+      "title": "Stdin in std::io - Rust",
+      "hash": "b2f3beb5b7edd06a92447ae83e191488d4ec26f75e3a31898374e3c1e3e63153"
+    },
+    {
+      "path": "pages/stable/std/macro.md",
+      "url": "https://doc.rust-lang.org/stable/std/macro.println.html",
+      "title": "println in std - Rust",
+      "hash": "b2e0fb6d5ded671d942e7a76722a8cc84c02424337e2373cb0cf1ac2f2d1050e"
+    },
+    {
+      "path": "pages/stable/std/net/enum.md",
+      "url": "https://doc.rust-lang.org/stable/std/net/enum.IpAddr.html",
+      "title": "IpAddr in std::net - Rust",
+      "hash": "e4aa48ecf51a20b24322ad611380932f39eb668465a994db8dffb8421a7f3042"
+    },
+    {
+      "path": "pages/stable/std/option/enum.md",
+      "url": "https://doc.rust-lang.org/stable/std/option/enum.Option.html",
+      "title": "Option in std::option - Rust",
+      "hash": "1531dcf6e77de5ad2668e179a278153a89489e4dde6c0c6ff550775cb2ceceed"
+    },
+    {
+      "path": "pages/stable/std/prelude/home.md",
+      "url": "https://doc.rust-lang.org/stable/std/prelude/index.html",
+      "title": "std::prelude - Rust",
+      "hash": "a89ce457e2ef28fe8140bb6945703a59ac85845ba8d62c0de785e26c5d5ea52a"
+    },
+    {
+      "path": "pages/stable/std/primitive.md",
+      "url": "https://doc.rust-lang.org/stable/std/primitive.str.html",
+      "title": "str - Rust",
+      "hash": "ba9a169a8a20d71d50cb53a74b37958f9722e281ee6c7a88ed5f20c2fa91f2bd"
+    },
+    {
+      "path": "pages/stable/std/process/trait.md",
+      "url": "https://doc.rust-lang.org/stable/std/process/trait.Termination.html",
+      "title": "Termination in std::process - Rust",
+      "hash": "ef1619b2dad90e38402eec270fc9ba32e157049e970299d2b0e12ca2bcd3fcbe"
+    },
+    {
+      "path": "pages/stable/std/result/enum.md",
+      "url": "https://doc.rust-lang.org/stable/std/result/enum.Result.html",
+      "title": "Result in std::result - Rust",
+      "hash": "db03d61f6c9a2bc1ad21b55433bda260461b1c670ebf9ae19c14958673b1f148"
+    },
+    {
+      "path": "pages/stable/std/string/struct.md",
+      "url": "https://doc.rust-lang.org/stable/std/string/struct.String.html",
+      "title": "String in std::string - Rust",
+      "hash": "92722145ce426331643ea1984bca0809fdb090f68c984abb382f8ece67ec75b9"
+    },
+    {
+      "path": "pages/stable/std/vec/struct.md",
+      "url": "https://doc.rust-lang.org/stable/std/vec/struct.Vec.html",
+      "title": "Vec in std::vec - Rust",
+      "hash": "8d062845905d59d10e24962f0597def58dab23791bebd2c1ef1a001d3c1393d2"
+    },
+    {
+      "path": "pages/stable/unstable-book/library-features/test.md",
+      "url": "https://doc.rust-lang.org/stable/unstable-book/library-features/test.html",
+      "title": "test - The Rust Unstable Book",
+      "hash": "d286aa53b66a4463d476b145a6601cdf6d192541c68068082f0fbd465fc98770"
+    }
+  ],
+  "edges": [
+    [
+      "pages/stable/book.md",
+      "pages/stable/book/appendix-05-editions.md"
+    ],
+    [
+      "pages/stable/book.md",
+      "pages/stable/book/appendix-06-translation.md"
+    ],
+    [
+      "pages/stable/book.md",
+      "pages/stable/book/ch01-01-installation.md"
+    ],
+    [
+      "pages/stable/book.md",
+      "pages/stable/book/foreword.md"
+    ],
+    [
+      "pages/stable/book.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/appendix-05-editions.md",
+      "pages/stable/book/appendix-06-translation.md"
+    ],
+    [
+      "pages/stable/book/appendix-05-editions.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/appendix-06-translation.md",
+      "pages/stable/book/appendix-05-editions.md"
+    ],
+    [
+      "pages/stable/book/appendix-06-translation.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch01-01-installation.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/foreword.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/print.md",
+      "pages/cargo/reference/publishing.md"
+    ],
+    [
+      "pages/stable/book/print.md",
+      "pages/stable/book.md"
+    ],
+    [
+      "pages/stable/book/print.md",
+      "pages/stable/nomicon/vec/vec.md"
+    ],
+    [
+      "pages/stable/book/print.md",
+      "pages/stable/reference/attributes.md"
+    ],
+    [
+      "pages/stable/book/print.md",
+      "pages/stable/reference/const_eval.md"
+    ],
+    [
+      "pages/stable/book/print.md",
+      "pages/stable/reference/trait-bounds.md"
+    ],
+    [
+      "pages/stable/book/print.md",
+      "pages/stable/std/collections/home.md"
+    ],
+    [
+      "pages/stable/book/print.md",
+      "pages/stable/std/io/struct.md"
+    ],
+    [
+      "pages/stable/book/print.md",
+      "pages/stable/std/macro.md"
+    ],
+    [
+      "pages/stable/book/print.md",
+      "pages/stable/std/net/enum.md"
+    ],
+    [
+      "pages/stable/book/print.md",
+      "pages/stable/std/option/enum.md"
+    ],
+    [
+      "pages/stable/book/print.md",
+      "pages/stable/std/prelude/home.md"
+    ],
+    [
+      "pages/stable/book/print.md",
+      "pages/stable/std/primitive.md"
+    ],
+    [
+      "pages/stable/book/print.md",
+      "pages/stable/std/process/trait.md"
+    ],
+    [
+      "pages/stable/book/print.md",
+      "pages/stable/std/result/enum.md"
+    ],
+    [
+      "pages/stable/book/print.md",
+      "pages/stable/std/string/struct.md"
+    ],
+    [
+      "pages/stable/book/print.md",
+      "pages/stable/std/vec/struct.md"
+    ],
+    [
+      "pages/stable/book/print.md",
+      "pages/stable/unstable-book/library-features/test.md"
+    ],
+    [
+      "pages/stable/std/collections/home.md",
+      "pages/stable/std/vec/struct.md"
+    ],
+    [
+      "pages/stable/std/io/struct.md",
+      "pages/stable/std/primitive.md"
+    ],
+    [
+      "pages/stable/std/io/struct.md",
+      "pages/stable/std/result/enum.md"
+    ],
+    [
+      "pages/stable/std/io/struct.md",
+      "pages/stable/std/string/struct.md"
+    ],
+    [
+      "pages/stable/std/io/struct.md",
+      "pages/stable/std/vec/struct.md"
+    ],
+    [
+      "pages/stable/std/macro.md",
+      "pages/stable/std/io/struct.md"
+    ],
+    [
+      "pages/stable/std/net/enum.md",
+      "pages/stable/std/option/enum.md"
+    ],
+    [
+      "pages/stable/std/net/enum.md",
+      "pages/stable/std/primitive.md"
+    ],
+    [
+      "pages/stable/std/net/enum.md",
+      "pages/stable/std/result/enum.md"
+    ],
+    [
+      "pages/stable/std/net/enum.md",
+      "pages/stable/std/string/struct.md"
+    ],
+    [
+      "pages/stable/std/option/enum.md",
+      "pages/stable/std/primitive.md"
+    ],
+    [
+      "pages/stable/std/option/enum.md",
+      "pages/stable/std/result/enum.md"
+    ],
+    [
+      "pages/stable/std/option/enum.md",
+      "pages/stable/std/string/struct.md"
+    ],
+    [
+      "pages/stable/std/prelude/home.md",
+      "pages/stable/std/option/enum.md"
+    ],
+    [
+      "pages/stable/std/prelude/home.md",
+      "pages/stable/std/result/enum.md"
+    ],
+    [
+      "pages/stable/std/prelude/home.md",
+      "pages/stable/std/string/struct.md"
+    ],
+    [
+      "pages/stable/std/prelude/home.md",
+      "pages/stable/std/vec/struct.md"
+    ],
+    [
+      "pages/stable/std/primitive.md",
+      "pages/stable/std/net/enum.md"
+    ],
+    [
+      "pages/stable/std/primitive.md",
+      "pages/stable/std/option/enum.md"
+    ],
+    [
+      "pages/stable/std/primitive.md",
+      "pages/stable/std/result/enum.md"
+    ],
+    [
+      "pages/stable/std/primitive.md",
+      "pages/stable/std/string/struct.md"
+    ],
+    [
+      "pages/stable/std/primitive.md",
+      "pages/stable/std/vec/struct.md"
+    ],
+    [
+      "pages/stable/std/process/trait.md",
+      "pages/stable/std/primitive.md"
+    ],
+    [
+      "pages/stable/std/process/trait.md",
+      "pages/stable/std/result/enum.md"
+    ],
+    [
+      "pages/stable/std/result/enum.md",
+      "pages/stable/std/option/enum.md"
+    ],
+    [
+      "pages/stable/std/result/enum.md",
+      "pages/stable/std/primitive.md"
+    ],
+    [
+      "pages/stable/std/result/enum.md",
+      "pages/stable/std/process/trait.md"
+    ],
+    [
+      "pages/stable/std/string/struct.md",
+      "pages/stable/std/macro.md"
+    ],
+    [
+      "pages/stable/std/string/struct.md",
+      "pages/stable/std/net/enum.md"
+    ],
+    [
+      "pages/stable/std/string/struct.md",
+      "pages/stable/std/option/enum.md"
+    ],
+    [
+      "pages/stable/std/string/struct.md",
+      "pages/stable/std/primitive.md"
+    ],
+    [
+      "pages/stable/std/string/struct.md",
+      "pages/stable/std/result/enum.md"
+    ],
+    [
+      "pages/stable/std/string/struct.md",
+      "pages/stable/std/vec/struct.md"
+    ],
+    [
+      "pages/stable/std/vec/struct.md",
+      "pages/stable/std/io/struct.md"
+    ],
+    [
+      "pages/stable/std/vec/struct.md",
+      "pages/stable/std/macro.md"
+    ],
+    [
+      "pages/stable/std/vec/struct.md",
+      "pages/stable/std/option/enum.md"
+    ],
+    [
+      "pages/stable/std/vec/struct.md",
+      "pages/stable/std/primitive.md"
+    ],
+    [
+      "pages/stable/std/vec/struct.md",
+      "pages/stable/std/result/enum.md"
+    ],
+    [
+      "pages/stable/std/vec/struct.md",
+      "pages/stable/std/string/struct.md"
+    ]
+  ]
+}

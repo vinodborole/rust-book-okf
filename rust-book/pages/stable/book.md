@@ -2,7 +2,7 @@
 type: Web Page
 title: The Rust Programming Language - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book
-timestamp: '2026-07-06T08:05:31.028609+00:00'
+timestamp: '2026-07-06T10:44:58.534505+00:00'
 ---
 
 # The Rust Programming Language

@@ -2,26 +2,51 @@
   "generator": "okf-kit",
   "okf_version": "0.1",
   "root_url": "https://doc.rust-lang.org/book",
-  "updated_at": "2026-07-06T08:05:31.069040+00:00",
+  "updated_at": "2026-07-06T10:44:58.580825+00:00",
   "config": {
-    "max_depth": 2,
-    "max_pages": 25,
+    "max_depth": 8,
+    "max_pages": 120,
     "fetcher": "http",
-    "respect_robots": true
+    "respect_robots": true,
+    "path_prefix": "/stable/book/"
   },
-  "page_count": 24,
+  "page_count": 109,
   "pages": [
-    {
-      "path": "pages/cargo/reference/publishing.md",
-      "url": "https://doc.rust-lang.org/cargo/reference/publishing.html",
-      "title": "Publishing on crates.io - The Cargo Book",
-      "hash": "29a3f60c83f9352d87d930888c9aa4cf9dd3ebbdd3557e796441b9a71dea56a4"
-    },
     {
       "path": "pages/stable/book.md",
       "url": "https://doc.rust-lang.org/stable/book",
       "title": "The Rust Programming Language - The Rust Programming Language",
       "hash": "5d74849a1c0e84a6b77a9607966969a5d98d8fb56b15a3763b9a7b10b622d191"
+    },
+    {
+      "path": "pages/stable/book/appendix-00.md",
+      "url": "https://doc.rust-lang.org/stable/book/appendix-00.html",
+      "title": "Appendix - The Rust Programming Language",
+      "hash": "02424d43bf017ab09fefff17a9d371b45340f6feb85b1b80ee7189874f907f8c"
+    },
+    {
+      "path": "pages/stable/book/appendix-01-keywords.md",
+      "url": "https://doc.rust-lang.org/stable/book/appendix-01-keywords.html",
+      "title": "A - Keywords - The Rust Programming Language",
+      "hash": "094922ff520f583d501aa24a93309f0f1bc3b94c5241cbce27e657cda6c021e5"
+    },
+    {
+      "path": "pages/stable/book/appendix-02-operators.md",
+      "url": "https://doc.rust-lang.org/stable/book/appendix-02-operators.html",
+      "title": "B - Operators and Symbols - The Rust Programming Language",
+      "hash": "696ae24edba1d8a75a70d46514333d898672c526a88191bad3dc8287529e31d5"
+    },
+    {
+      "path": "pages/stable/book/appendix-03-derivable-traits.md",
+      "url": "https://doc.rust-lang.org/stable/book/appendix-03-derivable-traits.html",
+      "title": "C - Derivable Traits - The Rust Programming Language",
+      "hash": "fc89dcd550c05ed28bfdb7a4709863d14a2e2d4c000f05fbb45bcc3d04ed8524"
+    },
+    {
+      "path": "pages/stable/book/appendix-04-useful-development-tools.md",
+      "url": "https://doc.rust-lang.org/stable/book/appendix-04-useful-development-tools.html",
+      "title": "D - Useful Development Tools - The Rust Programming Language",
+      "hash": "85f21b360f1145e588d83fd3b7a877196d37aa943963e980d769de379bd83f14"
     },
     {
       "path": "pages/stable/book/appendix-05-editions.md",
@@ -36,10 +61,592 @@
       "hash": "6da9c277b63d9d7e495005d1bdb40a6111124347b7a1bbc02697f276c8c9667b"
     },
     {
+      "path": "pages/stable/book/appendix-07-nightly-rust.md",
+      "url": "https://doc.rust-lang.org/stable/book/appendix-07-nightly-rust.html",
+      "title": "G - How Rust is Made and “Nightly Rust” - The Rust Programming Language",
+      "hash": "3225bf8247f7f9664718ac92ef9cfcd84ede28ef764fe1e2006c4007427a9582"
+    },
+    {
+      "path": "pages/stable/book/ch00-00-introduction.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch00-00-introduction.html",
+      "title": "Introduction - The Rust Programming Language",
+      "hash": "2716f778a61f12273ee13f6c98b7258df3ca70d8aa20100bf6d2f6c1e08bdcf2"
+    },
+    {
+      "path": "pages/stable/book/ch01-00-getting-started.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch01-00-getting-started.html",
+      "title": "Getting Started - The Rust Programming Language",
+      "hash": "f51c594b126fde1fffa1c7a3ed2b137cdeaa7e449e9fc8e663948fd62408e3db"
+    },
+    {
       "path": "pages/stable/book/ch01-01-installation.md",
       "url": "https://doc.rust-lang.org/stable/book/ch01-01-installation.html",
       "title": "Installation - The Rust Programming Language",
       "hash": "eec5cdce6fd0ef3502ca740ba696d3116d299d346015711730bced41d583b659"
+    },
+    {
+      "path": "pages/stable/book/ch01-02-hello-world.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch01-02-hello-world.html",
+      "title": "Hello, World! - The Rust Programming Language",
+      "hash": "2c4073469eda81c42041bb949ea49beb52c4666cf2895a2b34a68ecb9597d81c"
+    },
+    {
+      "path": "pages/stable/book/ch01-03-hello-cargo.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch01-03-hello-cargo.html",
+      "title": "Hello, Cargo! - The Rust Programming Language",
+      "hash": "b919573a3bbed3ab3c65daeb4f689351e6fd44becea72987fc0e21225de74f96"
+    },
+    {
+      "path": "pages/stable/book/ch02-00-guessing-game-tutorial.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch02-00-guessing-game-tutorial.html",
+      "title": "Programming a Guessing Game - The Rust Programming Language",
+      "hash": "901c9fbc9b19d119066f65a6abfdab2c05ead647e82156d2c60efb0afd5343c7"
+    },
+    {
+      "path": "pages/stable/book/ch03-00-common-programming-concepts.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch03-00-common-programming-concepts.html",
+      "title": "Common Programming Concepts - The Rust Programming Language",
+      "hash": "8a85c108664bf6b028fc15b0914845a54f159f7ec5e9a64216c52fc602de1417"
+    },
+    {
+      "path": "pages/stable/book/ch03-01-variables-and-mutability.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch03-01-variables-and-mutability.html",
+      "title": "Variables and Mutability - The Rust Programming Language",
+      "hash": "434f60425679ce5fea7c23220a4ff71646166a216b9d484f27235fa274e64b8a"
+    },
+    {
+      "path": "pages/stable/book/ch03-02-data-types.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch03-02-data-types.html",
+      "title": "Data Types - The Rust Programming Language",
+      "hash": "b91a9a8c8ea5b7f0b66b77fd36f21e4631d0ebf218fe51a83a54d8280558abcc"
+    },
+    {
+      "path": "pages/stable/book/ch03-03-how-functions-work.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch03-03-how-functions-work.html",
+      "title": "Functions - The Rust Programming Language",
+      "hash": "0a5164899b621cb00001c5501d93b3d5534288aac51b5dc0031e209daf2a0421"
+    },
+    {
+      "path": "pages/stable/book/ch03-04-comments.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch03-04-comments.html",
+      "title": "Comments - The Rust Programming Language",
+      "hash": "cb10b878258a1568a39f7e852fabf4f4722d625eb6f256d56a01b4fc4c0ff50e"
+    },
+    {
+      "path": "pages/stable/book/ch03-05-control-flow.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch03-05-control-flow.html",
+      "title": "Control Flow - The Rust Programming Language",
+      "hash": "5ded68b6e6cb3e1c72b1cb2023f1a0482b1bd3170fc45152a9a71d340f3811f7"
+    },
+    {
+      "path": "pages/stable/book/ch04-00-understanding-ownership.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch04-00-understanding-ownership.html",
+      "title": "Understanding Ownership - The Rust Programming Language",
+      "hash": "6ca5b370ee8c77694b73ee62cacbea399097b352d624fc1071bc0ed9fcf867bf"
+    },
+    {
+      "path": "pages/stable/book/ch04-01-what-is-ownership.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch04-01-what-is-ownership.html",
+      "title": "What is Ownership? - The Rust Programming Language",
+      "hash": "daf8eb73037299fec00d9fb1ff48c38a0a94ddb8c91c28f75a84073346f16740"
+    },
+    {
+      "path": "pages/stable/book/ch04-02-references-and-borrowing.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch04-02-references-and-borrowing.html",
+      "title": "References and Borrowing - The Rust Programming Language",
+      "hash": "5e7243d20cedf47a20daeb3c89f60e6ca187bf69bc975ddf9b8e0c3f6d80602f"
+    },
+    {
+      "path": "pages/stable/book/ch04-03-slices.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch04-03-slices.html",
+      "title": "The Slice Type - The Rust Programming Language",
+      "hash": "85b62ef9c01fca39d6c3af4e30971f17e49378df78f0105cb5539233516955d1"
+    },
+    {
+      "path": "pages/stable/book/ch05-00-structs.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch05-00-structs.html",
+      "title": "Using Structs to Structure Related Data - The Rust Programming Language",
+      "hash": "21c759c8a16e0d5e660148d3d8123536b968af1b2a7bc0e2982edeece3ad3b21"
+    },
+    {
+      "path": "pages/stable/book/ch05-01-defining-structs.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch05-01-defining-structs.html",
+      "title": "Defining and Instantiating Structs - The Rust Programming Language",
+      "hash": "6ee0b73faa41560a94aab1e5ca2b93dd7b927bf8ba4d7fcdcb1b30bd49d84a09"
+    },
+    {
+      "path": "pages/stable/book/ch05-02-example-structs.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch05-02-example-structs.html",
+      "title": "An Example Program Using Structs - The Rust Programming Language",
+      "hash": "4eab213485bf7c5d9f262f3b5170444eba3ab20772a1bad6ad9557d43ef25425"
+    },
+    {
+      "path": "pages/stable/book/ch05-03-method-syntax.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch05-03-method-syntax.html",
+      "title": "Methods - The Rust Programming Language",
+      "hash": "5a879e3a9cbec94238c460c58636c640e70a56130b9e92bb08c307d064f54ecf"
+    },
+    {
+      "path": "pages/stable/book/ch06-00-enums.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch06-00-enums.html",
+      "title": "Enums and Pattern Matching - The Rust Programming Language",
+      "hash": "4442011a9d6c9200af8e4d74929f65e9cab02742bf116cdaa2979f9eb09710d1"
+    },
+    {
+      "path": "pages/stable/book/ch06-01-defining-an-enum.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch06-01-defining-an-enum.html",
+      "title": "Defining an Enum - The Rust Programming Language",
+      "hash": "ed9da1f179bdc02902f0c007b2e52e880d0f81eeb396234a178a89f12453f8ab"
+    },
+    {
+      "path": "pages/stable/book/ch06-02-match.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch06-02-match.html",
+      "title": "The match Control Flow Construct - The Rust Programming Language",
+      "hash": "90a6026ece35c8933185b027bd4b0891968e54edc98d7be1475fee4de2ddbf90"
+    },
+    {
+      "path": "pages/stable/book/ch06-03-if-let.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch06-03-if-let.html",
+      "title": "Concise Control Flow with if let and let...else - The Rust Programming Language",
+      "hash": "d4d93a3b29354f1f8816ebc4b227a9f8579ccd9a48172f270d09973c1f081f29"
+    },
+    {
+      "path": "pages/stable/book/ch07-00-managing-growing-projects-with-packages-crates-and-modules.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch07-00-managing-growing-projects-with-packages-crates-and-modules.html",
+      "title": "Packages, Crates, and Modules - The Rust Programming Language",
+      "hash": "c5241035dac3a1a4ea9c63cd9d390f57649ec7e59dbc51eec9f48f91dace4373"
+    },
+    {
+      "path": "pages/stable/book/ch07-01-packages-and-crates.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch07-01-packages-and-crates.html",
+      "title": "Packages and Crates - The Rust Programming Language",
+      "hash": "64a266d507701c37282d97ec52bc8e4840da5ee6ff689cb6f015220fcb3fe25b"
+    },
+    {
+      "path": "pages/stable/book/ch07-02-defining-modules-to-control-scope-and-privacy.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch07-02-defining-modules-to-control-scope-and-privacy.html",
+      "title": "Control Scope and Privacy with Modules - The Rust Programming Language",
+      "hash": "d7773f2c0fada9067f2a67e54126cff3c265a52e001ed0172725b1b44f656afa"
+    },
+    {
+      "path": "pages/stable/book/ch07-03-paths-for-referring-to-an-item-in-the-module-tree.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch07-03-paths-for-referring-to-an-item-in-the-module-tree.html",
+      "title": "Paths for Referring to an Item in the Module Tree - The Rust Programming Language",
+      "hash": "3845afa20f56db213c5bd516a22fe453876b8c448ff5955a179c1a083b5b15b6"
+    },
+    {
+      "path": "pages/stable/book/ch07-04-bringing-paths-into-scope-with-the-use-keyword.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch07-04-bringing-paths-into-scope-with-the-use-keyword.html",
+      "title": "Bringing Paths Into Scope with the use Keyword - The Rust Programming Language",
+      "hash": "e3cbc8e902ecb51713b95af7ebd987b4f9c4094cbd6983754ad3d347d51aee92"
+    },
+    {
+      "path": "pages/stable/book/ch07-05-separating-modules-into-different-files.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch07-05-separating-modules-into-different-files.html",
+      "title": "Separating Modules into Different Files - The Rust Programming Language",
+      "hash": "0d74f1ca0a8358c2063ae5b6821e420d096312cc49f95b91a026517cf91d40eb"
+    },
+    {
+      "path": "pages/stable/book/ch08-00-common-collections.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch08-00-common-collections.html",
+      "title": "Common Collections - The Rust Programming Language",
+      "hash": "29f9845a95483fcdf48ecf0a47a08ba9bae394a8d860dd23c311232914b3f7b5"
+    },
+    {
+      "path": "pages/stable/book/ch08-01-vectors.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch08-01-vectors.html",
+      "title": "Storing Lists of Values with Vectors - The Rust Programming Language",
+      "hash": "48039814daa8a492465fb16bf733e9998f2b4d55ec3b2b30f9c93315bedfbdd4"
+    },
+    {
+      "path": "pages/stable/book/ch08-02-strings.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch08-02-strings.html",
+      "title": "Storing UTF-8 Encoded Text with Strings - The Rust Programming Language",
+      "hash": "b8382831298d3f9337230ca268e7e8b2c16d589407c2f9207cdd92ec64cf7527"
+    },
+    {
+      "path": "pages/stable/book/ch08-03-hash-maps.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch08-03-hash-maps.html",
+      "title": "Storing Keys with Associated Values in Hash Maps - The Rust Programming Language",
+      "hash": "6a8b2bb0a412ae0b4290d4d4f4c0ed9890b23b77ccc249d0619633a8f745962d"
+    },
+    {
+      "path": "pages/stable/book/ch09-00-error-handling.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch09-00-error-handling.html",
+      "title": "Error Handling - The Rust Programming Language",
+      "hash": "e743642abb51faa6deb5bb0ec10ac86cfeeda5da6081e5fc7931ef15ba4b21e6"
+    },
+    {
+      "path": "pages/stable/book/ch09-01-unrecoverable-errors-with-panic.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch09-01-unrecoverable-errors-with-panic.html",
+      "title": "Unrecoverable Errors with panic! - The Rust Programming Language",
+      "hash": "e4e0363d1c4a9589af92c3563e04e548baac6d54f80bfc8167514ca1671647ba"
+    },
+    {
+      "path": "pages/stable/book/ch09-02-recoverable-errors-with-result.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch09-02-recoverable-errors-with-result.html",
+      "title": "Recoverable Errors with Result - The Rust Programming Language",
+      "hash": "4ea060341612cbd7881912b75d9952c231ec1b61d45bf5201f834eacec60ae0f"
+    },
+    {
+      "path": "pages/stable/book/ch09-03-to-panic-or-not-to-panic.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch09-03-to-panic-or-not-to-panic.html",
+      "title": "To panic! or Not to panic! - The Rust Programming Language",
+      "hash": "c3ab954aef64777af809c2f402236e9d5d99acbed3f7305231dcace01640fd72"
+    },
+    {
+      "path": "pages/stable/book/ch10-00-generics.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch10-00-generics.html",
+      "title": "Generic Types, Traits, and Lifetimes - The Rust Programming Language",
+      "hash": "e6480c5d792096686c66c525e731d0abddbb2b7c8910e18bbdaf0e5487df1314"
+    },
+    {
+      "path": "pages/stable/book/ch10-01-syntax.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch10-01-syntax.html",
+      "title": "Generic Data Types - The Rust Programming Language",
+      "hash": "e69b8b1423f401ef169d15e41ae498197c07e81a26c776d7c5886b7aab9b46e3"
+    },
+    {
+      "path": "pages/stable/book/ch10-02-traits.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch10-02-traits.html",
+      "title": "Defining Shared Behavior with Traits - The Rust Programming Language",
+      "hash": "ee4718028e96cff45019857cd0780307e0938ce7c039757828af4e01e22799e7"
+    },
+    {
+      "path": "pages/stable/book/ch10-03-lifetime-syntax.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch10-03-lifetime-syntax.html",
+      "title": "Validating References with Lifetimes - The Rust Programming Language",
+      "hash": "9470056defe992c5e3050d3358a4e7521fc48c8c619c465b234d25da2d614e17"
+    },
+    {
+      "path": "pages/stable/book/ch11-00-testing.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch11-00-testing.html",
+      "title": "Writing Automated Tests - The Rust Programming Language",
+      "hash": "b8adb1137caff911d412a4e194335009f629006e4a8ef5b348cdff6a160b95a4"
+    },
+    {
+      "path": "pages/stable/book/ch11-01-writing-tests.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch11-01-writing-tests.html",
+      "title": "How to Write Tests - The Rust Programming Language",
+      "hash": "3db7c5894afc008f5f2aa27d67b36d18a76aff70a2b1dc4a4e417311cf5e5b70"
+    },
+    {
+      "path": "pages/stable/book/ch11-02-running-tests.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch11-02-running-tests.html",
+      "title": "Controlling How Tests Are Run - The Rust Programming Language",
+      "hash": "3daa557bdbe04c42e0bb0788bc40e81877610f8ff8cd921574e9da1bb6d4c35a"
+    },
+    {
+      "path": "pages/stable/book/ch11-03-test-organization.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch11-03-test-organization.html",
+      "title": "Test Organization - The Rust Programming Language",
+      "hash": "4d8f6209ad9f958a9abfad023d607c213ea79d5e5c585b58df499c623e34db59"
+    },
+    {
+      "path": "pages/stable/book/ch12-00-an-io-project.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch12-00-an-io-project.html",
+      "title": "An I/O Project: Building a Command Line Program - The Rust Programming Language",
+      "hash": "102733a46107e8113bc3ec9e43e6bfe333e304509b0d993d809e0de86608f352"
+    },
+    {
+      "path": "pages/stable/book/ch12-01-accepting-command-line-arguments.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch12-01-accepting-command-line-arguments.html",
+      "title": "Accepting Command Line Arguments - The Rust Programming Language",
+      "hash": "af4c8e33a24bb29ab92799ed7ec21dbe8aa21e64cc3657b8335c8191b0622059"
+    },
+    {
+      "path": "pages/stable/book/ch12-02-reading-a-file.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch12-02-reading-a-file.html",
+      "title": "Reading a File - The Rust Programming Language",
+      "hash": "06ad524d165df1cea9304d6691411f62135c3820057d0449f83ee739de114870"
+    },
+    {
+      "path": "pages/stable/book/ch12-04-testing-the-librarys-functionality.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch12-04-testing-the-librarys-functionality.html",
+      "title": "Adding Functionality with Test Driven Development - The Rust Programming Language",
+      "hash": "1acf17eee5e89a72a8fa86f069a4ef53dd9657cdd554176372b0387318d42a14"
+    },
+    {
+      "path": "pages/stable/book/ch12-05-working-with-environment-variables.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch12-05-working-with-environment-variables.html",
+      "title": "Working with Environment Variables - The Rust Programming Language",
+      "hash": "7e4e39c622ce472b7006451ed2111af45e03c35735b35ea41c13bc9e6c92a252"
+    },
+    {
+      "path": "pages/stable/book/ch12-06-writing-to-stderr-instead-of-stdout.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch12-06-writing-to-stderr-instead-of-stdout.html",
+      "title": "Redirecting Errors to Standard Error - The Rust Programming Language",
+      "hash": "4d9cfe82e2677e24ac63b08e0efc903427ea7362a8a95e2705e037c4b32a5f7a"
+    },
+    {
+      "path": "pages/stable/book/ch13-00-functional-features.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch13-00-functional-features.html",
+      "title": "Functional Language Features: Iterators and Closures - The Rust Programming Language",
+      "hash": "2fe96a0d7dc03c4848ce9e555ebca73dcad8aae66b6a11e39c3248a96679bdb9"
+    },
+    {
+      "path": "pages/stable/book/ch13-01-closures.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch13-01-closures.html",
+      "title": "Closures - The Rust Programming Language",
+      "hash": "8a711f193110c117029a2d0c49f1f2fe4923575bb139800746f8997f43847e75"
+    },
+    {
+      "path": "pages/stable/book/ch13-02-iterators.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch13-02-iterators.html",
+      "title": "Processing a Series of Items with Iterators - The Rust Programming Language",
+      "hash": "6189ac2ad6b7f6e836262dd867f1b2e991d9d71052fba59812c075097fd2a151"
+    },
+    {
+      "path": "pages/stable/book/ch13-03-improving-our-io-project.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch13-03-improving-our-io-project.html",
+      "title": "Improving Our I/O Project - The Rust Programming Language",
+      "hash": "f0caaeecee02ff81175c1bd0c6aa2e9d8702d1a1842c4aeab47da0b643ad58e9"
+    },
+    {
+      "path": "pages/stable/book/ch13-04-performance.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch13-04-performance.html",
+      "title": "Performance in Loops vs. Iterators - The Rust Programming Language",
+      "hash": "9d72c7fb522de18fffbc264fa8fa78784397fed95e60fdef43e3086ca463b5d7"
+    },
+    {
+      "path": "pages/stable/book/ch14-00-more-about-cargo.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch14-00-more-about-cargo.html",
+      "title": "More about Cargo and Crates.io - The Rust Programming Language",
+      "hash": "b91e6368e9501f7c9867931cf4e48e69cd9c56b9448610f9c83f5bd593046672"
+    },
+    {
+      "path": "pages/stable/book/ch14-01-release-profiles.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch14-01-release-profiles.html",
+      "title": "Customizing Builds with Release Profiles - The Rust Programming Language",
+      "hash": "2b64e956fc737b990016a2bd2a55081609a419b023fef70283d1b03629d07a15"
+    },
+    {
+      "path": "pages/stable/book/ch14-02-publishing-to-crates-io.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch14-02-publishing-to-crates-io.html",
+      "title": "Publishing a Crate to Crates.io - The Rust Programming Language",
+      "hash": "6f6f775526e314a601084801ef82bd820210257f06ebac7687e3dc3319c8dddf"
+    },
+    {
+      "path": "pages/stable/book/ch14-03-cargo-workspaces.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch14-03-cargo-workspaces.html",
+      "title": "Cargo Workspaces - The Rust Programming Language",
+      "hash": "882903ae494e4bd15c9beb67f09fadc4bb58d3f4ca9fc04ba6abefdfe6f2b75d"
+    },
+    {
+      "path": "pages/stable/book/ch14-04-installing-binaries.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch14-04-installing-binaries.html",
+      "title": "Installing Binaries with cargo install - The Rust Programming Language",
+      "hash": "7f270d83e8a8677d26388c1308ad8f189bfa5fe98b440da1ec53ab6fe2ad9b5a"
+    },
+    {
+      "path": "pages/stable/book/ch15-00-smart-pointers.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch15-00-smart-pointers.html",
+      "title": "Smart Pointers - The Rust Programming Language",
+      "hash": "b6f1bd4c603b183177d36ae631e78c623280573950f7bae8565579752821db21"
+    },
+    {
+      "path": "pages/stable/book/ch15-01-box.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch15-01-box.html",
+      "title": "Using Box<T> to Point to Data on the Heap - The Rust Programming Language",
+      "hash": "874dd174612fda04f8d03f8aee5b32110ffa4763db3d8851a316e2de37d7d7b8"
+    },
+    {
+      "path": "pages/stable/book/ch15-02-deref.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch15-02-deref.html",
+      "title": "Treating Smart Pointers Like Regular References - The Rust Programming Language",
+      "hash": "a4cf823ce7c09a0b2d2f28f7c25184d5bec835855cb3369efbbdae5c1c4d07e6"
+    },
+    {
+      "path": "pages/stable/book/ch15-03-drop.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch15-03-drop.html",
+      "title": "Running Code on Cleanup with the Drop Trait - The Rust Programming Language",
+      "hash": "d21f49cc1563a9d7afe9b34a70d7da2a183ae39444a885d8448e3046465e5ef0"
+    },
+    {
+      "path": "pages/stable/book/ch15-04-rc.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch15-04-rc.html",
+      "title": "Rc<T>, the Reference Counted Smart Pointer - The Rust Programming Language",
+      "hash": "a39d646f0db06a9e312a829b1f5f06b1a37f94ad3d4f73129fa30d4b1303b5f2"
+    },
+    {
+      "path": "pages/stable/book/ch16-00-concurrency.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch16-00-concurrency.html",
+      "title": "Fearless Concurrency - The Rust Programming Language",
+      "hash": "b2fd6eb811a7f845a41a140d8d150f4c97df33af5b117f949b6ddb75e1ccdb41"
+    },
+    {
+      "path": "pages/stable/book/ch16-01-threads.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch16-01-threads.html",
+      "title": "Using Threads to Run Code Simultaneously - The Rust Programming Language",
+      "hash": "5f9b93683363f85acc4fd670bfb5671333ffa1ad6bb48b2d3deea62739b4e6e9"
+    },
+    {
+      "path": "pages/stable/book/ch16-02-message-passing.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch16-02-message-passing.html",
+      "title": "Transfer Data Between Threads with Message Passing - The Rust Programming Language",
+      "hash": "faf4107266347cce6ab81f05136ffd4b9205b171d3dcbc33b46daea2733e967f"
+    },
+    {
+      "path": "pages/stable/book/ch16-03-shared-state.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch16-03-shared-state.html",
+      "title": "Shared-State Concurrency - The Rust Programming Language",
+      "hash": "37cef5bbbf5bdd38ebdb513e2d146c92d4fe9d1524c4f62c1398a58007905dc9"
+    },
+    {
+      "path": "pages/stable/book/ch16-04-extensible-concurrency-sync-and-send.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch16-04-extensible-concurrency-sync-and-send.html",
+      "title": "Extensible Concurrency with Send and Sync - The Rust Programming Language",
+      "hash": "5a7edb7b060f4bacaf73f672056e94572f27caa6d9003395a29d242c496fbe73"
+    },
+    {
+      "path": "pages/stable/book/ch17-00-async-await.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch17-00-async-await.html",
+      "title": "Fundamentals of Asynchronous Programming: Async, Await, Futures, and Streams - The Rust Programming Language",
+      "hash": "701af48c71e97ef84d69dda05338c764d656121b824342a499e337660143d980"
+    },
+    {
+      "path": "pages/stable/book/ch17-01-futures-and-syntax.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch17-01-futures-and-syntax.html",
+      "title": "Futures and the Async Syntax - The Rust Programming Language",
+      "hash": "76d008d273e2b4356fd8596a7cd9ea8578697b406b5337e36591fc04313943b4"
+    },
+    {
+      "path": "pages/stable/book/ch17-02-concurrency-with-async.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch17-02-concurrency-with-async.html",
+      "title": "Applying Concurrency with Async - The Rust Programming Language",
+      "hash": "88d173ede0ea9f094b9e846fba88962e4ec63116968426cec176d79841f3edea"
+    },
+    {
+      "path": "pages/stable/book/ch17-03-more-futures.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch17-03-more-futures.html",
+      "title": "Working With Any Number of Futures - The Rust Programming Language",
+      "hash": "2582b7c47a430533aaf6fc960fcf24e6369a4a914352dfbaab063520693f427a"
+    },
+    {
+      "path": "pages/stable/book/ch17-04-streams.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch17-04-streams.html",
+      "title": "Streams: Futures in Sequence - The Rust Programming Language",
+      "hash": "b0f20a3749f8bfdd1f2a4591f340951d0506bf5d99741bd72f350d8b3969fbbd"
+    },
+    {
+      "path": "pages/stable/book/ch17-05-traits-for-async.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch17-05-traits-for-async.html",
+      "title": "A Closer Look at the Traits for Async - The Rust Programming Language",
+      "hash": "9c4433867ecb8114945ec8e45e009e98bf9c07f2d50846ad85f02d8e9565b943"
+    },
+    {
+      "path": "pages/stable/book/ch17-06-futures-tasks-threads.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch17-06-futures-tasks-threads.html",
+      "title": "Futures, Tasks, and Threads - The Rust Programming Language",
+      "hash": "b96278481e308d44f685968b3116a68ad4920778f3df8925d29fb51a068fbac0"
+    },
+    {
+      "path": "pages/stable/book/ch18-00-oop.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch18-00-oop.html",
+      "title": "Object Oriented Programming Features - The Rust Programming Language",
+      "hash": "2715883b6a8197a067131646b8e92e7ce5300aad54d4c62846884e1ef5f958b5"
+    },
+    {
+      "path": "pages/stable/book/ch18-01-what-is-oo.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch18-01-what-is-oo.html",
+      "title": "Characteristics of Object-Oriented Languages - The Rust Programming Language",
+      "hash": "fb57d0935b1d2da7fe9f35cc49a7ddd5413c0f2897a4bbad1bbd6e85055dfdb6"
+    },
+    {
+      "path": "pages/stable/book/ch18-02-trait-objects.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch18-02-trait-objects.html",
+      "title": "Using Trait Objects to Abstract over Shared Behavior - The Rust Programming Language",
+      "hash": "bae0c96c021eb2f8623fe44c263d1cee93a58b8bd15456e501daf82356c00503"
+    },
+    {
+      "path": "pages/stable/book/ch18-03-oo-design-patterns.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch18-03-oo-design-patterns.html",
+      "title": "Implementing an Object-Oriented Design Pattern - The Rust Programming Language",
+      "hash": "1b6bc11d9c66520cc603d63074f8da29cc99af8e610c54dacf93f675dc56ed6a"
+    },
+    {
+      "path": "pages/stable/book/ch19-00-patterns.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch19-00-patterns.html",
+      "title": "Patterns and Matching - The Rust Programming Language",
+      "hash": "5cf502f402764bb46dc3d8d76ecfc4149a046a43a7c33a69cf1c60451ba0a6dc"
+    },
+    {
+      "path": "pages/stable/book/ch19-01-all-the-places-for-patterns.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch19-01-all-the-places-for-patterns.html",
+      "title": "All the Places Patterns Can Be Used - The Rust Programming Language",
+      "hash": "6a5e07dbb7f033924b9064b9efe8221f1bd2ddb01968b94120404c58793dceba"
+    },
+    {
+      "path": "pages/stable/book/ch19-02-refutability.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch19-02-refutability.html",
+      "title": "Refutability: Whether a Pattern Might Fail to Match - The Rust Programming Language",
+      "hash": "8aa3e1d26d1c7455504260e6a4741d280ec03da92d8a9f281e0a7a389f18d5ab"
+    },
+    {
+      "path": "pages/stable/book/ch19-03-pattern-syntax.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch19-03-pattern-syntax.html",
+      "title": "Pattern Syntax - The Rust Programming Language",
+      "hash": "80ff552424a99ac6134e8f78ef1a2e42f3d8b44f9a0be51adc0299f457ffe1b6"
+    },
+    {
+      "path": "pages/stable/book/ch20-00-advanced-features.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch20-00-advanced-features.html",
+      "title": "Advanced Features - The Rust Programming Language",
+      "hash": "8e968f8344273cb0daa03fbd1ed9b246f799f39d98a2d8d8534bb2195365d830"
+    },
+    {
+      "path": "pages/stable/book/ch20-01-unsafe-rust.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch20-01-unsafe-rust.html",
+      "title": "Unsafe Rust - The Rust Programming Language",
+      "hash": "48e55ada98ba8051dd90051a0edd6ae85d409c49710c10f0391adfd2fe2fe387"
+    },
+    {
+      "path": "pages/stable/book/ch20-02-advanced-traits.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch20-02-advanced-traits.html",
+      "title": "Advanced Traits - The Rust Programming Language",
+      "hash": "ee18130526262c4f6ad4650c81b949c372a573cf458872232441d01eb39897ee"
+    },
+    {
+      "path": "pages/stable/book/ch20-03-advanced-types.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch20-03-advanced-types.html",
+      "title": "Advanced Types - The Rust Programming Language",
+      "hash": "a8c5500da3e5d6cb758ab9fbc73c4b5756b88db8f6615ef6c9ab7bdf5c1be27f"
+    },
+    {
+      "path": "pages/stable/book/ch20-04-advanced-functions-and-closures.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch20-04-advanced-functions-and-closures.html",
+      "title": "Advanced Functions and Closures - The Rust Programming Language",
+      "hash": "86484e1585b515715a6c6bb73865857bea03e7a0d069411afd15fea3a07f8b33"
+    },
+    {
+      "path": "pages/stable/book/ch20-05-macros.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch20-05-macros.html",
+      "title": "Macros - The Rust Programming Language",
+      "hash": "60956802ca7bad1417b171e715608f7e10a6725f09f8e1cd41e8bae642fe11ca"
+    },
+    {
+      "path": "pages/stable/book/ch21-00-final-project-a-web-server.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch21-00-final-project-a-web-server.html",
+      "title": "Final Project: Building a Multithreaded Web Server - The Rust Programming Language",
+      "hash": "4ac28658518d8806aecb1596b02ab9995d9fa2ab7f6b5783d732484e4e602633"
+    },
+    {
+      "path": "pages/stable/book/ch21-01-single-threaded.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch21-01-single-threaded.html",
+      "title": "Building a Single-Threaded Web Server - The Rust Programming Language",
+      "hash": "daeb07b5ddfaa83d1c20f6185321283dbc2ef64555b3bb313fb2366c5f009fe5"
+    },
+    {
+      "path": "pages/stable/book/ch21-02-multithreaded.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch21-02-multithreaded.html",
+      "title": "From Single-Threaded to Multithreaded Server - The Rust Programming Language",
+      "hash": "23bf7504c9ccac060922a5d1076b4e537565e13e533f6151bc6fd33242b80485"
+    },
+    {
+      "path": "pages/stable/book/ch21-03-graceful-shutdown-and-cleanup.md",
+      "url": "https://doc.rust-lang.org/stable/book/ch21-03-graceful-shutdown-and-cleanup.html",
+      "title": "Graceful Shutdown and Cleanup - The Rust Programming Language",
+      "hash": "5aea46690de51869b44aa92d2633945cbf9f8acfa2e206c3e17485b23313b6fa"
     },
     {
       "path": "pages/stable/book/foreword.md",
@@ -54,106 +661,10 @@
       "hash": "52d3ddf9d88264e74536e0e410a8ab3253ae21e0c8f29c6aa2e8cfeb9b77e518"
     },
     {
-      "path": "pages/stable/cargo.md",
-      "url": "https://doc.rust-lang.org/stable/cargo",
-      "title": "Introduction - The Cargo Book",
-      "hash": "e70f2c2dd13b4eb8f1db594e9281ee4406a6dc40daad8e9086c892614837fc79"
-    },
-    {
-      "path": "pages/stable/nomicon/vec/vec.md",
-      "url": "https://doc.rust-lang.org/stable/nomicon/vec/vec.html",
-      "title": "Implementing Vec - The Rustonomicon",
-      "hash": "a1a8913ecf523992d9b6591e49dc9e9b3329218331ee836aeb07043755d4b8e8"
-    },
-    {
-      "path": "pages/stable/reference/attributes.md",
-      "url": "https://doc.rust-lang.org/stable/reference/attributes.html",
-      "title": "Attributes - The Rust Reference",
-      "hash": "980dbdecef0b25bc5392ea97e80ae1706603ed33121da19555adf56d40e16522"
-    },
-    {
-      "path": "pages/stable/reference/const_eval.md",
-      "url": "https://doc.rust-lang.org/stable/reference/const_eval.html",
-      "title": "Constant evaluation - The Rust Reference",
-      "hash": "7d6f6e90472f3cac52df8834100a182d3390b752710df3575be4f234ba1d82d8"
-    },
-    {
-      "path": "pages/stable/reference/trait-bounds.md",
-      "url": "https://doc.rust-lang.org/stable/reference/trait-bounds.html",
-      "title": "Trait and lifetime bounds - The Rust Reference",
-      "hash": "c9d03a216038750c7e0b93fbf1b0594a9b76daf712f85c6f59d9dabde1500885"
-    },
-    {
-      "path": "pages/stable/std/collections/home.md",
-      "url": "https://doc.rust-lang.org/stable/std/collections/index.html",
-      "title": "std::collections - Rust",
-      "hash": "2b74436538080f8866c7bedc37a49747541e4b8a1369558e8363f3f603268520"
-    },
-    {
-      "path": "pages/stable/std/io/struct.md",
-      "url": "https://doc.rust-lang.org/stable/std/io/struct.Stdin.html",
-      "title": "Stdin in std::io - Rust",
-      "hash": "b2f3beb5b7edd06a92447ae83e191488d4ec26f75e3a31898374e3c1e3e63153"
-    },
-    {
-      "path": "pages/stable/std/macro.md",
-      "url": "https://doc.rust-lang.org/stable/std/macro.println.html",
-      "title": "println in std - Rust",
-      "hash": "b2e0fb6d5ded671d942e7a76722a8cc84c02424337e2373cb0cf1ac2f2d1050e"
-    },
-    {
-      "path": "pages/stable/std/net/enum.md",
-      "url": "https://doc.rust-lang.org/stable/std/net/enum.IpAddr.html",
-      "title": "IpAddr in std::net - Rust",
-      "hash": "e4aa48ecf51a20b24322ad611380932f39eb668465a994db8dffb8421a7f3042"
-    },
-    {
-      "path": "pages/stable/std/option/enum.md",
-      "url": "https://doc.rust-lang.org/stable/std/option/enum.Option.html",
-      "title": "Option in std::option - Rust",
-      "hash": "1531dcf6e77de5ad2668e179a278153a89489e4dde6c0c6ff550775cb2ceceed"
-    },
-    {
-      "path": "pages/stable/std/prelude/home.md",
-      "url": "https://doc.rust-lang.org/stable/std/prelude/index.html",
-      "title": "std::prelude - Rust",
-      "hash": "a89ce457e2ef28fe8140bb6945703a59ac85845ba8d62c0de785e26c5d5ea52a"
-    },
-    {
-      "path": "pages/stable/std/primitive.md",
-      "url": "https://doc.rust-lang.org/stable/std/primitive.str.html",
-      "title": "str - Rust",
-      "hash": "ba9a169a8a20d71d50cb53a74b37958f9722e281ee6c7a88ed5f20c2fa91f2bd"
-    },
-    {
-      "path": "pages/stable/std/process/trait.md",
-      "url": "https://doc.rust-lang.org/stable/std/process/trait.Termination.html",
-      "title": "Termination in std::process - Rust",
-      "hash": "ef1619b2dad90e38402eec270fc9ba32e157049e970299d2b0e12ca2bcd3fcbe"
-    },
-    {
-      "path": "pages/stable/std/result/enum.md",
-      "url": "https://doc.rust-lang.org/stable/std/result/enum.Result.html",
-      "title": "Result in std::result - Rust",
-      "hash": "db03d61f6c9a2bc1ad21b55433bda260461b1c670ebf9ae19c14958673b1f148"
-    },
-    {
-      "path": "pages/stable/std/string/struct.md",
-      "url": "https://doc.rust-lang.org/stable/std/string/struct.String.html",
-      "title": "String in std::string - Rust",
-      "hash": "92722145ce426331643ea1984bca0809fdb090f68c984abb382f8ece67ec75b9"
-    },
-    {
-      "path": "pages/stable/std/vec/struct.md",
-      "url": "https://doc.rust-lang.org/stable/std/vec/struct.Vec.html",
-      "title": "Vec in std::vec - Rust",
-      "hash": "8d062845905d59d10e24962f0597def58dab23791bebd2c1ef1a001d3c1393d2"
-    },
-    {
-      "path": "pages/stable/unstable-book/library-features/test.md",
-      "url": "https://doc.rust-lang.org/stable/unstable-book/library-features/test.html",
-      "title": "test - The Rust Unstable Book",
-      "hash": "d286aa53b66a4463d476b145a6601cdf6d192541c68068082f0fbd465fc98770"
+      "path": "pages/stable/book/title-page.md",
+      "url": "https://doc.rust-lang.org/stable/book/title-page.html",
+      "title": "The Rust Programming Language - The Rust Programming Language",
+      "hash": "5d74849a1c0e84a6b77a9607966969a5d98d8fb56b15a3763b9a7b10b622d191"
     }
   ],
   "edges": [
@@ -178,6 +689,86 @@
       "pages/stable/book/print.md"
     ],
     [
+      "pages/stable/book/appendix-00.md",
+      "pages/stable/book/appendix-01-keywords.md"
+    ],
+    [
+      "pages/stable/book/appendix-00.md",
+      "pages/stable/book/ch21-03-graceful-shutdown-and-cleanup.md"
+    ],
+    [
+      "pages/stable/book/appendix-00.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/appendix-01-keywords.md",
+      "pages/stable/book/appendix-00.md"
+    ],
+    [
+      "pages/stable/book/appendix-01-keywords.md",
+      "pages/stable/book/appendix-02-operators.md"
+    ],
+    [
+      "pages/stable/book/appendix-01-keywords.md",
+      "pages/stable/book/appendix-05-editions.md"
+    ],
+    [
+      "pages/stable/book/appendix-01-keywords.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/appendix-02-operators.md",
+      "pages/stable/book/appendix-01-keywords.md"
+    ],
+    [
+      "pages/stable/book/appendix-02-operators.md",
+      "pages/stable/book/appendix-03-derivable-traits.md"
+    ],
+    [
+      "pages/stable/book/appendix-02-operators.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/appendix-03-derivable-traits.md",
+      "pages/stable/book/appendix-02-operators.md"
+    ],
+    [
+      "pages/stable/book/appendix-03-derivable-traits.md",
+      "pages/stable/book/appendix-04-useful-development-tools.md"
+    ],
+    [
+      "pages/stable/book/appendix-03-derivable-traits.md",
+      "pages/stable/book/ch04-01-what-is-ownership.md"
+    ],
+    [
+      "pages/stable/book/appendix-03-derivable-traits.md",
+      "pages/stable/book/ch05-01-defining-structs.md"
+    ],
+    [
+      "pages/stable/book/appendix-03-derivable-traits.md",
+      "pages/stable/book/ch20-05-macros.md"
+    ],
+    [
+      "pages/stable/book/appendix-03-derivable-traits.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/appendix-04-useful-development-tools.md",
+      "pages/stable/book/appendix-03-derivable-traits.md"
+    ],
+    [
+      "pages/stable/book/appendix-04-useful-development-tools.md",
+      "pages/stable/book/appendix-05-editions.md"
+    ],
+    [
+      "pages/stable/book/appendix-04-useful-development-tools.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/appendix-05-editions.md",
+      "pages/stable/book/appendix-04-useful-development-tools.md"
+    ],
+    [
       "pages/stable/book/appendix-05-editions.md",
       "pages/stable/book/appendix-06-translation.md"
     ],
@@ -191,243 +782,1699 @@
     ],
     [
       "pages/stable/book/appendix-06-translation.md",
+      "pages/stable/book/appendix-07-nightly-rust.md"
+    ],
+    [
+      "pages/stable/book/appendix-06-translation.md",
       "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/appendix-07-nightly-rust.md",
+      "pages/stable/book/appendix-06-translation.md"
+    ],
+    [
+      "pages/stable/book/appendix-07-nightly-rust.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch00-00-introduction.md",
+      "pages/stable/book/ch01-00-getting-started.md"
+    ],
+    [
+      "pages/stable/book/ch00-00-introduction.md",
+      "pages/stable/book/foreword.md"
+    ],
+    [
+      "pages/stable/book/ch00-00-introduction.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch01-00-getting-started.md",
+      "pages/stable/book/ch00-00-introduction.md"
+    ],
+    [
+      "pages/stable/book/ch01-00-getting-started.md",
+      "pages/stable/book/ch01-01-installation.md"
+    ],
+    [
+      "pages/stable/book/ch01-00-getting-started.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch01-01-installation.md",
+      "pages/stable/book/ch01-00-getting-started.md"
+    ],
+    [
+      "pages/stable/book/ch01-01-installation.md",
+      "pages/stable/book/ch01-02-hello-world.md"
     ],
     [
       "pages/stable/book/ch01-01-installation.md",
       "pages/stable/book/print.md"
     ],
     [
+      "pages/stable/book/ch01-02-hello-world.md",
+      "pages/stable/book/appendix-04-useful-development-tools.md"
+    ],
+    [
+      "pages/stable/book/ch01-02-hello-world.md",
+      "pages/stable/book/ch01-01-installation.md"
+    ],
+    [
+      "pages/stable/book/ch01-02-hello-world.md",
+      "pages/stable/book/ch01-03-hello-cargo.md"
+    ],
+    [
+      "pages/stable/book/ch01-02-hello-world.md",
+      "pages/stable/book/ch20-05-macros.md"
+    ],
+    [
+      "pages/stable/book/ch01-02-hello-world.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch01-03-hello-cargo.md",
+      "pages/stable/book/appendix-05-editions.md"
+    ],
+    [
+      "pages/stable/book/ch01-03-hello-cargo.md",
+      "pages/stable/book/ch01-01-installation.md"
+    ],
+    [
+      "pages/stable/book/ch01-03-hello-cargo.md",
+      "pages/stable/book/ch01-02-hello-world.md"
+    ],
+    [
+      "pages/stable/book/ch01-03-hello-cargo.md",
+      "pages/stable/book/ch02-00-guessing-game-tutorial.md"
+    ],
+    [
+      "pages/stable/book/ch01-03-hello-cargo.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch02-00-guessing-game-tutorial.md",
+      "pages/stable/book/ch01-03-hello-cargo.md"
+    ],
+    [
+      "pages/stable/book/ch02-00-guessing-game-tutorial.md",
+      "pages/stable/book/ch03-00-common-programming-concepts.md"
+    ],
+    [
+      "pages/stable/book/ch02-00-guessing-game-tutorial.md",
+      "pages/stable/book/ch03-01-variables-and-mutability.md"
+    ],
+    [
+      "pages/stable/book/ch02-00-guessing-game-tutorial.md",
+      "pages/stable/book/ch03-02-data-types.md"
+    ],
+    [
+      "pages/stable/book/ch02-00-guessing-game-tutorial.md",
+      "pages/stable/book/ch03-04-comments.md"
+    ],
+    [
+      "pages/stable/book/ch02-00-guessing-game-tutorial.md",
+      "pages/stable/book/ch06-00-enums.md"
+    ],
+    [
+      "pages/stable/book/ch02-00-guessing-game-tutorial.md",
+      "pages/stable/book/ch06-02-match.md"
+    ],
+    [
+      "pages/stable/book/ch02-00-guessing-game-tutorial.md",
+      "pages/stable/book/ch09-02-recoverable-errors-with-result.md"
+    ],
+    [
+      "pages/stable/book/ch02-00-guessing-game-tutorial.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch03-00-common-programming-concepts.md",
+      "pages/stable/book/appendix-01-keywords.md"
+    ],
+    [
+      "pages/stable/book/ch03-00-common-programming-concepts.md",
+      "pages/stable/book/ch02-00-guessing-game-tutorial.md"
+    ],
+    [
+      "pages/stable/book/ch03-00-common-programming-concepts.md",
+      "pages/stable/book/ch03-01-variables-and-mutability.md"
+    ],
+    [
+      "pages/stable/book/ch03-00-common-programming-concepts.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch03-01-variables-and-mutability.md",
+      "pages/stable/book/ch02-00-guessing-game-tutorial.md"
+    ],
+    [
+      "pages/stable/book/ch03-01-variables-and-mutability.md",
+      "pages/stable/book/ch03-00-common-programming-concepts.md"
+    ],
+    [
+      "pages/stable/book/ch03-01-variables-and-mutability.md",
+      "pages/stable/book/ch03-02-data-types.md"
+    ],
+    [
+      "pages/stable/book/ch03-01-variables-and-mutability.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch03-02-data-types.md",
+      "pages/stable/book/appendix-02-operators.md"
+    ],
+    [
+      "pages/stable/book/ch03-02-data-types.md",
+      "pages/stable/book/ch02-00-guessing-game-tutorial.md"
+    ],
+    [
+      "pages/stable/book/ch03-02-data-types.md",
+      "pages/stable/book/ch03-01-variables-and-mutability.md"
+    ],
+    [
+      "pages/stable/book/ch03-02-data-types.md",
+      "pages/stable/book/ch03-03-how-functions-work.md"
+    ],
+    [
+      "pages/stable/book/ch03-02-data-types.md",
+      "pages/stable/book/ch03-05-control-flow.md"
+    ],
+    [
+      "pages/stable/book/ch03-02-data-types.md",
+      "pages/stable/book/ch04-01-what-is-ownership.md"
+    ],
+    [
+      "pages/stable/book/ch03-02-data-types.md",
+      "pages/stable/book/ch08-01-vectors.md"
+    ],
+    [
+      "pages/stable/book/ch03-02-data-types.md",
+      "pages/stable/book/ch08-02-strings.md"
+    ],
+    [
+      "pages/stable/book/ch03-02-data-types.md",
+      "pages/stable/book/ch09-01-unrecoverable-errors-with-panic.md"
+    ],
+    [
+      "pages/stable/book/ch03-02-data-types.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch03-03-how-functions-work.md",
+      "pages/stable/book/ch03-02-data-types.md"
+    ],
+    [
+      "pages/stable/book/ch03-03-how-functions-work.md",
+      "pages/stable/book/ch03-04-comments.md"
+    ],
+    [
+      "pages/stable/book/ch03-03-how-functions-work.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch03-04-comments.md",
+      "pages/stable/book/ch03-03-how-functions-work.md"
+    ],
+    [
+      "pages/stable/book/ch03-04-comments.md",
+      "pages/stable/book/ch03-05-control-flow.md"
+    ],
+    [
+      "pages/stable/book/ch03-04-comments.md",
+      "pages/stable/book/ch14-02-publishing-to-crates-io.md"
+    ],
+    [
+      "pages/stable/book/ch03-04-comments.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch03-05-control-flow.md",
+      "pages/stable/book/ch02-00-guessing-game-tutorial.md"
+    ],
+    [
+      "pages/stable/book/ch03-05-control-flow.md",
+      "pages/stable/book/ch03-04-comments.md"
+    ],
+    [
+      "pages/stable/book/ch03-05-control-flow.md",
+      "pages/stable/book/ch04-00-understanding-ownership.md"
+    ],
+    [
+      "pages/stable/book/ch03-05-control-flow.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch04-00-understanding-ownership.md",
+      "pages/stable/book/ch03-05-control-flow.md"
+    ],
+    [
+      "pages/stable/book/ch04-00-understanding-ownership.md",
+      "pages/stable/book/ch04-01-what-is-ownership.md"
+    ],
+    [
+      "pages/stable/book/ch04-00-understanding-ownership.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch04-01-what-is-ownership.md",
+      "pages/stable/book/appendix-03-derivable-traits.md"
+    ],
+    [
+      "pages/stable/book/ch04-01-what-is-ownership.md",
+      "pages/stable/book/ch03-02-data-types.md"
+    ],
+    [
+      "pages/stable/book/ch04-01-what-is-ownership.md",
+      "pages/stable/book/ch04-00-understanding-ownership.md"
+    ],
+    [
+      "pages/stable/book/ch04-01-what-is-ownership.md",
+      "pages/stable/book/ch04-02-references-and-borrowing.md"
+    ],
+    [
+      "pages/stable/book/ch04-01-what-is-ownership.md",
+      "pages/stable/book/ch05-03-method-syntax.md"
+    ],
+    [
+      "pages/stable/book/ch04-01-what-is-ownership.md",
+      "pages/stable/book/ch07-03-paths-for-referring-to-an-item-in-the-module-tree.md"
+    ],
+    [
+      "pages/stable/book/ch04-01-what-is-ownership.md",
+      "pages/stable/book/ch08-02-strings.md"
+    ],
+    [
+      "pages/stable/book/ch04-01-what-is-ownership.md",
+      "pages/stable/book/ch10-02-traits.md"
+    ],
+    [
+      "pages/stable/book/ch04-01-what-is-ownership.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch04-02-references-and-borrowing.md",
+      "pages/stable/book/ch04-01-what-is-ownership.md"
+    ],
+    [
+      "pages/stable/book/ch04-02-references-and-borrowing.md",
+      "pages/stable/book/ch04-03-slices.md"
+    ],
+    [
+      "pages/stable/book/ch04-02-references-and-borrowing.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch04-03-slices.md",
+      "pages/stable/book/ch04-02-references-and-borrowing.md"
+    ],
+    [
+      "pages/stable/book/ch04-03-slices.md",
+      "pages/stable/book/ch05-00-structs.md"
+    ],
+    [
+      "pages/stable/book/ch04-03-slices.md",
+      "pages/stable/book/ch06-02-match.md"
+    ],
+    [
+      "pages/stable/book/ch04-03-slices.md",
+      "pages/stable/book/ch08-00-common-collections.md"
+    ],
+    [
+      "pages/stable/book/ch04-03-slices.md",
+      "pages/stable/book/ch08-02-strings.md"
+    ],
+    [
+      "pages/stable/book/ch04-03-slices.md",
+      "pages/stable/book/ch13-02-iterators.md"
+    ],
+    [
+      "pages/stable/book/ch04-03-slices.md",
+      "pages/stable/book/ch15-02-deref.md"
+    ],
+    [
+      "pages/stable/book/ch04-03-slices.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch05-00-structs.md",
+      "pages/stable/book/ch04-03-slices.md"
+    ],
+    [
+      "pages/stable/book/ch05-00-structs.md",
+      "pages/stable/book/ch05-01-defining-structs.md"
+    ],
+    [
+      "pages/stable/book/ch05-00-structs.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch05-01-defining-structs.md",
+      "pages/stable/book/ch03-02-data-types.md"
+    ],
+    [
+      "pages/stable/book/ch05-01-defining-structs.md",
+      "pages/stable/book/ch04-01-what-is-ownership.md"
+    ],
+    [
+      "pages/stable/book/ch05-01-defining-structs.md",
+      "pages/stable/book/ch05-00-structs.md"
+    ],
+    [
+      "pages/stable/book/ch05-01-defining-structs.md",
+      "pages/stable/book/ch05-02-example-structs.md"
+    ],
+    [
+      "pages/stable/book/ch05-01-defining-structs.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch05-02-example-structs.md",
+      "pages/stable/book/appendix-03-derivable-traits.md"
+    ],
+    [
+      "pages/stable/book/ch05-02-example-structs.md",
+      "pages/stable/book/ch03-02-data-types.md"
+    ],
+    [
+      "pages/stable/book/ch05-02-example-structs.md",
+      "pages/stable/book/ch05-01-defining-structs.md"
+    ],
+    [
+      "pages/stable/book/ch05-02-example-structs.md",
+      "pages/stable/book/ch05-03-method-syntax.md"
+    ],
+    [
+      "pages/stable/book/ch05-02-example-structs.md",
+      "pages/stable/book/ch12-06-writing-to-stderr-instead-of-stdout.md"
+    ],
+    [
+      "pages/stable/book/ch05-02-example-structs.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch05-03-method-syntax.md",
+      "pages/stable/book/ch05-02-example-structs.md"
+    ],
+    [
+      "pages/stable/book/ch05-03-method-syntax.md",
+      "pages/stable/book/ch06-00-enums.md"
+    ],
+    [
+      "pages/stable/book/ch05-03-method-syntax.md",
+      "pages/stable/book/ch07-02-defining-modules-to-control-scope-and-privacy.md"
+    ],
+    [
+      "pages/stable/book/ch05-03-method-syntax.md",
+      "pages/stable/book/ch07-03-paths-for-referring-to-an-item-in-the-module-tree.md"
+    ],
+    [
+      "pages/stable/book/ch05-03-method-syntax.md",
+      "pages/stable/book/ch18-02-trait-objects.md"
+    ],
+    [
+      "pages/stable/book/ch05-03-method-syntax.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch06-00-enums.md",
+      "pages/stable/book/ch05-03-method-syntax.md"
+    ],
+    [
+      "pages/stable/book/ch06-00-enums.md",
+      "pages/stable/book/ch06-01-defining-an-enum.md"
+    ],
+    [
+      "pages/stable/book/ch06-00-enums.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch06-01-defining-an-enum.md",
+      "pages/stable/book/ch06-00-enums.md"
+    ],
+    [
+      "pages/stable/book/ch06-01-defining-an-enum.md",
+      "pages/stable/book/ch06-02-match.md"
+    ],
+    [
+      "pages/stable/book/ch06-01-defining-an-enum.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch06-02-match.md",
+      "pages/stable/book/ch03-02-data-types.md"
+    ],
+    [
+      "pages/stable/book/ch06-02-match.md",
+      "pages/stable/book/ch06-01-defining-an-enum.md"
+    ],
+    [
+      "pages/stable/book/ch06-02-match.md",
+      "pages/stable/book/ch06-03-if-let.md"
+    ],
+    [
+      "pages/stable/book/ch06-02-match.md",
+      "pages/stable/book/ch19-00-patterns.md"
+    ],
+    [
+      "pages/stable/book/ch06-02-match.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch06-03-if-let.md",
+      "pages/stable/book/ch06-02-match.md"
+    ],
+    [
+      "pages/stable/book/ch06-03-if-let.md",
+      "pages/stable/book/ch07-00-managing-growing-projects-with-packages-crates-and-modules.md"
+    ],
+    [
+      "pages/stable/book/ch06-03-if-let.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch07-00-managing-growing-projects-with-packages-crates-and-modules.md",
+      "pages/stable/book/ch06-03-if-let.md"
+    ],
+    [
+      "pages/stable/book/ch07-00-managing-growing-projects-with-packages-crates-and-modules.md",
+      "pages/stable/book/ch07-01-packages-and-crates.md"
+    ],
+    [
+      "pages/stable/book/ch07-00-managing-growing-projects-with-packages-crates-and-modules.md",
+      "pages/stable/book/ch14-03-cargo-workspaces.md"
+    ],
+    [
+      "pages/stable/book/ch07-00-managing-growing-projects-with-packages-crates-and-modules.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch07-01-packages-and-crates.md",
+      "pages/stable/book/ch01-02-hello-world.md"
+    ],
+    [
+      "pages/stable/book/ch07-01-packages-and-crates.md",
+      "pages/stable/book/ch02-00-guessing-game-tutorial.md"
+    ],
+    [
+      "pages/stable/book/ch07-01-packages-and-crates.md",
+      "pages/stable/book/ch07-00-managing-growing-projects-with-packages-crates-and-modules.md"
+    ],
+    [
+      "pages/stable/book/ch07-01-packages-and-crates.md",
+      "pages/stable/book/ch07-02-defining-modules-to-control-scope-and-privacy.md"
+    ],
+    [
+      "pages/stable/book/ch07-01-packages-and-crates.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch07-02-defining-modules-to-control-scope-and-privacy.md",
+      "pages/stable/book/ch07-01-packages-and-crates.md"
+    ],
+    [
+      "pages/stable/book/ch07-02-defining-modules-to-control-scope-and-privacy.md",
+      "pages/stable/book/ch07-03-paths-for-referring-to-an-item-in-the-module-tree.md"
+    ],
+    [
+      "pages/stable/book/ch07-02-defining-modules-to-control-scope-and-privacy.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch07-03-paths-for-referring-to-an-item-in-the-module-tree.md",
+      "pages/stable/book/ch07-02-defining-modules-to-control-scope-and-privacy.md"
+    ],
+    [
+      "pages/stable/book/ch07-03-paths-for-referring-to-an-item-in-the-module-tree.md",
+      "pages/stable/book/ch07-04-bringing-paths-into-scope-with-the-use-keyword.md"
+    ],
+    [
+      "pages/stable/book/ch07-03-paths-for-referring-to-an-item-in-the-module-tree.md",
+      "pages/stable/book/ch12-00-an-io-project.md"
+    ],
+    [
+      "pages/stable/book/ch07-03-paths-for-referring-to-an-item-in-the-module-tree.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch07-04-bringing-paths-into-scope-with-the-use-keyword.md",
+      "pages/stable/book/ch02-00-guessing-game-tutorial.md"
+    ],
+    [
+      "pages/stable/book/ch07-04-bringing-paths-into-scope-with-the-use-keyword.md",
+      "pages/stable/book/ch07-03-paths-for-referring-to-an-item-in-the-module-tree.md"
+    ],
+    [
+      "pages/stable/book/ch07-04-bringing-paths-into-scope-with-the-use-keyword.md",
+      "pages/stable/book/ch07-05-separating-modules-into-different-files.md"
+    ],
+    [
+      "pages/stable/book/ch07-04-bringing-paths-into-scope-with-the-use-keyword.md",
+      "pages/stable/book/ch11-01-writing-tests.md"
+    ],
+    [
+      "pages/stable/book/ch07-04-bringing-paths-into-scope-with-the-use-keyword.md",
+      "pages/stable/book/ch14-02-publishing-to-crates-io.md"
+    ],
+    [
+      "pages/stable/book/ch07-04-bringing-paths-into-scope-with-the-use-keyword.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch07-05-separating-modules-into-different-files.md",
+      "pages/stable/book/ch07-03-paths-for-referring-to-an-item-in-the-module-tree.md"
+    ],
+    [
+      "pages/stable/book/ch07-05-separating-modules-into-different-files.md",
+      "pages/stable/book/ch07-04-bringing-paths-into-scope-with-the-use-keyword.md"
+    ],
+    [
+      "pages/stable/book/ch07-05-separating-modules-into-different-files.md",
+      "pages/stable/book/ch08-00-common-collections.md"
+    ],
+    [
+      "pages/stable/book/ch07-05-separating-modules-into-different-files.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch08-00-common-collections.md",
+      "pages/stable/book/ch07-05-separating-modules-into-different-files.md"
+    ],
+    [
+      "pages/stable/book/ch08-00-common-collections.md",
+      "pages/stable/book/ch08-01-vectors.md"
+    ],
+    [
+      "pages/stable/book/ch08-00-common-collections.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch08-01-vectors.md",
+      "pages/stable/book/ch03-02-data-types.md"
+    ],
+    [
+      "pages/stable/book/ch08-01-vectors.md",
+      "pages/stable/book/ch08-00-common-collections.md"
+    ],
+    [
+      "pages/stable/book/ch08-01-vectors.md",
+      "pages/stable/book/ch08-02-strings.md"
+    ],
+    [
+      "pages/stable/book/ch08-01-vectors.md",
+      "pages/stable/book/ch15-02-deref.md"
+    ],
+    [
+      "pages/stable/book/ch08-01-vectors.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch08-02-strings.md",
+      "pages/stable/book/ch08-01-vectors.md"
+    ],
+    [
+      "pages/stable/book/ch08-02-strings.md",
+      "pages/stable/book/ch08-03-hash-maps.md"
+    ],
+    [
+      "pages/stable/book/ch08-02-strings.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch08-03-hash-maps.md",
+      "pages/stable/book/ch08-02-strings.md"
+    ],
+    [
+      "pages/stable/book/ch08-03-hash-maps.md",
+      "pages/stable/book/ch09-00-error-handling.md"
+    ],
+    [
+      "pages/stable/book/ch08-03-hash-maps.md",
+      "pages/stable/book/ch10-02-traits.md"
+    ],
+    [
+      "pages/stable/book/ch08-03-hash-maps.md",
+      "pages/stable/book/ch10-03-lifetime-syntax.md"
+    ],
+    [
+      "pages/stable/book/ch08-03-hash-maps.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch09-00-error-handling.md",
+      "pages/stable/book/ch08-03-hash-maps.md"
+    ],
+    [
+      "pages/stable/book/ch09-00-error-handling.md",
+      "pages/stable/book/ch09-01-unrecoverable-errors-with-panic.md"
+    ],
+    [
+      "pages/stable/book/ch09-00-error-handling.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch09-01-unrecoverable-errors-with-panic.md",
+      "pages/stable/book/ch09-00-error-handling.md"
+    ],
+    [
+      "pages/stable/book/ch09-01-unrecoverable-errors-with-panic.md",
+      "pages/stable/book/ch09-02-recoverable-errors-with-result.md"
+    ],
+    [
+      "pages/stable/book/ch09-01-unrecoverable-errors-with-panic.md",
+      "pages/stable/book/ch09-03-to-panic-or-not-to-panic.md"
+    ],
+    [
+      "pages/stable/book/ch09-01-unrecoverable-errors-with-panic.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch09-02-recoverable-errors-with-result.md",
+      "pages/stable/book/ch02-00-guessing-game-tutorial.md"
+    ],
+    [
+      "pages/stable/book/ch09-02-recoverable-errors-with-result.md",
+      "pages/stable/book/ch09-01-unrecoverable-errors-with-panic.md"
+    ],
+    [
+      "pages/stable/book/ch09-02-recoverable-errors-with-result.md",
+      "pages/stable/book/ch09-03-to-panic-or-not-to-panic.md"
+    ],
+    [
+      "pages/stable/book/ch09-02-recoverable-errors-with-result.md",
+      "pages/stable/book/ch18-02-trait-objects.md"
+    ],
+    [
+      "pages/stable/book/ch09-02-recoverable-errors-with-result.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch09-03-to-panic-or-not-to-panic.md",
+      "pages/stable/book/ch09-02-recoverable-errors-with-result.md"
+    ],
+    [
+      "pages/stable/book/ch09-03-to-panic-or-not-to-panic.md",
+      "pages/stable/book/ch10-00-generics.md"
+    ],
+    [
+      "pages/stable/book/ch09-03-to-panic-or-not-to-panic.md",
+      "pages/stable/book/ch18-03-oo-design-patterns.md"
+    ],
+    [
+      "pages/stable/book/ch09-03-to-panic-or-not-to-panic.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch10-00-generics.md",
+      "pages/stable/book/ch09-03-to-panic-or-not-to-panic.md"
+    ],
+    [
+      "pages/stable/book/ch10-00-generics.md",
+      "pages/stable/book/ch10-01-syntax.md"
+    ],
+    [
+      "pages/stable/book/ch10-00-generics.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch10-01-syntax.md",
+      "pages/stable/book/ch10-00-generics.md"
+    ],
+    [
+      "pages/stable/book/ch10-01-syntax.md",
+      "pages/stable/book/ch10-02-traits.md"
+    ],
+    [
+      "pages/stable/book/ch10-01-syntax.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch10-02-traits.md",
+      "pages/stable/book/ch05-03-method-syntax.md"
+    ],
+    [
+      "pages/stable/book/ch10-02-traits.md",
+      "pages/stable/book/ch10-01-syntax.md"
+    ],
+    [
+      "pages/stable/book/ch10-02-traits.md",
+      "pages/stable/book/ch10-03-lifetime-syntax.md"
+    ],
+    [
+      "pages/stable/book/ch10-02-traits.md",
+      "pages/stable/book/ch18-02-trait-objects.md"
+    ],
+    [
+      "pages/stable/book/ch10-02-traits.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch10-03-lifetime-syntax.md",
+      "pages/stable/book/ch04-02-references-and-borrowing.md"
+    ],
+    [
+      "pages/stable/book/ch10-03-lifetime-syntax.md",
+      "pages/stable/book/ch04-03-slices.md"
+    ],
+    [
+      "pages/stable/book/ch10-03-lifetime-syntax.md",
+      "pages/stable/book/ch10-02-traits.md"
+    ],
+    [
+      "pages/stable/book/ch10-03-lifetime-syntax.md",
+      "pages/stable/book/ch11-00-testing.md"
+    ],
+    [
+      "pages/stable/book/ch10-03-lifetime-syntax.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch11-00-testing.md",
+      "pages/stable/book/ch10-03-lifetime-syntax.md"
+    ],
+    [
+      "pages/stable/book/ch11-00-testing.md",
+      "pages/stable/book/ch11-01-writing-tests.md"
+    ],
+    [
+      "pages/stable/book/ch11-00-testing.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch11-01-writing-tests.md",
+      "pages/stable/book/appendix-03-derivable-traits.md"
+    ],
+    [
+      "pages/stable/book/ch11-01-writing-tests.md",
+      "pages/stable/book/ch07-03-paths-for-referring-to-an-item-in-the-module-tree.md"
+    ],
+    [
+      "pages/stable/book/ch11-01-writing-tests.md",
+      "pages/stable/book/ch08-02-strings.md"
+    ],
+    [
+      "pages/stable/book/ch11-01-writing-tests.md",
+      "pages/stable/book/ch11-00-testing.md"
+    ],
+    [
+      "pages/stable/book/ch11-01-writing-tests.md",
+      "pages/stable/book/ch11-02-running-tests.md"
+    ],
+    [
+      "pages/stable/book/ch11-01-writing-tests.md",
+      "pages/stable/book/ch14-02-publishing-to-crates-io.md"
+    ],
+    [
+      "pages/stable/book/ch11-01-writing-tests.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch11-02-running-tests.md",
+      "pages/stable/book/ch11-01-writing-tests.md"
+    ],
+    [
+      "pages/stable/book/ch11-02-running-tests.md",
+      "pages/stable/book/ch11-03-test-organization.md"
+    ],
+    [
+      "pages/stable/book/ch11-02-running-tests.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch11-03-test-organization.md",
+      "pages/stable/book/ch07-03-paths-for-referring-to-an-item-in-the-module-tree.md"
+    ],
+    [
+      "pages/stable/book/ch11-03-test-organization.md",
+      "pages/stable/book/ch07-05-separating-modules-into-different-files.md"
+    ],
+    [
+      "pages/stable/book/ch11-03-test-organization.md",
+      "pages/stable/book/ch11-02-running-tests.md"
+    ],
+    [
+      "pages/stable/book/ch11-03-test-organization.md",
+      "pages/stable/book/ch12-00-an-io-project.md"
+    ],
+    [
+      "pages/stable/book/ch11-03-test-organization.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch12-00-an-io-project.md",
+      "pages/stable/book/ch07-00-managing-growing-projects-with-packages-crates-and-modules.md"
+    ],
+    [
+      "pages/stable/book/ch12-00-an-io-project.md",
+      "pages/stable/book/ch08-00-common-collections.md"
+    ],
+    [
+      "pages/stable/book/ch12-00-an-io-project.md",
+      "pages/stable/book/ch09-00-error-handling.md"
+    ],
+    [
+      "pages/stable/book/ch12-00-an-io-project.md",
+      "pages/stable/book/ch10-00-generics.md"
+    ],
+    [
+      "pages/stable/book/ch12-00-an-io-project.md",
+      "pages/stable/book/ch11-00-testing.md"
+    ],
+    [
+      "pages/stable/book/ch12-00-an-io-project.md",
+      "pages/stable/book/ch11-03-test-organization.md"
+    ],
+    [
+      "pages/stable/book/ch12-00-an-io-project.md",
+      "pages/stable/book/ch12-01-accepting-command-line-arguments.md"
+    ],
+    [
+      "pages/stable/book/ch12-00-an-io-project.md",
+      "pages/stable/book/ch13-00-functional-features.md"
+    ],
+    [
+      "pages/stable/book/ch12-00-an-io-project.md",
+      "pages/stable/book/ch18-00-oop.md"
+    ],
+    [
+      "pages/stable/book/ch12-00-an-io-project.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch12-01-accepting-command-line-arguments.md",
+      "pages/stable/book/ch07-04-bringing-paths-into-scope-with-the-use-keyword.md"
+    ],
+    [
+      "pages/stable/book/ch12-01-accepting-command-line-arguments.md",
+      "pages/stable/book/ch12-00-an-io-project.md"
+    ],
+    [
+      "pages/stable/book/ch12-01-accepting-command-line-arguments.md",
+      "pages/stable/book/ch12-02-reading-a-file.md"
+    ],
+    [
+      "pages/stable/book/ch12-01-accepting-command-line-arguments.md",
+      "pages/stable/book/ch13-00-functional-features.md"
+    ],
+    [
+      "pages/stable/book/ch12-01-accepting-command-line-arguments.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch12-02-reading-a-file.md",
+      "pages/stable/book/ch12-01-accepting-command-line-arguments.md"
+    ],
+    [
+      "pages/stable/book/ch12-02-reading-a-file.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch12-04-testing-the-librarys-functionality.md",
+      "pages/stable/book/ch03-05-control-flow.md"
+    ],
+    [
+      "pages/stable/book/ch12-04-testing-the-librarys-functionality.md",
+      "pages/stable/book/ch10-03-lifetime-syntax.md"
+    ],
+    [
+      "pages/stable/book/ch12-04-testing-the-librarys-functionality.md",
+      "pages/stable/book/ch11-01-writing-tests.md"
+    ],
+    [
+      "pages/stable/book/ch12-04-testing-the-librarys-functionality.md",
+      "pages/stable/book/ch12-05-working-with-environment-variables.md"
+    ],
+    [
+      "pages/stable/book/ch12-04-testing-the-librarys-functionality.md",
+      "pages/stable/book/ch13-02-iterators.md"
+    ],
+    [
+      "pages/stable/book/ch12-04-testing-the-librarys-functionality.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch12-05-working-with-environment-variables.md",
+      "pages/stable/book/ch12-04-testing-the-librarys-functionality.md"
+    ],
+    [
+      "pages/stable/book/ch12-05-working-with-environment-variables.md",
+      "pages/stable/book/ch12-06-writing-to-stderr-instead-of-stdout.md"
+    ],
+    [
+      "pages/stable/book/ch12-05-working-with-environment-variables.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch12-06-writing-to-stderr-instead-of-stdout.md",
+      "pages/stable/book/ch12-05-working-with-environment-variables.md"
+    ],
+    [
+      "pages/stable/book/ch12-06-writing-to-stderr-instead-of-stdout.md",
+      "pages/stable/book/ch13-00-functional-features.md"
+    ],
+    [
+      "pages/stable/book/ch12-06-writing-to-stderr-instead-of-stdout.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch13-00-functional-features.md",
+      "pages/stable/book/ch12-06-writing-to-stderr-instead-of-stdout.md"
+    ],
+    [
+      "pages/stable/book/ch13-00-functional-features.md",
+      "pages/stable/book/ch13-01-closures.md"
+    ],
+    [
+      "pages/stable/book/ch13-00-functional-features.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch13-01-closures.md",
+      "pages/stable/book/ch13-00-functional-features.md"
+    ],
+    [
+      "pages/stable/book/ch13-01-closures.md",
+      "pages/stable/book/ch13-02-iterators.md"
+    ],
+    [
+      "pages/stable/book/ch13-01-closures.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch13-02-iterators.md",
+      "pages/stable/book/ch13-01-closures.md"
+    ],
+    [
+      "pages/stable/book/ch13-02-iterators.md",
+      "pages/stable/book/ch13-03-improving-our-io-project.md"
+    ],
+    [
+      "pages/stable/book/ch13-02-iterators.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch13-03-improving-our-io-project.md",
+      "pages/stable/book/ch10-02-traits.md"
+    ],
+    [
+      "pages/stable/book/ch13-03-improving-our-io-project.md",
+      "pages/stable/book/ch13-02-iterators.md"
+    ],
+    [
+      "pages/stable/book/ch13-03-improving-our-io-project.md",
+      "pages/stable/book/ch13-04-performance.md"
+    ],
+    [
+      "pages/stable/book/ch13-03-improving-our-io-project.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch13-04-performance.md",
+      "pages/stable/book/ch13-03-improving-our-io-project.md"
+    ],
+    [
+      "pages/stable/book/ch13-04-performance.md",
+      "pages/stable/book/ch14-00-more-about-cargo.md"
+    ],
+    [
+      "pages/stable/book/ch13-04-performance.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch14-00-more-about-cargo.md",
+      "pages/stable/book/ch13-04-performance.md"
+    ],
+    [
+      "pages/stable/book/ch14-00-more-about-cargo.md",
+      "pages/stable/book/ch14-01-release-profiles.md"
+    ],
+    [
+      "pages/stable/book/ch14-00-more-about-cargo.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch14-01-release-profiles.md",
+      "pages/stable/book/ch14-00-more-about-cargo.md"
+    ],
+    [
+      "pages/stable/book/ch14-01-release-profiles.md",
+      "pages/stable/book/ch14-02-publishing-to-crates-io.md"
+    ],
+    [
+      "pages/stable/book/ch14-01-release-profiles.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch14-02-publishing-to-crates-io.md",
+      "pages/stable/book/ch14-01-release-profiles.md"
+    ],
+    [
+      "pages/stable/book/ch14-02-publishing-to-crates-io.md",
+      "pages/stable/book/ch14-03-cargo-workspaces.md"
+    ],
+    [
+      "pages/stable/book/ch14-02-publishing-to-crates-io.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch14-03-cargo-workspaces.md",
+      "pages/stable/book/ch14-02-publishing-to-crates-io.md"
+    ],
+    [
+      "pages/stable/book/ch14-03-cargo-workspaces.md",
+      "pages/stable/book/ch14-04-installing-binaries.md"
+    ],
+    [
+      "pages/stable/book/ch14-03-cargo-workspaces.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch14-04-installing-binaries.md",
+      "pages/stable/book/ch14-03-cargo-workspaces.md"
+    ],
+    [
+      "pages/stable/book/ch14-04-installing-binaries.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch15-00-smart-pointers.md",
+      "pages/stable/book/ch15-01-box.md"
+    ],
+    [
+      "pages/stable/book/ch15-00-smart-pointers.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch15-01-box.md",
+      "pages/stable/book/ch15-00-smart-pointers.md"
+    ],
+    [
+      "pages/stable/book/ch15-01-box.md",
+      "pages/stable/book/ch15-02-deref.md"
+    ],
+    [
+      "pages/stable/book/ch15-01-box.md",
+      "pages/stable/book/ch18-02-trait-objects.md"
+    ],
+    [
+      "pages/stable/book/ch15-01-box.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch15-02-deref.md",
+      "pages/stable/book/ch05-01-defining-structs.md"
+    ],
+    [
+      "pages/stable/book/ch15-02-deref.md",
+      "pages/stable/book/ch10-02-traits.md"
+    ],
+    [
+      "pages/stable/book/ch15-02-deref.md",
+      "pages/stable/book/ch15-01-box.md"
+    ],
+    [
+      "pages/stable/book/ch15-02-deref.md",
+      "pages/stable/book/ch15-03-drop.md"
+    ],
+    [
+      "pages/stable/book/ch15-02-deref.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch15-03-drop.md",
+      "pages/stable/book/ch15-02-deref.md"
+    ],
+    [
+      "pages/stable/book/ch15-03-drop.md",
+      "pages/stable/book/ch15-04-rc.md"
+    ],
+    [
+      "pages/stable/book/ch15-03-drop.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch15-04-rc.md",
+      "pages/stable/book/ch15-03-drop.md"
+    ],
+    [
+      "pages/stable/book/ch15-04-rc.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch16-00-concurrency.md",
+      "pages/stable/book/ch16-01-threads.md"
+    ],
+    [
+      "pages/stable/book/ch16-00-concurrency.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch16-01-threads.md",
+      "pages/stable/book/ch13-01-closures.md"
+    ],
+    [
+      "pages/stable/book/ch16-01-threads.md",
+      "pages/stable/book/ch16-00-concurrency.md"
+    ],
+    [
+      "pages/stable/book/ch16-01-threads.md",
+      "pages/stable/book/ch16-02-message-passing.md"
+    ],
+    [
+      "pages/stable/book/ch16-01-threads.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch16-02-message-passing.md",
+      "pages/stable/book/ch16-01-threads.md"
+    ],
+    [
+      "pages/stable/book/ch16-02-message-passing.md",
+      "pages/stable/book/ch16-03-shared-state.md"
+    ],
+    [
+      "pages/stable/book/ch16-02-message-passing.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch16-03-shared-state.md",
+      "pages/stable/book/ch16-02-message-passing.md"
+    ],
+    [
+      "pages/stable/book/ch16-03-shared-state.md",
+      "pages/stable/book/ch16-04-extensible-concurrency-sync-and-send.md"
+    ],
+    [
+      "pages/stable/book/ch16-03-shared-state.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch16-04-extensible-concurrency-sync-and-send.md",
+      "pages/stable/book/ch16-03-shared-state.md"
+    ],
+    [
+      "pages/stable/book/ch16-04-extensible-concurrency-sync-and-send.md",
+      "pages/stable/book/ch17-00-async-await.md"
+    ],
+    [
+      "pages/stable/book/ch16-04-extensible-concurrency-sync-and-send.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch17-00-async-await.md",
+      "pages/stable/book/ch16-04-extensible-concurrency-sync-and-send.md"
+    ],
+    [
+      "pages/stable/book/ch17-00-async-await.md",
+      "pages/stable/book/ch17-01-futures-and-syntax.md"
+    ],
+    [
+      "pages/stable/book/ch17-00-async-await.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch17-01-futures-and-syntax.md",
+      "pages/stable/book/ch10-02-traits.md"
+    ],
+    [
+      "pages/stable/book/ch17-01-futures-and-syntax.md",
+      "pages/stable/book/ch12-01-accepting-command-line-arguments.md"
+    ],
+    [
+      "pages/stable/book/ch17-01-futures-and-syntax.md",
+      "pages/stable/book/ch13-02-iterators.md"
+    ],
+    [
+      "pages/stable/book/ch17-01-futures-and-syntax.md",
+      "pages/stable/book/ch16-01-threads.md"
+    ],
+    [
+      "pages/stable/book/ch17-01-futures-and-syntax.md",
+      "pages/stable/book/ch17-00-async-await.md"
+    ],
+    [
+      "pages/stable/book/ch17-01-futures-and-syntax.md",
+      "pages/stable/book/ch17-02-concurrency-with-async.md"
+    ],
+    [
+      "pages/stable/book/ch17-01-futures-and-syntax.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch17-02-concurrency-with-async.md",
+      "pages/stable/book/ch06-03-if-let.md"
+    ],
+    [
+      "pages/stable/book/ch17-02-concurrency-with-async.md",
+      "pages/stable/book/ch13-01-closures.md"
+    ],
+    [
+      "pages/stable/book/ch17-02-concurrency-with-async.md",
+      "pages/stable/book/ch16-01-threads.md"
+    ],
+    [
+      "pages/stable/book/ch17-02-concurrency-with-async.md",
+      "pages/stable/book/ch16-02-message-passing.md"
+    ],
+    [
+      "pages/stable/book/ch17-02-concurrency-with-async.md",
+      "pages/stable/book/ch17-01-futures-and-syntax.md"
+    ],
+    [
+      "pages/stable/book/ch17-02-concurrency-with-async.md",
+      "pages/stable/book/ch17-03-more-futures.md"
+    ],
+    [
+      "pages/stable/book/ch17-02-concurrency-with-async.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch17-03-more-futures.md",
+      "pages/stable/book/ch17-01-futures-and-syntax.md"
+    ],
+    [
+      "pages/stable/book/ch17-03-more-futures.md",
+      "pages/stable/book/ch17-02-concurrency-with-async.md"
+    ],
+    [
+      "pages/stable/book/ch17-03-more-futures.md",
+      "pages/stable/book/ch17-04-streams.md"
+    ],
+    [
+      "pages/stable/book/ch17-03-more-futures.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch17-04-streams.md",
+      "pages/stable/book/ch13-02-iterators.md"
+    ],
+    [
+      "pages/stable/book/ch17-04-streams.md",
+      "pages/stable/book/ch17-02-concurrency-with-async.md"
+    ],
+    [
+      "pages/stable/book/ch17-04-streams.md",
+      "pages/stable/book/ch17-03-more-futures.md"
+    ],
+    [
+      "pages/stable/book/ch17-04-streams.md",
+      "pages/stable/book/ch17-05-traits-for-async.md"
+    ],
+    [
+      "pages/stable/book/ch17-04-streams.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch17-05-traits-for-async.md",
+      "pages/stable/book/ch17-02-concurrency-with-async.md"
+    ],
+    [
+      "pages/stable/book/ch17-05-traits-for-async.md",
+      "pages/stable/book/ch17-04-streams.md"
+    ],
+    [
+      "pages/stable/book/ch17-05-traits-for-async.md",
+      "pages/stable/book/ch17-06-futures-tasks-threads.md"
+    ],
+    [
+      "pages/stable/book/ch17-05-traits-for-async.md",
+      "pages/stable/book/ch18-00-oop.md"
+    ],
+    [
+      "pages/stable/book/ch17-05-traits-for-async.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch17-06-futures-tasks-threads.md",
+      "pages/stable/book/ch17-05-traits-for-async.md"
+    ],
+    [
+      "pages/stable/book/ch17-06-futures-tasks-threads.md",
+      "pages/stable/book/ch18-00-oop.md"
+    ],
+    [
+      "pages/stable/book/ch17-06-futures-tasks-threads.md",
+      "pages/stable/book/ch21-00-final-project-a-web-server.md"
+    ],
+    [
+      "pages/stable/book/ch17-06-futures-tasks-threads.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch18-00-oop.md",
+      "pages/stable/book/ch17-06-futures-tasks-threads.md"
+    ],
+    [
+      "pages/stable/book/ch18-00-oop.md",
+      "pages/stable/book/ch18-01-what-is-oo.md"
+    ],
+    [
+      "pages/stable/book/ch18-00-oop.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch18-01-what-is-oo.md",
+      "pages/stable/book/ch18-00-oop.md"
+    ],
+    [
+      "pages/stable/book/ch18-01-what-is-oo.md",
+      "pages/stable/book/ch18-02-trait-objects.md"
+    ],
+    [
+      "pages/stable/book/ch18-01-what-is-oo.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch18-02-trait-objects.md",
+      "pages/stable/book/ch10-01-syntax.md"
+    ],
+    [
+      "pages/stable/book/ch18-02-trait-objects.md",
+      "pages/stable/book/ch18-01-what-is-oo.md"
+    ],
+    [
+      "pages/stable/book/ch18-02-trait-objects.md",
+      "pages/stable/book/ch18-03-oo-design-patterns.md"
+    ],
+    [
+      "pages/stable/book/ch18-02-trait-objects.md",
+      "pages/stable/book/ch20-03-advanced-types.md"
+    ],
+    [
+      "pages/stable/book/ch18-02-trait-objects.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch18-03-oo-design-patterns.md",
+      "pages/stable/book/ch09-03-to-panic-or-not-to-panic.md"
+    ],
+    [
+      "pages/stable/book/ch18-03-oo-design-patterns.md",
+      "pages/stable/book/ch18-02-trait-objects.md"
+    ],
+    [
+      "pages/stable/book/ch18-03-oo-design-patterns.md",
+      "pages/stable/book/ch19-00-patterns.md"
+    ],
+    [
+      "pages/stable/book/ch18-03-oo-design-patterns.md",
+      "pages/stable/book/ch20-05-macros.md"
+    ],
+    [
+      "pages/stable/book/ch18-03-oo-design-patterns.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch19-00-patterns.md",
+      "pages/stable/book/ch18-03-oo-design-patterns.md"
+    ],
+    [
+      "pages/stable/book/ch19-00-patterns.md",
+      "pages/stable/book/ch19-01-all-the-places-for-patterns.md"
+    ],
+    [
+      "pages/stable/book/ch19-00-patterns.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch19-01-all-the-places-for-patterns.md",
+      "pages/stable/book/ch19-00-patterns.md"
+    ],
+    [
+      "pages/stable/book/ch19-01-all-the-places-for-patterns.md",
+      "pages/stable/book/ch19-02-refutability.md"
+    ],
+    [
+      "pages/stable/book/ch19-01-all-the-places-for-patterns.md",
+      "pages/stable/book/ch19-03-pattern-syntax.md"
+    ],
+    [
+      "pages/stable/book/ch19-01-all-the-places-for-patterns.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch19-02-refutability.md",
+      "pages/stable/book/ch19-01-all-the-places-for-patterns.md"
+    ],
+    [
+      "pages/stable/book/ch19-02-refutability.md",
+      "pages/stable/book/ch19-03-pattern-syntax.md"
+    ],
+    [
+      "pages/stable/book/ch19-02-refutability.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch19-03-pattern-syntax.md",
+      "pages/stable/book/ch19-02-refutability.md"
+    ],
+    [
+      "pages/stable/book/ch19-03-pattern-syntax.md",
+      "pages/stable/book/ch20-00-advanced-features.md"
+    ],
+    [
+      "pages/stable/book/ch19-03-pattern-syntax.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch20-00-advanced-features.md",
+      "pages/stable/book/ch19-03-pattern-syntax.md"
+    ],
+    [
+      "pages/stable/book/ch20-00-advanced-features.md",
+      "pages/stable/book/ch20-01-unsafe-rust.md"
+    ],
+    [
+      "pages/stable/book/ch20-00-advanced-features.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch20-01-unsafe-rust.md",
+      "pages/stable/book/appendix-07-nightly-rust.md"
+    ],
+    [
+      "pages/stable/book/ch20-01-unsafe-rust.md",
+      "pages/stable/book/ch03-01-variables-and-mutability.md"
+    ],
+    [
+      "pages/stable/book/ch20-01-unsafe-rust.md",
+      "pages/stable/book/ch04-02-references-and-borrowing.md"
+    ],
+    [
+      "pages/stable/book/ch20-01-unsafe-rust.md",
+      "pages/stable/book/ch04-03-slices.md"
+    ],
+    [
+      "pages/stable/book/ch20-01-unsafe-rust.md",
+      "pages/stable/book/ch16-04-extensible-concurrency-sync-and-send.md"
+    ],
+    [
+      "pages/stable/book/ch20-01-unsafe-rust.md",
+      "pages/stable/book/ch20-00-advanced-features.md"
+    ],
+    [
+      "pages/stable/book/ch20-01-unsafe-rust.md",
+      "pages/stable/book/ch20-02-advanced-traits.md"
+    ],
+    [
+      "pages/stable/book/ch20-01-unsafe-rust.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch20-02-advanced-traits.md",
+      "pages/stable/book/ch05-01-defining-structs.md"
+    ],
+    [
+      "pages/stable/book/ch20-02-advanced-traits.md",
+      "pages/stable/book/ch10-02-traits.md"
+    ],
+    [
+      "pages/stable/book/ch20-02-advanced-traits.md",
+      "pages/stable/book/ch15-02-deref.md"
+    ],
+    [
+      "pages/stable/book/ch20-02-advanced-traits.md",
+      "pages/stable/book/ch20-01-unsafe-rust.md"
+    ],
+    [
+      "pages/stable/book/ch20-02-advanced-traits.md",
+      "pages/stable/book/ch20-03-advanced-types.md"
+    ],
+    [
+      "pages/stable/book/ch20-02-advanced-traits.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch20-03-advanced-types.md",
+      "pages/stable/book/ch04-03-slices.md"
+    ],
+    [
+      "pages/stable/book/ch20-03-advanced-types.md",
+      "pages/stable/book/ch06-02-match.md"
+    ],
+    [
+      "pages/stable/book/ch20-03-advanced-types.md",
+      "pages/stable/book/ch18-01-what-is-oo.md"
+    ],
+    [
+      "pages/stable/book/ch20-03-advanced-types.md",
+      "pages/stable/book/ch18-02-trait-objects.md"
+    ],
+    [
+      "pages/stable/book/ch20-03-advanced-types.md",
+      "pages/stable/book/ch20-02-advanced-traits.md"
+    ],
+    [
+      "pages/stable/book/ch20-03-advanced-types.md",
+      "pages/stable/book/ch20-04-advanced-functions-and-closures.md"
+    ],
+    [
+      "pages/stable/book/ch20-03-advanced-types.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch20-04-advanced-functions-and-closures.md",
+      "pages/stable/book/ch06-01-defining-an-enum.md"
+    ],
+    [
+      "pages/stable/book/ch20-04-advanced-functions-and-closures.md",
+      "pages/stable/book/ch13-01-closures.md"
+    ],
+    [
+      "pages/stable/book/ch20-04-advanced-functions-and-closures.md",
+      "pages/stable/book/ch17-03-more-futures.md"
+    ],
+    [
+      "pages/stable/book/ch20-04-advanced-functions-and-closures.md",
+      "pages/stable/book/ch18-02-trait-objects.md"
+    ],
+    [
+      "pages/stable/book/ch20-04-advanced-functions-and-closures.md",
+      "pages/stable/book/ch20-02-advanced-traits.md"
+    ],
+    [
+      "pages/stable/book/ch20-04-advanced-functions-and-closures.md",
+      "pages/stable/book/ch20-03-advanced-types.md"
+    ],
+    [
+      "pages/stable/book/ch20-04-advanced-functions-and-closures.md",
+      "pages/stable/book/ch20-05-macros.md"
+    ],
+    [
+      "pages/stable/book/ch20-04-advanced-functions-and-closures.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch20-05-macros.md",
+      "pages/stable/book/ch20-04-advanced-functions-and-closures.md"
+    ],
+    [
+      "pages/stable/book/ch20-05-macros.md",
+      "pages/stable/book/ch21-00-final-project-a-web-server.md"
+    ],
+    [
+      "pages/stable/book/ch20-05-macros.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch21-00-final-project-a-web-server.md",
+      "pages/stable/book/ch20-05-macros.md"
+    ],
+    [
+      "pages/stable/book/ch21-00-final-project-a-web-server.md",
+      "pages/stable/book/ch21-01-single-threaded.md"
+    ],
+    [
+      "pages/stable/book/ch21-00-final-project-a-web-server.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch21-01-single-threaded.md",
+      "pages/stable/book/ch21-00-final-project-a-web-server.md"
+    ],
+    [
+      "pages/stable/book/ch21-01-single-threaded.md",
+      "pages/stable/book/ch21-02-multithreaded.md"
+    ],
+    [
+      "pages/stable/book/ch21-01-single-threaded.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch21-02-multithreaded.md",
+      "pages/stable/book/ch03-02-data-types.md"
+    ],
+    [
+      "pages/stable/book/ch21-02-multithreaded.md",
+      "pages/stable/book/ch13-01-closures.md"
+    ],
+    [
+      "pages/stable/book/ch21-02-multithreaded.md",
+      "pages/stable/book/ch20-03-advanced-types.md"
+    ],
+    [
+      "pages/stable/book/ch21-02-multithreaded.md",
+      "pages/stable/book/ch21-01-single-threaded.md"
+    ],
+    [
+      "pages/stable/book/ch21-02-multithreaded.md",
+      "pages/stable/book/ch21-03-graceful-shutdown-and-cleanup.md"
+    ],
+    [
+      "pages/stable/book/ch21-02-multithreaded.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/ch21-03-graceful-shutdown-and-cleanup.md",
+      "pages/stable/book/appendix-00.md"
+    ],
+    [
+      "pages/stable/book/ch21-03-graceful-shutdown-and-cleanup.md",
+      "pages/stable/book/ch21-02-multithreaded.md"
+    ],
+    [
+      "pages/stable/book/ch21-03-graceful-shutdown-and-cleanup.md",
+      "pages/stable/book/print.md"
+    ],
+    [
+      "pages/stable/book/foreword.md",
+      "pages/stable/book/ch00-00-introduction.md"
+    ],
+    [
       "pages/stable/book/foreword.md",
       "pages/stable/book/print.md"
     ],
     [
-      "pages/stable/book/print.md",
-      "pages/cargo/reference/publishing.md"
+      "pages/stable/book/foreword.md",
+      "pages/stable/book/title-page.md"
     ],
     [
       "pages/stable/book/print.md",
       "pages/stable/book.md"
     ],
     [
-      "pages/stable/book/print.md",
-      "pages/stable/nomicon/vec/vec.md"
+      "pages/stable/book/title-page.md",
+      "pages/stable/book.md"
     ],
     [
-      "pages/stable/book/print.md",
-      "pages/stable/reference/attributes.md"
+      "pages/stable/book/title-page.md",
+      "pages/stable/book/appendix-05-editions.md"
     ],
     [
-      "pages/stable/book/print.md",
-      "pages/stable/reference/const_eval.md"
+      "pages/stable/book/title-page.md",
+      "pages/stable/book/appendix-06-translation.md"
     ],
     [
-      "pages/stable/book/print.md",
-      "pages/stable/reference/trait-bounds.md"
+      "pages/stable/book/title-page.md",
+      "pages/stable/book/ch01-01-installation.md"
     ],
     [
-      "pages/stable/book/print.md",
-      "pages/stable/std/collections/home.md"
+      "pages/stable/book/title-page.md",
+      "pages/stable/book/foreword.md"
     ],
     [
-      "pages/stable/book/print.md",
-      "pages/stable/std/io/struct.md"
-    ],
-    [
-      "pages/stable/book/print.md",
-      "pages/stable/std/macro.md"
-    ],
-    [
-      "pages/stable/book/print.md",
-      "pages/stable/std/net/enum.md"
-    ],
-    [
-      "pages/stable/book/print.md",
-      "pages/stable/std/option/enum.md"
-    ],
-    [
-      "pages/stable/book/print.md",
-      "pages/stable/std/prelude/home.md"
-    ],
-    [
-      "pages/stable/book/print.md",
-      "pages/stable/std/primitive.md"
-    ],
-    [
-      "pages/stable/book/print.md",
-      "pages/stable/std/process/trait.md"
-    ],
-    [
-      "pages/stable/book/print.md",
-      "pages/stable/std/result/enum.md"
-    ],
-    [
-      "pages/stable/book/print.md",
-      "pages/stable/std/string/struct.md"
-    ],
-    [
-      "pages/stable/book/print.md",
-      "pages/stable/std/vec/struct.md"
-    ],
-    [
-      "pages/stable/book/print.md",
-      "pages/stable/unstable-book/library-features/test.md"
-    ],
-    [
-      "pages/stable/std/collections/home.md",
-      "pages/stable/std/vec/struct.md"
-    ],
-    [
-      "pages/stable/std/io/struct.md",
-      "pages/stable/std/primitive.md"
-    ],
-    [
-      "pages/stable/std/io/struct.md",
-      "pages/stable/std/result/enum.md"
-    ],
-    [
-      "pages/stable/std/io/struct.md",
-      "pages/stable/std/string/struct.md"
-    ],
-    [
-      "pages/stable/std/io/struct.md",
-      "pages/stable/std/vec/struct.md"
-    ],
-    [
-      "pages/stable/std/macro.md",
-      "pages/stable/std/io/struct.md"
-    ],
-    [
-      "pages/stable/std/net/enum.md",
-      "pages/stable/std/option/enum.md"
-    ],
-    [
-      "pages/stable/std/net/enum.md",
-      "pages/stable/std/primitive.md"
-    ],
-    [
-      "pages/stable/std/net/enum.md",
-      "pages/stable/std/result/enum.md"
-    ],
-    [
-      "pages/stable/std/net/enum.md",
-      "pages/stable/std/string/struct.md"
-    ],
-    [
-      "pages/stable/std/option/enum.md",
-      "pages/stable/std/primitive.md"
-    ],
-    [
-      "pages/stable/std/option/enum.md",
-      "pages/stable/std/result/enum.md"
-    ],
-    [
-      "pages/stable/std/option/enum.md",
-      "pages/stable/std/string/struct.md"
-    ],
-    [
-      "pages/stable/std/prelude/home.md",
-      "pages/stable/std/option/enum.md"
-    ],
-    [
-      "pages/stable/std/prelude/home.md",
-      "pages/stable/std/result/enum.md"
-    ],
-    [
-      "pages/stable/std/prelude/home.md",
-      "pages/stable/std/string/struct.md"
-    ],
-    [
-      "pages/stable/std/prelude/home.md",
-      "pages/stable/std/vec/struct.md"
-    ],
-    [
-      "pages/stable/std/primitive.md",
-      "pages/stable/std/net/enum.md"
-    ],
-    [
-      "pages/stable/std/primitive.md",
-      "pages/stable/std/option/enum.md"
-    ],
-    [
-      "pages/stable/std/primitive.md",
-      "pages/stable/std/result/enum.md"
-    ],
-    [
-      "pages/stable/std/primitive.md",
-      "pages/stable/std/string/struct.md"
-    ],
-    [
-      "pages/stable/std/primitive.md",
-      "pages/stable/std/vec/struct.md"
-    ],
-    [
-      "pages/stable/std/process/trait.md",
-      "pages/stable/std/primitive.md"
-    ],
-    [
-      "pages/stable/std/process/trait.md",
-      "pages/stable/std/result/enum.md"
-    ],
-    [
-      "pages/stable/std/result/enum.md",
-      "pages/stable/std/option/enum.md"
-    ],
-    [
-      "pages/stable/std/result/enum.md",
-      "pages/stable/std/primitive.md"
-    ],
-    [
-      "pages/stable/std/result/enum.md",
-      "pages/stable/std/process/trait.md"
-    ],
-    [
-      "pages/stable/std/string/struct.md",
-      "pages/stable/std/macro.md"
-    ],
-    [
-      "pages/stable/std/string/struct.md",
-      "pages/stable/std/net/enum.md"
-    ],
-    [
-      "pages/stable/std/string/struct.md",
-      "pages/stable/std/option/enum.md"
-    ],
-    [
-      "pages/stable/std/string/struct.md",
-      "pages/stable/std/primitive.md"
-    ],
-    [
-      "pages/stable/std/string/struct.md",
-      "pages/stable/std/result/enum.md"
-    ],
-    [
-      "pages/stable/std/string/struct.md",
-      "pages/stable/std/vec/struct.md"
-    ],
-    [
-      "pages/stable/std/vec/struct.md",
-      "pages/stable/std/io/struct.md"
-    ],
-    [
-      "pages/stable/std/vec/struct.md",
-      "pages/stable/std/macro.md"
-    ],
-    [
-      "pages/stable/std/vec/struct.md",
-      "pages/stable/std/option/enum.md"
-    ],
-    [
-      "pages/stable/std/vec/struct.md",
-      "pages/stable/std/primitive.md"
-    ],
-    [
-      "pages/stable/std/vec/struct.md",
-      "pages/stable/std/result/enum.md"
-    ],
-    [
-      "pages/stable/std/vec/struct.md",
-      "pages/stable/std/string/struct.md"
+      "pages/stable/book/title-page.md",
+      "pages/stable/book/print.md"
     ]
   ]
 }

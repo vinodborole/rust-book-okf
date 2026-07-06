@@ -2,7 +2,7 @@
 type: Web Page
 title: F - Translations of the Book - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/appendix-06-translation.html
-timestamp: '2026-07-06T08:05:31.028609+00:00'
+timestamp: '2026-07-06T10:44:58.534505+00:00'
 ---
 
 ## Appendix F: Translations of the Book

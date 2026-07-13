@@ -2,10 +2,10 @@
 type: Web Page
 title: Reading a File - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch12-02-reading-a-file.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-## Reading a File
+[Reading a File](#reading-a-file)
 
 Now we’ll add functionality to read the file specified in the `file_path`
 argument. First, we need a sample file to test it with: We’ll use a file with a

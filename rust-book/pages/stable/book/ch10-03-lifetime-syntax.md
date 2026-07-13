@@ -2,18 +2,27 @@
 type: Web Page
 title: Validating References with Lifetimes - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch10-03-lifetime-syntax.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-## Validating References with Lifetimes
+[Validating References with Lifetimes](#validating-references-with-lifetimes)
 
 Lifetimes are another kind of generic that we’ve already been using. Rather than ensuring that a type has the behavior we want, lifetimes ensure that references are valid as long as we need them to be.
 
-One detail we didn’t discuss in the “References and Borrowing” section in Chapter 4 is that every reference in Rust has a lifetime, which is the scope for which that reference is valid. Most of the time, lifetimes are implicit and inferred, just like most of the time, types are inferred. We are only required to annotate types when multiple types are possible. In a similar way, we must annotate lifetimes when the lifetimes of references could be related in a few different ways. Rust requires us to annotate the relationships using generic lifetime parameters to ensure that the actual references used at runtime will definitely be valid.
+One detail we didn’t discuss in the [“References and
+Borrowing”](ch04-02-references-and-borrowing.html#references-and-borrowing) section in Chapter 4 is
+that every reference in Rust has a lifetime, which is the scope for which
+that reference is valid. Most of the time, lifetimes are implicit and inferred,
+just like most of the time, types are inferred. We are only required to
+annotate types when multiple types are possible. In a similar way, we must
+annotate lifetimes when the lifetimes of references could be related in a few
+different ways. Rust requires us to annotate the relationships using generic
+lifetime parameters to ensure that the actual references used at runtime will
+definitely be valid.
 
 Annotating lifetimes is not even a concept most other programming languages have, so this is going to feel unfamiliar. Although we won’t cover lifetimes in their entirety in this chapter, we’ll discuss common ways you might encounter lifetime syntax so that you can get comfortable with the concept.
 
-### Dangling References
+[Dangling References](#dangling-references)
 
 The main aim of lifetimes is to prevent dangling references, which, if they were allowed to exist, would cause a program to reference data other than the data it’s intended to reference. Consider the program in Listing 10-16, which has an outer scope and an inner scope.
 
@@ -52,7 +61,7 @@ referencing memory that was deallocated when `x` went out of scope, and
 anything we tried to do with `r` wouldn’t work correctly. So, how does Rust
 determine that this code is invalid? It uses a borrow checker.
 
-### The Borrow Checker
+[The Borrow Checker](#the-borrow-checker)
 
 The Rust compiler has a *borrow checker* that compares scopes to determine
 whether all borrows are valid. Listing 10-17 shows the same code as Listing
@@ -73,7 +82,7 @@ always be valid while `x` is valid.
 
 Now that you know where the lifetimes of references are and how Rust analyzes lifetimes to ensure that references will always be valid, let’s explore generic lifetimes in function parameters and return values.
 
-### Generic Lifetimes in Functions
+[Generic Lifetimes in Functions](#generic-lifetimes-in-functions)
 
 We’ll write a function that returns the longer of two string slices. This
 function will take two string slices and return a single string slice. After
@@ -82,8 +91,8 @@ print `The longest string is abcd`.
 
 Note that we want the function to take string slices, which are references,
 rather than strings, because we don’t want the `longest` function to take
-ownership of its parameters. Refer to “String Slices as
-Parameters” in Chapter 4 for more
+ownership of its parameters. Refer to [“String Slices as
+Parameters”](ch04-03-slices.html#string-slices-as-parameters) in Chapter 4 for more
 discussion about why the parameters we use in Listing 10-19 are the ones we
 want.
 
@@ -126,7 +135,7 @@ return value. To fix this error, we’ll add generic lifetime parameters that
 define the relationship between the references so that the borrow checker can
 perform its analysis.
 
-### Lifetime Annotation Syntax
+[Lifetime Annotation Syntax](#lifetime-annotation-syntax)
 
 Lifetime annotations don’t change how long any of the references live. Rather, they describe the relationships of the lifetimes of multiple references to each other without affecting the lifetimes. Just as functions can accept any type when the signature specifies a generic type parameter, functions can accept references with any lifetime by specifying a generic lifetime parameter.
 
@@ -150,7 +159,7 @@ annotations are meant to tell Rust how generic lifetime parameters of multiple
 references relate to each other. Let’s examine how the lifetime annotations
 relate to each other in the context of the `longest` function.
 
-### In Function Signatures
+[In Function Signatures](#in-function-signatures)
 
 To use lifetime annotations in function signatures, we need to declare the generic lifetime parameters inside angle brackets between the function name and the parameter list, just as we did with generic type parameters.
 
@@ -244,7 +253,7 @@ references passed in to the `longest` function and how the returned reference
 is used. Make hypotheses about whether or not your experiments will pass the
 borrow checker before you compile; then, check to see if you’re right!
 
-### Relationships
+[Relationships](#relationships)
 
 The way in which you need to specify lifetime parameters depends on what your
 function is doing. For example, if we changed the implementation of the
@@ -293,7 +302,7 @@ cleaning up the value.
 
 Ultimately, lifetime syntax is about connecting the lifetimes of various parameters and return values of functions. Once they’re connected, Rust has enough information to allow memory-safe operations and disallow operations that would create dangling pointers or otherwise violate memory safety.
 
-### In Struct Definitions
+[In Struct Definitions](#in-struct-definitions)
 
 So far, the structs we’ve defined all hold owned types. We can define structs
 to hold references, but in that case, we would need to add a lifetime
@@ -314,7 +323,7 @@ instance is created. In addition, `novel` doesn’t go out of scope until after
 the `ImportantExcerpt` goes out of scope, so the reference in the
 `ImportantExcerpt` instance is valid.
 
-### Lifetime Elision
+[Lifetime Elision](#lifetime-elision)
 
 You’ve learned that every reference has a lifetime and that you need to specify lifetime parameters for functions or structs that use references. However, we had a function in Listing 4-9, shown again in Listing 10-25, that compiled without lifetime annotations.
 
@@ -382,7 +391,7 @@ couldn’t figure out all the lifetimes of the references in the signature.
 
 Because the third rule really only applies in method signatures, we’ll look at lifetimes in that context next to see why the third rule means we don’t have to annotate lifetimes in method signatures very often.
 
-### In Method Definitions
+[In Method Definitions](#in-method-definitions)
 
 When we implement methods on a struct with lifetimes, we use the same syntax as that of generic type parameters, as shown in Listing 10-11. Where we declare and use the lifetime parameters depends on whether they’re related to the struct fields or the method parameters and return values.
 
@@ -456,7 +465,7 @@ and gives both `&self` and `announcement` their own lifetimes. Then, because
 one of the parameters is `&self`, the return type gets the lifetime of `&self`,
 and all lifetimes have been accounted for.
 
-### The Static Lifetime
+[The Static Lifetime](#the-static-lifetime)
 
 One special lifetime we need to discuss is `'static`, which denotes that the
 affected reference *can* live for the entire duration of the program. All
@@ -479,7 +488,7 @@ suggesting the `'static` lifetime results from attempting to create a dangling
 reference or a mismatch of the available lifetimes. In such cases, the solution
 is to fix those problems, not to specify the `'static` lifetime.
 
-## Generic Type Parameters, Trait Bounds, and Lifetimes
+[Generic Type Parameters, Trait Bounds, and Lifetimes](#generic-type-parameters-trait-bounds-and-lifetimes)
 
 Let’s briefly look at the syntax of specifying generic type parameters, trait bounds, and lifetimes all in one function!
 
@@ -516,11 +525,16 @@ lifetimes are a type of generic, the declarations of the lifetime parameter
 `'a` and the generic type parameter `T` go in the same list inside the angle
 brackets after the function name.
 
-## Summary
+[Summary](#summary)
 
 We covered a lot in this chapter! Now that you know about generic type parameters, traits and trait bounds, and generic lifetime parameters, you’re ready to write code without repetition that works in many different situations. Generic type parameters let you apply the code to different types. Traits and trait bounds ensure that even though the types are generic, they’ll have the behavior the code needs. You learned how to use lifetime annotations to ensure that this flexible code won’t have any dangling references. And all of this analysis happens at compile time, which doesn’t affect runtime performance!
 
-Believe it or not, there is much more to learn on the topics we discussed in this chapter: Chapter 18 discusses trait objects, which are another way to use traits. There are also more complex scenarios involving lifetime annotations that you will only need in very advanced scenarios; for those, you should read the Rust Reference. But next, you’ll learn how to write tests in Rust so that you can make sure your code is working the way it should.
+Believe it or not, there is much more to learn on the topics we discussed in
+this chapter: Chapter 18 discusses trait objects, which are another way to use
+traits. There are also more complex scenarios involving lifetime annotations
+that you will only need in very advanced scenarios; for those, you should read
+the [Rust Reference](../reference/trait-bounds.html). But next, you’ll learn how to write tests in
+Rust so that you can make sure your code is working the way it should.
 
 # Citations
 

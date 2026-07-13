@@ -2,10 +2,10 @@
 type: Web Page
 title: Defining Shared Behavior with Traits - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch10-02-traits.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-## Defining Shared Behavior with Traits
+[Defining Shared Behavior with Traits](#defining-shared-behavior-with-traits)
 
 A *trait* defines the functionality a particular type has and can share with
 other types. We can use traits to define shared behavior in an abstract way. We
@@ -15,7 +15,7 @@ certain behavior.
 Note: Traits are similar to a feature often called *interfaces* in other
 languages, although with some differences.
 
-### Defining a Trait
+[Defining a Trait](#defining-a-trait)
 
 A type’s behavior consists of the methods we can call on that type. Different types share the same behavior if we can call the same methods on all of those types. Trait definitions are a way to group method signatures together to define a set of behaviors necessary to accomplish some purpose.
 
@@ -47,7 +47,7 @@ defined with this signature exactly.
 
 A trait can have multiple methods in its body: The method signatures are listed one per line, and each line ends in a semicolon.
 
-### Implementing a Trait on a Type
+[Implementing a Trait on a Type](#implementing-a-trait-on-a-type)
 
 Now that we’ve defined the desired signatures of the `Summary` trait’s methods,
 we can implement it on the types in our media aggregator. Listing 10-13 shows
@@ -108,7 +108,7 @@ can’t break your code and vice versa. Without the rule, two crates could
 implement the same trait for the same type, and Rust wouldn’t know which
 implementation to use.
 
-### Using Default Implementations
+[Using Default Implementations](#using-default-implementations)
 
 Sometimes it’s useful to have default behavior for some or all of the methods in a trait instead of requiring implementations for all methods on every type. Then, as we implement the trait on a particular type, we can keep or override each method’s default behavior.
 
@@ -221,7 +221,7 @@ This code prints `1 new post: (Read more from @horse_ebooks...)`.
 
 Note that it isn’t possible to call the default implementation from an overriding implementation of that same method.
 
-### Using Traits as Parameters
+[Using Traits as Parameters](#using-traits-as-parameters)
 
 Now that you know how to define and implement traits, we can explore how to use
 traits to define functions that accept many different types. We’ll use the
@@ -268,7 +268,7 @@ and pass in any instance of `NewsArticle` or `SocialPost`. Code that calls the
 function with any other type, such as a `String` or an `i32`, won’t compile,
 because those types don’t implement `Summary`.
 
-#### Trait Bound Syntax
+[Trait Bound Syntax](#trait-bound-syntax)
 
 The `impl Trait` syntax works for straightforward cases but is actually syntax
 sugar for a longer form known as a *trait bound*; it looks like this:
@@ -294,9 +294,9 @@ trait bound, like this:
 parameters constrains the function such that the concrete type of the value
 passed as an argument for `item1` and `item2` must be the same.
 
-#### Multiple Trait Bounds with the `+` Syntax
+[Multiple Trait Bounds with the ](#multiple-trait-bounds-with-the--syntax)`+` Syntax
 
-We can also specify more than one trait bound. Say we wanted `notify` to use
+`+` SyntaxWe can also specify more than one trait bound. Say we wanted `notify` to use
 display formatting as well as `summarize` on `item`: We specify in the `notify`
 definition that `item` must implement both `Display` and `Summary`. We can do
 so using the `+` syntax:
@@ -306,9 +306,9 @@ so using the `+` syntax:
 `pub fn notify<T: Summary + Display>(item: &T) {`With the two trait bounds specified, the body of `notify` can call `summarize`
 and use `{}` to format `item`.
 
-#### Clearer Trait Bounds with `where` Clauses
+[Clearer Trait Bounds with ](#clearer-trait-bounds-with-where-clauses)`where` Clauses
 
-Using too many trait bounds has its downsides. Each generic has its own trait
+`where` ClausesUsing too many trait bounds has its downsides. Each generic has its own trait
 bounds, so functions with multiple generic type parameters can contain lots of
 trait bound information between the function’s name and its parameter list,
 making the function signature hard to read. For this reason, Rust has alternate
@@ -328,7 +328,7 @@ where
 ```
 This function’s signature is less cluttered: The function name, parameter list, and return type are close together, similar to a function without lots of trait bounds.
 
-### Returning Types That Implement Traits
+[Returning Types That Implement Traits](#returning-types-that-implement-traits)
 
 We can also use the `impl Trait` syntax in the return position to return a
 value of some type that implements a trait, as shown here:
@@ -440,17 +440,17 @@ fn returns_summarizable(switch: bool) -> impl Summary {
 ```
 Returning either a `NewsArticle` or a `SocialPost` isn’t allowed due to
 restrictions around how the `impl Trait` syntax is implemented in the compiler.
-We’ll cover how to write a function with this behavior in the “Using Trait
-Objects to Abstract over Shared Behavior”
+We’ll cover how to write a function with this behavior in the [“Using Trait
+Objects to Abstract over Shared Behavior”](ch18-02-trait-objects.html#using-trait-objects-to-abstract-over-shared-behavior)
 section of Chapter 18.
 
-### Using Trait Bounds to Conditionally Implement Methods
+[Using Trait Bounds to Conditionally Implement Methods](#using-trait-bounds-to-conditionally-implement-methods)
 
 By using a trait bound with an `impl` block that uses generic type parameters,
 we can implement methods conditionally for types that implement the specified
 traits. For example, the type `Pair<T>` in Listing 10-15 always implements the
-`new` function to return a new instance of `Pair<T>` (recall from the “Method
-Syntax” section of Chapter 5 that `Self` is a type
+`new` function to return a new instance of `Pair<T>` (recall from the [“Method
+Syntax”](ch05-03-method-syntax.html#method-syntax) section of Chapter 5 that `Self` is a type
 alias for the type of the `impl` block, which in this case is `Pair<T>`). But
 in the next `impl` block, `Pair<T>` only implements the `cmp_display` method if
 its inner type `T` implements the `PartialOrd` trait that enables comparison

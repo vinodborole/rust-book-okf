@@ -2,10 +2,10 @@
 type: Web Page
 title: Controlling How Tests Are Run - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch11-02-running-tests.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-## Controlling How Tests Are Run
+[Controlling How Tests Are Run](#controlling-how-tests-are-run)
 
 Just as `cargo run` compiles your code and then runs the resultant binary,
 `cargo test` compiles your code in test mode and runs the resultant test
@@ -20,10 +20,10 @@ binary. To separate these two types of arguments, you list the arguments that
 go to `cargo test` followed by the separator `--` and then the ones that go to
 the test binary. Running `cargo test --help` displays the options you can use
 with `cargo test`, and running `cargo test -- --help` displays the options you
-can use after the separator. These options are also documented in the “Tests”
-section of *The  rustc Book*.
+can use after the separator. These options are also documented in [the “Tests”
+section of  The ](https://doc.rust-lang.org/rustc/tests/index.html).
 
-### Running Tests in Parallel or Consecutively
+`rustc` Book[Running Tests in Parallel or Consecutively](#running-tests-in-parallel-or-consecutively)
 
 When you run multiple tests, by default they run in parallel using threads, meaning they finish running more quickly and you get feedback sooner. Because the tests are running at the same time, you must make sure your tests don’t depend on each other or on any shared state, including a shared environment, such as the current working directory or environment variables.
 
@@ -50,7 +50,7 @@ parallelism. Running the tests using one thread will take longer than running
 them in parallel, but the tests won’t interfere with each other if they share
 state.
 
-### Showing Function Output
+[Showing Function Output](#showing-function-output)
 
 By default, if a test passes, Rust’s test library captures anything printed to
 standard output. For example, if we call `println!` in a test and the test
@@ -123,7 +123,7 @@ failures:
 test result: FAILED. 1 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 error: test failed, to rerun pass `--lib`
 ```
-### Running a Subset of Tests by Name
+[Running a Subset of Tests by Name](#running-a-subset-of-tests-by-name)
 
 Running a full test suite can sometimes take a long time. If you’re working on
 code in a particular area, you might want to run only the tests pertaining to
@@ -149,7 +149,7 @@ test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fini
 running 0 tests
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 ```
-#### Running Single Tests
+[Running Single Tests](#running-single-tests)
 
 We can pass the name of any test function to `cargo test` to run only that test:
 
@@ -169,7 +169,7 @@ displaying `2 filtered out` at the end.
 We can’t specify the names of multiple tests in this way; only the first value
 given to `cargo test` will be used. But there is a way to run multiple tests.
 
-#### Filtering to Run Multiple Tests
+[Filtering to Run Multiple Tests](#filtering-to-run-multiple-tests)
 
 We can specify part of a test name, and any test whose name matches that value
 will be run. For example, because two of our tests’ names contain `add`, we can
@@ -190,7 +190,7 @@ named `one_hundred`. Also note that the module in which a test appears becomes
 part of the test’s name, so we can run all the tests in a module by filtering
 on the module’s name.
 
-### Ignoring Tests Unless Specifically Requested
+[Ignoring Tests Unless Specifically Requested](#ignoring-tests-unless-specifically-requested)
 
 Sometimes a few specific tests can be very time-consuming to execute, so you
 might want to exclude them during most runs of `cargo test`. Rather than

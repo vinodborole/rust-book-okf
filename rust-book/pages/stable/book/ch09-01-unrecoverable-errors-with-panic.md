@@ -2,12 +2,12 @@
 type: Web Page
 title: Unrecoverable Errors with panic! - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch09-01-unrecoverable-errors-with-panic.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-## Unrecoverable Errors with `panic!`
+[Unrecoverable Errors with ](#unrecoverable-errors-with-panic)`panic!`
 
-Sometimes bad things happen in your code, and there’s nothing you can do about
+`panic!`Sometimes bad things happen in your code, and there’s nothing you can do about
 it. In these cases, Rust has the `panic!` macro. There are two ways to cause a
 panic in practice: by taking an action that causes our code to panic (such as
 accessing an array past the end) or by explicitly calling the `panic!` macro.
@@ -16,7 +16,7 @@ print a failure message, unwind, clean up the stack, and quit. Via an
 environment variable, you can also have Rust display the call stack when a
 panic occurs to make it easier to track down the source of the panic.
 
-### Unwinding the Stack or Aborting in Response to a Panic
+[Unwinding the Stack or Aborting in Response to a Panic](#unwinding-the-stack-or-aborting-in-response-to-a-panic)
 
 By default, when a panic occurs, the program starts *unwinding*, which means
 Rust walks back up the stack and cleans up the data from each function it
@@ -122,9 +122,11 @@ panics in the future, you’ll need to figure out what action the code is taking
 with what values to cause the panic and what the code should do instead.
 
 We’ll come back to `panic!` and when we should and should not use `panic!` to
-handle error conditions in the “To `panic!` or Not to
-`panic!`” section later in this
-chapter. Next, we’ll look at how to recover from an error using `Result`.
+handle error conditions in the [“To  panic! or Not to
+panic!”](ch09-03-to-panic-or-not-to-panic.html#to-panic-or-not-to-panic) section later in this
+chapter. Next, we’ll look at how to recover from an error using 
+
+`Result`.
 
 # Citations
 

@@ -2,14 +2,14 @@
 type: Web Page
 title: Pattern Syntax - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch19-03-pattern-syntax.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-## Pattern Syntax
+[Pattern Syntax](#pattern-syntax)
 
 In this section, we gather all the syntax that is valid in patterns and discuss why and when you might want to use each one.
 
-### Matching Literals
+[Matching Literals](#matching-literals)
 
 As you saw in Chapter 6, you can match patterns against literals directly. The following code gives some examples:
 
@@ -28,7 +28,7 @@ This code prints `one` because the value in `x` is `1`. This syntax is useful
 when you want your code to take an action if it gets a particular concrete
 value.
 
-### Matching Named Variables
+[Matching Named Variables](#matching-named-variables)
 
 Named variables are irrefutable patterns that match any value, and we’ve used
 them many times in this book. However, there is a complication when you use
@@ -65,10 +65,10 @@ the inner `y`. The last `println!` produces `at the end: x = Some(5), y = 10`.
 To create a `match` expression that compares the values of the outer `x` and
 `y`, rather than introducing a new variable that shadows the existing `y`
 variable, we would need to use a match guard conditional instead. We’ll talk
-about match guards later in the “Adding Conditionals with Match
-Guards” section.
+about match guards later in the [“Adding Conditionals with Match
+Guards”](#adding-conditionals-with-match-guards) section.
 
-### Matching Multiple Patterns
+[Matching Multiple Patterns](#matching-multiple-patterns)
 
 In `match` expressions, you can match multiple patterns using the `|` syntax,
 which is the pattern *or* operator. For example, in the following code, we match
@@ -88,9 +88,9 @@ fn main() {
 ```
 This code prints `one or two`.
 
-### Matching Ranges of Values with `..=`
+[Matching Ranges of Values with ](#matching-ranges-of-values-with-)`..=`
 
-The `..=` syntax allows us to match to an inclusive range of values. In the
+`..=`The `..=` syntax allows us to match to an inclusive range of values. In the
 following code, when a pattern matches any of the values within the given
 range, that arm will execute:
 
@@ -126,11 +126,11 @@ fn main() {
 ```
 Rust can tell that `'c'` is within the first pattern’s range and prints `early ASCII letter`.
 
-### Destructuring to Break Apart Values
+[Destructuring to Break Apart Values](#destructuring-to-break-apart-values)
 
 We can also use patterns to destructure structs, enums, and tuples to use different parts of these values. Let’s walk through each value.
 
-#### Structs
+[Structs](#structs)
 
 Listing 19-12 shows a `Point` struct with two fields, `x` and `y`, that we can
 break apart using a pattern with a `let` statement.
@@ -173,7 +173,7 @@ Remember that a `match` expression stops checking arms once it has found the
 first matching pattern, so even though `Point { x: 0, y: 0 }` is on the `x` axis
 and the `y` axis, this code would only print `On the x axis at 0`.
 
-#### Enums
+[Enums](#enums)
 
 We’ve destructured enums in this book (for example, Listing 6-5 in Chapter 6),
 but we haven’t yet explicitly discussed that the pattern to destructure an enum
@@ -200,7 +200,7 @@ pattern is similar to the pattern we specify to match tuples. The number of
 variables in the pattern must match the number of elements in the variant we’re
 matching.
 
-#### Nested Structs and Enums
+[Nested Structs and Enums](#nested-structs-and-enums)
 
 So far, our examples have all been matching structs or enums one level deep,
 but matching can work on nested items too! For example, we can refactor the
@@ -214,7 +214,7 @@ arm also matches a `Message::ChangeColor` enum variant, but the inner enum
 matches `Color::Hsv` instead. We can specify these complex conditions in one
 `match` expression, even though two enums are involved.
 
-#### Structs and Tuples
+[Structs and Tuples](#structs-and-tuples)
 
 We can mix, match, and nest destructuring patterns in even more complex ways. The following example shows a complicated destructure where we nest structs and tuples inside a tuple and destructure all the primitive values out:
 
@@ -231,7 +231,7 @@ This code lets us break complex types into their component parts so that we can 
 
 Destructuring with patterns is a convenient way to use pieces of values, such as the value from each field in a struct, separately from each other.
 
-### Ignoring Values in a Pattern
+[Ignoring Values in a Pattern](#ignoring-values-in-a-pattern)
 
 You’ve seen that it’s sometimes useful to ignore values in a pattern, such as
 in the last arm of a `match`, to get a catch-all that doesn’t actually do
@@ -241,9 +241,9 @@ pattern (which you’ve seen), using the `_` pattern within another pattern,
 using a name that starts with an underscore, or using `..` to ignore remaining
 parts of a value. Let’s explore how and why to use each of these patterns.
 
-#### An Entire Value with `_`
+[An Entire Value with ](#an-entire-value-with-_)`_`
 
-We’ve used the underscore as a wildcard pattern that will match any value but
+`_`We’ve used the underscore as a wildcard pattern that will match any value but
 not bind to the value. This is especially useful as the last arm in a `match`
 expression, but we can also use it in any pattern, including function
 parameters, as shown in Listing 19-17.
@@ -253,9 +253,9 @@ and will print `This code only uses the y parameter: 4`.
 
 In most cases when you no longer need a particular function parameter, you would change the signature so that it doesn’t include the unused parameter. Ignoring a function parameter can be especially useful in cases when, for example, you’re implementing a trait when you need a certain type signature but the function body in your implementation doesn’t need one of the parameters. You then avoid getting a compiler warning about unused function parameters, as you would if you used a name instead.
 
-#### Parts of a Value with a Nested `_`
+[Parts of a Value with a Nested ](#parts-of-a-value-with-a-nested-_)`_`
 
-We can also use `_` inside another pattern to ignore just part of a value, for
+`_`We can also use `_` inside another pattern to ignore just part of a value, for
 example, when we want to test for only part of a value but have no use for the
 other parts in the corresponding code we want to run. Listing 19-18 shows code
 responsible for managing a setting’s value. The business requirements are that
@@ -278,9 +278,9 @@ We can also use underscores in multiple places within one pattern to ignore part
 This code will print `Some numbers: 2, 8, 32`, and the values `4` and `16` will
 be ignored.
 
-#### An Unused Variable by Starting Its Name with `_`
+[An Unused Variable by Starting Its Name with ](#an-unused-variable-by-starting-its-name-with-_)`_`
 
-If you create a variable but don’t use it anywhere, Rust will usually issue a warning because an unused variable could be a bug. However, sometimes it’s useful to be able to create a variable you won’t use yet, such as when you’re prototyping or just starting a project. In this situation, you can tell Rust not to warn you about the unused variable by starting the name of the variable with an underscore. In Listing 19-20, we create two unused variables, but when we compile this code, we should only get a warning about one of them.
+`_`If you create a variable but don’t use it anywhere, Rust will usually issue a warning because an unused variable could be a bug. However, sometimes it’s useful to be able to create a variable you won’t use yet, such as when you’re prototyping or just starting a project. In this situation, you can tell Rust not to warn you about the unused variable by starting the name of the variable with an underscore. In Listing 19-20, we create two unused variables, but when we compile this code, we should only get a warning about one of them.
 
 Here, we get a warning about not using the variable `y`, but we don’t get a
 warning about not using `_x`.
@@ -297,9 +297,9 @@ because `s` doesn’t get moved into `_`.
 
 This code works just fine because we never bind `s` to anything; it isn’t moved.
 
-#### Remaining Parts of a Value with `..`
+[Remaining Parts of a Value with ](#remaining-parts-of-a-value-with-)`..`
 
-With values that have many parts, we can use the `..` syntax to use specific
+`..`With values that have many parts, we can use the `..` syntax to use specific
 parts and ignore the rest, avoiding the need to list underscores for each
 ignored value. The `..` pattern ignores any parts of a value that we haven’t
 explicitly matched in the rest of the pattern. In Listing 19-23, we have a
@@ -345,7 +345,7 @@ ignore thereafter. This code could mean that we want to ignore `2`, bind
 The variable name `second` doesn’t mean anything special to Rust, so we get a
 compiler error because using `..` in two places like this is ambiguous.
 
-### Adding Conditionals with Match Guards
+[Adding Conditionals with Match Guards](#adding-conditionals-with-match-guards)
 
 A *match guard* is an additional `if` condition, specified after the pattern in
 a `match` arm, that must also match for that arm to be chosen. Match guards are
@@ -420,9 +420,9 @@ were applied only to the final value in the list of values specified using the
 `|` operator, the arm would have matched, and the program would have printed
 `yes`.
 
-### Using `@` Bindings
+[Using ](#using--bindings)`@` Bindings
 
-The *at* operator `@` lets us create a variable that holds a value at the same
+`@` BindingsThe *at* operator `@` lets us create a variable that holds a value at the same
 time we’re testing that value for a pattern match. In Listing 19-29, we want to
 test that a `Message::Hello` `id` field is within the range `3..=7`. We also
 want to bind the value to the variable `id` so that we can use it in the code
@@ -447,7 +447,7 @@ first two arms: Any value would match this pattern.
 
 Using `@` lets us test a value and save it in a variable within one pattern.
 
-## Summary
+[Summary](#summary)
 
 Rust’s patterns are very useful in distinguishing between different kinds of
 data. When used in `match` expressions, Rust ensures that your patterns cover

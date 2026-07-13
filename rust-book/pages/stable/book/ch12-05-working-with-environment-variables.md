@@ -2,10 +2,10 @@
 type: Web Page
 title: Working with Environment Variables - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch12-05-working-with-environment-variables.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-## Working with Environment Variables
+[Working with Environment Variables](#working-with-environment-variables)
 
 We’ll improve the `minigrep` binary by adding an extra feature: an option for
 case-insensitive searching that the user can turn on via an environment
@@ -14,7 +14,7 @@ users enter it each time they want it to apply, but by instead making it an
 environment variable, we allow our users to set the environment variable once
 and have all their searches be case insensitive in that terminal session.
 
-### Writing a Failing Test for Case-Insensitive Search
+[Writing a Failing Test for Case-Insensitive Search](#writing-a-failing-test-for-case-insensitive-search)
 
 We first add a new `search_case_insensitive` function to the `minigrep` library
 that will be called when the environment variable has a value. We’ll continue
@@ -39,9 +39,9 @@ the `search_case_insensitive` function. Feel free to add a skeleton
 implementation that always returns an empty vector, similar to the way we did
 for the `search` function in Listing 12-16 to see the test compile and fail.
 
-### Implementing the `search_case_insensitive` Function
+[Implementing the ](#implementing-the-search_case_insensitive-function)`search_case_insensitive` Function
 
-The `search_case_insensitive` function, shown in Listing 12-21, will be almost
+`search_case_insensitive` FunctionThe `search_case_insensitive` function, shown in Listing 12-21, will be almost
 the same as the `search` function. The only difference is that we’ll lowercase
 the `query` and each `line` so that whatever the case of the input arguments,
 they’ll be the same case when we check whether the line contains the query.

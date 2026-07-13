@@ -2,10 +2,10 @@
 type: Web Page
 title: Writing Automated Tests - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch11-00-testing.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-# Writing Automated Tests
+[Writing Automated Tests](#writing-automated-tests)
 
 In his 1972 essay “The Humble Programmer,” Edsger W. Dijkstra said that “program testing can be a very effective way to show the presence of bugs, but it is hopelessly inadequate for showing their absence.” That doesn’t mean we shouldn’t try to test as much as we can!
 

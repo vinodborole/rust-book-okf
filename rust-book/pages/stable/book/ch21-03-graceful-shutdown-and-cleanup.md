@@ -2,10 +2,10 @@
 type: Web Page
 title: Graceful Shutdown and Cleanup - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch21-03-graceful-shutdown-and-cleanup.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-## Graceful Shutdown and Cleanup
+[Graceful Shutdown and Cleanup](#graceful-shutdown-and-cleanup)
 
 The code in Listing 21-20 is responding to requests asynchronously through the
 use of a thread pool, as we intended. We get some warnings about the `workers`,
@@ -24,9 +24,9 @@ its thread pool.
 
 One thing to notice as we go: None of this affects the parts of the code that handle executing the closures, so everything here would be the same if we were using a thread pool for an async runtime.
 
-### Implementing the `Drop` Trait on `ThreadPool`
+[Implementing the ](#implementing-the-drop-trait-on-threadpool)`Drop` Trait on `ThreadPool`
 
-Let’s start with implementing `Drop` on our thread pool. When the pool is
+`Drop` Trait on `ThreadPool`Let’s start with implementing `Drop` on our thread pool. When the pool is
 dropped, our threads should all join to make sure they finish their work.
 Listing 21-22 shows a first attempt at a `Drop` implementation; this code won’t
 quite work yet.
@@ -84,7 +84,7 @@ So, we need to update the `ThreadPool` `drop` implementation like this:
 
 This resolves the compiler error and does not require any other changes to our code. Note that, because drop can be called when panicking, the unwrap could also panic and cause a double panic, which immediately crashes the program and ends any cleanup in progress. This is fine for an example program, but it isn’t recommended for production code.
 
-### Signaling to the Threads to Stop Listening for Jobs
+[Signaling to the Threads to Stop Listening for Jobs](#signaling-to-the-threads-to-stop-listening-for-jobs)
 
 With all the changes we’ve made, our code compiles without any warnings.
 However, the bad news is that this code doesn’t function the way we want it to
@@ -165,9 +165,9 @@ We could do more here! If you want to continue enhancing this project, here are 
 - Add tests of the library’s functionality.
 - Change calls to `unwrap`to more robust error handling.
 - Use `ThreadPool`to perform some task other than serving web requests.
-- Find a thread pool crate on crates.io and implement a similar web server using the crate instead. Then, compare its API and robustness to the thread pool we implemented.
+- Find a thread pool crate on [crates.io](https://crates.io/)and implement a similar web server using the crate instead. Then, compare its API and robustness to the thread pool we implemented.
 
-## Summary
+[Summary](#summary)
 
 Well done! You’ve made it to the end of the book! We want to thank you for joining us on this tour of Rust. You’re now ready to implement your own Rust projects and help with other people’s projects. Keep in mind that there is a welcoming community of other Rustaceans who would love to help you with any challenges you encounter on your Rust journey.
 

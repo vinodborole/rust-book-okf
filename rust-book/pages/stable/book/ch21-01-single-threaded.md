@@ -2,10 +2,10 @@
 type: Web Page
 title: Building a Single-Threaded Web Server - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch21-01-single-threaded.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-## Building a Single-Threaded Web Server
+[Building a Single-Threaded Web Server](#building-a-single-threaded-web-server)
 
 We’ll start by getting a single-threaded web server working. Before we begin, let’s look at a quick overview of the protocols involved in building web servers. The details of these protocols are beyond the scope of this book, but a brief overview will give you the information you need.
 
@@ -17,7 +17,7 @@ contents of those requests and responses are defined by the protocols.
 
 TCP is the lower-level protocol that describes the details of how information gets from one server to another but doesn’t specify what that information is. HTTP builds on top of TCP by defining the contents of the requests and responses. It’s technically possible to use HTTP with other protocols, but in the vast majority of cases, HTTP sends its data over TCP. We’ll work with the raw bytes of TCP and HTTP requests and responses.
 
-### Listening to the TCP Connection
+[Listening to the TCP Connection](#listening-to-the-tcp-connection)
 
 Our web server needs to listen to a TCP connection, so that’s the first part
 we’ll work on. The standard library offers a `std::net` module that lets us do
@@ -111,7 +111,7 @@ you’re done running a particular version of the code. Then, restart the progra
 by invoking the `cargo run` command after you’ve made each set of code changes
 to make sure you’re running the newest code.
 
-### Reading the Request
+[Reading the Request](#reading-the-request)
 
 Let’s implement the functionality to read the request from the browser! To
 separate the concerns of first getting a connection and then taking some action
@@ -177,7 +177,7 @@ from our program.
 
 Let’s break down this request data to understand what the browser is asking of our program.
 
-### Looking More Closely at an HTTP Request
+[Looking More Closely at an HTTP Request](#looking-more-closely-at-an-http-request)
 
 HTTP is a text-based protocol, and a request takes this format:
 
@@ -217,7 +217,7 @@ address, such as *127.0.0.1:7878/test*, to see how the request data changes.
 
 Now that we know what the browser is asking for, let’s send back some data!
 
-### Writing a Response
+[Writing a Response](#writing-a-response)
 
 We’re going to implement sending data in response to a client request. Responses have the following format:
 
@@ -256,7 +256,7 @@ output from Cargo. When you load *127.0.0.1:7878* in a web browser, you should
 get a blank page instead of an error. You’ve just handcoded receiving an HTTP
 request and sending a response!
 
-### Returning Real HTML
+[Returning Real HTML](#returning-real-html)
 
 Let’s implement the functionality for returning more than a blank page. Create
 the new file *hello.html* in the root of your project directory, not in the
@@ -289,7 +289,7 @@ does not do what most web servers do. We want to customize our responses
 depending on the request and only send back the HTML file for a well-formed
 request to */*.
 
-### Validating the Request and Selectively Responding
+[Validating the Request and Selectively Responding](#validating-the-request-and-selectively-responding)
 
 Right now, our web server will return the HTML in the file no matter what the
 client requested. Let’s add functionality to check that the browser is
@@ -334,7 +334,7 @@ With these changes, run your server again. Requesting *127.0.0.1:7878* should
 return the contents of *hello.html*, and any other request, like
 *127.0.0.1:7878/foo*, should return the error HTML from *404.html*.
 
-### Refactoring
+[Refactoring](#refactoring)
 
 At the moment, the `if` and `else` blocks have a lot of repetition: They’re
 both reading files and writing the contents of the files to the stream. The

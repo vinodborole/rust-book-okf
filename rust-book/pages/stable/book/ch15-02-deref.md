@@ -2,10 +2,10 @@
 type: Web Page
 title: Treating Smart Pointers Like Regular References - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch15-02-deref.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-## Treating Smart Pointers Like Regular References
+[Treating Smart Pointers Like Regular References](#treating-smart-pointers-like-regular-references)
 
 Implementing the `Deref` trait allows you to customize the behavior of the
 *dereference operator* `*` (not to be confused with the multiplication or glob
@@ -21,7 +21,7 @@ smart pointers to work in ways similar to references. Then, we’ll look at
 Rust’s deref coercion feature and how it lets us work with either references or
 smart pointers.
 
-### Following the Reference to the Value
+[Following the Reference to the Value](#following-the-reference-to-the-value)
 
 A regular reference is a type of pointer, and one way to think of a pointer is
 as an arrow to a value stored somewhere else. In Listing 15-6, we create a
@@ -54,9 +54,9 @@ error: could not compile `deref-example` (bin "deref-example") due to 1 previous
 ```
 Comparing a number and a reference to a number isn’t allowed because they’re different types. We must use the dereference operator to follow the reference to the value it’s pointing to.
 
-### Using `Box<T>` Like a Reference
+[Using ](#using-boxt-like-a-reference)`Box<T>` Like a Reference
 
-We can rewrite the code in Listing 15-6 to use a `Box<T>` instead of a
+`Box<T>` Like a ReferenceWe can rewrite the code in Listing 15-6 to use a `Box<T>` instead of a
 reference; the dereference operator used on the `Box<T>` in Listing 15-7
 functions in the same way as the dereference operator used on the reference in
 Listing 15-6.
@@ -68,7 +68,7 @@ dereference operator to follow the box’s pointer in the same way that we did
 when `y` was a reference. Next, we’ll explore what is special about `Box<T>`
 that enables us to use the dereference operator by defining our own box type.
 
-### Defining Our Own Smart Pointer
+[Defining Our Own Smart Pointer](#defining-our-own-smart-pointer)
 
 Let’s build a wrapper type similar to the `Box<T>` type provided by the
 standard library to experience how smart pointer types behave differently from
@@ -111,9 +111,9 @@ Our `MyBox<T>` type can’t be dereferenced because we haven’t implemented tha
 ability on our type. To enable dereferencing with the `*` operator, we
 implement the `Deref` trait.
 
-### Implementing the `Deref` Trait
+[Implementing the ](#implementing-the-deref-trait)`Deref` Trait
 
-As discussed in “Implementing a Trait on a Type” in
+`Deref` TraitAs discussed in [“Implementing a Trait on a Type”](ch10-02-traits.html#implementing-a-trait-on-a-type) in
 Chapter 10, to implement a trait we need to provide implementations for the
 trait’s required methods. The `Deref` trait, provided by the standard library,
 requires us to implement one method named `deref` that borrows `self` and
@@ -127,7 +127,7 @@ more detail in Chapter 20.
 
 We fill in the body of the `deref` method with `&self.0` so that `deref`
 returns a reference to the value we want to access with the `*` operator;
-recall from “Creating Different Types with Tuple Structs” in Chapter 5 that `.0` accesses the first value in a tuple struct.
+recall from [“Creating Different Types with Tuple Structs”](ch05-01-defining-structs.html#creating-different-types-with-tuple-structs) in Chapter 5 that `.0` accesses the first value in a tuple struct.
 The `main` function in Listing 15-9 that calls `*` on the `MyBox<T>` value now
 compiles, and the assertions pass!
 
@@ -158,7 +158,7 @@ Because the substitution of the `*` operator does not recurse infinitely, we
 end up with data of type `i32`, which matches the `5` in `assert_eq!` in
 Listing 15-9.
 
-### Using Deref Coercion in Functions and Methods
+[Using Deref Coercion in Functions and Methods](#using-deref-coercion-in-functions-and-methods)
 
 *Deref coercion* converts a reference to a type that implements the `Deref`
 trait into a reference to another type. For example, deref coercion can convert
@@ -208,7 +208,7 @@ match the parameter’s type. The number of times that `Deref::deref` needs to b
 inserted is resolved at compile time, so there is no runtime penalty for taking
 advantage of deref coercion!
 
-### Handling Deref Coercion with Mutable References
+[Handling Deref Coercion with Mutable References](#handling-deref-coercion-with-mutable-references)
 
 Similar to how you use the `Deref` trait to override the `*` operator on
 immutable references, you can use the `DerefMut` trait to override the `*`

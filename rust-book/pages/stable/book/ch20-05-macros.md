@@ -2,10 +2,10 @@
 type: Web Page
 title: Macros - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch20-05-macros.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-## Macros
+[Macros](#macros)
 
 We’ve used macros like `println!` throughout this book, but we haven’t fully
 explored what a macro is and how it works. The term *macro* refers to a family
@@ -18,7 +18,7 @@ procedural macros:
 
 We’ll talk about each of these in turn, but first, let’s look at why we even need macros when we already have functions.
 
-### The Difference Between Macros and Functions
+[The Difference Between Macros and Functions](#the-difference-between-macros-and-functions)
 
 Fundamentally, macros are a way of writing code that writes other code, which
 is known as *metaprogramming*. In Appendix C, we discuss the `derive`
@@ -42,7 +42,7 @@ Another important difference between macros and functions is that you must
 define macros or bring them into scope *before* you call them in a file, as
 opposed to functions you can define anywhere and call anywhere.
 
-### Declarative Macros for General Metaprogramming
+[Declarative Macros for General Metaprogramming](#declarative-macros-for-general-metaprogramming)
 
 The most widely used form of macros in Rust is the *declarative macro*. These
 are also sometimes referred to as “macros by example,” “`macro_rules!` macros,”
@@ -95,7 +95,11 @@ is the only pattern in this macro, there is only one valid way to match; any
 other pattern will result in an error. More complex macros will have more than
 one arm.
 
-Valid pattern syntax in macro definitions is different from the pattern syntax covered in Chapter 19 because macro patterns are matched against Rust code structure rather than values. Let’s walk through what the pattern pieces in Listing 20-29 mean; for the full macro pattern syntax, see the Rust Reference.
+Valid pattern syntax in macro definitions is different from the pattern syntax
+covered in Chapter 19 because macro patterns are matched against Rust code
+structure rather than values. Let’s walk through what the pattern pieces in
+Listing 20-29 mean; for the full macro pattern syntax, see the [Rust
+Reference](../reference/macros-by-example.html).
 
 First, we use a set of parentheses to encompass the whole pattern. We use a
 dollar sign (`$`) to declare a variable in the macro system that will contain
@@ -131,9 +135,11 @@ will be the following:
 ```
 We’ve defined a macro that can take any number of arguments of any type and can generate code to create a vector containing the specified elements.
 
-To learn more about how to write macros, consult the online documentation or other resources, such as “The Little Book of Rust Macros” started by Daniel Keep and continued by Lukas Wirth.
+To learn more about how to write macros, consult the online documentation or
+other resources, such as [“The Little Book of Rust Macros”](https://veykril.github.io/tlborm/) started by
+Daniel Keep and continued by Lukas Wirth.
 
-### Procedural Macros for Generating Code from Attributes
+[Procedural Macros for Generating Code from Attributes](#procedural-macros-for-generating-code-from-attributes)
 
 The second form of macros is the procedural macro, which acts more like a
 function (and is a type of procedure). *Procedural macros* accept some code as
@@ -161,9 +167,9 @@ Let’s look at the different kinds of procedural macros. We’ll start with a
 custom `derive` macro and then explain the small dissimilarities that make the
 other forms different.
 
-### Custom `derive` Macros
+[Custom ](#custom-derive-macros)`derive` Macros
 
-Let’s create a crate named `hello_macro` that defines a trait named
+`derive` MacrosLet’s create a crate named `hello_macro` that defines a trait named
 `HelloMacro` with one associated function named `hello_macro`. Rather than
 making our users implement the `HelloMacro` trait for each of their types,
 we’ll provide a procedural macro so that users can annotate their type with
@@ -231,13 +237,16 @@ procedural macro crate you see or create. The code you specify in the body of
 the inner function (`impl_hello_macro` in this case) will be different
 depending on your procedural macro’s purpose.
 
-We’ve introduced three new crates: `proc_macro`, `syn`,
-and `quote`. The `proc_macro` crate comes with Rust,
-so we didn’t need to add that to the dependencies in *Cargo.toml*. The
-`proc_macro` crate is the compiler’s API that allows us to read and manipulate
-Rust code from our code.
+We’ve introduced three new crates: `proc_macro`, [ syn](https://crates.io/crates/syn),
+and 
 
-The `syn` crate parses Rust code from a string into a data structure that we
+[. The](https://crates.io/crates/quote)
+
+`quote``proc_macro` crate comes with Rust,
+so we didn’t need to add that to the dependencies in *Cargo.toml*. The
+
+`proc_macro` crate is the compiler’s API that allows us to read and manipulate
+Rust code from our code.The `syn` crate parses Rust code from a string into a data structure that we
 can perform operations on. The `quote` crate turns `syn` data structures back
 into Rust code. These crates make it much simpler to parse any sort of Rust
 code we might want to handle: Writing a full parser for Rust code is no simple
@@ -258,8 +267,8 @@ struct we get from parsing the `struct Pancakes;` string.
 
 The fields of this struct show that the Rust code we’ve parsed is a unit struct
 with the `ident` (*identifier*, meaning the name) of `Pancakes`. There are more
-fields on this struct for describing all sorts of Rust code; check the `syn`
-documentation for `DeriveInput` for more information.
+fields on this struct for describing all sorts of Rust code; check the [ syn
+documentation for DeriveInput](https://docs.rs/syn/2.0/syn/struct.DeriveInput.html) for more information.
 
 Soon we’ll define the `impl_hello_macro` function, which is where we’ll build
 the new Rust code we want to include. But before we do, note that the output
@@ -297,7 +306,7 @@ returns a value of the required `TokenStream` type.
 The `quote!` macro also provides some very cool templating mechanics: We can
 enter `#name`, and `quote!` will replace it with the value in the variable
 `name`. You can even do some repetition similar to the way regular macros work.
-Check out the `quote` crate’s docs for a thorough introduction.
+Check out [the  quote crate’s docs](https://docs.rs/quote) for a thorough introduction.
 
 We want our procedural macro to generate an implementation of our `HelloMacro`
 trait for the type the user annotated, which we can get by using `#name`. The
@@ -320,7 +329,7 @@ and `hello_macro_derive`. Let’s hook up these crates to the code in Listing
 your *projects* directory using `cargo new pancakes`. We need to add
 `hello_macro` and `hello_macro_derive` as dependencies in the `pancakes`
 crate’s *Cargo.toml*. If you’re publishing your versions of `hello_macro` and
-`hello_macro_derive` to crates.io, they
+`hello_macro_derive` to [crates.io](https://crates.io/), they
 would be regular dependencies; if not, you can specify them as `path`
 dependencies as follows:
 
@@ -338,7 +347,7 @@ trait implementation.
 Next, let’s explore how the other kinds of procedural macros differ from custom
 `derive` macros.
 
-### Attribute-Like Macros
+[Attribute-Like Macros](#attribute-like-macros)
 
 Attribute-like macros are similar to custom `derive` macros, but instead of
 generating code for the `derive` attribute, they allow you to create new
@@ -367,13 +376,13 @@ Other than that, attribute-like macros work the same way as custom `derive`
 macros: You create a crate with the `proc-macro` crate type and implement a
 function that generates the code you want!
 
-### Function-Like Macros
+[Function-Like Macros](#function-like-macros)
 
 Function-like macros define macros that look like function calls. Similarly to
 `macro_rules!` macros, they’re more flexible than functions; for example, they
 can take an unknown number of arguments. However, `macro_rules!` macros can
-only be defined using the match-like syntax we discussed in the “Declarative
-Macros for General Metaprogramming” section earlier.
+only be defined using the match-like syntax we discussed in the [“Declarative
+Macros for General Metaprogramming”](#declarative-macros-with-macro_rules-for-general-metaprogramming) section earlier.
 Function-like macros take a `TokenStream` parameter, and their definition
 manipulates that `TokenStream` using Rust code as the other two types of
 procedural macros do. An example of a function-like macro is an `sql!` macro
@@ -391,7 +400,7 @@ This definition is similar to the custom `derive` macro’s signature: We receiv
 the tokens that are inside the parentheses and return the code we wanted to
 generate.
 
-## Summary
+[Summary](#summary)
 
 Whew! Now you have some Rust features in your toolbox that you likely won’t use often, but you’ll know they’re available in very particular circumstances. We’ve introduced several complex topics so that when you encounter them in error message suggestions or in other people’s code, you’ll be able to recognize these concepts and syntax. Use this chapter as a reference to guide you to solutions.
 

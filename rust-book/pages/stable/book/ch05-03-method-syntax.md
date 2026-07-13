@@ -2,21 +2,21 @@
 type: Web Page
 title: Methods - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch05-03-method-syntax.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-## Methods
+[Methods](#methods)
 
 Methods are similar to functions: We declare them with the `fn` keyword and a
 name, they can have parameters and a return value, and they contain some code
 that’s run when the method is called from somewhere else. Unlike functions,
 methods are defined within the context of a struct (or an enum or a trait
-object, which we cover in Chapter 6 and Chapter
-18, respectively), and their first parameter is
+object, which we cover in [Chapter 6](ch06-00-enums.html) and [Chapter
+18](ch18-02-trait-objects.html), respectively), and their first parameter is
 always `self`, which represents the instance of the struct the method is being
 called on.
 
-### Method Syntax
+[Method Syntax](#method-syntax)
 
 Let’s change the `area` function that has a `Rectangle` instance as a parameter
 and instead make an `area` method defined on the `Rectangle` struct, as shown
@@ -76,12 +76,12 @@ are called *getters*, and Rust does not implement them automatically for struct
 fields as some other languages do. Getters are useful because you can make the
 field private but the method public and thus enable read-only access to that
 field as part of the type’s public API. We will discuss what public and private
-are and how to designate a field or method as public or private in Chapter
-7.
+are and how to designate a field or method as public or private in [Chapter
+7](ch07-03-paths-for-referring-to-an-item-in-the-module-tree.html#exposing-paths-with-the-pub-keyword).
 
-### Where’s the `->` Operator?
+[Where’s the ](#wheres-the---operator)`->` Operator?
 
-In C and C++, two different operators are used for calling methods: You use
+`->` Operator?In C and C++, two different operators are used for calling methods: You use
 `.` if you’re calling a method on the object directly and `->` if you’re
 calling the method on a pointer to the object and need to dereference the
 pointer first. In other words, if `object` is a pointer,
@@ -123,7 +123,7 @@ reading (`&self`), mutating (`&mut self`), or consuming (`self`). The fact
 that Rust makes borrowing implicit for method receivers is a big part of
 making ownership ergonomic in practice.
 
-### Methods with More Parameters
+[Methods with More Parameters](#methods-with-more-parameters)
 
 Let’s practice using methods by implementing a second method on the `Rectangle`
 struct. This time we want an instance of `Rectangle` to take another instance
@@ -159,7 +159,7 @@ desired output. Methods can take multiple parameters that we add to the
 signature after the `self` parameter, and those parameters work just like
 parameters in functions.
 
-### Associated Functions
+[Associated Functions](#associated-functions)
 
 All functions defined within an `impl` block are called *associated functions*
 because they’re associated with the type named after the `impl`. We can define
@@ -203,12 +203,12 @@ is `Rectangle`.
 To call this associated function, we use the `::` syntax with the struct name;
 `let sq = Rectangle::square(3);` is an example. This function is namespaced by
 the struct: The `::` syntax is used for both associated functions and
-namespaces created by modules. We’ll discuss modules in Chapter
-7.
+namespaces created by modules. We’ll discuss modules in [Chapter
+7](ch07-02-defining-modules-to-control-scope-and-privacy.html).
 
-### Multiple `impl` Blocks
+[Multiple ](#multiple-impl-blocks)`impl` Blocks
 
-Each struct is allowed to have multiple `impl` blocks. For example, Listing
+`impl` BlocksEach struct is allowed to have multiple `impl` blocks. For example, Listing
 5-15 is equivalent to the code shown in Listing 5-16, which has each method in
 its own `impl` block.
 
@@ -216,7 +216,7 @@ There’s no reason to separate these methods into multiple `impl` blocks here,
 but this is valid syntax. We’ll see a case in which multiple `impl` blocks are
 useful in Chapter 10, where we discuss generic types and traits.
 
-## Summary
+[Summary](#summary)
 
 Structs let you create custom types that are meaningful for your domain. By
 using structs, you can keep associated pieces of data connected to each other

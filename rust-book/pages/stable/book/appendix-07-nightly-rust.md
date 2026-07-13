@@ -2,14 +2,14 @@
 type: Web Page
 title: G - How Rust is Made and “Nightly Rust” - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/appendix-07-nightly-rust.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-## Appendix G - How Rust is Made and “Nightly Rust”
+[Appendix G - How Rust is Made and “Nightly Rust”](#appendix-g---how-rust-is-made-and-nightly-rust)
 
 This appendix is about how Rust is made and how that affects you as a Rust developer.
 
-### Stability Without Stagnation
+[Stability Without Stagnation](#stability-without-stagnation)
 
 As a language, Rust cares a *lot* about the stability of your code. We want
 Rust to be a rock-solid foundation you can build on, and if things were
@@ -19,7 +19,7 @@ their release, when we can no longer change things.
 
 Our solution to this problem is what we call “stability without stagnation”, and our guiding principle is this: you should never have to fear upgrading to a new version of stable Rust. Each upgrade should be painless, but should also bring you new features, fewer bugs, and faster compile times.
 
-### Choo, Choo! Release Channels and Riding the Trains
+[Choo, Choo! Release Channels and Riding the Trains](#choo-choo-release-channels-and-riding-the-trains)
 
 Rust development operates on a *train schedule*. That is, all development is
 done in the main branch of the Rust repository. Releases follow a software
@@ -95,11 +95,11 @@ work as expected, you can report it to the team and get it fixed before the
 next stable release happens! Breakage in a beta release is relatively rare, but
 `rustc` is still a piece of software, and bugs do exist.
 
-### Maintenance time
+[Maintenance time](#maintenance-time)
 
 The Rust project supports the most recent stable version. When a new stable version is released, the old version reaches its end of life (EOL). This means each version is supported for six weeks.
 
-### Unstable Features
+[Unstable Features](#unstable-features)
 
 There’s one more catch with this release model: unstable features. Rust uses a
 technique called “feature flags” to determine what features are enabled in a
@@ -113,7 +113,7 @@ If you’re using a beta or stable release of Rust, you can’t use any feature 
 
 This book only contains information about stable features, as in-progress features are still changing, and surely they’ll be different between when this book was written and when they get enabled in stable builds. You can find documentation for nightly-only features online.
 
-### Rustup and the Role of Rust Nightly
+[Rustup and the Role of Rust Nightly](#rustup-and-the-role-of-rust-nightly)
 
 Rustup makes it easy to change between different release channels of Rust, on a global or per-project basis. By default, you’ll have stable Rust installed. To install nightly, for example:
 
@@ -145,15 +145,25 @@ Now, every time you call `rustc` or `cargo` inside of
 Rust, rather than your default of stable Rust. This comes in handy when you
 have a lot of Rust projects!
 
-### The RFC Process and Teams
+[The RFC Process and Teams](#the-rfc-process-and-teams)
 
 So how do you learn about these new features? Rust’s development model follows
 a *Request For Comments (RFC) process*. If you’d like an improvement in Rust,
 you can write up a proposal, called an RFC.
 
-Anyone can write RFCs to improve Rust, and the proposals are reviewed and discussed by the Rust team, which is comprised of many topic subteams. There’s a full list of the teams on Rust’s website, which includes teams for each area of the project: language design, compiler implementation, infrastructure, documentation, and more. The appropriate team reads the proposal and the comments, writes some comments of their own, and eventually, there’s consensus to accept or reject the feature.
+Anyone can write RFCs to improve Rust, and the proposals are reviewed and
+discussed by the Rust team, which is comprised of many topic subteams. There’s
+a full list of the teams [on Rust’s website](https://www.rust-lang.org/governance), which includes teams for
+each area of the project: language design, compiler implementation,
+infrastructure, documentation, and more. The appropriate team reads the
+proposal and the comments, writes some comments of their own, and eventually,
+there’s consensus to accept or reject the feature.
 
-If the feature is accepted, an issue is opened on the Rust repository, and someone can implement it. The person who implements it very well may not be the person who proposed the feature in the first place! When the implementation is ready, it lands on the main branch behind a feature gate, as we discussed in the “Unstable Features” section.
+If the feature is accepted, an issue is opened on the Rust repository, and
+someone can implement it. The person who implements it very well may not be the
+person who proposed the feature in the first place! When the implementation is
+ready, it lands on the main branch behind a feature gate, as we discussed in
+the [“Unstable Features”](#unstable-features) section.
 
 After some time, once Rust developers who use nightly releases have been able to try out the new feature, team members will discuss the feature, how it’s worked out on nightly, and decide if it should make it into stable Rust or not. If the decision is to move forward, the feature gate is removed, and the feature is now considered stable! It rides the trains into a new stable release of Rust.
 

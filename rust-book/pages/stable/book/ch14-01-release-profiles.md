@@ -2,10 +2,10 @@
 type: Web Page
 title: Customizing Builds with Release Profiles - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch14-01-release-profiles.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-## Customizing Builds with Release Profiles
+[Customizing Builds with Release Profiles](#customizing-builds-with-release-profiles)
 
 In Rust, *release profiles* are predefined, customizable profiles with
 different configurations that allow a programmer to have more control over
@@ -65,7 +65,8 @@ Cargo will use the defaults for the `dev` profile plus our customization to
 `opt-level`. Because we set `opt-level` to `1`, Cargo will apply more
 optimizations than the default, but not as many as in a release build.
 
-For the full list of configuration options and defaults for each profile, see Cargo’s documentation.
+For the full list of configuration options and defaults for each profile, see
+[Cargo’s documentation](https://doc.rust-lang.org/cargo/reference/profiles.html).
 
 # Citations
 

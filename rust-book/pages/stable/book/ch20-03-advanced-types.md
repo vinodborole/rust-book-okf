@@ -2,10 +2,10 @@
 type: Web Page
 title: Advanced Types - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch20-03-advanced-types.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-## Advanced Types
+[Advanced Types](#advanced-types)
 
 The Rust type system has some features that we’ve so far mentioned but haven’t
 yet discussed. We’ll start by discussing newtypes in general as we examine why
@@ -13,10 +13,10 @@ they are useful as types. Then, we’ll move on to type aliases, a feature
 similar to newtypes but with slightly different semantics. We’ll also discuss
 the `!` type and dynamically sized types.
 
-### Type Safety and Abstraction with the Newtype Pattern
+[Type Safety and Abstraction with the Newtype Pattern](#type-safety-and-abstraction-with-the-newtype-pattern)
 
-This section assumes you’ve read the earlier section “Implementing External
-Traits with the Newtype Pattern”. The newtype pattern
+This section assumes you’ve read the earlier section [“Implementing External
+Traits with the Newtype Pattern”](ch20-02-advanced-traits.html#implementing-external-traits-with-the-newtype-pattern). The newtype pattern
 is also useful for tasks beyond those we’ve discussed so far, including
 statically enforcing that values are never confused and indicating the units of
 a value. You saw an example of using newtypes to indicate units in Listing
@@ -33,12 +33,12 @@ associated with their name. Code using `People` would only interact with the
 public API we provide, such as a method to add a name string to the `People`
 collection; that code wouldn’t need to know that we assign an `i32` ID to names
 internally. The newtype pattern is a lightweight way to achieve encapsulation
-to hide implementation details, which we discussed in the “Encapsulation that
+to hide implementation details, which we discussed in the [“Encapsulation that
 Hides Implementation
-Details”
+Details”](ch18-01-what-is-oo.html#encapsulation-that-hides-implementation-details)
 section in Chapter 18.
 
-### Type Synonyms and Type Aliases
+[Type Synonyms and Type Aliases](#type-synonyms-and-type-aliases)
 
 Rust provides the ability to declare a *type alias* to give an existing type
 another name. For this we use the `type` keyword. For example, we can create
@@ -136,7 +136,7 @@ us a consistent interface across all of `std::io`. Because it’s an alias, it�
 just another `Result<T, E>`, which means we can use any methods that work on
 `Result<T, E>` with it, as well as special syntax like the `?` operator.
 
-### The Never Type That Never Returns
+[The Never Type That Never Returns](#the-never-type-that-never-returns)
 
 Rust has a special type named `!` that’s known in type theory lingo as the
 *empty type* because it has no values. We prefer to call it the *never type*
@@ -155,12 +155,12 @@ so `bar` can never possibly return.
 
 But what use is a type you can never create values for? Recall the code from Listing 2-5, part of the number-guessing game; we’ve reproduced a bit of it here in Listing 20-27.
 
-At the time, we skipped over some details in this code. In “The `match`
-Control Flow Construct”
-section in Chapter 6, we discussed that `match` arms must all return the same
-type. So, for example, the following code doesn’t work:
+At the time, we skipped over some details in this code. In [“The  match
+Control Flow Construct”](ch06-02-match.html#the-match-control-flow-construct)
+section in Chapter 6, we discussed that 
 
-```
+`match` arms must all return the same
+type. So, for example, the following code doesn’t work:```
 fn main() {
     let guess = "3";
     let guess = match guess.trim().parse() {
@@ -224,9 +224,9 @@ Here, the loop never ends, so `!` is the value of the expression. However, this
 wouldn’t be true if we included a `break`, because the loop would terminate
 when it got to the `break`.
 
-### Dynamically Sized Types and the `Sized` Trait
+[Dynamically Sized Types and the ](#dynamically-sized-types-and-the-sized-trait)`Sized` Trait
 
-Rust needs to know certain details about its types, such as how much space to
+`Sized` TraitRust needs to know certain details about its types, such as how much space to
 allocate for a value of a particular type. This leaves one corner of its type
 system a little confusing at first: the concept of *dynamically sized types*.
 Sometimes referred to as *DSTs* or *unsized types*, these types let us write
@@ -254,7 +254,7 @@ holding a dynamically sized type.
 
 So, what do we do? In this case, you already know the answer: We make the type
 of `s1` and `s2` string slice (`&str`) rather than `str`. Recall from the
-“String Slices” section in Chapter 4 that the
+[“String Slices”](ch04-03-slices.html#string-slices) section in Chapter 4 that the
 slice data structure only stores the starting position and the length of the
 slice. So, although `&T` is a single value that stores the memory address of
 where the `T` is located, a string slice is *two* values: the address of the
@@ -269,8 +269,8 @@ put values of dynamically sized types behind a pointer of some kind.
 We can combine `str` with all kinds of pointers: for example, `Box<str>` or
 `Rc<str>`. In fact, you’ve seen this before but with a different dynamically
 sized type: traits. Every trait is a dynamically sized type we can refer to by
-using the name of the trait. In the “Using Trait Objects to Abstract over
-Shared Behavior” section in Chapter 18, we mentioned that to use traits as trait
+using the name of the trait. In the [“Using Trait Objects to Abstract over
+Shared Behavior”](ch18-02-trait-objects.html#using-trait-objects-to-abstract-over-shared-behavior) section in Chapter 18, we mentioned that to use traits as trait
 objects, we must put them behind a pointer, such as `&dyn Trait` or `Box<dyn Trait>` (`Rc<dyn Trait>` would work too).
 
 To work with DSTs, Rust provides the `Sized` trait to determine whether or not

@@ -2,12 +2,15 @@
 type: Web Page
 title: Transfer Data Between Threads with Message Passing - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch16-02-message-passing.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-## Transfer Data Between Threads with Message Passing
+[Transfer Data Between Threads with Message Passing](#transfer-data-between-threads-with-message-passing)
 
-One increasingly popular approach to ensuring safe concurrency is message passing, where threads or actors communicate by sending each other messages containing data. Here’s the idea in a slogan from the Go language documentation: “Do not communicate by sharing memory; instead, share memory by communicating.”
+One increasingly popular approach to ensuring safe concurrency is message
+passing, where threads or actors communicate by sending each other messages
+containing data. Here’s the idea in a slogan from [the Go language documentation](https://golang.org/doc/effective_go.html#concurrency):
+“Do not communicate by sharing memory; instead, share memory by communicating.”
 
 To accomplish message-sending concurrency, Rust’s standard library provides an
 implementation of channels. A *channel* is a general programming concept by
@@ -86,7 +89,7 @@ Got: hi
 ```
 Perfect!
 
-### Transferring Ownership Through Channels
+[Transferring Ownership Through Channels](#transferring-ownership-through-channels)
 
 The ownership rules play a vital role in message sending because they help you
 write safe, concurrent code. Preventing errors in concurrent programming is the
@@ -125,7 +128,7 @@ takes ownership of its parameter, and when the value is moved the receiver
 takes ownership of it. This stops us from accidentally using the value again
 after sending it; the ownership system checks that everything is okay.
 
-### Sending Multiple Values
+[Sending Multiple Values](#sending-multiple-values)
 
 The code in Listing 16-8 compiled and ran, but it didn’t clearly show us that two separate threads were talking to each other over the channel.
 
@@ -152,7 +155,7 @@ Because we don’t have any code that pauses or delays in the `for` loop in the
 main thread, we can tell that the main thread is waiting to receive values from
 the spawned thread.
 
-### Creating Multiple Producers
+[Creating Multiple Producers](#creating-multiple-producers)
 
 Earlier we mentioned that `mpsc` was an acronym for *multiple producer, single
 consumer*. Let’s put `mpsc` to use and expand the code in Listing 16-10 to

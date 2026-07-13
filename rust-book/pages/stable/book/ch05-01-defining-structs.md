@@ -2,12 +2,16 @@
 type: Web Page
 title: Defining and Instantiating Structs - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch05-01-defining-structs.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-## Defining and Instantiating Structs
+[Defining and Instantiating Structs](#defining-and-instantiating-structs)
 
-Structs are similar to tuples, discussed in “The Tuple Type” section, in that both hold multiple related values. Like tuples, the pieces of a struct can be different types. Unlike with tuples, in a struct you’ll name each piece of data so it’s clear what the values mean. Adding these names means that structs are more flexible than tuples: You don’t have to rely on the order of the data to specify or access the values of an instance.
+Structs are similar to tuples, discussed in [“The Tuple Type”](ch03-02-data-types.html#the-tuple-type) section, in that both hold multiple related values. Like tuples, the
+pieces of a struct can be different types. Unlike with tuples, in a struct
+you’ll name each piece of data so it’s clear what the values mean. Adding these
+names means that structs are more flexible than tuples: You don’t have to rely
+on the order of the data to specify or access the values of an instance.
 
 To define a struct, we enter the keyword `struct` and name the entire struct. A
 struct’s name should describe the significance of the pieces of data being
@@ -41,7 +45,7 @@ fields, but having to repeat the `email` and `username` field names and
 variables is a bit tedious. If the struct had more fields, repeating each name
 would get even more annoying. Luckily, there’s a convenient shorthand!
 
-### Using the Field Init Shorthand
+[Using the Field Init Shorthand](#using-the-field-init-shorthand)
 
 Because the parameter names and the struct field names are exactly the same in
 Listing 5-4, we can use the *field init shorthand* syntax to rewrite
@@ -54,7 +58,7 @@ named `email`. We want to set the `email` field’s value to the value in the
 the `email` parameter have the same name, we only need to write `email` rather
 than `email: email`.
 
-### Creating Instances with Struct Update Syntax
+[Creating Instances with Struct Update Syntax](#creating-instances-with-struct-update-syntax)
 
 It’s often useful to create a new instance of a struct that includes most of the values from another instance of the same type, but changes some of them. You can do this using struct update syntax.
 
@@ -75,18 +79,18 @@ many fields as we want in any order, regardless of the order of the fields in
 the struct’s definition.
 
 Note that the struct update syntax uses `=` like an assignment; this is because
-it moves the data, just as we saw in the “Variables and Data Interacting with
-Move” section. In this example, we can no longer use
+it moves the data, just as we saw in the [“Variables and Data Interacting with
+Move”](ch04-01-what-is-ownership.html#variables-and-data-interacting-with-move) section. In this example, we can no longer use
 `user1` after creating `user2` because the `String` in the `username` field of
 `user1` was moved into `user2`. If we had given `user2` new `String` values for
 both `email` and `username`, and thus only used the `active` and `sign_in_count`
 values from `user1`, then `user1` would still be valid after creating `user2`.
 Both `active` and `sign_in_count` are types that implement the `Copy` trait, so
-the behavior we discussed in the “Stack-Only Data: Copy”
+the behavior we discussed in the [“Stack-Only Data: Copy”](ch04-01-what-is-ownership.html#stack-only-data-copy)
 section would apply. We can also still use `user1.email` in this example,
 because its value was not moved out of `user1`.
 
-### Creating Different Types with Tuple Structs
+[Creating Different Types with Tuple Structs](#creating-different-types-with-tuple-structs)
 
 Rust also supports structs that look similar to tuples, called *tuple structs*.
 Tuple structs have the added meaning the struct name provides but don’t have
@@ -111,11 +115,11 @@ require you to name the type of the struct when you destructure them. For
 example, we would write `let Point(x, y, z) = origin;` to destructure the
 values in the `origin` point into variables named `x`, `y`, and `z`.
 
-### Defining Unit-Like Structs
+[Defining Unit-Like Structs](#defining-unit-like-structs)
 
 You can also define structs that don’t have any fields! These are called
 *unit-like structs* because they behave similarly to `()`, the unit type that
-we mentioned in “The Tuple Type” section. Unit-like
+we mentioned in [“The Tuple Type”](ch03-02-data-types.html#the-tuple-type) section. Unit-like
 structs can be useful when you need to implement a trait on some type but don’t
 have any data that you want to store in the type itself. We’ll discuss traits
 in Chapter 10. Here’s an example of declaring and instantiating a unit struct
@@ -131,7 +135,7 @@ have a known result for testing purposes. We wouldn’t need any data to
 implement that behavior! You’ll see in Chapter 10 how to define traits and
 implement them on any type, including unit-like structs.
 
-### Ownership of Struct Data
+[Ownership of Struct Data](#ownership-of-struct-data)
 
 In the `User` struct definition in Listing 5-1, we used the owned `String`
 type rather than the `&str` string slice type. This is a deliberate choice

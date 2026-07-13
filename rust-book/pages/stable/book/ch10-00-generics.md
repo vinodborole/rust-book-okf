@@ -2,10 +2,10 @@
 type: Web Page
 title: Generic Types, Traits, and Lifetimes - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch10-00-generics.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-# Generic Types, Traits, and Lifetimes
+[Generic Types, Traits, and Lifetimes](#generic-types-traits-and-lifetimes)
 
 Every programming language has tools for effectively handling the duplication
 of concepts. In Rust, one such tool is *generics*: abstract stand-ins for
@@ -30,7 +30,7 @@ us to give the compiler enough information about borrowed values so that it can
 ensure that references will be valid in more situations than it could without
 our help.
 
-## Removing Duplication by Extracting a Function
+[Removing Duplication by Extracting a Function](#removing-duplication-by-extracting-a-function)
 
 Generics allow us to replace specific types with a placeholder that represents multiple types to remove code duplication. Before diving into generics syntax, let’s first look at how to remove duplication in a way that doesn’t involve generic types by extracting a function that replaces specific values with a placeholder that represents multiple values. Then, we’ll apply the same technique to extract a generic function! By looking at how to recognize duplicated code you can extract into a function, you’ll start to recognize duplicated code that can use generics.
 

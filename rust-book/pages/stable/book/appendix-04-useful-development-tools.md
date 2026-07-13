@@ -2,16 +2,16 @@
 type: Web Page
 title: D - Useful Development Tools - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/appendix-04-useful-development-tools.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-## Appendix D: Useful Development Tools
+[Appendix D: Useful Development Tools](#appendix-d-useful-development-tools)
 
 In this appendix, we talk about some useful development tools that the Rust project provides. We’ll look at automatic formatting, quick ways to apply warning fixes, a linter, and integrating with IDEs.
 
-### Automatic Formatting with `rustfmt`
+[Automatic Formatting with ](#automatic-formatting-with-rustfmt)`rustfmt`
 
-The `rustfmt` tool reformats your code according to the community code style.
+`rustfmt`The `rustfmt` tool reformats your code according to the community code style.
 Many collaborative projects use `rustfmt` to prevent arguments about which
 style to use when writing Rust: Everyone formats their code using the tool.
 
@@ -26,11 +26,11 @@ $ cargo fmt
 ```
 Running this command reformats all the Rust code in the current crate. This
 should only change the code style, not the code semantics. For more information
-on `rustfmt`, see its documentation.
+on `rustfmt`, see [its documentation](https://github.com/rust-lang/rustfmt).
 
-### Fix Your Code with `rustfix`
+[Fix Your Code with ](#fix-your-code-with-rustfix)`rustfix`
 
-The `rustfix` tool is included with Rust installations and can automatically
+`rustfix`The `rustfix` tool is included with Rust installations and can automatically
 fix compiler warnings that have a clear way to correct the problem that’s
 likely what you want. You’ve probably seen compiler warnings before. For
 example, consider this code:
@@ -82,9 +82,9 @@ fn main() {
 The variable `x` is now immutable, and the warning no longer appears.
 
 You can also use the `cargo fix` command to transition your code between
-different Rust editions. Editions are covered in Appendix E.
+different Rust editions. Editions are covered in [Appendix E](appendix-05-editions.html).
 
-### More Lints with Clippy
+[More Lints with Clippy](#more-lints-with-clippy)
 
 The Clippy tool is a collection of lints to analyze your code so that you can catch common mistakes and improve your Rust code. Clippy is included with standard Rust installations.
 
@@ -114,17 +114,20 @@ instead. You would then change your code to use the `PI` constant.
 
 The following code doesn’t result in any errors or warnings from Clippy:
 
-For more information on Clippy, see its documentation.
+For more information on Clippy, see [its documentation](https://github.com/rust-lang/rust-clippy).
 
-### IDE Integration Using `rust-analyzer`
+[IDE Integration Using ](#ide-integration-using-rust-analyzer)`rust-analyzer`
 
-To help with IDE integration, the Rust community recommends using
-`rust-analyzer`. This tool is a set of
-compiler-centric utilities that speak Language Server Protocol, which is a specification for IDEs and programming languages to
-communicate with each other. Different clients can use `rust-analyzer`, such as
-the Rust analyzer plug-in for Visual Studio Code.
+`rust-analyzer`To help with IDE integration, the Rust community recommends using
+[ rust-analyzer](https://rust-analyzer.github.io). This tool is a set of
+compiler-centric utilities that speak 
 
-Visit the `rust-analyzer` project’s home page
+[Language Server Protocol](http://langserver.org/), which is a specification for IDEs and programming languages to communicate with each other. Different clients can use
+
+`rust-analyzer`, such as
+[the Rust analyzer plug-in for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer).
+
+Visit the `rust-analyzer` project’s [home page](https://rust-analyzer.github.io)
 for installation instructions, then install the language server support in your
 particular IDE. Your IDE will gain capabilities such as autocompletion, jump to
 definition, and inline errors.

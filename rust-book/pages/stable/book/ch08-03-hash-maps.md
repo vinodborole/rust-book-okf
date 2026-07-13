@@ -2,10 +2,10 @@
 type: Web Page
 title: Storing Keys with Associated Values in Hash Maps - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch08-03-hash-maps.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-## Storing Keys with Associated Values in Hash Maps
+[Storing Keys with Associated Values in Hash Maps](#storing-keys-with-associated-values-in-hash-maps)
 
 The last of our common collections is the hash map. The type `HashMap<K, V>`
 stores a mapping of keys of type `K` to values of type `V` using a *hashing
@@ -20,7 +20,7 @@ We’ll go over the basic API of hash maps in this section, but many more goodie
 are hiding in the functions defined on `HashMap<K, V>` by the standard library.
 As always, check the standard library documentation for more information.
 
-### Creating a New Hash Map
+[Creating a New Hash Map](#creating-a-new-hash-map)
 
 One way to create an empty hash map is to use `new` and to add elements with
 `insert`. In Listing 8-20, we’re keeping track of the scores of two teams whose
@@ -38,7 +38,7 @@ keys of type `String` and values of type `i32`. Like vectors, hash maps are
 homogeneous: All of the keys must have the same type, and all of the values
 must have the same type.
 
-### Accessing Values in a Hash Map
+[Accessing Values in a Hash Map](#accessing-values-in-a-hash-map)
 
 We can get a value out of the hash map by providing its key to the `get`
 method, as shown in Listing 8-21.
@@ -70,7 +70,7 @@ This code will print each pair in an arbitrary order:
 Yellow: 50
 Blue: 10
 ```
-### Managing Ownership in Hash Maps
+[Managing Ownership in Hash Maps](#managing-ownership-in-hash-maps)
 
 For types that implement the `Copy` trait, like `i32`, the values are copied
 into the hash map. For owned values like `String`, the values will be moved and
@@ -79,9 +79,13 @@ the hash map will be the owner of those values, as demonstrated in Listing 8-22.
 We aren’t able to use the variables `field_name` and `field_value` after
 they’ve been moved into the hash map with the call to `insert`.
 
-If we insert references to values into the hash map, the values won’t be moved into the hash map. The values that the references point to must be valid for at least as long as the hash map is valid. We’ll talk more about these issues in “Validating References with Lifetimes” in Chapter 10.
+If we insert references to values into the hash map, the values won’t be moved
+into the hash map. The values that the references point to must be valid for at
+least as long as the hash map is valid. We’ll talk more about these issues in
+[“Validating References with
+Lifetimes”](ch10-03-lifetime-syntax.html#validating-references-with-lifetimes) in Chapter 10.
 
-### Updating a Hash Map
+[Updating a Hash Map](#updating-a-hash-map)
 
 Although the number of key and value pairs is growable, each unique key can
 only have one value associated with it at a time (but not vice versa: For
@@ -95,7 +99,7 @@ keep the old value and ignore the new value, only adding the new value if the
 key *doesn’t* already have a value. Or you could combine the old value and the
 new value. Let’s look at how to do each of these!
 
-#### Overwriting a Value
+[Overwriting a Value](#overwriting-a-value)
 
 If we insert a key and a value into a hash map and then insert that same key
 with a different value, the value associated with that key will be replaced.
@@ -106,7 +110,7 @@ team’s key both times.
 This code will print `{"Blue": 25}`. The original value of `10` has been
 overwritten.
 
-#### Adding a Key and Value Only If a Key Isn’t Present
+[Adding a Key and Value Only If a Key Isn’t Present](#adding-a-key-and-value-only-if-a-key-isnt-present)
 
 It’s common to check whether a particular key already exists in the hash map with a value and then to take the following actions: If the key does exist in the hash map, the existing value should remain the way it is; if the key doesn’t exist, insert it and a value for it.
 
@@ -129,7 +133,7 @@ first call to `entry` will insert the key for the Yellow team with the value
 `entry` will not change the hash map, because the Blue team already has the
 value `10`.
 
-#### Updating a Value Based on the Old Value
+[Updating a Value Based on the Old Value](#updating-a-value-based-on-the-old-value)
 
 Another common use case for hash maps is to look up a key’s value and then
 update it based on the old value. For instance, Listing 8-25 shows code that
@@ -139,8 +143,8 @@ seen that word. If it’s the first time we’ve seen a word, we’ll first inse
 the value `0`.
 
 This code will print `{"world": 2, "hello": 1, "wonderful": 1}`. You might see
-the same key-value pairs printed in a different order: Recall from “Accessing
-Values in a Hash Map” that iterating over a hash map
+the same key-value pairs printed in a different order: Recall from [“Accessing
+Values in a Hash Map”](#accessing-values-in-a-hash-map) that iterating over a hash map
 happens in an arbitrary order.
 
 The `split_whitespace` method returns an iterator over subslices, separated by
@@ -151,22 +155,24 @@ we must first dereference `count` using the asterisk (`*`). The mutable
 reference goes out of scope at the end of the `for` loop, so all of these
 changes are safe and allowed by the borrowing rules.
 
-### Hashing Functions
+[Hashing Functions](#hashing-functions)
 
 By default, `HashMap` uses a hashing function called *SipHash* that can provide
 resistance to denial-of-service (DoS) attacks involving hash
-tables1. This is not the fastest hashing algorithm
+tables 1. This is not the fastest hashing algorithm
 available, but the trade-off for better security that comes with the drop in
 performance is worth it. If you profile your code and find that the default
 hash function is too slow for your purposes, you can switch to another function
-by specifying a different hasher. A *hasher* is a type that implements the
-`BuildHasher` trait. We’ll talk about traits and how to implement them in
-Chapter 10. You don’t necessarily have to implement
-your own hasher from scratch; crates.io
-has libraries shared by other Rust users that provide hashers implementing many
-common hashing algorithms.
+by specifying a different hasher. A 
 
-## Summary
+*hasher*is a type that implements the
+
+`BuildHasher` trait. We’ll talk about traits and how to implement them in
+[Chapter 10](ch10-02-traits.html). You don’t necessarily have to implement your own hasher from scratch;
+
+[crates.io](https://crates.io/)has libraries shared by other Rust users that provide hashers implementing many common hashing algorithms.
+
+[Summary](#summary)
 
 Vectors, strings, and hash maps will provide a large amount of functionality necessary in programs when you need to store, access, and modify data. Here are some exercises you should now be equipped to solve:
 

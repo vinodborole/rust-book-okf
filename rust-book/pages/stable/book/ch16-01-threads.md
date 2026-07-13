@@ -2,10 +2,10 @@
 type: Web Page
 title: Using Threads to Run Code Simultaneously - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch16-01-threads.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-## Using Threads to Run Code Simultaneously
+[Using Threads to Run Code Simultaneously](#using-threads-to-run-code-simultaneously)
 
 In most current operating systems, an executed program’s code is run in a
 *process*, and the operating system will manage multiple processes at once.
@@ -30,9 +30,9 @@ language thread. There are crates that implement other models of threading that
 make different trade-offs to the 1:1 model. (Rust’s async system, which we will
 see in the next chapter, provides another approach to concurrency as well.)
 
-### Creating a New Thread with `spawn`
+[Creating a New Thread with ](#creating-a-new-thread-with-spawn)`spawn`
 
-To create a new thread, we call the `thread::spawn` function and pass it a
+`spawn`To create a new thread, we call the `thread::spawn` function and pass it a
 closure (we talked about closures in Chapter 13) containing the code we want to
 run in the new thread. The example in Listing 16-1 prints some text from a main
 thread and other text from a new thread.
@@ -60,7 +60,7 @@ before the main thread shut down.
 
 If you run this code and only see output from the main thread, or don’t see any overlap, try increasing the numbers in the ranges to create more opportunities for the operating system to switch between the threads.
 
-### Waiting for All Threads to Finish
+[Waiting for All Threads to Finish](#waiting-for-all-threads-to-finish)
 
 The code in Listing 16-1 not only stops the spawned thread prematurely most of the time due to the main thread ending, but because there is no guarantee on the order in which threads run, we also can’t guarantee that the spawned thread will get to run at all!
 
@@ -120,12 +120,12 @@ hi number 4 from the main thread!
 Small details, such as where `join` is called, can affect whether or not your
 threads run at the same time.
 
-### Using `move` Closures with Threads
+[Using ](#using-move-closures-with-threads)`move` Closures with Threads
 
-We’ll often use the `move` keyword with closures passed to `thread::spawn`
+`move` Closures with ThreadsWe’ll often use the `move` keyword with closures passed to `thread::spawn`
 because the closure will then take ownership of the values it uses from the
 environment, thus transferring ownership of those values from one thread to
-another. In “Capturing References or Moving Ownership” in Chapter 13, we discussed `move` in the context of closures. Now we’ll
+another. In [“Capturing References or Moving Ownership”](ch13-01-closures.html#capturing-references-or-moving-ownership) in Chapter 13, we discussed `move` in the context of closures. Now we’ll
 concentrate more on the interaction between `move` and `thread::spawn`.
 
 Notice in Listing 16-1 that the closure we pass to `thread::spawn` takes no

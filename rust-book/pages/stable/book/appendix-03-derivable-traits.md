@@ -2,10 +2,10 @@
 type: Web Page
 title: C - Derivable Traits - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/appendix-03-derivable-traits.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-## Appendix C: Derivable Traits
+[Appendix C: Derivable Traits](#appendix-c-derivable-traits)
 
 In various places in the book, we’ve discussed the `derive` attribute, which
 you can apply to a struct or enum definition. The `derive` attribute generates
@@ -22,7 +22,7 @@ library that you can use with `derive`. Each section covers:
 - Examples of operations that require the trait
 
 If you want different behavior from that provided by the `derive` attribute,
-consult the standard library documentation
+consult the [standard library documentation](../std/index.html)
 for each trait for details on how to manually implement them.
 
 The traits listed here are the only ones defined by the standard library that
@@ -40,12 +40,12 @@ it can’t provide appropriate default behavior for you.
 The list of derivable traits provided in this appendix is not comprehensive:
 Libraries can implement `derive` for their own traits, making the list of
 traits you can use `derive` with truly open ended. Implementing `derive`
-involves using a procedural macro, which is covered in the “Custom `derive`
-Macros” section in Chapter 20.
+involves using a procedural macro, which is covered in the [“Custom  derive
+Macros”](ch20-05-macros.html#custom-derive-macros) section in Chapter 20.
 
 `Debug` for Programmer Output
 
-The `Debug` trait enables debug formatting in format strings, which you
+`Debug` for Programmer OutputThe `Debug` trait enables debug formatting in format strings, which you
 indicate by adding `:?` within `{}` placeholders.
 
 The `Debug` trait allows you to print instances of a type for debugging
@@ -59,7 +59,7 @@ weren’t equal.
 
 `PartialEq` and `Eq` for Equality Comparisons
 
-The `PartialEq` trait allows you to compare instances of a type to check for
+`PartialEq` and `Eq` for Equality ComparisonsThe `PartialEq` trait allows you to compare instances of a type to check for
 equality and enables use of the `==` and `!=` operators.
 
 Deriving `PartialEq` implements the `eq` method. When `PartialEq` is derived on
@@ -83,7 +83,7 @@ the `HashMap<K, V>` can tell whether two keys are the same.
 
 `PartialOrd` and `Ord` for Ordering Comparisons
 
-The `PartialOrd` trait allows you to compare instances of a type for sorting
+`PartialOrd` and `Ord` for Ordering ComparisonsThe `PartialOrd` trait allows you to compare instances of a type for sorting
 purposes. A type that implements `PartialOrd` can be used with the `<`, `>`,
 `<=`, and `>=` operators. You can only apply the `PartialOrd` trait to types
 that also implement `PartialEq`.
@@ -117,10 +117,10 @@ a data structure that stores data based on the sort order of the values.
 
 `Clone` and `Copy` for Duplicating Values
 
-The `Clone` trait allows you to explicitly create a deep copy of a value, and
+`Clone` and `Copy` for Duplicating ValuesThe `Clone` trait allows you to explicitly create a deep copy of a value, and
 the duplication process might involve running arbitrary code and copying heap
-data. See the “Variables and Data Interacting with
-Clone” section in
+data. See the [“Variables and Data Interacting with
+Clone”](ch04-01-what-is-ownership.html#variables-and-data-interacting-with-clone) section in
 Chapter 4 for more information on `Clone`.
 
 Deriving `Clone` implements the `clone` method, which when implemented for the
@@ -133,8 +133,8 @@ returned from `to_vec` will need to own its instances, so `to_vec` calls
 `clone` on each item. Thus, the type stored in the slice must implement `Clone`.
 
 The `Copy` trait allows you to duplicate a value by only copying bits stored on
-the stack; no arbitrary code is necessary. See the “Stack-Only Data:
-Copy” section in Chapter 4 for more
+the stack; no arbitrary code is necessary. See the [“Stack-Only Data:
+Copy”](ch04-01-what-is-ownership.html#stack-only-data-copy) section in Chapter 4 for more
 information on `Copy`.
 
 The `Copy` trait doesn’t define any methods to prevent programmers from
@@ -156,7 +156,7 @@ code might be slower or have to use `clone` in places.
 
 `Hash` for Mapping a Value to a Value of Fixed Size
 
-The `Hash` trait allows you to take an instance of a type of arbitrary size and
+`Hash` for Mapping a Value to a Value of Fixed SizeThe `Hash` trait allows you to take an instance of a type of arbitrary size and
 map that instance to a value of fixed size using a hash function. Deriving
 `Hash` implements the `hash` method. The derived implementation of the `hash`
 method combines the result of calling `hash` on each of the parts of the type,
@@ -167,16 +167,16 @@ to store data efficiently.
 
 `Default` for Default Values
 
-The `Default` trait allows you to create a default value for a type. Deriving
+`Default` for Default ValuesThe `Default` trait allows you to create a default value for a type. Deriving
 `Default` implements the `default` function. The derived implementation of the
 `default` function calls the `default` function on each part of the type,
 meaning all fields or values in the type must also implement `Default` to
 derive `Default`.
 
 The `Default::default` function is commonly used in combination with the struct
-update syntax discussed in the “Creating Instances from Other Instances with
+update syntax discussed in the [“Creating Instances from Other Instances with
 Struct Update
-Syntax” section in Chapter 5. You can customize a few fields of a struct and
+Syntax”](ch05-01-defining-structs.html#creating-instances-from-other-instances-with-struct-update-syntax) section in Chapter 5. You can customize a few fields of a struct and
 then set and use a default value for the rest of the fields by using
 `..Default::default()`.
 

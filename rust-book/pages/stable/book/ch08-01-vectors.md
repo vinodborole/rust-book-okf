@@ -2,10 +2,10 @@
 type: Web Page
 title: Storing Lists of Values with Vectors - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch08-01-vectors.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-## Storing Lists of Values with Vectors
+[Storing Lists of Values with Vectors](#storing-lists-of-values-with-vectors)
 
 The first collection type we’ll look at is `Vec<T>`, also known as a vector.
 Vectors allow you to store more than one value in a single data structure that
@@ -13,7 +13,7 @@ puts all the values next to each other in memory. Vectors can only store values
 of the same type. They are useful when you have a list of items, such as the
 lines of text in a file or the prices of items in a shopping cart.
 
-### Creating a New Vector
+[Creating a New Vector](#creating-a-new-vector)
 
 To create a new, empty vector, we call the `Vec::new` function, as shown in
 Listing 8-1.
@@ -32,14 +32,14 @@ the type of value you want to store, so you rarely need to do this type
 annotation. Rust conveniently provides the `vec!` macro, which will create a
 new vector that holds the values you give it. Listing 8-2 creates a new
 `Vec<i32>` that holds the values `1`, `2`, and `3`. The integer type is `i32`
-because that’s the default integer type, as we discussed in the “Data
-Types” section of Chapter 3.
+because that’s the default integer type, as we discussed in the [“Data
+Types”](ch03-02-data-types.html#data-types) section of Chapter 3.
 
 Because we’ve given initial `i32` values, Rust can infer that the type of `v`
 is `Vec<i32>`, and the type annotation isn’t necessary. Next, we’ll look at how
 to modify a vector.
 
-### Updating a Vector
+[Updating a Vector](#updating-a-vector)
 
 To create a vector and then add elements to it, we can use the `push` method,
 as shown in Listing 8-3.
@@ -49,7 +49,7 @@ make it mutable using the `mut` keyword, as discussed in Chapter 3. The numbers
 we place inside are all of type `i32`, and Rust infers this from the data, so
 we don’t need the `Vec<i32>` annotation.
 
-### Reading Elements of Vectors
+[Reading Elements of Vectors](#reading-elements-of-vectors)
 
 There are two ways to reference a value stored in a vector: via indexing or by
 using the `get` method. In the following examples, we’ve annotated the types of
@@ -105,10 +105,10 @@ error: could not compile `collections` (bin "collections") due to 1 previous err
 ```
 The code in Listing 8-6 might look like it should work: Why should a reference to the first element care about changes at the end of the vector? This error is due to the way vectors work: Because vectors put the values next to each other in memory, adding a new element onto the end of the vector might require allocating new memory and copying the old elements to the new space, if there isn’t enough room to put all the elements next to each other where the vector is currently stored. In that case, the reference to the first element would be pointing to deallocated memory. The borrowing rules prevent programs from ending up in that situation.
 
-Note: For more on the implementation details of the `Vec<T>` type, see “The
-Rustonomicon”.
+Note: For more on the implementation details of the `Vec<T>` type, see [“The
+Rustonomicon”](../nomicon/vec/vec.html).
 
-### Iterating Over the Values in a Vector
+[Iterating Over the Values in a Vector](#iterating-over-the-values-in-a-vector)
 
 To access each element in a vector in turn, we would iterate through all of the
 elements rather than use indices to access one at a time. Listing 8-7 shows how
@@ -121,8 +121,8 @@ will add `50` to each element.
 
 To change the value that the mutable reference refers to, we have to use the
 `*` dereference operator to get to the value in `i` before we can use the `+=`
-operator. We’ll talk more about the dereference operator in the “Following the
-Reference to the Value” section of Chapter 15.
+operator. We’ll talk more about the dereference operator in the [“Following the
+Reference to the Value”](ch15-02-deref.html#following-the-pointer-to-the-value-with-the-dereference-operator) section of Chapter 15.
 
 Iterating over a vector, whether immutably or mutably, is safe because of the
 borrow checker’s rules. If we attempted to insert or remove items in the `for`
@@ -131,7 +131,7 @@ similar to the one we got with the code in Listing 8-6. The reference to the
 vector that the `for` loop holds prevents simultaneous modification of the
 whole vector.
 
-### Using an Enum to Store Multiple Types
+[Using an Enum to Store Multiple Types](#using-an-enum-to-store-multiple-types)
 
 Vectors can only store values that are of the same type. This can be inconvenient; there are definitely use cases for needing to store a list of items of different types. Fortunately, the variants of an enum are defined under the same enum type, so when we need one type to represent elements of different types, we can define and use an enum!
 
@@ -148,11 +148,11 @@ at compile time that every possible case is handled, as discussed in Chapter 6.
 If you don’t know the exhaustive set of types a program will get at runtime to store in a vector, the enum technique won’t work. Instead, you can use a trait object, which we’ll cover in Chapter 18.
 
 Now that we’ve discussed some of the most common ways to use vectors, be sure
-to review the API documentation for all of the many
+to review [the API documentation](../std/vec/struct.Vec.html) for all of the many
 useful methods defined on `Vec<T>` by the standard library. For example, in
 addition to `push`, a `pop` method removes and returns the last element.
 
-### Dropping a Vector Drops Its Elements
+[Dropping a Vector Drops Its Elements](#dropping-a-vector-drops-its-elements)
 
 Like any other `struct`, a vector is freed when it goes out of scope, as
 annotated in Listing 8-10.

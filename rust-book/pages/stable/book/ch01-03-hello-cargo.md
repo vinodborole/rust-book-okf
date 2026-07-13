@@ -2,10 +2,10 @@
 type: Web Page
 title: Hello, Cargo! - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch01-03-hello-cargo.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-## Hello, Cargo!
+[Hello, Cargo!](#hello-cargo)
 
 Cargo is Rust’s build system and package manager. Most Rustaceans use this tool
 to manage their Rust projects because Cargo handles a lot of tasks for you,
@@ -15,7 +15,12 @@ building those libraries. (We call the libraries that your code needs
 
 The simplest Rust programs, like the one we’ve written so far, don’t have any dependencies. If we had built the “Hello, world!” project with Cargo, it would only use the part of Cargo that handles building your code. As you write more complex Rust programs, you’ll add dependencies, and if you start a project using Cargo, adding dependencies will be much easier to do.
 
-Because the vast majority of Rust projects use Cargo, the rest of this book assumes that you’re using Cargo too. Cargo comes installed with Rust if you used the official installers discussed in the “Installation” section. If you installed Rust through some other means, check whether Cargo is installed by entering the following in your terminal:
+Because the vast majority of Rust projects use Cargo, the rest of this book
+assumes that you’re using Cargo too. Cargo comes installed with Rust if you
+used the official installers discussed in the
+[“Installation”](ch01-01-installation.html#installation) section. If you installed Rust
+through some other means, check whether Cargo is installed by entering the
+following in your terminal:
 
 ```
 $ cargo --version
@@ -23,7 +28,7 @@ $ cargo --version
 If you see a version number, you have it! If you see an error, such as `command not found`, look at the documentation for your method of installation to
 determine how to install Cargo separately.
 
-### Creating a Project with Cargo
+[Creating a Project with Cargo](#creating-a-project-with-cargo)
 
 Let’s create a new project using Cargo and look at how it differs from our
 original “Hello, world!” project. Navigate back to your *projects* directory
@@ -53,8 +58,9 @@ the `--vcs` flag. Run `cargo new --help` to see the available options.
 Open *Cargo.toml* in your text editor of choice. It should look similar to the
 code in Listing 1-2.
 
-This file is in the *TOML* (*Tom’s Obvious, Minimal
-Language*) format, which is Cargo’s configuration format.
+This file is in the [ TOML](https://toml.io) (
+
+*Tom’s Obvious, Minimal Language*) format, which is Cargo’s configuration format.
 
 The first line, `[package]`, is a section heading that indicates that the
 following statements are configuring a package. As we add more information to
@@ -62,7 +68,7 @@ this file, we’ll add other sections.
 
 The next three lines set the configuration information Cargo needs to compile
 your program: the name, the version, and the edition of Rust to use. We’ll talk
-about the `edition` key in Appendix E.
+about the `edition` key in [Appendix E](appendix-05-editions.html).
 
 The last line, `[dependencies]`, is the start of a section for you to list any
 of your project’s dependencies. In Rust, packages of code are referred to as
@@ -95,7 +101,7 @@ project code into the *src* directory and create an appropriate *Cargo.toml*
 file. One easy way to get that *Cargo.toml* file is to run `cargo init`, which
 will create it for you automatically.
 
-### Building and Running a Cargo Project
+[Building and Running a Cargo Project](#building-and-running-a-cargo-project)
 
 Now let’s look at what’s different when we build and run the “Hello, world!”
 program with Cargo! From your *hello_cargo* directory, build your project by
@@ -174,7 +180,7 @@ Cargo stores it in the *target/debug*directory.
 
 An additional advantage of using Cargo is that the commands are the same no matter which operating system you’re working on. So, at this point, we’ll no longer provide specific instructions for Linux and macOS versus Windows.
 
-### Building for Release
+[Building for Release](#building-for-release)
 
 When your project is finally ready for release, you can use `cargo build --release` to compile it with optimizations. This command will create an
 executable in *target/release* instead of *target/debug*. The optimizations
@@ -186,7 +192,7 @@ repeatedly and that will run as fast as possible. If you’re benchmarking your
 code’s running time, be sure to run `cargo build --release` and benchmark with
 the executable in *target/release*.
 
-### Leveraging Cargo’s Conventions
+[Leveraging Cargo’s Conventions](#leveraging-cargos-conventions)
 
 With simple projects, Cargo doesn’t provide a lot of value over just using
 `rustc`, but it will prove its worth as your programs become more intricate.
@@ -203,9 +209,9 @@ $ git clone example.org/someproject
 $ cd someproject
 $ cargo build
 ```
-For more information about Cargo, check out its documentation.
+For more information about Cargo, check out [its documentation](https://doc.rust-lang.org/cargo/).
 
-## Summary
+[Summary](#summary)
 
 You’re already off to a great start on your Rust journey! In this chapter, you learned how to:
 

@@ -2,10 +2,10 @@
 type: Web Page
 title: Smart Pointers - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch15-00-smart-pointers.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-# Smart Pointers
+[Smart Pointers](#smart-pointers)
 
 A pointer is a general concept for a variable that contains an address in
 memory. This address refers to, or “points at,” some other data. The most

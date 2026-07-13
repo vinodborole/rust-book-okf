@@ -2,16 +2,16 @@
 type: Web Page
 title: The match Control Flow Construct - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch06-02-match.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-## The `match` Control Flow Construct
+[The ](#the-match-control-flow-construct)`match` Control Flow Construct
 
-Rust has an extremely powerful control flow construct called `match` that
+`match` Control Flow ConstructRust has an extremely powerful control flow construct called `match` that
 allows you to compare a value against a series of patterns and then execute
 code based on which pattern matches. Patterns can be made up of literal values,
-variable names, wildcards, and many other things; Chapter
-19 covers all the different kinds of patterns
+variable names, wildcards, and many other things; [Chapter
+19](ch19-00-patterns.html) covers all the different kinds of patterns
 and what they do. The power of `match` comes from the expressiveness of the
 patterns and the fact that the compiler confirms that all possible cases are
 handled.
@@ -76,7 +76,7 @@ fn value_in_cents(coin: Coin) -> u8 {
 }
 fn main() {}
 ```
-### Patterns That Bind to Values
+[Patterns That Bind to Values](#patterns-that-bind-to-values)
 
 Another useful feature of match arms is that they can bind to the parts of the values that match the pattern. This is how we can extract values out of enum variants.
 
@@ -129,9 +129,9 @@ that point, the binding for `state` will be the value `UsState::Alaska`. We can
 then use that binding in the `println!` expression, thus getting the inner
 state value out of the `Coin` enum variant for `Quarter`.
 
-### The `Option<T>` `match` Pattern
+[The ](#the-optiont-match-pattern)`Option<T>` `match` Pattern
 
-In the previous section, we wanted to get the inner `T` value out of the `Some`
+`Option<T>` `match` PatternIn the previous section, we wanted to get the inner `T` value out of the `Some`
 case when using `Option<T>`; we can also handle `Option<T>` using `match`, as
 we did with the `Coin` enum! Instead of comparing coins, we’ll compare the
 variants of `Option<T>`, but the way the `match` expression works remains the
@@ -209,7 +209,7 @@ data inside, and then execute code based on it. It’s a bit tricky at first, bu
 once you get used to it, you’ll wish you had it in all languages. It’s
 consistently a user favorite.
 
-### Matches Are Exhaustive
+[Matches Are Exhaustive](#matches-are-exhaustive)
 
 There’s one other aspect of `match` we need to discuss: The arms’ patterns must
 cover all possibilities. Consider this version of our `plus_one` function,
@@ -261,9 +261,9 @@ possibility in order for the code to be valid. Especially in the case of
 `None` case, it protects us from assuming that we have a value when we might
 have null, thus making the billion-dollar mistake discussed earlier impossible.
 
-### Catch-All Patterns and the `_` Placeholder
+[Catch-All Patterns and the ](#catch-all-patterns-and-the-_-placeholder)`_` Placeholder
 
-Using enums, we can also take special actions for a few particular values, but
+`_` PlaceholderUsing enums, we can also take special actions for a few particular values, but
 for all other values take one default action. Imagine we’re implementing a game
 where, if you roll a 3 on a dice roll, your player doesn’t move but instead
 gets a fancy new hat. If you roll a 7, your player loses a fancy hat. For all
@@ -325,8 +325,8 @@ This example also meets the exhaustiveness requirement because we’re explicitl
 
 Finally, we’ll change the rules of the game one more time so that nothing else
 happens on your turn if you roll anything other than a 3 or a 7. We can express
-that by using the unit value (the empty tuple type we mentioned in “The Tuple
-Type” section) as the code that goes with the `_` arm:
+that by using the unit value (the empty tuple type we mentioned in [“The Tuple
+Type”](ch03-02-data-types.html#the-tuple-type) section) as the code that goes with the `_` arm:
 
 ```
 fn main() {
@@ -342,8 +342,8 @@ fn main() {
 ```
 Here, we’re telling Rust explicitly that we aren’t going to use any other value that doesn’t match a pattern in an earlier arm, and we don’t want to run any code in this case.
 
-There’s more about patterns and matching that we’ll cover in Chapter
-19. For now, we’re going to move on to the
+There’s more about patterns and matching that we’ll cover in [Chapter
+19](ch19-00-patterns.html). For now, we’re going to move on to the
 `if let` syntax, which can be useful in situations where the `match` expression
 is a bit wordy.
 

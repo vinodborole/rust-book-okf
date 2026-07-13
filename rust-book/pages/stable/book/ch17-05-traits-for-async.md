@@ -2,10 +2,10 @@
 type: Web Page
 title: A Closer Look at the Traits for Async - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch17-05-traits-for-async.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-## A Closer Look at the Traits for Async
+[A Closer Look at the Traits for Async](#a-closer-look-at-the-traits-for-async)
 
 Throughout the chapter, we’ve used the `Future`, `Stream`, and `StreamExt`
 traits in various ways. So far, though, we’ve avoided getting too far into the
@@ -16,9 +16,9 @@ along with the `Pin` type and the `Unpin` trait. In this section, we’ll dig in
 just enough to help in those scenarios, still leaving the *really* deep dive
 for other documentation.
 
-### The `Future` Trait
+[The ](#the-future-trait)`Future` Trait
 
-Let’s start by taking a closer look at how the `Future` trait works. Here’s how
+`Future` TraitLet’s start by taking a closer look at how the `Future` trait works. Here’s how
 Rust defines it:
 
 ```
@@ -104,8 +104,8 @@ future to work on other futures and then check this one again later. As we’ve
 seen, that something is an async runtime, and this scheduling and coordination
 work is one of its main jobs.
 
-In the “Sending Data Between Two Tasks Using Message
-Passing” section, we described waiting on
+In the [“Sending Data Between Two Tasks Using Message
+Passing”](ch17-02-concurrency-with-async.html#sending-data-between-two-tasks-using-message-passing) section, we described waiting on
 `rx.recv`. The `recv` call returns a future, and awaiting the future polls it.
 We noted that a runtime will pause the future until it’s ready with either
 `Some(message)` or `None` when the channel closes. With our deeper
@@ -120,9 +120,9 @@ but the key is to see the basic mechanics of futures: a runtime *polls* each
 future it is responsible for, putting the future back to sleep when it is not
 yet ready.
 
-### The `Pin` Type and the `Unpin` Trait
+[The ](#the-pin-type-and-the-unpin-trait)`Pin` Type and the `Unpin` Trait
 
-Back in Listing 17-13, we used the `trpl::join!` macro to await three
+`Pin` Type and the `Unpin` TraitBack in Listing 17-13, we used the `trpl::join!` macro to await three
 futures. However, it’s common to have a collection such as a vector containing
 some number futures that won’t be known until runtime. Let’s change Listing
 17-13 to the code in Listing 17-23 that puts the three futures into a vector
@@ -210,7 +210,7 @@ differences:
 - It can’t be just any type. It’s restricted to the type on which the method is
 implemented, a reference or smart pointer to that type, or a `Pin`wrapping a reference to that type.
 
-We’ll see more on this syntax in Chapter 18. For now,
+We’ll see more on this syntax in [Chapter 18](ch18-00-oop.html). For now,
 it’s enough to know that if we want to poll a future to check whether it is
 `Pending` or `Ready(Output)`, we need a `Pin`-wrapped mutable reference to the
 type.
@@ -335,13 +335,13 @@ to uphold, are covered extensively in the API documentation for `std::pin`, so
 if you’re interested in learning more, that’s a great place to start.
 
 If you want to understand how things work under the hood in even more detail,
-see Chapters 2 and
-4 of
-*Asynchronous Programming in Rust*.
+see Chapters [2](https://rust-lang.github.io/async-book/02_execution/01_chapter.html) and
+[4](https://rust-lang.github.io/async-book/04_pinning/01_chapter.html) of
+[ Asynchronous Programming in Rust](https://rust-lang.github.io/async-book/).
 
-### The `Stream` Trait
+[The ](#the-stream-trait)`Stream` Trait
 
-Now that you have a deeper grasp on the `Future`, `Pin`, and `Unpin` traits, we
+`Stream` TraitNow that you have a deeper grasp on the `Future`, `Pin`, and `Unpin` traits, we
 can turn our attention to the `Stream` trait. As you learned earlier in the
 chapter, streams are similar to asynchronous iterators. Unlike `Iterator` and
 `Future`, however, `Stream` has no definition in the standard library as of
@@ -385,7 +385,7 @@ does.
 
 Something very similar to this definition will likely end up as part of Rust’s standard library. In the meantime, it’s part of the toolkit of most runtimes, so you can rely on it, and everything we cover next should generally apply!
 
-In the examples we saw in the “Streams: Futures in Sequence” section, though, we didn’t use `poll_next` *or* `Stream`, but
+In the examples we saw in the [“Streams: Futures in Sequence”](ch17-04-streams.html) section, though, we didn’t use `poll_next` *or* `Stream`, but
 instead used `next` and `StreamExt`. We *could* work directly in terms of the
 `poll_next` API by hand-writing our own `Stream` state machines, of course,
 just as we *could* work with futures directly via their `poll` method. Using

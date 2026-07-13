@@ -3,10 +3,10 @@ type: Web Page
 title: 'Final Project: Building a Multithreaded Web Server - The Rust Programming
   Language'
 resource: https://doc.rust-lang.org/stable/book/ch21-00-final-project-a-web-server.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-# Final Project: Building a Multithreaded Web Server
+[Final Project: Building a Multithreaded Web Server](#final-project-building-a-multithreaded-web-server)
 
 It’s been a long journey, but we’ve reached the end of the book. In this chapter, we’ll build one more project together to demonstrate some of the concepts we covered in the final chapters, as well as recap some earlier lessons.
 
@@ -20,7 +20,15 @@ Here is our plan for building the web server:
 - Create a proper HTTP response.
 - Improve the throughput of our server with a thread pool.
 
-Before we get started, we should mention two details. First, the method we’ll use won’t be the best way to build a web server with Rust. Community members have published a number of production-ready crates available at crates.io that provide more complete web server and thread pool implementations than we’ll build. However, our intention in this chapter is to help you learn, not to take the easy route. Because Rust is a systems programming language, we can choose the level of abstraction we want to work with and can go to a lower level than is possible or practical in other languages.
+Before we get started, we should mention two details. First, the method we’ll
+use won’t be the best way to build a web server with Rust. Community members
+have published a number of production-ready crates available at
+[crates.io](https://crates.io/) that provide more complete web server and
+thread pool implementations than we’ll build. However, our intention in this
+chapter is to help you learn, not to take the easy route. Because Rust is a
+systems programming language, we can choose the level of abstraction we want to
+work with and can go to a lower level than is possible or practical in other
+languages.
 
 Second, we will not be using async and await here. Building a thread pool is a big enough challenge on its own, without adding in building an async runtime! However, we will note how async and await might be applicable to some of the same problems we will see in this chapter. Ultimately, as we noted back in Chapter 17, many async runtimes use thread pools for managing their work.
 

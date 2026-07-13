@@ -2,10 +2,10 @@
 type: Web Page
 title: Comments - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch03-04-comments.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-## Comments
+[Comments](#comments)
 
 All programmers strive to make their code easy to understand, but sometimes
 extra explanation is warranted. In these cases, programmers leave *comments* in
@@ -51,7 +51,9 @@ fn main() {
     let lucky_number = 7;
 }
 ```
-Rust also has another kind of comment, documentation comments, which we’ll discuss in the “Publishing a Crate to Crates.io” section of Chapter 14.
+Rust also has another kind of comment, documentation comments, which we’ll
+discuss in the [“Publishing a Crate to Crates.io”](ch14-02-publishing-to-crates-io.html)
+section of Chapter 14.
 
 # Citations
 

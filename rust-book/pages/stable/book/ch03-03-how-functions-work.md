@@ -2,10 +2,10 @@
 type: Web Page
 title: Functions - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch03-03-how-functions-work.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-## Functions
+[Functions](#functions)
 
 Functions are prevalent in Rust code. You’ve already seen one of the most
 important functions in the language: the `main` function, which is the entry
@@ -54,7 +54,7 @@ The lines execute in the order in which they appear in the `main` function.
 First the “Hello, world!” message prints, and then `another_function` is called
 and its message is printed.
 
-### Parameters
+[Parameters](#parameters)
 
 We can define functions to have *parameters*, which are special variables that
 are part of a function’s signature. When a function has parameters, you can
@@ -126,7 +126,7 @@ The measurement is: 5h
 Because we called the function with `5` as the value for `value` and `'h'` as
 the value for `unit_label`, the program output contains those values.
 
-### Statements and Expressions
+[Statements and Expressions](#statements-and-expressions)
 
 Function bodies are made up of a series of statements optionally ending in an expression. So far, the functions we’ve covered haven’t included an ending expression, but you have seen an expression as part of a statement. Because Rust is an expression-based language, this is an important distinction to understand. Other languages don’t have the same distinctions, so let’s look at what statements and expressions are and how their differences affect the bodies of functions.
 
@@ -218,7 +218,7 @@ not include ending semicolons. If you add a semicolon to the end of an
 expression, you turn it into a statement, and it will then not return a value.
 Keep this in mind as you explore function return values and expressions next.
 
-### Functions with Return Values
+[Functions with Return Values](#functions-with-return-values)
 
 Functions can return values to the code that calls them. We don’t name return
 values, but we must declare their type after an arrow (`->`). In Rust, the

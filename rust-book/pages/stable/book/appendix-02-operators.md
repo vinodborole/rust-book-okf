@@ -2,14 +2,14 @@
 type: Web Page
 title: B - Operators and Symbols - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/appendix-02-operators.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-## Appendix B: Operators and Symbols
+[Appendix B: Operators and Symbols](#appendix-b-operators-and-symbols)
 
 This appendix contains a glossary of Rust’s syntax, including operators and other symbols that appear by themselves or in the context of paths, generics, trait bounds, macros, attributes, comments, tuples, and brackets.
 
-### Operators
+[Operators](#operators)
 
 Table B-1 contains the operators in Rust, an example of how the operator would appear in context, a short explanation, and whether that operator is overloadable. If an operator is overloadable, the relevant trait to use to overload that operator is listed.
 
@@ -72,7 +72,7 @@ Table B-1 contains the operators in Rust, an example of how the operator would a
 | `||` | `expr || expr` | Short-circuiting logical OR | |
 | `?` | `expr?` | Error propagation | 
 
-### Non-operator Symbols
+[Non-operator Symbols](#non-operator-symbols)
 
 The following tables contain all symbols that don’t function as operators; that is, they don’t behave like a function or method call.
 

@@ -2,10 +2,10 @@
 type: Web Page
 title: 'An I/O Project: Building a Command Line Program - The Rust Programming Language'
 resource: https://doc.rust-lang.org/stable/book/ch12-00-an-io-project.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-# An I/O Project: Building a Command Line Program
+[An I/O Project: Building a Command Line Program](#an-io-project-building-a-command-line-program)
 
 This chapter is a recap of the many skills you’ve learned so far and an exploration of a few more standard library features. We’ll build a command line tool that interacts with file and command line input/output to practice some of the Rust concepts you now have under your belt.
 
@@ -33,13 +33,15 @@ background knowledge you need to understand a real-world project such as
 
 Our `grep` project will combine a number of concepts you’ve learned so far:
 
-- Organizing code (Chapter 7)
-- Using vectors and strings (Chapter 8)
-- Handling errors (Chapter 9)
-- Using traits and lifetimes where appropriate (Chapter 10)
-- Writing tests (Chapter 11)
+- Organizing code ([Chapter 7](ch07-00-managing-growing-projects-with-packages-crates-and-modules.html))
+- Using vectors and strings ([Chapter 8](ch08-00-common-collections.html))
+- Handling errors ([Chapter 9](ch09-00-error-handling.html))
+- Using traits and lifetimes where appropriate ([Chapter 10](ch10-00-generics.html))
+- Writing tests ([Chapter 11](ch11-00-testing.html))
 
-We’ll also briefly introduce closures, iterators, and trait objects, which Chapter 13 and Chapter 18 will cover in detail.
+We’ll also briefly introduce closures, iterators, and trait objects, which
+[Chapter 13](ch13-00-functional-features.html) and [Chapter 18](ch18-00-oop.html) will
+cover in detail.
 
 # Citations
 

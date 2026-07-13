@@ -2,13 +2,13 @@
 type: Web Page
 title: 'Streams: Futures in Sequence - The Rust Programming Language'
 resource: https://doc.rust-lang.org/stable/book/ch17-04-streams.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-## Streams: Futures in Sequence
+[Streams: Futures in Sequence](#streams-futures-in-sequence)
 
 Recall how we used the receiver for our async channel earlier in this chapter
-in the “Message Passing” section. The async
+in the [“Message Passing”](ch17-02-concurrency-with-async.html#message-passing) section. The async
 `recv` method produces a sequence of items over time. This is an instance of a
 much more general pattern known as a *stream*. Many concepts are naturally
 represented as streams: items becoming available in a queue, chunks of data
@@ -20,18 +20,18 @@ triggering too many network calls, set timeouts on sequences of long-running
 operations, or throttle user interface events to avoid doing needless work.
 
 We saw a sequence of items back in Chapter 13, when we looked at the Iterator
-trait in “The Iterator Trait and the `next` Method” section, but there are two differences between iterators and the
+trait in [“The Iterator Trait and the  next Method”](ch13-02-iterators.html#the-iterator-trait-and-the-next-method) section, but there are two differences between iterators and the
 async channel receiver. The first difference is time: iterators are
 synchronous, while the channel receiver is asynchronous. The second difference
-is the API. When working directly with `Iterator`, we call its synchronous
+is the API. When working directly with 
+
+`Iterator`, we call its synchronous
 `next` method. With the `trpl::Receiver` stream in particular, we called an
 asynchronous `recv` method instead. Otherwise, these APIs feel very similar,
 and that similarity isn’t a coincidence. A stream is like an asynchronous form
 of iteration. Whereas the `trpl::Receiver` specifically waits to receive
 messages, though, the general-purpose stream API is much broader: it provides
-the next item the way `Iterator` does, but asynchronously.
-
-The similarity between iterators and streams in Rust means we can actually
+the next item the way `Iterator` does, but asynchronously.The similarity between iterators and streams in Rust means we can actually
 create a stream from any iterator. As with an iterator, we can work with a
 stream by calling its `next` method and then awaiting the output, as in Listing
 17-21, which won’t compile yet.

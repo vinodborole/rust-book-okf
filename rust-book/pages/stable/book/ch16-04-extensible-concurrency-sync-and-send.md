@@ -2,17 +2,17 @@
 type: Web Page
 title: Extensible Concurrency with Send and Sync - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch16-04-extensible-concurrency-sync-and-send.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-## Extensible Concurrency with `Send` and `Sync`
+[Extensible Concurrency with ](#extensible-concurrency-with-send-and-sync)`Send` and `Sync`
 
-Interestingly, almost every concurrency feature we’ve talked about so far in this chapter has been part of the standard library, not the language. Your options for handling concurrency are not limited to the language or the standard library; you can write your own concurrency features or use those written by others.
+`Send` and `Sync`Interestingly, almost every concurrency feature we’ve talked about so far in this chapter has been part of the standard library, not the language. Your options for handling concurrency are not limited to the language or the standard library; you can write your own concurrency features or use those written by others.
 
 However, among the key concurrency concepts that are embedded in the language
 rather than the standard library are the `std::marker` traits `Send` and `Sync`.
 
-### Transferring Ownership Between Threads
+[Transferring Ownership Between Threads](#transferring-ownership-between-threads)
 
 The `Send` marker trait indicates that ownership of values of the type
 implementing `Send` can be transferred between threads. Almost every Rust type
@@ -32,7 +32,7 @@ Any type composed entirely of `Send` types is automatically marked as `Send` as
 well. Almost all primitive types are `Send`, aside from raw pointers, which
 we’ll discuss in Chapter 20.
 
-### Accessing from Multiple Threads
+[Accessing from Multiple Threads](#accessing-from-multiple-threads)
 
 The `Sync` marker trait indicates that it is safe for the type implementing
 `Sync` to be referenced from multiple threads. In other words, any type `T`
@@ -46,12 +46,12 @@ that it doesn’t implement `Send`. The `RefCell<T>` type (which we talked about
 in Chapter 15) and the family of related `Cell<T>` types don’t implement
 `Sync`. The implementation of borrow checking that `RefCell<T>` does at runtime
 is not thread-safe. The smart pointer `Mutex<T>` implements `Sync` and can be
-used to share access with multiple threads, as you saw in “Shared Access to
-`Mutex<T>`”.
+used to share access with multiple threads, as you saw in [“Shared Access to
+ Mutex<T>”](ch16-03-shared-state.html#shared-access-to-mutext).
 
-### Implementing `Send` and `Sync` Manually Is Unsafe
+[Implementing ](#implementing-send-and-sync-manually-is-unsafe)`Send` and `Sync` Manually Is Unsafe
 
-Because types composed entirely of other types that implement the `Send` and
+`Send` and `Sync` Manually Is UnsafeBecause types composed entirely of other types that implement the `Send` and
 `Sync` traits also automatically implement `Send` and `Sync`, we don’t have to
 implement those traits manually. As marker traits, they don’t even have any
 methods to implement. They’re just useful for enforcing invariants related to
@@ -60,11 +60,11 @@ concurrency.
 Manually implementing these traits involves implementing unsafe Rust code.
 We’ll talk about using unsafe Rust code in Chapter 20; for now, the important
 information is that building new concurrent types not made up of `Send` and
-`Sync` parts requires careful thought to uphold the safety guarantees. “The
-Rustonomicon” has more information about these guarantees and how to
+`Sync` parts requires careful thought to uphold the safety guarantees. [“The
+Rustonomicon”](../nomicon/index.html) has more information about these guarantees and how to
 uphold them.
 
-## Summary
+[Summary](#summary)
 
 This isn’t the last you’ll see of concurrency in this book: The next chapter focuses on async programming, and the project in Chapter 21 will use the concepts in this chapter in a more realistic situation than the smaller examples discussed here.
 

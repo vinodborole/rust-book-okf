@@ -2,10 +2,10 @@
 type: Web Page
 title: Programming a Guessing Game - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch02-00-guessing-game-tutorial.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-# Programming a Guessing Game
+[Programming a Guessing Game](#programming-a-guessing-game)
 
 Let’s jump into Rust by working through a hands-on project together! This
 chapter introduces you to a few common Rust concepts by showing you how to use
@@ -16,7 +16,7 @@ fundamentals.
 
 We’ll implement a classic beginner programming problem: a guessing game. Here’s how it works: The program will generate a random integer between 1 and 100. It will then prompt the player to enter a guess. After a guess is entered, the program will indicate whether the guess is too low or too high. If the guess is correct, the game will print a congratulatory message and exit.
 
-## Setting Up a New Project
+[Setting Up a New Project](#setting-up-a-new-project)
 
 To set up a new project, go to the *projects* directory that you created in
 Chapter 1 and make a new project using Cargo, like so:
@@ -66,7 +66,7 @@ the next one.
 
 Reopen the *src/main.rs* file. You’ll be writing all the code in this file.
 
-## Processing a Guess
+[Processing a Guess](#processing-a-guess)
 
 The first part of the guessing game program will ask for user input, process
 that input, and check that the input is in the expected form. To start, we’ll
@@ -92,7 +92,7 @@ fn main() {
 ```
 By default, Rust has a set of items defined in the standard library that it
 brings into the scope of every program. This set is called the *prelude*, and
-you can see everything in it in the standard library documentation.
+you can see everything in it [in the standard library documentation](../std/prelude/index.html).
 
 If a type you want to use isn’t in the prelude, you have to bring that type
 into scope explicitly with a `use` statement. Using the `std::io` library
@@ -134,7 +134,7 @@ fn main() {
 ```
 This code is printing a prompt stating what the game is and requesting input from the user.
 
-### Storing Values with Variables
+[Storing Values with Variables](#storing-values-with-variables)
 
 Next, we’ll create a *variable* to store the user input, like this:
 
@@ -156,7 +156,7 @@ line. We use the `let` statement to create the variable. Here’s another exampl
 `let apples = 5;`This line creates a new variable named `apples` and binds it to the value `5`.
 In Rust, variables are immutable by default, meaning once we give the variable
 a value, the value won’t change. We’ll be discussing this concept in detail in
-the “Variables and Mutability”
+the [“Variables and Mutability”](ch03-01-variables-and-mutability.html#variables-and-mutability)
 section in Chapter 3. To make a variable mutable, we add `mut` before the
 variable name:
 
@@ -166,14 +166,14 @@ let mut bananas = 5; // mutable
 ```
 Note: The `//` syntax starts a comment that continues until the end of the
 line. Rust ignores everything in comments. We’ll discuss comments in more
-detail in Chapter 3.
+detail in [Chapter 3](ch03-04-comments.html).
 
 Returning to the guessing game program, you now know that `let mut guess` will
 introduce a mutable variable named `guess`. The equal sign (`=`) tells Rust we
 want to bind something to the variable now. On the right of the equal sign is
 the value that `guess` is bound to, which is the result of calling
 `String::new`, a function that returns a new instance of a `String`.
-`String` is a string type provided by the standard
+[ String](../std/string/struct.String.html) is a string type provided by the standard
 library that is a growable, UTF-8 encoded bit of text.
 
 The `::` syntax in the `::new` line indicates that `new` is an associated
@@ -185,7 +185,7 @@ common name for a function that makes a new value of some kind.
 In full, the `let mut guess = String::new();` line has created a mutable
 variable that is currently bound to a new, empty instance of a `String`. Whew!
 
-### Receiving User Input
+[Receiving User Input](#receiving-user-input)
 
 Recall that we included the input/output functionality from the standard
 library with `use std::io;` on the first line of the program. Now we’ll call
@@ -207,18 +207,18 @@ fn main() {
 If we hadn’t imported the `io` module with `use std::io;` at the beginning of
 the program, we could still use the function by writing this function call as
 `std::io::stdin`. The `stdin` function returns an instance of
-`std::io::Stdin`, which is a type that represents a
+[ std::io::Stdin](../std/io/struct.Stdin.html), which is a type that represents a
 handle to the standard input for your terminal.
 
-Next, the line `.read_line(&mut guess)` calls the `read_line` method on the standard input handle to get input from the user.
-We’re also passing `&mut guess` as the argument to `read_line` to tell it what
+Next, the line `.read_line(&mut guess)` calls the [ read_line](../std/io/struct.Stdin.html#method.read_line) method on the standard input handle to get input from the user.
+We’re also passing 
+
+`&mut guess` as the argument to `read_line` to tell it what
 string to store the user input in. The full job of `read_line` is to take
 whatever the user types into standard input and append that into a string
 (without overwriting its contents), so we therefore pass that string as an
 argument. The string argument needs to be mutable so that the method can change
-the string’s content.
-
-The `&` indicates that this argument is a *reference*, which gives you a way to
+the string’s content.The `&` indicates that this argument is a *reference*, which gives you a way to
 let multiple parts of your code access one piece of data without needing to
 copy that data into memory multiple times. References are a complex feature,
 and one of Rust’s major advantages is how safe and easy it is to use
@@ -228,9 +228,9 @@ immutable by default. Hence, you need to write `&mut guess` rather than
 `&guess` to make it mutable. (Chapter 4 will explain references more
 thoroughly.)
 
-### Handling Potential Failure with `Result`
+[Handling Potential Failure with ](#handling-potential-failure-with-result)`Result`
 
-We’re still working on this line of code. We’re now discussing a third line of text, but note that it’s still part of a single logical line of code. The next part is this method:
+`Result`We’re still working on this line of code. We’re now discussing a third line of text, but note that it’s still part of a single logical line of code. The next part is this method:
 
 ```
 use std::io;
@@ -252,11 +252,15 @@ lines when you call a method with the `.method_name()` syntax. Now let’s
 discuss what this line does.
 
 As mentioned earlier, `read_line` puts whatever the user enters into the string
-we pass to it, but it also returns a `Result` value. `Result` is an *enumeration*, often called an *enum*,
-which is a type that can be in one of multiple possible states. We call each
-possible state a *variant*.
+we pass to it, but it also returns a `Result` value. [ Result](../std/result/enum.Result.html) is an 
 
-Chapter 6 will cover enums in more detail. The purpose
+[, often called an](ch06-00-enums.html)
+
+*enumeration**enum*, which is a type that can be in one of multiple possible states. We call each possible state a
+
+*variant*.
+
+[Chapter 6](ch06-00-enums.html) will cover enums in more detail. The purpose
 of these `Result` types is to encode error-handling information.
 
 `Result`’s variants are `Ok` and `Err`. The `Ok` variant indicates the
@@ -265,16 +269,16 @@ The `Err` variant means the operation failed, and it contains information
 about how or why the operation failed.
 
 Values of the `Result` type, like values of any type, have methods defined on
-them. An instance of `Result` has an `expect` method
-that you can call. If this instance of `Result` is an `Err` value, `expect`
+them. An instance of `Result` has an [ expect method](../std/result/enum.Result.html#method.expect)
+that you can call. If this instance of 
+
+`Result` is an `Err` value, `expect`
 will cause the program to crash and display the message that you passed as an
 argument to `expect`. If the `read_line` method returns an `Err`, it would
 likely be the result of an error coming from the underlying operating system.
 If this instance of `Result` is an `Ok` value, `expect` will take the return
 value that `Ok` is holding and return just that value to you so that you can
-use it. In this case, that value is the number of bytes in the user’s input.
-
-If you don’t call `expect`, the program will compile, but you’ll get a warning:
+use it. In this case, that value is the number of bytes in the user’s input.If you don’t call `expect`, the program will compile, but you’ll get a warning:
 
 ```
 $ cargo build
@@ -299,12 +303,12 @@ indicating that the program hasn’t handled a possible error.
 
 The right way to suppress the warning is to actually write error-handling code,
 but in our case we just want to crash this program when a problem occurs, so we
-can use `expect`. You’ll learn about recovering from errors in Chapter
-9.
+can use `expect`. You’ll learn about recovering from errors in [Chapter
+9](ch09-02-recoverable-errors-with-result.html).
 
-### Printing Values with `println!` Placeholders
+[Printing Values with ](#printing-values-with-println-placeholders)`println!` Placeholders
 
-Aside from the closing curly bracket, there’s only one more line to discuss in the code so far:
+`println!` PlaceholdersAside from the closing curly bracket, there’s only one more line to discuss in the code so far:
 
 ```
 use std::io;
@@ -337,7 +341,7 @@ println!("x = {x} and y + 2 = {}", y + 2);
 ```
 This code would print `x = 5 and y + 2 = 12`.
 
-### Testing the First Part
+[Testing the First Part](#testing-the-first-part)
 
 Let’s test the first part of the guessing game. Run it using `cargo run`:
 
@@ -353,16 +357,16 @@ You guessed: 6
 ```
 At this point, the first part of the game is done: We’re getting input from the keyboard and then printing it.
 
-## Generating a Secret Number
+[Generating a Secret Number](#generating-a-secret-number)
 
 Next, we need to generate a secret number that the user will try to guess. The
 secret number should be different every time so that the game is fun to play
 more than once. We’ll use a random number between 1 and 100 so that the game
 isn’t too difficult. Rust doesn’t yet include random number functionality in
-its standard library. However, the Rust team does provide a `rand`
-crate with said functionality.
+its standard library. However, the Rust team does provide a [ rand
+crate](https://crates.io/crates/rand) with said functionality.
 
-### Increasing Functionality with a Crate
+[Increasing Functionality with a Crate](#increasing-functionality-with-a-crate)
 
 Remember that a crate is a collection of Rust source code files. The project
 we’ve been building is a binary crate, which is an executable. The `rand` crate
@@ -386,8 +390,8 @@ In the *Cargo.toml* file, everything that follows a header is part of that
 section that continues until another section starts. In `[dependencies]`, you
 tell Cargo which external crates your project depends on and which versions of
 those crates you require. In this case, we specify the `rand` crate with the
-semantic version specifier `0.8.5`. Cargo understands Semantic
-Versioning (sometimes called *SemVer*), which is a
+semantic version specifier `0.8.5`. Cargo understands [Semantic
+Versioning](http://semver.org) (sometimes called *SemVer*), which is a
 standard for writing version numbers. The specifier `0.8.5` is actually
 shorthand for `^0.8.5`, which means any version that is at least 0.8.5 but
 below 0.9.0.
@@ -400,7 +404,7 @@ You may see different version numbers (but they will all be compatible with the 
 
 When we include an external dependency, Cargo fetches the latest versions of
 everything that dependency needs from the *registry*, which is a copy of data
-from Crates.io. Crates.io is where people in the Rust ecosystem
+from [Crates.io](https://crates.io/). Crates.io is where people in the Rust ecosystem
 post their open source Rust projects for others to use.
 
 After updating the registry, Cargo checks the `[dependencies]` section and
@@ -428,7 +432,7 @@ These lines show that Cargo only updates the build with your tiny change to the
 *src/main.rs* file. Your dependencies haven’t changed, so Cargo knows it can
 reuse what it has already downloaded and compiled for those.
 
-#### Ensuring Reproducible Builds
+[Ensuring Reproducible Builds](#ensuring-reproducible-builds)
 
 Cargo has a mechanism that ensures that you can rebuild the same artifact every
 time you or anyone else builds your code: Cargo will use only the versions of
@@ -449,7 +453,7 @@ remain at 0.8.5 until you explicitly upgrade, thanks to the *Cargo.lock* file.
 Because the *Cargo.lock* file is important for reproducible builds, it’s often
 checked into source control with the rest of the code in your project.
 
-#### Updating a Crate to Get a New Version
+[Updating a Crate to Get a New Version](#updating-a-crate-to-get-a-new-version)
 
 When you *do* want to update a crate, Cargo provides the command `update`,
 which will ignore the *Cargo.lock* file and figure out all the latest versions
@@ -480,9 +484,13 @@ The next time you run `cargo build`, Cargo will update the registry of crates
 available and reevaluate your `rand` requirements according to the new version
 you have specified.
 
-There’s a lot more to say about Cargo and its ecosystem, which we’ll discuss in Chapter 14, but for now, that’s all you need to know. Cargo makes it very easy to reuse libraries, so Rustaceans are able to write smaller projects that are assembled from a number of packages.
+There’s a lot more to say about [Cargo](https://doc.rust-lang.org/cargo/) and [its
+ecosystem](https://doc.rust-lang.org/cargo/reference/publishing.html), which we’ll discuss in Chapter 14, but
+for now, that’s all you need to know. Cargo makes it very easy to reuse
+libraries, so Rustaceans are able to write smaller projects that are assembled
+from a number of packages.
 
-### Generating a Random Number
+[Generating a Random Number](#generating-a-random-number)
 
 Let’s start using `rand` to generate a number to guess. The next step is to
 update *src/main.rs*, as shown in Listing 2-3.
@@ -534,7 +542,7 @@ You guessed: 5
 ```
 You should get different random numbers, and they should all be numbers between 1 and 100. Great job!
 
-## Comparing the Guess to the Secret Number
+[Comparing the Guess to the Secret Number](#comparing-the-guess-to-the-secret-number)
 
 Now that we have user input and a random number, we can compare them. That step is shown in Listing 2-4. Note that this code won’t compile just yet, as we will explain.
 
@@ -548,11 +556,11 @@ Then, we add five new lines at the bottom that use the `Ordering` type. The
 compared. It takes a reference to whatever you want to compare with: Here, it’s
 comparing `guess` to `secret_number`. Then, it returns a variant of the
 `Ordering` enum we brought into scope with the `use` statement. We use a
-`match` expression to decide what to do next based on
-which variant of `Ordering` was returned from the call to `cmp` with the values
-in `guess` and `secret_number`.
+[ match](ch06-02-match.html) expression to decide what to do next based on
+which variant of 
 
-A `match` expression is made up of *arms*. An arm consists of a *pattern* to
+`Ordering` was returned from the call to `cmp` with the values
+in `guess` and `secret_number`.A `match` expression is made up of *arms*. An arm consists of a *pattern* to
 match against, and the code that should be run if the value given to `match`
 fits that arm’s pattern. Rust takes the value given to `match` and looks
 through each arm’s pattern in turn. Patterns and the `match` construct are
@@ -649,7 +657,7 @@ a variable named `guess`? It does, but helpfully Rust allows us to shadow the
 previous value of `guess` with a new one. *Shadowing* lets us reuse the `guess`
 variable name rather than forcing us to create two unique variables, such as
 `guess_str` and `guess`, for example. We’ll cover this in more detail in
-Chapter 3, but for now, know that this feature is
+[Chapter 3](ch03-01-variables-and-mutability.html#shadowing), but for now, know that this feature is
 often used when you want to convert a value from one type to another type.
 
 We bind this new variable to the expression `guess.trim().parse()`. The `guess`
@@ -664,13 +672,15 @@ presses `enter`, `guess` looks like this: `5\n`. The `\n` represents
 and a newline, `\r\n`.) The `trim` method eliminates `\n` or `\r\n`, resulting
 in just `5`.
 
-The `parse` method on strings converts a string to
+The [ parse method on strings](../std/primitive.str.html#method.parse) converts a string to
 another type. Here, we use it to convert from a string to a number. We need to
-tell Rust the exact number type we want by using `let guess: u32`. The colon
+tell Rust the exact number type we want by using 
+
+`let guess: u32`. The colon
 (`:`) after `guess` tells Rust we’ll annotate the variable’s type. Rust has a
 few built-in number types; the `u32` seen here is an unsigned, 32-bit integer.
 It’s a good default choice for a small positive number. You’ll learn about
-other number types in Chapter 3.
+other number types in [Chapter 3](ch03-02-data-types.html#integer-types).
 
 Additionally, the `u32` annotation in this example program and the comparison
 with `secret_number` means Rust will infer that `secret_number` should be a
@@ -681,16 +691,16 @@ The `parse` method will only work on characters that can logically be converted
 into numbers and so can easily cause errors. If, for example, the string
 contained `A👍%`, there would be no way to convert that to a number. Because it
 might fail, the `parse` method returns a `Result` type, much as the `read_line`
-method does (discussed earlier in “Handling Potential Failure with
-`Result`”). We’ll treat
-this `Result` the same way by using the `expect` method again. If `parse`
+method does (discussed earlier in [“Handling Potential Failure with
+ Result”](#handling-potential-failure-with-result)). We’ll treat
+this 
+
+`Result` the same way by using the `expect` method again. If `parse`
 returns an `Err` `Result` variant because it couldn’t create a number from the
 string, the `expect` call will crash the game and print the message we give it.
 If `parse` can successfully convert the string to a number, it will return the
 `Ok` variant of `Result`, and `expect` will return the number that we want from
-the `Ok` value.
-
-Let’s run the program now:
+the `Ok` value.Let’s run the program now:
 
 ```
 $ cargo run
@@ -708,7 +718,7 @@ Nice! Even though spaces were added before the guess, the program still figured 
 
 We have most of the game working now, but the user can make only one guess. Let’s change that by adding a loop!
 
-## Allowing Multiple Guesses with Looping
+[Allowing Multiple Guesses with Looping](#allowing-multiple-guesses-with-looping)
 
 The `loop` keyword creates an infinite loop. We’ll add a loop to give users
 more chances at guessing the number:
@@ -745,8 +755,8 @@ As you can see, we’ve moved everything from the guess input prompt onward into
 
 The user could always interrupt the program by using the keyboard shortcut
 `ctrl`-`C`. But there’s another way to escape this insatiable
-monster, as mentioned in the `parse` discussion in “Comparing the Guess to the
-Secret Number”: If
+monster, as mentioned in the `parse` discussion in [“Comparing the Guess to the
+Secret Number”](#comparing-the-guess-to-the-secret-number): If
 the user enters a non-number answer, the program will crash. We can take
 advantage of that to allow the user to quit, as shown here:
 
@@ -779,7 +789,7 @@ Typing `quit` will quit the game, but as you’ll notice, so will entering any
 other non-number input. This is suboptimal, to say the least; we want the game
 to also stop when the correct number is guessed.
 
-### Quitting After a Correct Guess
+[Quitting After a Correct Guess](#quitting-after-a-correct-guess)
 
 Let’s program the game to quit when the user wins by adding a `break` statement:
 
@@ -817,7 +827,7 @@ Adding the `break` line after `You win!` makes the program exit the loop when
 the user guesses the secret number correctly. Exiting the loop also means
 exiting the program, because the loop is the last part of `main`.
 
-### Handling Invalid Input
+[Handling Invalid Input](#handling-invalid-input)
 
 To further refine the game’s behavior, rather than crashing the program when
 the user inputs a non-number, let’s make the game ignore a non-number so that
@@ -877,7 +887,7 @@ secret number. Listing 2-6 shows the final code.
 
 At this point, you’ve successfully built the guessing game. Congratulations!
 
-## Summary
+[Summary](#summary)
 
 This project was a hands-on way to introduce you to many new Rust concepts:
 `let`, `match`, functions, the use of external crates, and more. In the next

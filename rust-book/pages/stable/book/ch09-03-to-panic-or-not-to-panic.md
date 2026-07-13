@@ -2,12 +2,12 @@
 type: Web Page
 title: To panic! or Not to panic! - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch09-03-to-panic-or-not-to-panic.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-## To `panic!` or Not to `panic!`
+[To ](#to-panic-or-not-to-panic)`panic!` or Not to `panic!`
 
-So, how do you decide when you should call `panic!` and when you should return
+`panic!` or Not to `panic!`So, how do you decide when you should call `panic!` and when you should return
 `Result`? When code panics, there’s no way to recover. You could call `panic!`
 for any error situation, whether there’s a possible way to recover or not, but
 then you’re making the decision that a situation is unrecoverable on behalf of
@@ -24,7 +24,7 @@ explore why, then discuss situations in which the compiler can’t tell that
 failure is impossible, but you as a human can. The chapter will conclude with
 some general guidelines on how to decide whether to panic in library code.
 
-### Examples, Prototype Code, and Tests
+[Examples, Prototype Code, and Tests](#examples-prototype-code-and-tests)
 
 When you’re writing an example to illustrate some concept, also including
 robust error-handling code can make the example less clear. In examples, it’s
@@ -42,7 +42,7 @@ that method isn’t the functionality under test. Because `panic!` is how a test
 is marked as a failure, calling `unwrap` or `expect` is exactly what should
 happen.
 
-### When You Have More Information Than the Compiler
+[When You Have More Information Than the Compiler](#when-you-have-more-information-than-the-compiler)
 
 It would also be appropriate to call `expect` when you have some other logic
 that ensures that the `Result` will have an `Ok` value, but the logic isn’t
@@ -75,7 +75,7 @@ Mentioning the assumption that this IP address is hardcoded will prompt us to
 change `expect` to better error-handling code if, in the future, we need to get
 the IP address from some other source instead.
 
-### Guidelines for Error Handling
+[Guidelines for Error Handling](#guidelines-for-error-handling)
 
 It’s advisable to have your code panic when it’s possible that your code could
 end up in a bad state. In this context, a *bad state* is when some assumption,
@@ -85,7 +85,8 @@ more of the following:
 
 - The bad state is something that is unexpected, as opposed to something that will likely happen occasionally, like a user entering data in the wrong format.
 - Your code after this point needs to rely on not being in this bad state, rather than checking for the problem at every step.
-- There’s not a good way to encode this information in the types you use. We’ll work through an example of what we mean in “Encoding States and Behavior as Types” in Chapter 18.
+- There’s not a good way to encode this information in the types you use. We’ll
+work through an example of what we mean in [“Encoding States and Behavior as Types”](ch18-03-oo-design-patterns.html#encoding-states-and-behavior-as-types)in Chapter 18.
 
 If someone calls your code and passes in values that don’t make sense, it’s
 best to return an error if you can so that the user of the library can decide
@@ -130,7 +131,7 @@ function won’t even compile, so your function doesn’t have to check for that
 case at runtime. Another example is using an unsigned integer type such as
 `u32`, which ensures that the parameter is never negative.
 
-### Custom Types for Validation
+[Custom Types for Validation](#custom-types-for-validation)
 
 Let’s take the idea of using Rust’s type system to ensure that we have a valid value one step further and look at creating a custom type for validation. Recall the guessing game in Chapter 2 in which our code asked the user to guess a number between 1 and 100. We never validated that the user’s guess was between those numbers before checking it against our secret number; we only validated that the guess was positive. In this case, the consequences were not very dire: Our output of “Too high” or “Too low” would still be correct. But it would be a useful enhancement to guide the user toward valid guesses and have different behavior when the user guesses a number that’s out of range versus when the user types, for example, letters instead.
 
@@ -188,7 +189,7 @@ A function that has a parameter or returns only numbers between 1 and 100 could
 then declare in its signature that it takes or returns a `Guess` rather than an
 `i32` and wouldn’t need to do any additional checks in its body.
 
-## Summary
+[Summary](#summary)
 
 Rust’s error-handling features are designed to help you write more robust code.
 The `panic!` macro signals that your program is in a state it can’t handle and

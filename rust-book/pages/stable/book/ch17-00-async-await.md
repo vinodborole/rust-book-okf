@@ -3,10 +3,10 @@ type: Web Page
 title: 'Fundamentals of Asynchronous Programming: Async, Await, Futures, and Streams
   - The Rust Programming Language'
 resource: https://doc.rust-lang.org/stable/book/ch17-00-async-await.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-# Fundamentals of Asynchronous Programming: Async, Await, Futures, and Streams
+[Fundamentals of Asynchronous Programming: Async, Await, Futures, and Streams](#fundamentals-of-asynchronous-programming-async-await-futures-and-streams)
 
 Many operations we ask the computer to do can take a while to finish. It would
 be nice if we could do something else while we’re waiting for those
@@ -73,7 +73,7 @@ following topics:
 
 Before we see how async works in practice, though, we need to take a short detour to discuss the differences between parallelism and concurrency.
 
-## Parallelism and Concurrency
+[Parallelism and Concurrency](#parallelism-and-concurrency)
 
 We’ve treated parallelism and concurrency as mostly interchangeable so far. Now we need to distinguish between them more precisely, because the differences will show up as we start working.
 

@@ -2,10 +2,10 @@
 type: Web Page
 title: An Example Program Using Structs - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch05-02-example-structs.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-## An Example Program Using Structs
+[An Example Program Using Structs](#an-example-program-using-structs)
 
 To understand when we might want to use structs, let’s write a program that calculates the area of a rectangle. We’ll start by using single variables and then refactor the program until we’re using structs instead.
 
@@ -46,10 +46,10 @@ The `area` function is supposed to calculate the area of one rectangle, but the
 function we wrote has two parameters, and it’s not clear anywhere in our
 program that the parameters are related. It would be more readable and more
 manageable to group width and height together. We’ve already discussed one way
-we might do that in “The Tuple Type” section
+we might do that in [“The Tuple Type”](ch03-02-data-types.html#the-tuple-type) section
 of Chapter 3: by using tuples.
 
-### Refactoring with Tuples
+[Refactoring with Tuples](#refactoring-with-tuples)
 
 Listing 5-9 shows another version of our program that uses tuples.
 
@@ -62,7 +62,7 @@ index `1`. This would be even harder for someone else to figure out and keep in
 mind if they were to use our code. Because we haven’t conveyed the meaning of
 our data in our code, it’s now easier to introduce errors.
 
-### Refactoring with Structs
+[Refactoring with Structs](#refactoring-with-structs)
 
 We use structs to add meaning by labeling the data. We can transform the tuple we’re using into a struct with a name for the whole as well as names for the parts, as shown in Listing 5-10.
 
@@ -87,11 +87,11 @@ width and height are related to each other, and it gives descriptive names to
 the values rather than using the tuple index values of `0` and `1`. This is a
 win for clarity.
 
-### Adding Functionality with Derived Traits
+[Adding Functionality with Derived Traits](#adding-functionality-with-derived-traits)
 
 It’d be useful to be able to print an instance of `Rectangle` while we’re
 debugging our program and see the values for all its fields. Listing 5-11 tries
-using the `println!` macro as we have used in
+using the [ println! macro](../std/macro.println.html) as we have used in
 previous chapters. This won’t work, however.
 
 When we compile this code, we get an error with this core message:
@@ -162,17 +162,17 @@ rect1 is Rectangle {
     height: 50,
 }
 ```
-Another way to print out a value using the `Debug` format is to use the `dbg!`
-macro, which takes ownership of an expression (as opposed
-to `println!`, which takes a reference), prints the file and line number of
-where that `dbg!` macro call occurs in your code along with the resultant value
-of that expression, and returns ownership of the value.
+Another way to print out a value using the `Debug` format is to use the [ dbg!
+macro](../std/macro.dbg.html), which takes ownership of an expression (as opposed
+to 
 
-Note: Calling the `dbg!` macro prints to the standard error console stream
+`println!`, which takes a reference), prints the file and line number of
+where that `dbg!` macro call occurs in your code along with the resultant value
+of that expression, and returns ownership of the value.Note: Calling the `dbg!` macro prints to the standard error console stream
 (`stderr`), as opposed to `println!`, which prints to the standard output
 console stream (`stdout`). We’ll talk more about `stderr` and `stdout` in the
-“Redirecting Errors to Standard Error” section in Chapter
-12.
+[“Redirecting Errors to Standard Error” section in Chapter
+12](ch12-06-writing-to-stderr-instead-of-stdout.html).
 
 Here’s an example where we’re interested in the value that gets assigned to the
 `width` field, as well as the value of the whole struct in `rect1`:
@@ -219,10 +219,10 @@ figure out what your code is doing!
 
 In addition to the `Debug` trait, Rust has provided a number of traits for us
 to use with the `derive` attribute that can add useful behavior to our custom
-types. Those traits and their behaviors are listed in Appendix C. We’ll cover how to implement these traits with custom behavior as
+types. Those traits and their behaviors are listed in [Appendix C](appendix-03-derivable-traits.html). We’ll cover how to implement these traits with custom behavior as
 well as how to create your own traits in Chapter 10. There are also many
-attributes other than `derive`; for more information, see the “Attributes”
-section of the Rust Reference.
+attributes other than `derive`; for more information, see [the “Attributes”
+section of the Rust Reference](../reference/attributes.html).
 
 Our `area` function is very specific: It only computes the area of rectangles.
 It would be helpful to tie this behavior more closely to our `Rectangle` struct

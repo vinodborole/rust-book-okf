@@ -2,10 +2,10 @@
 type: Web Page
 title: Getting Started - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch01-00-getting-started.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-# Getting Started
+[Getting Started](#getting-started)
 
 Let’s start your Rust journey! There’s a lot to learn, but every journey starts somewhere. In this chapter, we’ll discuss:
 

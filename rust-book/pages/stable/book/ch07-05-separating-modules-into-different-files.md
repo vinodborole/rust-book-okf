@@ -2,10 +2,10 @@
 type: Web Page
 title: Separating Modules into Different Files - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch07-05-separating-modules-into-different-files.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-## Separating Modules into Different Files
+[Separating Modules into Different Files](#separating-modules-into-different-files)
 
 So far, all the examples in this chapter defined multiple modules in one file. When modules get large, you might want to move their definitions to a separate file to make the code easier to navigate.
 
@@ -30,8 +30,8 @@ Note that you only need to load a file using a `mod` declaration *once* in your
 module tree. Once the compiler knows the file is part of the project (and knows
 where in the module tree the code resides because of where you’ve put the `mod`
 statement), other files in your project should refer to the loaded file’s code
-using a path to where it was declared, as covered in the “Paths for Referring
-to an Item in the Module Tree” section. In other words,
+using a path to where it was declared, as covered in the [“Paths for Referring
+to an Item in the Module Tree”](ch07-03-paths-for-referring-to-an-item-in-the-module-tree.html) section. In other words,
 `mod` is *not* an “include” operation that you may have seen in other
 programming languages.
 
@@ -52,7 +52,7 @@ root and not declared as a child of the `front_of_house` module. The
 compiler’s rules for which files to check for which modules’ code mean the
 directories and files more closely match the module tree.
 
-### Alternate File Paths
+[Alternate File Paths](#alternate-file-paths)
 
 So far we’ve covered the most idiomatic file paths the Rust compiler uses,
 but Rust also supports an older style of file path. For a module named
@@ -85,7 +85,7 @@ are compiled as part of the crate. The `mod` keyword declares modules, and Rust
 looks in a file with the same name as the module for the code that goes into
 that module.
 
-## Summary
+[Summary](#summary)
 
 Rust lets you split a package into multiple crates and a crate into modules so
 that you can refer to items defined in one module from another module. You can

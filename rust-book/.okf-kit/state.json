@@ -2,7 +2,7 @@
   "generator": "okf-kit",
   "okf_version": "0.1",
   "root_url": "https://doc.rust-lang.org/book",
-  "updated_at": "2026-07-09T12:16:59.842621+00:00",
+  "updated_at": "2026-07-13T09:33:08.912383+00:00",
   "config": {
     "max_depth": 8,
     "max_pages": 120,
@@ -16,655 +16,655 @@
       "path": "pages/stable/book.md",
       "url": "https://doc.rust-lang.org/stable/book",
       "title": "The Rust Programming Language - The Rust Programming Language",
-      "hash": "5d74849a1c0e84a6b77a9607966969a5d98d8fb56b15a3763b9a7b10b622d191"
+      "hash": "ead8d35de755051e825f02f3172879c6b81f1e65eb88b6f6d767fba0ea5cee49"
     },
     {
       "path": "pages/stable/book/appendix-00.md",
       "url": "https://doc.rust-lang.org/stable/book/appendix-00.html",
       "title": "Appendix - The Rust Programming Language",
-      "hash": "02424d43bf017ab09fefff17a9d371b45340f6feb85b1b80ee7189874f907f8c"
+      "hash": "e99e98683633765c8414c7a1f13d81c675396404c21b563e3af23e6f805b2b16"
     },
     {
       "path": "pages/stable/book/appendix-01-keywords.md",
       "url": "https://doc.rust-lang.org/stable/book/appendix-01-keywords.html",
       "title": "A - Keywords - The Rust Programming Language",
-      "hash": "094922ff520f583d501aa24a93309f0f1bc3b94c5241cbce27e657cda6c021e5"
+      "hash": "d155c19c2e5307e3eab88a38de3adf46f334f616a6e686639e6065acd0978914"
     },
     {
       "path": "pages/stable/book/appendix-02-operators.md",
       "url": "https://doc.rust-lang.org/stable/book/appendix-02-operators.html",
       "title": "B - Operators and Symbols - The Rust Programming Language",
-      "hash": "696ae24edba1d8a75a70d46514333d898672c526a88191bad3dc8287529e31d5"
+      "hash": "099859c2f90d5eb7b88949b3035bab9d4ba0a34413e6bd23026876cc9598ad54"
     },
     {
       "path": "pages/stable/book/appendix-03-derivable-traits.md",
       "url": "https://doc.rust-lang.org/stable/book/appendix-03-derivable-traits.html",
       "title": "C - Derivable Traits - The Rust Programming Language",
-      "hash": "fc89dcd550c05ed28bfdb7a4709863d14a2e2d4c000f05fbb45bcc3d04ed8524"
+      "hash": "264d54f5904c49398d25c6b7d7755c194c9294821658060bcbc7df09e4b9899c"
     },
     {
       "path": "pages/stable/book/appendix-04-useful-development-tools.md",
       "url": "https://doc.rust-lang.org/stable/book/appendix-04-useful-development-tools.html",
       "title": "D - Useful Development Tools - The Rust Programming Language",
-      "hash": "85f21b360f1145e588d83fd3b7a877196d37aa943963e980d769de379bd83f14"
+      "hash": "0517afca56aa10ffdfadb7b46f7770d1ef95c716097122a0d3b3dbf7ed744210"
     },
     {
       "path": "pages/stable/book/appendix-05-editions.md",
       "url": "https://doc.rust-lang.org/stable/book/appendix-05-editions.html",
       "title": "E - Editions - The Rust Programming Language",
-      "hash": "6266fcb96eb82e954f4b3263b71fd057cb6c27db289fa00629ae1b67e5ba2807"
+      "hash": "8ab491995d7ca6971a3cede0dac49a49b631ea528b691146a7d0c1cf25933c12"
     },
     {
       "path": "pages/stable/book/appendix-06-translation.md",
       "url": "https://doc.rust-lang.org/stable/book/appendix-06-translation.html",
       "title": "F - Translations of the Book - The Rust Programming Language",
-      "hash": "6da9c277b63d9d7e495005d1bdb40a6111124347b7a1bbc02697f276c8c9667b"
+      "hash": "62e1d5fc525228eb72f66e95e6f964c77057d94fd917462796550b88a6d10b13"
     },
     {
       "path": "pages/stable/book/appendix-07-nightly-rust.md",
       "url": "https://doc.rust-lang.org/stable/book/appendix-07-nightly-rust.html",
       "title": "G - How Rust is Made and “Nightly Rust” - The Rust Programming Language",
-      "hash": "3225bf8247f7f9664718ac92ef9cfcd84ede28ef764fe1e2006c4007427a9582"
+      "hash": "bc37f9bfb977d6dad03212b953cee5c24d313e72e9be947832360628a9009a19"
     },
     {
       "path": "pages/stable/book/ch00-00-introduction.md",
       "url": "https://doc.rust-lang.org/stable/book/ch00-00-introduction.html",
       "title": "Introduction - The Rust Programming Language",
-      "hash": "2716f778a61f12273ee13f6c98b7258df3ca70d8aa20100bf6d2f6c1e08bdcf2"
+      "hash": "90632597f0507cbaa602e929d364fff718790cf2dc502ae1f171cf2fba05ed60"
     },
     {
       "path": "pages/stable/book/ch01-00-getting-started.md",
       "url": "https://doc.rust-lang.org/stable/book/ch01-00-getting-started.html",
       "title": "Getting Started - The Rust Programming Language",
-      "hash": "f51c594b126fde1fffa1c7a3ed2b137cdeaa7e449e9fc8e663948fd62408e3db"
+      "hash": "f02565c5f435dcfbf4c57b14d923c19d03b92d6b6aebdec8a11acea703bb5eb8"
     },
     {
       "path": "pages/stable/book/ch01-01-installation.md",
       "url": "https://doc.rust-lang.org/stable/book/ch01-01-installation.html",
       "title": "Installation - The Rust Programming Language",
-      "hash": "eec5cdce6fd0ef3502ca740ba696d3116d299d346015711730bced41d583b659"
+      "hash": "a5604a090f40b5bbe5a051927fecf4cd2a7b0dd0579d149f55c40b4fbd6b6e56"
     },
     {
       "path": "pages/stable/book/ch01-02-hello-world.md",
       "url": "https://doc.rust-lang.org/stable/book/ch01-02-hello-world.html",
       "title": "Hello, World! - The Rust Programming Language",
-      "hash": "2c4073469eda81c42041bb949ea49beb52c4666cf2895a2b34a68ecb9597d81c"
+      "hash": "23bef5f2d2bab5e265b2e3502c6bf9881c148e0775c75b66e4492d86f7463e4c"
     },
     {
       "path": "pages/stable/book/ch01-03-hello-cargo.md",
       "url": "https://doc.rust-lang.org/stable/book/ch01-03-hello-cargo.html",
       "title": "Hello, Cargo! - The Rust Programming Language",
-      "hash": "b919573a3bbed3ab3c65daeb4f689351e6fd44becea72987fc0e21225de74f96"
+      "hash": "18a694cfc85ea62b4d6e939b88a1b8b2c94f96ebdfaa4ed0b4fb80d0182f238c"
     },
     {
       "path": "pages/stable/book/ch02-00-guessing-game-tutorial.md",
       "url": "https://doc.rust-lang.org/stable/book/ch02-00-guessing-game-tutorial.html",
       "title": "Programming a Guessing Game - The Rust Programming Language",
-      "hash": "901c9fbc9b19d119066f65a6abfdab2c05ead647e82156d2c60efb0afd5343c7"
+      "hash": "60c47a18d83cbd9adde1a8d25e9d00e53f9cd8d675246789276fdbd6c76d5e52"
     },
     {
       "path": "pages/stable/book/ch03-00-common-programming-concepts.md",
       "url": "https://doc.rust-lang.org/stable/book/ch03-00-common-programming-concepts.html",
       "title": "Common Programming Concepts - The Rust Programming Language",
-      "hash": "8a85c108664bf6b028fc15b0914845a54f159f7ec5e9a64216c52fc602de1417"
+      "hash": "601c81cb4c07eb10c2bbb3f6d75cbecf42a5061a503a2c29db348b593de491d0"
     },
     {
       "path": "pages/stable/book/ch03-01-variables-and-mutability.md",
       "url": "https://doc.rust-lang.org/stable/book/ch03-01-variables-and-mutability.html",
       "title": "Variables and Mutability - The Rust Programming Language",
-      "hash": "434f60425679ce5fea7c23220a4ff71646166a216b9d484f27235fa274e64b8a"
+      "hash": "8e25cd54d7a5b65f67ec1f5b8e327e43d6cdb70b9c3d9d40b2a261f52facf82c"
     },
     {
       "path": "pages/stable/book/ch03-02-data-types.md",
       "url": "https://doc.rust-lang.org/stable/book/ch03-02-data-types.html",
       "title": "Data Types - The Rust Programming Language",
-      "hash": "b91a9a8c8ea5b7f0b66b77fd36f21e4631d0ebf218fe51a83a54d8280558abcc"
+      "hash": "c63f4d982388d6331b68ffb6ed4d20b49b9bbc373926c47e37eef16363dc6cdb"
     },
     {
       "path": "pages/stable/book/ch03-03-how-functions-work.md",
       "url": "https://doc.rust-lang.org/stable/book/ch03-03-how-functions-work.html",
       "title": "Functions - The Rust Programming Language",
-      "hash": "0a5164899b621cb00001c5501d93b3d5534288aac51b5dc0031e209daf2a0421"
+      "hash": "eab92b73564c99041bce8c344edd46eb18ec01a9033685191ce56bc798b65c69"
     },
     {
       "path": "pages/stable/book/ch03-04-comments.md",
       "url": "https://doc.rust-lang.org/stable/book/ch03-04-comments.html",
       "title": "Comments - The Rust Programming Language",
-      "hash": "cb10b878258a1568a39f7e852fabf4f4722d625eb6f256d56a01b4fc4c0ff50e"
+      "hash": "293f634737d9b59e1c4c0b8c547942c75aa12cf4080a6834989522fe81bf5a82"
     },
     {
       "path": "pages/stable/book/ch03-05-control-flow.md",
       "url": "https://doc.rust-lang.org/stable/book/ch03-05-control-flow.html",
       "title": "Control Flow - The Rust Programming Language",
-      "hash": "5ded68b6e6cb3e1c72b1cb2023f1a0482b1bd3170fc45152a9a71d340f3811f7"
+      "hash": "641e547bb3215487079c37d7a56113575b614d80fc0c3513b1fde52fcfdfcb76"
     },
     {
       "path": "pages/stable/book/ch04-00-understanding-ownership.md",
       "url": "https://doc.rust-lang.org/stable/book/ch04-00-understanding-ownership.html",
       "title": "Understanding Ownership - The Rust Programming Language",
-      "hash": "6ca5b370ee8c77694b73ee62cacbea399097b352d624fc1071bc0ed9fcf867bf"
+      "hash": "1c6ead0ccf4c442ba4de330762aaff9bc8fa59f3d35a08cf89d33f7071f5ebb2"
     },
     {
       "path": "pages/stable/book/ch04-01-what-is-ownership.md",
       "url": "https://doc.rust-lang.org/stable/book/ch04-01-what-is-ownership.html",
       "title": "What is Ownership? - The Rust Programming Language",
-      "hash": "daf8eb73037299fec00d9fb1ff48c38a0a94ddb8c91c28f75a84073346f16740"
+      "hash": "5d489b06e28e0996764f4e2b6d2ae3ed71f4db6367154e6b5b8c7203bafc5027"
     },
     {
       "path": "pages/stable/book/ch04-02-references-and-borrowing.md",
       "url": "https://doc.rust-lang.org/stable/book/ch04-02-references-and-borrowing.html",
       "title": "References and Borrowing - The Rust Programming Language",
-      "hash": "5e7243d20cedf47a20daeb3c89f60e6ca187bf69bc975ddf9b8e0c3f6d80602f"
+      "hash": "ed5da0aca66a8ab18baa1fbd06479b8e33078927f739345651cb02efd500b17e"
     },
     {
       "path": "pages/stable/book/ch04-03-slices.md",
       "url": "https://doc.rust-lang.org/stable/book/ch04-03-slices.html",
       "title": "The Slice Type - The Rust Programming Language",
-      "hash": "85b62ef9c01fca39d6c3af4e30971f17e49378df78f0105cb5539233516955d1"
+      "hash": "766290f7326cfff8f665ff1e0bef436b795db4ac439f1409f6063938681acb51"
     },
     {
       "path": "pages/stable/book/ch05-00-structs.md",
       "url": "https://doc.rust-lang.org/stable/book/ch05-00-structs.html",
       "title": "Using Structs to Structure Related Data - The Rust Programming Language",
-      "hash": "21c759c8a16e0d5e660148d3d8123536b968af1b2a7bc0e2982edeece3ad3b21"
+      "hash": "ba04c6213dc7a2548d0782a8763af3e01db5e1f0f5d2d0f1142b32dcfdcd22ab"
     },
     {
       "path": "pages/stable/book/ch05-01-defining-structs.md",
       "url": "https://doc.rust-lang.org/stable/book/ch05-01-defining-structs.html",
       "title": "Defining and Instantiating Structs - The Rust Programming Language",
-      "hash": "6ee0b73faa41560a94aab1e5ca2b93dd7b927bf8ba4d7fcdcb1b30bd49d84a09"
+      "hash": "363cb32f859b5819b26d157df3a1ae0febe012ef3effce47688128b52f7d15da"
     },
     {
       "path": "pages/stable/book/ch05-02-example-structs.md",
       "url": "https://doc.rust-lang.org/stable/book/ch05-02-example-structs.html",
       "title": "An Example Program Using Structs - The Rust Programming Language",
-      "hash": "4eab213485bf7c5d9f262f3b5170444eba3ab20772a1bad6ad9557d43ef25425"
+      "hash": "f24beb773d76aac486891501c86d45eec18d14e644f990531241a2266f2366f0"
     },
     {
       "path": "pages/stable/book/ch05-03-method-syntax.md",
       "url": "https://doc.rust-lang.org/stable/book/ch05-03-method-syntax.html",
       "title": "Methods - The Rust Programming Language",
-      "hash": "5a879e3a9cbec94238c460c58636c640e70a56130b9e92bb08c307d064f54ecf"
+      "hash": "475de8f78566083f5b7cbd0496ae10d303de53685ef73c8aed8fde69cd96699f"
     },
     {
       "path": "pages/stable/book/ch06-00-enums.md",
       "url": "https://doc.rust-lang.org/stable/book/ch06-00-enums.html",
       "title": "Enums and Pattern Matching - The Rust Programming Language",
-      "hash": "4442011a9d6c9200af8e4d74929f65e9cab02742bf116cdaa2979f9eb09710d1"
+      "hash": "9a69a298136252afd4eef38668fb730474133ac6f76e163a9e2b2700bb5f65d4"
     },
     {
       "path": "pages/stable/book/ch06-01-defining-an-enum.md",
       "url": "https://doc.rust-lang.org/stable/book/ch06-01-defining-an-enum.html",
       "title": "Defining an Enum - The Rust Programming Language",
-      "hash": "ed9da1f179bdc02902f0c007b2e52e880d0f81eeb396234a178a89f12453f8ab"
+      "hash": "859ddedd28b9ce58a0fd546bdbf39ca33085ba2a4adc2a8e019e9f081ea4f8f2"
     },
     {
       "path": "pages/stable/book/ch06-02-match.md",
       "url": "https://doc.rust-lang.org/stable/book/ch06-02-match.html",
       "title": "The match Control Flow Construct - The Rust Programming Language",
-      "hash": "90a6026ece35c8933185b027bd4b0891968e54edc98d7be1475fee4de2ddbf90"
+      "hash": "ebaf5fe0d02ddf75d8cf9253a0b3ee006e58e05f7b066d9426624201541b16d8"
     },
     {
       "path": "pages/stable/book/ch06-03-if-let.md",
       "url": "https://doc.rust-lang.org/stable/book/ch06-03-if-let.html",
       "title": "Concise Control Flow with if let and let...else - The Rust Programming Language",
-      "hash": "d4d93a3b29354f1f8816ebc4b227a9f8579ccd9a48172f270d09973c1f081f29"
+      "hash": "fb5b97737a5ce3e33ab90ded4dd5cb2009fadd5d3ff834f4cab47a2900cdd3ec"
     },
     {
       "path": "pages/stable/book/ch07-00-managing-growing-projects-with-packages-crates-and-modules.md",
       "url": "https://doc.rust-lang.org/stable/book/ch07-00-managing-growing-projects-with-packages-crates-and-modules.html",
       "title": "Packages, Crates, and Modules - The Rust Programming Language",
-      "hash": "c5241035dac3a1a4ea9c63cd9d390f57649ec7e59dbc51eec9f48f91dace4373"
+      "hash": "03c3983b797ae68e1242e90eda6e131eb17f0c44550d03b93028913f40e96fb1"
     },
     {
       "path": "pages/stable/book/ch07-01-packages-and-crates.md",
       "url": "https://doc.rust-lang.org/stable/book/ch07-01-packages-and-crates.html",
       "title": "Packages and Crates - The Rust Programming Language",
-      "hash": "64a266d507701c37282d97ec52bc8e4840da5ee6ff689cb6f015220fcb3fe25b"
+      "hash": "e474a93147bf5fc91a14770c08e8e4bbd5757b8f983c020aa6c2f8719c46cc7b"
     },
     {
       "path": "pages/stable/book/ch07-02-defining-modules-to-control-scope-and-privacy.md",
       "url": "https://doc.rust-lang.org/stable/book/ch07-02-defining-modules-to-control-scope-and-privacy.html",
       "title": "Control Scope and Privacy with Modules - The Rust Programming Language",
-      "hash": "d7773f2c0fada9067f2a67e54126cff3c265a52e001ed0172725b1b44f656afa"
+      "hash": "1402c9fe46d18fa8e7d892dd0dd8fffd230b32d56953aeb372a2ccf5ca4ac451"
     },
     {
       "path": "pages/stable/book/ch07-03-paths-for-referring-to-an-item-in-the-module-tree.md",
       "url": "https://doc.rust-lang.org/stable/book/ch07-03-paths-for-referring-to-an-item-in-the-module-tree.html",
       "title": "Paths for Referring to an Item in the Module Tree - The Rust Programming Language",
-      "hash": "3845afa20f56db213c5bd516a22fe453876b8c448ff5955a179c1a083b5b15b6"
+      "hash": "e1432d8b3607ded25906fbb471296339b250105bef029987b01407b2e0966e78"
     },
     {
       "path": "pages/stable/book/ch07-04-bringing-paths-into-scope-with-the-use-keyword.md",
       "url": "https://doc.rust-lang.org/stable/book/ch07-04-bringing-paths-into-scope-with-the-use-keyword.html",
       "title": "Bringing Paths Into Scope with the use Keyword - The Rust Programming Language",
-      "hash": "e3cbc8e902ecb51713b95af7ebd987b4f9c4094cbd6983754ad3d347d51aee92"
+      "hash": "f83901e48dc1833c8e3db1d73180e5e9ac396a2ffbb52c7e6ec501b97827a81d"
     },
     {
       "path": "pages/stable/book/ch07-05-separating-modules-into-different-files.md",
       "url": "https://doc.rust-lang.org/stable/book/ch07-05-separating-modules-into-different-files.html",
       "title": "Separating Modules into Different Files - The Rust Programming Language",
-      "hash": "0d74f1ca0a8358c2063ae5b6821e420d096312cc49f95b91a026517cf91d40eb"
+      "hash": "cc3eaa0292e2cd5af65d7832860379764b567c3b1bf09d745535632f638b45c8"
     },
     {
       "path": "pages/stable/book/ch08-00-common-collections.md",
       "url": "https://doc.rust-lang.org/stable/book/ch08-00-common-collections.html",
       "title": "Common Collections - The Rust Programming Language",
-      "hash": "29f9845a95483fcdf48ecf0a47a08ba9bae394a8d860dd23c311232914b3f7b5"
+      "hash": "0baa82538faf76e50ba78cfb04ea8e52fcb9692fdb5d4ba7ff50a75d2c6f00ae"
     },
     {
       "path": "pages/stable/book/ch08-01-vectors.md",
       "url": "https://doc.rust-lang.org/stable/book/ch08-01-vectors.html",
       "title": "Storing Lists of Values with Vectors - The Rust Programming Language",
-      "hash": "48039814daa8a492465fb16bf733e9998f2b4d55ec3b2b30f9c93315bedfbdd4"
+      "hash": "716617e0dee71c744afdb458b0ed86d92e2047e44cf13af909479c0c466fef60"
     },
     {
       "path": "pages/stable/book/ch08-02-strings.md",
       "url": "https://doc.rust-lang.org/stable/book/ch08-02-strings.html",
       "title": "Storing UTF-8 Encoded Text with Strings - The Rust Programming Language",
-      "hash": "b8382831298d3f9337230ca268e7e8b2c16d589407c2f9207cdd92ec64cf7527"
+      "hash": "a958d60943a5a43068744a28069119dc818d9fe160ca1b0390ffe973f65b48e4"
     },
     {
       "path": "pages/stable/book/ch08-03-hash-maps.md",
       "url": "https://doc.rust-lang.org/stable/book/ch08-03-hash-maps.html",
       "title": "Storing Keys with Associated Values in Hash Maps - The Rust Programming Language",
-      "hash": "6a8b2bb0a412ae0b4290d4d4f4c0ed9890b23b77ccc249d0619633a8f745962d"
+      "hash": "d0b43116d78aa9533293b49d3782f0a558d1dfc1a166e0512f224238ceaa8a7f"
     },
     {
       "path": "pages/stable/book/ch09-00-error-handling.md",
       "url": "https://doc.rust-lang.org/stable/book/ch09-00-error-handling.html",
       "title": "Error Handling - The Rust Programming Language",
-      "hash": "e743642abb51faa6deb5bb0ec10ac86cfeeda5da6081e5fc7931ef15ba4b21e6"
+      "hash": "80711c6c3238534e53bea0cf549a82f94a121a0e6e5eb5e4c0f188a1fb891c7c"
     },
     {
       "path": "pages/stable/book/ch09-01-unrecoverable-errors-with-panic.md",
       "url": "https://doc.rust-lang.org/stable/book/ch09-01-unrecoverable-errors-with-panic.html",
       "title": "Unrecoverable Errors with panic! - The Rust Programming Language",
-      "hash": "e4e0363d1c4a9589af92c3563e04e548baac6d54f80bfc8167514ca1671647ba"
+      "hash": "f3c8354dff4627556afb548b98ab93bd188b0b2fb0dfa0b0dbf6fda0caeb44d7"
     },
     {
       "path": "pages/stable/book/ch09-02-recoverable-errors-with-result.md",
       "url": "https://doc.rust-lang.org/stable/book/ch09-02-recoverable-errors-with-result.html",
       "title": "Recoverable Errors with Result - The Rust Programming Language",
-      "hash": "4ea060341612cbd7881912b75d9952c231ec1b61d45bf5201f834eacec60ae0f"
+      "hash": "b8479ebb15f8cc503907bac887ba3ca10a06b3a8aec8b86b220d2fed48505bc0"
     },
     {
       "path": "pages/stable/book/ch09-03-to-panic-or-not-to-panic.md",
       "url": "https://doc.rust-lang.org/stable/book/ch09-03-to-panic-or-not-to-panic.html",
       "title": "To panic! or Not to panic! - The Rust Programming Language",
-      "hash": "c3ab954aef64777af809c2f402236e9d5d99acbed3f7305231dcace01640fd72"
+      "hash": "172e5fadf11801ea1277f3ca98b9176e41ac6194cdc797b5ccbe7513753b2eb8"
     },
     {
       "path": "pages/stable/book/ch10-00-generics.md",
       "url": "https://doc.rust-lang.org/stable/book/ch10-00-generics.html",
       "title": "Generic Types, Traits, and Lifetimes - The Rust Programming Language",
-      "hash": "e6480c5d792096686c66c525e731d0abddbb2b7c8910e18bbdaf0e5487df1314"
+      "hash": "d7bd220ee76e1db2a7c50a5afbca16554f0c84750787e4571a9f0c2984530238"
     },
     {
       "path": "pages/stable/book/ch10-01-syntax.md",
       "url": "https://doc.rust-lang.org/stable/book/ch10-01-syntax.html",
       "title": "Generic Data Types - The Rust Programming Language",
-      "hash": "e69b8b1423f401ef169d15e41ae498197c07e81a26c776d7c5886b7aab9b46e3"
+      "hash": "e616bb2be86429024e26d521a1c8643fedb41294bc0b5a0114bc1b86b9808963"
     },
     {
       "path": "pages/stable/book/ch10-02-traits.md",
       "url": "https://doc.rust-lang.org/stable/book/ch10-02-traits.html",
       "title": "Defining Shared Behavior with Traits - The Rust Programming Language",
-      "hash": "ee4718028e96cff45019857cd0780307e0938ce7c039757828af4e01e22799e7"
+      "hash": "447115eb97e595233ae7b5a945b84f25201c567587f76e8a0e717a303c0f38c8"
     },
     {
       "path": "pages/stable/book/ch10-03-lifetime-syntax.md",
       "url": "https://doc.rust-lang.org/stable/book/ch10-03-lifetime-syntax.html",
       "title": "Validating References with Lifetimes - The Rust Programming Language",
-      "hash": "9470056defe992c5e3050d3358a4e7521fc48c8c619c465b234d25da2d614e17"
+      "hash": "052000326b4809956ce2b2a37eabae122dea0f53ea3c9b4de3c46584bd684355"
     },
     {
       "path": "pages/stable/book/ch11-00-testing.md",
       "url": "https://doc.rust-lang.org/stable/book/ch11-00-testing.html",
       "title": "Writing Automated Tests - The Rust Programming Language",
-      "hash": "b8adb1137caff911d412a4e194335009f629006e4a8ef5b348cdff6a160b95a4"
+      "hash": "18939233d15dba1c6e2484703d18d4bab351eb4254d149b0150d4ba7a7617549"
     },
     {
       "path": "pages/stable/book/ch11-01-writing-tests.md",
       "url": "https://doc.rust-lang.org/stable/book/ch11-01-writing-tests.html",
       "title": "How to Write Tests - The Rust Programming Language",
-      "hash": "3db7c5894afc008f5f2aa27d67b36d18a76aff70a2b1dc4a4e417311cf5e5b70"
+      "hash": "73bd9d3ac53a67b0bc9c45a2cf73dfce1061d3b52182e108a536d3cba70da2b7"
     },
     {
       "path": "pages/stable/book/ch11-02-running-tests.md",
       "url": "https://doc.rust-lang.org/stable/book/ch11-02-running-tests.html",
       "title": "Controlling How Tests Are Run - The Rust Programming Language",
-      "hash": "3daa557bdbe04c42e0bb0788bc40e81877610f8ff8cd921574e9da1bb6d4c35a"
+      "hash": "b2bae39f1c5d3de28a232f3b1e022299d36e90c65de5bd963d0abdf250d74a86"
     },
     {
       "path": "pages/stable/book/ch11-03-test-organization.md",
       "url": "https://doc.rust-lang.org/stable/book/ch11-03-test-organization.html",
       "title": "Test Organization - The Rust Programming Language",
-      "hash": "4d8f6209ad9f958a9abfad023d607c213ea79d5e5c585b58df499c623e34db59"
+      "hash": "a1b889c40ef7a580cce54acd63f55b9f268871e2d4e19fc296819f03321f624e"
     },
     {
       "path": "pages/stable/book/ch12-00-an-io-project.md",
       "url": "https://doc.rust-lang.org/stable/book/ch12-00-an-io-project.html",
       "title": "An I/O Project: Building a Command Line Program - The Rust Programming Language",
-      "hash": "102733a46107e8113bc3ec9e43e6bfe333e304509b0d993d809e0de86608f352"
+      "hash": "dff5ca29d79383ca211b849327c94ff8ba35f78976fdb6a3c792d062e59ad5e0"
     },
     {
       "path": "pages/stable/book/ch12-01-accepting-command-line-arguments.md",
       "url": "https://doc.rust-lang.org/stable/book/ch12-01-accepting-command-line-arguments.html",
       "title": "Accepting Command Line Arguments - The Rust Programming Language",
-      "hash": "af4c8e33a24bb29ab92799ed7ec21dbe8aa21e64cc3657b8335c8191b0622059"
+      "hash": "1dc8984c5ed0e40578cdb6624104bf13ce1b8e7f63201a006ef21841a3801bb8"
     },
     {
       "path": "pages/stable/book/ch12-02-reading-a-file.md",
       "url": "https://doc.rust-lang.org/stable/book/ch12-02-reading-a-file.html",
       "title": "Reading a File - The Rust Programming Language",
-      "hash": "06ad524d165df1cea9304d6691411f62135c3820057d0449f83ee739de114870"
+      "hash": "d30de9a13c91410ea324e816e51161abe45a0c8458a3f0a0b78f65da0ea66c38"
     },
     {
       "path": "pages/stable/book/ch12-04-testing-the-librarys-functionality.md",
       "url": "https://doc.rust-lang.org/stable/book/ch12-04-testing-the-librarys-functionality.html",
       "title": "Adding Functionality with Test Driven Development - The Rust Programming Language",
-      "hash": "1acf17eee5e89a72a8fa86f069a4ef53dd9657cdd554176372b0387318d42a14"
+      "hash": "38f495107d8f374ccafeff9b61a3c23d7f752d64dd59948aaf09ef6a1b7209ae"
     },
     {
       "path": "pages/stable/book/ch12-05-working-with-environment-variables.md",
       "url": "https://doc.rust-lang.org/stable/book/ch12-05-working-with-environment-variables.html",
       "title": "Working with Environment Variables - The Rust Programming Language",
-      "hash": "7e4e39c622ce472b7006451ed2111af45e03c35735b35ea41c13bc9e6c92a252"
+      "hash": "5fbee213892f1cc174ee6416782310c9a06fb69e25f94ae08724cba15f94c491"
     },
     {
       "path": "pages/stable/book/ch12-06-writing-to-stderr-instead-of-stdout.md",
       "url": "https://doc.rust-lang.org/stable/book/ch12-06-writing-to-stderr-instead-of-stdout.html",
       "title": "Redirecting Errors to Standard Error - The Rust Programming Language",
-      "hash": "4d9cfe82e2677e24ac63b08e0efc903427ea7362a8a95e2705e037c4b32a5f7a"
+      "hash": "c09943db4b6c1213b461c139fa7970c87355c623f65a7d55fd6d36aab5ca108b"
     },
     {
       "path": "pages/stable/book/ch13-00-functional-features.md",
       "url": "https://doc.rust-lang.org/stable/book/ch13-00-functional-features.html",
       "title": "Functional Language Features: Iterators and Closures - The Rust Programming Language",
-      "hash": "2fe96a0d7dc03c4848ce9e555ebca73dcad8aae66b6a11e39c3248a96679bdb9"
+      "hash": "f353d711c10aea47ab583ce2fedd7215c747531bf03c3fa8ccd271df6670c945"
     },
     {
       "path": "pages/stable/book/ch13-01-closures.md",
       "url": "https://doc.rust-lang.org/stable/book/ch13-01-closures.html",
       "title": "Closures - The Rust Programming Language",
-      "hash": "8a711f193110c117029a2d0c49f1f2fe4923575bb139800746f8997f43847e75"
+      "hash": "65fedc554bdf4fa4fc23077705ecb6c9965ddea8f4176d6d5f4935848eddbf78"
     },
     {
       "path": "pages/stable/book/ch13-02-iterators.md",
       "url": "https://doc.rust-lang.org/stable/book/ch13-02-iterators.html",
       "title": "Processing a Series of Items with Iterators - The Rust Programming Language",
-      "hash": "6189ac2ad6b7f6e836262dd867f1b2e991d9d71052fba59812c075097fd2a151"
+      "hash": "feb166500f92808b4489c65f3512ab18250c29c429ab97fee956532d39562acd"
     },
     {
       "path": "pages/stable/book/ch13-03-improving-our-io-project.md",
       "url": "https://doc.rust-lang.org/stable/book/ch13-03-improving-our-io-project.html",
       "title": "Improving Our I/O Project - The Rust Programming Language",
-      "hash": "f0caaeecee02ff81175c1bd0c6aa2e9d8702d1a1842c4aeab47da0b643ad58e9"
+      "hash": "8d018cd59d73babd506ac2661ea84a47c4aa7bf17d91d6965547a0e29fd37b3b"
     },
     {
       "path": "pages/stable/book/ch13-04-performance.md",
       "url": "https://doc.rust-lang.org/stable/book/ch13-04-performance.html",
       "title": "Performance in Loops vs. Iterators - The Rust Programming Language",
-      "hash": "9d72c7fb522de18fffbc264fa8fa78784397fed95e60fdef43e3086ca463b5d7"
+      "hash": "c5b8e979c6a1927dc92e91e466f88e43520a7cf3146f344f9876124905922e2c"
     },
     {
       "path": "pages/stable/book/ch14-00-more-about-cargo.md",
       "url": "https://doc.rust-lang.org/stable/book/ch14-00-more-about-cargo.html",
       "title": "More about Cargo and Crates.io - The Rust Programming Language",
-      "hash": "b91e6368e9501f7c9867931cf4e48e69cd9c56b9448610f9c83f5bd593046672"
+      "hash": "7ccf64943374adeb3ab028416bdd8e5dbe38ef08c9499bd116bb0203896de5c1"
     },
     {
       "path": "pages/stable/book/ch14-01-release-profiles.md",
       "url": "https://doc.rust-lang.org/stable/book/ch14-01-release-profiles.html",
       "title": "Customizing Builds with Release Profiles - The Rust Programming Language",
-      "hash": "2b64e956fc737b990016a2bd2a55081609a419b023fef70283d1b03629d07a15"
+      "hash": "9f7bcc62310fbcb6e4f747f645604422e4727ab209231c9994de65fb9b1999cd"
     },
     {
       "path": "pages/stable/book/ch14-02-publishing-to-crates-io.md",
       "url": "https://doc.rust-lang.org/stable/book/ch14-02-publishing-to-crates-io.html",
       "title": "Publishing a Crate to Crates.io - The Rust Programming Language",
-      "hash": "6f6f775526e314a601084801ef82bd820210257f06ebac7687e3dc3319c8dddf"
+      "hash": "622842b9e1e6bb769543450fb7ac845d790945449995383d773086b04bbb5466"
     },
     {
       "path": "pages/stable/book/ch14-03-cargo-workspaces.md",
       "url": "https://doc.rust-lang.org/stable/book/ch14-03-cargo-workspaces.html",
       "title": "Cargo Workspaces - The Rust Programming Language",
-      "hash": "882903ae494e4bd15c9beb67f09fadc4bb58d3f4ca9fc04ba6abefdfe6f2b75d"
+      "hash": "d3e7310deb035d6eb56146c5ed9c8b5da814d8c6d1fd9b3bdfa5dc50b7a576a3"
     },
     {
       "path": "pages/stable/book/ch14-04-installing-binaries.md",
       "url": "https://doc.rust-lang.org/stable/book/ch14-04-installing-binaries.html",
       "title": "Installing Binaries with cargo install - The Rust Programming Language",
-      "hash": "7f270d83e8a8677d26388c1308ad8f189bfa5fe98b440da1ec53ab6fe2ad9b5a"
+      "hash": "badcfec9a930d841cee8a4a277c93b4731e8423e56cff68482da2e55d25027b2"
     },
     {
       "path": "pages/stable/book/ch15-00-smart-pointers.md",
       "url": "https://doc.rust-lang.org/stable/book/ch15-00-smart-pointers.html",
       "title": "Smart Pointers - The Rust Programming Language",
-      "hash": "b6f1bd4c603b183177d36ae631e78c623280573950f7bae8565579752821db21"
+      "hash": "60e82875ea8f79708e63577db82ba663f1961d2e290d6fc4429cf91a2d8afed9"
     },
     {
       "path": "pages/stable/book/ch15-01-box.md",
       "url": "https://doc.rust-lang.org/stable/book/ch15-01-box.html",
       "title": "Using Box<T> to Point to Data on the Heap - The Rust Programming Language",
-      "hash": "874dd174612fda04f8d03f8aee5b32110ffa4763db3d8851a316e2de37d7d7b8"
+      "hash": "bab9d02c2b5e10783d481d9c7e1e7d95818375c85b91b0d18c28124be4471334"
     },
     {
       "path": "pages/stable/book/ch15-02-deref.md",
       "url": "https://doc.rust-lang.org/stable/book/ch15-02-deref.html",
       "title": "Treating Smart Pointers Like Regular References - The Rust Programming Language",
-      "hash": "a4cf823ce7c09a0b2d2f28f7c25184d5bec835855cb3369efbbdae5c1c4d07e6"
+      "hash": "5cdbd211d06b51bb41c85855975c69c89df6601b640f29a0d3fc1343e2f9ee6f"
     },
     {
       "path": "pages/stable/book/ch15-03-drop.md",
       "url": "https://doc.rust-lang.org/stable/book/ch15-03-drop.html",
       "title": "Running Code on Cleanup with the Drop Trait - The Rust Programming Language",
-      "hash": "d21f49cc1563a9d7afe9b34a70d7da2a183ae39444a885d8448e3046465e5ef0"
+      "hash": "8cf4193f866d1e493358f03741f996197cfcd74bd6532499867c5066685790d2"
     },
     {
       "path": "pages/stable/book/ch15-04-rc.md",
       "url": "https://doc.rust-lang.org/stable/book/ch15-04-rc.html",
       "title": "Rc<T>, the Reference Counted Smart Pointer - The Rust Programming Language",
-      "hash": "a39d646f0db06a9e312a829b1f5f06b1a37f94ad3d4f73129fa30d4b1303b5f2"
+      "hash": "e3add4f353fa9bcd3d0a1d0991e5bfb1463099669c5a3dcacc90b4cc9e7e5424"
     },
     {
       "path": "pages/stable/book/ch16-00-concurrency.md",
       "url": "https://doc.rust-lang.org/stable/book/ch16-00-concurrency.html",
       "title": "Fearless Concurrency - The Rust Programming Language",
-      "hash": "b2fd6eb811a7f845a41a140d8d150f4c97df33af5b117f949b6ddb75e1ccdb41"
+      "hash": "9ad3301931757545954c3bf27a095511ce1392a85534b860efc577efc38f9d2e"
     },
     {
       "path": "pages/stable/book/ch16-01-threads.md",
       "url": "https://doc.rust-lang.org/stable/book/ch16-01-threads.html",
       "title": "Using Threads to Run Code Simultaneously - The Rust Programming Language",
-      "hash": "5f9b93683363f85acc4fd670bfb5671333ffa1ad6bb48b2d3deea62739b4e6e9"
+      "hash": "e7b41345afe35ecd9fc482651f98d84bae3e8e704337db6401c219e6f6699321"
     },
     {
       "path": "pages/stable/book/ch16-02-message-passing.md",
       "url": "https://doc.rust-lang.org/stable/book/ch16-02-message-passing.html",
       "title": "Transfer Data Between Threads with Message Passing - The Rust Programming Language",
-      "hash": "faf4107266347cce6ab81f05136ffd4b9205b171d3dcbc33b46daea2733e967f"
+      "hash": "e2631992b13412644d0cb4a1b73b643a9de5ba2194075cd35ed34341b86c20a7"
     },
     {
       "path": "pages/stable/book/ch16-03-shared-state.md",
       "url": "https://doc.rust-lang.org/stable/book/ch16-03-shared-state.html",
       "title": "Shared-State Concurrency - The Rust Programming Language",
-      "hash": "37cef5bbbf5bdd38ebdb513e2d146c92d4fe9d1524c4f62c1398a58007905dc9"
+      "hash": "fe01be79ca66f14e4de4cce505d9cc52f0fafa4ece89e362b102e20071927cb9"
     },
     {
       "path": "pages/stable/book/ch16-04-extensible-concurrency-sync-and-send.md",
       "url": "https://doc.rust-lang.org/stable/book/ch16-04-extensible-concurrency-sync-and-send.html",
       "title": "Extensible Concurrency with Send and Sync - The Rust Programming Language",
-      "hash": "5a7edb7b060f4bacaf73f672056e94572f27caa6d9003395a29d242c496fbe73"
+      "hash": "c4efee8ec824de019e56f70e832f9ed53070e7c382410893e83b6116b982786f"
     },
     {
       "path": "pages/stable/book/ch17-00-async-await.md",
       "url": "https://doc.rust-lang.org/stable/book/ch17-00-async-await.html",
       "title": "Fundamentals of Asynchronous Programming: Async, Await, Futures, and Streams - The Rust Programming Language",
-      "hash": "701af48c71e97ef84d69dda05338c764d656121b824342a499e337660143d980"
+      "hash": "a5455f0799e0e5d68babd20f992c1323e47055bd6339c2d39e93c8f4979becd6"
     },
     {
       "path": "pages/stable/book/ch17-01-futures-and-syntax.md",
       "url": "https://doc.rust-lang.org/stable/book/ch17-01-futures-and-syntax.html",
       "title": "Futures and the Async Syntax - The Rust Programming Language",
-      "hash": "76d008d273e2b4356fd8596a7cd9ea8578697b406b5337e36591fc04313943b4"
+      "hash": "bce288e4c7531d3d9688e283af667e08158950aabd70b75e827a020d000f6de0"
     },
     {
       "path": "pages/stable/book/ch17-02-concurrency-with-async.md",
       "url": "https://doc.rust-lang.org/stable/book/ch17-02-concurrency-with-async.html",
       "title": "Applying Concurrency with Async - The Rust Programming Language",
-      "hash": "88d173ede0ea9f094b9e846fba88962e4ec63116968426cec176d79841f3edea"
+      "hash": "2be9fd19c98d7f800700b9c24ebf10027e2dfe5f14ec8fc9f97dc0b92c8c4be2"
     },
     {
       "path": "pages/stable/book/ch17-03-more-futures.md",
       "url": "https://doc.rust-lang.org/stable/book/ch17-03-more-futures.html",
       "title": "Working With Any Number of Futures - The Rust Programming Language",
-      "hash": "2582b7c47a430533aaf6fc960fcf24e6369a4a914352dfbaab063520693f427a"
+      "hash": "4decca2af01d4d27bb91887e56a1130e97b84801a4c78e42f7f6fdbc5dc4e308"
     },
     {
       "path": "pages/stable/book/ch17-04-streams.md",
       "url": "https://doc.rust-lang.org/stable/book/ch17-04-streams.html",
       "title": "Streams: Futures in Sequence - The Rust Programming Language",
-      "hash": "b0f20a3749f8bfdd1f2a4591f340951d0506bf5d99741bd72f350d8b3969fbbd"
+      "hash": "99a0da679d95ee22ca2c27c15fb0ee24632c64d6779a94f4b84036062ae6c172"
     },
     {
       "path": "pages/stable/book/ch17-05-traits-for-async.md",
       "url": "https://doc.rust-lang.org/stable/book/ch17-05-traits-for-async.html",
       "title": "A Closer Look at the Traits for Async - The Rust Programming Language",
-      "hash": "9c4433867ecb8114945ec8e45e009e98bf9c07f2d50846ad85f02d8e9565b943"
+      "hash": "e524db192fbe0f82ef8c1975e2e00f5eb7494eeb635b0beec694b994944aed0f"
     },
     {
       "path": "pages/stable/book/ch17-06-futures-tasks-threads.md",
       "url": "https://doc.rust-lang.org/stable/book/ch17-06-futures-tasks-threads.html",
       "title": "Futures, Tasks, and Threads - The Rust Programming Language",
-      "hash": "b96278481e308d44f685968b3116a68ad4920778f3df8925d29fb51a068fbac0"
+      "hash": "e17112c528c0ab9401ba902ff2e5f9cb7757ce31e2196cb96ae088d7d679f011"
     },
     {
       "path": "pages/stable/book/ch18-00-oop.md",
       "url": "https://doc.rust-lang.org/stable/book/ch18-00-oop.html",
       "title": "Object Oriented Programming Features - The Rust Programming Language",
-      "hash": "2715883b6a8197a067131646b8e92e7ce5300aad54d4c62846884e1ef5f958b5"
+      "hash": "7863f21a3340c149e7e22adfd878fbabbbfd148d299247b43fa60b0e810ff54b"
     },
     {
       "path": "pages/stable/book/ch18-01-what-is-oo.md",
       "url": "https://doc.rust-lang.org/stable/book/ch18-01-what-is-oo.html",
       "title": "Characteristics of Object-Oriented Languages - The Rust Programming Language",
-      "hash": "fb57d0935b1d2da7fe9f35cc49a7ddd5413c0f2897a4bbad1bbd6e85055dfdb6"
+      "hash": "2e7973f575904dade20e1e276f9406fb81c4a5e3616349db26136b2111dacfe1"
     },
     {
       "path": "pages/stable/book/ch18-02-trait-objects.md",
       "url": "https://doc.rust-lang.org/stable/book/ch18-02-trait-objects.html",
       "title": "Using Trait Objects to Abstract over Shared Behavior - The Rust Programming Language",
-      "hash": "bae0c96c021eb2f8623fe44c263d1cee93a58b8bd15456e501daf82356c00503"
+      "hash": "322eaa33be53b6bf471e3eb85ab5ca406f262b1d09ac83de5f9569df8ad4a91c"
     },
     {
       "path": "pages/stable/book/ch18-03-oo-design-patterns.md",
       "url": "https://doc.rust-lang.org/stable/book/ch18-03-oo-design-patterns.html",
       "title": "Implementing an Object-Oriented Design Pattern - The Rust Programming Language",
-      "hash": "1b6bc11d9c66520cc603d63074f8da29cc99af8e610c54dacf93f675dc56ed6a"
+      "hash": "c7d616f55ab56efbeffcdc78d1615e4edee7843a50c47be910dd18a6e0f90076"
     },
     {
       "path": "pages/stable/book/ch19-00-patterns.md",
       "url": "https://doc.rust-lang.org/stable/book/ch19-00-patterns.html",
       "title": "Patterns and Matching - The Rust Programming Language",
-      "hash": "5cf502f402764bb46dc3d8d76ecfc4149a046a43a7c33a69cf1c60451ba0a6dc"
+      "hash": "65768122152b8f2fb103222bd548feeef4f2e0f926d5ef5d9e1c2162aaf557bf"
     },
     {
       "path": "pages/stable/book/ch19-01-all-the-places-for-patterns.md",
       "url": "https://doc.rust-lang.org/stable/book/ch19-01-all-the-places-for-patterns.html",
       "title": "All the Places Patterns Can Be Used - The Rust Programming Language",
-      "hash": "6a5e07dbb7f033924b9064b9efe8221f1bd2ddb01968b94120404c58793dceba"
+      "hash": "bed873726678fef040b7b9bf0b5250ab19a0bc0cd1ff8be1a661757b052a10e7"
     },
     {
       "path": "pages/stable/book/ch19-02-refutability.md",
       "url": "https://doc.rust-lang.org/stable/book/ch19-02-refutability.html",
       "title": "Refutability: Whether a Pattern Might Fail to Match - The Rust Programming Language",
-      "hash": "8aa3e1d26d1c7455504260e6a4741d280ec03da92d8a9f281e0a7a389f18d5ab"
+      "hash": "cb50ab3eb2eae4f065651599ce46abce9891c46124e2c8c6bfcf39558fa42076"
     },
     {
       "path": "pages/stable/book/ch19-03-pattern-syntax.md",
       "url": "https://doc.rust-lang.org/stable/book/ch19-03-pattern-syntax.html",
       "title": "Pattern Syntax - The Rust Programming Language",
-      "hash": "80ff552424a99ac6134e8f78ef1a2e42f3d8b44f9a0be51adc0299f457ffe1b6"
+      "hash": "56c066ba76e585be314a0764f44584cb7283c02c721b70a3856396f42efbb6fe"
     },
     {
       "path": "pages/stable/book/ch20-00-advanced-features.md",
       "url": "https://doc.rust-lang.org/stable/book/ch20-00-advanced-features.html",
       "title": "Advanced Features - The Rust Programming Language",
-      "hash": "8e968f8344273cb0daa03fbd1ed9b246f799f39d98a2d8d8534bb2195365d830"
+      "hash": "1983813aded974ee6a9e4d8fd0510a8ac836237e5cc5af434cf98e90a55a89c0"
     },
     {
       "path": "pages/stable/book/ch20-01-unsafe-rust.md",
       "url": "https://doc.rust-lang.org/stable/book/ch20-01-unsafe-rust.html",
       "title": "Unsafe Rust - The Rust Programming Language",
-      "hash": "48e55ada98ba8051dd90051a0edd6ae85d409c49710c10f0391adfd2fe2fe387"
+      "hash": "81c047bfc09f2ab901fe27e77727e7eeff087b857eda33bb0ad1b5f6dbb12e82"
     },
     {
       "path": "pages/stable/book/ch20-02-advanced-traits.md",
       "url": "https://doc.rust-lang.org/stable/book/ch20-02-advanced-traits.html",
       "title": "Advanced Traits - The Rust Programming Language",
-      "hash": "ee18130526262c4f6ad4650c81b949c372a573cf458872232441d01eb39897ee"
+      "hash": "9fd98945e9b9bbaadac893c1ab4aaade7d30d000b7ecce00b79b5af76837bbfd"
     },
     {
       "path": "pages/stable/book/ch20-03-advanced-types.md",
       "url": "https://doc.rust-lang.org/stable/book/ch20-03-advanced-types.html",
       "title": "Advanced Types - The Rust Programming Language",
-      "hash": "a8c5500da3e5d6cb758ab9fbc73c4b5756b88db8f6615ef6c9ab7bdf5c1be27f"
+      "hash": "c774152a9233219c1cc6cbb490a7ee0a112282808002b997dd425d04b953d9a3"
     },
     {
       "path": "pages/stable/book/ch20-04-advanced-functions-and-closures.md",
       "url": "https://doc.rust-lang.org/stable/book/ch20-04-advanced-functions-and-closures.html",
       "title": "Advanced Functions and Closures - The Rust Programming Language",
-      "hash": "86484e1585b515715a6c6bb73865857bea03e7a0d069411afd15fea3a07f8b33"
+      "hash": "56512dbe178f29b3b88992d25dfe87f060b9b8efe8c103875835e3efe0e0d1ff"
     },
     {
       "path": "pages/stable/book/ch20-05-macros.md",
       "url": "https://doc.rust-lang.org/stable/book/ch20-05-macros.html",
       "title": "Macros - The Rust Programming Language",
-      "hash": "60956802ca7bad1417b171e715608f7e10a6725f09f8e1cd41e8bae642fe11ca"
+      "hash": "2a10cf3cfdea8b00a6d87261efa56a1477c04a3bcb5d90516c03fa9da8572997"
     },
     {
       "path": "pages/stable/book/ch21-00-final-project-a-web-server.md",
       "url": "https://doc.rust-lang.org/stable/book/ch21-00-final-project-a-web-server.html",
       "title": "Final Project: Building a Multithreaded Web Server - The Rust Programming Language",
-      "hash": "4ac28658518d8806aecb1596b02ab9995d9fa2ab7f6b5783d732484e4e602633"
+      "hash": "d045ad32b4eaeb590dd943a6329503c78ac4541bb70e2ea9c7a5ddf12cd80d01"
     },
     {
       "path": "pages/stable/book/ch21-01-single-threaded.md",
       "url": "https://doc.rust-lang.org/stable/book/ch21-01-single-threaded.html",
       "title": "Building a Single-Threaded Web Server - The Rust Programming Language",
-      "hash": "daeb07b5ddfaa83d1c20f6185321283dbc2ef64555b3bb313fb2366c5f009fe5"
+      "hash": "f28e59728bf6c0f90bce9ceb09a5f9554fb31f467317d16758502eb1e3e848b5"
     },
     {
       "path": "pages/stable/book/ch21-02-multithreaded.md",
       "url": "https://doc.rust-lang.org/stable/book/ch21-02-multithreaded.html",
       "title": "From Single-Threaded to Multithreaded Server - The Rust Programming Language",
-      "hash": "23bf7504c9ccac060922a5d1076b4e537565e13e533f6151bc6fd33242b80485"
+      "hash": "2691ead5bb8fcd339401606710dc3984e60432261fe62b770a2e94ddca831f16"
     },
     {
       "path": "pages/stable/book/ch21-03-graceful-shutdown-and-cleanup.md",
       "url": "https://doc.rust-lang.org/stable/book/ch21-03-graceful-shutdown-and-cleanup.html",
       "title": "Graceful Shutdown and Cleanup - The Rust Programming Language",
-      "hash": "5aea46690de51869b44aa92d2633945cbf9f8acfa2e206c3e17485b23313b6fa"
+      "hash": "2ec49e7aa2045f465669babec80dca2c5d4a8c5fb8e0e46fb3024e87e10f40cf"
     },
     {
       "path": "pages/stable/book/foreword.md",
       "url": "https://doc.rust-lang.org/stable/book/foreword.html",
       "title": "Foreword - The Rust Programming Language",
-      "hash": "de7587220cb5b720ed335fa7a490775cea05ce1d83e5860eaff8b106ab8057ac"
+      "hash": "34e515981664c45f0d897d5e870625d6c1a72d4083cf79f756ff4d5abeee2da8"
     },
     {
       "path": "pages/stable/book/print.md",
       "url": "https://doc.rust-lang.org/stable/book/print.html",
       "title": "The Rust Programming Language",
-      "hash": "52d3ddf9d88264e74536e0e410a8ab3253ae21e0c8f29c6aa2e8cfeb9b77e518"
+      "hash": "2f9a1d8214ab4ea0351b2c9244d89b4680224e0b9bc8c5da703a26233e42a824"
     },
     {
       "path": "pages/stable/book/title-page.md",
       "url": "https://doc.rust-lang.org/stable/book/title-page.html",
       "title": "The Rust Programming Language - The Rust Programming Language",
-      "hash": "5d74849a1c0e84a6b77a9607966969a5d98d8fb56b15a3763b9a7b10b622d191"
+      "hash": "ead8d35de755051e825f02f3172879c6b81f1e65eb88b6f6d767fba0ea5cee49"
     }
   ],
   "edges": [
@@ -1254,9 +1254,9 @@
     ]
   ],
   "last_sync": {
-    "synced_at": "2026-07-09T12:16:59.814181+00:00",
+    "synced_at": "2026-07-13T09:33:08.894537+00:00",
     "added": 0,
-    "changed": 0,
+    "changed": 109,
     "removed": 0,
     "pages": 109
   }

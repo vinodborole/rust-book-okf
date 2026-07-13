@@ -2,10 +2,10 @@
 type: Web Page
 title: Hello, World! - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch01-02-hello-world.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-## Hello, World!
+[Hello, World!](#hello-world)
 
 Now that you’ve installed Rust, it’s time to write your first Rust program.
 It’s traditional when learning a new language to write a little program that
@@ -16,10 +16,10 @@ no specific demands about your editing or tooling or where your code lives, so
 if you prefer to use an IDE instead of the command line, feel free to use your
 favorite IDE. Many IDEs now have some degree of Rust support; check the IDE’s
 documentation for details. The Rust team has been focusing on enabling great
-IDE support via `rust-analyzer`. See Appendix D
+IDE support via `rust-analyzer`. See [Appendix D](appendix-04-useful-development-tools.html)
 for more details.
 
-### Project Directory Setup
+[Project Directory Setup](#project-directory-setup)
 
 You’ll start by making a directory to store your Rust code. It doesn’t matter
 to Rust where your code lives, but for the exercises and projects in this book,
@@ -45,7 +45,7 @@ For Windows CMD, enter this:
 > mkdir hello_world
 > cd hello_world
 ```
-### Rust Program Basics
+[Rust Program Basics](#rust-program-basics)
 
 Next, make a new source file and call it *main.rs*. Rust files always end with
 the *.rs* extension. If you’re using more than one word in your filename, the
@@ -72,13 +72,13 @@ Hello, world!
 ```
 Regardless of your operating system, the string `Hello, world!` should print to
 the terminal. If you don’t see this output, refer back to the
-“Troubleshooting” part of the Installation
+[“Troubleshooting”](ch01-01-installation.html#troubleshooting) part of the Installation
 section for ways to get help.
 
 If `Hello, world!` did print, congratulations! You’ve officially written a Rust
 program. That makes you a Rust programmer—welcome!
 
-### The Anatomy of a Rust Program
+[The Anatomy of a Rust Program](#the-anatomy-of-a-rust-program)
 
 Let’s review this “Hello, world!” program in detail. Here’s the first piece of the puzzle:
 
@@ -98,7 +98,7 @@ line as the function declaration, adding one space in between.
 Note: If you want to stick to a standard style across Rust projects, you can
 use an automatic formatter tool called `rustfmt` to format your code in a
 particular style (more on `rustfmt` in
-Appendix D). The Rust team has included this tool
+[Appendix D](appendix-04-useful-development-tools.html)). The Rust team has included this tool
 with the standard Rust distribution, as `rustc` is, so it should already be
 installed on your computer!
 
@@ -115,7 +115,7 @@ This line does all the work in this little program: It prints text to the screen
 First, `println!` calls a Rust macro. If it had called a function instead, it
 would be entered as `println` (without the `!`). Rust macros are a way to write
 code that generates code to extend Rust syntax, and we’ll discuss them in more
-detail in Chapter 20. For now, you just need to
+detail in [Chapter 20](ch20-05-macros.html). For now, you just need to
 know that using a `!` means that you’re calling a macro instead of a normal
 function and that macros don’t always follow the same rules as functions.
 
@@ -126,7 +126,7 @@ Third, we end the line with a semicolon (`;`), which indicates that this
 expression is over, and the next one is ready to begin. Most lines of Rust code
 end with a semicolon.
 
-### Compilation and Execution
+[Compilation and Execution](#compilation-and-execution)
 
 You’ve just run a newly created program, so let’s examine each step in the process.
 

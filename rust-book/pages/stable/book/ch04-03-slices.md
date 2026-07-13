@@ -2,18 +2,21 @@
 type: Web Page
 title: The Slice Type - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch04-03-slices.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-## The Slice Type
+[The Slice Type](#the-slice-type)
 
 *Slices* let you reference a contiguous sequence of elements in a
-collection. A slice is a kind
+[collection](ch08-00-common-collections.html). A slice is a kind
 of reference, so it does not have ownership.
 
 Here’s a small programming problem: Write a function that takes a string of words separated by spaces and returns the first word it finds in that string. If the function doesn’t find a space in the string, the whole string must be one word, so the entire string should be returned.
 
-Note: For the purposes of introducing slices, we are assuming ASCII only in this section; a more thorough discussion of UTF-8 handling is in the “Storing UTF-8 Encoded Text with Strings” section of Chapter 8.
+Note: For the purposes of introducing slices, we are assuming ASCII only in
+this section; a more thorough discussion of UTF-8 handling is in the
+[“Storing UTF-8 Encoded Text with Strings”](ch08-02-strings.html#storing-utf-8-encoded-text-with-strings) section
+of Chapter 8.
 
 Let’s work through how we’d write the signature of this function without using slices, to understand the problem that slices will solve:
 
@@ -54,7 +57,7 @@ fn first_word(s: &String) -> usize {
 }
 fn main() {}
 ```
-We’ll discuss iterators in more detail in Chapter 13.
+We’ll discuss iterators in more detail in [Chapter 13](ch13-02-iterators.html).
 For now, know that `iter` is a method that returns each element in a collection
 and that `enumerate` wraps the result of `iter` and returns each element as
 part of a tuple instead. The first element of the tuple returned from
@@ -62,8 +65,8 @@ part of a tuple instead. The first element of the tuple returned from
 This is a bit more convenient than calculating the index ourselves.
 
 Because the `enumerate` method returns a tuple, we can use patterns to
-destructure that tuple. We’ll be discussing patterns more in Chapter
-6. In the `for` loop, we specify a pattern that has `i`
+destructure that tuple. We’ll be discussing patterns more in [Chapter
+6](ch06-02-match.html#patterns-that-bind-to-values). In the `for` loop, we specify a pattern that has `i`
 for the index in the tuple and `&item` for the single byte in the tuple.
 Because we get a reference to the element from `.iter().enumerate()`, we use
 `&` in the pattern.
@@ -108,7 +111,7 @@ to be kept in sync.
 
 Luckily, Rust has a solution to this problem: string slices.
 
-### String Slices
+[String Slices](#string-slices)
 
 A *string slice* is a reference to a contiguous sequence of the elements of a
 `String`, and it looks like this:
@@ -221,7 +224,7 @@ reference in `clear` and the immutable reference in `word` from existing at the
 same time, and compilation fails. Not only has Rust made our API easier to use,
 but it has also eliminated an entire class of errors at compile time!
 
-#### String Literals as Slices
+[String Literals as Slices](#string-literals-as-slices)
 
 Recall that we talked about string literals being stored inside the binary. Now that we know about slices, we can properly understand string literals:
 
@@ -235,7 +238,7 @@ The type of `s` here is `&str`: It’s a slice pointing to that specific point o
 the binary. This is also why string literals are immutable; `&str` is an
 immutable reference.
 
-#### String Slices as Parameters
+[String Slices as Parameters](#string-slices-as-parameters)
 
 Knowing that you can take slices of literals and `String` values leads us to
 one more improvement on `first_word`, and that’s its signature:
@@ -247,12 +250,12 @@ and `&str` values.
 If we have a string slice, we can pass that directly. If we have a `String`, we
 can pass a slice of the `String` or a reference to the `String`. This
 flexibility takes advantage of deref coercions, a feature we will cover in
-the “Using Deref Coercions in Functions and Methods” section of Chapter 15.
+the [“Using Deref Coercions in Functions and Methods”](ch15-02-deref.html#using-deref-coercions-in-functions-and-methods) section of Chapter 15.
 
 Defining a function to take a string slice instead of a reference to a `String`
 makes our API more general and useful without losing any functionality:
 
-### Other Slices
+[Other Slices](#other-slices)
 
 String slices, as you might imagine, are specific to strings. But there’s a more general slice type too. Consider this array:
 
@@ -277,7 +280,7 @@ storing a reference to the first element and a length. You’ll use this kind of
 slice for all sorts of other collections. We’ll discuss these collections in
 detail when we talk about vectors in Chapter 8.
 
-## Summary
+[Summary](#summary)
 
 The concepts of ownership, borrowing, and slices ensure memory safety in Rust programs at compile time. The Rust language gives you control over your memory usage in the same way as other systems programming languages. But having the owner of data automatically clean up that data when the owner goes out of scope means you don’t have to write and debug extra code to get this control.
 

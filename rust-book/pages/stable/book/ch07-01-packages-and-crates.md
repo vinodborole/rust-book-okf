@@ -2,16 +2,16 @@
 type: Web Page
 title: Packages and Crates - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch07-01-packages-and-crates.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-## Packages and Crates
+[Packages and Crates](#packages-and-crates)
 
 The first parts of the module system we’ll cover are packages and crates.
 
 A *crate* is the smallest amount of code that the Rust compiler considers at a
 time. Even if you run `rustc` rather than `cargo` and pass a single source code
-file (as we did all the way back in “Rust Program Basics” in Chapter 1), the compiler considers that file to be a crate. Crates can
+file (as we did all the way back in [“Rust Program Basics”](ch01-02-hello-world.html#rust-program-basics) in Chapter 1), the compiler considers that file to be a crate. Crates can
 contain modules, and the modules may be defined in other files that get
 compiled with the crate, as we’ll see in the coming sections.
 
@@ -23,14 +23,14 @@ created so far have been binary crates.
 
 *Library crates* don’t have a `main` function, and they don’t compile to an
 executable. Instead, they define functionality intended to be shared with
-multiple projects. For example, the `rand` crate we used in Chapter
-2 provides functionality that generates random numbers.
+multiple projects. For example, the `rand` crate we used in [Chapter
+2](ch02-00-guessing-game-tutorial.html#generating-a-random-number) provides functionality that generates random numbers.
 Most of the time when Rustaceans say “crate,” they mean library crate, and they
 use “crate” interchangeably with the general programming concept of a “library.”
 
 The *crate root* is a source file that the Rust compiler starts from and makes
-up the root module of your crate (we’ll explain modules in depth in “Control
-Scope and Privacy with Modules”).
+up the root module of your crate (we’ll explain modules in depth in [“Control
+Scope and Privacy with Modules”](ch07-02-defining-modules-to-control-scope-and-privacy.html)).
 
 A *package* is a bundle of one or more crates that provides a set of
 functionality. A package contains a *Cargo.toml* file that describes how to

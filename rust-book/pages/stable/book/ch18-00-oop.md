@@ -2,10 +2,10 @@
 type: Web Page
 title: Object Oriented Programming Features - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch18-00-oop.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-# Object-Oriented Programming Features
+[Object-Oriented Programming Features](#object-oriented-programming-features)
 
 Object-oriented programming (OOP) is a way of modeling programs. Objects as a
 programmatic concept were introduced in the programming language Simula in the

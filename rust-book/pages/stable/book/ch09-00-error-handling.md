@@ -2,10 +2,10 @@
 type: Web Page
 title: Error Handling - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch09-00-error-handling.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-# Error Handling
+[Error Handling](#error-handling)
 
 Errors are a fact of life in software, so Rust has a number of features for handling situations in which something goes wrong. In many cases, Rust requires you to acknowledge the possibility of an error and take some action before your code will compile. This requirement makes your program more robust by ensuring that you’ll discover errors and handle them appropriately before deploying your code to production!
 

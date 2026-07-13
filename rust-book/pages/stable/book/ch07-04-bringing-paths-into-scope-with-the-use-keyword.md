@@ -2,12 +2,12 @@
 type: Web Page
 title: Bringing Paths Into Scope with the use Keyword - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch07-04-bringing-paths-into-scope-with-the-use-keyword.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-## Bringing Paths into Scope with the `use` Keyword
+[Bringing Paths into Scope with the ](#bringing-paths-into-scope-with-the-use-keyword)`use` Keyword
 
-Having to write out the paths to call functions can feel inconvenient and
+`use` KeywordHaving to write out the paths to call functions can feel inconvenient and
 repetitive. In Listing 7-7, whether we chose the absolute or relative path to
 the `add_to_waitlist` function, every time we wanted to call `add_to_waitlist`
 we had to specify `front_of_house` and `hosting` too. Fortunately, there’s a
@@ -63,9 +63,9 @@ fix this problem, move the `use` within the `customer` module too, or reference
 the shortcut in the parent module with `super::hosting` within the child
 `customer` module.
 
-### Creating Idiomatic `use` Paths
+[Creating Idiomatic ](#creating-idiomatic-use-paths)`use` Paths
 
-In Listing 7-11, you might have wondered why we specified `use crate::front_of_house::hosting` and then called `hosting::add_to_waitlist` in
+`use` PathsIn Listing 7-11, you might have wondered why we specified `use crate::front_of_house::hosting` and then called `hosting::add_to_waitlist` in
 `eat_at_restaurant`, rather than specifying the `use` path all the way out to
 the `add_to_waitlist` function to achieve the same result, as in Listing 7-13.
 
@@ -94,9 +94,9 @@ If instead we specified `use std::fmt::Result` and `use std::io::Result`, we’d
 have two `Result` types in the same scope, and Rust wouldn’t know which one we
 meant when we used `Result`.
 
-### Providing New Names with the `as` Keyword
+[Providing New Names with the ](#providing-new-names-with-the-as-keyword)`as` Keyword
 
-There’s another solution to the problem of bringing two types of the same name
+`as` KeywordThere’s another solution to the problem of bringing two types of the same name
 into the same scope with `use`: After the path, we can specify `as` and a new
 local name, or *alias*, for the type. Listing 7-16 shows another way to write
 the code in Listing 7-15 by renaming one of the two `Result` types using `as`.
@@ -106,9 +106,9 @@ In the second `use` statement, we chose the new name `IoResult` for the
 that we’ve also brought into scope. Listing 7-15 and Listing 7-16 are
 considered idiomatic, so the choice is up to you!
 
-### Re-exporting Names with `pub use`
+[Re-exporting Names with ](#re-exporting-names-with-pub-use)`pub use`
 
-When we bring a name into scope with the `use` keyword, the name is private to
+`pub use`When we bring a name into scope with the `use` keyword, the name is private to
 the scope into which we imported it. To enable code outside that scope to refer
 to that name as if it had been defined in that scope, we can combine `pub` and
 `use`. This technique is called *re-exporting* because we’re bringing an item
@@ -131,23 +131,23 @@ about “front of house” and “back of house.” But customers visiting a res
 probably won’t think about the parts of the restaurant in those terms. With `pub use`, we can write our code with one structure but expose a different structure.
 Doing so makes our library well organized for programmers working on the library
 and programmers calling the library. We’ll look at another example of `pub use`
-and how it affects your crate’s documentation in “Exporting a Convenient Public
-API” in Chapter 14.
+and how it affects your crate’s documentation in [“Exporting a Convenient Public
+API”](ch14-02-publishing-to-crates-io.html#exporting-a-convenient-public-api) in Chapter 14.
 
-### Using External Packages
+[Using External Packages](#using-external-packages)
 
 In Chapter 2, we programmed a guessing game project that used an external
 package called `rand` to get random numbers. To use `rand` in our project, we
 added this line to *Cargo.toml*:
 
 Adding `rand` as a dependency in *Cargo.toml* tells Cargo to download the
-`rand` package and any dependencies from crates.io and
+`rand` package and any dependencies from [crates.io](https://crates.io/) and
 make `rand` available to our project.
 
 Then, to bring `rand` definitions into the scope of our package, we added a
 `use` line starting with the name of the crate, `rand`, and listed the items we
-wanted to bring into scope. Recall that in “Generating a Random
-Number” in Chapter 2, we brought the `Rng` trait into
+wanted to bring into scope. Recall that in [“Generating a Random
+Number”](ch02-00-guessing-game-tutorial.html#generating-a-random-number) in Chapter 2, we brought the `Rng` trait into
 scope and called the `rand::thread_rng` function:
 
 ```
@@ -166,7 +166,7 @@ fn main() {
 }
 ```
 Members of the Rust community have made many packages available at
-crates.io, and pulling any of them into your package
+[crates.io](https://crates.io/), and pulling any of them into your package
 involves these same steps: listing them in your package’s *Cargo.toml* file and
 using `use` to bring items from their crates into scope.
 
@@ -185,9 +185,9 @@ use std::collections::HashMap;
 This is an absolute path starting with `std`, the name of the standard library
 crate.
 
-### Using Nested Paths to Clean Up `use` Lists
+[Using Nested Paths to Clean Up ](#using-nested-paths-to-clean-up-use-lists)`use` Lists
 
-If we’re using multiple items defined in the same crate or same module, listing
+`use` ListsIf we’re using multiple items defined in the same crate or same module, listing
 each item on its own line can take up a lot of vertical space in our files. For
 example, these two `use` statements we had in the guessing game in Listing 2-4
 bring items from `std` into scope:
@@ -209,7 +209,7 @@ the nested path, as shown in Listing 7-20.
 
 This line brings `std::io` and `std::io::Write` into scope.
 
-### Importing Items with the Glob Operator
+[Importing Items with the Glob Operator](#importing-items-with-the-glob-operator)
 
 If we want to bring *all* public items defined in a path into scope, we can
 specify that path followed by the `*` glob operator:
@@ -229,10 +229,10 @@ upgrade the dependency if the dependency adds a definition with the same name
 as a definition of yours in the same scope, for example.
 
 The glob operator is often used when testing to bring everything under test into
-the `tests` module; we’ll talk about that in “How to Write
-Tests” in Chapter 11. The glob operator is also
-sometimes used as part of the prelude pattern: See the standard library
-documentation for more
+the `tests` module; we’ll talk about that in [“How to Write
+Tests”](ch11-01-writing-tests.html#how-to-write-tests) in Chapter 11. The glob operator is also
+sometimes used as part of the prelude pattern: See [the standard library
+documentation](../std/prelude/index.html#other-preludes) for more
 information on that pattern.
 
 # Citations

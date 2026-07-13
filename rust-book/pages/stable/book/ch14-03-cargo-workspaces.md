@@ -2,10 +2,10 @@
 type: Web Page
 title: Cargo Workspaces - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch14-03-cargo-workspaces.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-## Cargo Workspaces
+[Cargo Workspaces](#cargo-workspaces)
 
 In Chapter 12, we built a package that included a binary crate and a library
 crate. As your project develops, you might find that the library crate
@@ -13,7 +13,7 @@ continues to get bigger and you want to split your package further into
 multiple library crates. Cargo offers a feature called *workspaces* that can
 help manage multiple related packages that are developed in tandem.
 
-### Creating a Workspace
+[Creating a Workspace](#creating-a-workspace)
 
 A *workspace* is a set of packages that share the same *Cargo.lock* and output
 directory. Let’s make a project using a workspace—we’ll use trivial code so
@@ -82,7 +82,7 @@ to recompile each of the other crates in the workspace to place the artifacts
 in its own *target* directory. By sharing one *target* directory, the crates
 can avoid unnecessary rebuilding.
 
-### Creating the Second Package in the Workspace
+[Creating the Second Package in the Workspace](#creating-the-second-package-in-the-workspace)
 
 Next, let’s create another member package in the workspace and call it
 `add_one`. Generate a new library crate named `add_one`:
@@ -163,7 +163,7 @@ Hello, world! 10 plus one is 11!
 ```
 This runs the code in *adder/src/main.rs*, which depends on the `add_one` crate.
 
-### Depending on an External Package
+[Depending on an External Package](#depending-on-an-external-package)
 
 Notice that the workspace has only one *Cargo.lock* file at the top level,
 rather than having a *Cargo.lock* in each crate’s directory. This ensures that
@@ -231,7 +231,7 @@ each other.
 
 If crates in the workspace specify incompatible versions of the same dependency, Cargo will resolve each of them but will still try to resolve as few versions as possible.
 
-### Adding a Test to a Workspace
+[Adding a Test to a Workspace](#adding-a-test-to-a-workspace)
 
 For another enhancement, let’s add a test of the `add_one::add_one` function
 within the `add_one` crate:
@@ -295,7 +295,7 @@ This output shows `cargo test` only ran the tests for the `add_one` crate and
 didn’t run the `adder` crate tests.
 
 If you publish the crates in the workspace to
-crates.io, each crate in the workspace
+[crates.io](https://crates.io/), each crate in the workspace
 will need to be published separately. Like `cargo test`, we can publish a
 particular crate in our workspace by using the `-p` flag and specifying the
 name of the crate we want to publish.

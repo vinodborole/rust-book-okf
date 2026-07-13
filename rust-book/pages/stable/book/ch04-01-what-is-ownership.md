@@ -2,10 +2,10 @@
 type: Web Page
 title: What is Ownership? - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch04-01-what-is-ownership.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-## What Is Ownership?
+[What Is Ownership?](#what-is-ownership)
 
 *Ownership* is a set of rules that govern how a Rust program manages memory.
 All programs have to manage the way they use a computer’s memory while running.
@@ -20,7 +20,7 @@ Because ownership is a new concept for many programmers, it does take some time 
 
 When you understand ownership, you’ll have a solid foundation for understanding the features that make Rust unique. In this chapter, you’ll learn ownership by working through some examples that focus on a very common data structure: strings.
 
-### The Stack and the Heap
+[The Stack and the Heap](#the-stack-and-the-heap)
 
 Many programming languages don’t require you to think about the stack and the heap very often. But in a systems programming language like Rust, whether a value is on the stack or the heap affects how the language behaves and why you have to make certain decisions. Parts of ownership will be described in relation to the stack and the heap later in this chapter, so here is a brief explanation in preparation.
 
@@ -57,7 +57,7 @@ When your code calls a function, the values passed into the function (including,
 
 Keeping track of what parts of code are using what data on the heap, minimizing the amount of duplicate data on the heap, and cleaning up unused data on the heap so that you don’t run out of space are all problems that ownership addresses. Once you understand ownership, you won’t need to think about the stack and the heap very often. But knowing that the main purpose of ownership is to manage heap data can help explain why it works the way it does.
 
-### Ownership Rules
+[Ownership Rules](#ownership-rules)
 
 First, let’s take a look at the ownership rules. Keep these rules in mind as we work through the examples that illustrate them:
 
@@ -65,7 +65,7 @@ First, let’s take a look at the ownership rules. Keep these rules in mind as w
 - There can only be one owner at a time.
 - When the owner goes out of scope, the value will be dropped.
 
-### Variable Scope
+[Variable Scope](#variable-scope)
 
 Now that we’re past basic Rust syntax, we won’t include all the `fn main() {`
 code in the examples, so if you’re following along, make sure to put the
@@ -97,10 +97,10 @@ At this point, the relationship between scopes and when variables are valid is
 similar to that in other programming languages. Now we’ll build on top of this
 understanding by introducing the `String` type.
 
-### The `String` Type
+[The ](#the-string-type)`String` Type
 
-To illustrate the rules of ownership, we need a data type that is more complex
-than those we covered in the “Data Types” section
+`String` TypeTo illustrate the rules of ownership, we need a data type that is more complex
+than those we covered in the [“Data Types”](ch03-02-data-types.html#data-types) section
 of Chapter 3. The types covered previously are of a known size, can be stored
 on the stack and popped off the stack when their scope is over, and can be
 quickly and trivially copied to make a new, independent instance if another
@@ -111,7 +111,7 @@ clean up that data, and the `String` type is a great example.
 We’ll concentrate on the parts of `String` that relate to ownership. These
 aspects also apply to other complex data types, whether they are provided by
 the standard library or created by you. We’ll discuss non-ownership aspects of
-`String` in Chapter 8.
+`String` in [Chapter 8](ch08-02-strings.html).
 
 We’ve already seen string literals, where a string value is hardcoded into our
 program. String literals are convenient, but they aren’t suitable for every
@@ -131,9 +131,9 @@ let s = String::from("hello");
 ```
 The double colon `::` operator allows us to namespace this particular `from`
 function under the `String` type rather than using some sort of name like
-`string_from`. We’ll discuss this syntax more in the “Methods” section of Chapter 5, and when we talk about namespacing with
-modules in “Paths for Referring to an Item in the Module
-Tree” in Chapter 7.
+`string_from`. We’ll discuss this syntax more in the [“Methods”](ch05-03-method-syntax.html#methods) section of Chapter 5, and when we talk about namespacing with
+modules in [“Paths for Referring to an Item in the Module
+Tree”](ch07-03-paths-for-referring-to-an-item-in-the-module-tree.html) in Chapter 7.
 
 This kind of string *can* be mutated:
 
@@ -147,7 +147,7 @@ fn main() {
 So, what’s the difference here? Why can `String` be mutated but literals
 cannot? The difference is in how these two types deal with memory.
 
-### Memory and Allocation
+[Memory and Allocation](#memory-and-allocation)
 
 In the case of a string literal, we know the contents at compile time, so the text is hardcoded directly into the final executable. This is why string literals are fast and efficient. But these properties only come from the string literal’s immutability. Unfortunately, we can’t put a blob of memory into the binary for each piece of text whose size is unknown at compile time and whose size might change while running the program.
 
@@ -200,7 +200,7 @@ patterns.
 
 This pattern has a profound impact on the way Rust code is written. It may seem simple right now, but the behavior of code can be unexpected in more complicated situations when we want to have multiple variables use the data we’ve allocated on the heap. Let’s explore some of those situations now.
 
-#### Variables and Data Interacting with Move
+[Variables and Data Interacting with Move](#variables-and-data-interacting-with-move)
 
 Multiple variables can interact with the same data in different ways in Rust. Listing 4-2 shows an example using an integer.
 
@@ -302,7 +302,7 @@ In addition, there’s a design choice that’s implied by this: Rust will never
 automatically create “deep” copies of your data. Therefore, any *automatic*
 copying can be assumed to be inexpensive in terms of runtime performance.
 
-#### Scope and Assignment
+[Scope and Assignment](#scope-and-assignment)
 
 The inverse of this is true for the relationship between scoping, ownership, and
 memory being freed via the `drop` function as well. When you assign a completely
@@ -325,7 +325,7 @@ The original string thus immediately goes out of scope. Rust will run the `drop`
 function on it and its memory will be freed right away. When we print the value
 at the end, it will be `"ahoy, world!"`.
 
-#### Variables and Data Interacting with Clone
+[Variables and Data Interacting with Clone](#variables-and-data-interacting-with-clone)
 
 If we *do* want to deeply copy the heap data of the `String`, not just the
 stack data, we can use a common method called `clone`. We’ll discuss method
@@ -348,7 +348,7 @@ When you see a call to `clone`, you know that some arbitrary code is being
 executed and that code may be expensive. It’s a visual indicator that something
 different is going on.
 
-#### Stack-Only Data: Copy
+[Stack-Only Data: Copy](#stack-only-data-copy)
 
 There’s another wrinkle we haven’t talked about yet. This code using integers—part of which was shown in Listing 4-2—works and is valid:
 
@@ -371,7 +371,7 @@ different from the usual shallow copying, and we can leave it out.
 
 Rust has a special annotation called the `Copy` trait that we can place on
 types that are stored on the stack, as integers are (we’ll talk more about
-traits in Chapter 10). If a type implements the `Copy`
+traits in [Chapter 10](ch10-02-traits.html)). If a type implements the `Copy`
 trait, variables that use it do not move, but rather are trivially copied,
 making them still valid after assignment to another variable.
 
@@ -379,8 +379,8 @@ Rust won’t let us annotate a type with `Copy` if the type, or any of its parts
 has implemented the `Drop` trait. If the type needs something special to happen
 when the value goes out of scope and we add the `Copy` annotation to that type,
 we’ll get a compile-time error. To learn about how to add the `Copy` annotation
-to your type to implement the trait, see “Derivable
-Traits” in Appendix C.
+to your type to implement the trait, see [“Derivable
+Traits”](appendix-03-derivable-traits.html) in Appendix C.
 
 So, what types implement the `Copy` trait? You can check the documentation for
 the given type to be sure, but as a general rule, any group of simple scalar
@@ -394,7 +394,7 @@ implement `Copy`:
 - The character type, `char`.
 - Tuples, if they only contain types that also implement `Copy`. For example,`(i32, i32)`implements`Copy`, but`(i32, String)`does not.
 
-### Ownership and Functions
+[Ownership and Functions](#ownership-and-functions)
 
 The mechanics of passing a value to a function are similar to those when assigning a value to a variable. Passing a variable to a function will move or copy, just as assignment does. Listing 4-3 has an example with some annotations showing where variables go into and out of scope.
 
@@ -403,7 +403,7 @@ compile-time error. These static checks protect us from mistakes. Try adding
 code to `main` that uses `s` and `x` to see where you can use them and where
 the ownership rules prevent you from doing so.
 
-### Return Values and Scope
+[Return Values and Scope](#return-values-and-scope)
 
 Returning values can also transfer ownership. Listing 4-4 shows an example of a function that returns some value, with similar annotations as those in Listing 4-3.
 

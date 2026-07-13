@@ -2,12 +2,12 @@
 type: Web Page
 title: Concise Control Flow with if let and let...else - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch06-03-if-let.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-## Concise Control Flow with `if let` and `let...else`
+[Concise Control Flow with ](#concise-control-flow-with-if-let-and-letelse)`if let` and `let...else`
 
-The `if let` syntax lets you combine `if` and `let` into a less verbose way to
+`if let` and `let...else`The `if let` syntax lets you combine `if` and `let` into a less verbose way to
 handle values that match one pattern while ignoring the rest. Consider the
 program in Listing 6-6 that matches on an `Option<u8>` value in the
 `config_max` variable but only wants to execute code if the value is the `Some`
@@ -100,9 +100,9 @@ fn main() {
     }
 }
 ```
-## Staying on the “Happy Path” with `let...else`
+[Staying on the “Happy Path” with ](#staying-on-the-happy-path-with-letelse)`let...else`
 
-The common pattern is to perform some computation when a value is present and
+`let...else`The common pattern is to perform some computation when a value is present and
 return a default value otherwise. Continuing with our example of coins with a
 `UsState` value, if we wanted to say something funny depending on how old the
 state on the quarter was, we might introduce a method on `UsState` to check the
@@ -176,7 +176,7 @@ If you have a situation in which your program has logic that is too verbose to
 express using a `match`, remember that `if let` and `let...else` are in your
 Rust toolbox as well.
 
-## Summary
+[Summary](#summary)
 
 We’ve now covered how to use enums to create custom types that can be one of a
 set of enumerated values. We’ve shown how the standard library’s `Option<T>`

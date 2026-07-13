@@ -2,10 +2,10 @@
 type: Web Page
 title: Fearless Concurrency - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch16-00-concurrency.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-# Fearless Concurrency
+[Fearless Concurrency](#fearless-concurrency)
 
 Handling concurrent programming safely and efficiently is another of Rust’s
 major goals. *Concurrent programming*, in which different parts of a program

@@ -2,12 +2,12 @@
 type: Web Page
 title: Using Box<T> to Point to Data on the Heap - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch15-01-box.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-## Using `Box<T>` to Point to Data on the Heap
+[Using ](#using-boxt-to-point-to-data-on-the-heap)`Box<T>` to Point to Data on the Heap
 
-The most straightforward smart pointer is a box, whose type is written
+`Box<T>` to Point to Data on the HeapThe most straightforward smart pointer is a box, whose type is written
 `Box<T>`. *Boxes* allow you to store data on the heap rather than the stack.
 What remains on the stack is the pointer to the heap data. Refer to Chapter 4
 to review the difference between the stack and the heap.
@@ -18,18 +18,18 @@ Boxes don’t have performance overhead, other than storing their data on the he
 - When you have a large amount of data, and you want to transfer ownership but ensure that the data won’t be copied when you do so
 - When you want to own a value, and you care only that it’s a type that implements a particular trait rather than being of a specific type
 
-We’ll demonstrate the first situation in “Enabling Recursive Types with
-Boxes”. In the second
+We’ll demonstrate the first situation in [“Enabling Recursive Types with
+Boxes”](#enabling-recursive-types-with-boxes). In the second
 case, transferring ownership of a large amount of data can take a long time
 because the data is copied around on the stack. To improve performance in this
 situation, we can store the large amount of data on the heap in a box. Then,
 only the small amount of pointer data is copied around on the stack, while the
 data it references stays in one place on the heap. The third case is known as a
-*trait object*, and “Using Trait Objects to Abstract over Shared
-Behavior” in Chapter 18 is devoted to that
+*trait object*, and [“Using Trait Objects to Abstract over Shared
+Behavior”](ch18-02-trait-objects.html#using-trait-objects-to-abstract-over-shared-behavior) in Chapter 18 is devoted to that
 topic. So, what you learn here you’ll apply again in that section!
 
-### Storing Data on the Heap
+[Storing Data on the Heap](#storing-data-on-the-heap)
 
 Before we discuss the heap storage use case for `Box<T>`, we’ll cover the
 syntax and how to interact with values stored within a `Box<T>`.
@@ -50,7 +50,7 @@ stack, where they’re stored by default, is more appropriate in the majority of
 situations. Let’s look at a case where boxes allow us to define types that we
 wouldn’t be allowed to define if we didn’t have boxes.
 
-### Enabling Recursive Types with Boxes
+[Enabling Recursive Types with Boxes](#enabling-recursive-types-with-boxes)
 
 A value of a *recursive type* can have another value of the same type as part of
 itself. Recursive types pose an issue because Rust needs to know at compile time
@@ -61,7 +61,7 @@ by inserting a box in the recursive type definition.
 
 As an example of a recursive type, let’s explore the cons list. This is a data type commonly found in functional programming languages. The cons list type we’ll define is straightforward except for the recursion; therefore, the concepts in the example we’ll work with will be useful anytime you get into more complex situations involving recursive types.
 
-#### Understanding the Cons List
+[Understanding the Cons List](#understanding-the-cons-list)
 
 A *cons list* is a data structure that comes from the Lisp programming language
 and its dialects, is made up of nested pairs, and is the Lisp version of a
@@ -114,7 +114,7 @@ directly. As a result, Rust can’t figure out how much space it needs to store 
 `List` value. Let’s break down why we get this error. First, we’ll look at how
 Rust decides how much space it needs to store a value of a non-recursive type.
 
-#### Computing the Size of a Non-Recursive Type
+[Computing the Size of a Non-Recursive Type](#computing-the-size-of-a-non-recursive-type)
 
 Recall the `Message` enum we defined in Listing 6-2 when we discussed enum
 definitions in Chapter 6:
@@ -144,7 +144,7 @@ type needs, the compiler looks at the variants, starting with the `Cons`
 variant. The `Cons` variant holds a value of type `i32` and a value of type
 `List`, and this process continues infinitely, as shown in Figure 15-1.
 
-#### Getting a Recursive Type with a Known Size
+[Getting a Recursive Type with a Known Size](#getting-a-recursive-type-with-a-known-size)
 
 Because Rust can’t figure out how much space to allocate for recursively defined types, the compiler gives an error with this helpful suggestion:
 

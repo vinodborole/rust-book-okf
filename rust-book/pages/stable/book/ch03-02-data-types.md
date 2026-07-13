@@ -2,10 +2,10 @@
 type: Web Page
 title: Data Types - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch03-02-data-types.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-## Data Types
+[Data Types](#data-types)
 
 Every value in Rust is of a certain *data type*, which tells Rust what kind of
 data is being specified so that it knows how to work with that data. We’ll look
@@ -15,8 +15,8 @@ Keep in mind that Rust is a *statically typed* language, which means that it
 must know the types of all variables at compile time. The compiler can usually
 infer what type we want to use based on the value and how we use it. In cases
 when many types are possible, such as when we converted a `String` to a numeric
-type using `parse` in the “Comparing the Guess to the Secret
-Number” section in
+type using `parse` in the [“Comparing the Guess to the Secret
+Number”](ch02-00-guessing-game-tutorial.html#comparing-the-guess-to-the-secret-number) section in
 Chapter 2, we must add a type annotation, like this:
 
 ```
@@ -48,13 +48,13 @@ error: could not compile `no_type_annotations` (bin "no_type_annotations") due t
 ```
 You’ll see different type annotations for other data types.
 
-### Scalar Types
+[Scalar Types](#scalar-types)
 
 A *scalar* type represents a single value. Rust has four primary scalar types:
 integers, floating-point numbers, Booleans, and characters. You may recognize
 these from other programming languages. Let’s jump into how they work in Rust.
 
-#### Integer Types
+[Integer Types](#integer-types)
 
 An *integer* is a number without a fractional component. We used one integer
 type in Chapter 2, the `u32` type. This type declaration indicates that the
@@ -79,7 +79,7 @@ negative—in other words, whether the number needs to have a sign with it
 represented without a sign (unsigned). It’s like writing numbers on paper: When
 the sign matters, a number is shown with a plus sign or a minus sign; however,
 when it’s safe to assume the number is positive, it’s shown with no sign.
-Signed numbers are stored using two’s complement representation.
+Signed numbers are stored using [two’s complement](https://en.wikipedia.org/wiki/Two%27s_complement) representation.
 
 Each signed variant can store numbers from −(2n − 1) to 2n −
 1 − 1 inclusive, where *n* is the number of bits that variant uses. So, an
@@ -110,7 +110,7 @@ defaults are generally good places to start: Integer types default to `i32`.
 The primary situation in which you’d use `isize` or `usize` is when indexing
 some sort of collection.
 
-##### Integer Overflow
+[Integer Overflow](#integer-overflow)
 
 Let’s say you have a variable of type `u8` that can hold values between 0 and
 255. If you try to change the variable to a value outside that range, such as
@@ -118,8 +118,8 @@ Let’s say you have a variable of type `u8` that can hold values between 0 and
 When you’re compiling in debug mode, Rust includes checks for integer overflow
 that cause your program to *panic* at runtime if this behavior occurs. Rust
 uses the term *panicking* when a program exits with an error; we’ll discuss
-panics in more depth in the “Unrecoverable Errors with
-`panic!`” section in Chapter
+panics in more depth in the [“Unrecoverable Errors with
+ panic!”](ch09-01-unrecoverable-errors-with-panic.html) section in Chapter
 9.
 
 When you’re compiling in release mode with the `--release` flag, Rust does
@@ -139,7 +139,7 @@ To explicitly handle the possibility of overflow, you can use these families of 
 the `overflowing_*`methods.
 - Saturate at the value’s minimum or maximum values with the `saturating_*`methods.
 
-#### Floating-Point Types
+[Floating-Point Types](#floating-point-types)
 
 Rust also has two primitive types for *floating-point numbers*, which are
 numbers with decimal points. Rust’s floating-point types are `f32` and `f64`,
@@ -159,7 +159,7 @@ fn main() {
 ```
 Floating-point numbers are represented according to the IEEE-754 standard.
 
-#### Numeric Operations
+[Numeric Operations](#numeric-operations)
 
 Rust supports the basic mathematical operations you’d expect for all the number
 types: addition, subtraction, multiplication, division, and remainder. Integer
@@ -183,9 +183,12 @@ fn main() {
     let remainder = 43 % 5;
 }
 ```
-Each expression in these statements uses a mathematical operator and evaluates to a single value, which is then bound to a variable. Appendix B contains a list of all operators that Rust provides.
+Each expression in these statements uses a mathematical operator and evaluates
+to a single value, which is then bound to a variable. [Appendix
+B](appendix-02-operators.html) contains a list of all operators that Rust
+provides.
 
-#### The Boolean Type
+[The Boolean Type](#the-boolean-type)
 
 As in most other programming languages, a Boolean type in Rust has two possible
 values: `true` and `false`. Booleans are one byte in size. The Boolean type in
@@ -200,10 +203,10 @@ fn main() {
 }
 ```
 The main way to use Boolean values is through conditionals, such as an `if`
-expression. We’ll cover how `if` expressions work in Rust in the “Control
-Flow” section.
+expression. We’ll cover how `if` expressions work in Rust in the [“Control
+Flow”](ch03-05-control-flow.html#control-flow) section.
 
-#### The Character Type
+[The Character Type](#the-character-type)
 
 Rust’s `char` type is the language’s most primitive alphabetic type. Here are
 some examples of declaring `char` values:
@@ -225,15 +228,15 @@ Korean characters; emojis; and zero-width spaces are all valid `char` values in
 Rust. Unicode scalar values range from `U+0000` to `U+D7FF` and `U+E000` to
 `U+10FFFF` inclusive. However, a “character” isn’t really a concept in Unicode,
 so your human intuition for what a “character” is may not match up with what a
-`char` is in Rust. We’ll discuss this topic in detail in “Storing UTF-8
-Encoded Text with Strings” in Chapter 8.
+`char` is in Rust. We’ll discuss this topic in detail in [“Storing UTF-8
+Encoded Text with Strings”](ch08-02-strings.html#storing-utf-8-encoded-text-with-strings) in Chapter 8.
 
-### Compound Types
+[Compound Types](#compound-types)
 
 *Compound types* can group multiple values into one type. Rust has two
 primitive compound types: tuples and arrays.
 
-#### The Tuple Type
+[The Tuple Type](#the-tuple-type)
 
 A *tuple* is a general way of grouping together a number of values with a
 variety of types into one compound type. Tuples have a fixed length: Once
@@ -289,7 +292,7 @@ corresponding type are both written `()` and represent an empty value or an
 empty return type. Expressions implicitly return the unit value if they don’t
 return any other value.
 
-#### The Array Type
+[The Array Type](#the-array-type)
 
 Another way to have a collection of multiple values is with an *array*. Unlike
 a tuple, every element of an array must have the same type. Unlike arrays in
@@ -306,13 +309,13 @@ fn main() {
 ```
 Arrays are useful when you want your data allocated on the stack, the same as
 the other types we have seen so far, rather than the heap (we will discuss the
-stack and the heap more in Chapter 4) or when
+stack and the heap more in [Chapter 4](ch04-01-what-is-ownership.html#the-stack-and-the-heap)) or when
 you want to ensure that you always have a fixed number of elements. An array
 isn’t as flexible as the vector type, though. A vector is a similar collection
 type provided by the standard library that *is* allowed to grow or shrink in
 size because its contents live on the heap. If you’re unsure whether to use an
-array or a vector, chances are you should use a vector. Chapter
-8 discusses vectors in more detail.
+array or a vector, chances are you should use a vector. [Chapter
+8](ch08-01-vectors.html) discusses vectors in more detail.
 
 However, arrays are more useful when you know the number of elements will not need to change. For example, if you were using the names of the month in a program, you would probably use an array rather than a vector because you know it will always contain 12 elements:
 
@@ -346,7 +349,7 @@ The array named `a` will contain `5` elements that will all be set to the value
 `3` initially. This is the same as writing `let a = [3, 3, 3, 3, 3];` but in a
 more concise way.
 
-#### Array Element Access
+[Array Element Access](#array-element-access)
 
 An array is a single chunk of memory of a known, fixed size that can be allocated on the stack. You can access elements of an array using indexing, like this:
 
@@ -363,7 +366,7 @@ In this example, the variable named `first` will get the value `1` because that
 is the value at index `[0]` in the array. The variable named `second` will get
 the value `2` from index `[1]` in the array.
 
-#### Invalid Array Element Access
+[Invalid Array Element Access](#invalid-array-element-access)
 
 Let’s see what happens if you try to access an element of an array that is past the end of the array. Say you run this code, similar to the guessing game in Chapter 2, to get an array index from the user:
 

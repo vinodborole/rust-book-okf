@@ -2,10 +2,10 @@
 type: Web Page
 title: Processing a Series of Items with Iterators - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch13-02-iterators.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-## Processing a Series of Items with Iterators
+[Processing a Series of Items with Iterators](#processing-a-series-of-items-with-iterators)
 
 The iterator pattern allows you to perform some task on a sequence of items in turn. An iterator is responsible for the logic of iterating over each item and determining when the sequence has finished. When you use iterators, you don’t have to reimplement that logic yourself.
 
@@ -30,9 +30,9 @@ In languages that don’t have iterators provided by their standard libraries, y
 
 Iterators handle all of that logic for you, cutting down on repetitive code you could potentially mess up. Iterators give you more flexibility to use the same logic with many different kinds of sequences, not just data structures you can index into, like vectors. Let’s examine how iterators do that.
 
-### The `Iterator` Trait and the `next` Method
+[The ](#the-iterator-trait-and-the-next-method)`Iterator` Trait and the `next` Method
 
-All iterators implement a trait named `Iterator` that is defined in the
+`Iterator` Trait and the `next` MethodAll iterators implement a trait named `Iterator` that is defined in the
 standard library. The definition of the trait looks like this:
 
 ```
@@ -75,7 +75,7 @@ ownership of `v1` and returns owned values, we can call `into_iter` instead of
 `iter`. Similarly, if we want to iterate over mutable references, we can call
 `iter_mut` instead of `iter`.
 
-### Methods That Consume the Iterator
+[Methods That Consume the Iterator](#methods-that-consume-the-iterator)
 
 The `Iterator` trait has a number of different methods with default
 implementations provided by the standard library; you can find out about these
@@ -94,7 +94,7 @@ test illustrating a use of the `sum` method.
 We aren’t allowed to use `v1_iter` after the call to `sum`, because `sum` takes
 ownership of the iterator we call it on.
 
-### Methods That Produce Other Iterators
+[Methods That Produce Other Iterators](#methods-that-produce-other-iterators)
 
 *Iterator adapters* are methods defined on the `Iterator` trait that don’t
 consume the iterator. Instead, they produce different iterators by changing
@@ -144,7 +144,7 @@ provides.
 
 You can chain multiple calls to iterator adapters to perform complex actions in a readable way. But because all iterators are lazy, you have to call one of the consuming adapter methods to get results from calls to iterator adapters.
 
-### Closures That Capture Their Environment
+[Closures That Capture Their Environment](#closures-that-capture-their-environment)
 
 Many iterator adapters take closures as arguments, and commonly the closures we’ll specify as arguments to iterator adapters will be closures that capture their environment.
 

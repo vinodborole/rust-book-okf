@@ -2,17 +2,17 @@
 type: Web Page
 title: Recoverable Errors with Result - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch09-02-recoverable-errors-with-result.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-## Recoverable Errors with `Result`
+[Recoverable Errors with ](#recoverable-errors-with-result)`Result`
 
-Most errors aren’t serious enough to require the program to stop entirely. Sometimes when a function fails, it’s for a reason that you can easily interpret and respond to. For example, if you try to open a file and that operation fails because the file doesn’t exist, you might want to create the file instead of terminating the process.
+`Result`Most errors aren’t serious enough to require the program to stop entirely. Sometimes when a function fails, it’s for a reason that you can easily interpret and respond to. For example, if you try to open a file and that operation fails because the file doesn’t exist, you might want to create the file instead of terminating the process.
 
-Recall from “Handling Potential Failure with `Result`” in Chapter 2 that the `Result` enum is defined as having two
-variants, `Ok` and `Err`, as follows:
+Recall from [“Handling Potential Failure with  Result”](ch02-00-guessing-game-tutorial.html#handling-potential-failure-with-result) in Chapter 2 that the 
 
-```
+`Result` enum is defined as having two
+variants, `Ok` and `Err`, as follows:```
 #![allow(unused)]
 fn main() {
 enum Result<T, E> {
@@ -80,7 +80,7 @@ note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 ```
 As usual, this output tells us exactly what has gone wrong.
 
-### Matching on Different Errors
+[Matching on Different Errors](#matching-on-different-errors)
 
 The code in Listing 9-4 will `panic!` no matter why `File::open` failed.
 However, we want to take different actions for different failure reasons. If
@@ -107,9 +107,9 @@ file can’t be created, a different error message is printed. The second arm of
 the outer `match` stays the same, so the program panics on any error besides
 the missing file error.
 
-#### Alternatives to Using `match` with `Result<T, E>`
+[Alternatives to Using ](#alternatives-to-using-match-with-resultt-e)`match` with `Result<T, E>`
 
-That’s a lot of `match`! The `match` expression is very useful but also very
+`match` with `Result<T, E>`That’s a lot of `match`! The `match` expression is very useful but also very
 much a primitive. In Chapter 13, you’ll learn about closures, which are used
 with many of the methods defined on `Result<T, E>`. These methods can be more
 concise than using `match` when handling `Result<T, E>` values in your code.
@@ -138,7 +138,7 @@ after you’ve read Chapter 13 and look up the `unwrap_or_else` method in the
 standard library documentation. Many more of these methods can clean up huge,
 nested `match` expressions when you’re dealing with errors.
 
-#### Shortcuts for Panic on Error
+[Shortcuts for Panic on Error](#shortcuts-for-panic-on-error)
 
 Using `match` works well enough, but it can be a bit verbose and doesn’t always
 communicate intent well. The `Result<T, E>` type has many helper methods
@@ -174,7 +174,7 @@ In production-quality code, most Rustaceans choose `expect` rather than
 succeed. That way, if your assumptions are ever proven wrong, you have more
 information to use in debugging.
 
-### Propagating Errors
+[Propagating Errors](#propagating-errors)
 
 When a function’s implementation calls something that might fail, instead of
 handling the error within the function itself, you can return the error to the
@@ -236,9 +236,9 @@ it to handle appropriately.
 This pattern of propagating errors is so common in Rust that Rust provides the
 question mark operator `?` to make this easier.
 
-#### The `?` Operator Shortcut
+[The ](#the--operator-shortcut)`?` Operator Shortcut
 
-Listing 9-7 shows an implementation of `read_username_from_file` that has the
+`?` Operator ShortcutListing 9-7 shows an implementation of `read_username_from_file` that has the
 same functionality as in Listing 9-6, but this implementation uses the `?`
 operator.
 
@@ -295,9 +295,9 @@ into that `String`, and returns it. Of course, using `fs::read_to_string`
 doesn’t give us the opportunity to explain all the error handling, so we did it
 the longer way first.
 
-#### Where to Use the `?` Operator
+[Where to Use the ](#where-to-use-the--operator)`?` Operator
 
-The `?` operator can only be used in functions whose return type is compatible
+`?` OperatorThe `?` operator can only be used in functions whose return type is compatible
 with the value the `?` is used on. This is because the `?` operator is defined
 to perform an early return of a value out of the function, in the same manner
 as the `match` expression we defined in Listing 9-6. In Listing 9-6, the
@@ -392,8 +392,8 @@ from Listing 9-10, but we’ve changed the return type of `main` to be
 `Result<(), Box<dyn Error>>` and added a return value `Ok(())` to the end. This
 code will now compile.
 
-The `Box<dyn Error>` type is a trait object, which we’ll talk about in “Using
-Trait Objects to Abstract over Shared Behavior”
+The `Box<dyn Error>` type is a trait object, which we’ll talk about in [“Using
+Trait Objects to Abstract over Shared Behavior”](ch18-02-trait-objects.html#using-trait-objects-to-abstract-over-shared-behavior)
 in Chapter 18. For now, you can read `Box<dyn Error>` to mean “any kind of
 error.” Using `?` on a `Result` value in a `main` function with the error type
 `Box<dyn Error>` is allowed because it allows any `Err` value to be returned
@@ -409,13 +409,13 @@ they exit: Programs that exit successfully return the integer `0`, and programs
 that error return some integer other than `0`. Rust also returns integers from
 executables to be compatible with this convention.
 
-The `main` function may return any types that implement the
-`std::process::Termination` trait, which contains
-a function `report` that returns an `ExitCode`. Consult the standard library
-documentation for more information on implementing the `Termination` trait for
-your own types.
+The `main` function may return any types that implement [the
+ std::process::Termination trait](../std/process/trait.Termination.html), which contains
+a function 
 
-Now that we’ve discussed the details of calling `panic!` or returning `Result`,
+`report` that returns an `ExitCode`. Consult the standard library
+documentation for more information on implementing the `Termination` trait for
+your own types.Now that we’ve discussed the details of calling `panic!` or returning `Result`,
 let’s return to the topic of how to decide which is appropriate to use in which
 cases.
 

@@ -2,21 +2,21 @@
 type: Web Page
 title: Installation - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch01-01-installation.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-## Installation
+[Installation](#installation)
 
 The first step is to install Rust. We’ll download Rust through `rustup`, a
 command line tool for managing Rust versions and associated tools. You’ll need
 an internet connection for the download.
 
 Note: If you prefer not to use `rustup` for some reason, please see the
-Other Rust Installation Methods page for more options.
+[Other Rust Installation Methods page](https://forge.rust-lang.org/infra/other-installation-methods.html) for more options.
 
 The following steps install the latest stable version of the Rust compiler. Rust’s stability guarantees ensure that all the examples in the book that compile will continue to compile with newer Rust versions. The output might differ slightly between versions because Rust often improves error messages and warnings. In other words, any newer, stable version of Rust you install using these steps should work as expected with the content of this book.
 
-### Command Line Notation
+[Command Line Notation](#command-line-notation)
 
 In this chapter and throughout the book, we’ll show some commands used in the
 terminal. Lines that you should enter in a terminal all start with `$`. You
@@ -25,9 +25,9 @@ indicate the start of each command. Lines that don’t start with `$` typically
 show the output of the previous command. Additionally, PowerShell-specific
 examples will use `>` rather than `$`.
 
-### Installing `rustup` on Linux or macOS
+[Installing ](#installing-rustup-on-linux-or-macos)`rustup` on Linux or macOS
 
-If you’re using Linux or macOS, open a terminal and enter the following command:
+`rustup` on Linux or macOSIf you’re using Linux or macOS, open a terminal and enter the following command:
 
 ```
 $ curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
@@ -54,14 +54,18 @@ Linux users should generally install GCC or Clang, according to their
 distribution’s documentation. For example, if you use Ubuntu, you can install
 the `build-essential` package.
 
-### Installing `rustup` on Windows
+[Installing ](#installing-rustup-on-windows)`rustup` on Windows
 
-On Windows, go to https://www.rust-lang.org/tools/install and follow the instructions for installing Rust. At some point in the installation, you’ll be prompted to install Visual Studio. This provides a linker and the native libraries needed to compile programs. If you need more help with this step, see https://rust-lang.github.io/rustup/installation/windows-msvc.html.
+`rustup` on WindowsOn Windows, go to [https://www.rust-lang.org/tools/install](https://www.rust-lang.org/tools/install) and follow the instructions for installing Rust. At some point in the
+installation, you’ll be prompted to install Visual Studio. This provides a
+linker and the native libraries needed to compile programs. If you need more
+help with this step, see
+[https://rust-lang.github.io/rustup/installation/windows-msvc.html](https://rust-lang.github.io/rustup/installation/windows-msvc.html).
 
 The rest of this book uses commands that work in both *cmd.exe* and PowerShell.
 If there are specific differences, we’ll explain which to use.
 
-### Troubleshooting
+[Troubleshooting](#troubleshooting)
 
 To check whether you have Rust installed correctly, open a shell and enter this line:
 
@@ -92,9 +96,11 @@ In Linux and macOS, use:
 ```
 $ echo $PATH
 ```
-If that’s all correct and Rust still isn’t working, there are a number of places you can get help. Find out how to get in touch with other Rustaceans (a silly nickname we call ourselves) on the community page.
+If that’s all correct and Rust still isn’t working, there are a number of
+places you can get help. Find out how to get in touch with other Rustaceans (a
+silly nickname we call ourselves) on [the community page](https://www.rust-lang.org/community).
 
-### Updating and Uninstalling
+[Updating and Uninstalling](#updating-and-uninstalling)
 
 Once Rust is installed via `rustup`, updating to a newly released version is
 easy. From your shell, run the following update script:
@@ -108,7 +114,7 @@ shell:
 ```
 $ rustup self uninstall
 ```
-### Reading the Local Documentation
+[Reading the Local Documentation](#reading-the-local-documentation)
 
 The installation of Rust also includes a local copy of the documentation so
 that you can read it offline. Run `rustup doc` to open the local documentation
@@ -116,11 +122,15 @@ in your browser.
 
 Any time a type or function is provided by the standard library and you’re not sure what it does or how to use it, use the application programming interface (API) documentation to find out!
 
-### Using Text Editors and IDEs
+[Using Text Editors and IDEs](#using-text-editors-and-ides)
 
-This book makes no assumptions about what tools you use to author Rust code. Just about any text editor will get the job done! However, many text editors and integrated development environments (IDEs) have built-in support for Rust. You can always find a fairly current list of many editors and IDEs on the tools page on the Rust website.
+This book makes no assumptions about what tools you use to author Rust code.
+Just about any text editor will get the job done! However, many text editors and
+integrated development environments (IDEs) have built-in support for Rust. You
+can always find a fairly current list of many editors and IDEs on [the tools
+page](https://www.rust-lang.org/tools) on the Rust website.
 
-### Working Offline with This Book
+[Working Offline with This Book](#working-offline-with-this-book)
 
 In several examples, we will use Rust packages beyond the standard library. To
 work through those examples, you will either need to have an internet connection

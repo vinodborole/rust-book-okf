@@ -2,10 +2,10 @@
 type: Web Page
 title: Using Structs to Structure Related Data - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch05-00-structs.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-# Using Structs to Structure Related Data
+[Using Structs to Structure Related Data](#using-structs-to-structure-related-data)
 
 A *struct*, or *structure*, is a custom data type that lets you package
 together and name multiple related values that make up a meaningful group. If

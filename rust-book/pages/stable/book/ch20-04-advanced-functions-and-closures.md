@@ -2,14 +2,14 @@
 type: Web Page
 title: Advanced Functions and Closures - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch20-04-advanced-functions-and-closures.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-## Advanced Functions and Closures
+[Advanced Functions and Closures](#advanced-functions-and-closures)
 
 This section explores some advanced features related to functions and closures, including function pointers and returning closures.
 
-### Function Pointers
+[Function Pointers](#function-pointers)
 
 We’ve talked about how to pass closures to functions; you can also pass regular
 functions to functions! This technique is useful when you want to pass a
@@ -56,21 +56,25 @@ Or we could name a function as the argument to `map` instead of the closure.
 Listing 20-30 shows what this would look like.
 
 Note that we must use the fully qualified syntax that we talked about in the
-“Advanced Traits” section because there are
+[“Advanced Traits”](ch20-02-advanced-traits.html#advanced-traits) section because there are
 multiple functions available named `to_string`.
 
 Here, we’re using the `to_string` function defined in the `ToString` trait,
 which the standard library has implemented for any type that implements
 `Display`.
 
-Recall from the “Enum Values” section in Chapter 6 that the name of each enum variant that we define also becomes an initializer function. We can use these initializer functions as function pointers that implement the closure traits, which means we can specify the initializer functions as arguments for methods that take closures, as seen in Listing 20-31.
+Recall from the [“Enum Values”](ch06-01-defining-an-enum.html#enum-values) section in Chapter
+6 that the name of each enum variant that we define also becomes an initializer
+function. We can use these initializer functions as function pointers that
+implement the closure traits, which means we can specify the initializer
+functions as arguments for methods that take closures, as seen in Listing 20-31.
 
 Here, we create `Status::Value` instances using each `u32` value in the range
 that `map` is called on by using the initializer function of `Status::Value`.
 Some people prefer this style and some people prefer to use closures. They
 compile to the same code, so use whichever style is clearer to you.
 
-### Returning Closures
+[Returning Closures](#returning-closures)
 
 Closures are represented by traits, which means you can’t return closures
 directly. In most cases where you might want to return a trait, you can instead
@@ -84,7 +88,12 @@ Instead, you will normally use the `impl Trait` syntax we learned about in
 Chapter 10. You can return any function type, using `Fn`, `FnOnce`, and `FnMut`.
 For example, the code in Listing 20-32 will compile just fine.
 
-However, as we noted in the “Inferring and Annotating Closure Types” section in Chapter 13, each closure is also its own distinct type. If you need to work with multiple functions that have the same signature but different implementations, you will need to use a trait object for them. Consider what happens if you write code like that shown in Listing 20-33.
+However, as we noted in the [“Inferring and Annotating Closure
+Types”](ch13-01-closures.html#closure-type-inference-and-annotation) section in Chapter 13, each closure is
+also its own distinct type. If you need to work with multiple functions that
+have the same signature but different implementations, you will need to use a
+trait object for them. Consider what happens if you write code like that shown
+in Listing 20-33.
 
 Here we have two functions, `returns_closure` and `returns_initialized_closure`,
 which both return `impl Fn(i32) -> i32`. Notice that the closures that they
@@ -119,11 +128,13 @@ write ourselves. So, even though these functions return closures that implement
 the same trait, `Fn(i32) -> i32`, the opaque types Rust generates for each are
 distinct. (This is similar to how Rust produces different concrete types for
 distinct async blocks even when they have the same output type, as we saw in
-“The `Pin` Type and the `Unpin` Trait” in
+[“The  Pin Type and the Unpin Trait”](ch17-03-more-futures.html) in
 Chapter 17.) We have seen a solution to this problem a few times now: We can
 use a trait object, as in Listing 20-34.
 
-This code will compile just fine. For more about trait objects, refer to the section “Using Trait Objects To Abstract over Shared Behavior” in Chapter 18.
+This code will compile just fine. For more about trait objects, refer to the
+section [“Using Trait Objects To Abstract over Shared
+Behavior”](ch18-02-trait-objects.html) in Chapter 18.
 
 Next, let’s look at macros!
 

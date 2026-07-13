@@ -2,15 +2,15 @@
 type: Web Page
 title: Installing Binaries with cargo install - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch14-04-installing-binaries.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-## Installing Binaries with `cargo install`
+[Installing Binaries with ](#installing-binaries-with-cargo-install)`cargo install`
 
-The `cargo install` command allows you to install and use binary crates
+`cargo install`The `cargo install` command allows you to install and use binary crates
 locally. This isn’t intended to replace system packages; it’s meant to be a
 convenient way for Rust developers to install tools that others have shared on
-crates.io. Note that you can only install
+[crates.io](https://crates.io/). Note that you can only install
 packages that have binary targets. A *binary target* is the runnable program
 that is created if the crate has a *src/main.rs* file or another file specified
 as a binary, as opposed to a library target that isn’t runnable on its own but

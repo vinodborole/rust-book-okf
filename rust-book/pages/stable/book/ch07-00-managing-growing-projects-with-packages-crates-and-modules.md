@@ -2,14 +2,21 @@
 type: Web Page
 title: Packages, Crates, and Modules - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch07-00-managing-growing-projects-with-packages-crates-and-modules.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-# Packages, Crates, and Modules
+[Packages, Crates, and Modules](#packages-crates-and-modules)
 
 As you write large programs, organizing your code will become increasingly important. By grouping related functionality and separating code with distinct features, you’ll clarify where to find code that implements a particular feature and where to go to change how a feature works.
 
-The programs we’ve written so far have been in one module in one file. As a project grows, you should organize code by splitting it into multiple modules and then multiple files. A package can contain multiple binary crates and optionally one library crate. As a package grows, you can extract parts into separate crates that become external dependencies. This chapter covers all these techniques. For very large projects comprising a set of interrelated packages that evolve together, Cargo provides workspaces, which we’ll cover in “Cargo Workspaces” in Chapter 14.
+The programs we’ve written so far have been in one module in one file. As a
+project grows, you should organize code by splitting it into multiple modules
+and then multiple files. A package can contain multiple binary crates and
+optionally one library crate. As a package grows, you can extract parts into
+separate crates that become external dependencies. This chapter covers all
+these techniques. For very large projects comprising a set of interrelated
+packages that evolve together, Cargo provides workspaces, which we’ll cover in
+[“Cargo Workspaces”](ch14-03-cargo-workspaces.html) in Chapter 14.
 
 We’ll also discuss encapsulating implementation details, which lets you reuse code at a higher level: Once you’ve implemented an operation, other code can call your code via its public interface without having to know how the implementation works. The way you write code defines which parts are public for other code to use and which parts are private implementation details that you reserve the right to change. This is another way to limit the amount of detail you have to keep in your head.
 

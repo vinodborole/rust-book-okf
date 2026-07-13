@@ -2,10 +2,10 @@
 type: Web Page
 title: Patterns and Matching - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch19-00-patterns.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-# Patterns and Matching
+[Patterns and Matching](#patterns-and-matching)
 
 Patterns are a special syntax in Rust for matching against the structure of
 types, both complex and simple. Using patterns in conjunction with `match`

@@ -2,12 +2,12 @@
 type: Web Page
 title: Working With Any Number of Futures - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch17-03-more-futures.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-### Yielding Control to the Runtime
+[Yielding Control to the Runtime](#yielding-control-to-the-runtime)
 
-Recall from the “Our First Async Program”
+Recall from the [“Our First Async Program”](ch17-01-futures-and-syntax.html#our-first-async-program)
 section that at each await point, Rust gives a runtime a chance to pause the
 task and switch to another one if the future being awaited isn’t ready. The
 inverse is also true: Rust *only* pauses async blocks and hands control back to
@@ -112,7 +112,7 @@ measure to see what your code’s actual performance bottlenecks are. The
 underlying dynamic is important to keep in mind, though, if you *are* seeing a
 lot of work happening in serial that you expected to happen concurrently!
 
-### Building Our Own Async Abstractions
+[Building Our Own Async Abstractions](#building-our-own-async-abstractions)
 
 We can also compose futures together to create new patterns. For example, we can
 build a `timeout` function with async building blocks we already have. When

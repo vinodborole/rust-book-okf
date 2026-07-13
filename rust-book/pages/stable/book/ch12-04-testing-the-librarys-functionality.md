@@ -2,10 +2,10 @@
 type: Web Page
 title: Adding Functionality with Test Driven Development - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch12-04-testing-the-librarys-functionality.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-## Adding Functionality with Test-Driven Development
+[Adding Functionality with Test-Driven Development](#adding-functionality-with-test-driven-development)
 
 Now that we have the search logic in *src/lib.rs* separate from the `main`
 function, it’s much easier to write tests for the core functionality of our
@@ -27,10 +27,10 @@ the searching for the query string in the file contents and produce a list of
 lines that match the query. We’ll add this functionality in a function called
 `search`.
 
-### Writing a Failing Test
+[Writing a Failing Test](#writing-a-failing-test)
 
 In *src/lib.rs*, we’ll add a `tests` module with a test function, as we did in
-Chapter 11. The test function specifies the
+[Chapter 11](ch11-01-writing-tests.html#the-anatomy-of-a-test-function). The test function specifies the
 behavior we want the `search` function to have: It will take a query and the
 text to search, and it will return only the lines from the text that contain
 the query. Listing 12-15 shows this test.
@@ -50,7 +50,7 @@ because an empty vector doesn’t match a vector containing the line `"safe, fas
 
 Now let’s discuss why we need to define an explicit lifetime `'a` in the
 signature of `search` and use that lifetime with the `contents` argument and
-the return value. Recall in Chapter 10 that
+the return value. Recall in [Chapter 10](ch10-03-lifetime-syntax.html) that
 the lifetime parameters specify which argument lifetime is connected to the
 lifetime of the return value. In this case, we indicate that the returned
 vector should contain string slices that reference slices of the argument
@@ -90,9 +90,13 @@ and we want to return the parts of that text that match, we know `contents` is
 the only parameter that should be connected to the return value using the
 lifetime syntax.
 
-Other programming languages don’t require you to connect arguments to return values in the signature, but this practice will get easier over time. You might want to compare this example with the examples in the “Validating References with Lifetimes” section in Chapter 10.
+Other programming languages don’t require you to connect arguments to return
+values in the signature, but this practice will get easier over time. You might
+want to compare this example with the examples in the [“Validating References
+with Lifetimes”](ch10-03-lifetime-syntax.html#validating-references-with-lifetimes) section
+in Chapter 10.
 
-### Writing Code to Pass the Test
+[Writing Code to Pass the Test](#writing-code-to-pass-the-test)
 
 Currently, our test is failing because we always return an empty vector. To fix
 that and implement `search`, our program needs to follow these steps:
@@ -105,18 +109,18 @@ that and implement `search`, our program needs to follow these steps:
 
 Let’s work through each step, starting with iterating through lines.
 
-#### Iterating Through Lines with the `lines` Method
+[Iterating Through Lines with the ](#iterating-through-lines-with-the-lines-method)`lines` Method
 
-Rust has a helpful method to handle line-by-line iteration of strings,
+`lines` MethodRust has a helpful method to handle line-by-line iteration of strings,
 conveniently named `lines`, that works as shown in Listing 12-17. Note that
 this won’t compile yet.
 
 The `lines` method returns an iterator. We’ll talk about iterators in depth in
-Chapter 13. But recall that you saw this way
-of using an iterator in Listing 3-5, where we used a
+[Chapter 13](ch13-02-iterators.html). But recall that you saw this way
+of using an iterator in [Listing 3-5](ch03-05-control-flow.html#looping-through-a-collection-with-for), where we used a
 `for` loop with an iterator to run some code on each item in a collection.
 
-#### Searching Each Line for the Query
+[Searching Each Line for the Query](#searching-each-line-for-the-query)
 
 Next, we’ll check whether the current line contains our query string.
 Fortunately, strings have a helpful method named `contains` that does this for
@@ -125,7 +129,7 @@ Listing 12-18. Note that this still won’t compile yet.
 
 At the moment, we’re building up functionality. To get the code to compile, we need to return a value from the body as we indicated we would in the function signature.
 
-#### Storing Matching Lines
+[Storing Matching Lines](#storing-matching-lines)
 
 To finish this function, we need a way to store the matching lines that we want
 to return. For that, we can make a mutable vector before the `for` loop and
@@ -152,7 +156,12 @@ test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fini
 ```
 Our test passed, so we know it works!
 
-At this point, we could consider opportunities for refactoring the implementation of the search function while keeping the tests passing to maintain the same functionality. The code in the search function isn’t too bad, but it doesn’t take advantage of some useful features of iterators. We’ll return to this example in Chapter 13, where we’ll explore iterators in detail, and look at how to improve it.
+At this point, we could consider opportunities for refactoring the
+implementation of the search function while keeping the tests passing to
+maintain the same functionality. The code in the search function isn’t too bad,
+but it doesn’t take advantage of some useful features of iterators. We’ll
+return to this example in [Chapter 13](ch13-02-iterators.html), where
+we’ll explore iterators in detail, and look at how to improve it.
 
 Now the entire program should work! Let’s try it out, first with a word that
 should return exactly one line from the Emily Dickinson poem: *frog*.

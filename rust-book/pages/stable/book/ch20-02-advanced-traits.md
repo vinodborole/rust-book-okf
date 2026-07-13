@@ -2,14 +2,17 @@
 type: Web Page
 title: Advanced Traits - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch20-02-advanced-traits.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-## Advanced Traits
+[Advanced Traits](#advanced-traits)
 
-We first covered traits in the “Defining Shared Behavior with Traits” section in Chapter 10, but we didn’t discuss the more advanced details. Now that you know more about Rust, we can get into the nitty-gritty.
+We first covered traits in the [“Defining Shared Behavior with
+Traits”](ch10-02-traits.html) section in Chapter 10, but we didn’t discuss
+the more advanced details. Now that you know more about Rust, we can get into
+the nitty-gritty.
 
-### Defining Traits with Associated Types
+[Defining Traits with Associated Types](#defining-traits-with-associated-types)
 
 *Associated types* connect a type placeholder with a trait such that the trait
 method definitions can use these placeholder types in their signatures. The
@@ -58,7 +61,7 @@ call `next` on `Counter`.
 
 Associated types also become part of the trait’s contract: Implementors of the trait must provide a type to stand in for the associated type placeholder. Associated types often have a name that describes how the type will be used, and documenting the associated type in the API documentation is a good practice.
 
-### Using Default Generic Parameters and Operator Overloading
+[Using Default Generic Parameters and Operator Overloading](#using-default-generic-parameters-and-operator-overloading)
 
 When we use generic type parameters, we can specify a default concrete type for
 the generic type. This eliminates the need for implementors of the trait to
@@ -108,8 +111,8 @@ default.
 
 We have two structs, `Millimeters` and `Meters`, holding values in different
 units. This thin wrapping of an existing type in another struct is known as the
-*newtype pattern*, which we describe in more detail in the “Implementing
-External Traits with the Newtype Pattern” section. We
+*newtype pattern*, which we describe in more detail in the [“Implementing
+External Traits with the Newtype Pattern”](ch20-02-advanced-traits.html#implementing-external-traits-with-the-newtype-pattern) section. We
 want to add values in millimeters to values in meters and have the
 implementation of `Add` do the conversion correctly. We can implement `Add` for
 `Millimeters` with `Meters` as the `Rhs`, as shown in Listing 20-16.
@@ -131,7 +134,7 @@ it easier to use the trait.
 
 The first purpose is similar to the second but in reverse: If you want to add a type parameter to an existing trait, you can give it a default to allow extension of the functionality of the trait without breaking the existing implementation code.
 
-### Disambiguating Between Identically Named Methods
+[Disambiguating Between Identically Named Methods](#disambiguating-between-identically-named-methods)
 
 Nothing in Rust prevents a trait from having a method with the same name as another trait’s method, nor does Rust prevent you from implementing both traits on one type. It’s also possible to implement a method directly on the type with the same name as methods from traits.
 
@@ -253,7 +256,7 @@ in the program. You only need to use this more verbose syntax in cases where
 there are multiple implementations that use the same name and Rust needs help
 to identify which implementation you want to call.
 
-### Using Supertraits
+[Using Supertraits](#using-supertraits)
 
 Sometimes you might write a trait definition that depends on another trait: For
 a type to implement the first trait, you want to require that type to also
@@ -332,14 +335,14 @@ Then, implementing the `OutlinePrint` trait on `Point` will compile
 successfully, and we can call `outline_print` on a `Point` instance to display
 it within an outline of asterisks.
 
-### Implementing External Traits with the Newtype Pattern
+[Implementing External Traits with the Newtype Pattern](#implementing-external-traits-with-the-newtype-pattern)
 
-In the “Implementing a Trait on a Type” section in Chapter 10, we mentioned the orphan rule that states
+In the [“Implementing a Trait on a Type”](ch10-02-traits.html#implementing-a-trait-on-a-type) section in Chapter 10, we mentioned the orphan rule that states
 we’re only allowed to implement a trait on a type if either the trait or the
 type, or both, are local to our crate. It’s possible to get around this
 restriction using the newtype pattern, which involves creating a new type in a
-tuple struct. (We covered tuple structs in the “Creating Different Types with
-Tuple Structs” section in Chapter 5.) The tuple
+tuple struct. (We covered tuple structs in the [“Creating Different Types with
+Tuple Structs”](ch05-01-defining-structs.html#creating-different-types-with-tuple-structs) section in Chapter 5.) The tuple
 struct will have one field and be a thin wrapper around the type for which we
 want to implement a trait. Then, the wrapper type is local to our crate, and we
 can implement the trait on the wrapper. *Newtype* is a term that originates
@@ -362,8 +365,8 @@ all the methods of `Vec<T>` directly on `Wrapper` such that the methods
 delegate to `self.0`, which would allow us to treat `Wrapper` exactly like a
 `Vec<T>`. If we wanted the new type to have every method the inner type has,
 implementing the `Deref` trait on the `Wrapper` to return the inner type would
-be a solution (we discussed implementing the `Deref` trait in the “Treating
-Smart Pointers Like Regular References”
+be a solution (we discussed implementing the `Deref` trait in the [“Treating
+Smart Pointers Like Regular References”](ch15-02-deref.html#treating-smart-pointers-like-regular-references)
 section in Chapter 15). If we didn’t want the `Wrapper` type to have all the
 methods of the inner type—for example, to restrict the `Wrapper` type’s
 behavior—we would have to implement just the methods we do want manually.

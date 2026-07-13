@@ -2,12 +2,12 @@
 type: Web Page
 title: Futures, Tasks, and Threads - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch17-06-futures-tasks-threads.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-## Putting It All Together: Futures, Tasks, and Threads
+[Putting It All Together: Futures, Tasks, and Threads](#putting-it-all-together-futures-tasks-and-threads)
 
-As we saw in Chapter 16, threads provide one approach to
+As we saw in [Chapter 16](http://localhost:3000/ch16-00-concurrency.html), threads provide one approach to
 concurrency. We’ve seen another approach in this chapter: using async with
 futures and streams. If you’re wondering when to choose one method over the other,
 the answer is: it depends! And in many cases, the choice isn’t threads *or*
@@ -66,9 +66,12 @@ seen.
 
 To return to the scenario we opened the chapter with, imagine running a set of video encoding tasks using a dedicated thread (because video encoding is compute-bound) but notifying the UI that those operations are done with an async channel. There are countless examples of these kinds of combinations in real-world use cases.
 
-## Summary
+[Summary](#summary)
 
-This isn’t the last you’ll see of concurrency in this book. The project in Chapter 21 will apply these concepts in a more realistic situation than the simpler examples discussed here and compare problem-solving with threading versus tasks and futures more directly.
+This isn’t the last you’ll see of concurrency in this book. The project in
+[Chapter 21](ch21-00-final-project-a-web-server.html) will apply these concepts in a more realistic
+situation than the simpler examples discussed here and compare problem-solving
+with threading versus tasks and futures more directly.
 
 No matter which of these approaches you choose, Rust gives you the tools you need to write safe, fast, concurrent code—whether for a high-throughput web server or an embedded operating system.
 

@@ -2,10 +2,10 @@
 type: Web Page
 title: Defining an Enum - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch06-01-defining-an-enum.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-## Defining an Enum
+[Defining an Enum](#defining-an-enum)
 
 Where structs give you a way of grouping together related fields and data, like
 a `Rectangle` with its `width` and `height`, enums give you a way of saying a
@@ -41,7 +41,7 @@ fn route(ip_kind: IpAddrKind) {}
 ```
 `IpAddrKind` is now a custom data type that we can use elsewhere in our code.
 
-### Enum Values
+[Enum Values](#enum-values)
 
 We can create instances of each of the two variants of `IpAddrKind` like this:
 
@@ -148,8 +148,8 @@ fn main() {
 ```
 We’ve shown several different ways to define data structures to store version
 four and version six IP addresses. However, as it turns out, wanting to store
-IP addresses and encode which kind they are is so common that the standard
-library has a definition we can use! Let’s look at how
+IP addresses and encode which kind they are is so common that [the standard
+library has a definition we can use!](../std/net/enum.IpAddr.html) Let’s look at how
 the standard library defines `IpAddr`. It has the exact enum and variants that
 we’ve defined and used, but it embeds the address data inside the variants in
 the form of two different structs, which are defined differently for each
@@ -235,9 +235,9 @@ body of the `call` method when `m.call()` runs.
 Let’s look at another enum in the standard library that is very common and
 useful: `Option`.
 
-### The `Option` Enum
+[The ](#the-option-enum)`Option` Enum
 
-This section explores a case study of `Option`, which is another enum defined
+`Option` EnumThis section explores a case study of `Option`, which is another enum defined
 by the standard library. The `Option` type encodes the very common scenario in
 which a value could be something, or it could be nothing.
 
@@ -260,7 +260,7 @@ However, the concept that null is trying to express is still a useful one: A nul
 The problem isn’t really with the concept but with the particular
 implementation. As such, Rust does not have nulls, but it does have an enum
 that can encode the concept of a value being present or absent. This enum is
-`Option<T>`, and it is defined by the standard library
+`Option<T>`, and it is [defined by the standard library](../std/option/enum.Option.html)
 as follows:
 
 ```
@@ -363,7 +363,7 @@ code.
 So how do you get the `T` value out of a `Some` variant when you have a value
 of type `Option<T>` so that you can use that value? The `Option<T>` enum has a
 large number of methods that are useful in a variety of situations; you can
-check them out in its documentation. Becoming familiar
+check them out in [its documentation](../std/option/enum.Option.html). Becoming familiar
 with the methods on `Option<T>` will be extremely useful in your journey with
 Rust.
 

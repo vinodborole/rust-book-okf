@@ -2,19 +2,19 @@
 type: Web Page
 title: A - Keywords - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/appendix-01-keywords.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-## Appendix A: Keywords
+[Appendix A: Keywords](#appendix-a-keywords)
 
 The following lists contain keywords that are reserved for current or future
 use by the Rust language. As such, they cannot be used as identifiers (except
-as raw identifiers, as we discuss in the “Raw
-Identifiers” section). *Identifiers* are names
+as raw identifiers, as we discuss in the [“Raw
+Identifiers”](#raw-identifiers) section). *Identifiers* are names
 of functions, variables, parameters, struct fields, modules, crates, constants,
 macros, static values, attributes, types, traits, or lifetimes.
 
-### Keywords Currently in Use
+[Keywords Currently in Use](#keywords-currently-in-use)
 
 The following is a list of keywords currently in use, with their functionality described.
 
@@ -52,13 +52,13 @@ The following is a list of keywords currently in use, with their functionality d
 - `trait`
 - `true`
 - `type`
-- `union`
+- `union`- [union](../reference/items/unions.html); is a keyword only when used in a union declaration.
 - `unsafe`
 - `use`
 - `where`
 - `while`
 
-### Keywords Reserved for Future Use
+[Keywords Reserved for Future Use](#keywords-reserved-for-future-use)
 
 The following keywords do not yet have any functionality but are reserved by Rust for potential future use:
 
@@ -77,7 +77,7 @@ The following keywords do not yet have any functionality but are reserved by Rus
 - `virtual`
 - `yield`
 
-### Raw Identifiers
+[Raw Identifiers](#raw-identifiers)
 
 *Raw identifiers* are the syntax that lets you use keywords where they wouldn’t
 normally be allowed. You use a raw identifier by prefixing a keyword with `r#`.
@@ -127,7 +127,7 @@ For example, `try` isn’t a keyword in the 2015 edition but is in the 2018, 202
 and 2024 editions. If you depend on a library that is written using the 2015
 edition and has a `try` function, you’ll need to use the raw identifier syntax,
 `r#try` in this case, to call that function from your code on later editions.
-See Appendix E for more information on editions.
+See [Appendix E](appendix-05-editions.html) for more information on editions.
 
 # Citations
 

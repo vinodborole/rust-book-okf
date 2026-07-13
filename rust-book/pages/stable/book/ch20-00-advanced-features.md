@@ -2,10 +2,10 @@
 type: Web Page
 title: Advanced Features - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch20-00-advanced-features.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-# Advanced Features
+[Advanced Features](#advanced-features)
 
 By now, you’ve learned the most commonly used parts of the Rust programming language. Before we do one more project, in Chapter 21, we’ll look at a few aspects of the language you might run into every once in a while but may not use every day. You can use this chapter as a reference for when you encounter any unknowns. The features covered here are useful in very specific situations. Although you might not reach for them often, we want to make sure you have a grasp of all the features Rust has to offer.
 

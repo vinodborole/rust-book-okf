@@ -2,14 +2,14 @@
 type: Web Page
 title: Closures - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch13-01-closures.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-## Closures
+[Closures](#closures)
 
 Rust’s closures are anonymous functions you can save in a variable or pass as arguments to other functions. You can create the closure in one place and then call the closure elsewhere to evaluate it in a different context. Unlike functions, closures can capture values from the scope in which they’re defined. We’ll demonstrate how these closure features allow for code reuse and behavior customization.
 
-### Capturing the Environment
+[Capturing the Environment](#capturing-the-environment)
 
 We’ll first examine how we can use closures to capture values from the environment they’re defined in for later use. Here’s the scenario: Every so often, our T-shirt company gives away an exclusive, limited-edition shirt to someone on our mailing list as a promotion. People on the mailing list can optionally add their favorite color to their profile. If the person chosen for a free shirt has their favorite color set, they get that color shirt. If the person hasn’t specified a favorite color, they get whatever color the company currently has the most of.
 
@@ -30,16 +30,16 @@ Again, this code could be implemented in many ways, and here, to focus on
 closures, we’ve stuck to concepts you’ve already learned, except for the body of
 the `giveaway` method that uses a closure. In the `giveaway` method, we get the
 user preference as a parameter of type `Option<ShirtColor>` and call the
-`unwrap_or_else` method on `user_preference`. The `unwrap_or_else` method on
-`Option<T>` is defined by the standard library.
-It takes one argument: a closure without any arguments that returns a value `T`
+`unwrap_or_else` method on `user_preference`. The [ unwrap_or_else method on
+Option<T>](../std/option/enum.Option.html#method.unwrap_or_else) is defined by the standard library.
+It takes one argument: a closure without any arguments that returns a value 
+
+`T`
 (the same type stored in the `Some` variant of the `Option<T>`, in this case
 `ShirtColor`). If the `Option<T>` is the `Some` variant, `unwrap_or_else`
 returns the value from within the `Some`. If the `Option<T>` is the `None`
 variant, `unwrap_or_else` calls the closure and returns the value returned by
-the closure.
-
-We specify the closure expression `|| self.most_stocked()` as the argument to
+the closure.We specify the closure expression `|| self.most_stocked()` as the argument to
 `unwrap_or_else`. This is a closure that takes no parameters itself (if the
 closure had parameters, they would appear between the two vertical pipes). The
 body of the closure calls `self.most_stocked()`. We’re defining the closure
@@ -64,7 +64,7 @@ immutable reference to the `self` `Inventory` instance and passes it with the
 code we specify to the `unwrap_or_else` method. Functions, on the other hand,
 are not able to capture their environment in this way.
 
-### Inferring and Annotating Closure Types
+[Inferring and Annotating Closure Types](#inferring-and-annotating-closure-types)
 
 There are more differences between functions and closures. Closures don’t
 usually require you to annotate the types of the parameters or the return value
@@ -143,7 +143,7 @@ infers the type of `x` and the return type of the closure to be `String`. Those
 types are then locked into the closure in `example_closure`, and we get a type
 error when we next try to use a different type with the same closure.
 
-### Capturing References or Moving Ownership
+[Capturing References or Moving Ownership](#capturing-references-or-moving-ownership)
 
 Closures can capture values from their environment in three ways, which directly map to the three ways a function can take a parameter: borrowing immutably, borrowing mutably, and taking ownership. The closure will decide which of these to use based on what the body of the function does with the captured values.
 
@@ -216,7 +216,7 @@ so that the reference will be valid. Try removing the `move` keyword or using
 `list` in the main thread after the closure is defined to see what compiler
 errors you get!
 
-### Moving Captured Values Out of Closures
+[Moving Captured Values Out of Closures](#moving-captured-values-out-of-closures)
 
 Once a closure has captured a reference or captured ownership of a value from
 the environment where the closure is defined (thus affecting what, if anything,

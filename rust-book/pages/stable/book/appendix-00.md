@@ -2,10 +2,10 @@
 type: Web Page
 title: Appendix - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/appendix-00.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-# Appendix
+[Appendix](#appendix)
 
 The following sections contain reference material you may find useful in your Rust journey.
 

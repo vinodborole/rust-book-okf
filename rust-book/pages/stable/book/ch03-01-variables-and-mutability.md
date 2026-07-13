@@ -2,12 +2,18 @@
 type: Web Page
 title: Variables and Mutability - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch03-01-variables-and-mutability.html
-timestamp: '2026-07-06T10:44:58.534505+00:00'
+timestamp: '2026-07-13T09:33:08.854356+00:00'
 ---
 
-## Variables and Mutability
+[Variables and Mutability](#variables-and-mutability)
 
-As mentioned in the “Storing Values with Variables” section, by default, variables are immutable. This is one of many nudges Rust gives you to write your code in a way that takes advantage of the safety and easy concurrency that Rust offers. However, you still have the option to make your variables mutable. Let’s explore how and why Rust encourages you to favor immutability and why sometimes you might want to opt out.
+As mentioned in the [“Storing Values with
+Variables”](ch02-00-guessing-game-tutorial.html#storing-values-with-variables) section, by default,
+variables are immutable. This is one of many nudges Rust gives you to write
+your code in a way that takes advantage of the safety and easy concurrency that
+Rust offers. However, you still have the option to make your variables mutable.
+Let’s explore how and why Rust encourages you to favor immutability and why
+sometimes you might want to opt out.
 
 When a variable is immutable, once a value is bound to a name, you can’t change
 that value. To illustrate this, generate a new project called *variables* in
@@ -68,8 +74,8 @@ easier to reason through.
 
 But mutability can be very useful and can make code more convenient to write.
 Although variables are immutable by default, you can make them mutable by
-adding `mut` in front of the variable name as you did in Chapter
-2. Adding `mut` also conveys
+adding `mut` in front of the variable name as you did in [Chapter
+2](ch02-00-guessing-game-tutorial.html#storing-values-with-variables). Adding `mut` also conveys
 intent to future readers of the code by indicating that other parts of the code
 will be changing this variable’s value.
 
@@ -99,7 +105,7 @@ We’re allowed to change the value bound to `x` from `5` to `6` when `mut` is
 used. Ultimately, deciding whether to use mutability or not is up to you and
 depends on what you think is clearest in that particular situation.
 
-### Declaring Constants
+[Declaring Constants](#declaring-constants)
 
 Like immutable variables, *constants* are values that are bound to a name and
 are not allowed to change, but there are a few differences between constants
@@ -109,7 +115,7 @@ First, you aren’t allowed to use `mut` with constants. Constants aren’t just
 immutable by default—they’re always immutable. You declare constants using the
 `const` keyword instead of the `let` keyword, and the type of the value *must*
 be annotated. We’ll cover types and type annotations in the next section,
-“Data Types”, so don’t worry about the details
+[“Data Types”](ch03-02-data-types.html#data-types), so don’t worry about the details
 right now. Just know that you must always annotate the type.
 
 Constants can be declared in any scope, including the global scope, which makes them useful for values that many parts of code need to know about.
@@ -131,18 +137,18 @@ program). Rust’s naming convention for constants is to use all uppercase with
 underscores between words. The compiler is able to evaluate a limited set of
 operations at compile time, which lets us choose to write out this value in a
 way that’s easier to understand and verify, rather than setting this constant
-to the value 10,800. See the Rust Reference’s section on constant
-evaluation for more information on what operations can be used
+to the value 10,800. See the [Rust Reference’s section on constant
+evaluation](../reference/const_eval.html) for more information on what operations can be used
 when declaring constants.
 
 Constants are valid for the entire time a program runs, within the scope in which they were declared. This property makes constants useful for values in your application domain that multiple parts of the program might need to know about, such as the maximum number of points any player of a game is allowed to earn, or the speed of light.
 
 Naming hardcoded values used throughout your program as constants is useful in conveying the meaning of that value to future maintainers of the code. It also helps to have only one place in your code that you would need to change if the hardcoded value needed to be updated in the future.
 
-### Shadowing
+[Shadowing](#shadowing)
 
-As you saw in the guessing game tutorial in Chapter
-2, you can declare a
+As you saw in the guessing game tutorial in [Chapter
+2](ch02-00-guessing-game-tutorial.html#comparing-the-guess-to-the-secret-number), you can declare a
 new variable with the same name as a previous variable. Rustaceans say that the
 first variable is *shadowed* by the second, which means that the second
 variable is what the compiler will see when you use the name of the variable.

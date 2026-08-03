@@ -2,10 +2,10 @@
 type: Web Page
 title: A - Keywords - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/appendix-01-keywords.html
-timestamp: '2026-07-13T09:33:08.854356+00:00'
+timestamp: '2026-08-03T09:51:37.355491+00:00'
 ---
 
-[Appendix A: Keywords](#appendix-a-keywords)
+## [Appendix A: Keywords](#appendix-a-keywords)
 
 The following lists contain keywords that are reserved for current or future
 use by the Rust language. As such, they cannot be used as identifiers (except
@@ -14,51 +14,56 @@ Identifiers”](#raw-identifiers) section). *Identifiers* are names
 of functions, variables, parameters, struct fields, modules, crates, constants,
 macros, static values, attributes, types, traits, or lifetimes.
 
-[Keywords Currently in Use](#keywords-currently-in-use)
+### [Keywords Currently in Use](#keywords-currently-in-use)
 
 The following is a list of keywords currently in use, with their functionality described.
 
-- `as`- `use`statements.
-- `async`- `Future`instead of blocking the current thread.
-- `await`- `Future`is ready.
-- `break`
-- `const`
-- `continue`
-- `crate`
-- `dyn`
-- `else`- `if`and- `if let`control flow constructs.
-- `enum`
-- `extern`
-- `false`
-- `fn`
-- `for`
-- `if`
-- `impl`
-- `in`- `for`loop syntax.
-- `let`
-- `loop`
-- `match`
-- `mod`
-- `move`
-- `mut`
-- `pub`- `impl`blocks, or modules.
-- `ref`
-- `return`
-- `Self`
-- `self`
-- `static`
-- `struct`
-- `super`
-- `trait`
-- `true`
-- `type`
-- `union`- [union](../reference/items/unions.html); is a keyword only when used in a union declaration.
-- `unsafe`
-- `use`
-- `where`
-- `while`
+- **`as`** : Perform primitive casting, disambiguate the specific trait
+containing an item, or rename items in`use` statements.
+- **`async`** : Return a`Future` instead of blocking the current thread.
+- **`await`** : Suspend execution until the result of a`Future` is ready.
+- **`break`** : Exit a loop immediately.
+- **`const`** : Define constant items or constant raw pointers.
+- **`continue`** : Continue to the next loop iteration.
+- **`crate`** : In a module path, refers to the crate root.
+- **`dyn`** : Dynamic dispatch to a trait object.
+- **`else`** : Fallback for`if` and`if let` control flow constructs.
+- **`enum`** : Define an enumeration.
+- **`extern`** : Link an external function or variable.
+- **`false`** : Boolean false literal.
+- **`fn`** : Define a function or the function pointer type.
+- **`for`** : Loop over items from an iterator, implement a trait, or specify a
+higher ranked lifetime.
+- **`if`** : Branch based on the result of a conditional expression.
+- **`impl`** : Implement inherent or trait functionality.
+- **`in`** : Part of`for` loop syntax.
+- **`let`** : Bind a variable.
+- **`loop`** : Loop unconditionally.
+- **`match`** : Match a value to patterns.
+- **`mod`** : Define a module.
+- **`move`** : Make a closure take ownership of all its captures.
+- **`mut`** : Denote mutability in references, raw pointers, or pattern bindings.
+- **`pub`** : Denote public visibility in struct fields,`impl` blocks, or
+modules.
+- **`ref`** : Bind by reference.
+- **`return`** : Return from function.
+- **`Self`** : A type alias for the type we are defining or implementing.
+- **`self`** : Method subject or current module.
+- **`static`** : Global variable or lifetime lasting the entire program
+execution.
+- **`struct`** : Define a structure.
+- **`super`** : Parent module of the current module.
+- **`trait`** : Define a trait.
+- **`true`** : Boolean true literal.
+- **`type`** : Define a type alias or associated type.
+- **`union`** : Define a[union](../reference/items/unions.html) ; is a keyword only when
+used in a union declaration.
+- **`unsafe`** : Denote unsafe code, functions, traits, or implementations.
+- **`use`** : Bring symbols into scope.
+- **`where`** : Denote clauses that constrain a type.
+- **`while`** : Loop conditionally based on the result of an expression.
 
-[Keywords Reserved for Future Use](#keywords-reserved-for-future-use)
+### [Keywords Reserved for Future Use](#keywords-reserved-for-future-use)
 
 The following keywords do not yet have any functionality but are reserved by Rust for potential future use:
 
@@ -77,7 +82,7 @@ The following keywords do not yet have any functionality but are reserved by Rus
 - `virtual`
 - `yield`
 
-[Raw Identifiers](#raw-identifiers)
+### [Raw Identifiers](#raw-identifiers)
 
 *Raw identifiers* are the syntax that lets you use keywords where they wouldn’t
 normally be allowed. You use a raw identifier by prefixing a keyword with `r#`.

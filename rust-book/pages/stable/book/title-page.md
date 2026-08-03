@@ -2,10 +2,10 @@
 type: Web Page
 title: The Rust Programming Language - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/title-page.html
-timestamp: '2026-07-13T09:33:08.854356+00:00'
+timestamp: '2026-08-03T09:51:37.355491+00:00'
 ---
 
-[The Rust Programming Language](#the-rust-programming-language)
+# [The Rust Programming Language](#the-rust-programming-language)
 
 *by Steve Klabnik, Carol Nichols, and Chris Krycho, with contributions from the
 Rust Community*
@@ -26,7 +26,9 @@ Several community [translations](appendix-06-translation.html) are also availabl
 This text is available in [paperback and ebook format from No Starch
 Press](https://nostarch.com/rust-programming-language-3rd-edition).
 
-🚨 Want a more interactive learning experience? Try out a different version of the Rust Book, featuring: quizzes, highlighting, visualizations, and more:[https://rust-book.cs.brown.edu](https://rust-book.cs.brown.edu)
+**🚨 Want a more interactive learning experience? Try out a different version
+of the Rust Book, featuring: quizzes, highlighting, visualizations, and
+more**: [https://rust-book.cs.brown.edu](https://rust-book.cs.brown.edu)
 
 # Citations
 

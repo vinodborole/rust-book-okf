@@ -2,10 +2,10 @@
 type: Web Page
 title: Control Flow - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch03-05-control-flow.html
-timestamp: '2026-07-13T09:33:08.854356+00:00'
+timestamp: '2026-08-03T09:51:37.355491+00:00'
 ---
 
-[Control Flow](#control-flow)
+## [Control Flow](#control-flow)
 
 The ability to run some code depending on whether a condition is `true` and the
 ability to run some code repeatedly while a condition is `true` are basic
@@ -13,9 +13,10 @@ building blocks in most programming languages. The most common constructs that
 let you control the flow of execution of Rust code are `if` expressions and
 loops.
 
-`if` Expressions
+### [`if` Expressions](#if-expressions)
 
-`if` ExpressionsAn `if` expression allows you to branch your code depending on conditions. You
+`if` Expressions
+An `if` expression allows you to branch your code depending on conditions. You
 provide a condition and then state, “If this condition is met, run this block
 of code. If the condition is not met, do not run this block of code.”
 
@@ -126,9 +127,10 @@ fn main() {
 ```
 Running this code will print `number was something other than zero`.
 
-[Handling Multiple Conditions with ](#handling-multiple-conditions-with-else-if)`else if`
+#### [Handling Multiple Conditions with `else if`](#handling-multiple-conditions-with-else-if)
 
-`else if`You can use multiple conditions by combining `if` and `else` in an `else if`
+`else if`
+You can use multiple conditions by combining `if` and `else` in an `else if`
 expression. For example:
 
 Filename: src/main.rs
@@ -167,9 +169,10 @@ Using too many `else if` expressions can clutter your code, so if you have more
 than one, you might want to refactor your code. Chapter 6 describes a powerful
 Rust branching construct called `match` for these cases.
 
-[Using ](#using-if-in-a-let-statement)`if` in a `let` Statement
+#### [Using `if` in a `let` Statement](#using-if-in-a-let-statement)
 
-`if` in a `let` StatementBecause `if` is an expression, we can use it on the right side of a `let`
+`if` in a `let` Statement
+Because `if` is an expression, we can use it on the right side of a `let`
 statement to assign the outcome to a variable, as in Listing 3-2.
 
 The `number` variable will be bound to a value based on the outcome of the `if`
@@ -225,7 +228,7 @@ do that if the type of `number` was only determined at runtime; the compiler
 would be more complex and would make fewer guarantees about the code if it had
 to keep track of multiple hypothetical types for any variable.
 
-[Repetition with Loops](#repetition-with-loops)
+### [Repetition with Loops](#repetition-with-loops)
 
 It’s often useful to execute a block of code more than once. For this task,
 Rust provides several *loops*, which will run through the code inside the loop
@@ -234,9 +237,10 @@ with loops, let’s make a new project called *loops*.
 
 Rust has three kinds of loops: `loop`, `while`, and `for`. Let’s try each one.
 
-[Repeating Code with ](#repeating-code-with-loop)`loop`
+#### [Repeating Code with `loop`](#repeating-code-with-loop)
 
-`loop`The `loop` keyword tells Rust to execute a block of code over and over again
+`loop`
+The `loop` keyword tells Rust to execute a block of code over and over again
 either forever or until you explicitly tell it to stop.
 
 As an example, change the *src/main.rs* file in your *loops* directory to look
@@ -282,7 +286,7 @@ We also used `continue` in the guessing game, which in a loop tells the program
 to skip over any remaining code in this iteration of the loop and go to the
 next iteration.
 
-[Returning Values from Loops](#returning-values-from-loops)
+#### [Returning Values from Loops](#returning-values-from-loops)
 
 One of the uses of a `loop` is to retry an operation you know might fail, such
 as checking whether a thread has completed its job. You might also need to pass
@@ -314,7 +318,7 @@ print the value in `result`, which in this case is `20`.
 You can also `return` from inside a loop. While `break` only exits the current
 loop, `return` always exits the current function.
 
-[Disambiguating with Loop Labels](#disambiguating-with-loop-labels)
+#### [Disambiguating with Loop Labels](#disambiguating-with-loop-labels)
 
 If you have loops within loops, `break` and `continue` apply to the innermost
 loop at that point. You can optionally specify a *loop label* on a loop that
@@ -362,7 +366,7 @@ count = 2
 remaining = 10
 End count = 2
 ```
-[Streamlining Conditional Loops with while](#streamlining-conditional-loops-with-while)
+#### [Streamlining Conditional Loops with while](#streamlining-conditional-loops-with-while)
 
 A program will often need to evaluate a condition within a loop. While the
 condition is `true`, the loop runs. When the condition ceases to be `true`, the
@@ -377,9 +381,10 @@ This construct eliminates a lot of nesting that would be necessary if you used
 `loop`, `if`, `else`, and `break`, and it’s clearer. While a condition
 evaluates to `true`, the code runs; otherwise, it exits the loop.
 
-[Looping Through a Collection with ](#looping-through-a-collection-with-for)`for`
+#### [Looping Through a Collection with `for`](#looping-through-a-collection-with-for)
 
-`for`You can choose to use the `while` construct to loop over the elements of a
+`for`
+You can choose to use the `while` construct to loop over the elements of a
 collection, such as an array. For example, the loop in Listing 3-4 prints each
 element in the array `a`.
 
@@ -447,7 +452,7 @@ fn main() {
 ```
 This code is a bit nicer, isn’t it?
 
-[Summary](#summary)
+## [Summary](#summary)
 
 You made it! This was a sizable chapter: You learned about variables, scalar
 and compound data types, functions, comments, `if` expressions, and loops! To
@@ -455,7 +460,7 @@ practice with the concepts discussed in this chapter, try building programs to
 do the following:
 
 - Convert temperatures between Fahrenheit and Celsius.
-- Generate the *n*th Fibonacci number.
+- Generate the *n* th Fibonacci number.
 - Print the lyrics to the Christmas carol “The Twelve Days of Christmas,” taking advantage of the repetition in the song.
 
 When you’re ready to move on, we’ll talk about a concept in Rust that *doesn’t*

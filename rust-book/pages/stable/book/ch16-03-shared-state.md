@@ -2,10 +2,10 @@
 type: Web Page
 title: Shared-State Concurrency - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch16-03-shared-state.html
-timestamp: '2026-07-13T09:33:08.854356+00:00'
+timestamp: '2026-08-03T09:51:37.355491+00:00'
 ---
 
-[Shared-State Concurrency](#shared-state-concurrency)
+## [Shared-State Concurrency](#shared-state-concurrency)
 
 Message passing is a fine way to handle concurrency, but it’s not the only way. Another method would be for multiple threads to access the same shared data. Consider this part of the slogan from the Go language documentation again: “Do not communicate by sharing memory.”
 
@@ -13,7 +13,7 @@ What would communicating by sharing memory look like? In addition, why would mes
 
 In a way, channels in any programming language are similar to single ownership because once you transfer a value down a channel, you should no longer use that value. Shared-memory concurrency is like multiple ownership: Multiple threads can access the same memory location at the same time. As you saw in Chapter 15, where smart pointers made multiple ownership possible, multiple ownership can add complexity because these different owners need managing. Rust’s type system and ownership rules greatly assist in getting this management correct. For an example, let’s look at mutexes, one of the more common concurrency primitives for shared memory.
 
-[Controlling Access with Mutexes](#controlling-access-with-mutexes)
+### [Controlling Access with Mutexes](#controlling-access-with-mutexes)
 
 *Mutex* is an abbreviation for *mutual exclusion*, as in a mutex allows only
 one thread to access some data at any given time. To access the data in a
@@ -24,16 +24,17 @@ mutex is described as *guarding* the data it holds via the locking system.
 
 Mutexes have a reputation for being difficult to use because you have to remember two rules:
 
-- You must attempt to acquire the lock before using the data.
-- When you’re done with the data that the mutex guards, you must unlock the data so that other threads can acquire the lock.
+1. You must attempt to acquire the lock before using the data.
+2. When you’re done with the data that the mutex guards, you must unlock the data so that other threads can acquire the lock.
 
 For a real-world metaphor for a mutex, imagine a panel discussion at a conference with only one microphone. Before a panelist can speak, they have to ask or signal that they want to use the microphone. When they get the microphone, they can talk for as long as they want to and then hand the microphone to the next panelist who requests to speak. If a panelist forgets to hand the microphone off when they’re finished with it, no one else is able to speak. If management of the shared microphone goes wrong, the panel won’t work as planned!
 
 Management of mutexes can be incredibly tricky to get right, which is why so many people are enthusiastic about channels. However, thanks to Rust’s type system and ownership rules, you can’t get locking and unlocking wrong.
 
-[The API of ](#the-api-of-mutext)`Mutex<T>`
+#### [The API of `Mutex<T>`](#the-api-of-mutext)
 
-`Mutex<T>`As an example of how to use a mutex, let’s start by using a mutex in a single-threaded context, as shown in Listing 16-12.
+`Mutex<T>`
+As an example of how to use a mutex, let’s start by using a mutex in a single-threaded context, as shown in Listing 16-12.
 
 As with many types, we create a `Mutex<T>` using the associated function `new`.
 To access the data inside the mutex, we use the `lock` method to acquire the
@@ -62,9 +63,10 @@ used by other threads because the lock release happens automatically.
 After dropping the lock, we can print the mutex value and see that we were able
 to change the inner `i32` to `6`.
 
-[Shared Access to ](#shared-access-to-mutext)`Mutex<T>`
+#### [Shared Access to `Mutex<T>`](#shared-access-to-mutext)
 
-`Mutex<T>`Now let’s try to share a value between multiple threads using `Mutex<T>`. We’ll
+`Mutex<T>`
+Now let’s try to share a value between multiple threads using `Mutex<T>`. We’ll
 spin up 10 threads and have them each increment a counter value by 1, so the
 counter goes from 0 to 10. The example in Listing 16-13 will have a compiler
 error, and we’ll use that error to learn more about using `Mutex<T>` and how
@@ -117,7 +119,7 @@ iteration of the loop. Rust is telling us that we can’t move the ownership of
 lock `counter` into multiple threads. Let’s fix the compiler error with the
 multiple-ownership method we discussed in Chapter 15.
 
-[Multiple Ownership with Multiple Threads](#multiple-ownership-with-multiple-threads)
+#### [Multiple Ownership with Multiple Threads](#multiple-ownership-with-multiple-threads)
 
 In Chapter 15, we gave a value to multiple owners by using the smart pointer
 `Rc<T>` to create a reference-counted value. Let’s do the same here and see
@@ -156,8 +158,8 @@ For more information about this error, try `rustc --explain E0277`.
 error: could not compile `shared-state` (bin "shared-state") due to 1 previous error
 ```
 Wow, that error message is very wordy! Here’s the important part to focus on:
-``Rc<Mutex<i32>>` cannot be sent between threads safely`. The compiler is
-also telling us the reason why: `the trait `Send` is not implemented for `Rc<Mutex<i32>>``. We’ll talk about `Send` in the next section: It’s one of
+`` `Rc<Mutex<i32>>` cannot be sent between threads safely ``. The compiler is
+also telling us the reason why: `` the trait `Send` is not implemented for `Rc<Mutex<i32>>` ``. We’ll talk about `Send` in the next section: It’s one of
 the traits that ensures that the types we use with threads are meant for use in
 concurrent situations.
 
@@ -170,13 +172,14 @@ could in turn lead to memory leaks or a value being dropped before we’re done
 with it. What we need is a type that is exactly like `Rc<T>`, but that makes
 changes to the reference count in a thread-safe way.
 
-[Atomic Reference Counting with ](#atomic-reference-counting-with-arct)`Arc<T>`
+#### [Atomic Reference Counting with `Arc<T>`](#atomic-reference-counting-with-arct)
 
-`Arc<T>`Fortunately, `Arc<T>` *is* a type like `Rc<T>` that is safe to use in
+`Arc<T>`
+Fortunately, `Arc<T>` *is* a type like `Rc<T>` that is safe to use in
 concurrent situations. The *a* stands for *atomic*, meaning it’s an *atomically
 reference-counted* type. Atomics are an additional kind of concurrency
 primitive that we won’t cover in detail here: See the standard library
-documentation for [ std::sync::atomic](../std/sync/atomic/index.html) for more
+documentation for [`std::sync::atomic`](../std/sync/atomic/index.html) for more
 details. At this point, you just need to know that atomics work like primitive
 types but are safe to share across threads.
 
@@ -204,14 +207,15 @@ parts, split those parts across threads, and then use a `Mutex<T>` to have each
 thread update the final result with its part.
 
 Note that if you are doing simple numerical operations, there are types simpler
-than `Mutex<T>` types provided by the [ std::sync::atomic module of the
+than `Mutex<T>` types provided by the [`std::sync::atomic` module of the
 standard library](../std/sync/atomic/index.html). These types provide safe, concurrent,
-atomic access to primitive types. We chose to use 
+atomic access to primitive types. We chose to use `Mutex<T>` with a primitive
+type for this example so that we could concentrate on how `Mutex<T>` works.
 
-`Mutex<T>` with a primitive
-type for this example so that we could concentrate on how `Mutex<T>` works.[Comparing ](#comparing-refcelltrct-and-mutextarct)`RefCell<T>`/`Rc<T>` and `Mutex<T>`/`Arc<T>`
+### [Comparing `RefCell<T>`/`Rc<T>` and `Mutex<T>`/`Arc<T>`](#comparing-refcelltrct-and-mutextarct)
 
-`RefCell<T>`/`Rc<T>` and `Mutex<T>`/`Arc<T>`You might have noticed that `counter` is immutable but that we could get a
+`RefCell<T>`/`Rc<T>` and `Mutex<T>`/`Arc<T>`
+You might have noticed that `counter` is immutable but that we could get a
 mutable reference to the value inside it; this means `Mutex<T>` provides
 interior mutability, as the `Cell` family does. In the same way we used
 `RefCell<T>` in Chapter 15 to allow us to mutate contents inside an `Rc<T>`, we

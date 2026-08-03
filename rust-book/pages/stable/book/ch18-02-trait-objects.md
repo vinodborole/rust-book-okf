@@ -3,10 +3,10 @@ type: Web Page
 title: Using Trait Objects to Abstract over Shared Behavior - The Rust Programming
   Language
 resource: https://doc.rust-lang.org/stable/book/ch18-02-trait-objects.html
-timestamp: '2026-07-13T09:33:08.854356+00:00'
+timestamp: '2026-08-03T09:51:37.355491+00:00'
 ---
 
-[Using Trait Objects to Abstract over Shared Behavior](#using-trait-objects-to-abstract-over-shared-behavior)
+## [Using Trait Objects to Abstract over Shared Behavior](#using-trait-objects-to-abstract-over-shared-behavior)
 
 In Chapter 8, we mentioned that one limitation of vectors is that they can
 store elements of only one type. We created a workaround in Listing 8-9 where
@@ -43,7 +43,7 @@ they were `Component` instances and call `draw` on them. But because Rust
 doesn’t have inheritance, we need another way to structure the `gui` library to
 allow users to create new types compatible with the library.
 
-[Defining a Trait for Common Behavior](#defining-a-trait-for-common-behavior)
+### [Defining a Trait for Common Behavior](#defining-a-trait-for-common-behavior)
 
 To implement the behavior that we want `gui` to have, we’ll define a trait
 named `Draw` that will have one method named `draw`. Then, we can define a
@@ -53,7 +53,7 @@ methods on that type at runtime. We create a trait object by specifying some
 sort of pointer, such as a reference or a `Box<T>` smart pointer, then the
 `dyn` keyword, and then specifying the relevant trait. (We’ll talk about the
 reason trait objects must use a pointer in [“Dynamically Sized Types and the
- Sized Trait”](ch20-03-advanced-types.html#dynamically-sized-types-and-the-sized-trait) in Chapter 20.) We can use
+`Sized` Trait”](ch20-03-advanced-types.html#dynamically-sized-types-and-the-sized-trait) in Chapter 20.) We can use
 trait objects in place of a generic or concrete type. Wherever we use a trait
 object, Rust’s type system will ensure at compile time that any value used in
 that context will implement the trait object’s trait. Consequently, we don’t
@@ -97,7 +97,7 @@ can hold a `Vec<T>` that contains a `Box<Button>` as well as a
 `Box<TextField>`. Let’s look at how this works, and then we’ll talk about the
 runtime performance implications.
 
-[Implementing the Trait](#implementing-the-trait)
+### [Implementing the Trait](#implementing-the-trait)
 
 Now we’ll add some types that implement the `Draw` trait. We’ll provide the
 `Button` type. Again, actually implementing a GUI library is beyond the scope
@@ -166,7 +166,7 @@ This error lets us know that either we’re passing something to `Screen` that w
 didn’t mean to pass and so should pass a different type, or we should implement
 `Draw` on `String` so that `Screen` is able to call `draw` on it.
 
-[Performing Dynamic Dispatch](#performing-dynamic-dispatch)
+### [Performing Dynamic Dispatch](#performing-dynamic-dispatch)
 
 Recall in [“Performance of Code Using
 Generics”](ch10-01-syntax.html#performance-of-code-using-generics) in Chapter 10 our

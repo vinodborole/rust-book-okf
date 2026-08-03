@@ -2,10 +2,10 @@
 type: Web Page
 title: Fearless Concurrency - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch16-00-concurrency.html
-timestamp: '2026-07-13T09:33:08.854356+00:00'
+timestamp: '2026-08-03T09:51:37.355491+00:00'
 ---
 
-[Fearless Concurrency](#fearless-concurrency)
+# [Fearless Concurrency](#fearless-concurrency)
 
 Handling concurrent programming safely and efficiently is another of Rust’s
 major goals. *Concurrent programming*, in which different parts of a program
@@ -40,9 +40,11 @@ Many languages are dogmatic about the solutions they offer for handling concurre
 Here are the topics we’ll cover in this chapter:
 
 - How to create threads to run multiple pieces of code at the same time
-- *Message-passing*concurrency, where channels send messages between threads
-- *Shared-state*concurrency, where multiple threads have access to some piece of data
-- The `Sync`and`Send`traits, which extend Rust’s concurrency guarantees to user-defined types as well as types provided by the standard library
+- *Message-passing* concurrency, where channels send messages between threads
+- *Shared-state* concurrency, where multiple threads have access to some piece
+of data
+- The `Sync` and`Send` traits, which extend Rust’s concurrency guarantees to
+user-defined types as well as types provided by the standard library
 
 # Citations
 

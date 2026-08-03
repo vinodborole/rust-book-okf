@@ -2,10 +2,10 @@
 type: Web Page
 title: Separating Modules into Different Files - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch07-05-separating-modules-into-different-files.html
-timestamp: '2026-07-13T09:33:08.854356+00:00'
+timestamp: '2026-08-03T09:51:37.355491+00:00'
 ---
 
-[Separating Modules into Different Files](#separating-modules-into-different-files)
+## [Separating Modules into Different Files](#separating-modules-into-different-files)
 
 So far, all the examples in this chapter defined multiple modules in one file. When modules get large, you might want to move their definitions to a separate file to make the code easier to navigate.
 
@@ -52,21 +52,21 @@ root and not declared as a child of the `front_of_house` module. The
 compiler’s rules for which files to check for which modules’ code mean the
 directories and files more closely match the module tree.
 
-[Alternate File Paths](#alternate-file-paths)
+### [Alternate File Paths](#alternate-file-paths)
 
 So far we’ve covered the most idiomatic file paths the Rust compiler uses,
 but Rust also supports an older style of file path. For a module named
 `front_of_house` declared in the crate root, the compiler will look for the
 module’s code in:
 
-- *src/front_of_house.rs*(what we covered)
-- *src/front_of_house/mod.rs*(older style, still supported path)
+- *src/front_of_house.rs* (what we covered)
+- *src/front_of_house/mod.rs* (older style, still supported path)
 
 For a module named `hosting` that is a submodule of `front_of_house`, the
 compiler will look for the module’s code in:
 
-- *src/front_of_house/hosting.rs*(what we covered)
-- *src/front_of_house/hosting/mod.rs*(older style, still supported path)
+- *src/front_of_house/hosting.rs* (what we covered)
+- *src/front_of_house/hosting/mod.rs* (older style, still supported path)
 
 If you use both styles for the same module, you’ll get a compiler error. Using a mix of both styles for different modules in the same project is allowed but might be confusing for people navigating your project.
 
@@ -85,7 +85,7 @@ are compiled as part of the crate. The `mod` keyword declares modules, and Rust
 looks in a file with the same name as the module for the code that goes into
 that module.
 
-[Summary](#summary)
+## [Summary](#summary)
 
 Rust lets you split a package into multiple crates and a crate into modules so
 that you can refer to items defined in one module from another module. You can

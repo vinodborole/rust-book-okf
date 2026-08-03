@@ -2,19 +2,20 @@
 type: Web Page
 title: Improving Our I/O Project - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch13-03-improving-our-io-project.html
-timestamp: '2026-07-13T09:33:08.854356+00:00'
+timestamp: '2026-08-03T09:51:37.355491+00:00'
 ---
 
-[Improving Our I/O Project](#improving-our-io-project)
+## [Improving Our I/O Project](#improving-our-io-project)
 
 With this new knowledge about iterators, we can improve the I/O project in
 Chapter 12 by using iterators to make places in the code clearer and more
 concise. Let’s look at how iterators can improve our implementation of the
 `Config::build` function and the `search` function.
 
-[Removing a ](#removing-a-clone-using-an-iterator)`clone` Using an Iterator
+### [Removing a `clone` Using an Iterator](#removing-a-clone-using-an-iterator)
 
-`clone` Using an IteratorIn Listing 12-6, we added code that took a slice of `String` values and created
+`clone` Using an Iterator
+In Listing 12-6, we added code that took a slice of `String` values and created
 an instance of the `Config` struct by indexing into the slice and cloning the
 values, allowing the `Config` struct to own those values. In Listing 13-17,
 we’ve reproduced the implementation of the `Config::build` function as it was
@@ -39,7 +40,7 @@ Once `Config::build` takes ownership of the iterator and stops using indexing
 operations that borrow, we can move the `String` values from the iterator into
 `Config` rather than calling `clone` and making a new allocation.
 
-[Using the Returned Iterator Directly](#using-the-returned-iterator-directly)
+#### [Using the Returned Iterator Directly](#using-the-returned-iterator-directly)
 
 Open your I/O project’s *src/main.rs* file, which should look like this:
 
@@ -123,9 +124,10 @@ Because we’re taking ownership of `args` and we’ll be mutating `args` by
 iterating over it, we can add the `mut` keyword into the specification of the
 `args` parameter to make it mutable.
 
-[Using ](#using-iterator-trait-methods)`Iterator` Trait Methods
+#### [Using `Iterator` Trait Methods](#using-iterator-trait-methods)
 
-`Iterator` Trait MethodsNext, we’ll fix the body of `Config::build`. Because `args` implements the
+`Iterator` Trait Methods
+Next, we’ll fix the body of `Config::build`. Because `args` implements the
 `Iterator` trait, we know we can call the `next` method on it! Listing 13-20
 updates the code from Listing 12-23 to use the `next` method.
 
@@ -137,7 +139,7 @@ value we want to put in the `query` field of `Config`. If `next` returns
 not enough arguments were given, and we return early with an `Err` value. We do
 the same thing for the `file_path` value.
 
-[Clarifying Code with Iterator Adapters](#clarifying-code-with-iterator-adapters)
+### [Clarifying Code with Iterator Adapters](#clarifying-code-with-iterator-adapters)
 
 We can also take advantage of iterators in the `search` function in our I/O
 project, which is reproduced here in Listing 13-21 as it was in Listing 12-19.
@@ -165,7 +167,7 @@ until it has collected all of the results, but after the change, the results
 will be printed as each matching line is found because the `for` loop in the
 `run` function is able to take advantage of the laziness of the iterator.
 
-[Choosing Between Loops and Iterators](#choosing-between-loops-and-iterators)
+### [Choosing Between Loops and Iterators](#choosing-between-loops-and-iterators)
 
 The next logical question is which style you should choose in your own code and why: the original implementation in Listing 13-21 or the version using iterators in Listing 13-22 (assuming we’re collecting all the results before returning them rather than returning the iterator). Most Rust programmers prefer to use the iterator style. It’s a bit tougher to get the hang of at first, but once you get a feel for the various iterator adapters and what they do, iterators can be easier to understand. Instead of fiddling with the various bits of looping and building new vectors, the code focuses on the high-level objective of the loop. This abstracts away some of the commonplace code so that it’s easier to see the concepts that are unique to this code, such as the filtering condition each element in the iterator must pass.
 

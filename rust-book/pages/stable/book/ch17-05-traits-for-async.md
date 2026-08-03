@@ -2,10 +2,10 @@
 type: Web Page
 title: A Closer Look at the Traits for Async - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch17-05-traits-for-async.html
-timestamp: '2026-07-13T09:33:08.854356+00:00'
+timestamp: '2026-08-03T09:51:37.355491+00:00'
 ---
 
-[A Closer Look at the Traits for Async](#a-closer-look-at-the-traits-for-async)
+## [A Closer Look at the Traits for Async](#a-closer-look-at-the-traits-for-async)
 
 Throughout the chapter, we’ve used the `Future`, `Stream`, and `StreamExt`
 traits in various ways. So far, though, we’ve avoided getting too far into the
@@ -16,9 +16,10 @@ along with the `Pin` type and the `Unpin` trait. In this section, we’ll dig in
 just enough to help in those scenarios, still leaving the *really* deep dive
 for other documentation.
 
-[The ](#the-future-trait)`Future` Trait
+### [The `Future` Trait](#the-future-trait)
 
-`Future` TraitLet’s start by taking a closer look at how the `Future` trait works. Here’s how
+`Future` Trait
+Let’s start by taking a closer look at how the `Future` trait works. Here’s how
 Rust defines it:
 
 ```
@@ -120,9 +121,10 @@ but the key is to see the basic mechanics of futures: a runtime *polls* each
 future it is responsible for, putting the future back to sleep when it is not
 yet ready.
 
-[The ](#the-pin-type-and-the-unpin-trait)`Pin` Type and the `Unpin` Trait
+### [The `Pin` Type and the `Unpin` Trait](#the-pin-type-and-the-unpin-trait)
 
-`Pin` Type and the `Unpin` TraitBack in Listing 17-13, we used the `trpl::join!` macro to await three
+`Pin` Type and the `Unpin` Trait
+Back in Listing 17-13, we used the `trpl::join!` macro to await three
 futures. However, it’s common to have a collection such as a vector containing
 some number futures that won’t be known until runtime. Let’s change Listing
 17-13 to the code in Listing 17-23 that puts the three futures into a vector
@@ -206,9 +208,10 @@ method where `self` has a type annotation. A type annotation for `self` works
 like type annotations for other function parameters but with two key
 differences:
 
-- It tells Rust what type `self`must be for the method to be called.
+- It tells Rust what type `self` must be for the method to be called.
 - It can’t be just any type. It’s restricted to the type on which the method is
-implemented, a reference or smart pointer to that type, or a `Pin`wrapping a reference to that type.
+implemented, a reference or smart pointer to that type, or a `Pin` wrapping a
+reference to that type.
 
 We’ll see more on this syntax in [Chapter 18](ch18-00-oop.html). For now,
 it’s enough to know that if we want to poll a future to check whether it is
@@ -285,7 +288,7 @@ moved.
 Just as with `Send` and `Sync`, the compiler implements `Unpin` automatically
 for all types where it can prove it is safe. A special case, again similar to
 `Send` and `Sync`, is where `Unpin` is *not* implemented for a type. The
-notation for this is `impl !Unpin for `, where
+notation for this is `impl !Unpin for` , where
 *SomeType**SomeType**does* need to uphold
 those guarantees to be safe whenever a pointer to that type is used in a `Pin`.
 
@@ -337,11 +340,12 @@ if you’re interested in learning more, that’s a great place to start.
 If you want to understand how things work under the hood in even more detail,
 see Chapters [2](https://rust-lang.github.io/async-book/02_execution/01_chapter.html) and
 [4](https://rust-lang.github.io/async-book/04_pinning/01_chapter.html) of
-[ Asynchronous Programming in Rust](https://rust-lang.github.io/async-book/).
+[*Asynchronous Programming in Rust*](https://rust-lang.github.io/async-book/).
 
-[The ](#the-stream-trait)`Stream` Trait
+### [The `Stream` Trait](#the-stream-trait)
 
-`Stream` TraitNow that you have a deeper grasp on the `Future`, `Pin`, and `Unpin` traits, we
+`Stream` Trait
+Now that you have a deeper grasp on the `Future`, `Pin`, and `Unpin` traits, we
 can turn our attention to the `Stream` trait. As you learned earlier in the
 chapter, streams are similar to asynchronous iterators. Unlike `Iterator` and
 `Future`, however, `Stream` has no definition in the standard library as of
@@ -414,7 +418,8 @@ trait StreamExt: Stream {
 ```
 Note: The actual definition we used earlier in the chapter looks slightly different than this, because it supports versions of Rust that did not yet support using async functions in traits. As a result, it looks like this:
 
-`fn next(&mut self) -> Next<'_, Self> where Self: Unpin;`That `Next` type is a `struct` that implements `Future` and allows us to name
+`fn next(&mut self) -> Next<'_, Self> where Self: Unpin;`
+That `Next` type is a `struct` that implements `Future` and allows us to name
 the lifetime of the reference to `self` with `Next<'_, Self>`, so that `await`
 can work with this method.
 

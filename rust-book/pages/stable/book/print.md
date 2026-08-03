@@ -2,10 +2,10 @@
 type: Web Page
 title: The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/print.html
-timestamp: '2026-07-13T09:33:08.854356+00:00'
+timestamp: '2026-08-03T09:51:37.355491+00:00'
 ---
 
-[The Rust Programming Language](#the-rust-programming-language)
+# [The Rust Programming Language](#the-rust-programming-language)
 
 *by Steve Klabnik, Carol Nichols, and Chris Krycho, with contributions from the
 Rust Community*
@@ -26,9 +26,11 @@ Several community [translations](#f---translations-of-the-book) are also availab
 This text is available in [paperback and ebook format from No Starch
 Press](https://nostarch.com/rust-programming-language-3rd-edition).
 
-🚨 Want a more interactive learning experience? Try out a different version of the Rust Book, featuring: quizzes, highlighting, visualizations, and more:[https://rust-book.cs.brown.edu](https://rust-book.cs.brown.edu)
+**🚨 Want a more interactive learning experience? Try out a different version
+of the Rust Book, featuring: quizzes, highlighting, visualizations, and
+more**: [https://rust-book.cs.brown.edu](https://rust-book.cs.brown.edu)
 
-[Foreword](#foreword)
+# [Foreword](#foreword)
 
 The Rust programming language has come a long way in a few short years, from its creation and incubation by a small and nascent community of enthusiasts, to becoming one of the most loved and in-demand programming languages in the world. Looking back, it was inevitable that the power and promise of Rust would turn heads and gain a foothold in systems programming. What was not inevitable was the global growth in interest and innovation that permeated through open source communities and catalyzed wide-scale adoption across industries.
 
@@ -57,7 +59,7 @@ Welcome to the Rust community!
 
 - Bec Rumbul, Executive Director of the Rust Foundation
 
-[Introduction](#introduction)
+# [Introduction](#introduction)
 
 Note: This edition of the book is the same as [The Rust Programming
 Language](https://nostarch.com/rust-programming-language-3rd-edition) available in print and ebook format from [No Starch
@@ -71,35 +73,36 @@ technical capacity and a great developer experience, Rust gives you the option
 to control low-level details (such as memory usage) without all the hassle
 traditionally associated with such control.
 
-[Who Rust Is For](#who-rust-is-for)
+## [Who Rust Is For](#who-rust-is-for)
 
 Rust is ideal for many people for a variety of reasons. Let’s look at a few of the most important groups.
 
-[Teams of Developers](#teams-of-developers)
+### [Teams of Developers](#teams-of-developers)
 
 Rust is proving to be a productive tool for collaborating among large teams of developers with varying levels of systems programming knowledge. Low-level code is prone to various subtle bugs, which in most other languages can only be caught through extensive testing and careful code review by experienced developers. In Rust, the compiler plays a gatekeeper role by refusing to compile code with these elusive bugs, including concurrency bugs. By working alongside the compiler, the team can spend its time focusing on the program’s logic rather than chasing down bugs.
 
 Rust also brings contemporary developer tools to the systems programming world:
 
 - Cargo, the included dependency manager and build tool, makes adding, compiling, and managing dependencies painless and consistent across the Rust ecosystem.
-- The `rustfmt`formatting tool ensures a consistent coding style across developers.
+- The `rustfmt` formatting tool ensures a consistent coding style across
+developers.
 - The Rust Language Server powers integrated development environment (IDE) integration for code completion and inline error messages.
 
 By using these and other tools in the Rust ecosystem, developers can be productive while writing systems-level code.
 
-[Students](#students)
+### [Students](#students)
 
 Rust is for students and those who are interested in learning about systems concepts. Using Rust, many people have learned about topics like operating systems development. The community is very welcoming and happy to answer students’ questions. Through efforts such as this book, the Rust teams want to make systems concepts more accessible to more people, especially those new to programming.
 
-[Companies](#companies)
+### [Companies](#companies)
 
 Hundreds of companies, large and small, use Rust in production for a variety of tasks, including command line tools, web services, DevOps tooling, embedded devices, audio and video analysis and transcoding, cryptocurrencies, bioinformatics, search engines, Internet of Things applications, machine learning, and even major parts of the Firefox web browser.
 
-[Open Source Developers](#open-source-developers)
+### [Open Source Developers](#open-source-developers)
 
 Rust is for people who want to build the Rust programming language, community, developer tools, and libraries. We’d love to have you contribute to the Rust language.
 
-[People Who Value Speed and Stability](#people-who-value-speed-and-stability)
+### [People Who Value Speed and Stability](#people-who-value-speed-and-stability)
 
 Rust is for people who crave speed and stability in a language. By speed, we mean both how quickly Rust code can run and the speed at which Rust lets you write programs. The Rust compiler’s checks ensure stability through feature additions and refactoring. This is in contrast to the brittle legacy code in languages without these checks, which developers are often afraid to modify. By striving for zero-cost abstractions—higher-level features that compile to lower-level code as fast as code written manually—Rust endeavors to make safe code be fast code as well.
 
@@ -109,7 +112,7 @@ ambition is to eliminate the trade-offs that programmers have accepted for
 decades by providing safety *and* productivity, speed *and* ergonomics. Give
 Rust a try, and see if its choices work for you.
 
-[Who This Book Is For](#who-this-book-is-for)
+## [Who This Book Is For](#who-this-book-is-for)
 
 This book assumes that you’ve written code in another programming language, but
 it doesn’t make any assumptions about which one. We’ve tried to make the
@@ -119,7 +122,7 @@ or how to think about it. If you’re entirely new to programming, you would be
 better served by reading a book that specifically provides an introduction to
 programming.
 
-[How to Use This Book](#how-to-use-this-book)
+## [How to Use This Book](#how-to-use-this-book)
 
 In general, this book assumes that you’re reading it in sequence from front to back. Later chapters build on concepts in earlier chapters, and earlier chapters might not delve into details on a particular topic but will revisit the topic in a later chapter.
 
@@ -192,28 +195,28 @@ An important part of the process of learning Rust is learning how to read the er
 
 | Ferris | Meaning | 
 |---|---|
-| This code does not compile! | |
-| This code panics! | |
-| This code does not produce the desired behavior. | 
+|  | This code does not compile! | 
+|  | This code panics! | 
+|  | This code does not produce the desired behavior. | 
 
 In most situations, we’ll lead you to the correct version of any code that doesn’t compile.
 
-[Source Code](#source-code)
+## [Source Code](#source-code)
 
 The source files from which this book is generated can be found on
 [GitHub](https://github.com/rust-lang/book/tree/main/src).
 
-[Getting Started](#getting-started)
+# [Getting Started](#getting-started)
 
 Let’s start your Rust journey! There’s a lot to learn, but every journey starts somewhere. In this chapter, we’ll discuss:
 
 - Installing Rust on Linux, macOS, and Windows
 - Writing a program that prints `Hello, world!`
-- Using `cargo`, Rust’s package manager and build system
+- Using `cargo` , Rust’s package manager and build system
 
-[Installation](#installation-1)
+# [Installation](#installation-1)
 
-[Installation](#installation)
+## [Installation](#installation)
 
 The first step is to install Rust. We’ll download Rust through `rustup`, a
 command line tool for managing Rust versions and associated tools. You’ll need
@@ -224,7 +227,7 @@ Note: If you prefer not to use `rustup` for some reason, please see the
 
 The following steps install the latest stable version of the Rust compiler. Rust’s stability guarantees ensure that all the examples in the book that compile will continue to compile with newer Rust versions. The output might differ slightly between versions because Rust often improves error messages and warnings. In other words, any newer, stable version of Rust you install using these steps should work as expected with the content of this book.
 
-[Command Line Notation](#command-line-notation)
+### [Command Line Notation](#command-line-notation)
 
 In this chapter and throughout the book, we’ll show some commands used in the
 terminal. Lines that you should enter in a terminal all start with `$`. You
@@ -233,9 +236,10 @@ indicate the start of each command. Lines that don’t start with `$` typically
 show the output of the previous command. Additionally, PowerShell-specific
 examples will use `>` rather than `$`.
 
-[Installing ](#installing-rustup-on-linux-or-macos)`rustup` on Linux or macOS
+### [Installing `rustup` on Linux or macOS](#installing-rustup-on-linux-or-macos)
 
-`rustup` on Linux or macOSIf you’re using Linux or macOS, open a terminal and enter the following command:
+`rustup` on Linux or macOS
+If you’re using Linux or macOS, open a terminal and enter the following command:
 
 ```
 $ curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
@@ -262,9 +266,10 @@ Linux users should generally install GCC or Clang, according to their
 distribution’s documentation. For example, if you use Ubuntu, you can install
 the `build-essential` package.
 
-[Installing ](#installing-rustup-on-windows)`rustup` on Windows
+### [Installing `rustup` on Windows](#installing-rustup-on-windows)
 
-`rustup` on WindowsOn Windows, go to [https://www.rust-lang.org/tools/install](https://www.rust-lang.org/tools/install) and follow the instructions for installing Rust. At some point in the
+`rustup` on Windows
+On Windows, go to [https://www.rust-lang.org/tools/install](https://www.rust-lang.org/tools/install) and follow the instructions for installing Rust. At some point in the
 installation, you’ll be prompted to install Visual Studio. This provides a
 linker and the native libraries needed to compile programs. If you need more
 help with this step, see
@@ -273,7 +278,7 @@ help with this step, see
 The rest of this book uses commands that work in both *cmd.exe* and PowerShell.
 If there are specific differences, we’ll explain which to use.
 
-[Troubleshooting](#troubleshooting)
+### [Troubleshooting](#troubleshooting)
 
 To check whether you have Rust installed correctly, open a shell and enter this line:
 
@@ -308,7 +313,7 @@ If that’s all correct and Rust still isn’t working, there are a number of
 places you can get help. Find out how to get in touch with other Rustaceans (a
 silly nickname we call ourselves) on [the community page](https://www.rust-lang.org/community).
 
-[Updating and Uninstalling](#updating-and-uninstalling)
+### [Updating and Uninstalling](#updating-and-uninstalling)
 
 Once Rust is installed via `rustup`, updating to a newly released version is
 easy. From your shell, run the following update script:
@@ -322,7 +327,7 @@ shell:
 ```
 $ rustup self uninstall
 ```
-[Reading the Local Documentation](#reading-the-local-documentation)
+### [Reading the Local Documentation](#reading-the-local-documentation)
 
 The installation of Rust also includes a local copy of the documentation so
 that you can read it offline. Run `rustup doc` to open the local documentation
@@ -330,7 +335,7 @@ in your browser.
 
 Any time a type or function is provided by the standard library and you’re not sure what it does or how to use it, use the application programming interface (API) documentation to find out!
 
-[Using Text Editors and IDEs](#using-text-editors-and-ides)
+### [Using Text Editors and IDEs](#using-text-editors-and-ides)
 
 This book makes no assumptions about what tools you use to author Rust code.
 Just about any text editor will get the job done! However, many text editors and
@@ -338,7 +343,7 @@ integrated development environments (IDEs) have built-in support for Rust. You
 can always find a fairly current list of many editors and IDEs on [the tools
 page](https://www.rust-lang.org/tools) on the Rust website.
 
-[Working Offline with This Book](#working-offline-with-this-book)
+### [Working Offline with This Book](#working-offline-with-this-book)
 
 In several examples, we will use Rust packages beyond the standard library. To
 work through those examples, you will either need to have an internet connection
@@ -357,9 +362,9 @@ download them later. Once you have run this command, you do not need to keep the
 `--offline` flag with all `cargo` commands in the rest of the book to use these
 cached versions instead of attempting to use the network.
 
-[Hello, World!](#hello-world-1)
+# [Hello, World!](#hello-world-1)
 
-[Hello, World!](#hello-world)
+## [Hello, World!](#hello-world)
 
 Now that you’ve installed Rust, it’s time to write your first Rust program.
 It’s traditional when learning a new language to write a little program that
@@ -373,7 +378,7 @@ documentation for details. The Rust team has been focusing on enabling great
 IDE support via `rust-analyzer`. See [Appendix D](#d---useful-development-tools)
 for more details.
 
-[Project Directory Setup](#project-directory-setup)
+### [Project Directory Setup](#project-directory-setup)
 
 You’ll start by making a directory to store your Rust code. It doesn’t matter
 to Rust where your code lives, but for the exercises and projects in this book,
@@ -399,7 +404,7 @@ For Windows CMD, enter this:
 > mkdir hello_world
 > cd hello_world
 ```
-[Rust Program Basics](#rust-program-basics)
+### [Rust Program Basics](#rust-program-basics)
 
 Next, make a new source file and call it *main.rs*. Rust files always end with
 the *.rs* extension. If you’re using more than one word in your filename, the
@@ -432,7 +437,7 @@ section for ways to get help.
 If `Hello, world!` did print, congratulations! You’ve officially written a Rust
 program. That makes you a Rust programmer—welcome!
 
-[The Anatomy of a Rust Program](#the-anatomy-of-a-rust-program)
+### [The Anatomy of a Rust Program](#the-anatomy-of-a-rust-program)
 
 Let’s review this “Hello, world!” program in detail. Here’s the first piece of the puzzle:
 
@@ -480,7 +485,7 @@ Third, we end the line with a semicolon (`;`), which indicates that this
 expression is over, and the next one is ready to begin. Most lines of Rust code
 end with a semicolon.
 
-[Compilation and Execution](#compilation-and-execution)
+### [Compilation and Execution](#compilation-and-execution)
 
 You’ve just run a newly created program, so let’s examine each step in the process.
 
@@ -533,9 +538,9 @@ grows, you’ll want to manage all the options and make it easy to share your
 code. Next, we’ll introduce you to the Cargo tool, which will help you write
 real-world Rust programs.
 
-[Hello, Cargo!](#hello-cargo-1)
+# [Hello, Cargo!](#hello-cargo-1)
 
-[Hello, Cargo!](#hello-cargo)
+## [Hello, Cargo!](#hello-cargo)
 
 Cargo is Rust’s build system and package manager. Most Rustaceans use this tool
 to manage their Rust projects because Cargo handles a lot of tasks for you,
@@ -558,7 +563,7 @@ $ cargo --version
 If you see a version number, you have it! If you see an error, such as `command not found`, look at the documentation for your method of installation to
 determine how to install Cargo separately.
 
-[Creating a Project with Cargo](#creating-a-project-with-cargo)
+### [Creating a Project with Cargo](#creating-a-project-with-cargo)
 
 Let’s create a new project using Cargo and look at how it differs from our
 original “Hello, world!” project. Navigate back to your *projects* directory
@@ -588,9 +593,8 @@ the `--vcs` flag. Run `cargo new --help` to see the available options.
 Open *Cargo.toml* in your text editor of choice. It should look similar to the
 code in Listing 1-2.
 
-This file is in the [ TOML](https://toml.io) (
-
-*Tom’s Obvious, Minimal Language*) format, which is Cargo’s configuration format.
+This file is in the [*TOML*](https://toml.io) (*Tom’s Obvious, Minimal
+Language*) format, which is Cargo’s configuration format.
 
 The first line, `[package]`, is a section heading that indicates that the
 following statements are configuring a package. As we add more information to
@@ -631,7 +635,7 @@ project code into the *src* directory and create an appropriate *Cargo.toml*
 file. One easy way to get that *Cargo.toml* file is to run `cargo init`, which
 will create it for you automatically.
 
-[Building and Running a Cargo Project](#building-and-running-a-cargo-project)
+### [Building and Running a Cargo Project](#building-and-running-a-cargo-project)
 
 Now let’s look at what’s different when we build and run the “Hello, world!”
 program with Cargo! From your *hello_cargo* directory, build your project by
@@ -700,17 +704,17 @@ ready to use the executable.
 
 Let’s recap what we’ve learned so far about Cargo:
 
-- We can create a project using `cargo new`.
-- We can build a project using `cargo build`.
-- We can build and run a project in one step using `cargo run`.
+- We can create a project using `cargo new` .
+- We can build a project using `cargo build` .
+- We can build and run a project in one step using `cargo run` .
 - We can build a project without producing a binary to check for errors using
-`cargo check`.
+`cargo check` .
 - Instead of saving the result of the build in the same directory as our code,
-Cargo stores it in the *target/debug*directory.
+Cargo stores it in the *target/debug* directory.
 
 An additional advantage of using Cargo is that the commands are the same no matter which operating system you’re working on. So, at this point, we’ll no longer provide specific instructions for Linux and macOS versus Windows.
 
-[Building for Release](#building-for-release)
+### [Building for Release](#building-for-release)
 
 When your project is finally ready for release, you can use `cargo build --release` to compile it with optimizations. This command will create an
 executable in *target/release* instead of *target/debug*. The optimizations
@@ -722,7 +726,7 @@ repeatedly and that will run as fast as possible. If you’re benchmarking your
 code’s running time, be sure to run `cargo build --release` and benchmark with
 the executable in *target/release*.
 
-[Leveraging Cargo’s Conventions](#leveraging-cargos-conventions)
+### [Leveraging Cargo’s Conventions](#leveraging-cargos-conventions)
 
 With simple projects, Cargo doesn’t provide a lot of value over just using
 `rustc`, but it will prove its worth as your programs become more intricate.
@@ -741,19 +745,19 @@ $ cargo build
 ```
 For more information about Cargo, check out [its documentation](https://doc.rust-lang.org/cargo/).
 
-[Summary](#summary)
+## [Summary](#summary)
 
 You’re already off to a great start on your Rust journey! In this chapter, you learned how to:
 
-- Install the latest stable version of Rust using `rustup`.
+- Install the latest stable version of Rust using `rustup` .
 - Update to a newer Rust version.
 - Open locally installed documentation.
-- Write and run a “Hello, world!” program using `rustc`directly.
+- Write and run a “Hello, world!” program using `rustc` directly.
 - Create and run a new project using the conventions of Cargo.
 
 This is a great time to build a more substantial program to get used to reading and writing Rust code. So, in Chapter 2, we’ll build a guessing game program. If you would rather start by learning how common programming concepts work in Rust, see Chapter 3 and then return to Chapter 2.
 
-[Programming a Guessing Game](#programming-a-guessing-game)
+# [Programming a Guessing Game](#programming-a-guessing-game)
 
 Let’s jump into Rust by working through a hands-on project together! This
 chapter introduces you to a few common Rust concepts by showing you how to use
@@ -764,7 +768,7 @@ fundamentals.
 
 We’ll implement a classic beginner programming problem: a guessing game. Here’s how it works: The program will generate a random integer between 1 and 100. It will then prompt the player to enter a guess. After a guess is entered, the program will indicate whether the guess is too low or too high. If the guess is correct, the game will print a congratulatory message and exit.
 
-[Setting Up a New Project](#setting-up-a-new-project)
+## [Setting Up a New Project](#setting-up-a-new-project)
 
 To set up a new project, go to the *projects* directory that you created in
 Chapter 1 and make a new project using Cargo, like so:
@@ -814,7 +818,7 @@ the next one.
 
 Reopen the *src/main.rs* file. You’ll be writing all the code in this file.
 
-[Processing a Guess](#processing-a-guess)
+## [Processing a Guess](#processing-a-guess)
 
 The first part of the guessing game program will ask for user input, process
 that input, and check that the input is in the expected form. To start, we’ll
@@ -882,7 +886,7 @@ fn main() {
 ```
 This code is printing a prompt stating what the game is and requesting input from the user.
 
-[Storing Values with Variables](#storing-values-with-variables)
+### [Storing Values with Variables](#storing-values-with-variables)
 
 Next, we’ll create a *variable* to store the user input, like this:
 
@@ -901,7 +905,8 @@ fn main() {
 Now the program is getting interesting! There’s a lot going on in this little
 line. We use the `let` statement to create the variable. Here’s another example:
 
-`let apples = 5;`This line creates a new variable named `apples` and binds it to the value `5`.
+`let apples = 5;`
+This line creates a new variable named `apples` and binds it to the value `5`.
 In Rust, variables are immutable by default, meaning once we give the variable
 a value, the value won’t change. We’ll be discussing this concept in detail in
 the [“Variables and Mutability”](#variables-and-mutability)
@@ -921,7 +926,7 @@ introduce a mutable variable named `guess`. The equal sign (`=`) tells Rust we
 want to bind something to the variable now. On the right of the equal sign is
 the value that `guess` is bound to, which is the result of calling
 `String::new`, a function that returns a new instance of a `String`.
-[ String](../std/string/struct.String.html) is a string type provided by the standard
+[`String`](../std/string/struct.String.html) is a string type provided by the standard
 library that is a growable, UTF-8 encoded bit of text.
 
 The `::` syntax in the `::new` line indicates that `new` is an associated
@@ -933,7 +938,7 @@ common name for a function that makes a new value of some kind.
 In full, the `let mut guess = String::new();` line has created a mutable
 variable that is currently bound to a new, empty instance of a `String`. Whew!
 
-[Receiving User Input](#receiving-user-input)
+### [Receiving User Input](#receiving-user-input)
 
 Recall that we included the input/output functionality from the standard
 library with `use std::io;` on the first line of the program. Now we’ll call
@@ -955,18 +960,18 @@ fn main() {
 If we hadn’t imported the `io` module with `use std::io;` at the beginning of
 the program, we could still use the function by writing this function call as
 `std::io::stdin`. The `stdin` function returns an instance of
-[ std::io::Stdin](../std/io/struct.Stdin.html), which is a type that represents a
+[`std::io::Stdin`](../std/io/struct.Stdin.html), which is a type that represents a
 handle to the standard input for your terminal.
 
-Next, the line `.read_line(&mut guess)` calls the [ read_line](../std/io/struct.Stdin.html#method.read_line) method on the standard input handle to get input from the user.
-We’re also passing 
-
-`&mut guess` as the argument to `read_line` to tell it what
+Next, the line `.read_line(&mut guess)` calls the [`read_line`](../std/io/struct.Stdin.html#method.read_line) method on the standard input handle to get input from the user.
+We’re also passing `&mut guess` as the argument to `read_line` to tell it what
 string to store the user input in. The full job of `read_line` is to take
 whatever the user types into standard input and append that into a string
 (without overwriting its contents), so we therefore pass that string as an
 argument. The string argument needs to be mutable so that the method can change
-the string’s content.The `&` indicates that this argument is a *reference*, which gives you a way to
+the string’s content.
+
+The `&` indicates that this argument is a *reference*, which gives you a way to
 let multiple parts of your code access one piece of data without needing to
 copy that data into memory multiple times. References are a complex feature,
 and one of Rust’s major advantages is how safe and easy it is to use
@@ -976,9 +981,10 @@ immutable by default. Hence, you need to write `&mut guess` rather than
 `&guess` to make it mutable. (Chapter 4 will explain references more
 thoroughly.)
 
-[Handling Potential Failure with ](#handling-potential-failure-with-result)`Result`
+### [Handling Potential Failure with `Result`](#handling-potential-failure-with-result)
 
-`Result`We’re still working on this line of code. We’re now discussing a third line of text, but note that it’s still part of a single logical line of code. The next part is this method:
+`Result`
+We’re still working on this line of code. We’re now discussing a third line of text, but note that it’s still part of a single logical line of code. The next part is this method:
 
 ```
 use std::io;
@@ -994,19 +1000,16 @@ fn main() {
 ```
 We could have written this code as:
 
-`io::stdin().read_line(&mut guess).expect("Failed to read line");`However, one long line is difficult to read, so it’s best to divide it. It’s
+`io::stdin().read_line(&mut guess).expect("Failed to read line");`
+However, one long line is difficult to read, so it’s best to divide it. It’s
 often wise to introduce a newline and other whitespace to help break up long
 lines when you call a method with the `.method_name()` syntax. Now let’s
 discuss what this line does.
 
 As mentioned earlier, `read_line` puts whatever the user enters into the string
-we pass to it, but it also returns a `Result` value. [ Result](../std/result/enum.Result.html) is an 
-
-[, often called an](#enums-and-pattern-matching)
-
-*enumeration**enum*, which is a type that can be in one of multiple possible states. We call each possible state a
-
-*variant*.
+we pass to it, but it also returns a `Result` value. [`Result`](../std/result/enum.Result.html) is an [*enumeration*](#enums-and-pattern-matching), often called an *enum*,
+which is a type that can be in one of multiple possible states. We call each
+possible state a *variant*.
 
 [Chapter 6](#enums-and-pattern-matching) will cover enums in more detail. The purpose
 of these `Result` types is to encode error-handling information.
@@ -1017,16 +1020,16 @@ The `Err` variant means the operation failed, and it contains information
 about how or why the operation failed.
 
 Values of the `Result` type, like values of any type, have methods defined on
-them. An instance of `Result` has an [ expect method](../std/result/enum.Result.html#method.expect)
-that you can call. If this instance of 
-
-`Result` is an `Err` value, `expect`
+them. An instance of `Result` has an [`expect` method](../std/result/enum.Result.html#method.expect)
+that you can call. If this instance of `Result` is an `Err` value, `expect`
 will cause the program to crash and display the message that you passed as an
 argument to `expect`. If the `read_line` method returns an `Err`, it would
 likely be the result of an error coming from the underlying operating system.
 If this instance of `Result` is an `Ok` value, `expect` will take the return
 value that `Ok` is holding and return just that value to you so that you can
-use it. In this case, that value is the number of bytes in the user’s input.If you don’t call `expect`, the program will compile, but you’ll get a warning:
+use it. In this case, that value is the number of bytes in the user’s input.
+
+If you don’t call `expect`, the program will compile, but you’ll get a warning:
 
 ```
 $ cargo build
@@ -1054,9 +1057,10 @@ but in our case we just want to crash this program when a problem occurs, so we
 can use `expect`. You’ll learn about recovering from errors in [Chapter
 9](#recoverable-errors-with-result-1).
 
-[Printing Values with ](#printing-values-with-println-placeholders)`println!` Placeholders
+### [Printing Values with `println!` Placeholders](#printing-values-with-println-placeholders)
 
-`println!` PlaceholdersAside from the closing curly bracket, there’s only one more line to discuss in the code so far:
+`println!` Placeholders
+Aside from the closing curly bracket, there’s only one more line to discuss in the code so far:
 
 ```
 use std::io;
@@ -1089,7 +1093,7 @@ println!("x = {x} and y + 2 = {}", y + 2);
 ```
 This code would print `x = 5 and y + 2 = 12`.
 
-[Testing the First Part](#testing-the-first-part)
+### [Testing the First Part](#testing-the-first-part)
 
 Let’s test the first part of the guessing game. Run it using `cargo run`:
 
@@ -1105,16 +1109,16 @@ You guessed: 6
 ```
 At this point, the first part of the game is done: We’re getting input from the keyboard and then printing it.
 
-[Generating a Secret Number](#generating-a-secret-number)
+## [Generating a Secret Number](#generating-a-secret-number)
 
 Next, we need to generate a secret number that the user will try to guess. The
 secret number should be different every time so that the game is fun to play
 more than once. We’ll use a random number between 1 and 100 so that the game
 isn’t too difficult. Rust doesn’t yet include random number functionality in
-its standard library. However, the Rust team does provide a [ rand
+its standard library. However, the Rust team does provide a [`rand`
 crate](https://crates.io/crates/rand) with said functionality.
 
-[Increasing Functionality with a Crate](#increasing-functionality-with-a-crate)
+### [Increasing Functionality with a Crate](#increasing-functionality-with-a-crate)
 
 Remember that a crate is a collection of Rust source code files. The project
 we’ve been building is a binary crate, which is an executable. The `rand` crate
@@ -1180,7 +1184,7 @@ These lines show that Cargo only updates the build with your tiny change to the
 *src/main.rs* file. Your dependencies haven’t changed, so Cargo knows it can
 reuse what it has already downloaded and compiled for those.
 
-[Ensuring Reproducible Builds](#ensuring-reproducible-builds)
+#### [Ensuring Reproducible Builds](#ensuring-reproducible-builds)
 
 Cargo has a mechanism that ensures that you can rebuild the same artifact every
 time you or anyone else builds your code: Cargo will use only the versions of
@@ -1201,7 +1205,7 @@ remain at 0.8.5 until you explicitly upgrade, thanks to the *Cargo.lock* file.
 Because the *Cargo.lock* file is important for reproducible builds, it’s often
 checked into source control with the rest of the code in your project.
 
-[Updating a Crate to Get a New Version](#updating-a-crate-to-get-a-new-version)
+#### [Updating a Crate to Get a New Version](#updating-a-crate-to-get-a-new-version)
 
 When you *do* want to update a crate, Cargo provides the command `update`,
 which will ignore the *Cargo.lock* file and figure out all the latest versions
@@ -1238,7 +1242,7 @@ for now, that’s all you need to know. Cargo makes it very easy to reuse
 libraries, so Rustaceans are able to write smaller projects that are assembled
 from a number of packages.
 
-[Generating a Random Number](#generating-a-random-number)
+### [Generating a Random Number](#generating-a-random-number)
 
 Let’s start using `rand` to generate a number to guess. The next step is to
 update *src/main.rs*, as shown in Listing 2-3.
@@ -1290,7 +1294,7 @@ You guessed: 5
 ```
 You should get different random numbers, and they should all be numbers between 1 and 100. Great job!
 
-[Comparing the Guess to the Secret Number](#comparing-the-guess-to-the-secret-number)
+## [Comparing the Guess to the Secret Number](#comparing-the-guess-to-the-secret-number)
 
 Now that we have user input and a random number, we can compare them. That step is shown in Listing 2-4. Note that this code won’t compile just yet, as we will explain.
 
@@ -1304,11 +1308,11 @@ Then, we add five new lines at the bottom that use the `Ordering` type. The
 compared. It takes a reference to whatever you want to compare with: Here, it’s
 comparing `guess` to `secret_number`. Then, it returns a variant of the
 `Ordering` enum we brought into scope with the `use` statement. We use a
-[ match](#the-match-control-flow-construct-1) expression to decide what to do next based on
-which variant of 
+[`match`](#the-match-control-flow-construct-1) expression to decide what to do next based on
+which variant of `Ordering` was returned from the call to `cmp` with the values
+in `guess` and `secret_number`.
 
-`Ordering` was returned from the call to `cmp` with the values
-in `guess` and `secret_number`.A `match` expression is made up of *arms*. An arm consists of a *pattern* to
+A `match` expression is made up of *arms*. An arm consists of a *pattern* to
 match against, and the code that should be run if the value given to `match`
 fits that arm’s pattern. Rust takes the value given to `match` and looks
 through each arm’s pattern in turn. Patterns and the `match` construct are
@@ -1400,7 +1404,8 @@ fn main() {
 ```
 The line is:
 
-`let guess: u32 = guess.trim().parse().expect("Please type a number!");`We create a variable named `guess`. But wait, doesn’t the program already have
+`let guess: u32 = guess.trim().parse().expect("Please type a number!");`
+We create a variable named `guess`. But wait, doesn’t the program already have
 a variable named `guess`? It does, but helpfully Rust allows us to shadow the
 previous value of `guess` with a new one. *Shadowing* lets us reuse the `guess`
 variable name rather than forcing us to create two unique variables, such as
@@ -1420,11 +1425,9 @@ presses `enter`, `guess` looks like this: `5\n`. The `\n` represents
 and a newline, `\r\n`.) The `trim` method eliminates `\n` or `\r\n`, resulting
 in just `5`.
 
-The [ parse method on strings](../std/primitive.str.html#method.parse) converts a string to
+The [`parse` method on strings](../std/primitive.str.html#method.parse) converts a string to
 another type. Here, we use it to convert from a string to a number. We need to
-tell Rust the exact number type we want by using 
-
-`let guess: u32`. The colon
+tell Rust the exact number type we want by using `let guess: u32`. The colon
 (`:`) after `guess` tells Rust we’ll annotate the variable’s type. Rust has a
 few built-in number types; the `u32` seen here is an unsigned, 32-bit integer.
 It’s a good default choice for a small positive number. You’ll learn about
@@ -1440,15 +1443,15 @@ into numbers and so can easily cause errors. If, for example, the string
 contained `A👍%`, there would be no way to convert that to a number. Because it
 might fail, the `parse` method returns a `Result` type, much as the `read_line`
 method does (discussed earlier in [“Handling Potential Failure with
- Result”](#handling-potential-failure-with-result)). We’ll treat
-this 
-
-`Result` the same way by using the `expect` method again. If `parse`
+`Result`”](#handling-potential-failure-with-result)). We’ll treat
+this `Result` the same way by using the `expect` method again. If `parse`
 returns an `Err` `Result` variant because it couldn’t create a number from the
 string, the `expect` call will crash the game and print the message we give it.
 If `parse` can successfully convert the string to a number, it will return the
 `Ok` variant of `Result`, and `expect` will return the number that we want from
-the `Ok` value.Let’s run the program now:
+the `Ok` value.
+
+Let’s run the program now:
 
 ```
 $ cargo run
@@ -1466,7 +1469,7 @@ Nice! Even though spaces were added before the guess, the program still figured 
 
 We have most of the game working now, but the user can make only one guess. Let’s change that by adding a loop!
 
-[Allowing Multiple Guesses with Looping](#allowing-multiple-guesses-with-looping)
+## [Allowing Multiple Guesses with Looping](#allowing-multiple-guesses-with-looping)
 
 The `loop` keyword creates an infinite loop. We’ll add a loop to give users
 more chances at guessing the number:
@@ -1537,7 +1540,7 @@ Typing `quit` will quit the game, but as you’ll notice, so will entering any
 other non-number input. This is suboptimal, to say the least; we want the game
 to also stop when the correct number is guessed.
 
-[Quitting After a Correct Guess](#quitting-after-a-correct-guess)
+### [Quitting After a Correct Guess](#quitting-after-a-correct-guess)
 
 Let’s program the game to quit when the user wins by adding a `break` statement:
 
@@ -1575,7 +1578,7 @@ Adding the `break` line after `You win!` makes the program exit the loop when
 the user guesses the secret number correctly. Exiting the loop also means
 exiting the program, because the loop is the last part of `main`.
 
-[Handling Invalid Input](#handling-invalid-input)
+### [Handling Invalid Input](#handling-invalid-input)
 
 To further refine the game’s behavior, rather than crashing the program when
 the user inputs a non-number, let’s make the game ignore a non-number so that
@@ -1635,7 +1638,7 @@ secret number. Listing 2-6 shows the final code.
 
 At this point, you’ve successfully built the guessing game. Congratulations!
 
-[Summary](#summary-1)
+## [Summary](#summary-1)
 
 This project was a hands-on way to introduce you to many new Rust concepts:
 `let`, `match`, functions, the use of external crates, and more. In the next
@@ -1645,13 +1648,13 @@ types, and functions, and shows how to use them in Rust. Chapter 4 explores
 ownership, a feature that makes Rust different from other languages. Chapter 5
 discusses structs and method syntax, and Chapter 6 explains how enums work.
 
-[Common Programming Concepts](#common-programming-concepts)
+# [Common Programming Concepts](#common-programming-concepts)
 
 This chapter covers concepts that appear in almost every programming language and how they work in Rust. Many programming languages have much in common at their core. None of the concepts presented in this chapter are unique to Rust, but we’ll discuss them in the context of Rust and explain the conventions around using them.
 
 Specifically, you’ll learn about variables, basic types, functions, comments, and control flow. These foundations will be in every Rust program, and learning them early will give you a strong core to start from.
 
-[Keywords](#keywords)
+#### [Keywords](#keywords)
 
 The Rust language has a set of *keywords* that are reserved for use by the
 language only, much as in other languages. Keep in mind that you cannot use
@@ -1661,9 +1664,9 @@ programs; a few have no current functionality associated with them but have
 been reserved for functionality that might be added to Rust in the future. You
 can find the list of the keywords in [Appendix A](#a---keywords).
 
-[Variables and Mutability](#variables-and-mutability-1)
+# [Variables and Mutability](#variables-and-mutability-1)
 
-[Variables and Mutability](#variables-and-mutability)
+## [Variables and Mutability](#variables-and-mutability)
 
 As mentioned in the [“Storing Values with
 Variables”](#storing-values-with-variables) section, by default,
@@ -1717,7 +1720,7 @@ Compiler errors can be frustrating, but really they only mean your program
 isn’t safely doing what you want it to do yet; they do *not* mean that you’re
 not a good programmer! Experienced Rustaceans still get compiler errors.
 
-You received the error message `cannot assign twice to immutable variable `x`` because you tried to assign a second value to the immutable `x` variable.
+You received the error message `` cannot assign twice to immutable variable `x` `` because you tried to assign a second value to the immutable `x` variable.
 
 It’s important that we get compile-time errors when we attempt to change a
 value that’s designated as immutable, because this very situation can lead to
@@ -1763,7 +1766,7 @@ We’re allowed to change the value bound to `x` from `5` to `6` when `mut` is
 used. Ultimately, deciding whether to use mutability or not is up to you and
 depends on what you think is clearest in that particular situation.
 
-[Declaring Constants](#declaring-constants)
+### [Declaring Constants](#declaring-constants)
 
 Like immutable variables, *constants* are values that are bound to a name and
 are not allowed to change, but there are a few differences between constants
@@ -1803,7 +1806,7 @@ Constants are valid for the entire time a program runs, within the scope in whic
 
 Naming hardcoded values used throughout your program as constants is useful in conveying the meaning of that value to future maintainers of the code. It also helps to have only one place in your code that you would need to change if the hardcoded value needed to be updated in the future.
 
-[Shadowing](#shadowing)
+### [Shadowing](#shadowing)
 
 As you saw in the guessing game tutorial in [Chapter
 2](#comparing-the-guess-to-the-secret-number), you can declare a
@@ -1891,9 +1894,9 @@ error: could not compile `variables` (bin "variables") due to 1 previous error
 ```
 Now that we’ve explored how variables work, let’s look at more data types they can have.
 
-[Data Types](#data-types-1)
+# [Data Types](#data-types-1)
 
-[Data Types](#data-types)
+## [Data Types](#data-types)
 
 Every value in Rust is of a certain *data type*, which tells Rust what kind of
 data is being specified so that it knows how to work with that data. We’ll look
@@ -1936,13 +1939,13 @@ error: could not compile `no_type_annotations` (bin "no_type_annotations") due t
 ```
 You’ll see different type annotations for other data types.
 
-[Scalar Types](#scalar-types)
+### [Scalar Types](#scalar-types)
 
 A *scalar* type represents a single value. Rust has four primary scalar types:
 integers, floating-point numbers, Booleans, and characters. You may recognize
 these from other programming languages. Let’s jump into how they work in Rust.
 
-[Integer Types](#integer-types)
+#### [Integer Types](#integer-types)
 
 An *integer* is a number without a fractional component. We used one integer
 type in Chapter 2, the `u32` type. This type declaration indicates that the
@@ -1969,11 +1972,11 @@ the sign matters, a number is shown with a plus sign or a minus sign; however,
 when it’s safe to assume the number is positive, it’s shown with no sign.
 Signed numbers are stored using [two’s complement](https://en.wikipedia.org/wiki/Two%27s_complement) representation.
 
-Each signed variant can store numbers from −(2n − 1) to 2n −
-1 − 1 inclusive, where *n* is the number of bits that variant uses. So, an
-`i8` can store numbers from −(27) to 27 − 1, which equals
-−128 to 127. Unsigned variants can store numbers from 0 to 2n − 1,
-so a `u8` can store numbers from 0 to 28 − 1, which equals 0 to 255.
+Each signed variant can store numbers from −(2<sup>n − 1</sup>) to 2<sup>n −
+1</sup> − 1 inclusive, where *n* is the number of bits that variant uses. So, an
+`i8` can store numbers from −(2<sup>7</sup>) to 2<sup>7</sup> − 1, which equals
+−128 to 127. Unsigned variants can store numbers from 0 to 2<sup>n</sup> − 1,
+so a `u8` can store numbers from 0 to 2<sup>8</sup> − 1, which equals 0 to 255.
 
 Additionally, the `isize` and `usize` types depend on the architecture of the
 computer your program is running on: 64 bits if you’re on a 64-bit architecture
@@ -1991,14 +1994,14 @@ have the same value as if you had specified `1000`.
 | Hex | `0xff` | 
 | Octal | `0o77` | 
 | Binary | `0b1111_0000` | 
-| Byte ( `u8`only) | `b'A'` | 
+| Byte ( `u8` only) | `b'A'` | 
 
 So how do you know which type of integer to use? If you’re unsure, Rust’s
 defaults are generally good places to start: Integer types default to `i32`.
 The primary situation in which you’d use `isize` or `usize` is when indexing
 some sort of collection.
 
-[Integer Overflow](#integer-overflow)
+##### [Integer Overflow](#integer-overflow)
 
 Let’s say you have a variable of type `u8` that can hold values between 0 and
 255. If you try to change the variable to a value outside that range, such as
@@ -2007,7 +2010,7 @@ When you’re compiling in debug mode, Rust includes checks for integer overflow
 that cause your program to *panic* at runtime if this behavior occurs. Rust
 uses the term *panicking* when a program exits with an error; we’ll discuss
 panics in more depth in the [“Unrecoverable Errors with
- panic!”](#unrecoverable-errors-with-panic-1) section in Chapter
+`panic!`”](#unrecoverable-errors-with-panic-1) section in Chapter
 9.
 
 When you’re compiling in release mode with the `--release` flag, Rust does
@@ -2021,13 +2024,13 @@ have. Relying on integer overflow’s wrapping behavior is considered an error.
 
 To explicitly handle the possibility of overflow, you can use these families of methods provided by the standard library for primitive numeric types:
 
-- Wrap in all modes with the `wrapping_*`methods, such as`wrapping_add`.
-- Return the `None`value if there is overflow with the`checked_*`methods.
+- Wrap in all modes with the `wrapping_*` methods, such as`wrapping_add` .
+- Return the `None` value if there is overflow with the`checked_*` methods.
 - Return the value and a Boolean indicating whether there was overflow with
-the `overflowing_*`methods.
-- Saturate at the value’s minimum or maximum values with the `saturating_*`methods.
+the `overflowing_*` methods.
+- Saturate at the value’s minimum or maximum values with the `saturating_*` methods.
 
-[Floating-Point Types](#floating-point-types)
+#### [Floating-Point Types](#floating-point-types)
 
 Rust also has two primitive types for *floating-point numbers*, which are
 numbers with decimal points. Rust’s floating-point types are `f32` and `f64`,
@@ -2047,7 +2050,7 @@ fn main() {
 ```
 Floating-point numbers are represented according to the IEEE-754 standard.
 
-[Numeric Operations](#numeric-operations)
+#### [Numeric Operations](#numeric-operations)
 
 Rust supports the basic mathematical operations you’d expect for all the number
 types: addition, subtraction, multiplication, division, and remainder. Integer
@@ -2076,7 +2079,7 @@ to a single value, which is then bound to a variable. [Appendix
 B](#b---operators-and-symbols) contains a list of all operators that Rust
 provides.
 
-[The Boolean Type](#the-boolean-type)
+#### [The Boolean Type](#the-boolean-type)
 
 As in most other programming languages, a Boolean type in Rust has two possible
 values: `true` and `false`. Booleans are one byte in size. The Boolean type in
@@ -2094,7 +2097,7 @@ The main way to use Boolean values is through conditionals, such as an `if`
 expression. We’ll cover how `if` expressions work in Rust in the [“Control
 Flow”](#control-flow) section.
 
-[The Character Type](#the-character-type)
+#### [The Character Type](#the-character-type)
 
 Rust’s `char` type is the language’s most primitive alphabetic type. Here are
 some examples of declaring `char` values:
@@ -2119,12 +2122,12 @@ so your human intuition for what a “character” is may not match up with what
 `char` is in Rust. We’ll discuss this topic in detail in [“Storing UTF-8
 Encoded Text with Strings”](#storing-utf-8-encoded-text-with-strings) in Chapter 8.
 
-[Compound Types](#compound-types)
+### [Compound Types](#compound-types)
 
 *Compound types* can group multiple values into one type. Rust has two
 primitive compound types: tuples and arrays.
 
-[The Tuple Type](#the-tuple-type)
+#### [The Tuple Type](#the-tuple-type)
 
 A *tuple* is a general way of grouping together a number of values with a
 variety of types into one compound type. Tuples have a fixed length: Once
@@ -2180,7 +2183,7 @@ corresponding type are both written `()` and represent an empty value or an
 empty return type. Expressions implicitly return the unit value if they don’t
 return any other value.
 
-[The Array Type](#the-array-type)
+#### [The Array Type](#the-array-type)
 
 Another way to have a collection of multiple values is with an *array*. Unlike
 a tuple, every element of an array must have the same type. Unlike arrays in
@@ -2237,7 +2240,7 @@ The array named `a` will contain `5` elements that will all be set to the value
 `3` initially. This is the same as writing `let a = [3, 3, 3, 3, 3];` but in a
 more concise way.
 
-[Array Element Access](#array-element-access)
+#### [Array Element Access](#array-element-access)
 
 An array is a single chunk of memory of a known, fixed size that can be allocated on the stack. You can access elements of an array using indexing, like this:
 
@@ -2254,7 +2257,7 @@ In this example, the variable named `first` will get the value `1` because that
 is the value at index `[0]` in the array. The variable named `second` will get
 the value `2` from index `[1]` in the array.
 
-[Invalid Array Element Access](#invalid-array-element-access)
+#### [Invalid Array Element Access](#invalid-array-element-access)
 
 Let’s see what happens if you try to access an element of an array that is past the end of the array. Say you run this code, similar to the guessing game in Chapter 2, to get an array index from the user:
 
@@ -2298,9 +2301,9 @@ run the code later.
 
 This is an example of Rust’s memory safety principles in action. In many low-level languages, this kind of check is not done, and when you provide an incorrect index, invalid memory can be accessed. Rust protects you against this kind of error by immediately exiting instead of allowing the memory access and continuing. Chapter 9 discusses more of Rust’s error handling and how you can write readable, safe code that neither panics nor allows invalid memory access.
 
-[Functions](#functions-1)
+# [Functions](#functions-1)
 
-[Functions](#functions)
+## [Functions](#functions)
 
 Functions are prevalent in Rust code. You’ve already seen one of the most
 important functions in the language: the `main` function, which is the entry
@@ -2349,7 +2352,7 @@ The lines execute in the order in which they appear in the `main` function.
 First the “Hello, world!” message prints, and then `another_function` is called
 and its message is printed.
 
-[Parameters](#parameters)
+### [Parameters](#parameters)
 
 We can define functions to have *parameters*, which are special variables that
 are part of a function’s signature. When a function has parameters, you can
@@ -2421,12 +2424,13 @@ The measurement is: 5h
 Because we called the function with `5` as the value for `value` and `'h'` as
 the value for `unit_label`, the program output contains those values.
 
-[Statements and Expressions](#statements-and-expressions)
+### [Statements and Expressions](#statements-and-expressions)
 
 Function bodies are made up of a series of statements optionally ending in an expression. So far, the functions we’ve covered haven’t included an ending expression, but you have seen an expression as part of a statement. Because Rust is an expression-based language, this is an important distinction to understand. Other languages don’t have the same distinctions, so let’s look at what statements and expressions are and how their differences affect the bodies of functions.
 
-- *Statements*are instructions that perform some action and do not return a value.
-- *Expressions*evaluate to a resultant value.
+- *Statements* are instructions that perform some action and do not return
+a value.
+- *Expressions* evaluate to a resultant value.
 
 Let’s look at some examples.
 
@@ -2513,7 +2517,7 @@ not include ending semicolons. If you add a semicolon to the end of an
 expression, you turn it into a statement, and it will then not return a value.
 Keep this in mind as you explore function return values and expressions next.
 
-[Functions with Return Values](#functions-with-return-values)
+### [Functions with Return Values](#functions-with-return-values)
 
 Functions can return values to the code that calls them. We don’t name return
 values, but we must declare their type after an arrow (`->`). In Rust, the
@@ -2615,9 +2619,9 @@ definition and results in an error. In this output, Rust provides a message to
 possibly help rectify this issue: It suggests removing the semicolon, which
 would fix the error.
 
-[Comments](#comments-1)
+# [Comments](#comments-1)
 
-[Comments](#comments)
+## [Comments](#comments)
 
 All programmers strive to make their code easy to understand, but sometimes
 extra explanation is warranted. In these cases, programmers leave *comments* in
@@ -2667,9 +2671,9 @@ Rust also has another kind of comment, documentation comments, which we’ll
 discuss in the [“Publishing a Crate to Crates.io”](#publishing-a-crate-to-cratesio-1)
 section of Chapter 14.
 
-[Control Flow](#control-flow-1)
+# [Control Flow](#control-flow-1)
 
-[Control Flow](#control-flow)
+## [Control Flow](#control-flow)
 
 The ability to run some code depending on whether a condition is `true` and the
 ability to run some code repeatedly while a condition is `true` are basic
@@ -2677,9 +2681,10 @@ building blocks in most programming languages. The most common constructs that
 let you control the flow of execution of Rust code are `if` expressions and
 loops.
 
-`if` Expressions
+### [`if` Expressions](#if-expressions)
 
-`if` ExpressionsAn `if` expression allows you to branch your code depending on conditions. You
+`if` Expressions
+An `if` expression allows you to branch your code depending on conditions. You
 provide a condition and then state, “If this condition is met, run this block
 of code. If the condition is not met, do not run this block of code.”
 
@@ -2790,9 +2795,10 @@ fn main() {
 ```
 Running this code will print `number was something other than zero`.
 
-[Handling Multiple Conditions with ](#handling-multiple-conditions-with-else-if)`else if`
+#### [Handling Multiple Conditions with `else if`](#handling-multiple-conditions-with-else-if)
 
-`else if`You can use multiple conditions by combining `if` and `else` in an `else if`
+`else if`
+You can use multiple conditions by combining `if` and `else` in an `else if`
 expression. For example:
 
 Filename: src/main.rs
@@ -2831,9 +2837,10 @@ Using too many `else if` expressions can clutter your code, so if you have more
 than one, you might want to refactor your code. Chapter 6 describes a powerful
 Rust branching construct called `match` for these cases.
 
-[Using ](#using-if-in-a-let-statement)`if` in a `let` Statement
+#### [Using `if` in a `let` Statement](#using-if-in-a-let-statement)
 
-`if` in a `let` StatementBecause `if` is an expression, we can use it on the right side of a `let`
+`if` in a `let` Statement
+Because `if` is an expression, we can use it on the right side of a `let`
 statement to assign the outcome to a variable, as in Listing 3-2.
 
 The `number` variable will be bound to a value based on the outcome of the `if`
@@ -2889,7 +2896,7 @@ do that if the type of `number` was only determined at runtime; the compiler
 would be more complex and would make fewer guarantees about the code if it had
 to keep track of multiple hypothetical types for any variable.
 
-[Repetition with Loops](#repetition-with-loops)
+### [Repetition with Loops](#repetition-with-loops)
 
 It’s often useful to execute a block of code more than once. For this task,
 Rust provides several *loops*, which will run through the code inside the loop
@@ -2898,9 +2905,10 @@ with loops, let’s make a new project called *loops*.
 
 Rust has three kinds of loops: `loop`, `while`, and `for`. Let’s try each one.
 
-[Repeating Code with ](#repeating-code-with-loop)`loop`
+#### [Repeating Code with `loop`](#repeating-code-with-loop)
 
-`loop`The `loop` keyword tells Rust to execute a block of code over and over again
+`loop`
+The `loop` keyword tells Rust to execute a block of code over and over again
 either forever or until you explicitly tell it to stop.
 
 As an example, change the *src/main.rs* file in your *loops* directory to look
@@ -2946,7 +2954,7 @@ We also used `continue` in the guessing game, which in a loop tells the program
 to skip over any remaining code in this iteration of the loop and go to the
 next iteration.
 
-[Returning Values from Loops](#returning-values-from-loops)
+#### [Returning Values from Loops](#returning-values-from-loops)
 
 One of the uses of a `loop` is to retry an operation you know might fail, such
 as checking whether a thread has completed its job. You might also need to pass
@@ -2978,7 +2986,7 @@ print the value in `result`, which in this case is `20`.
 You can also `return` from inside a loop. While `break` only exits the current
 loop, `return` always exits the current function.
 
-[Disambiguating with Loop Labels](#disambiguating-with-loop-labels)
+#### [Disambiguating with Loop Labels](#disambiguating-with-loop-labels)
 
 If you have loops within loops, `break` and `continue` apply to the innermost
 loop at that point. You can optionally specify a *loop label* on a loop that
@@ -3026,7 +3034,7 @@ count = 2
 remaining = 10
 End count = 2
 ```
-[Streamlining Conditional Loops with while](#streamlining-conditional-loops-with-while)
+#### [Streamlining Conditional Loops with while](#streamlining-conditional-loops-with-while)
 
 A program will often need to evaluate a condition within a loop. While the
 condition is `true`, the loop runs. When the condition ceases to be `true`, the
@@ -3041,9 +3049,10 @@ This construct eliminates a lot of nesting that would be necessary if you used
 `loop`, `if`, `else`, and `break`, and it’s clearer. While a condition
 evaluates to `true`, the code runs; otherwise, it exits the loop.
 
-[Looping Through a Collection with ](#looping-through-a-collection-with-for)`for`
+#### [Looping Through a Collection with `for`](#looping-through-a-collection-with-for)
 
-`for`You can choose to use the `while` construct to loop over the elements of a
+`for`
+You can choose to use the `while` construct to loop over the elements of a
 collection, such as an array. For example, the loop in Listing 3-4 prints each
 element in the array `a`.
 
@@ -3111,7 +3120,7 @@ fn main() {
 ```
 This code is a bit nicer, isn’t it?
 
-[Summary](#summary-2)
+## [Summary](#summary-2)
 
 You made it! This was a sizable chapter: You learned about variables, scalar
 and compound data types, functions, comments, `if` expressions, and loops! To
@@ -3119,19 +3128,19 @@ practice with the concepts discussed in this chapter, try building programs to
 do the following:
 
 - Convert temperatures between Fahrenheit and Celsius.
-- Generate the *n*th Fibonacci number.
+- Generate the *n* th Fibonacci number.
 - Print the lyrics to the Christmas carol “The Twelve Days of Christmas,” taking advantage of the repetition in the song.
 
 When you’re ready to move on, we’ll talk about a concept in Rust that *doesn’t*
 commonly exist in other programming languages: ownership.
 
-[Understanding Ownership](#understanding-ownership)
+# [Understanding Ownership](#understanding-ownership)
 
 Ownership is Rust’s most unique feature and has deep implications for the rest of the language. It enables Rust to make memory safety guarantees without needing a garbage collector, so it’s important to understand how ownership works. In this chapter, we’ll talk about ownership as well as several related features: borrowing, slices, and how Rust lays data out in memory.
 
-[What is Ownership?](#what-is-ownership-1)
+# [What is Ownership?](#what-is-ownership-1)
 
-[What Is Ownership?](#what-is-ownership)
+## [What Is Ownership?](#what-is-ownership)
 
 *Ownership* is a set of rules that govern how a Rust program manages memory.
 All programs have to manage the way they use a computer’s memory while running.
@@ -3146,7 +3155,7 @@ Because ownership is a new concept for many programmers, it does take some time 
 
 When you understand ownership, you’ll have a solid foundation for understanding the features that make Rust unique. In this chapter, you’ll learn ownership by working through some examples that focus on a very common data structure: strings.
 
-[The Stack and the Heap](#the-stack-and-the-heap)
+### [The Stack and the Heap](#the-stack-and-the-heap)
 
 Many programming languages don’t require you to think about the stack and the heap very often. But in a systems programming language like Rust, whether a value is on the stack or the heap affects how the language behaves and why you have to make certain decisions. Parts of ownership will be described in relation to the stack and the heap later in this chapter, so here is a brief explanation in preparation.
 
@@ -3183,15 +3192,15 @@ When your code calls a function, the values passed into the function (including,
 
 Keeping track of what parts of code are using what data on the heap, minimizing the amount of duplicate data on the heap, and cleaning up unused data on the heap so that you don’t run out of space are all problems that ownership addresses. Once you understand ownership, you won’t need to think about the stack and the heap very often. But knowing that the main purpose of ownership is to manage heap data can help explain why it works the way it does.
 
-[Ownership Rules](#ownership-rules)
+### [Ownership Rules](#ownership-rules)
 
 First, let’s take a look at the ownership rules. Keep these rules in mind as we work through the examples that illustrate them:
 
-- Each value in Rust has an *owner*.
+- Each value in Rust has an *owner* .
 - There can only be one owner at a time.
 - When the owner goes out of scope, the value will be dropped.
 
-[Variable Scope](#variable-scope)
+### [Variable Scope](#variable-scope)
 
 Now that we’re past basic Rust syntax, we won’t include all the `fn main() {`
 code in the examples, so if you’re following along, make sure to put the
@@ -3216,16 +3225,17 @@ program with comments annotating where the variable `s` would be valid.
 
 In other words, there are two important points in time here:
 
-- When `s`comes*into*scope, it is valid.
-- It remains valid until it goes *out of*scope.
+- When `s` comes*into* scope, it is valid.
+- It remains valid until it goes *out of* scope.
 
 At this point, the relationship between scopes and when variables are valid is
 similar to that in other programming languages. Now we’ll build on top of this
 understanding by introducing the `String` type.
 
-[The ](#the-string-type)`String` Type
+### [The `String` Type](#the-string-type)
 
-`String` TypeTo illustrate the rules of ownership, we need a data type that is more complex
+`String` Type
+To illustrate the rules of ownership, we need a data type that is more complex
 than those we covered in the [“Data Types”](#data-types) section
 of Chapter 3. The types covered previously are of a known size, can be stored
 on the stack and popped off the stack when their scope is over, and can be
@@ -3273,7 +3283,7 @@ fn main() {
 So, what’s the difference here? Why can `String` be mutated but literals
 cannot? The difference is in how these two types deal with memory.
 
-[Memory and Allocation](#memory-and-allocation)
+### [Memory and Allocation](#memory-and-allocation)
 
 In the case of a string literal, we know the contents at compile time, so the text is hardcoded directly into the final executable. This is why string literals are fast and efficient. But these properties only come from the string literal’s immutability. Unfortunately, we can’t put a blob of memory into the binary for each piece of text whose size is unknown at compile time and whose size might change while running the program.
 
@@ -3283,7 +3293,7 @@ to hold the contents. This means:
 
 - The memory must be requested from the memory allocator at runtime.
 - We need a way of returning this memory to the allocator when we’re done with
-our `String`.
+our `String` .
 
 That first part is done by us: When we call `String::from`, its implementation
 requests the memory it needs. This is pretty much universal in programming
@@ -3326,7 +3336,7 @@ patterns.
 
 This pattern has a profound impact on the way Rust code is written. It may seem simple right now, but the behavior of code can be unexpected in more complicated situations when we want to have multiple variables use the data we’ve allocated on the heap. Let’s explore some of those situations now.
 
-[Variables and Data Interacting with Move](#variables-and-data-interacting-with-move)
+#### [Variables and Data Interacting with Move](#variables-and-data-interacting-with-move)
 
 Multiple variables can interact with the same data in different ways in Rust. Listing 4-2 shows an example using an integer.
 
@@ -3428,7 +3438,7 @@ In addition, there’s a design choice that’s implied by this: Rust will never
 automatically create “deep” copies of your data. Therefore, any *automatic*
 copying can be assumed to be inexpensive in terms of runtime performance.
 
-[Scope and Assignment](#scope-and-assignment)
+#### [Scope and Assignment](#scope-and-assignment)
 
 The inverse of this is true for the relationship between scoping, ownership, and
 memory being freed via the `drop` function as well. When you assign a completely
@@ -3451,7 +3461,7 @@ The original string thus immediately goes out of scope. Rust will run the `drop`
 function on it and its memory will be freed right away. When we print the value
 at the end, it will be `"ahoy, world!"`.
 
-[Variables and Data Interacting with Clone](#variables-and-data-interacting-with-clone)
+#### [Variables and Data Interacting with Clone](#variables-and-data-interacting-with-clone)
 
 If we *do* want to deeply copy the heap data of the `String`, not just the
 stack data, we can use a common method called `clone`. We’ll discuss method
@@ -3474,7 +3484,7 @@ When you see a call to `clone`, you know that some arbitrary code is being
 executed and that code may be expensive. It’s a visual indicator that something
 different is going on.
 
-[Stack-Only Data: Copy](#stack-only-data-copy)
+#### [Stack-Only Data: Copy](#stack-only-data-copy)
 
 There’s another wrinkle we haven’t talked about yet. This code using integers—part of which was shown in Listing 4-2—works and is valid:
 
@@ -3514,13 +3524,13 @@ values can implement `Copy`, and nothing that requires allocation or is some
 form of resource can implement `Copy`. Here are some of the types that
 implement `Copy`:
 
-- All the integer types, such as `u32`.
-- The Boolean type, `bool`, with values`true`and`false`.
-- All the floating-point types, such as `f64`.
-- The character type, `char`.
-- Tuples, if they only contain types that also implement `Copy`. For example,`(i32, i32)`implements`Copy`, but`(i32, String)`does not.
+- All the integer types, such as `u32` .
+- The Boolean type, `bool` , with values`true` and`false` .
+- All the floating-point types, such as `f64` .
+- The character type, `char` .
+- Tuples, if they only contain types that also implement `Copy` . For example,`(i32, i32)` implements`Copy` , but`(i32, String)` does not.
 
-[Ownership and Functions](#ownership-and-functions)
+### [Ownership and Functions](#ownership-and-functions)
 
 The mechanics of passing a value to a function are similar to those when assigning a value to a variable. Passing a variable to a function will move or copy, just as assignment does. Listing 4-3 has an example with some annotations showing where variables go into and out of scope.
 
@@ -3529,7 +3539,7 @@ compile-time error. These static checks protect us from mistakes. Try adding
 code to `main` that uses `s` and `x` to see where you can use them and where
 the ownership rules prevent you from doing so.
 
-[Return Values and Scope](#return-values-and-scope)
+### [Return Values and Scope](#return-values-and-scope)
 
 Returning values can also transfer ownership. Listing 4-4 shows an example of a function that returns some value, with similar annotations as those in Listing 4-3.
 
@@ -3544,9 +3554,9 @@ Rust does let us return multiple values using a tuple, as shown in Listing 4-5.
 
 But this is too much ceremony and a lot of work for a concept that should be common. Luckily for us, Rust has a feature for using a value without transferring ownership: references.
 
-[References and Borrowing](#references-and-borrowing-1)
+# [References and Borrowing](#references-and-borrowing-1)
 
-[References and Borrowing](#references-and-borrowing)
+## [References and Borrowing](#references-and-borrowing)
 
 The issue with the tuple code in Listing 4-5 is that we have to return the
 `String` to the calling function so that we can still use the `String` after
@@ -3634,7 +3644,7 @@ error: could not compile `ownership` (bin "ownership") due to 1 previous error
 ```
 Just as variables are immutable by default, so are references. We’re not allowed to modify something we have a reference to.
 
-[Mutable References](#mutable-references)
+### [Mutable References](#mutable-references)
 
 We can fix the code from Listing 4-6 to allow us to modify a borrowed value
 with just a few small tweaks that use, instead, a *mutable reference*:
@@ -3756,7 +3766,7 @@ the scope.
 
 Even though borrowing errors may be frustrating at times, remember that it’s the Rust compiler pointing out a potential bug early (at compile time rather than at runtime) and showing you exactly where the problem is. Then, you don’t have to track down why your data isn’t what you thought it was.
 
-[Dangling References](#dangling-references)
+### [Dangling References](#dangling-references)
 
 In languages with pointers, it’s easy to erroneously create a *dangling
 pointer*—a pointer that references a location in memory that may have been
@@ -3819,18 +3829,19 @@ fn no_dangle() -> String {
 ```
 This works without any problems. Ownership is moved out, and nothing is deallocated.
 
-[The Rules of References](#the-rules-of-references)
+### [The Rules of References](#the-rules-of-references)
 
 Let’s recap what we’ve discussed about references:
 
-- At any given time, you can have *either*one mutable reference*or*any number of immutable references.
+- At any given time, you can have *either* one mutable reference*or* any
+number of immutable references.
 - References must always be valid.
 
 Next, we’ll look at a different kind of reference: slices.
 
-[The Slice Type](#the-slice-type-1)
+# [The Slice Type](#the-slice-type-1)
 
-[The Slice Type](#the-slice-type)
+## [The Slice Type](#the-slice-type)
 
 *Slices* let you reference a contiguous sequence of elements in a
 [collection](#common-collections). A slice is a kind
@@ -3845,7 +3856,8 @@ of Chapter 8.
 
 Let’s work through how we’d write the signature of this function without using slices, to understand the problem that slices will solve:
 
-`fn first_word(s: &String) -> ?`The `first_word` function has a parameter of type `&String`. We don’t need
+`fn first_word(s: &String) -> ?`
+The `first_word` function has a parameter of type `&String`. We don’t need
 ownership, so this is fine. (In idiomatic Rust, functions do not take ownership
 of their arguments unless they need to, and the reasons for that will become
 clear as we keep going.) But what should we return? We don’t really have a way
@@ -3929,14 +3941,15 @@ Having to worry about the index in `word` getting out of sync with the data in
 `s` is tedious and error-prone! Managing these indices is even more brittle if
 we write a `second_word` function. Its signature would have to look like this:
 
-`fn second_word(s: &String) -> (usize, usize) {`Now we’re tracking a starting *and* an ending index, and we have even more
+`fn second_word(s: &String) -> (usize, usize) {`
+Now we’re tracking a starting *and* an ending index, and we have even more
 values that were calculated from data in a particular state but aren’t tied to
 that state at all. We have three unrelated variables floating around that need
 to be kept in sync.
 
 Luckily, Rust has a solution to this problem: string slices.
 
-[String Slices](#string-slices)
+### [String Slices](#string-slices)
 
 A *string slice* is a reference to a contiguous sequence of the elements of a
 `String`, and it looks like this:
@@ -3951,18 +3964,15 @@ fn main() {
 Rather than a reference to the entire `String`, `hello` is a reference to a
 portion of the `String`, specified in the extra `[0..5]` bit. We create slices
 using a range within square brackets by specifying
-`[starting_index..ending_index]`, where * starting_index* is the first
-position in the slice and 
-
-*is one more than the last position in the slice. Internally, the slice data structure stores the starting position and the length of the slice, which corresponds to*
-
-`ending_index`*minus*
-
-`ending_index`*. So, in the case of*
-
-`starting_index``let world = &s[6..11];`, `world` would
+`[starting_index..ending_index]`, where *`starting_index`* is the first
+position in the slice and *`ending_index`* is one more than the last position
+in the slice. Internally, the slice data structure stores the starting position
+and the length of the slice, which corresponds to *`ending_index`* minus
+*`starting_index`*. So, in the case of `let world = &s[6..11];`, `world` would
 be a slice that contains a pointer to the byte at index 6 of `s` with a length
-value of `5`.Figure 4-7 shows this in a diagram.
+value of `5`.
+
+Figure 4-7 shows this in a diagram.
 
 With Rust’s `..` range syntax, if you want to start at index 0, you can drop
 the value before the two periods. In other words, these are equal:
@@ -4011,7 +4021,8 @@ the slice and the number of elements in the slice.
 
 Returning a slice would also work for a `second_word` function:
 
-`fn second_word(s: &String) -> &str {`We now have a straightforward API that’s much harder to mess up because the
+`fn second_word(s: &String) -> &str {`
+We now have a straightforward API that’s much harder to mess up because the
 compiler will ensure that the references into the `String` remain valid.
 Remember the bug in the program in Listing 4-8, when we got the index to the
 end of the first word but then cleared the string so our index was invalid?
@@ -4049,7 +4060,7 @@ reference in `clear` and the immutable reference in `word` from existing at the
 same time, and compilation fails. Not only has Rust made our API easier to use,
 but it has also eliminated an entire class of errors at compile time!
 
-[String Literals as Slices](#string-literals-as-slices)
+#### [String Literals as Slices](#string-literals-as-slices)
 
 Recall that we talked about string literals being stored inside the binary. Now that we know about slices, we can properly understand string literals:
 
@@ -4063,12 +4074,13 @@ The type of `s` here is `&str`: It’s a slice pointing to that specific point o
 the binary. This is also why string literals are immutable; `&str` is an
 immutable reference.
 
-[String Slices as Parameters](#string-slices-as-parameters)
+#### [String Slices as Parameters](#string-slices-as-parameters)
 
 Knowing that you can take slices of literals and `String` values leads us to
 one more improvement on `first_word`, and that’s its signature:
 
-`fn first_word(s: &String) -> &str {`A more experienced Rustacean would write the signature shown in Listing 4-9
+`fn first_word(s: &String) -> &str {`
+A more experienced Rustacean would write the signature shown in Listing 4-9
 instead because it allows us to use the same function on both `&String` values
 and `&str` values.
 
@@ -4080,7 +4092,7 @@ the [“Using Deref Coercions in Functions and Methods”](#using-deref-coercion
 Defining a function to take a string slice instead of a reference to a `String`
 makes our API more general and useful without losing any functionality:
 
-[Other Slices](#other-slices)
+### [Other Slices](#other-slices)
 
 String slices, as you might imagine, are specific to strings. But there’s a more general slice type too. Consider this array:
 
@@ -4105,7 +4117,7 @@ storing a reference to the first element and a length. You’ll use this kind of
 slice for all sorts of other collections. We’ll discuss these collections in
 detail when we talk about vectors in Chapter 8.
 
-[Summary](#summary-3)
+## [Summary](#summary-3)
 
 The concepts of ownership, borrowing, and slices ensure memory safety in Rust programs at compile time. The Rust language gives you control over your memory usage in the same way as other systems programming languages. But having the owner of data automatically clean up that data when the owner goes out of scope means you don’t have to write and debug extra code to get this control.
 
@@ -4113,7 +4125,7 @@ Ownership affects how lots of other parts of Rust work, so we’ll talk about
 these concepts further throughout the rest of the book. Let’s move on to
 Chapter 5 and look at grouping pieces of data together in a `struct`.
 
-[Using Structs to Structure Related Data](#using-structs-to-structure-related-data)
+# [Using Structs to Structure Related Data](#using-structs-to-structure-related-data)
 
 A *struct*, or *structure*, is a custom data type that lets you package
 together and name multiple related values that make up a meaningful group. If
@@ -4128,9 +4140,7 @@ define associated functions, especially the kind of associated functions called
 (discussed in Chapter 6) are the building blocks for creating new types in your
 program’s domain to take full advantage of Rust’s compile-time type checking.
 
-[Defining and Instantiating Structs](#defining-and-instantiating-structs-1)
-
-[Defining and Instantiating Structs](#defining-and-instantiating-structs)
+# [Defining and Instantiating Structs](#defining-and-instantiating-structs-1)
 
 Structs are similar to tuples, discussed in [“The Tuple Type”](#the-tuple-type) section, in that both hold multiple related values. Like tuples, the
 pieces of a struct can be different types. Unlike with tuples, in a struct
@@ -4146,7 +4156,7 @@ struct that stores information about a user account.
 
 To use a struct after we’ve defined it, we create an *instance* of that struct
 by specifying concrete values for each of the fields. We create an instance by
-stating the name of the struct and then add curly brackets containing * key: value* pairs, where the keys are the names of the fields and the values are the
+stating the name of the struct and then add curly brackets containing *`key: value`* pairs, where the keys are the names of the fields and the values are the
 data we want to store in those fields. We don’t have to specify the fields in
 the same order in which we declared them in the struct. In other words, the
 struct definition is like a general template for the type, and instances fill
@@ -4170,7 +4180,7 @@ fields, but having to repeat the `email` and `username` field names and
 variables is a bit tedious. If the struct had more fields, repeating each name
 would get even more annoying. Luckily, there’s a convenient shorthand!
 
-[Using the Field Init Shorthand](#using-the-field-init-shorthand)
+### [Using the Field Init Shorthand](#using-the-field-init-shorthand)
 
 Because the parameter names and the struct field names are exactly the same in
 Listing 5-4, we can use the *field init shorthand* syntax to rewrite
@@ -4183,7 +4193,7 @@ named `email`. We want to set the `email` field’s value to the value in the
 the `email` parameter have the same name, we only need to write `email` rather
 than `email: email`.
 
-[Creating Instances with Struct Update Syntax](#creating-instances-with-struct-update-syntax)
+### [Creating Instances with Struct Update Syntax](#creating-instances-with-struct-update-syntax)
 
 It’s often useful to create a new instance of a struct that includes most of the values from another instance of the same type, but changes some of them. You can do this using struct update syntax.
 
@@ -4215,7 +4225,7 @@ the behavior we discussed in the [“Stack-Only Data: Copy”](#stack-only-data-
 section would apply. We can also still use `user1.email` in this example,
 because its value was not moved out of `user1`.
 
-[Creating Different Types with Tuple Structs](#creating-different-types-with-tuple-structs)
+### [Creating Different Types with Tuple Structs](#creating-different-types-with-tuple-structs)
 
 Rust also supports structs that look similar to tuples, called *tuple structs*.
 Tuple structs have the added meaning the struct name provides but don’t have
@@ -4240,7 +4250,7 @@ require you to name the type of the struct when you destructure them. For
 example, we would write `let Point(x, y, z) = origin;` to destructure the
 values in the `origin` point into variables named `x`, `y`, and `z`.
 
-[Defining Unit-Like Structs](#defining-unit-like-structs)
+### [Defining Unit-Like Structs](#defining-unit-like-structs)
 
 You can also define structs that don’t have any fields! These are called
 *unit-like structs* because they behave similarly to `()`, the unit type that
@@ -4260,7 +4270,7 @@ have a known result for testing purposes. We wouldn’t need any data to
 implement that behavior! You’ll see in Chapter 10 how to define traits and
 implement them on any type, including unit-like structs.
 
-[Ownership of Struct Data](#ownership-of-struct-data)
+### [Ownership of Struct Data](#ownership-of-struct-data)
 
 In the `User` struct definition in Listing 5-1, we used the owned `String`
 type rather than the `&str` string slice type. This is a deliberate choice
@@ -4311,9 +4321,7 @@ In Chapter 10, we’ll discuss how to fix these errors so that you can store
 references in structs, but for now, we’ll fix errors like these using owned
 types like `String` instead of references like `&str`.
 
-[An Example Program Using Structs](#an-example-program-using-structs-1)
-
-[An Example Program Using Structs](#an-example-program-using-structs)
+# [An Example Program Using Structs](#an-example-program-using-structs-1)
 
 To understand when we might want to use structs, let’s write a program that calculates the area of a rectangle. We’ll start by using single variables and then refactor the program until we’re using structs instead.
 
@@ -4357,7 +4365,7 @@ manageable to group width and height together. We’ve already discussed one way
 we might do that in [“The Tuple Type”](#the-tuple-type) section
 of Chapter 3: by using tuples.
 
-[Refactoring with Tuples](#refactoring-with-tuples)
+### [Refactoring with Tuples](#refactoring-with-tuples)
 
 Listing 5-9 shows another version of our program that uses tuples.
 
@@ -4370,7 +4378,7 @@ index `1`. This would be even harder for someone else to figure out and keep in
 mind if they were to use our code. Because we haven’t conveyed the meaning of
 our data in our code, it’s now easier to introduce errors.
 
-[Refactoring with Structs](#refactoring-with-structs)
+### [Refactoring with Structs](#refactoring-with-structs)
 
 We use structs to add meaning by labeling the data. We can transform the tuple we’re using into a struct with a name for the whole as well as names for the parts, as shown in Listing 5-10.
 
@@ -4395,11 +4403,11 @@ width and height are related to each other, and it gives descriptive names to
 the values rather than using the tuple index values of `0` and `1`. This is a
 win for clarity.
 
-[Adding Functionality with Derived Traits](#adding-functionality-with-derived-traits)
+### [Adding Functionality with Derived Traits](#adding-functionality-with-derived-traits)
 
 It’d be useful to be able to print an instance of `Rectangle` while we’re
 debugging our program and see the values for all its fields. Listing 5-11 tries
-using the [ println! macro](../std/macro.println.html) as we have used in
+using the [`println!` macro](../std/macro.println.html) as we have used in
 previous chapters. This won’t work, however.
 
 When we compile this code, we get an error with this core message:
@@ -4470,13 +4478,13 @@ rect1 is Rectangle {
     height: 50,
 }
 ```
-Another way to print out a value using the `Debug` format is to use the [ dbg!
+Another way to print out a value using the `Debug` format is to use the [`dbg!`
 macro](../std/macro.dbg.html), which takes ownership of an expression (as opposed
-to 
-
-`println!`, which takes a reference), prints the file and line number of
+to `println!`, which takes a reference), prints the file and line number of
 where that `dbg!` macro call occurs in your code along with the resultant value
-of that expression, and returns ownership of the value.Note: Calling the `dbg!` macro prints to the standard error console stream
+of that expression, and returns ownership of the value.
+
+Note: Calling the `dbg!` macro prints to the standard error console stream
 (`stderr`), as opposed to `println!`, which prints to the standard output
 console stream (`stdout`). We’ll talk more about `stderr` and `stdout` in the
 [“Redirecting Errors to Standard Error” section in Chapter
@@ -4538,9 +4546,9 @@ because it won’t work with any other type. Let’s look at how we can continue
 refactor this code by turning the `area` function into an `area` method
 defined on our `Rectangle` type.
 
-[Methods](#methods-1)
+# [Methods](#methods-1)
 
-[Methods](#methods)
+## [Methods](#methods)
 
 Methods are similar to functions: We declare them with the `fn` keyword and a
 name, they can have parameters and a return value, and they contain some code
@@ -4551,7 +4559,7 @@ object, which we cover in [Chapter 6](#enums-and-pattern-matching) and [Chapter
 always `self`, which represents the instance of the struct the method is being
 called on.
 
-[Method Syntax](#method-syntax)
+### [Method Syntax](#method-syntax)
 
 Let’s change the `area` function that has a `Rectangle` instance as a parameter
 and instead make an `area` method defined on the `Rectangle` struct, as shown
@@ -4614,9 +4622,10 @@ field as part of the type’s public API. We will discuss what public and privat
 are and how to designate a field or method as public or private in [Chapter
 7](#exposing-paths-with-the-pub-keyword).
 
-[Where’s the ](#wheres-the---operator)`->` Operator?
+### [Where’s the `->` Operator?](#wheres-the---operator)
 
-`->` Operator?In C and C++, two different operators are used for calling methods: You use
+`->` Operator?
+In C and C++, two different operators are used for calling methods: You use
 `.` if you’re calling a method on the object directly and `->` if you’re
 calling the method on a pointer to the object and need to dereference the
 pointer first. In other words, if `object` is a pointer,
@@ -4658,7 +4667,7 @@ reading (`&self`), mutating (`&mut self`), or consuming (`self`). The fact
 that Rust makes borrowing implicit for method receivers is a big part of
 making ownership ergonomic in practice.
 
-[Methods with More Parameters](#methods-with-more-parameters)
+### [Methods with More Parameters](#methods-with-more-parameters)
 
 Let’s practice using methods by implementing a second method on the `Rectangle`
 struct. This time we want an instance of `Rectangle` to take another instance
@@ -4694,7 +4703,7 @@ desired output. Methods can take multiple parameters that we add to the
 signature after the `self` parameter, and those parameters work just like
 parameters in functions.
 
-[Associated Functions](#associated-functions)
+### [Associated Functions](#associated-functions)
 
 All functions defined within an `impl` block are called *associated functions*
 because they’re associated with the type named after the `impl`. We can define
@@ -4741,9 +4750,10 @@ the struct: The `::` syntax is used for both associated functions and
 namespaces created by modules. We’ll discuss modules in [Chapter
 7](#control-scope-and-privacy-with-modules-1).
 
-[Multiple ](#multiple-impl-blocks)`impl` Blocks
+### [Multiple `impl` Blocks](#multiple-impl-blocks)
 
-`impl` BlocksEach struct is allowed to have multiple `impl` blocks. For example, Listing
+`impl` Blocks
+Each struct is allowed to have multiple `impl` blocks. For example, Listing
 5-15 is equivalent to the code shown in Listing 5-16, which has each method in
 its own `impl` block.
 
@@ -4751,7 +4761,7 @@ There’s no reason to separate these methods into multiple `impl` blocks here,
 but this is valid syntax. We’ll see a case in which multiple `impl` blocks are
 useful in Chapter 10, where we discuss generic types and traits.
 
-[Summary](#summary-4)
+## [Summary](#summary-4)
 
 Structs let you create custom types that are meaningful for your domain. By
 using structs, you can keep associated pieces of data connected to each other
@@ -4762,7 +4772,7 @@ structs have.
 
 But structs aren’t the only way you can create custom types: Let’s turn to Rust’s enum feature to add another tool to your toolbox.
 
-[Enums and Pattern Matching](#enums-and-pattern-matching)
+# [Enums and Pattern Matching](#enums-and-pattern-matching)
 
 In this chapter, we’ll look at enumerations, also referred to as *enums*.
 Enums allow you to define a type by enumerating its possible variants. First
@@ -4774,9 +4784,9 @@ code for different values of an enum. Finally, we’ll cover how the `if let`
 construct is another convenient and concise idiom available to handle enums in
 your code.
 
-[Defining an Enum](#defining-an-enum-1)
+# [Defining an Enum](#defining-an-enum-1)
 
-[Defining an Enum](#defining-an-enum)
+## [Defining an Enum](#defining-an-enum)
 
 Where structs give you a way of grouping together related fields and data, like
 a `Rectangle` with its `width` and `height`, enums give you a way of saying a
@@ -4812,7 +4822,7 @@ fn route(ip_kind: IpAddrKind) {}
 ```
 `IpAddrKind` is now a custom data type that we can use elsewhere in our code.
 
-[Enum Values](#enum-values)
+### [Enum Values](#enum-values)
 
 We can create instances of each of the two variants of `IpAddrKind` like this:
 
@@ -4952,10 +4962,10 @@ Let’s look at another example of an enum in Listing 6-2: This one has a wide v
 
 This enum has four variants with different types:
 
-- `Quit`: Has no data associated with it at all
-- `Move`: Has named fields, like a struct does
-- `Write`: Includes a single- `String`
-- `ChangeColor`: Includes three- `i32`values
+- `Quit` : Has no data associated with it at all
+- `Move` : Has named fields, like a struct does
+- `Write` : Includes a single`String`
+- `ChangeColor` : Includes three`i32` values
 
 Defining an enum with variants such as the ones in Listing 6-2 is similar to
 defining different kinds of struct definitions, except the enum doesn’t use the
@@ -5006,9 +5016,10 @@ body of the `call` method when `m.call()` runs.
 Let’s look at another enum in the standard library that is very common and
 useful: `Option`.
 
-[The ](#the-option-enum)`Option` Enum
+### [The `Option` Enum](#the-option-enum)
 
-`Option` EnumThis section explores a case study of `Option`, which is another enum defined
+`Option` Enum
+This section explores a case study of `Option`, which is another enum defined
 by the standard library. The `Option` type encodes the very common scenario in
 which a value could be something, or it could be nothing.
 
@@ -5147,11 +5158,12 @@ does just this when used with enums: It will run different code depending on
 which variant of the enum it has, and that code can use the data inside the
 matching value.
 
-[The match Control Flow Construct](#the-match-control-flow-construct-1)
+# [The match Control Flow Construct](#the-match-control-flow-construct-1)
 
-[The ](#the-match-control-flow-construct)`match` Control Flow Construct
+## [The `match` Control Flow Construct](#the-match-control-flow-construct)
 
-`match` Control Flow ConstructRust has an extremely powerful control flow construct called `match` that
+`match` Control Flow Construct
+Rust has an extremely powerful control flow construct called `match` that
 allows you to compare a value against a series of patterns and then execute
 code based on which pattern matches. Patterns can be made up of literal values,
 variable names, wildcards, and many other things; [Chapter
@@ -5220,7 +5232,7 @@ fn value_in_cents(coin: Coin) -> u8 {
 }
 fn main() {}
 ```
-[Patterns That Bind to Values](#patterns-that-bind-to-values)
+### [Patterns That Bind to Values](#patterns-that-bind-to-values)
 
 Another useful feature of match arms is that they can bind to the parts of the values that match the pattern. This is how we can extract values out of enum variants.
 
@@ -5273,9 +5285,10 @@ that point, the binding for `state` will be the value `UsState::Alaska`. We can
 then use that binding in the `println!` expression, thus getting the inner
 state value out of the `Coin` enum variant for `Quarter`.
 
-[The ](#the-optiont-match-pattern)`Option<T>` `match` Pattern
+### [The `Option<T>` `match` Pattern](#the-optiont-match-pattern)
 
-`Option<T>` `match` PatternIn the previous section, we wanted to get the inner `T` value out of the `Some`
+`Option<T>` `match` Pattern
+In the previous section, we wanted to get the inner `T` value out of the `Some`
 case when using `Option<T>`; we can also handle `Option<T>` using `match`, as
 we did with the `Coin` enum! Instead of comparing coins, we’ll compare the
 variants of `Option<T>`, but the way the `match` expression works remains the
@@ -5353,7 +5366,7 @@ data inside, and then execute code based on it. It’s a bit tricky at first, bu
 once you get used to it, you’ll wish you had it in all languages. It’s
 consistently a user favorite.
 
-[Matches Are Exhaustive](#matches-are-exhaustive)
+### [Matches Are Exhaustive](#matches-are-exhaustive)
 
 There’s one other aspect of `match` we need to discuss: The arms’ patterns must
 cover all possibilities. Consider this version of our `plus_one` function,
@@ -5405,9 +5418,10 @@ possibility in order for the code to be valid. Especially in the case of
 `None` case, it protects us from assuming that we have a value when we might
 have null, thus making the billion-dollar mistake discussed earlier impossible.
 
-[Catch-All Patterns and the ](#catch-all-patterns-and-the-_-placeholder)`_` Placeholder
+### [Catch-All Patterns and the `_` Placeholder](#catch-all-patterns-and-the-_-placeholder)
 
-`_` PlaceholderUsing enums, we can also take special actions for a few particular values, but
+`_` Placeholder
+Using enums, we can also take special actions for a few particular values, but
 for all other values take one default action. Imagine we’re implementing a game
 where, if you roll a 3 on a dice roll, your player doesn’t move but instead
 gets a fancy new hat. If you roll a 7, your player loses a fancy hat. For all
@@ -5491,11 +5505,12 @@ There’s more about patterns and matching that we’ll cover in [Chapter
 `if let` syntax, which can be useful in situations where the `match` expression
 is a bit wordy.
 
-[Concise Control Flow with if let and let...else](#concise-control-flow-with-if-let-and-letelse-1)
+# [Concise Control Flow with if let and let...else](#concise-control-flow-with-if-let-and-letelse-1)
 
-[Concise Control Flow with ](#concise-control-flow-with-if-let-and-letelse)`if let` and `let...else`
+## [Concise Control Flow with `if let` and `let...else`](#concise-control-flow-with-if-let-and-letelse)
 
-`if let` and `let...else`The `if let` syntax lets you combine `if` and `let` into a less verbose way to
+`if let` and `let...else`
+The `if let` syntax lets you combine `if` and `let` into a less verbose way to
 handle values that match one pattern while ignoring the rest. Consider the
 program in Listing 6-6 that matches on an `Option<u8>` value in the
 `config_max` variable but only wants to execute code if the value is the `Some`
@@ -5588,9 +5603,10 @@ fn main() {
     }
 }
 ```
-[Staying on the “Happy Path” with ](#staying-on-the-happy-path-with-letelse)`let...else`
+## [Staying on the “Happy Path” with `let...else`](#staying-on-the-happy-path-with-letelse)
 
-`let...else`The common pattern is to perform some computation when a value is present and
+`let...else`
+The common pattern is to perform some computation when a value is present and
 return a default value otherwise. Continuing with our example of coins with a
 `UsState` value, if we wanted to say something funny depending on how old the
 state on the quarter was, we might introduce a method on `UsState` to check the
@@ -5664,7 +5680,7 @@ If you have a situation in which your program has logic that is too verbose to
 express using a `match`, remember that `if let` and `let...else` are in your
 Rust toolbox as well.
 
-[Summary](#summary-5)
+## [Summary](#summary-5)
 
 We’ve now covered how to use enums to create custom types that can be one of a
 set of enumerated values. We’ve shown how the standard library’s `Option<T>`
@@ -5676,7 +5692,7 @@ Your Rust programs can now express concepts in your domain using structs and enu
 
 In order to provide a well-organized API to your users that is straightforward to use and only exposes exactly what your users will need, let’s now turn to Rust’s modules.
 
-[Packages, Crates, and Modules](#packages-crates-and-modules)
+# [Packages, Crates, and Modules](#packages-crates-and-modules)
 
 As you write large programs, organizing your code will become increasingly important. By grouping related functionality and separating code with distinct features, you’ll clarify where to find code that implements a particular feature and where to go to change how a feature works.
 
@@ -5698,16 +5714,17 @@ organization, including which details are exposed, which details are private,
 and what names are in each scope in your programs. These features, sometimes
 collectively referred to as the *module system*, include:
 
-- **Packages**: A Cargo feature that lets you build, test, and share crates
-- **Crates**: A tree of modules that produces a library or executable
-- **Modules and use**: Let you control the organization, scope, and privacy of paths
-- **Paths**: A way of naming an item, such as a struct, function, or module
+- **Packages** : A Cargo feature that lets you build, test, and share crates
+- **Crates** : A tree of modules that produces a library or executable
+- **Modules and use** : Let you control the organization, scope, and privacy of
+paths
+- **Paths** : A way of naming an item, such as a struct, function, or module
 
 In this chapter, we’ll cover all these features, discuss how they interact, and explain how to use them to manage scope. By the end, you should have a solid understanding of the module system and be able to work with scopes like a pro!
 
-[Packages and Crates](#packages-and-crates-1)
+# [Packages and Crates](#packages-and-crates-1)
 
-[Packages and Crates](#packages-and-crates)
+## [Packages and Crates](#packages-and-crates)
 
 The first parts of the module system we’ll cover are packages and crates.
 
@@ -5772,16 +5789,14 @@ and *src/lib.rs*, it has two crates: a binary and a library, both with the same
 name as the package. A package can have multiple binary crates by placing files
 in the *src/bin* directory: Each file will be a separate binary crate.
 
-[Control Scope and Privacy with Modules](#control-scope-and-privacy-with-modules-1)
-
-[Control Scope and Privacy with Modules](#control-scope-and-privacy-with-modules)
+# [Control Scope and Privacy with Modules](#control-scope-and-privacy-with-modules-1)
 
 In this section, we’ll talk about modules and other parts of the module system,
 namely *paths*, which allow you to name items; the `use` keyword that brings a
 path into scope; and the `pub` keyword to make items public. We’ll also discuss
 the `as` keyword, external packages, and the glob operator.
 
-[Modules Cheat Sheet](#modules-cheat-sheet)
+### [Modules Cheat Sheet](#modules-cheat-sheet)
 
 Before we get to the details of modules and paths, here we provide a quick
 reference on how modules, paths, the `use` keyword, and the `pub` keyword work
@@ -5789,20 +5804,31 @@ in the compiler, and how most developers organize their code. We’ll be going
 through examples of each of these rules throughout this chapter, but this is a
 great place to refer to as a reminder of how modules work.
 
-- **Start from the crate root**: When compiling a crate, the compiler first looks in the crate root file (usually- *src/lib.rs*for a library crate and- *src/main.rs*for a binary crate) for code to compile.
-- **Declaring modules**: In the crate root file, you can declare new modules; say you declare a “garden” module with- `mod garden;`. The compiler will look for the module’s code in these places:- Inline, within curly brackets that replace the semicolon following `mod garden`
-- In the file *src/garden.rs*
-- In the file *src/garden/mod.rs*
- 
+- **Start from the crate root** : When compiling a crate, the compiler first
+looks in the crate root file (usually*src/lib.rs* for a library crate and*src/main.rs* for a binary crate) for code to compile.
+- **Declaring modules** : In the crate root file, you can declare new modules;
+say you declare a “garden” module with`mod garden;` . The compiler will look
+for the module’s code in these places:
+  - Inline, within curly brackets that replace the semicolon following `mod garden`
+  - In the file *src/garden.rs*
+  - In the file *src/garden/mod.rs*
 - Inline, within curly brackets that replace the semicolon following 
-- **Declaring submodules**: In any file other than the crate root, you can declare submodules. For example, you might declare- `mod vegetables;`in- *src/garden.rs*. The compiler will look for the submodule’s code within the directory named for the parent module in these places:- Inline, directly following `mod vegetables`, within curly brackets instead of the semicolon
-- In the file *src/garden/vegetables.rs*
-- In the file *src/garden/vegetables/mod.rs*
- 
+- **Declaring submodules** : In any file other than the crate root, you can
+declare submodules. For example, you might declare`mod vegetables;` in*src/garden.rs* . The compiler will look for the submodule’s code within the
+directory named for the parent module in these places:
+  - Inline, directly following `mod vegetables` , within curly brackets instead
+of the semicolon
+  - In the file *src/garden/vegetables.rs*
+  - In the file *src/garden/vegetables/mod.rs*
 - Inline, directly following 
-- **Paths to code in modules**: Once a module is part of your crate, you can refer to code in that module from anywhere else in that same crate, as long as the privacy rules allow, using the path to the code. For example, an- `Asparagus`type in the garden vegetables module would be found at- `crate::garden::vegetables::Asparagus`.
-- **Private vs. public**: Code within a module is private from its parent modules by default. To make a module public, declare it with- `pub mod`instead of- `mod`. To make items within a public module public as well, use- `pub`before their declarations.
-- **The**: Within a scope, the- `use`keyword- `use`keyword creates shortcuts to items to reduce repetition of long paths. In any scope that can refer to- `crate::garden::vegetables::Asparagus`, you can create a shortcut with- `use crate::garden::vegetables::Asparagus;`, and from then on you only need to write- `Asparagus`to make use of that type in the scope.
+- **Paths to code in modules** : Once a module is part of your crate, you can
+refer to code in that module from anywhere else in that same crate, as long
+as the privacy rules allow, using the path to the code. For example, an`Asparagus` type in the garden vegetables module would be found at`crate::garden::vegetables::Asparagus` .
+- **Private vs. public** : Code within a module is private from its parent
+modules by default. To make a module public, declare it with`pub mod` instead of`mod` . To make items within a public module public as well, use`pub` before their declarations.
+- **The `use` keyword** : Within a scope, the`use` keyword creates shortcuts to
+items to reduce repetition of long paths. In any scope that can refer to`crate::garden::vegetables::Asparagus` , you can create a shortcut with`use crate::garden::vegetables::Asparagus;` , and from then on you only need to
+write`Asparagus` to make use of that type in the scope.
 
 Here, we create a binary crate named `backyard` that illustrates these rules.
 The crate’s directory, also named *backyard*, contains these files and
@@ -5832,7 +5858,7 @@ pub struct Asparagus {}
 ```
 Now let’s get into the details of these rules and demonstrate them in action!
 
-[Grouping Related Code in Modules](#grouping-related-code-in-modules)
+### [Grouping Related Code in Modules](#grouping-related-code-in-modules)
 
 *Modules* let us organize code within a crate for readability and easy reuse.
 Modules also allow us to control the *privacy* of items because code within a
@@ -5881,16 +5907,17 @@ is rooted under the implicit module named `crate`.
 
 The module tree might remind you of the filesystem’s directory tree on your computer; this is a very apt comparison! Just like directories in a filesystem, you use modules to organize your code. And just like files in a directory, we need a way to find our modules.
 
-[Paths for Referring to an Item in the Module Tree](#paths-for-referring-to-an-item-in-the-module-tree-1)
-
-[Paths for Referring to an Item in the Module Tree](#paths-for-referring-to-an-item-in-the-module-tree)
+# [Paths for Referring to an Item in the Module Tree](#paths-for-referring-to-an-item-in-the-module-tree-1)
 
 To show Rust where to find an item in a module tree, we use a path in the same way we use a path when navigating a filesystem. To call a function, we need to know its path.
 
 A path can take two forms:
 
-- An *absolute path*is the full path starting from a crate root; for code from an external crate, the absolute path begins with the crate name, and for code from the current crate, it starts with the literal`crate`.
-- A *relative path*starts from the current module and uses`self`,`super`, or an identifier in the current module.
+- An *absolute path* is the full path starting from a crate root; for code
+from an external crate, the absolute path begins with the crate name, and for
+code from the current crate, it starts with the literal`crate` .
+- A *relative path* starts from the current module and uses`self` ,`super` , or
+an identifier in the current module.
 
 Both absolute and relative paths are followed by one or more identifiers
 separated by double colons (`::`).
@@ -5905,10 +5932,10 @@ there’s another problem remaining that will prevent this example from compilin
 as is. We’ll explain why in a bit.
 
 The `eat_at_restaurant` function is part of our library crate’s public API, so
-we mark it with the `pub` keyword. In the [“Exposing Paths with the  pub
-Keyword”](#exposing-paths-with-the-pub-keyword) section, we’ll go into more detail about 
+we mark it with the `pub` keyword. In the [“Exposing Paths with the `pub`
+Keyword”](#exposing-paths-with-the-pub-keyword) section, we’ll go into more detail about `pub`.
 
-`pub`.The first time we call the `add_to_waitlist` function in `eat_at_restaurant`,
+The first time we call the `add_to_waitlist` function in `eat_at_restaurant`,
 we use an absolute path. The `add_to_waitlist` function is defined in the same
 crate as `eat_at_restaurant`, which means we can use the `crate` keyword to
 start an absolute path. We then include each of the successive modules until we
@@ -5954,9 +5981,10 @@ inner code you can change without breaking the outer code. However, Rust does
 give you the option to expose inner parts of child modules’ code to outer
 ancestor modules by using the `pub` keyword to make an item public.
 
-[Exposing Paths with the ](#exposing-paths-with-the-pub-keyword)`pub` Keyword
+### [Exposing Paths with the `pub` Keyword](#exposing-paths-with-the-pub-keyword)
 
-`pub` KeywordLet’s return to the error in Listing 7-4 that told us the `hosting` module is
+`pub` Keyword
+Let’s return to the error in Listing 7-4 that told us the `hosting` module is
 private. We want the `eat_at_restaurant` function in the parent module to have
 access to the `add_to_waitlist` function in the child module, so we mark the
 `hosting` module with the `pub` keyword, as shown in Listing 7-5.
@@ -6008,7 +6036,7 @@ managing changes to your public API to make it easier for people to depend on
 your crate. These considerations are beyond the scope of this book; if you’re
 interested in this topic, see [the Rust API Guidelines](https://rust-lang.github.io/api-guidelines/).
 
-[Best Practices for Packages with a Binary and a Library](#best-practices-for-packages-with-a-binary-and-a-library)
+#### [Best Practices for Packages with a Binary and a Library](#best-practices-for-packages-with-a-binary-and-a-library)
 
 We mentioned that a package can contain both a *src/main.rs* binary crate
 root as well as a *src/lib.rs* library crate root, and both crates will have
@@ -6029,9 +6057,10 @@ In [Chapter 12](#an-io-project-building-a-command-line-program), we’ll demonst
 practice with a command line program that will contain both a binary crate
 and a library crate.
 
-[Starting Relative Paths with ](#starting-relative-paths-with-super)`super`
+### [Starting Relative Paths with `super`](#starting-relative-paths-with-super)
 
-`super`We can construct relative paths that begin in the parent module, rather than
+`super`
+We can construct relative paths that begin in the parent module, rather than
 the current module or the crate root, by using `super` at the start of the
 path. This is like starting a filesystem path with the `..` syntax that means
 to go to the parent directory. Using `super` allows us to reference an item
@@ -6054,7 +6083,7 @@ together should we decide to reorganize the crate’s module tree. Therefore, we
 used `super` so that we’ll have fewer places to update code in the future if
 this code gets moved to a different module.
 
-[Making Structs and Enums Public](#making-structs-and-enums-public)
+### [Making Structs and Enums Public](#making-structs-and-enums-public)
 
 We can also use `pub` to designate structs and enums as public, but there are a
 few extra details to the usage of `pub` with structs and enums. If we use `pub`
@@ -6096,11 +6125,12 @@ There’s one more situation involving `pub` that we haven’t covered, and that
 our last module system feature: the `use` keyword. We’ll cover `use` by itself
 first, and then we’ll show how to combine `pub` and `use`.
 
-[Bringing Paths Into Scope with the use Keyword](#bringing-paths-into-scope-with-the-use-keyword-1)
+# [Bringing Paths Into Scope with the use Keyword](#bringing-paths-into-scope-with-the-use-keyword-1)
 
-[Bringing Paths into Scope with the ](#bringing-paths-into-scope-with-the-use-keyword)`use` Keyword
+## [Bringing Paths into Scope with the `use` Keyword](#bringing-paths-into-scope-with-the-use-keyword)
 
-`use` KeywordHaving to write out the paths to call functions can feel inconvenient and
+`use` Keyword
+Having to write out the paths to call functions can feel inconvenient and
 repetitive. In Listing 7-7, whether we chose the absolute or relative path to
 the `add_to_waitlist` function, every time we wanted to call `add_to_waitlist`
 we had to specify `front_of_house` and `hosting` too. Fortunately, there’s a
@@ -6156,9 +6186,10 @@ fix this problem, move the `use` within the `customer` module too, or reference
 the shortcut in the parent module with `super::hosting` within the child
 `customer` module.
 
-[Creating Idiomatic ](#creating-idiomatic-use-paths)`use` Paths
+### [Creating Idiomatic `use` Paths](#creating-idiomatic-use-paths)
 
-`use` PathsIn Listing 7-11, you might have wondered why we specified `use crate::front_of_house::hosting` and then called `hosting::add_to_waitlist` in
+`use` Paths
+In Listing 7-11, you might have wondered why we specified `use crate::front_of_house::hosting` and then called `hosting::add_to_waitlist` in
 `eat_at_restaurant`, rather than specifying the `use` path all the way out to
 the `add_to_waitlist` function to achieve the same result, as in Listing 7-13.
 
@@ -6187,9 +6218,10 @@ If instead we specified `use std::fmt::Result` and `use std::io::Result`, we’d
 have two `Result` types in the same scope, and Rust wouldn’t know which one we
 meant when we used `Result`.
 
-[Providing New Names with the ](#providing-new-names-with-the-as-keyword)`as` Keyword
+### [Providing New Names with the `as` Keyword](#providing-new-names-with-the-as-keyword)
 
-`as` KeywordThere’s another solution to the problem of bringing two types of the same name
+`as` Keyword
+There’s another solution to the problem of bringing two types of the same name
 into the same scope with `use`: After the path, we can specify `as` and a new
 local name, or *alias*, for the type. Listing 7-16 shows another way to write
 the code in Listing 7-15 by renaming one of the two `Result` types using `as`.
@@ -6199,9 +6231,10 @@ In the second `use` statement, we chose the new name `IoResult` for the
 that we’ve also brought into scope. Listing 7-15 and Listing 7-16 are
 considered idiomatic, so the choice is up to you!
 
-[Re-exporting Names with ](#re-exporting-names-with-pub-use)`pub use`
+### [Re-exporting Names with `pub use`](#re-exporting-names-with-pub-use)
 
-`pub use`When we bring a name into scope with the `use` keyword, the name is private to
+`pub use`
+When we bring a name into scope with the `use` keyword, the name is private to
 the scope into which we imported it. To enable code outside that scope to refer
 to that name as if it had been defined in that scope, we can combine `pub` and
 `use`. This technique is called *re-exporting* because we’re bringing an item
@@ -6227,7 +6260,7 @@ and programmers calling the library. We’ll look at another example of `pub use
 and how it affects your crate’s documentation in [“Exporting a Convenient Public
 API”](#exporting-a-convenient-public-api) in Chapter 14.
 
-[Using External Packages](#using-external-packages)
+### [Using External Packages](#using-external-packages)
 
 In Chapter 2, we programmed a guessing game project that used an external
 package called `rand` to get random numbers. To use `rand` in our project, we
@@ -6278,9 +6311,10 @@ use std::collections::HashMap;
 This is an absolute path starting with `std`, the name of the standard library
 crate.
 
-[Using Nested Paths to Clean Up ](#using-nested-paths-to-clean-up-use-lists)`use` Lists
+### [Using Nested Paths to Clean Up `use` Lists](#using-nested-paths-to-clean-up-use-lists)
 
-`use` ListsIf we’re using multiple items defined in the same crate or same module, listing
+`use` Lists
+If we’re using multiple items defined in the same crate or same module, listing
 each item on its own line can take up a lot of vertical space in our files. For
 example, these two `use` statements we had in the guessing game in Listing 2-4
 bring items from `std` into scope:
@@ -6302,7 +6336,7 @@ the nested path, as shown in Listing 7-20.
 
 This line brings `std::io` and `std::io::Write` into scope.
 
-[Importing Items with the Glob Operator](#importing-items-with-the-glob-operator)
+### [Importing Items with the Glob Operator](#importing-items-with-the-glob-operator)
 
 If we want to bring *all* public items defined in a path into scope, we can
 specify that path followed by the `*` glob operator:
@@ -6328,9 +6362,7 @@ sometimes used as part of the prelude pattern: See [the standard library
 documentation](../std/prelude/index.html#other-preludes) for more
 information on that pattern.
 
-[Separating Modules into Different Files](#separating-modules-into-different-files-1)
-
-[Separating Modules into Different Files](#separating-modules-into-different-files)
+# [Separating Modules into Different Files](#separating-modules-into-different-files-1)
 
 So far, all the examples in this chapter defined multiple modules in one file. When modules get large, you might want to move their definitions to a separate file to make the code easier to navigate.
 
@@ -6377,21 +6409,21 @@ root and not declared as a child of the `front_of_house` module. The
 compiler’s rules for which files to check for which modules’ code mean the
 directories and files more closely match the module tree.
 
-[Alternate File Paths](#alternate-file-paths)
+### [Alternate File Paths](#alternate-file-paths)
 
 So far we’ve covered the most idiomatic file paths the Rust compiler uses,
 but Rust also supports an older style of file path. For a module named
 `front_of_house` declared in the crate root, the compiler will look for the
 module’s code in:
 
-- *src/front_of_house.rs*(what we covered)
-- *src/front_of_house/mod.rs*(older style, still supported path)
+- *src/front_of_house.rs* (what we covered)
+- *src/front_of_house/mod.rs* (older style, still supported path)
 
 For a module named `hosting` that is a submodule of `front_of_house`, the
 compiler will look for the module’s code in:
 
-- *src/front_of_house/hosting.rs*(what we covered)
-- *src/front_of_house/hosting/mod.rs*(older style, still supported path)
+- *src/front_of_house/hosting.rs* (what we covered)
+- *src/front_of_house/hosting/mod.rs* (older style, still supported path)
 
 If you use both styles for the same module, you’ll get a compiler error. Using a mix of both styles for different modules in the same project is allowed but might be confusing for people navigating your project.
 
@@ -6410,7 +6442,7 @@ are compiled as part of the crate. The `mod` keyword declares modules, and Rust
 looks in a file with the same name as the module for the code that goes into
 that module.
 
-[Summary](#summary-6)
+## [Summary](#summary-6)
 
 Rust lets you split a package into multiple crates and a crate into modules so
 that you can refer to items defined in one module from another module. You can
@@ -6421,7 +6453,7 @@ you can make definitions public by adding the `pub` keyword.
 
 In the next chapter, we’ll look at some collection data structures in the standard library that you can use in your neatly organized code.
 
-[Common Collections](#common-collections)
+# [Common Collections](#common-collections)
 
 Rust’s standard library includes a number of very useful data structures called
 *collections*. Most other data types represent one specific value, but
@@ -6433,18 +6465,18 @@ capabilities and costs, and choosing an appropriate one for your current
 situation is a skill you’ll develop over time. In this chapter, we’ll discuss
 three collections that are used very often in Rust programs:
 
-- A *vector*allows you to store a variable number of values next to each other.
-- A *string*is a collection of characters. We’ve mentioned the`String`type previously, but in this chapter, we’ll talk about it in depth.
-- A *hash map*allows you to associate a value with a specific key. It’s a particular implementation of the more general data structure called a*map*.
+- A *vector* allows you to store a variable number of values next to each other.
+- A *string* is a collection of characters. We’ve mentioned the`String` type
+previously, but in this chapter, we’ll talk about it in depth.
+- A *hash map* allows you to associate a value with a specific key. It’s a
+particular implementation of the more general data structure called a*map* .
 
 To learn about the other kinds of collections provided by the standard library,
 see [the documentation](../std/collections/index.html).
 
 We’ll discuss how to create and update vectors, strings, and hash maps, as well as what makes each special.
 
-[Storing Lists of Values with Vectors](#storing-lists-of-values-with-vectors-1)
-
-[Storing Lists of Values with Vectors](#storing-lists-of-values-with-vectors)
+# [Storing Lists of Values with Vectors](#storing-lists-of-values-with-vectors-1)
 
 The first collection type we’ll look at is `Vec<T>`, also known as a vector.
 Vectors allow you to store more than one value in a single data structure that
@@ -6452,7 +6484,7 @@ puts all the values next to each other in memory. Vectors can only store values
 of the same type. They are useful when you have a list of items, such as the
 lines of text in a file or the prices of items in a shopping cart.
 
-[Creating a New Vector](#creating-a-new-vector)
+### [Creating a New Vector](#creating-a-new-vector)
 
 To create a new, empty vector, we call the `Vec::new` function, as shown in
 Listing 8-1.
@@ -6478,7 +6510,7 @@ Because we’ve given initial `i32` values, Rust can infer that the type of `v`
 is `Vec<i32>`, and the type annotation isn’t necessary. Next, we’ll look at how
 to modify a vector.
 
-[Updating a Vector](#updating-a-vector)
+### [Updating a Vector](#updating-a-vector)
 
 To create a vector and then add elements to it, we can use the `push` method,
 as shown in Listing 8-3.
@@ -6488,7 +6520,7 @@ make it mutable using the `mut` keyword, as discussed in Chapter 3. The numbers
 we place inside are all of type `i32`, and Rust infers this from the data, so
 we don’t need the `Vec<i32>` annotation.
 
-[Reading Elements of Vectors](#reading-elements-of-vectors)
+### [Reading Elements of Vectors](#reading-elements-of-vectors)
 
 There are two ways to reference a value stored in a vector: via indexing or by
 using the `get` method. In the following examples, we’ve annotated the types of
@@ -6547,7 +6579,7 @@ The code in Listing 8-6 might look like it should work: Why should a reference t
 Note: For more on the implementation details of the `Vec<T>` type, see [“The
 Rustonomicon”](../nomicon/vec/vec.html).
 
-[Iterating Over the Values in a Vector](#iterating-over-the-values-in-a-vector)
+### [Iterating Over the Values in a Vector](#iterating-over-the-values-in-a-vector)
 
 To access each element in a vector in turn, we would iterate through all of the
 elements rather than use indices to access one at a time. Listing 8-7 shows how
@@ -6570,7 +6602,7 @@ similar to the one we got with the code in Listing 8-6. The reference to the
 vector that the `for` loop holds prevents simultaneous modification of the
 whole vector.
 
-[Using an Enum to Store Multiple Types](#using-an-enum-to-store-multiple-types)
+### [Using an Enum to Store Multiple Types](#using-an-enum-to-store-multiple-types)
 
 Vectors can only store values that are of the same type. This can be inconvenient; there are definitely use cases for needing to store a list of items of different types. Fortunately, the variants of an enum are defined under the same enum type, so when we need one type to represent elements of different types, we can define and use an enum!
 
@@ -6591,7 +6623,7 @@ to review [the API documentation](../std/vec/struct.Vec.html) for all of the man
 useful methods defined on `Vec<T>` by the standard library. For example, in
 addition to `push`, a `pop` method removes and returns the last element.
 
-[Dropping a Vector Drops Its Elements](#dropping-a-vector-drops-its-elements)
+### [Dropping a Vector Drops Its Elements](#dropping-a-vector-drops-its-elements)
 
 Like any other `struct`, a vector is freed when it goes out of scope, as
 annotated in Listing 8-10.
@@ -6600,9 +6632,7 @@ When the vector gets dropped, all of its contents are also dropped, meaning the 
 
 Let’s move on to the next collection type: `String`!
 
-[Storing UTF-8 Encoded Text with Strings](#storing-utf-8-encoded-text-with-strings-1)
-
-[Storing UTF-8 Encoded Text with Strings](#storing-utf-8-encoded-text-with-strings)
+# [Storing UTF-8 Encoded Text with Strings](#storing-utf-8-encoded-text-with-strings-1)
 
 We talked about strings in Chapter 4, but we’ll look at them in more depth now. New Rustaceans commonly get stuck on strings for a combination of three reasons: Rust’s propensity for exposing possible errors, strings being a more complicated data structure than many programmers give them credit for, and UTF-8. These factors combine in a way that can seem difficult when you’re coming from other programming languages.
 
@@ -6615,7 +6645,7 @@ is different from the other collections, namely, how indexing into a `String` is
 complicated by the differences between how people and computers interpret
 `String` data.
 
-[Defining Strings](#defining-strings)
+### [Defining Strings](#defining-strings)
 
 We’ll first define what we mean by the term *string*. Rust has only one string
 type in the core language, which is the string slice `str` that is usually seen
@@ -6632,7 +6662,7 @@ of those types. Although this section is largely about `String`, both types are
 used heavily in Rust’s standard library, and both `String` and string slices
 are UTF-8 encoded.
 
-[Creating a New String](#creating-a-new-string)
+### [Creating a New String](#creating-a-new-string)
 
 Many of the same operations available with `Vec<T>` are available with `String`
 as well because `String` is actually implemented as a wrapper around a vector
@@ -6662,15 +6692,16 @@ Remember that strings are UTF-8 encoded, so we can include any properly encoded 
 
 All of these are valid `String` values.
 
-[Updating a String](#updating-a-string)
+### [Updating a String](#updating-a-string)
 
 A `String` can grow in size and its contents can change, just like the contents
 of a `Vec<T>`, if you push more data into it. In addition, you can conveniently
 use the `+` operator or the `format!` macro to concatenate `String` values.
 
-[Appending with ](#appending-with-push_str-or-push)`push_str` or `push`
+#### [Appending with `push_str` or `push`](#appending-with-push_str-or-push)
 
-`push_str` or `push`We can grow a `String` by using the `push_str` method to append a string slice,
+`push_str` or `push`
+We can grow a `String` by using the `push_str` method to append a string slice,
 as shown in Listing 8-15.
 
 After these two lines, `s` will contain `foobar`. The `push_str` method takes a
@@ -6687,9 +6718,10 @@ method.
 
 As a result, `s` will contain `lol`.
 
-[Concatenating with ](#concatenating-with--or-format)`+` or `format!`
+#### [Concatenating with `+` or `format!`](#concatenating-with--or-format)
 
-`+` or `format!`Often, you’ll want to combine two existing strings. One way to do so is to use
+`+` or `format!`
+Often, you’ll want to combine two existing strings. One way to do so is to use
 the `+` operator, as shown in Listing 8-18.
 
 The string `s3` will contain `Hello, world!`. The reason `s1` is no longer
@@ -6698,7 +6730,8 @@ with the signature of the method that’s called when we use the `+` operator.
 The `+` operator uses the `add` method, whose signature looks something like
 this:
 
-`fn add(self, s: &str) -> String {`In the standard library, you’ll see `add` defined using generics and associated
+`fn add(self, s: &str) -> String {`
+In the standard library, you’ll see `add` defined using generics and associated
 types. Here, we’ve substituted in concrete types, which is what happens when we
 call this method with `String` values. We’ll discuss generics in Chapter 10.
 This signature gives us the clues we need in order to understand the tricky
@@ -6756,7 +6789,7 @@ This code also sets `s` to `tic-tac-toe`. The `format!` macro works like
 easier to read, and the code generated by the `format!` macro uses references
 so that this call doesn’t take ownership of any of its parameters.
 
-[Indexing into Strings](#indexing-into-strings)
+### [Indexing into Strings](#indexing-into-strings)
 
 In many other programming languages, accessing individual characters in a
 string by referencing them by index is a valid and common operation. However,
@@ -6786,7 +6819,7 @@ error: could not compile `collections` (bin "collections") due to 1 previous err
 ```
 The error tells the story: Rust strings don’t support indexing. But why not? To answer that question, we need to discuss how Rust stores strings in memory.
 
-[Internal Representation](#internal-representation)
+#### [Internal Representation](#internal-representation)
 
 A `String` is a wrapper over a `Vec<u8>`. Let’s look at some of our properly
 encoded UTF-8 example strings from Listing 8-14. First, this one:
@@ -6843,7 +6876,7 @@ returned the byte value, it would return `104`, not `h`.
 
 The answer, then, is that to avoid returning an unexpected value and causing bugs that might not be discovered immediately, Rust doesn’t compile this code at all and prevents misunderstandings early in the development process.
 
-[Bytes, Scalar Values, and Grapheme Clusters](#bytes-scalar-values-and-grapheme-clusters)
+#### [Bytes, Scalar Values, and Grapheme Clusters](#bytes-scalar-values-and-grapheme-clusters)
 
 Another point about UTF-8 is that there are actually three relevant ways to
 look at strings from Rust’s perspective: as bytes, scalar values, and grapheme
@@ -6879,7 +6912,7 @@ character is that indexing operations are expected to always take constant time
 because Rust would have to walk through the contents from the beginning to the
 index to determine how many valid characters there were.
 
-[Slicing Strings](#slicing-strings)
+### [Slicing Strings](#slicing-strings)
 
 Indexing into a string is often a bad idea because it’s not clear what the return type of the string-indexing operation should be: a byte value, a character, a grapheme cluster, or a string slice. If you really need to use indices to create string slices, therefore, Rust asks you to be more specific.
 
@@ -6912,7 +6945,7 @@ note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 ```
 You should use caution when creating string slices with ranges, because doing so can crash your program.
 
-[Iterating Over Strings](#iterating-over-strings)
+### [Iterating Over Strings](#iterating-over-strings)
 
 The best way to operate on pieces of strings is to be explicit about whether
 you want characters or bytes. For individual Unicode scalar values, use the
@@ -6959,7 +6992,7 @@ complex, so this functionality is not provided by the standard library. Crates
 are available on [crates.io](https://crates.io/) if this is the
 functionality you need.
 
-[Handling the Complexities of Strings](#handling-the-complexities-of-strings)
+### [Handling the Complexities of Strings](#handling-the-complexities-of-strings)
 
 To summarize, strings are complicated. Different programming languages make
 different choices about how to present this complexity to the programmer. Rust
@@ -6978,9 +7011,7 @@ string with another string.
 
 Let’s switch to something a bit less complex: hash maps!
 
-[Storing Keys with Associated Values in Hash Maps](#storing-keys-with-associated-values-in-hash-maps-1)
-
-[Storing Keys with Associated Values in Hash Maps](#storing-keys-with-associated-values-in-hash-maps)
+# [Storing Keys with Associated Values in Hash Maps](#storing-keys-with-associated-values-in-hash-maps-1)
 
 The last of our common collections is the hash map. The type `HashMap<K, V>`
 stores a mapping of keys of type `K` to values of type `V` using a *hashing
@@ -6995,7 +7026,7 @@ We’ll go over the basic API of hash maps in this section, but many more goodie
 are hiding in the functions defined on `HashMap<K, V>` by the standard library.
 As always, check the standard library documentation for more information.
 
-[Creating a New Hash Map](#creating-a-new-hash-map)
+### [Creating a New Hash Map](#creating-a-new-hash-map)
 
 One way to create an empty hash map is to use `new` and to add elements with
 `insert`. In Listing 8-20, we’re keeping track of the scores of two teams whose
@@ -7013,7 +7044,7 @@ keys of type `String` and values of type `i32`. Like vectors, hash maps are
 homogeneous: All of the keys must have the same type, and all of the values
 must have the same type.
 
-[Accessing Values in a Hash Map](#accessing-values-in-a-hash-map)
+### [Accessing Values in a Hash Map](#accessing-values-in-a-hash-map)
 
 We can get a value out of the hash map by providing its key to the `get`
 method, as shown in Listing 8-21.
@@ -7045,7 +7076,7 @@ This code will print each pair in an arbitrary order:
 Yellow: 50
 Blue: 10
 ```
-[Managing Ownership in Hash Maps](#managing-ownership-in-hash-maps)
+### [Managing Ownership in Hash Maps](#managing-ownership-in-hash-maps)
 
 For types that implement the `Copy` trait, like `i32`, the values are copied
 into the hash map. For owned values like `String`, the values will be moved and
@@ -7060,7 +7091,7 @@ least as long as the hash map is valid. We’ll talk more about these issues in
 [“Validating References with
 Lifetimes”](#validating-references-with-lifetimes) in Chapter 10.
 
-[Updating a Hash Map](#updating-a-hash-map)
+### [Updating a Hash Map](#updating-a-hash-map)
 
 Although the number of key and value pairs is growable, each unique key can
 only have one value associated with it at a time (but not vice versa: For
@@ -7074,7 +7105,7 @@ keep the old value and ignore the new value, only adding the new value if the
 key *doesn’t* already have a value. Or you could combine the old value and the
 new value. Let’s look at how to do each of these!
 
-[Overwriting a Value](#overwriting-a-value)
+#### [Overwriting a Value](#overwriting-a-value)
 
 If we insert a key and a value into a hash map and then insert that same key
 with a different value, the value associated with that key will be replaced.
@@ -7085,7 +7116,7 @@ team’s key both times.
 This code will print `{"Blue": 25}`. The original value of `10` has been
 overwritten.
 
-[Adding a Key and Value Only If a Key Isn’t Present](#adding-a-key-and-value-only-if-a-key-isnt-present)
+#### [Adding a Key and Value Only If a Key Isn’t Present](#adding-a-key-and-value-only-if-a-key-isnt-present)
 
 It’s common to check whether a particular key already exists in the hash map with a value and then to take the following actions: If the key does exist in the hash map, the existing value should remain the way it is; if the key doesn’t exist, insert it and a value for it.
 
@@ -7108,7 +7139,7 @@ first call to `entry` will insert the key for the Yellow team with the value
 `entry` will not change the hash map, because the Blue team already has the
 value `10`.
 
-[Updating a Value Based on the Old Value](#updating-a-value-based-on-the-old-value)
+#### [Updating a Value Based on the Old Value](#updating-a-value-based-on-the-old-value)
 
 Another common use case for hash maps is to look up a key’s value and then
 update it based on the old value. For instance, Listing 8-25 shows code that
@@ -7130,37 +7161,36 @@ we must first dereference `count` using the asterisk (`*`). The mutable
 reference goes out of scope at the end of the `for` loop, so all of these
 changes are safe and allowed by the borrowing rules.
 
-[Hashing Functions](#hashing-functions)
+### [Hashing Functions](#hashing-functions)
 
 By default, `HashMap` uses a hashing function called *SipHash* that can provide
 resistance to denial-of-service (DoS) attacks involving hash
-tables 1. This is not the fastest hashing algorithm
+tables<sup>[1](#footnote-siphash)</sup>. This is not the fastest hashing algorithm
 available, but the trade-off for better security that comes with the drop in
 performance is worth it. If you profile your code and find that the default
 hash function is too slow for your purposes, you can switch to another function
-by specifying a different hasher. A 
-
-*hasher*is a type that implements the
-
+by specifying a different hasher. A *hasher* is a type that implements the
 `BuildHasher` trait. We’ll talk about traits and how to implement them in
-[Chapter 10](#defining-shared-behavior-with-traits-1). You don’t necessarily have to implement your own hasher from scratch;
+[Chapter 10](#defining-shared-behavior-with-traits-1). You don’t necessarily have to implement
+your own hasher from scratch; [crates.io](https://crates.io/)
+has libraries shared by other Rust users that provide hashers implementing many
+common hashing algorithms.
 
-[crates.io](https://crates.io/)has libraries shared by other Rust users that provide hashers implementing many common hashing algorithms.
-
-[Summary](#summary-7)
+## [Summary](#summary-7)
 
 Vectors, strings, and hash maps will provide a large amount of functionality necessary in programs when you need to store, access, and modify data. Here are some exercises you should now be equipped to solve:
 
-- Given a list of integers, use a vector and return the median (when sorted, the value in the middle position) and mode (the value that occurs most often; a hash map will be helpful here) of the list.
-- Convert strings to Pig Latin. The first consonant of each word is moved to
-the end of the word and *ay*is added, so*first*becomes*irst-fay*. Words that start with a vowel have*hay*added to the end instead (*apple*becomes*apple-hay*). Keep in mind the details about UTF-8 encoding!
-- Using a hash map and vectors, create a text interface to allow a user to add employee names to a department in a company; for example, “Add Sally to Engineering” or “Add Amir to Sales.” Then, let the user retrieve a list of all people in a department or all people in the company by department, sorted alphabetically.
+1. Given a list of integers, use a vector and return the median (when sorted, the value in the middle position) and mode (the value that occurs most often; a hash map will be helpful here) of the list.
+2. Convert strings to Pig Latin. The first consonant of each word is moved to
+the end of the word and *ay* is added, so*first* becomes*irst-fay* . Words
+that start with a vowel have*hay* added to the end instead (*apple* becomes*apple-hay* ). Keep in mind the details about UTF-8 encoding!
+3. Using a hash map and vectors, create a text interface to allow a user to add employee names to a department in a company; for example, “Add Sally to Engineering” or “Add Amir to Sales.” Then, let the user retrieve a list of all people in a department or all people in the company by department, sorted alphabetically.
 
 The standard library API documentation describes methods that vectors, strings, and hash maps have that will be helpful for these exercises!
 
 We’re getting into more complex programs in which operations can fail, so it’s a perfect time to discuss error handling. We’ll do that next!
 
-[Error Handling](#error-handling)
+# [Error Handling](#error-handling)
 
 Errors are a fact of life in software, so Rust has a number of features for handling situations in which something goes wrong. In many cases, Rust requires you to acknowledge the possibility of an error and take some action before your code will compile. This requirement makes your program more robust by ensuring that you’ll discover errors and handle them appropriately before deploying your code to production!
 
@@ -7180,11 +7210,12 @@ about returning `Result<T, E>` values. Additionally, we’ll explore
 considerations when deciding whether to try to recover from an error or to stop
 execution.
 
-[Unrecoverable Errors with panic!](#unrecoverable-errors-with-panic-1)
+# [Unrecoverable Errors with panic!](#unrecoverable-errors-with-panic-1)
 
-[Unrecoverable Errors with ](#unrecoverable-errors-with-panic)`panic!`
+## [Unrecoverable Errors with `panic!`](#unrecoverable-errors-with-panic)
 
-`panic!`Sometimes bad things happen in your code, and there’s nothing you can do about
+`panic!`
+Sometimes bad things happen in your code, and there’s nothing you can do about
 it. In these cases, Rust has the `panic!` macro. There are two ways to cause a
 panic in practice: by taking an action that causes our code to panic (such as
 accessing an array past the end) or by explicitly calling the `panic!` macro.
@@ -7193,7 +7224,7 @@ print a failure message, unwind, clean up the stack, and quit. Via an
 environment variable, you can also have Rust display the call stack when a
 panic occurs to make it easier to track down the source of the panic.
 
-[Unwinding the Stack or Aborting in Response to a Panic](#unwinding-the-stack-or-aborting-in-response-to-a-panic)
+### [Unwinding the Stack or Aborting in Response to a Panic](#unwinding-the-stack-or-aborting-in-response-to-a-panic)
 
 By default, when a panic occurs, the program starts *unwinding*, which means
 Rust walks back up the stack and cleans up the data from each function it
@@ -7299,20 +7330,21 @@ panics in the future, you’ll need to figure out what action the code is taking
 with what values to cause the panic and what the code should do instead.
 
 We’ll come back to `panic!` and when we should and should not use `panic!` to
-handle error conditions in the [“To  panic! or Not to
-panic!”](#to-panic-or-not-to-panic) section later in this
-chapter. Next, we’ll look at how to recover from an error using 
+handle error conditions in the [“To `panic!` or Not to
+`panic!`”](#to-panic-or-not-to-panic) section later in this
+chapter. Next, we’ll look at how to recover from an error using `Result`.
 
-`Result`.[Recoverable Errors with Result](#recoverable-errors-with-result-1)
+# [Recoverable Errors with Result](#recoverable-errors-with-result-1)
 
-[Recoverable Errors with ](#recoverable-errors-with-result)`Result`
+## [Recoverable Errors with `Result`](#recoverable-errors-with-result)
 
-`Result`Most errors aren’t serious enough to require the program to stop entirely. Sometimes when a function fails, it’s for a reason that you can easily interpret and respond to. For example, if you try to open a file and that operation fails because the file doesn’t exist, you might want to create the file instead of terminating the process.
+`Result`
+Most errors aren’t serious enough to require the program to stop entirely. Sometimes when a function fails, it’s for a reason that you can easily interpret and respond to. For example, if you try to open a file and that operation fails because the file doesn’t exist, you might want to create the file instead of terminating the process.
 
-Recall from [“Handling Potential Failure with  Result”](#handling-potential-failure-with-result) in Chapter 2 that the 
+Recall from [“Handling Potential Failure with `Result`”](#handling-potential-failure-with-result) in Chapter 2 that the `Result` enum is defined as having two
+variants, `Ok` and `Err`, as follows:
 
-`Result` enum is defined as having two
-variants, `Ok` and `Err`, as follows:```
+```
 #![allow(unused)]
 fn main() {
 enum Result<T, E> {
@@ -7380,7 +7412,7 @@ note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 ```
 As usual, this output tells us exactly what has gone wrong.
 
-[Matching on Different Errors](#matching-on-different-errors)
+### [Matching on Different Errors](#matching-on-different-errors)
 
 The code in Listing 9-4 will `panic!` no matter why `File::open` failed.
 However, we want to take different actions for different failure reasons. If
@@ -7407,9 +7439,10 @@ file can’t be created, a different error message is printed. The second arm of
 the outer `match` stays the same, so the program panics on any error besides
 the missing file error.
 
-[Alternatives to Using ](#alternatives-to-using-match-with-resultt-e)`match` with `Result<T, E>`
+#### [Alternatives to Using `match` with `Result<T, E>`](#alternatives-to-using-match-with-resultt-e)
 
-`match` with `Result<T, E>`That’s a lot of `match`! The `match` expression is very useful but also very
+`match` with `Result<T, E>`
+That’s a lot of `match`! The `match` expression is very useful but also very
 much a primitive. In Chapter 13, you’ll learn about closures, which are used
 with many of the methods defined on `Result<T, E>`. These methods can be more
 concise than using `match` when handling `Result<T, E>` values in your code.
@@ -7438,7 +7471,7 @@ after you’ve read Chapter 13 and look up the `unwrap_or_else` method in the
 standard library documentation. Many more of these methods can clean up huge,
 nested `match` expressions when you’re dealing with errors.
 
-[Shortcuts for Panic on Error](#shortcuts-for-panic-on-error)
+#### [Shortcuts for Panic on Error](#shortcuts-for-panic-on-error)
 
 Using `match` works well enough, but it can be a bit verbose and doesn’t always
 communicate intent well. The `Result<T, E>` type has many helper methods
@@ -7474,7 +7507,7 @@ In production-quality code, most Rustaceans choose `expect` rather than
 succeed. That way, if your assumptions are ever proven wrong, you have more
 information to use in debugging.
 
-[Propagating Errors](#propagating-errors)
+### [Propagating Errors](#propagating-errors)
 
 When a function’s implementation calls something that might fail, instead of
 handling the error within the function itself, you can return the error to the
@@ -7536,9 +7569,10 @@ it to handle appropriately.
 This pattern of propagating errors is so common in Rust that Rust provides the
 question mark operator `?` to make this easier.
 
-[The ](#the--operator-shortcut)`?` Operator Shortcut
+#### [The `?` Operator Shortcut](#the--operator-shortcut)
 
-`?` Operator ShortcutListing 9-7 shows an implementation of `read_username_from_file` that has the
+`?` Operator Shortcut
+Listing 9-7 shows an implementation of `read_username_from_file` that has the
 same functionality as in Listing 9-6, but this implementation uses the `?`
 operator.
 
@@ -7595,9 +7629,10 @@ into that `String`, and returns it. Of course, using `fs::read_to_string`
 doesn’t give us the opportunity to explain all the error handling, so we did it
 the longer way first.
 
-[Where to Use the ](#where-to-use-the--operator)`?` Operator
+#### [Where to Use the `?` Operator](#where-to-use-the--operator)
 
-`?` OperatorThe `?` operator can only be used in functions whose return type is compatible
+`?` Operator
+The `?` operator can only be used in functions whose return type is compatible
 with the value the `?` is used on. This is because the `?` operator is defined
 to perform an early return of a value out of the function, in the same manner
 as the `match` expression we defined in Listing 9-6. In Listing 9-6, the
@@ -7710,20 +7745,21 @@ that error return some integer other than `0`. Rust also returns integers from
 executables to be compatible with this convention.
 
 The `main` function may return any types that implement [the
- std::process::Termination trait](../std/process/trait.Termination.html), which contains
-a function 
-
-`report` that returns an `ExitCode`. Consult the standard library
+`std::process::Termination` trait](../std/process/trait.Termination.html), which contains
+a function `report` that returns an `ExitCode`. Consult the standard library
 documentation for more information on implementing the `Termination` trait for
-your own types.Now that we’ve discussed the details of calling `panic!` or returning `Result`,
+your own types.
+
+Now that we’ve discussed the details of calling `panic!` or returning `Result`,
 let’s return to the topic of how to decide which is appropriate to use in which
 cases.
 
-[To panic! or Not to panic!](#to-panic-or-not-to-panic-1)
+# [To panic! or Not to panic!](#to-panic-or-not-to-panic-1)
 
-[To ](#to-panic-or-not-to-panic)`panic!` or Not to `panic!`
+## [To `panic!` or Not to `panic!`](#to-panic-or-not-to-panic)
 
-`panic!` or Not to `panic!`So, how do you decide when you should call `panic!` and when you should return
+`panic!` or Not to `panic!`
+So, how do you decide when you should call `panic!` and when you should return
 `Result`? When code panics, there’s no way to recover. You could call `panic!`
 for any error situation, whether there’s a possible way to recover or not, but
 then you’re making the decision that a situation is unrecoverable on behalf of
@@ -7740,7 +7776,7 @@ explore why, then discuss situations in which the compiler can’t tell that
 failure is impossible, but you as a human can. The chapter will conclude with
 some general guidelines on how to decide whether to panic in library code.
 
-[Examples, Prototype Code, and Tests](#examples-prototype-code-and-tests)
+### [Examples, Prototype Code, and Tests](#examples-prototype-code-and-tests)
 
 When you’re writing an example to illustrate some concept, also including
 robust error-handling code can make the example less clear. In examples, it’s
@@ -7758,7 +7794,7 @@ that method isn’t the functionality under test. Because `panic!` is how a test
 is marked as a failure, calling `unwrap` or `expect` is exactly what should
 happen.
 
-[When You Have More Information Than the Compiler](#when-you-have-more-information-than-the-compiler)
+### [When You Have More Information Than the Compiler](#when-you-have-more-information-than-the-compiler)
 
 It would also be appropriate to call `expect` when you have some other logic
 that ensures that the `Result` will have an `Ok` value, but the logic isn’t
@@ -7791,7 +7827,7 @@ Mentioning the assumption that this IP address is hardcoded will prompt us to
 change `expect` to better error-handling code if, in the future, we need to get
 the IP address from some other source instead.
 
-[Guidelines for Error Handling](#guidelines-for-error-handling)
+### [Guidelines for Error Handling](#guidelines-for-error-handling)
 
 It’s advisable to have your code panic when it’s possible that your code could
 end up in a bad state. In this context, a *bad state* is when some assumption,
@@ -7802,7 +7838,8 @@ more of the following:
 - The bad state is something that is unexpected, as opposed to something that will likely happen occasionally, like a user entering data in the wrong format.
 - Your code after this point needs to rely on not being in this bad state, rather than checking for the problem at every step.
 - There’s not a good way to encode this information in the types you use. We’ll
-work through an example of what we mean in [“Encoding States and Behavior as Types”](#encoding-states-and-behavior-as-types)in Chapter 18.
+work through an example of what we mean in [“Encoding States and Behavior as
+Types”](#encoding-states-and-behavior-as-types) in Chapter 18.
 
 If someone calls your code and passes in values that don’t make sense, it’s
 best to return an error if you can so that the user of the library can decide
@@ -7847,7 +7884,7 @@ function won’t even compile, so your function doesn’t have to check for that
 case at runtime. Another example is using an unsigned integer type such as
 `u32`, which ensures that the parameter is never negative.
 
-[Custom Types for Validation](#custom-types-for-validation)
+### [Custom Types for Validation](#custom-types-for-validation)
 
 Let’s take the idea of using Rust’s type system to ensure that we have a valid value one step further and look at creating a custom type for validation. Recall the guessing game in Chapter 2 in which our code asked the user to guess a number between 1 and 100. We never validated that the user’s guess was between those numbers before checking it against our secret number; we only validated that the guess was positive. In this case, the consequences were not very dire: Our output of “Too high” or “Too low” would still be correct. But it would be a useful enhancement to guide the user toward valid guesses and have different behavior when the user guesses a number that’s out of range versus when the user types, for example, letters instead.
 
@@ -7905,7 +7942,7 @@ A function that has a parameter or returns only numbers between 1 and 100 could
 then declare in its signature that it takes or returns a `Guess` rather than an
 `i32` and wouldn’t need to do any additional checks in its body.
 
-[Summary](#summary-8)
+## [Summary](#summary-8)
 
 Rust’s error-handling features are designed to help you write more robust code.
 The `panic!` macro signals that your program is in a state it can’t handle and
@@ -7920,7 +7957,7 @@ Now that you’ve seen useful ways that the standard library uses generics with
 the `Option` and `Result` enums, we’ll talk about how generics work and how you
 can use them in your code.
 
-[Generic Types, Traits, and Lifetimes](#generic-types-traits-and-lifetimes)
+# [Generic Types, Traits, and Lifetimes](#generic-types-traits-and-lifetimes)
 
 Every programming language has tools for effectively handling the duplication
 of concepts. In Rust, one such tool is *generics*: abstract stand-ins for
@@ -7945,7 +7982,7 @@ us to give the compiler enough information about borrowed values so that it can
 ensure that references will be valid in more situations than it could without
 our help.
 
-[Removing Duplication by Extracting a Function](#removing-duplication-by-extracting-a-function)
+## [Removing Duplication by Extracting a Function](#removing-duplication-by-extracting-a-function)
 
 Generics allow us to replace specific types with a placeholder that represents multiple types to remove code duplication. Before diving into generics syntax, let’s first look at how to remove duplication in a way that doesn’t involve generic types by extracting a function that replaces specific values with a placeholder that represents multiple values. Then, we’ll apply the same technique to extract a generic function! By looking at how to recognize duplicated code you can extract into a function, you’ll start to recognize duplicated code that can use generics.
 
@@ -7978,9 +8015,9 @@ in.
 
 In summary, here are the steps we took to change the code from Listing 10-2 to Listing 10-3:
 
-- Identify duplicate code.
-- Extract the duplicate code into the body of the function, and specify the inputs and return values of that code in the function signature.
-- Update the two instances of duplicated code to call the function instead.
+1. Identify duplicate code.
+2. Extract the duplicate code into the body of the function, and specify the inputs and return values of that code in the function signature.
+3. Update the two instances of duplicated code to call the function instead.
 
 Next, we’ll use these same steps with generics to reduce code duplication. In
 the same way that the function body can operate on an abstract `list` instead
@@ -7990,13 +8027,13 @@ For example, say we had two functions: one that finds the largest item in a
 slice of `i32` values and one that finds the largest item in a slice of `char`
 values. How would we eliminate that duplication? Let’s find out!
 
-[Generic Data Types](#generic-data-types-1)
+# [Generic Data Types](#generic-data-types-1)
 
-[Generic Data Types](#generic-data-types)
+## [Generic Data Types](#generic-data-types)
 
 We use generics to create definitions for items like function signatures or structs, which we can then use with many different concrete data types. Let’s first look at how to define functions, structs, enums, and methods using generics. Then, we’ll discuss how generics affect code performance.
 
-[In Function Definitions](#in-function-definitions)
+### [In Function Definitions](#in-function-definitions)
 
 When defining a function that uses generics, we place the generics in the signature of the function where we would usually specify the data types of the parameters and return value. Doing so makes our code more flexible and provides more functionality to callers of our function while preventing code duplication.
 
@@ -8023,7 +8060,8 @@ have to declare the type parameter name before we use it. To define the generic
 `largest` function, we place type name declarations inside angle brackets,
 `<>`, between the name of the function and the parameter list, like this:
 
-`fn largest<T>(list: &[T]) -> &T {`We read this definition as “The function `largest` is generic over some type
+`fn largest<T>(list: &[T]) -> &T {`
+We read this definition as “The function `largest` is generic over some type
 `T`.” This function has one parameter named `list`, which is a slice of values
 of type `T`. The `largest` function will return a reference to a value of the
 same type `T`.
@@ -8064,7 +8102,7 @@ help text’s suggestion and restrict the types valid for `T` to only those that
 implement `PartialOrd`. The listing will then compile, because the standard
 library implements `PartialOrd` on both `i32` and `char`.
 
-[In Struct Definitions](#in-struct-definitions)
+### [In Struct Definitions](#in-struct-definitions)
 
 We can also define structs to use a generic type parameter in one or more
 fields using the `<>` syntax. Listing 10-6 defines a `Point<T>` struct to hold
@@ -8105,7 +8143,7 @@ your code hard to read. If you’re finding you need lots of generic types in
 your code, it could indicate that your code needs restructuring into smaller
 pieces.
 
-[In Enum Definitions](#in-enum-definitions)
+### [In Enum Definitions](#in-enum-definitions)
 
 As we did with structs, we can define enums to hold generic data types in their
 variants. Let’s take another look at the `Option<T>` enum that the standard
@@ -8150,7 +8188,7 @@ the file was opened successfully and `E` was filled in with the type
 
 When you recognize situations in your code with multiple struct or enum definitions that differ only in the types of the values they hold, you can avoid duplication by using generic types instead.
 
-[In Method Definitions](#in-method-definitions)
+### [In Method Definitions](#in-method-definitions)
 
 We can implement methods on structs and enums (as we did in Chapter 5) and use
 generic types in their definitions too. Listing 10-9 shows the `Point<T>`
@@ -8202,7 +8240,7 @@ definition. Here, the generic parameters `X1` and `Y1` are declared after
 and `Y2` are declared after `fn mixup` because they’re only relevant to the
 method.
 
-[Performance of Code Using Generics](#performance-of-code-using-generics)
+### [Performance of Code Using Generics](#performance-of-code-using-generics)
 
 You might be wondering whether there is a runtime cost when using generic type parameters. The good news is that using generic types won’t make your program run any slower than it would with concrete types.
 
@@ -8240,9 +8278,7 @@ runs, it performs just as it would if we had duplicated each definition by
 hand. The process of monomorphization makes Rust’s generics extremely efficient
 at runtime.
 
-[Defining Shared Behavior with Traits](#defining-shared-behavior-with-traits-1)
-
-[Defining Shared Behavior with Traits](#defining-shared-behavior-with-traits)
+# [Defining Shared Behavior with Traits](#defining-shared-behavior-with-traits-1)
 
 A *trait* defines the functionality a particular type has and can share with
 other types. We can use traits to define shared behavior in an abstract way. We
@@ -8252,7 +8288,7 @@ certain behavior.
 Note: Traits are similar to a feature often called *interfaces* in other
 languages, although with some differences.
 
-[Defining a Trait](#defining-a-trait)
+### [Defining a Trait](#defining-a-trait)
 
 A type’s behavior consists of the methods we can call on that type. Different types share the same behavior if we can call the same methods on all of those types. Trait definitions are a way to group method signatures together to define a set of behaviors necessary to accomplish some purpose.
 
@@ -8284,7 +8320,7 @@ defined with this signature exactly.
 
 A trait can have multiple methods in its body: The method signatures are listed one per line, and each line ends in a semicolon.
 
-[Implementing a Trait on a Type](#implementing-a-trait-on-a-type)
+### [Implementing a Trait on a Type](#implementing-a-trait-on-a-type)
 
 Now that we’ve defined the desired signatures of the `Summary` trait’s methods,
 we can implement it on the types in our media aggregator. Listing 10-13 shows
@@ -8345,7 +8381,7 @@ can’t break your code and vice versa. Without the rule, two crates could
 implement the same trait for the same type, and Rust wouldn’t know which
 implementation to use.
 
-[Using Default Implementations](#using-default-implementations)
+### [Using Default Implementations](#using-default-implementations)
 
 Sometimes it’s useful to have default behavior for some or all of the methods in a trait instead of requiring implementations for all methods on every type. Then, as we implement the trait on a particular type, we can keep or override each method’s default behavior.
 
@@ -8458,7 +8494,7 @@ This code prints `1 new post: (Read more from @horse_ebooks...)`.
 
 Note that it isn’t possible to call the default implementation from an overriding implementation of that same method.
 
-[Using Traits as Parameters](#using-traits-as-parameters)
+### [Using Traits as Parameters](#using-traits-as-parameters)
 
 Now that you know how to define and implement traits, we can explore how to use
 traits to define functions that accept many different types. We’ll use the
@@ -8505,7 +8541,7 @@ and pass in any instance of `NewsArticle` or `SocialPost`. Code that calls the
 function with any other type, such as a `String` or an `i32`, won’t compile,
 because those types don’t implement `Summary`.
 
-[Trait Bound Syntax](#trait-bound-syntax)
+#### [Trait Bound Syntax](#trait-bound-syntax)
 
 The `impl Trait` syntax works for straightforward cases but is actually syntax
 sugar for a longer form known as a *trait bound*; it looks like this:
@@ -8522,37 +8558,44 @@ cases, while the fuller trait bound syntax can express more complexity in other
 cases. For example, we can have two parameters that implement `Summary`. Doing
 so with the `impl Trait` syntax looks like this:
 
-`pub fn notify(item1: &impl Summary, item2: &impl Summary) {`Using `impl Trait` is appropriate if we want this function to allow `item1` and
+`pub fn notify(item1: &impl Summary, item2: &impl Summary) {`
+Using `impl Trait` is appropriate if we want this function to allow `item1` and
 `item2` to have different types (as long as both types implement `Summary`). If
 we want to force both parameters to have the same type, however, we must use a
 trait bound, like this:
 
-`pub fn notify<T: Summary>(item1: &T, item2: &T) {`The generic type `T` specified as the type of the `item1` and `item2`
+`pub fn notify<T: Summary>(item1: &T, item2: &T) {`
+The generic type `T` specified as the type of the `item1` and `item2`
 parameters constrains the function such that the concrete type of the value
 passed as an argument for `item1` and `item2` must be the same.
 
-[Multiple Trait Bounds with the ](#multiple-trait-bounds-with-the--syntax)`+` Syntax
+#### [Multiple Trait Bounds with the `+` Syntax](#multiple-trait-bounds-with-the--syntax)
 
-`+` SyntaxWe can also specify more than one trait bound. Say we wanted `notify` to use
+`+` Syntax
+We can also specify more than one trait bound. Say we wanted `notify` to use
 display formatting as well as `summarize` on `item`: We specify in the `notify`
 definition that `item` must implement both `Display` and `Summary`. We can do
 so using the `+` syntax:
 
-`pub fn notify(item: &(impl Summary + Display)) {`The `+` syntax is also valid with trait bounds on generic types:
+`pub fn notify(item: &(impl Summary + Display)) {`
+The `+` syntax is also valid with trait bounds on generic types:
 
-`pub fn notify<T: Summary + Display>(item: &T) {`With the two trait bounds specified, the body of `notify` can call `summarize`
+`pub fn notify<T: Summary + Display>(item: &T) {`
+With the two trait bounds specified, the body of `notify` can call `summarize`
 and use `{}` to format `item`.
 
-[Clearer Trait Bounds with ](#clearer-trait-bounds-with-where-clauses)`where` Clauses
+#### [Clearer Trait Bounds with `where` Clauses](#clearer-trait-bounds-with-where-clauses)
 
-`where` ClausesUsing too many trait bounds has its downsides. Each generic has its own trait
+`where` Clauses
+Using too many trait bounds has its downsides. Each generic has its own trait
 bounds, so functions with multiple generic type parameters can contain lots of
 trait bound information between the function’s name and its parameter list,
 making the function signature hard to read. For this reason, Rust has alternate
 syntax for specifying trait bounds inside a `where` clause after the function
 signature. So, instead of writing this:
 
-`fn some_function<T: Display + Clone, U: Clone + Debug>(t: &T, u: &U) -> i32 {`we can use a `where` clause, like this:
+`fn some_function<T: Display + Clone, U: Clone + Debug>(t: &T, u: &U) -> i32 {`
+we can use a `where` clause, like this:
 
 ```
 fn some_function<T, U>(t: &T, u: &U) -> i32
@@ -8565,7 +8608,7 @@ where
 ```
 This function’s signature is less cluttered: The function name, parameter list, and return type are close together, similar to a function without lots of trait bounds.
 
-[Returning Types That Implement Traits](#returning-types-that-implement-traits)
+### [Returning Types That Implement Traits](#returning-types-that-implement-traits)
 
 We can also use the `impl Trait` syntax in the return position to return a
 value of some type that implements a trait, as shown here:
@@ -8681,7 +8724,7 @@ We’ll cover how to write a function with this behavior in the [“Using Trait
 Objects to Abstract over Shared Behavior”](#using-trait-objects-to-abstract-over-shared-behavior)
 section of Chapter 18.
 
-[Using Trait Bounds to Conditionally Implement Methods](#using-trait-bounds-to-conditionally-implement-methods)
+### [Using Trait Bounds to Conditionally Implement Methods](#using-trait-bounds-to-conditionally-implement-methods)
 
 By using a trait bound with an `impl` block that uses generic type parameters,
 we can implement methods conditionally for types that implement the specified
@@ -8720,9 +8763,7 @@ Blanket implementations appear in the documentation for the trait in the “Impl
 
 Traits and trait bounds let us write code that uses generic type parameters to reduce duplication but also specify to the compiler that we want the generic type to have particular behavior. The compiler can then use the trait bound information to check that all the concrete types used with our code provide the correct behavior. In dynamically typed languages, we would get an error at runtime if we called a method on a type that didn’t define the method. But Rust moves these errors to compile time so that we’re forced to fix the problems before our code is even able to run. Additionally, we don’t have to write code that checks for behavior at runtime, because we’ve already checked at compile time. Doing so improves performance without having to give up the flexibility of generics.
 
-[Validating References with Lifetimes](#validating-references-with-lifetimes-1)
-
-[Validating References with Lifetimes](#validating-references-with-lifetimes)
+# [Validating References with Lifetimes](#validating-references-with-lifetimes-1)
 
 Lifetimes are another kind of generic that we’ve already been using. Rather than ensuring that a type has the behavior we want, lifetimes ensure that references are valid as long as we need them to be.
 
@@ -8739,7 +8780,7 @@ definitely be valid.
 
 Annotating lifetimes is not even a concept most other programming languages have, so this is going to feel unfamiliar. Although we won’t cover lifetimes in their entirety in this chapter, we’ll discuss common ways you might encounter lifetime syntax so that you can get comfortable with the concept.
 
-[Dangling References](#dangling-references-1)
+### [Dangling References](#dangling-references-1)
 
 The main aim of lifetimes is to prevent dangling references, which, if they were allowed to exist, would cause a program to reference data other than the data it’s intended to reference. Consider the program in Listing 10-16, which has an outer scope and an inner scope.
 
@@ -8778,7 +8819,7 @@ referencing memory that was deallocated when `x` went out of scope, and
 anything we tried to do with `r` wouldn’t work correctly. So, how does Rust
 determine that this code is invalid? It uses a borrow checker.
 
-[The Borrow Checker](#the-borrow-checker)
+### [The Borrow Checker](#the-borrow-checker)
 
 The Rust compiler has a *borrow checker* that compares scopes to determine
 whether all borrows are valid. Listing 10-17 shows the same code as Listing
@@ -8799,7 +8840,7 @@ always be valid while `x` is valid.
 
 Now that you know where the lifetimes of references are and how Rust analyzes lifetimes to ensure that references will always be valid, let’s explore generic lifetimes in function parameters and return values.
 
-[Generic Lifetimes in Functions](#generic-lifetimes-in-functions)
+### [Generic Lifetimes in Functions](#generic-lifetimes-in-functions)
 
 We’ll write a function that returns the longer of two string slices. This
 function will take two string slices and return a single string slice. After
@@ -8852,7 +8893,7 @@ return value. To fix this error, we’ll add generic lifetime parameters that
 define the relationship between the references so that the borrow checker can
 perform its analysis.
 
-[Lifetime Annotation Syntax](#lifetime-annotation-syntax)
+### [Lifetime Annotation Syntax](#lifetime-annotation-syntax)
 
 Lifetime annotations don’t change how long any of the references live. Rather, they describe the relationships of the lifetimes of multiple references to each other without affecting the lifetimes. Just as functions can accept any type when the signature specifies a generic type parameter, functions can accept references with any lifetime by specifying a generic lifetime parameter.
 
@@ -8876,7 +8917,7 @@ annotations are meant to tell Rust how generic lifetime parameters of multiple
 references relate to each other. Let’s examine how the lifetime annotations
 relate to each other in the context of the `longest` function.
 
-[In Function Signatures](#in-function-signatures)
+### [In Function Signatures](#in-function-signatures)
 
 To use lifetime annotations in function signatures, we need to declare the generic lifetime parameters inside angle brackets between the function name and the parameter list, just as we did with generic type parameters.
 
@@ -8970,7 +9011,7 @@ references passed in to the `longest` function and how the returned reference
 is used. Make hypotheses about whether or not your experiments will pass the
 borrow checker before you compile; then, check to see if you’re right!
 
-[Relationships](#relationships)
+### [Relationships](#relationships)
 
 The way in which you need to specify lifetime parameters depends on what your
 function is doing. For example, if we changed the implementation of the
@@ -9019,7 +9060,7 @@ cleaning up the value.
 
 Ultimately, lifetime syntax is about connecting the lifetimes of various parameters and return values of functions. Once they’re connected, Rust has enough information to allow memory-safe operations and disallow operations that would create dangling pointers or otherwise violate memory safety.
 
-[In Struct Definitions](#in-struct-definitions-1)
+### [In Struct Definitions](#in-struct-definitions-1)
 
 So far, the structs we’ve defined all hold owned types. We can define structs
 to hold references, but in that case, we would need to add a lifetime
@@ -9040,13 +9081,14 @@ instance is created. In addition, `novel` doesn’t go out of scope until after
 the `ImportantExcerpt` goes out of scope, so the reference in the
 `ImportantExcerpt` instance is valid.
 
-[Lifetime Elision](#lifetime-elision)
+### [Lifetime Elision](#lifetime-elision)
 
 You’ve learned that every reference has a lifetime and that you need to specify lifetime parameters for functions or structs that use references. However, we had a function in Listing 4-9, shown again in Listing 10-25, that compiled without lifetime annotations.
 
 The reason this function compiles without lifetime annotations is historical: In early versions (pre-1.0) of Rust, this code wouldn’t have compiled, because every reference needed an explicit lifetime. At that time, the function signature would have been written like this:
 
-`fn first_word<'a>(s: &'a str) -> &'a str {`After writing a lot of Rust code, the Rust team found that Rust programmers were entering the same lifetime annotations over and over in particular situations. These situations were predictable and followed a few deterministic patterns. The developers programmed these patterns into the compiler’s code so that the borrow checker could infer the lifetimes in these situations and wouldn’t need explicit annotations.
+`fn first_word<'a>(s: &'a str) -> &'a str {`
+After writing a lot of Rust code, the Rust team found that Rust programmers were entering the same lifetime annotations over and over in particular situations. These situations were predictable and followed a few deterministic patterns. The developers programmed these patterns into the compiler’s code so that the borrow checker could infer the lifetimes in these situations and wouldn’t need explicit annotations.
 
 This piece of Rust history is relevant because it’s possible that more deterministic patterns will emerge and be added to the compiler. In the future, even fewer lifetime annotations might be required.
 
@@ -9085,20 +9127,25 @@ lifetimes of the references in the signature of the `first_word` function in
 Listing 10-25. The signature starts without any lifetimes associated with the
 references:
 
-`fn first_word(s: &str) -> &str {`Then, the compiler applies the first rule, which specifies that each parameter
+`fn first_word(s: &str) -> &str {`
+Then, the compiler applies the first rule, which specifies that each parameter
 gets its own lifetime. We’ll call it `'a` as usual, so now the signature is
 this:
 
-`fn first_word<'a>(s: &'a str) -> &str {`The second rule applies because there is exactly one input lifetime. The second rule specifies that the lifetime of the one input parameter gets assigned to the output lifetime, so the signature is now this:
+`fn first_word<'a>(s: &'a str) -> &str {`
+The second rule applies because there is exactly one input lifetime. The second rule specifies that the lifetime of the one input parameter gets assigned to the output lifetime, so the signature is now this:
 
-`fn first_word<'a>(s: &'a str) -> &'a str {`Now all the references in this function signature have lifetimes, and the compiler can continue its analysis without needing the programmer to annotate the lifetimes in this function signature.
+`fn first_word<'a>(s: &'a str) -> &'a str {`
+Now all the references in this function signature have lifetimes, and the compiler can continue its analysis without needing the programmer to annotate the lifetimes in this function signature.
 
 Let’s look at another example, this time using the `longest` function that had
 no lifetime parameters when we started working with it in Listing 10-20:
 
-`fn longest(x: &str, y: &str) -> &str {`Let’s apply the first rule: Each parameter gets its own lifetime. This time we have two parameters instead of one, so we have two lifetimes:
+`fn longest(x: &str, y: &str) -> &str {`
+Let’s apply the first rule: Each parameter gets its own lifetime. This time we have two parameters instead of one, so we have two lifetimes:
 
-`fn longest<'a, 'b>(x: &'a str, y: &'b str) -> &str {`You can see that the second rule doesn’t apply, because there is more than one
+`fn longest<'a, 'b>(x: &'a str, y: &'b str) -> &str {`
+You can see that the second rule doesn’t apply, because there is more than one
 input lifetime. The third rule doesn’t apply either, because `longest` is a
 function rather than a method, so none of the parameters are `self`. After
 working through all three rules, we still haven’t figured out what the return
@@ -9108,7 +9155,7 @@ couldn’t figure out all the lifetimes of the references in the signature.
 
 Because the third rule really only applies in method signatures, we’ll look at lifetimes in that context next to see why the third rule means we don’t have to annotate lifetimes in method signatures very often.
 
-[In Method Definitions](#in-method-definitions-1)
+### [In Method Definitions](#in-method-definitions-1)
 
 When we implement methods on a struct with lifetimes, we use the same syntax as that of generic type parameters, as shown in Listing 10-11. Where we declare and use the lifetime parameters depends on whether they’re related to the struct fields or the method parameters and return values.
 
@@ -9182,7 +9229,7 @@ and gives both `&self` and `announcement` their own lifetimes. Then, because
 one of the parameters is `&self`, the return type gets the lifetime of `&self`,
 and all lifetimes have been accounted for.
 
-[The Static Lifetime](#the-static-lifetime)
+### [The Static Lifetime](#the-static-lifetime)
 
 One special lifetime we need to discuss is `'static`, which denotes that the
 affected reference *can* live for the entire duration of the program. All
@@ -9205,7 +9252,7 @@ suggesting the `'static` lifetime results from attempting to create a dangling
 reference or a mismatch of the available lifetimes. In such cases, the solution
 is to fix those problems, not to specify the `'static` lifetime.
 
-[Generic Type Parameters, Trait Bounds, and Lifetimes](#generic-type-parameters-trait-bounds-and-lifetimes)
+## [Generic Type Parameters, Trait Bounds, and Lifetimes](#generic-type-parameters-trait-bounds-and-lifetimes)
 
 Let’s briefly look at the syntax of specifying generic type parameters, trait bounds, and lifetimes all in one function!
 
@@ -9242,7 +9289,7 @@ lifetimes are a type of generic, the declarations of the lifetime parameter
 `'a` and the generic type parameter `T` go in the same list inside the angle
 brackets after the function name.
 
-[Summary](#summary-9)
+## [Summary](#summary-9)
 
 We covered a lot in this chapter! Now that you know about generic type parameters, traits and trait bounds, and generic lifetime parameters, you’re ready to write code without repetition that works in many different situations. Generic type parameters let you apply the code to different types. Traits and trait bounds ensure that even though the types are generic, they’ll have the behavior the code needs. You learned how to use lifetime annotations to ensure that this flexible code won’t have any dangling references. And all of this analysis happens at compile time, which doesn’t affect runtime performance!
 
@@ -9253,7 +9300,7 @@ that you will only need in very advanced scenarios; for those, you should read
 the [Rust Reference](../reference/trait-bounds.html). But next, you’ll learn how to write tests in
 Rust so that you can make sure your code is working the way it should.
 
-[Writing Automated Tests](#writing-automated-tests)
+# [Writing Automated Tests](#writing-automated-tests)
 
 In his 1972 essay “The Humble Programmer,” Edsger W. Dijkstra said that “program testing can be a very effective way to show the presence of bugs, but it is hopelessly inadequate for showing their absence.” That doesn’t mean we shouldn’t try to test as much as we can!
 
@@ -9280,9 +9327,9 @@ changed.
 
 Testing is a complex skill: Although we can’t cover in one chapter every detail about how to write good tests, in this chapter we will discuss the mechanics of Rust’s testing facilities. We’ll talk about the annotations and macros available to you when writing your tests, the default behavior and options provided for running your tests, and how to organize tests into unit tests and integration tests.
 
-[How to Write Tests](#how-to-write-tests-1)
+# [How to Write Tests](#how-to-write-tests-1)
 
-[How to Write Tests](#how-to-write-tests)
+## [How to Write Tests](#how-to-write-tests)
 
 *Tests* are Rust functions that verify that the non-test code is functioning in
 the expected manner. The bodies of test functions typically perform these three
@@ -9296,7 +9343,7 @@ Let’s look at the features Rust provides specifically for writing tests that
 take these actions, which include the `test` attribute, a few macros, and the
 `should_panic` attribute.
 
-[Structuring Test Functions](#structuring-test-functions)
+### [Structuring Test Functions](#structuring-test-functions)
 
 At its simplest, a test in Rust is a function that’s annotated with the `test`
 attribute. Attributes are metadata about pieces of Rust code; one example is
@@ -9422,9 +9469,10 @@ had one test pass and one test fail.
 Now that you’ve seen what the test results look like in different scenarios,
 let’s look at some macros other than `panic!` that are useful in tests.
 
-[Checking Results with ](#checking-results-with-assert)`assert!`
+### [Checking Results with `assert!`](#checking-results-with-assert)
 
-`assert!`The `assert!` macro, provided by the standard library, is useful when you want
+`assert!`
+The `assert!` macro, provided by the standard library, is useful when you want
 to ensure that some condition in a test evaluates to `true`. We give the
 `assert!` macro an argument that evaluates to a Boolean. If the value is
 `true`, nothing happens and the test passes. If the value is `false`, the
@@ -9599,9 +9647,10 @@ Our tests caught the bug! Because `larger.width` is `8` and `smaller.width` is
 `5`, the comparison of the widths in `can_hold` now returns `false`: 8 is not
 less than 5.
 
-[Testing Equality with ](#testing-equality-with-assert_eq-and-assert_ne)`assert_eq!` and `assert_ne!`
+### [Testing Equality with `assert_eq!` and `assert_ne!`](#testing-equality-with-assert_eq-and-assert_ne)
 
-`assert_eq!` and `assert_ne!`A common way to verify functionality is to test for equality between the result
+`assert_eq!` and `assert_ne!`
+A common way to verify functionality is to test for equality between the result
 of the code under test and the value you expect the code to return. You could
 do this by using the `assert!` macro and passing it an expression using the
 `==` operator. However, this is such a common test that the standard library
@@ -9684,7 +9733,7 @@ we specify the arguments matters. However, in Rust, they’re called `left` and
 `right`, and the order in which we specify the value we expect and the value
 the code produces doesn’t matter. We could write the assertion in this test as
 `assert_eq!(4, result)`, which would result in the same failure message that
-displays `assertion `left == right` failed`.
+displays ``assertion `left == right` failed``.
 
 The `assert_ne!` macro will pass if the two values we give it are not equal and
 will fail if they are equal. This macro is most useful for cases when we’re not
@@ -9707,18 +9756,18 @@ Listing 5-12 in Chapter 5, this is usually as straightforward as adding the
 Appendix C, [“Derivable Traits,”](#c---derivable-traits) for more
 details about these and other derivable traits.
 
-[Adding Custom Failure Messages](#adding-custom-failure-messages)
+### [Adding Custom Failure Messages](#adding-custom-failure-messages)
 
 You can also add a custom message to be printed with the failure message as
 optional arguments to the `assert!`, `assert_eq!`, and `assert_ne!` macros. Any
 arguments specified after the required arguments are passed along to the
-`format!` macro (discussed in [“Concatenating with  + or
-format!”](#concatenating-with--or-format) in Chapter 8), so you can pass a format string that contains 
-
-`{}`
+`format!` macro (discussed in [“Concatenating with `+` or
+`format!`”](#concatenating-with--or-format) in Chapter 8), so you can pass a format string that contains `{}`
 placeholders and values to go in those placeholders. Custom messages are useful
 for documenting what an assertion means; when a test fails, you’ll have a better
-idea of what the problem is with the code.For example, let’s say we have a function that greets people by name and we want to test that the name we pass into the function appears in the output:
+idea of what the problem is with the code.
+
+For example, let’s say we have a function that greets people by name and we want to test that the name we pass into the function appears in the output:
 
 Filename: src/lib.rs
 
@@ -9823,9 +9872,10 @@ error: test failed, to rerun pass `--lib`
 ```
 We can see the value we actually got in the test output, which would help us debug what happened instead of what we were expecting to happen.
 
-[Checking for Panics with ](#checking-for-panics-with-should_panic)`should_panic`
+### [Checking for Panics with `should_panic`](#checking-for-panics-with-should_panic)
 
-`should_panic`In addition to checking return values, it’s important to check that our code
+`should_panic`
+In addition to checking return values, it’s important to check that our code
 handles error conditions as we expect. For example, consider the `Guess` type
 that we created in Chapter 9, Listing 9-13. Other code that uses `Guess`
 depends on the guarantee that `Guess` instances will contain only values
@@ -9977,9 +10027,10 @@ The failure message indicates that this test did indeed panic as we expected,
 but the panic message did not include the expected string `less than or equal to 100`. The panic message that we did get in this case was `Guess value must be greater than or equal to 1, got 200`. Now we can start figuring out where
 our bug is!
 
-[Using ](#using-resultt-e-in-tests)`Result<T, E>` in Tests
+### [Using `Result<T, E>` in Tests](#using-resultt-e-in-tests)
 
-`Result<T, E>` in TestsAll of our tests so far panic when they fail. We can also write tests that use
+`Result<T, E>` in Tests
+All of our tests so far panic when they fail. We can also write tests that use
 `Result<T, E>`! Here’s the test from Listing 11-1, rewritten to use `Result<T, E>` and return an `Err` instead of panicking:
 
 ```
@@ -10017,9 +10068,7 @@ question mark operator on the `Result<T, E>` value. Instead, use
 Now that you know several ways to write tests, let’s look at what is happening
 when we run our tests and explore the different options we can use with `cargo test`.
 
-[Controlling How Tests Are Run](#controlling-how-tests-are-run-1)
-
-[Controlling How Tests Are Run](#controlling-how-tests-are-run)
+# [Controlling How Tests Are Run](#controlling-how-tests-are-run-1)
 
 Just as `cargo run` compiles your code and then runs the resultant binary,
 `cargo test` compiles your code in test mode and runs the resultant test
@@ -10035,9 +10084,9 @@ go to `cargo test` followed by the separator `--` and then the ones that go to
 the test binary. Running `cargo test --help` displays the options you can use
 with `cargo test`, and running `cargo test -- --help` displays the options you
 can use after the separator. These options are also documented in [the “Tests”
-section of  The ](https://doc.rust-lang.org/rustc/tests/index.html).
+section of *The `rustc` Book*](https://doc.rust-lang.org/rustc/tests/index.html).
 
-`rustc` Book[Running Tests in Parallel or Consecutively](#running-tests-in-parallel-or-consecutively)
+### [Running Tests in Parallel or Consecutively](#running-tests-in-parallel-or-consecutively)
 
 When you run multiple tests, by default they run in parallel using threads, meaning they finish running more quickly and you get feedback sooner. Because the tests are running at the same time, you must make sure your tests don’t depend on each other or on any shared state, including a shared environment, such as the current working directory or environment variables.
 
@@ -10064,7 +10113,7 @@ parallelism. Running the tests using one thread will take longer than running
 them in parallel, but the tests won’t interfere with each other if they share
 state.
 
-[Showing Function Output](#showing-function-output)
+### [Showing Function Output](#showing-function-output)
 
 By default, if a test passes, Rust’s test library captures anything printed to
 standard output. For example, if we call `println!` in a test and the test
@@ -10137,7 +10186,7 @@ failures:
 test result: FAILED. 1 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 error: test failed, to rerun pass `--lib`
 ```
-[Running a Subset of Tests by Name](#running-a-subset-of-tests-by-name)
+### [Running a Subset of Tests by Name](#running-a-subset-of-tests-by-name)
 
 Running a full test suite can sometimes take a long time. If you’re working on
 code in a particular area, you might want to run only the tests pertaining to
@@ -10163,7 +10212,7 @@ test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fini
 running 0 tests
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 ```
-[Running Single Tests](#running-single-tests)
+#### [Running Single Tests](#running-single-tests)
 
 We can pass the name of any test function to `cargo test` to run only that test:
 
@@ -10183,7 +10232,7 @@ displaying `2 filtered out` at the end.
 We can’t specify the names of multiple tests in this way; only the first value
 given to `cargo test` will be used. But there is a way to run multiple tests.
 
-[Filtering to Run Multiple Tests](#filtering-to-run-multiple-tests)
+#### [Filtering to Run Multiple Tests](#filtering-to-run-multiple-tests)
 
 We can specify part of a test name, and any test whose name matches that value
 will be run. For example, because two of our tests’ names contain `add`, we can
@@ -10204,7 +10253,7 @@ named `one_hundred`. Also note that the module in which a test appears becomes
 part of the test’s name, so we can run all the tests in a module by filtering
 on the module’s name.
 
-[Ignoring Tests Unless Specifically Requested](#ignoring-tests-unless-specifically-requested)
+### [Ignoring Tests Unless Specifically Requested](#ignoring-tests-unless-specifically-requested)
 
 Sometimes a few specific tests can be very time-consuming to execute, so you
 might want to exclude them during most runs of `cargo test`. Rather than
@@ -10270,9 +10319,9 @@ the results of the `ignored` tests and you have time to wait for the results,
 you can run `cargo test -- --ignored` instead. If you want to run all tests
 whether they’re ignored or not, you can run `cargo test -- --include-ignored`.
 
-[Test Organization](#test-organization-1)
+# [Test Organization](#test-organization-1)
 
-[Test Organization](#test-organization)
+## [Test Organization](#test-organization)
 
 As mentioned at the start of the chapter, testing is a complex discipline, and
 different people use different terminology and organization. The Rust community
@@ -10285,7 +10334,7 @@ modules per test.
 
 Writing both kinds of tests is important to ensure that the pieces of your library are doing what you expect them to, separately and together.
 
-[Unit Tests](#unit-tests)
+### [Unit Tests](#unit-tests)
 
 The purpose of unit tests is to test each unit of code in isolation from the
 rest of the code to quickly pinpoint where code is and isn’t working as
@@ -10294,9 +10343,10 @@ code that they’re testing. The convention is to create a module named `tests`
 in each file to contain the test functions and to annotate the module with
 `cfg(test)`.
 
-[The ](#the-tests-module-and-cfgtest)`tests` Module and `#[cfg(test)]`
+#### [The `tests` Module and `#\[cfg(test)\]`](#the-tests-module-and-cfgtest)
 
-`tests` Module and `#[cfg(test)]`The `#[cfg(test)]` annotation on the `tests` module tells Rust to compile and
+`tests` Module and `#[cfg(test)]`
+The `#[cfg(test)]` annotation on the `tests` module tells Rust to compile and
 run the test code only when you run `cargo test`, not when you run `cargo build`. This saves compile time when you only want to build the library and
 saves space in the resultant compiled artifact because the tests are not
 included. You’ll see that because integration tests go in a different
@@ -10331,7 +10381,7 @@ given a certain configuration option. In this case, the configuration option is
 with `cargo test`. This includes any helper functions that might be within this
 module, in addition to the functions annotated with `#[test]`.
 
-[Private Function Tests](#private-function-tests)
+#### [Private Function Tests](#private-function-tests)
 
 There’s debate within the testing community about whether or not private
 functions should be tested directly, and other languages make it difficult or
@@ -10348,7 +10398,7 @@ scope with `use super::*`, and then the test can call `internal_adder`. If you
 don’t think private functions should be tested, there’s nothing in Rust that
 will compel you to do so.
 
-[Integration Tests](#integration-tests)
+### [Integration Tests](#integration-tests)
 
 In Rust, integration tests are entirely external to your library. They use your
 library in the same way any other code would, which means they can only call
@@ -10358,7 +10408,7 @@ work correctly on their own could have problems when integrated, so test
 coverage of the integrated code is important as well. To create integration
 tests, you first need a *tests* directory.
 
-[The ](#the-tests-directory)*tests* Directory
+#### [The *tests* Directory](#the-tests-directory)
 
 *tests*Directory
 
@@ -10434,7 +10484,7 @@ test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fini
 ```
 This command runs only the tests in the *tests/integration_test.rs* file.
 
-[Submodules in Integration Tests](#submodules-in-integration-tests)
+#### [Submodules in Integration Tests](#submodules-in-integration-tests)
 
 As you add more integration tests, you might want to make more files in the
 *tests* directory to help organize them; for example, you can group the test
@@ -10527,7 +10577,7 @@ Note that the `mod common;` declaration is the same as the module declaration
 we demonstrated in Listing 7-21. Then, in the test function, we can call the
 `common::setup()` function.
 
-[Integration Tests for Binary Crates](#integration-tests-for-binary-crates)
+#### [Integration Tests for Binary Crates](#integration-tests-for-binary-crates)
 
 If our project is a binary crate that only contains a *src/main.rs* file and
 doesn’t have a *src/lib.rs* file, we can’t create integration tests in the
@@ -10542,13 +10592,13 @@ library crate with `use` to make the important functionality available. If the
 important functionality works, the small amount of code in the *src/main.rs*
 file will work as well, and that small amount of code doesn’t need to be tested.
 
-[Summary](#summary-10)
+## [Summary](#summary-10)
 
 Rust’s testing features provide a way to specify how code should function to ensure that it continues to work as you expect, even as you make changes. Unit tests exercise different parts of a library separately and can test private implementation details. Integration tests check that many parts of the library work together correctly, and they use the library’s public API to test the code in the same way external code will use it. Even though Rust’s type system and ownership rules help prevent some kinds of bugs, tests are still important to reduce logic bugs having to do with how your code is expected to behave.
 
 Let’s combine the knowledge you learned in this chapter and in previous chapters to work on a project!
 
-[An I/O Project: Building a Command Line Program](#an-io-project-building-a-command-line-program)
+# [An I/O Project: Building a Command Line Program](#an-io-project-building-a-command-line-program)
 
 This chapter is a recap of the many skills you’ve learned so far and an exploration of a few more standard library features. We’ll build a command line tool that interacts with file and command line input/output to practice some of the Rust concepts you now have under your belt.
 
@@ -10576,19 +10626,17 @@ background knowledge you need to understand a real-world project such as
 
 Our `grep` project will combine a number of concepts you’ve learned so far:
 
-- Organizing code ([Chapter 7](#packages-crates-and-modules))
-- Using vectors and strings ([Chapter 8](#common-collections))
-- Handling errors ([Chapter 9](#error-handling))
-- Using traits and lifetimes where appropriate ([Chapter 10](#generic-types-traits-and-lifetimes))
-- Writing tests ([Chapter 11](#writing-automated-tests))
+- Organizing code ([Chapter 7](#packages-crates-and-modules) )
+- Using vectors and strings ([Chapter 8](#common-collections) )
+- Handling errors ([Chapter 9](#error-handling) )
+- Using traits and lifetimes where appropriate ([Chapter 10](#generic-types-traits-and-lifetimes) )
+- Writing tests ([Chapter 11](#writing-automated-tests) )
 
 We’ll also briefly introduce closures, iterators, and trait objects, which
 [Chapter 13](#functional-language-features-iterators-and-closures) and [Chapter 18](#object-oriented-programming-features) will
 cover in detail.
 
-[Accepting Command Line Arguments](#accepting-command-line-arguments-1)
-
-[Accepting Command Line Arguments](#accepting-command-line-arguments)
+# [Accepting Command Line Arguments](#accepting-command-line-arguments-1)
 
 Let’s create a new project with, as always, `cargo new`. We’ll call our project
 `minigrep` to distinguish it from the `grep` tool that you might already have
@@ -10613,7 +10661,7 @@ give it. Some existing libraries on [crates.io](https://crates.io/) can help
 with writing a program that accepts command line arguments, but because you’re
 just learning this concept, let’s implement this capability ourselves.
 
-[Reading the Argument Values](#reading-the-argument-values)
+### [Reading the Argument Values](#reading-the-argument-values)
 
 To enable `minigrep` to read the values of command line arguments we pass to
 it, we’ll need the `std::env::args` function provided in Rust’s standard
@@ -10636,9 +10684,10 @@ from `std::env`. It’s also less ambiguous than adding `use std::env::args` and
 then calling the function with just `args`, because `args` might easily be
 mistaken for a function that’s defined in the current module.
 
-[The ](#the-args-function-and-invalid-unicode)`args` Function and Invalid Unicode
+### [The `args` Function and Invalid Unicode](#the-args-function-and-invalid-unicode)
 
-`args` Function and Invalid UnicodeNote that `std::env::args` will panic if any argument contains invalid
+`args` Function and Invalid Unicode
+Note that `std::env::args` will panic if any argument contains invalid
 Unicode. If your program needs to accept arguments containing invalid
 Unicode, use `std::env::args_os` instead. That function returns an iterator
 that produces `OsString` values instead of `String` values. We’ve chosen to
@@ -10683,7 +10732,7 @@ print it in messages or change the behavior of the program based on what
 command line alias was used to invoke the program. But for the purposes of this
 chapter, we’ll ignore it and save only the two arguments we need.
 
-[Saving the Argument Values in Variables](#saving-the-argument-values-in-variables)
+### [Saving the Argument Values in Variables](#saving-the-argument-values-in-variables)
 
 The program is currently able to access the values specified as command line arguments. Now we need to save the values of the two arguments in variables so that we can use the values throughout the rest of the program. We do that in Listing 12-2.
 
@@ -10708,9 +10757,9 @@ In file sample.txt
 ```
 Great, the program is working! The values of the arguments we need are being saved into the right variables. Later we’ll add some error handling to deal with certain potential erroneous situations, such as when the user provides no arguments; for now, we’ll ignore that situation and work on adding file-reading capabilities instead.
 
-[Reading a File](#reading-a-file-1)
+# [Reading a File](#reading-a-file-1)
 
-[Reading a File](#reading-a-file)
+## [Reading a File](#reading-a-file)
 
 Now we’ll add functionality to read the file specified in the `file_path`
 argument. First, we need a sample file to test it with: We’ll use a file with a
@@ -10764,9 +10813,7 @@ them cleanly. It’s a good practice to begin refactoring early on when
 developing a program because it’s much easier to refactor smaller amounts of
 code. We’ll do that next.
 
-[Refactoring to Improve Modularity and Error Handling](#refactoring-to-improve-modularity-and-error-handling-1)
-
-[Refactoring to Improve Modularity and Error Handling](#refactoring-to-improve-modularity-and-error-handling)
+# [Refactoring to Improve Modularity and Error Handling](#refactoring-to-improve-modularity-and-error-handling-1)
 
 To improve our program, we’ll fix four problems that have to do with the
 program’s structure and how it’s handling potential errors. First, our `main`
@@ -10800,7 +10847,7 @@ messages that will be meaningful to our end users.
 
 Let’s address these four problems by refactoring our project.
 
-[Separating Concerns in Binary Projects](#separating-concerns-in-binary-projects)
+### [Separating Concerns in Binary Projects](#separating-concerns-in-binary-projects)
 
 The organizational problem of allocating responsibility for multiple tasks to
 the `main` function is common to many binary projects. As a result, many Rust
@@ -10808,19 +10855,20 @@ programmers find it useful to split up the separate concerns of a binary
 program when the `main` function starts getting large. This process has the
 following steps:
 
-- Split your program into a *main.rs*file and a*lib.rs*file and move your program’s logic to*lib.rs*.
+- Split your program into a *main.rs* file and a*lib.rs* file and move your
+program’s logic to*lib.rs* .
 - As long as your command line parsing logic is small, it can remain in
-the `main`function.
+the `main` function.
 - When the command line parsing logic starts getting complicated, extract it
-from the `main`function into other functions or types.
+from the `main` function into other functions or types.
 
 The responsibilities that remain in the `main` function after this process
 should be limited to the following:
 
 - Calling the command line parsing logic with the argument values
 - Setting up any other configuration
-- Calling a `run`function in*lib.rs*
-- Handling the error if `run`returns an error
+- Calling a `run` function in*lib.rs*
+- Handling the error if `run` returns an error
 
 This pattern is about separating concerns: *main.rs* handles running the
 program and *lib.rs* handles all the logic of the task at hand. Because you
@@ -10829,7 +10877,7 @@ your program’s logic by moving it out of the `main` function. The code that
 remains in the `main` function will be small enough to verify its correctness
 by reading it. Let’s rework our program by following this process.
 
-[Extracting the Argument Parser](#extracting-the-argument-parser)
+#### [Extracting the Argument Parser](#extracting-the-argument-parser)
 
 We’ll extract the functionality for parsing arguments into a function that
 `main` will call. Listing 12-5 shows the new start of the `main` function that
@@ -10847,7 +10895,7 @@ correspond.
 
 This rework may seem like overkill for our small program, but we’re refactoring in small, incremental steps. After making this change, run the program again to verify that the argument parsing still works. It’s good to check your progress often, to help identify the cause of problems when they occur.
 
-[Grouping Configuration Values](#grouping-configuration-values)
+#### [Grouping Configuration Values](#grouping-configuration-values)
 
 We can take another small step to improve the `parse_config` function further.
 At the moment, we’re returning a tuple, but then we immediately break that
@@ -10882,9 +10930,10 @@ However, cloning the data also makes our code very straightforward because we
 don’t have to manage the lifetimes of the references; in this circumstance,
 giving up a little performance to gain simplicity is a worthwhile trade-off.
 
-[The Trade-Offs of Using ](#the-trade-offs-of-using-clone)`clone`
+### [The Trade-Offs of Using `clone`](#the-trade-offs-of-using-clone)
 
-`clone`There’s a tendency among many Rustaceans to avoid using `clone` to fix
+`clone`
+There’s a tendency among many Rustaceans to avoid using `clone` to fix
 ownership problems because of its runtime cost. In
 [Chapter 13](#functional-language-features-iterators-and-closures), you’ll learn how to use more efficient
 methods in this type of situation. But for now, it’s okay to copy a few
@@ -10905,9 +10954,10 @@ that their purpose is to configure how the program will work. Any code that
 uses these values knows to find them in the `config` instance in the fields
 named for their purpose.
 
-[Creating a Constructor for ](#creating-a-constructor-for-config)`Config`
+#### [Creating a Constructor for `Config`](#creating-a-constructor-for-config)
 
-`Config`So far, we’ve extracted the logic responsible for parsing the command line
+`Config`
+So far, we’ve extracted the logic responsible for parsing the command line
 arguments from `main` and placed it in the `parse_config` function. Doing so
 helped us see that the `query` and `file_path` values were related, and that
 relationship should be conveyed in our code. We then added a `Config` struct to
@@ -10928,7 +10978,7 @@ We’ve updated `main` where we were calling `parse_config` to instead call
 within an `impl` block, which associates the `new` function with `Config`. Try
 compiling this code again to make sure it works.
 
-[Fixing the Error Handling](#fixing-the-error-handling)
+### [Fixing the Error Handling](#fixing-the-error-handling)
 
 Now we’ll work on fixing our error handling. Recall that attempting to access
 the values in the `args` vector at index 1 or index 2 will cause the program to
@@ -10948,21 +10998,21 @@ The line `index out of bounds: the len is 1 but the index is 1` is an error
 message intended for programmers. It won’t help our end users understand what
 they should do instead. Let’s fix that now.
 
-[Improving the Error Message](#improving-the-error-message)
+#### [Improving the Error Message](#improving-the-error-message)
 
 In Listing 12-8, we add a check in the `new` function that will verify that the
 slice is long enough before accessing index 1 and index 2. If the slice isn’t
 long enough, the program panics and displays a better error message.
 
-This code is similar to [the  Guess::new function we wrote in Listing
-9-13](#creating-custom-types-for-validation), where we called 
-
-`panic!` when the
+This code is similar to [the `Guess::new` function we wrote in Listing
+9-13](#creating-custom-types-for-validation), where we called `panic!` when the
 `value` argument was out of the range of valid values. Instead of checking for
 a range of values here, we’re checking that the length of `args` is at least
 `3` and the rest of the function can operate under the assumption that this
 condition has been met. If `args` has fewer than three items, this condition
-will be `true`, and we call the `panic!` macro to end the program immediately.With these extra few lines of code in `new`, let’s run the program without any
+will be `true`, and we call the `panic!` macro to end the program immediately.
+
+With these extra few lines of code in `new`, let’s run the program without any
 arguments again to see what the error looks like now:
 
 ```
@@ -10980,11 +11030,12 @@ technique we used in Listing 9-13 isn’t the best one to use here: A call to
 `panic!` is more appropriate for a programming problem than a usage problem,
 [as discussed in Chapter 9](#guidelines-for-error-handling). Instead,
 we’ll use the other technique you learned about in Chapter 9—[returning a
- Result](#recoverable-errors-with-result-1) that indicates either success or an error.
+`Result`](#recoverable-errors-with-result-1) that indicates either success or an error.
 
-[Returning a ](#returning-a-result-instead-of-calling-panic)`Result` Instead of Calling `panic!`
+#### [Returning a `Result` Instead of Calling `panic!`](#returning-a-result-instead-of-calling-panic)
 
-`Result` Instead of Calling `panic!`We can instead return a `Result` value that will contain a `Config` instance in
+`Result` Instead of Calling `panic!`
+We can instead return a `Result` value that will contain a `Config` instance in
 the successful case and will describe the problem in the error case. We’re also
 going to change the function name from `new` to `build` because many
 programmers expect `new` functions to never fail. When `Config::build` is
@@ -11010,9 +11061,10 @@ Returning an `Err` value from `Config::build` allows the `main` function to
 handle the `Result` value returned from the `build` function and exit the
 process more cleanly in the error case.
 
-[Calling ](#calling-configbuild-and-handling-errors)`Config::build` and Handling Errors
+#### [Calling `Config::build` and Handling Errors](#calling-configbuild-and-handling-errors)
 
-`Config::build` and Handling ErrorsTo handle the error case and print a user-friendly message, we need to update
+`Config::build` and Handling Errors
+To handle the error case and print a user-friendly message, we need to update
 `main` to handle the `Result` being returned by `Config::build`, as shown in
 Listing 12-10. We’ll also take the responsibility of exiting the command line
 tool with a nonzero error code away from `panic!` and instead implement it by
@@ -11050,9 +11102,10 @@ Problem parsing arguments: not enough arguments
 ```
 Great! This output is much friendlier for our users.
 
-[Extracting Logic from ](#extracting-logic-from-main)`main`
+### [Extracting Logic from `main`](#extracting-logic-from-main)
 
-`main`Now that we’ve finished refactoring the configuration parsing, let’s turn to
+`main`
+Now that we’ve finished refactoring the configuration parsing, let’s turn to
 the program’s logic. As we stated in [“Separating Concerns in Binary
 Projects”](#separation-of-concerns-for-binary-projects), we’ll
 extract a function named `run` that will hold all the logic currently in the
@@ -11067,9 +11120,10 @@ The `run` function now contains all the remaining logic from `main`, starting
 from reading the file. The `run` function takes the `Config` instance as an
 argument.
 
-[Returning Errors from ](#returning-errors-from-run)`run`
+#### [Returning Errors from `run`](#returning-errors-from-run)
 
-`run`With the remaining program logic separated into the `run` function, we can
+`run`
+With the remaining program logic separated into the `run` function, we can
 improve the error handling, as we did with `Config::build` in Listing 12-9.
 Instead of allowing the program to panic by calling `expect`, the `run`
 function will return a `Result<T, E>` when something goes wrong. This will let
@@ -11140,9 +11194,10 @@ might indicate that an error occurred. But we’re not checking to see whether o
 not there was an error, and the compiler reminds us that we probably meant to
 have some error-handling code here! Let’s rectify that problem now.
 
-[Handling Errors Returned from ](#handling-errors-returned-from-run-in-main)`run` in `main`
+#### [Handling Errors Returned from `run` in `main`](#handling-errors-returned-from-run-in-main)
 
-`run` in `main`We’ll check for errors and handle them using a technique similar to one we used
+`run` in `main`
+We’ll check for errors and handle them using a technique similar to one we used
 with `Config::build` in Listing 12-10, but with a slight difference:
 
 Filename: src/main.rs
@@ -11196,7 +11251,7 @@ the success case, we only care about detecting an error, so we don’t need
 The bodies of the `if let` and the `unwrap_or_else` functions are the same in
 both cases: We print the error and exit.
 
-[Splitting Code into a Library Crate](#splitting-code-into-a-library-crate)
+### [Splitting Code into a Library Crate](#splitting-code-into-a-library-crate)
 
 Our `minigrep` project is looking good so far! Now we’ll split the
 *src/main.rs* file and put some code into the *src/lib.rs* file. That way, we
@@ -11235,9 +11290,9 @@ modular. Almost all of our work will be done in *src/lib.rs* from here on out.
 
 Let’s take advantage of this newfound modularity by doing something that would have been difficult with the old code but is easy with the new code: We’ll write some tests!
 
-[Adding Functionality with Test Driven Development](#adding-functionality-with-test-driven-development-1)
+# [Adding Functionality with Test Driven Development](#adding-functionality-with-test-driven-development-1)
 
-[Adding Functionality with Test-Driven Development](#adding-functionality-with-test-driven-development)
+## [Adding Functionality with Test-Driven Development](#adding-functionality-with-test-driven-development)
 
 Now that we have the search logic in *src/lib.rs* separate from the `main`
 function, it’s much easier to write tests for the core functionality of our
@@ -11247,10 +11302,10 @@ values without having to call our binary from the command line.
 In this section, we’ll add the searching logic to the `minigrep` program using
 the test-driven development (TDD) process with the following steps:
 
-- Write a test that fails and run it to make sure it fails for the reason you expect.
-- Write or modify just enough code to make the new test pass.
-- Refactor the code you just added or changed and make sure the tests continue to pass.
-- Repeat from step 1!
+1. Write a test that fails and run it to make sure it fails for the reason you expect.
+2. Write or modify just enough code to make the new test pass.
+3. Refactor the code you just added or changed and make sure the tests continue to pass.
+4. Repeat from step 1!
 
 Though it’s just one of many ways to write software, TDD can help drive code design. Writing the test before you write the code that makes the test pass helps maintain high test coverage throughout the process.
 
@@ -11259,7 +11314,7 @@ the searching for the query string in the file contents and produce a list of
 lines that match the query. We’ll add this functionality in a function called
 `search`.
 
-[Writing a Failing Test](#writing-a-failing-test)
+### [Writing a Failing Test](#writing-a-failing-test)
 
 In *src/lib.rs*, we’ll add a `tests` module with a test function, as we did in
 [Chapter 11](#the-anatomy-of-a-test-function). The test function specifies the
@@ -11328,22 +11383,23 @@ want to compare this example with the examples in the [“Validating References
 with Lifetimes”](#validating-references-with-lifetimes) section
 in Chapter 10.
 
-[Writing Code to Pass the Test](#writing-code-to-pass-the-test)
+### [Writing Code to Pass the Test](#writing-code-to-pass-the-test)
 
 Currently, our test is failing because we always return an empty vector. To fix
 that and implement `search`, our program needs to follow these steps:
 
-- Iterate through each line of the contents.
-- Check whether the line contains our query string.
-- If it does, add it to the list of values we’re returning.
-- If it doesn’t, do nothing.
-- Return the list of results that match.
+1. Iterate through each line of the contents.
+2. Check whether the line contains our query string.
+3. If it does, add it to the list of values we’re returning.
+4. If it doesn’t, do nothing.
+5. Return the list of results that match.
 
 Let’s work through each step, starting with iterating through lines.
 
-[Iterating Through Lines with the ](#iterating-through-lines-with-the-lines-method)`lines` Method
+#### [Iterating Through Lines with the `lines` Method](#iterating-through-lines-with-the-lines-method)
 
-`lines` MethodRust has a helpful method to handle line-by-line iteration of strings,
+`lines` Method
+Rust has a helpful method to handle line-by-line iteration of strings,
 conveniently named `lines`, that works as shown in Listing 12-17. Note that
 this won’t compile yet.
 
@@ -11352,7 +11408,7 @@ The `lines` method returns an iterator. We’ll talk about iterators in depth in
 of using an iterator in [Listing 3-5](#looping-through-a-collection-with-for), where we used a
 `for` loop with an iterator to run some code on each item in a collection.
 
-[Searching Each Line for the Query](#searching-each-line-for-the-query)
+#### [Searching Each Line for the Query](#searching-each-line-for-the-query)
 
 Next, we’ll check whether the current line contains our query string.
 Fortunately, strings have a helpful method named `contains` that does this for
@@ -11361,7 +11417,7 @@ Listing 12-18. Note that this still won’t compile yet.
 
 At the moment, we’re building up functionality. To get the code to compile, we need to return a value from the body as we indicated we would in the function signature.
 
-[Storing Matching Lines](#storing-matching-lines)
+#### [Storing Matching Lines](#storing-matching-lines)
 
 To finish this function, we need a way to store the matching lines that we want
 to return. For that, we can make a mutable vector before the `for` loop and
@@ -11429,9 +11485,7 @@ Excellent! We’ve built our own mini version of a classic tool and learned a lo
 
 To round out this project, we’ll briefly demonstrate how to work with environment variables and how to print to standard error, both of which are useful when you’re writing command line programs.
 
-[Working with Environment Variables](#working-with-environment-variables-1)
-
-[Working with Environment Variables](#working-with-environment-variables)
+# [Working with Environment Variables](#working-with-environment-variables-1)
 
 We’ll improve the `minigrep` binary by adding an extra feature: an option for
 case-insensitive searching that the user can turn on via an environment
@@ -11440,7 +11494,7 @@ users enter it each time they want it to apply, but by instead making it an
 environment variable, we allow our users to set the environment variable once
 and have all their searches be case insensitive in that terminal session.
 
-[Writing a Failing Test for Case-Insensitive Search](#writing-a-failing-test-for-case-insensitive-search)
+### [Writing a Failing Test for Case-Insensitive Search](#writing-a-failing-test-for-case-insensitive-search)
 
 We first add a new `search_case_insensitive` function to the `minigrep` library
 that will be called when the environment variable has a value. We’ll continue
@@ -11465,9 +11519,10 @@ the `search_case_insensitive` function. Feel free to add a skeleton
 implementation that always returns an empty vector, similar to the way we did
 for the `search` function in Listing 12-16 to see the test compile and fail.
 
-[Implementing the ](#implementing-the-search_case_insensitive-function)`search_case_insensitive` Function
+### [Implementing the `search_case_insensitive` Function](#implementing-the-search_case_insensitive-function)
 
-`search_case_insensitive` FunctionThe `search_case_insensitive` function, shown in Listing 12-21, will be almost
+`search_case_insensitive` Function
+The `search_case_insensitive` function, shown in Listing 12-21, will be almost
 the same as the `search` function. The only difference is that we’ll lowercase
 the `query` and each `line` so that whatever the case of the input arguments,
 they’ll be the same case when we check whether the line contains the query.
@@ -11648,9 +11703,7 @@ ignore case.
 The `std::env` module contains many more useful features for dealing with
 environment variables: Check out its documentation to see what is available.
 
-[Redirecting Errors to Standard Error](#redirecting-errors-to-standard-error-1)
-
-[Redirecting Errors to Standard Error](#redirecting-errors-to-standard-error)
+# [Redirecting Errors to Standard Error](#redirecting-errors-to-standard-error-1)
 
 At the moment, we’re writing all of our output to the terminal using the
 `println!` macro. In most terminals, there are two kinds of output: *standard
@@ -11662,7 +11715,7 @@ screen.
 The `println!` macro is only capable of printing to standard output, so we have
 to use something else to print to standard error.
 
-[Checking Where Errors Are Written](#checking-where-errors-are-written)
+### [Checking Where Errors Are Written](#checking-where-errors-are-written)
 
 First, let’s observe how the content printed by `minigrep` is currently being
 written to standard output, including any error messages we want to write to
@@ -11690,7 +11743,7 @@ Problem parsing arguments: not enough arguments
 ```
 Yup, our error message is being printed to standard output. It’s much more useful for error messages like this to be printed to standard error so that only data from a successful run ends up in the file. We’ll change that.
 
-[Printing Errors to Standard Error](#printing-errors-to-standard-error)
+### [Printing Errors to Standard Error](#printing-errors-to-standard-error)
 
 We’ll use the code in Listing 12-24 to change how error messages are printed.
 Because of the refactoring we did earlier in this chapter, all the code that
@@ -11725,7 +11778,7 @@ How dreary to be somebody!
 ```
 This demonstrates that we’re now using standard output for successful output and standard error for error output as appropriate.
 
-[Summary](#summary-11)
+## [Summary](#summary-11)
 
 This chapter recapped some of the major concepts you’ve learned so far and
 covered how to perform common I/O operations in Rust. By using command line
@@ -11737,7 +11790,7 @@ well tested.
 
 Next, we’ll explore some Rust features that were influenced by functional languages: closures and iterators.
 
-[Functional Language Features: Iterators and Closures](#functional-language-features-iterators-and-closures)
+# [Functional Language Features: Iterators and Closures](#functional-language-features-iterators-and-closures)
 
 Rust’s design has taken inspiration from many existing languages and
 techniques, and one significant influence is *functional programming*.
@@ -11749,20 +11802,20 @@ In this chapter, we won’t debate the issue of what functional programming is o
 
 More specifically, we’ll cover:
 
-- *Closures*, a function-like construct you can store in a variable
-- *Iterators*, a way of processing a series of elements
+- *Closures* , a function-like construct you can store in a variable
+- *Iterators* , a way of processing a series of elements
 - How to use closures and iterators to improve the I/O project in Chapter 12
 - The performance of closures and iterators (spoiler alert: They’re faster than you might think!)
 
 We’ve already covered some other Rust features, such as pattern matching and enums, that are also influenced by the functional style. Because mastering closures and iterators is an important part of writing fast, idiomatic, Rust code, we’ll devote this entire chapter to them.
 
-[Closures](#closures-1)
+# [Closures](#closures-1)
 
-[Closures](#closures)
+## [Closures](#closures)
 
 Rust’s closures are anonymous functions you can save in a variable or pass as arguments to other functions. You can create the closure in one place and then call the closure elsewhere to evaluate it in a different context. Unlike functions, closures can capture values from the scope in which they’re defined. We’ll demonstrate how these closure features allow for code reuse and behavior customization.
 
-[Capturing the Environment](#capturing-the-environment)
+### [Capturing the Environment](#capturing-the-environment)
 
 We’ll first examine how we can use closures to capture values from the environment they’re defined in for later use. Here’s the scenario: Every so often, our T-shirt company gives away an exclusive, limited-edition shirt to someone on our mailing list as a promotion. People on the mailing list can optionally add their favorite color to their profile. If the person chosen for a free shirt has their favorite color set, they get that color shirt. If the person hasn’t specified a favorite color, they get whatever color the company currently has the most of.
 
@@ -11783,16 +11836,16 @@ Again, this code could be implemented in many ways, and here, to focus on
 closures, we’ve stuck to concepts you’ve already learned, except for the body of
 the `giveaway` method that uses a closure. In the `giveaway` method, we get the
 user preference as a parameter of type `Option<ShirtColor>` and call the
-`unwrap_or_else` method on `user_preference`. The [ unwrap_or_else method on
-Option<T>](../std/option/enum.Option.html#method.unwrap_or_else) is defined by the standard library.
-It takes one argument: a closure without any arguments that returns a value 
-
-`T`
+`unwrap_or_else` method on `user_preference`. The [`unwrap_or_else` method on
+`Option<T>`](../std/option/enum.Option.html#method.unwrap_or_else) is defined by the standard library.
+It takes one argument: a closure without any arguments that returns a value `T`
 (the same type stored in the `Some` variant of the `Option<T>`, in this case
 `ShirtColor`). If the `Option<T>` is the `Some` variant, `unwrap_or_else`
 returns the value from within the `Some`. If the `Option<T>` is the `None`
 variant, `unwrap_or_else` calls the closure and returns the value returned by
-the closure.We specify the closure expression `|| self.most_stocked()` as the argument to
+the closure.
+
+We specify the closure expression `|| self.most_stocked()` as the argument to
 `unwrap_or_else`. This is a closure that takes no parameters itself (if the
 closure had parameters, they would appear between the two vertical pipes). The
 body of the closure calls `self.most_stocked()`. We’re defining the closure
@@ -11817,7 +11870,7 @@ immutable reference to the `self` `Inventory` instance and passes it with the
 code we specify to the `unwrap_or_else` method. Functions, on the other hand,
 are not able to capture their environment in this way.
 
-[Inferring and Annotating Closure Types](#inferring-and-annotating-closure-types)
+### [Inferring and Annotating Closure Types](#inferring-and-annotating-closure-types)
 
 There are more differences between functions and closures. Closures don’t
 usually require you to annotate the types of the parameters or the return value
@@ -11896,7 +11949,7 @@ infers the type of `x` and the return type of the closure to be `String`. Those
 types are then locked into the closure in `example_closure`, and we get a type
 error when we next try to use a different type with the same closure.
 
-[Capturing References or Moving Ownership](#capturing-references-or-moving-ownership)
+### [Capturing References or Moving Ownership](#capturing-references-or-moving-ownership)
 
 Closures can capture values from their environment in three ways, which directly map to the three ways a function can take a parameter: borrowing immutably, borrowing mutably, and taking ownership. The closure will decide which of these to use based on what the body of the function does with the captured values.
 
@@ -11969,7 +12022,7 @@ so that the reference will be valid. Try removing the `move` keyword or using
 `list` in the main thread after the closure is defined to see what compiler
 errors you get!
 
-[Moving Captured Values Out of Closures](#moving-captured-values-out-of-closures)
+### [Moving Captured Values Out of Closures](#moving-captured-values-out-of-closures)
 
 Once a closure has captured a reference or captured ownership of a value from
 the environment where the closure is defined (thus affecting what, if anything,
@@ -11985,9 +12038,17 @@ can specify what kinds of closures they can use. Closures will automatically
 implement one, two, or all three of these `Fn` traits, in an additive fashion,
 depending on how the closure’s body handles the values:
 
-- `FnOnce`applies to closures that can be called once. All closures implement at least this trait because all closures can be called. A closure that moves captured values out of its body will only implement- `FnOnce`and none of the other- `Fn`traits because it can only be called once.
-- `FnMut`applies to closures that don’t move captured values out of their body but might mutate the captured values. These closures can be called more than once.
-- `Fn`applies to closures that don’t move captured values out of their body and don’t mutate captured values, as well as closures that capture nothing from their environment. These closures can be called more than once without mutating their environment, which is important in cases such as calling a closure multiple times concurrently.
+- `FnOnce` applies to closures that can be called once. All closures implement
+at least this trait because all closures can be called. A closure that moves
+captured values out of its body will only implement`FnOnce` and none of the
+other`Fn` traits because it can only be called once.
+- `FnMut` applies to closures that don’t move captured values out of their body
+but might mutate the captured values. These closures can be called more than
+once.
+- `Fn` applies to closures that don’t move captured values out of their body
+and don’t mutate captured values, as well as closures that capture nothing
+from their environment. These closures can be called more than once without
+mutating their environment, which is important in cases such as calling a closure multiple times concurrently.
 
 Let’s look at the definition of the `unwrap_or_else` method on `Option<T>` that
 we used in Listing 13-1:
@@ -12118,9 +12179,7 @@ make use of closures. In the next section, we’ll discuss iterators. Many
 iterator methods take closure arguments, so keep these closure details in mind
 as we continue!
 
-[Processing a Series of Items with Iterators](#processing-a-series-of-items-with-iterators-1)
-
-[Processing a Series of Items with Iterators](#processing-a-series-of-items-with-iterators)
+# [Processing a Series of Items with Iterators](#processing-a-series-of-items-with-iterators-1)
 
 The iterator pattern allows you to perform some task on a sequence of items in turn. An iterator is responsible for the logic of iterating over each item and determining when the sequence has finished. When you use iterators, you don’t have to reimplement that logic yourself.
 
@@ -12145,9 +12204,10 @@ In languages that don’t have iterators provided by their standard libraries, y
 
 Iterators handle all of that logic for you, cutting down on repetitive code you could potentially mess up. Iterators give you more flexibility to use the same logic with many different kinds of sequences, not just data structures you can index into, like vectors. Let’s examine how iterators do that.
 
-[The ](#the-iterator-trait-and-the-next-method)`Iterator` Trait and the `next` Method
+### [The `Iterator` Trait and the `next` Method](#the-iterator-trait-and-the-next-method)
 
-`Iterator` Trait and the `next` MethodAll iterators implement a trait named `Iterator` that is defined in the
+`Iterator` Trait and the `next` Method
+All iterators implement a trait named `Iterator` that is defined in the
 standard library. The definition of the trait looks like this:
 
 ```
@@ -12190,7 +12250,7 @@ ownership of `v1` and returns owned values, we can call `into_iter` instead of
 `iter`. Similarly, if we want to iterate over mutable references, we can call
 `iter_mut` instead of `iter`.
 
-[Methods That Consume the Iterator](#methods-that-consume-the-iterator)
+### [Methods That Consume the Iterator](#methods-that-consume-the-iterator)
 
 The `Iterator` trait has a number of different methods with default
 implementations provided by the standard library; you can find out about these
@@ -12209,7 +12269,7 @@ test illustrating a use of the `sum` method.
 We aren’t allowed to use `v1_iter` after the call to `sum`, because `sum` takes
 ownership of the iterator we call it on.
 
-[Methods That Produce Other Iterators](#methods-that-produce-other-iterators)
+### [Methods That Produce Other Iterators](#methods-that-produce-other-iterators)
 
 *Iterator adapters* are methods defined on the `Iterator` trait that don’t
 consume the iterator. Instead, they produce different iterators by changing
@@ -12259,7 +12319,7 @@ provides.
 
 You can chain multiple calls to iterator adapters to perform complex actions in a readable way. But because all iterators are lazy, you have to call one of the consuming adapter methods to get results from calls to iterator adapters.
 
-[Closures That Capture Their Environment](#closures-that-capture-their-environment)
+### [Closures That Capture Their Environment](#closures-that-capture-their-environment)
 
 Many iterator adapters take closures as arguments, and commonly the closures we’ll specify as arguments to iterator adapters will be closures that capture their environment.
 
@@ -12289,18 +12349,19 @@ adapted iterator into a vector that’s returned by the function.
 The test shows that when we call `shoes_in_size`, we get back only shoes that
 have the same size as the value we specified.
 
-[Improving Our I/O Project](#improving-our-io-project-1)
+# [Improving Our I/O Project](#improving-our-io-project-1)
 
-[Improving Our I/O Project](#improving-our-io-project)
+## [Improving Our I/O Project](#improving-our-io-project)
 
 With this new knowledge about iterators, we can improve the I/O project in
 Chapter 12 by using iterators to make places in the code clearer and more
 concise. Let’s look at how iterators can improve our implementation of the
 `Config::build` function and the `search` function.
 
-[Removing a ](#removing-a-clone-using-an-iterator)`clone` Using an Iterator
+### [Removing a `clone` Using an Iterator](#removing-a-clone-using-an-iterator)
 
-`clone` Using an IteratorIn Listing 12-6, we added code that took a slice of `String` values and created
+`clone` Using an Iterator
+In Listing 12-6, we added code that took a slice of `String` values and created
 an instance of the `Config` struct by indexing into the slice and cloning the
 values, allowing the `Config` struct to own those values. In Listing 13-17,
 we’ve reproduced the implementation of the `Config::build` function as it was
@@ -12325,7 +12386,7 @@ Once `Config::build` takes ownership of the iterator and stops using indexing
 operations that borrow, we can move the `String` values from the iterator into
 `Config` rather than calling `clone` and making a new allocation.
 
-[Using the Returned Iterator Directly](#using-the-returned-iterator-directly)
+#### [Using the Returned Iterator Directly](#using-the-returned-iterator-directly)
 
 Open your I/O project’s *src/main.rs* file, which should look like this:
 
@@ -12409,9 +12470,10 @@ Because we’re taking ownership of `args` and we’ll be mutating `args` by
 iterating over it, we can add the `mut` keyword into the specification of the
 `args` parameter to make it mutable.
 
-[Using ](#using-iterator-trait-methods)`Iterator` Trait Methods
+#### [Using `Iterator` Trait Methods](#using-iterator-trait-methods)
 
-`Iterator` Trait MethodsNext, we’ll fix the body of `Config::build`. Because `args` implements the
+`Iterator` Trait Methods
+Next, we’ll fix the body of `Config::build`. Because `args` implements the
 `Iterator` trait, we know we can call the `next` method on it! Listing 13-20
 updates the code from Listing 12-23 to use the `next` method.
 
@@ -12423,7 +12485,7 @@ value we want to put in the `query` field of `Config`. If `next` returns
 not enough arguments were given, and we return early with an `Err` value. We do
 the same thing for the `file_path` value.
 
-[Clarifying Code with Iterator Adapters](#clarifying-code-with-iterator-adapters)
+### [Clarifying Code with Iterator Adapters](#clarifying-code-with-iterator-adapters)
 
 We can also take advantage of iterators in the `search` function in our I/O
 project, which is reproduced here in Listing 13-21 as it was in Listing 12-19.
@@ -12451,15 +12513,13 @@ until it has collected all of the results, but after the change, the results
 will be printed as each matching line is found because the `for` loop in the
 `run` function is able to take advantage of the laziness of the iterator.
 
-[Choosing Between Loops and Iterators](#choosing-between-loops-and-iterators)
+### [Choosing Between Loops and Iterators](#choosing-between-loops-and-iterators)
 
 The next logical question is which style you should choose in your own code and why: the original implementation in Listing 13-21 or the version using iterators in Listing 13-22 (assuming we’re collecting all the results before returning them rather than returning the iterator). Most Rust programmers prefer to use the iterator style. It’s a bit tougher to get the hang of at first, but once you get a feel for the various iterator adapters and what they do, iterators can be easier to understand. Instead of fiddling with the various bits of looping and building new vectors, the code focuses on the high-level objective of the loop. This abstracts away some of the commonplace code so that it’s easier to see the concepts that are unique to this code, such as the filtering condition each element in the iterator must pass.
 
 But are the two implementations truly equivalent? The intuitive assumption might be that the lower-level loop will be faster. Let’s talk about performance.
 
-[Performance in Loops vs. Iterators](#performance-in-loops-vs-iterators-1)
-
-[Performance in Loops vs. Iterators](#performance-in-loops-vs-iterators)
+# [Performance in Loops vs. Iterators](#performance-in-loops-vs-iterators-1)
 
 To determine whether to use loops or iterators, you need to know which
 implementation is faster: the version of the `search` function with an explicit
@@ -12490,7 +12550,7 @@ In general, C++ implementations obey the zero-overhead principle: What you don�
 
 In many cases, Rust code using iterators compiles to the same assembly you’d write by hand. Optimizations such as loop unrolling and eliminating bounds checking on array access apply and make the resultant code extremely efficient. Now that you know this, you can use iterators and closures without fear! They make code seem like it’s higher level but don’t impose a runtime performance penalty for doing so.
 
-[Summary](#summary-12)
+## [Summary](#summary-12)
 
 Closures and iterators are Rust features inspired by functional programming language ideas. They contribute to Rust’s capability to clearly express high-level ideas at low-level performance. The implementations of closures and iterators are such that runtime performance is not affected. This is part of Rust’s goal to strive to provide zero-cost abstractions.
 
@@ -12498,22 +12558,20 @@ Now that we’ve improved the expressiveness of our I/O project, let’s look at
 some more features of `cargo` that will help us share the project with the
 world.
 
-[More About Cargo and Crates.io](#more-about-cargo-and-cratesio)
+# [More About Cargo and Crates.io](#more-about-cargo-and-cratesio)
 
 So far, we’ve used only the most basic features of Cargo to build, run, and test our code, but it can do a lot more. In this chapter, we’ll discuss some of its other, more advanced features to show you how to do the following:
 
 - Customize your build through release profiles.
-- Publish libraries on [crates.io](https://crates.io/).
+- Publish libraries on [crates.io](https://crates.io/) .
 - Organize large projects with workspaces.
-- Install binaries from [crates.io](https://crates.io/).
+- Install binaries from [crates.io](https://crates.io/) .
 - Extend Cargo using custom commands.
 
 Cargo can do even more than the functionality we cover in this chapter, so for
 a full explanation of all its features, see [its documentation](https://doc.rust-lang.org/cargo/).
 
-[Customizing Builds with Release Profiles](#customizing-builds-with-release-profiles-1)
-
-[Customizing Builds with Release Profiles](#customizing-builds-with-release-profiles)
+# [Customizing Builds with Release Profiles](#customizing-builds-with-release-profiles-1)
 
 In Rust, *release profiles* are predefined, customizable profiles with
 different configurations that allow a programmer to have more control over
@@ -12576,9 +12634,7 @@ optimizations than the default, but not as many as in a release build.
 For the full list of configuration options and defaults for each profile, see
 [Cargo’s documentation](https://doc.rust-lang.org/cargo/reference/profiles.html).
 
-[Publishing a Crate to Crates.io](#publishing-a-crate-to-cratesio-1)
-
-[Publishing a Crate to Crates.io](#publishing-a-crate-to-cratesio)
+# [Publishing a Crate to Crates.io](#publishing-a-crate-to-cratesio-1)
 
 We’ve used packages from [crates.io](https://crates.io/) as
 dependencies of our project, but you can also share your code with other people
@@ -12588,7 +12644,7 @@ your packages, so it primarily hosts code that is open source.
 
 Rust and Cargo have features that make your published package easier for people to find and use. We’ll talk about some of these features next and then explain how to publish a package.
 
-[Making Useful Documentation Comments](#making-useful-documentation-comments)
+### [Making Useful Documentation Comments](#making-useful-documentation-comments)
 
 Accurately documenting your packages will help other users know how and when to
 use them, so it’s worth investing the time to write documentation. In Chapter
@@ -12617,19 +12673,26 @@ crate’s dependencies) and open the result in a web browser. Navigate to the
 `add_one` function and you’ll see how the text in the documentation comments is
 rendered, as shown in Figure 14-1.
 
-[Commonly Used Sections](#commonly-used-sections)
+#### [Commonly Used Sections](#commonly-used-sections)
 
 We used the `# Examples` Markdown heading in Listing 14-1 to create a section
 in the HTML with the title “Examples.” Here are some other sections that crate
 authors commonly use in their documentation:
 
-- **Panics**: These are the scenarios in which the function being documented could panic. Callers of the function who don’t want their programs to panic should make sure they don’t call the function in these situations.
-- **Errors**: If the function returns a- `Result`, describing the kinds of errors that might occur and what conditions might cause those errors to be returned can be helpful to callers so that they can write code to handle the different kinds of errors in different ways.
-- **Safety**: If the function is- `unsafe`to call (we discuss unsafety in Chapter 20), there should be a section explaining why the function is unsafe and covering the invariants that the function expects callers to uphold.
+- **Panics** : These are the scenarios in which the function being documented
+could panic. Callers of the function who don’t want their programs to panic
+should make sure they don’t call the function in these situations.
+- **Errors** : If the function returns a`Result` , describing the kinds of
+errors that might occur and what conditions might cause those errors to be
+returned can be helpful to callers so that they can write code to handle the
+different kinds of errors in different ways.
+- **Safety** : If the function is`unsafe` to call (we discuss unsafety in
+Chapter 20), there should be a section explaining why the function is unsafe
+and covering the invariants that the function expects callers to uphold.
 
 Most documentation comments don’t need all of these sections, but this is a good checklist to remind you of the aspects of your code users will be interested in knowing about.
 
-[Documentation Comments as Tests](#documentation-comments-as-tests)
+#### [Documentation Comments as Tests](#documentation-comments-as-tests)
 
 Adding example code blocks in your documentation comments can help demonstrate
 how to use your library and has an additional bonus: Running `cargo test` will
@@ -12649,7 +12712,7 @@ Now, if we change either the function or the example so that the `assert_eq!`
 in the example panics, and run `cargo test` again, we’ll see that the doc tests
 catch that the example and the code are out of sync with each other!
 
-[Contained Item Comments](#contained-item-comments)
+#### [Contained Item Comments](#contained-item-comments)
 
 The style of doc comment `//!` adds documentation to the item that *contains*
 the comments rather than to the items *following* the comments. We typically
@@ -12673,7 +12736,7 @@ crate, as shown in Figure 14-2.
 
 Documentation comments within items are useful for describing crates and modules especially. Use them to explain the overall purpose of the container to help your users understand the crate’s organization.
 
-[Exporting a Convenient Public API](#exporting-a-convenient-public-api)
+### [Exporting a Convenient Public API](#exporting-a-convenient-public-api)
 
 The structure of your public API is a major consideration when publishing a crate. People who use your crate are less familiar with the structure than you are and might have difficulty finding the pieces they want to use if your crate has a large module hierarchy.
 
@@ -12743,7 +12806,7 @@ that internal structure from what you present to your users. Look at some of
 the code of crates you’ve installed to see if their internal structure differs
 from their public API.
 
-[Setting Up a Crates.io Account](#setting-up-a-cratesio-account)
+### [Setting Up a Crates.io Account](#setting-up-a-cratesio-account)
 
 Before you can publish any crates, you need to create an account on
 [crates.io](https://crates.io/) and get an API token. To do so,
@@ -12763,7 +12826,7 @@ This command will inform Cargo of your API token and store it locally in
 it with anyone else. If you do share it with anyone for any reason, you should
 revoke it and generate a new token on [crates.io](https://crates.io/).
 
-[Adding Metadata to a New Crate](#adding-metadata-to-a-new-crate)
+### [Adding Metadata to a New Crate](#adding-metadata-to-a-new-crate)
 
 Let’s say you have a crate you want to publish. Before publishing, you’ll need
 to add some metadata in the `[package]` section of the crate’s *Cargo.toml*
@@ -12842,7 +12905,7 @@ license = "MIT OR Apache-2.0"
 metadata you can specify to ensure that others can discover and use your crate
 more easily.
 
-[Publishing to Crates.io](#publishing-to-cratesio)
+### [Publishing to Crates.io](#publishing-to-cratesio)
 
 Now that you’ve created an account, saved your API token, chosen a name for
 your crate, and specified the required metadata, you’re ready to publish!
@@ -12877,7 +12940,7 @@ You may press ctrl-c to skip waiting; the crate should be available shortly.
 ```
 Congratulations! You’ve now shared your code with the Rust community, and anyone can easily add your crate as a dependency of their project.
 
-[Publishing a New Version of an Existing Crate](#publishing-a-new-version-of-an-existing-crate)
+### [Publishing a New Version of an Existing Crate](#publishing-a-new-version-of-an-existing-crate)
 
 When you’ve made changes to your crate and are ready to release a new version,
 you change the `version` value specified in your *Cargo.toml* file and
@@ -12885,7 +12948,7 @@ republish. Use the [Semantic Versioning rules](https://semver.org/) to decide wh
 appropriate next version number is, based on the kinds of changes you’ve made.
 Then, run `cargo publish` to upload the new version.
 
-[Deprecating Versions from Crates.io](#deprecating-versions-from-cratesio)
+### [Deprecating Versions from Crates.io](#deprecating-versions-from-cratesio)
 
 Although you can’t remove previous versions of a crate, you can prevent any future projects from adding them as a new dependency. This is useful when a crate version is broken for one reason or another. In such situations, Cargo supports yanking a crate version.
 
@@ -12916,9 +12979,9 @@ $ cargo yank --vers 1.0.1 --undo
 A yank *does not* delete any code. It cannot, for example, delete accidentally
 uploaded secrets. If that happens, you must reset those secrets immediately.
 
-[Cargo Workspaces](#cargo-workspaces-1)
+# [Cargo Workspaces](#cargo-workspaces-1)
 
-[Cargo Workspaces](#cargo-workspaces)
+## [Cargo Workspaces](#cargo-workspaces)
 
 In Chapter 12, we built a package that included a binary crate and a library
 crate. As your project develops, you might find that the library crate
@@ -12926,7 +12989,7 @@ continues to get bigger and you want to split your package further into
 multiple library crates. Cargo offers a feature called *workspaces* that can
 help manage multiple related packages that are developed in tandem.
 
-[Creating a Workspace](#creating-a-workspace)
+### [Creating a Workspace](#creating-a-workspace)
 
 A *workspace* is a set of packages that share the same *Cargo.lock* and output
 directory. Let’s make a project using a workspace—we’ll use trivial code so
@@ -12995,7 +13058,7 @@ to recompile each of the other crates in the workspace to place the artifacts
 in its own *target* directory. By sharing one *target* directory, the crates
 can avoid unnecessary rebuilding.
 
-[Creating the Second Package in the Workspace](#creating-the-second-package-in-the-workspace)
+### [Creating the Second Package in the Workspace](#creating-the-second-package-in-the-workspace)
 
 Next, let’s create another member package in the workspace and call it
 `add_one`. Generate a new library crate named `add_one`:
@@ -13076,7 +13139,7 @@ Hello, world! 10 plus one is 11!
 ```
 This runs the code in *adder/src/main.rs*, which depends on the `add_one` crate.
 
-[Depending on an External Package](#depending-on-an-external-package)
+### [Depending on an External Package](#depending-on-an-external-package)
 
 Notice that the workspace has only one *Cargo.lock* file at the top level,
 rather than having a *Cargo.lock* in each crate’s directory. This ensures that
@@ -13144,7 +13207,7 @@ each other.
 
 If crates in the workspace specify incompatible versions of the same dependency, Cargo will resolve each of them but will still try to resolve as few versions as possible.
 
-[Adding a Test to a Workspace](#adding-a-test-to-a-workspace)
+### [Adding a Test to a Workspace](#adding-a-test-to-a-workspace)
 
 For another enhancement, let’s add a test of the `add_one::add_one` function
 within the `add_one` crate:
@@ -13218,11 +13281,12 @@ way as the `add_one` crate!
 
 As your project grows, consider using a workspace: It enables you to work with smaller, easier-to-understand components than one big blob of code. Furthermore, keeping the crates in a workspace can make coordination between crates easier if they are often changed at the same time.
 
-[Installing Binaries with cargo install](#installing-binaries-with-cargo-install-1)
+# [Installing Binaries with cargo install](#installing-binaries-with-cargo-install-1)
 
-[Installing Binaries with ](#installing-binaries-with-cargo-install)`cargo install`
+## [Installing Binaries with `cargo install`](#installing-binaries-with-cargo-install)
 
-`cargo install`The `cargo install` command allows you to install and use binary crates
+`cargo install`
+The `cargo install` command allows you to install and use binary crates
 locally. This isn’t intended to replace system packages; it’s meant to be a
 convenient way for Rust developers to install tools that others have shared on
 [crates.io](https://crates.io/). Note that you can only install
@@ -13260,9 +13324,7 @@ installed binary, which in the case of `ripgrep` is `rg`. As long as the
 installation directory is in your `$PATH`, as mentioned previously, you can
 then run `rg --help` and start using a faster, Rustier tool for searching files!
 
-[Extending Cargo with Custom Commands](#extending-cargo-with-custom-commands-1)
-
-[Extending Cargo with Custom Commands](#extending-cargo-with-custom-commands)
+# [Extending Cargo with Custom Commands](#extending-cargo-with-custom-commands-1)
 
 Cargo is designed so that you can extend it with new subcommands without having
 to modify it. If a binary in your `$PATH` is named `cargo-something`, you can
@@ -13271,7 +13333,7 @@ commands like this are also listed when you run `cargo --list`. Being able to
 use `cargo install` to install extensions and then run them just like the
 built-in Cargo tools is a super-convenient benefit of Cargo’s design!
 
-[Summary](#summary-13)
+## [Summary](#summary-13)
 
 Sharing code with Cargo and [crates.io](https://crates.io/) is
 part of what makes the Rust ecosystem useful for many different tasks. Rust’s
@@ -13279,7 +13341,7 @@ standard library is small and stable, but crates are easy to share, use, and
 improve on a timeline different from that of the language. Don’t be shy about
 sharing code that’s useful to you on [crates.io](https://crates.io/); it’s likely that it will be useful to someone else as well!
 
-[Smart Pointers](#smart-pointers)
+# [Smart Pointers](#smart-pointers)
 
 A pointer is a general concept for a variable that contains an address in
 memory. This address refers to, or “points at,” some other data. The most
@@ -13312,9 +13374,10 @@ both of these traits and demonstrate why they’re important to smart pointers.
 
 Given that the smart pointer pattern is a general design pattern used frequently in Rust, this chapter won’t cover every existing smart pointer. Many libraries have their own smart pointers, and you can even write your own. We’ll cover the most common smart pointers in the standard library:
 
-- `Box<T>`, for allocating values on the heap
-- `Rc<T>`, a reference counting type that enables multiple ownership
-- `Ref<T>`and- `RefMut<T>`, accessed through- `RefCell<T>`, a type that enforces the borrowing rules at runtime instead of compile time
+- `Box<T>` , for allocating values on the heap
+- `Rc<T>` , a reference counting type that enables multiple ownership
+- `Ref<T>` and`RefMut<T>` , accessed through`RefCell<T>` , a type that enforces
+the borrowing rules at runtime instead of compile time
 
 In addition, we’ll cover the *interior mutability* pattern where an immutable
 type exposes an API for mutating an interior value. We’ll also discuss
@@ -13322,11 +13385,12 @@ reference cycles: how they can leak memory and how to prevent them.
 
 Let’s dive in!
 
-[Using Box<T> to Point to Data on the Heap](#using-boxt-to-point-to-data-on-the-heap-1)
+# [Using Box<T> to Point to Data on the Heap](#using-boxt-to-point-to-data-on-the-heap-1)
 
-[Using ](#using-boxt-to-point-to-data-on-the-heap)`Box<T>` to Point to Data on the Heap
+## [Using `Box<T>` to Point to Data on the Heap](#using-boxt-to-point-to-data-on-the-heap)
 
-`Box<T>` to Point to Data on the HeapThe most straightforward smart pointer is a box, whose type is written
+`Box<T>` to Point to Data on the Heap
+The most straightforward smart pointer is a box, whose type is written
 `Box<T>`. *Boxes* allow you to store data on the heap rather than the stack.
 What remains on the stack is the pointer to the heap data. Refer to Chapter 4
 to review the difference between the stack and the heap.
@@ -13348,7 +13412,7 @@ data it references stays in one place on the heap. The third case is known as a
 Behavior”](#using-trait-objects-to-abstract-over-shared-behavior) in Chapter 18 is devoted to that
 topic. So, what you learn here you’ll apply again in that section!
 
-[Storing Data on the Heap](#storing-data-on-the-heap)
+### [Storing Data on the Heap](#storing-data-on-the-heap)
 
 Before we discuss the heap storage use case for `Box<T>`, we’ll cover the
 syntax and how to interact with values stored within a `Box<T>`.
@@ -13369,7 +13433,7 @@ stack, where they’re stored by default, is more appropriate in the majority of
 situations. Let’s look at a case where boxes allow us to define types that we
 wouldn’t be allowed to define if we didn’t have boxes.
 
-[Enabling Recursive Types with Boxes](#enabling-recursive-types-with-boxes)
+### [Enabling Recursive Types with Boxes](#enabling-recursive-types-with-boxes)
 
 A value of a *recursive type* can have another value of the same type as part of
 itself. Recursive types pose an issue because Rust needs to know at compile time
@@ -13380,7 +13444,7 @@ by inserting a box in the recursive type definition.
 
 As an example of a recursive type, let’s explore the cons list. This is a data type commonly found in functional programming languages. The cons list type we’ll define is straightforward except for the recursion; therefore, the concepts in the example we’ll work with will be useful anytime you get into more complex situations involving recursive types.
 
-[Understanding the Cons List](#understanding-the-cons-list)
+#### [Understanding the Cons List](#understanding-the-cons-list)
 
 A *cons list* is a data structure that comes from the Lisp programming language
 and its dialects, is made up of nested pairs, and is the Lisp version of a
@@ -13433,7 +13497,7 @@ directly. As a result, Rust can’t figure out how much space it needs to store 
 `List` value. Let’s break down why we get this error. First, we’ll look at how
 Rust decides how much space it needs to store a value of a non-recursive type.
 
-[Computing the Size of a Non-Recursive Type](#computing-the-size-of-a-non-recursive-type)
+#### [Computing the Size of a Non-Recursive Type](#computing-the-size-of-a-non-recursive-type)
 
 Recall the `Message` enum we defined in Listing 6-2 when we discussed enum
 definitions in Chapter 6:
@@ -13463,7 +13527,7 @@ type needs, the compiler looks at the variants, starting with the `Cons`
 variant. The `Cons` variant holds a value of type `i32` and a value of type
 `List`, and this process continues infinitely, as shown in Figure 15-1.
 
-[Getting a Recursive Type with a Known Size](#getting-a-recursive-type-with-a-known-size)
+#### [Getting a Recursive Type with a Known Size](#getting-a-recursive-type-with-a-known-size)
 
 Because Rust can’t figure out how much space to allocate for recursively defined types, the compiler gives an error with this helpful suggestion:
 
@@ -13507,9 +13571,7 @@ even more important to the functionality provided by the other smart pointer
 types we’ll discuss in the rest of this chapter. Let’s explore these two traits
 in more detail.
 
-[Treating Smart Pointers Like Regular References](#treating-smart-pointers-like-regular-references-1)
-
-[Treating Smart Pointers Like Regular References](#treating-smart-pointers-like-regular-references)
+# [Treating Smart Pointers Like Regular References](#treating-smart-pointers-like-regular-references-1)
 
 Implementing the `Deref` trait allows you to customize the behavior of the
 *dereference operator* `*` (not to be confused with the multiplication or glob
@@ -13525,7 +13587,7 @@ smart pointers to work in ways similar to references. Then, we’ll look at
 Rust’s deref coercion feature and how it lets us work with either references or
 smart pointers.
 
-[Following the Reference to the Value](#following-the-reference-to-the-value)
+### [Following the Reference to the Value](#following-the-reference-to-the-value)
 
 A regular reference is a type of pointer, and one way to think of a pointer is
 as an arrow to a value stored somewhere else. In Listing 15-6, we create a
@@ -13558,9 +13620,10 @@ error: could not compile `deref-example` (bin "deref-example") due to 1 previous
 ```
 Comparing a number and a reference to a number isn’t allowed because they’re different types. We must use the dereference operator to follow the reference to the value it’s pointing to.
 
-[Using ](#using-boxt-like-a-reference)`Box<T>` Like a Reference
+### [Using `Box<T>` Like a Reference](#using-boxt-like-a-reference)
 
-`Box<T>` Like a ReferenceWe can rewrite the code in Listing 15-6 to use a `Box<T>` instead of a
+`Box<T>` Like a Reference
+We can rewrite the code in Listing 15-6 to use a `Box<T>` instead of a
 reference; the dereference operator used on the `Box<T>` in Listing 15-7
 functions in the same way as the dereference operator used on the reference in
 Listing 15-6.
@@ -13572,7 +13635,7 @@ dereference operator to follow the box’s pointer in the same way that we did
 when `y` was a reference. Next, we’ll explore what is special about `Box<T>`
 that enables us to use the dereference operator by defining our own box type.
 
-[Defining Our Own Smart Pointer](#defining-our-own-smart-pointer)
+### [Defining Our Own Smart Pointer](#defining-our-own-smart-pointer)
 
 Let’s build a wrapper type similar to the `Box<T>` type provided by the
 standard library to experience how smart pointer types behave differently from
@@ -13615,9 +13678,10 @@ Our `MyBox<T>` type can’t be dereferenced because we haven’t implemented tha
 ability on our type. To enable dereferencing with the `*` operator, we
 implement the `Deref` trait.
 
-[Implementing the ](#implementing-the-deref-trait)`Deref` Trait
+### [Implementing the `Deref` Trait](#implementing-the-deref-trait)
 
-`Deref` TraitAs discussed in [“Implementing a Trait on a Type”](#implementing-a-trait-on-a-type) in
+`Deref` Trait
+As discussed in [“Implementing a Trait on a Type”](#implementing-a-trait-on-a-type) in
 Chapter 10, to implement a trait we need to provide implementations for the
 trait’s required methods. The `Deref` trait, provided by the standard library,
 requires us to implement one method named `deref` that borrows `self` and
@@ -13643,7 +13707,8 @@ it knows how to dereference.
 When we entered `*y` in Listing 15-9, behind the scenes Rust actually ran this
 code:
 
-`*(y.deref())`Rust substitutes the `*` operator with a call to the `deref` method and then a
+`*(y.deref())`
+Rust substitutes the `*` operator with a call to the `deref` method and then a
 plain dereference so that we don’t have to think about whether or not we need
 to call the `deref` method. This Rust feature lets us write code that functions
 identically whether we have a regular reference or a type that implements
@@ -13662,7 +13727,7 @@ Because the substitution of the `*` operator does not recurse infinitely, we
 end up with data of type `i32`, which matches the `5` in `assert_eq!` in
 Listing 15-9.
 
-[Using Deref Coercion in Functions and Methods](#using-deref-coercion-in-functions-and-methods)
+### [Using Deref Coercion in Functions and Methods](#using-deref-coercion-in-functions-and-methods)
 
 *Deref coercion* converts a reference to a type that implements the `Deref`
 trait into a reference to another type. For example, deref coercion can convert
@@ -13712,7 +13777,7 @@ match the parameter’s type. The number of times that `Deref::deref` needs to b
 inserted is resolved at compile time, so there is no runtime penalty for taking
 advantage of deref coercion!
 
-[Handling Deref Coercion with Mutable References](#handling-deref-coercion-with-mutable-references)
+### [Handling Deref Coercion with Mutable References](#handling-deref-coercion-with-mutable-references)
 
 Similar to how you use the `Deref` trait to override the `*` operator on
 immutable references, you can use the `DerefMut` trait to override the `*`
@@ -13720,9 +13785,9 @@ operator on mutable references.
 
 Rust does deref coercion when it finds types and trait implementations in three cases:
 
-- From `&T`to`&U`when`T: Deref<Target=U>`
-- From `&mut T`to`&mut U`when`T: DerefMut<Target=U>`
-- From `&mut T`to`&U`when`T: Deref<Target=U>`
+1. From `&T` to`&U` when`T: Deref<Target=U>`
+2. From `&mut T` to`&mut U` when`T: DerefMut<Target=U>`
+3. From `&mut T` to`&U` when`T: Deref<Target=U>`
 
 The first two cases are the same except that the second implements mutability.
 The first case states that if you have a `&T`, and `T` implements `Deref` to
@@ -13741,11 +13806,12 @@ the borrowing rules don’t guarantee that. Therefore, Rust can’t make the
 assumption that converting an immutable reference to a mutable reference is
 possible.
 
-[Running Code on Cleanup with the Drop Trait](#running-code-on-cleanup-with-the-drop-trait-1)
+# [Running Code on Cleanup with the Drop Trait](#running-code-on-cleanup-with-the-drop-trait-1)
 
-[Running Code on Cleanup with the ](#running-code-on-cleanup-with-the-drop-trait)`Drop` Trait
+## [Running Code on Cleanup with the `Drop` Trait](#running-code-on-cleanup-with-the-drop-trait)
 
-`Drop` TraitThe second trait important to the smart pointer pattern is `Drop`, which lets
+`Drop` Trait
+The second trait important to the smart pointer pattern is `Drop`, which lets
 you customize what happens when a value is about to go out of scope. You can
 provide an implementation for the `Drop` trait on any type, and that code can
 be used to release resources like files or network connections.
@@ -13859,7 +13925,7 @@ CustomSmartPointer created
 Dropping CustomSmartPointer with data `some data`!
 CustomSmartPointer dropped before the end of main
 ```
-The text `Dropping CustomSmartPointer with data `some data`!` is printed
+The text ``Dropping CustomSmartPointer with data `some data`!`` is printed
 between the `CustomSmartPointer created` and `CustomSmartPointer dropped before the end of main` text, showing that the `drop` method code is called to drop
 `c` at that point.
 
@@ -13877,11 +13943,12 @@ Now that we’ve examined `Box<T>` and some of the characteristics of smart
 pointers, let’s look at a few other smart pointers defined in the standard
 library.
 
-[Rc<T>, the Reference Counted Smart Pointer](#rct-the-reference-counted-smart-pointer-1)
+# [Rc<T>, the Reference Counted Smart Pointer](#rct-the-reference-counted-smart-pointer-1)
+
+## [`Rc<T>`, the Reference-Counted Smart Pointer](#rct-the-reference-counted-smart-pointer)
 
 `Rc<T>`, the Reference-Counted Smart Pointer
-
-`Rc<T>`, the Reference-Counted Smart PointerIn the majority of cases, ownership is clear: You know exactly which variable owns a given value. However, there are cases when a single value might have multiple owners. For example, in graph data structures, multiple edges might point to the same node, and that node is conceptually owned by all of the edges that point to it. A node shouldn’t be cleaned up unless it doesn’t have any edges pointing to it and so has no owners.
+In the majority of cases, ownership is clear: You know exactly which variable owns a given value. However, there are cases when a single value might have multiple owners. For example, in graph data structures, multiple edges might point to the same node, and that node is conceptually owned by all of the edges that point to it. A node shouldn’t be cleaned up unless it doesn’t have any edges pointing to it and so has no owners.
 
 You have to enable multiple ownership explicitly by using the Rust type
 `Rc<T>`, which is an abbreviation for *reference counting*. The `Rc<T>` type
@@ -13905,7 +13972,7 @@ Note that `Rc<T>` is only for use in single-threaded scenarios. When we discuss
 concurrency in Chapter 16, we’ll cover how to do reference counting in
 multithreaded programs.
 
-[Sharing Data](#sharing-data)
+### [Sharing Data](#sharing-data)
 
 Let’s return to our cons list example in Listing 15-5. Recall that we defined
 it using `Box<T>`. This time, we’ll create two lists that both share ownership
@@ -13984,7 +14051,7 @@ increase the reference count. When looking for performance problems in the
 code, we only need to consider the deep-copy clones and can disregard calls to
 `Rc::clone`.
 
-[Cloning to Increase the Reference Count](#cloning-to-increase-the-reference-count)
+### [Cloning to Increase the Reference Count](#cloning-to-increase-the-reference-count)
 
 Let’s change our working example in Listing 15-18 so that we can see the
 reference counts changing as we create and drop references to the `Rc<List>` in
@@ -13998,7 +14065,7 @@ At each point in the program where the reference count changes, we print the
 reference count, which we get by calling the `Rc::strong_count` function. This
 function is named `strong_count` rather than `count` because the `Rc<T>` type
 also has a `weak_count`; we’ll see what `weak_count` is used for in [“Preventing
-Reference Cycles Using  Weak<T>”](#preventing-reference-cycles-turning-an-rct-into-a-weakt).
+Reference Cycles Using `Weak<T>`”](#preventing-reference-cycles-turning-an-rct-into-a-weakt).
 
 This code prints the following:
 
@@ -14034,11 +14101,12 @@ section, we’ll discuss the interior mutability pattern and the `RefCell<T>`
 type that you can use in conjunction with an `Rc<T>` to work with this
 immutability restriction.
 
-[RefCell<T> and the Interior Mutability Pattern](#refcellt-and-the-interior-mutability-pattern-1)
+# [RefCell<T> and the Interior Mutability Pattern](#refcellt-and-the-interior-mutability-pattern-1)
+
+## [`RefCell<T>` and the Interior Mutability Pattern](#refcellt-and-the-interior-mutability-pattern)
 
 `RefCell<T>` and the Interior Mutability Pattern
-
-`RefCell<T>` and the Interior Mutability Pattern*Interior mutability* is a design pattern in Rust that allows you to mutate
+*Interior mutability* is a design pattern in Rust that allows you to mutate
 data even when there are immutable references to that data; normally, this
 action is disallowed by the borrowing rules. To mutate data, the pattern uses
 `unsafe` code inside a data structure to bend Rust’s usual rules that govern
@@ -14054,13 +14122,14 @@ safe API, and the outer type is still immutable.
 Let’s explore this concept by looking at the `RefCell<T>` type that follows the
 interior mutability pattern.
 
-[Enforcing Borrowing Rules at Runtime](#enforcing-borrowing-rules-at-runtime)
+### [Enforcing Borrowing Rules at Runtime](#enforcing-borrowing-rules-at-runtime)
 
 Unlike `Rc<T>`, the `RefCell<T>` type represents single ownership over the data
 it holds. So, what makes `RefCell<T>` different from a type like `Box<T>`?
 Recall the borrowing rules you learned in Chapter 4:
 
-- At any given time, you can have *either*one mutable reference or any number of immutable references (but not both).
+- At any given time, you can have *either* one mutable reference or any number
+of immutable references (but not both).
 - References must always be valid.
 
 With references and `Box<T>`, the borrowing rules’ invariants are enforced at
@@ -14088,13 +14157,16 @@ multithreaded program in Chapter 16.
 
 Here is a recap of the reasons to choose `Box<T>`, `Rc<T>`, or `RefCell<T>`:
 
-- `Rc<T>`enables multiple owners of the same data;- `Box<T>`and- `RefCell<T>`have single owners.
-- `Box<T>`allows immutable or mutable borrows checked at compile time;- `Rc<T>`allows only immutable borrows checked at compile time;- `RefCell<T>`allows immutable or mutable borrows checked at runtime.
-- Because `RefCell<T>`allows mutable borrows checked at runtime, you can mutate the value inside the`RefCell<T>`even when the`RefCell<T>`is immutable.
+- `Rc<T>` enables multiple owners of the same data;`Box<T>` and`RefCell<T>` have single owners.
+- `Box<T>` allows immutable or mutable borrows checked at compile time;`Rc<T>` allows only immutable borrows checked at compile time;`RefCell<T>` allows
+immutable or mutable borrows checked at runtime.
+- Because `RefCell<T>` allows mutable borrows checked at runtime, you can
+mutate the value inside the`RefCell<T>` even when the`RefCell<T>` is
+immutable.
 
 Mutating the value inside an immutable value is the interior mutability pattern. Let’s look at a situation in which interior mutability is useful and examine how it’s possible.
 
-[Using Interior Mutability](#using-interior-mutability)
+### [Using Interior Mutability](#using-interior-mutability)
 
 A consequence of the borrowing rules is that when you have an immutable value, you can’t borrow it mutably. For example, this code won’t compile:
 
@@ -14134,7 +14206,7 @@ a compiler error.
 Let’s work through a practical example where we can use `RefCell<T>` to mutate
 an immutable value and see why that is useful.
 
-[Testing with Mock Objects](#testing-with-mock-objects)
+#### [Testing with Mock Objects](#testing-with-mock-objects)
 
 Sometimes during testing a programmer will use a type in place of another type,
 in order to observe particular behavior and assert that it’s implemented
@@ -14244,7 +14316,7 @@ immutable reference to the vector.
 
 Now that you’ve seen how to use `RefCell<T>`, let’s dig into how it works!
 
-[Tracking Borrows at Runtime](#tracking-borrows-at-runtime)
+#### [Tracking Borrows at Runtime](#tracking-borrows-at-runtime)
 
 When creating immutable and mutable references, we use the `&` and `&mut`
 syntax, respectively. With `RefCell<T>`, we use the `borrow` and `borrow_mut`
@@ -14304,7 +14376,7 @@ in a context where only immutable values are allowed. You can use `RefCell<T>`
 despite its trade-offs to get more functionality than regular references
 provide.
 
-[Allowing Multiple Owners of Mutable Data](#allowing-multiple-owners-of-mutable-data)
+### [Allowing Multiple Owners of Mutable Data](#allowing-multiple-owners-of-mutable-data)
 
 A common way to use `RefCell<T>` is in combination with `Rc<T>`. Recall that
 `Rc<T>` lets you have multiple owners of some data, but it only gives immutable
@@ -14331,13 +14403,13 @@ they can both refer to `a`, which is what we did in Listing 15-18.
 
 After we’ve created the lists in `a`, `b`, and `c`, we want to add 10 to the
 value in `value`. We do this by calling `borrow_mut` on `value`, which uses the
-automatic dereferencing feature we discussed in [“Where’s the  ->
+automatic dereferencing feature we discussed in [“Where’s the `->`
 Operator?”](#wheres-the---operator) in Chapter 5 to dereference
-the 
-
-`Rc<T>` to the inner `RefCell<T>` value. The `borrow_mut` method returns a
+the `Rc<T>` to the inner `RefCell<T>` value. The `borrow_mut` method returns a
 `RefMut<T>` smart pointer, and we use the dereference operator on it and change
-the inner value.When we print `a`, `b`, and `c`, we can see that they all have the modified
+the inner value.
+
+When we print `a`, `b`, and `c`, we can see that they all have the modified
 value of `15` rather than `5`:
 
 ```
@@ -14358,9 +14430,7 @@ structures. Note that `RefCell<T>` does not work for multithreaded code!
 `Mutex<T>` is the thread-safe version of `RefCell<T>`, and we’ll discuss
 `Mutex<T>` in Chapter 16.
 
-[Reference Cycles Can Leak Memory](#reference-cycles-can-leak-memory-1)
-
-[Reference Cycles Can Leak Memory](#reference-cycles-can-leak-memory)
+# [Reference Cycles Can Leak Memory](#reference-cycles-can-leak-memory-1)
 
 Rust’s memory safety guarantees make it difficult, but not impossible, to
 accidentally create memory that is never cleaned up (known as a *memory leak*).
@@ -14371,7 +14441,7 @@ items refer to each other in a cycle. This creates memory leaks because the
 reference count of each item in the cycle will never reach 0, and the values
 will never be dropped.
 
-[Creating a Reference Cycle](#creating-a-reference-cycle)
+### [Creating a Reference Cycle](#creating-a-reference-cycle)
 
 Let’s look at how a reference cycle might happen and how to prevent it,
 starting with the definition of the `List` enum and a `tail` method in Listing
@@ -14452,9 +14522,10 @@ Let’s look at an example using graphs made up of parent nodes and child nodes
 to see when non-ownership relationships are an appropriate way to prevent
 reference cycles.
 
-[Preventing Reference Cycles Using ](#preventing-reference-cycles-using-weakt)`Weak<T>`
+### [Preventing Reference Cycles Using `Weak<T>`](#preventing-reference-cycles-using-weakt)
 
-`Weak<T>`So far, we’ve demonstrated that calling `Rc::clone` increases the
+`Weak<T>`
+So far, we’ve demonstrated that calling `Rc::clone` increases the
 `strong_count` of an `Rc<T>` instance, and an `Rc<T>` instance is only cleaned
 up if its `strong_count` is 0. You can also create a weak reference to the
 value within an `Rc<T>` instance by calling `Rc::downgrade` and passing a
@@ -14485,7 +14556,7 @@ As an example, rather than using a list whose items know only about the next
 item, we’ll create a tree whose items know about their child items *and* their
 parent items.
 
-[Creating a Tree Data Structure](#creating-a-tree-data-structure)
+#### [Creating a Tree Data Structure](#creating-a-tree-data-structure)
 
 To start, we’ll build a tree with nodes that know about their child nodes.
 We’ll create a struct named `Node` that holds its own `i32` value as well as
@@ -14529,7 +14600,7 @@ We clone the `Rc<Node>` in `leaf` and store that in `branch`, meaning the
 doesn’t know they’re related. We want `leaf` to know that `branch` is its
 parent. We’ll do that next.
 
-[Adding a Reference from a Child to Its Parent](#adding-a-reference-from-a-child-to-its-parent)
+#### [Adding a Reference from a Child to Its Parent](#adding-a-reference-from-a-child-to-its-parent)
 
 To make the child node aware of its parent, we need to add a `parent` field to
 our `Node` struct definition. The trouble is in deciding what the type of
@@ -14608,9 +14679,10 @@ The lack of infinite output indicates that this code didn’t create a reference
 cycle. We can also tell this by looking at the values we get from calling
 `Rc::strong_count` and `Rc::weak_count`.
 
-[Visualizing Changes to ](#visualizing-changes-to-strong_count-and-weak_count)`strong_count` and `weak_count`
+#### [Visualizing Changes to `strong_count` and `weak_count`](#visualizing-changes-to-strong_count-and-weak_count)
 
-`strong_count` and `weak_count`Let’s look at how the `strong_count` and `weak_count` values of the `Rc<Node>`
+`strong_count` and `weak_count`
+Let’s look at how the `strong_count` and `weak_count` values of the `Rc<Node>`
 instances change by creating a new inner scope and moving the creation of
 `branch` into that scope. By doing so, we can see what happens when `branch` is
 created and then dropped when it goes out of scope. The modifications are shown
@@ -14642,7 +14714,7 @@ specifying that the relationship from a child to its parent should be a
 nodes point to child nodes and vice versa without creating a reference cycle
 and memory leaks.
 
-[Summary](#summary-14)
+## [Summary](#summary-14)
 
 This chapter covered how to use smart pointers to make different guarantees and
 trade-offs from those Rust makes by default with regular references. The
@@ -14663,7 +14735,7 @@ information.
 
 Next, we’ll talk about concurrency in Rust. You’ll even learn about a few new smart pointers.
 
-[Fearless Concurrency](#fearless-concurrency)
+# [Fearless Concurrency](#fearless-concurrency)
 
 Handling concurrent programming safely and efficiently is another of Rust’s
 major goals. *Concurrent programming*, in which different parts of a program
@@ -14698,13 +14770,13 @@ Many languages are dogmatic about the solutions they offer for handling concurre
 Here are the topics we’ll cover in this chapter:
 
 - How to create threads to run multiple pieces of code at the same time
-- *Message-passing*concurrency, where channels send messages between threads
-- *Shared-state*concurrency, where multiple threads have access to some piece of data
-- The `Sync`and`Send`traits, which extend Rust’s concurrency guarantees to user-defined types as well as types provided by the standard library
+- *Message-passing* concurrency, where channels send messages between threads
+- *Shared-state* concurrency, where multiple threads have access to some piece
+of data
+- The `Sync` and`Send` traits, which extend Rust’s concurrency guarantees to
+user-defined types as well as types provided by the standard library
 
-[Using Threads to Run Code Simultaneously](#using-threads-to-run-code-simultaneously-1)
-
-[Using Threads to Run Code Simultaneously](#using-threads-to-run-code-simultaneously)
+# [Using Threads to Run Code Simultaneously](#using-threads-to-run-code-simultaneously-1)
 
 In most current operating systems, an executed program’s code is run in a
 *process*, and the operating system will manage multiple processes at once.
@@ -14729,9 +14801,10 @@ language thread. There are crates that implement other models of threading that
 make different trade-offs to the 1:1 model. (Rust’s async system, which we will
 see in the next chapter, provides another approach to concurrency as well.)
 
-[Creating a New Thread with ](#creating-a-new-thread-with-spawn)`spawn`
+### [Creating a New Thread with `spawn`](#creating-a-new-thread-with-spawn)
 
-`spawn`To create a new thread, we call the `thread::spawn` function and pass it a
+`spawn`
+To create a new thread, we call the `thread::spawn` function and pass it a
 closure (we talked about closures in Chapter 13) containing the code we want to
 run in the new thread. The example in Listing 16-1 prints some text from a main
 thread and other text from a new thread.
@@ -14759,7 +14832,7 @@ before the main thread shut down.
 
 If you run this code and only see output from the main thread, or don’t see any overlap, try increasing the numbers in the ranges to create more opportunities for the operating system to switch between the threads.
 
-[Waiting for All Threads to Finish](#waiting-for-all-threads-to-finish)
+### [Waiting for All Threads to Finish](#waiting-for-all-threads-to-finish)
 
 The code in Listing 16-1 not only stops the spawned thread prematurely most of the time due to the main thread ending, but because there is no guarantee on the order in which threads run, we also can’t guarantee that the spawned thread will get to run at all!
 
@@ -14819,9 +14892,10 @@ hi number 4 from the main thread!
 Small details, such as where `join` is called, can affect whether or not your
 threads run at the same time.
 
-[Using ](#using-move-closures-with-threads)`move` Closures with Threads
+### [Using `move` Closures with Threads](#using-move-closures-with-threads)
 
-`move` Closures with ThreadsWe’ll often use the `move` keyword with closures passed to `thread::spawn`
+`move` Closures with Threads
+We’ll often use the `move` keyword with closures passed to `thread::spawn`
 because the closure will then take ownership of the values it uses from the
 environment, thus transferring ownership of those values from one thread to
 another. In [“Capturing References or Moving Ownership”](#capturing-references-or-moving-ownership) in Chapter 13, we discussed `move` in the context of closures. Now we’ll
@@ -14938,9 +15012,7 @@ ownership rules.
 
 Now that we’ve covered what threads are and the methods supplied by the thread API, let’s look at some situations in which we can use threads.
 
-[Transfer Data Between Threads with Message Passing](#transfer-data-between-threads-with-message-passing-1)
-
-[Transfer Data Between Threads with Message Passing](#transfer-data-between-threads-with-message-passing)
+# [Transfer Data Between Threads with Message Passing](#transfer-data-between-threads-with-message-passing-1)
 
 One increasingly popular approach to ensuring safe concurrency is message
 passing, where threads or actors communicate by sending each other messages
@@ -15024,7 +15096,7 @@ Got: hi
 ```
 Perfect!
 
-[Transferring Ownership Through Channels](#transferring-ownership-through-channels)
+### [Transferring Ownership Through Channels](#transferring-ownership-through-channels)
 
 The ownership rules play a vital role in message sending because they help you
 write safe, concurrent code. Preventing errors in concurrent programming is the
@@ -15063,7 +15135,7 @@ takes ownership of its parameter, and when the value is moved the receiver
 takes ownership of it. This stops us from accidentally using the value again
 after sending it; the ownership system checks that everything is okay.
 
-[Sending Multiple Values](#sending-multiple-values)
+### [Sending Multiple Values](#sending-multiple-values)
 
 The code in Listing 16-8 compiled and ran, but it didn’t clearly show us that two separate threads were talking to each other over the channel.
 
@@ -15090,7 +15162,7 @@ Because we don’t have any code that pauses or delays in the `for` loop in the
 main thread, we can tell that the main thread is waiting to receive values from
 the spawned thread.
 
-[Creating Multiple Producers](#creating-multiple-producers)
+### [Creating Multiple Producers](#creating-multiple-producers)
 
 Earlier we mentioned that `mpsc` was an acronym for *multiple producer, single
 consumer*. Let’s put `mpsc` to use and expand the code in Listing 16-10 to
@@ -15121,9 +15193,9 @@ will be more nondeterministic and create different output each time.
 
 Now that we’ve looked at how channels work, let’s look at a different method of concurrency.
 
-[Shared-State Concurrency](#shared-state-concurrency-1)
+# [Shared-State Concurrency](#shared-state-concurrency-1)
 
-[Shared-State Concurrency](#shared-state-concurrency)
+## [Shared-State Concurrency](#shared-state-concurrency)
 
 Message passing is a fine way to handle concurrency, but it’s not the only way. Another method would be for multiple threads to access the same shared data. Consider this part of the slogan from the Go language documentation again: “Do not communicate by sharing memory.”
 
@@ -15131,7 +15203,7 @@ What would communicating by sharing memory look like? In addition, why would mes
 
 In a way, channels in any programming language are similar to single ownership because once you transfer a value down a channel, you should no longer use that value. Shared-memory concurrency is like multiple ownership: Multiple threads can access the same memory location at the same time. As you saw in Chapter 15, where smart pointers made multiple ownership possible, multiple ownership can add complexity because these different owners need managing. Rust’s type system and ownership rules greatly assist in getting this management correct. For an example, let’s look at mutexes, one of the more common concurrency primitives for shared memory.
 
-[Controlling Access with Mutexes](#controlling-access-with-mutexes)
+### [Controlling Access with Mutexes](#controlling-access-with-mutexes)
 
 *Mutex* is an abbreviation for *mutual exclusion*, as in a mutex allows only
 one thread to access some data at any given time. To access the data in a
@@ -15142,16 +15214,17 @@ mutex is described as *guarding* the data it holds via the locking system.
 
 Mutexes have a reputation for being difficult to use because you have to remember two rules:
 
-- You must attempt to acquire the lock before using the data.
-- When you’re done with the data that the mutex guards, you must unlock the data so that other threads can acquire the lock.
+1. You must attempt to acquire the lock before using the data.
+2. When you’re done with the data that the mutex guards, you must unlock the data so that other threads can acquire the lock.
 
 For a real-world metaphor for a mutex, imagine a panel discussion at a conference with only one microphone. Before a panelist can speak, they have to ask or signal that they want to use the microphone. When they get the microphone, they can talk for as long as they want to and then hand the microphone to the next panelist who requests to speak. If a panelist forgets to hand the microphone off when they’re finished with it, no one else is able to speak. If management of the shared microphone goes wrong, the panel won’t work as planned!
 
 Management of mutexes can be incredibly tricky to get right, which is why so many people are enthusiastic about channels. However, thanks to Rust’s type system and ownership rules, you can’t get locking and unlocking wrong.
 
-[The API of ](#the-api-of-mutext)`Mutex<T>`
+#### [The API of `Mutex<T>`](#the-api-of-mutext)
 
-`Mutex<T>`As an example of how to use a mutex, let’s start by using a mutex in a single-threaded context, as shown in Listing 16-12.
+`Mutex<T>`
+As an example of how to use a mutex, let’s start by using a mutex in a single-threaded context, as shown in Listing 16-12.
 
 As with many types, we create a `Mutex<T>` using the associated function `new`.
 To access the data inside the mutex, we use the `lock` method to acquire the
@@ -15180,9 +15253,10 @@ used by other threads because the lock release happens automatically.
 After dropping the lock, we can print the mutex value and see that we were able
 to change the inner `i32` to `6`.
 
-[Shared Access to ](#shared-access-to-mutext)`Mutex<T>`
+#### [Shared Access to `Mutex<T>`](#shared-access-to-mutext)
 
-`Mutex<T>`Now let’s try to share a value between multiple threads using `Mutex<T>`. We’ll
+`Mutex<T>`
+Now let’s try to share a value between multiple threads using `Mutex<T>`. We’ll
 spin up 10 threads and have them each increment a counter value by 1, so the
 counter goes from 0 to 10. The example in Listing 16-13 will have a compiler
 error, and we’ll use that error to learn more about using `Mutex<T>` and how
@@ -15235,7 +15309,7 @@ iteration of the loop. Rust is telling us that we can’t move the ownership of
 lock `counter` into multiple threads. Let’s fix the compiler error with the
 multiple-ownership method we discussed in Chapter 15.
 
-[Multiple Ownership with Multiple Threads](#multiple-ownership-with-multiple-threads)
+#### [Multiple Ownership with Multiple Threads](#multiple-ownership-with-multiple-threads)
 
 In Chapter 15, we gave a value to multiple owners by using the smart pointer
 `Rc<T>` to create a reference-counted value. Let’s do the same here and see
@@ -15274,8 +15348,8 @@ For more information about this error, try `rustc --explain E0277`.
 error: could not compile `shared-state` (bin "shared-state") due to 1 previous error
 ```
 Wow, that error message is very wordy! Here’s the important part to focus on:
-``Rc<Mutex<i32>>` cannot be sent between threads safely`. The compiler is
-also telling us the reason why: `the trait `Send` is not implemented for `Rc<Mutex<i32>>``. We’ll talk about `Send` in the next section: It’s one of
+`` `Rc<Mutex<i32>>` cannot be sent between threads safely ``. The compiler is
+also telling us the reason why: `` the trait `Send` is not implemented for `Rc<Mutex<i32>>` ``. We’ll talk about `Send` in the next section: It’s one of
 the traits that ensures that the types we use with threads are meant for use in
 concurrent situations.
 
@@ -15288,13 +15362,14 @@ could in turn lead to memory leaks or a value being dropped before we’re done
 with it. What we need is a type that is exactly like `Rc<T>`, but that makes
 changes to the reference count in a thread-safe way.
 
-[Atomic Reference Counting with ](#atomic-reference-counting-with-arct)`Arc<T>`
+#### [Atomic Reference Counting with `Arc<T>`](#atomic-reference-counting-with-arct)
 
-`Arc<T>`Fortunately, `Arc<T>` *is* a type like `Rc<T>` that is safe to use in
+`Arc<T>`
+Fortunately, `Arc<T>` *is* a type like `Rc<T>` that is safe to use in
 concurrent situations. The *a* stands for *atomic*, meaning it’s an *atomically
 reference-counted* type. Atomics are an additional kind of concurrency
 primitive that we won’t cover in detail here: See the standard library
-documentation for [ std::sync::atomic](../std/sync/atomic/index.html) for more
+documentation for [`std::sync::atomic`](../std/sync/atomic/index.html) for more
 details. At this point, you just need to know that atomics work like primitive
 types but are safe to share across threads.
 
@@ -15322,14 +15397,15 @@ parts, split those parts across threads, and then use a `Mutex<T>` to have each
 thread update the final result with its part.
 
 Note that if you are doing simple numerical operations, there are types simpler
-than `Mutex<T>` types provided by the [ std::sync::atomic module of the
+than `Mutex<T>` types provided by the [`std::sync::atomic` module of the
 standard library](../std/sync/atomic/index.html). These types provide safe, concurrent,
-atomic access to primitive types. We chose to use 
+atomic access to primitive types. We chose to use `Mutex<T>` with a primitive
+type for this example so that we could concentrate on how `Mutex<T>` works.
 
-`Mutex<T>` with a primitive
-type for this example so that we could concentrate on how `Mutex<T>` works.[Comparing ](#comparing-refcelltrct-and-mutextarct)`RefCell<T>`/`Rc<T>` and `Mutex<T>`/`Arc<T>`
+### [Comparing `RefCell<T>`/`Rc<T>` and `Mutex<T>`/`Arc<T>`](#comparing-refcelltrct-and-mutextarct)
 
-`RefCell<T>`/`Rc<T>` and `Mutex<T>`/`Arc<T>`You might have noticed that `counter` is immutable but that we could get a
+`RefCell<T>`/`Rc<T>` and `Mutex<T>`/`Arc<T>`
+You might have noticed that `counter` is immutable but that we could get a
 mutable reference to the value inside it; this means `Mutex<T>` provides
 interior mutability, as the `Cell` family does. In the same way we used
 `RefCell<T>` in Chapter 15 to allow us to mutate contents inside an `Rc<T>`, we
@@ -15350,16 +15426,17 @@ useful information.
 We’ll round out this chapter by talking about the `Send` and `Sync` traits and
 how we can use them with custom types.
 
-[Extensible Concurrency with Send and Sync](#extensible-concurrency-with-send-and-sync-1)
+# [Extensible Concurrency with Send and Sync](#extensible-concurrency-with-send-and-sync-1)
 
-[Extensible Concurrency with ](#extensible-concurrency-with-send-and-sync)`Send` and `Sync`
+## [Extensible Concurrency with `Send` and `Sync`](#extensible-concurrency-with-send-and-sync)
 
-`Send` and `Sync`Interestingly, almost every concurrency feature we’ve talked about so far in this chapter has been part of the standard library, not the language. Your options for handling concurrency are not limited to the language or the standard library; you can write your own concurrency features or use those written by others.
+`Send` and `Sync`
+Interestingly, almost every concurrency feature we’ve talked about so far in this chapter has been part of the standard library, not the language. Your options for handling concurrency are not limited to the language or the standard library; you can write your own concurrency features or use those written by others.
 
 However, among the key concurrency concepts that are embedded in the language
 rather than the standard library are the `std::marker` traits `Send` and `Sync`.
 
-[Transferring Ownership Between Threads](#transferring-ownership-between-threads)
+### [Transferring Ownership Between Threads](#transferring-ownership-between-threads)
 
 The `Send` marker trait indicates that ownership of values of the type
 implementing `Send` can be transferred between threads. Almost every Rust type
@@ -15372,14 +15449,14 @@ thread-safe performance penalty.
 
 Therefore, Rust’s type system and trait bounds ensure that you can never
 accidentally send an `Rc<T>` value across threads unsafely. When we tried to do
-this in Listing 16-14, we got the error `the trait `Send` is not implemented for `Rc<Mutex<i32>>``. When we switched to `Arc<T>`, which does implement
+this in Listing 16-14, we got the error `` the trait `Send` is not implemented for `Rc<Mutex<i32>>` ``. When we switched to `Arc<T>`, which does implement
 `Send`, the code compiled.
 
 Any type composed entirely of `Send` types is automatically marked as `Send` as
 well. Almost all primitive types are `Send`, aside from raw pointers, which
 we’ll discuss in Chapter 20.
 
-[Accessing from Multiple Threads](#accessing-from-multiple-threads)
+### [Accessing from Multiple Threads](#accessing-from-multiple-threads)
 
 The `Sync` marker trait indicates that it is safe for the type implementing
 `Sync` to be referenced from multiple threads. In other words, any type `T`
@@ -15394,11 +15471,12 @@ in Chapter 15) and the family of related `Cell<T>` types don’t implement
 `Sync`. The implementation of borrow checking that `RefCell<T>` does at runtime
 is not thread-safe. The smart pointer `Mutex<T>` implements `Sync` and can be
 used to share access with multiple threads, as you saw in [“Shared Access to
- Mutex<T>”](#shared-access-to-mutext).
+`Mutex<T>`”](#shared-access-to-mutext).
 
-[Implementing ](#implementing-send-and-sync-manually-is-unsafe)`Send` and `Sync` Manually Is Unsafe
+### [Implementing `Send` and `Sync` Manually Is Unsafe](#implementing-send-and-sync-manually-is-unsafe)
 
-`Send` and `Sync` Manually Is UnsafeBecause types composed entirely of other types that implement the `Send` and
+`Send` and `Sync` Manually Is Unsafe
+Because types composed entirely of other types that implement the `Send` and
 `Sync` traits also automatically implement `Send` and `Sync`, we don’t have to
 implement those traits manually. As marker traits, they don’t even have any
 methods to implement. They’re just useful for enforcing invariants related to
@@ -15411,7 +15489,7 @@ information is that building new concurrent types not made up of `Send` and
 Rustonomicon”](../nomicon/index.html) has more information about these guarantees and how to
 uphold them.
 
-[Summary](#summary-15)
+## [Summary](#summary-15)
 
 This isn’t the last you’ll see of concurrency in this book: The next chapter focuses on async programming, and the project in Chapter 21 will use the concepts in this chapter in a more realistic situation than the smaller examples discussed here.
 
@@ -15426,7 +15504,7 @@ run on multiple threads without the kinds of hard-to-track-down bugs common in
 other languages. Concurrent programming is no longer a concept to be afraid of:
 Go forth and make your programs concurrent, fearlessly!
 
-[Fundamentals of Asynchronous Programming: Async, Await, Futures, and Streams](#fundamentals-of-asynchronous-programming-async-await-futures-and-streams)
+# [Fundamentals of Asynchronous Programming: Async, Await, Futures, and Streams](#fundamentals-of-asynchronous-programming-async-await-futures-and-streams)
 
 Many operations we ask the computer to do can take a while to finish. It would
 be nice if we could do something else while we’re waiting for those
@@ -15487,13 +15565,14 @@ That is exactly what Rust’s *async* (short for *asynchronous*) abstraction
 gives us. In this chapter, you’ll learn all about async as we cover the
 following topics:
 
-- How to use Rust’s `async`and`await`syntax and execute asynchronous functions with a runtime
+- How to use Rust’s `async` and`await` syntax and execute asynchronous
+functions with a runtime
 - How to use the async model to solve some of the same challenges we looked at in Chapter 16
 - How multithreading and async provide complementary solutions that you can combine in many cases
 
 Before we see how async works in practice, though, we need to take a short detour to discuss the differences between parallelism and concurrency.
 
-[Parallelism and Concurrency](#parallelism-and-concurrency)
+## [Parallelism and Concurrency](#parallelism-and-concurrency)
 
 We’ve treated parallelism and concurrency as mostly interchangeable so far. Now we need to distinguish between them more precisely, because the differences will show up as we start working.
 
@@ -15528,9 +15607,7 @@ Running async code in Rust usually happens concurrently. Depending on the hardwa
 
 Now, let’s dive into how async programming in Rust actually works.
 
-[Futures and the Async Syntax](#futures-and-the-async-syntax-1)
-
-[Futures and the Async Syntax](#futures-and-the-async-syntax)
+# [Futures and the Async Syntax](#futures-and-the-async-syntax-1)
 
 The key elements of asynchronous programming in Rust are *futures* and Rust’s
 `async` and `await` keywords.
@@ -15567,21 +15644,20 @@ forward.
 
 This may all feel a bit abstract, so let’s write our first async program: a little web scraper. We’ll pass in two URLs from the command line, fetch both of them concurrently, and return the result of whichever one finishes first. This example will have a fair bit of new syntax, but don’t worry—we’ll explain everything you need to know as we go.
 
-[Our First Async Program](#our-first-async-program)
+## [Our First Async Program](#our-first-async-program)
 
 To keep the focus of this chapter on learning async rather than juggling parts
 of the ecosystem, we’ve created the `trpl` crate (`trpl` is short for “The Rust
 Programming Language”). It re-exports all the types, traits, and functions
-you’ll need, primarily from the [ futures](https://crates.io/crates/futures) and
-
-[crates. The](https://tokio.rs)
-
-`tokio``futures` crate is an official home
+you’ll need, primarily from the [`futures`](https://crates.io/crates/futures) and
+[`tokio`](https://tokio.rs) crates. The `futures` crate is an official home
 for Rust experimentation for async code, and it’s actually where the `Future`
 trait was originally designed. Tokio is the most widely used async runtime in
 Rust today, especially for web applications. There are other great runtimes out
 there, and they may be more suitable for your purposes. We use the `tokio`
-crate under the hood for `trpl` because it’s well tested and widely used.In some cases, `trpl` also renames or wraps the original APIs to keep you
+crate under the hood for `trpl` because it’s well tested and widely used.
+
+In some cases, `trpl` also renames or wraps the original APIs to keep you
 focused on the details relevant to this chapter. If you want to understand what
 the crate does, we encourage you to check out [its source code](https://github.com/rust-lang/book/tree/main/packages/trpl).
 You’ll be able to see what crate each re-export comes from, and we’ve left
@@ -15600,7 +15676,7 @@ program. We’ll build a little command line tool that fetches two web pages,
 pulls the `<title>` element from each, and prints out the title of whichever
 page finishes that whole process first.
 
-[Defining the page_title Function](#defining-the-page_title-function)
+### [Defining the page_title Function](#defining-the-page_title-function)
 
 Let’s start by writing a function that takes one page URL as a parameter, makes
 a request to it, and returns the text of the `<title>` element (see Listing
@@ -15687,16 +15763,20 @@ fn page_title(url: &str) -> impl Future<Output = Option<String>> {
 ```
 Let’s walk through each part of the transformed version:
 
-- It uses the `impl Trait`syntax we discussed back in Chapter 10 in the[“Traits as Parameters”](#traits-as-parameters)section.
-- The returned value implements the `Future`trait with an associated type of`Output`. Notice that the`Output`type is`Option<String>`, which is the same as the original return type from the`async fn`version of`page_title`.
+- It uses the `impl Trait` syntax we discussed back in Chapter 10 in the[“Traits as Parameters”](#traits-as-parameters) section.
+- The returned value implements the `Future` trait with an associated type of`Output` . Notice that the`Output` type is`Option<String>` , which is the
+same as the original return type from the`async fn` version of`page_title` .
 - All of the code called in the body of the original function is wrapped in
-an `async move`block. Remember that blocks are expressions. This whole block is the expression returned from the function.
-- This async block produces a value with the type `Option<String>`, as just described. That value matches the`Output`type in the return type. This is just like other blocks you have seen.
-- The new function body is an `async move`block because of how it uses the`url`parameter. (We’ll talk much more about`async`versus`async move`later in the chapter.)
+an `async move` block. Remember that blocks are expressions. This whole block
+is the expression returned from the function.
+- This async block produces a value with the type `Option<String>` , as just
+described. That value matches the`Output` type in the return type. This is
+just like other blocks you have seen.
+- The new function body is an `async move` block because of how it uses the`url` parameter. (We’ll talk much more about`async` versus`async move` later in the chapter.)
 
 Now we can call `page_title` in `main`.
 
-[Executing an Async Function with a Runtime](#executing-an-async-function-with-a-runtime)
+### [Executing an Async Function with a Runtime](#executing-an-async-function-with-a-runtime)
 
 To start, we’ll get the title for a single page, shown in Listing 17-3. Unfortunately, this code doesn’t compile yet.
 
@@ -15791,7 +15871,7 @@ function that runs a future to completion the way `trpl::block_on` does.
 
 Now let’s put these pieces together and see how we can write concurrent code.
 
-[Racing Two URLs Against Each Other Concurrently](#racing-two-urls-against-each-other-concurrently)
+### [Racing Two URLs Against Each Other Concurrently](#racing-two-urls-against-each-other-concurrently)
 
 In Listing 17-5, we call `page_title` with two different URLs passed in from the
 command line and race them by selecting whichever future finishes first.
@@ -15836,9 +15916,7 @@ what, if any, the `<title>` is for the web page at that URL.
 
 You have built a small working web scraper now! Pick a couple URLs and run the command line tool. You may discover that some sites are consistently faster than others, while in other cases the faster site varies from run to run. More importantly, you’ve learned the basics of working with futures, so now we can dig deeper into what we can do with async.
 
-[Applying Concurrency with Async](#applying-concurrency-with-async-1)
-
-[Applying Concurrency with Async](#applying-concurrency-with-async)
+# [Applying Concurrency with Async](#applying-concurrency-with-async-1)
 
 In this section, we’ll apply async to some of the same concurrency challenges we tackled with threads in Chapter 16. Because we already talked about a lot of the key ideas there, in this section we’ll focus on what’s different between threads and futures.
 
@@ -15848,16 +15926,17 @@ different. Even when the APIs *look* similar between threads and async, they
 often have different behavior—and they nearly always have different performance
 characteristics.
 
-[Creating a New Task with ](#creating-a-new-task-with-spawn_task)`spawn_task`
+### [Creating a New Task with `spawn_task`](#creating-a-new-task-with-spawn_task)
 
-`spawn_task`The first operation we tackled in the [“Creating a New Thread with
- spawn”](#creating-a-new-thread-with-spawn) section in Chapter 16 was counting up on
-two separate threads. Let’s do the same using async. The 
-
-`trpl` crate supplies
+`spawn_task`
+The first operation we tackled in the [“Creating a New Thread with
+`spawn`”](#creating-a-new-thread-with-spawn) section in Chapter 16 was counting up on
+two separate threads. Let’s do the same using async. The `trpl` crate supplies
 a `spawn_task` function that looks very similar to the `thread::spawn` API, and
 a `sleep` function that is an async version of the `thread::sleep` API. We can
-use these together to implement the counting example, as shown in Listing 17-6.As our starting point, we set up our `main` function with `trpl::block_on` so
+use these together to implement the counting example, as shown in Listing 17-6.
+
+As our starting point, we set up our `main` function with `trpl::block_on` so
 that our top-level function can be async.
 
 Note: From this point forward in the chapter, every example will include this
@@ -15967,7 +16046,7 @@ Try some of these variations on awaiting the futures and see what they do:
 For an extra challenge, see if you can figure out what the output will be in
 each case *before* running the code!
 
-[Sending Data Between Two Tasks Using Message Passing](#sending-data-between-two-tasks-using-message-passing)
+### [Sending Data Between Two Tasks Using Message Passing](#sending-data-between-two-tasks-using-message-passing)
 
 Sharing data between futures will also be familiar: we’ll use message passing
 again, but this time with async versions of the types and functions. We’ll take
@@ -16014,7 +16093,7 @@ In Listing 16-10, we used a `for` loop to process all the items received from a
 synchronous channel. Rust doesn’t yet have a way to use a `for` loop with an
 *asynchronously produced* series of items, however, so we need to use a loop we
 haven’t seen before: the `while let` conditional loop. This is the loop version
-of the `if let` construct we saw back in the [“Concise Control Flow with  if let and let...else”](#concise-control-flow-with-if-let-and-letelse-1) section in Chapter 6. The loop
+of the `if let` construct we saw back in the [“Concise Control Flow with `if let` and `let...else`”](#concise-control-flow-with-if-let-and-letelse-1) section in Chapter 6. The loop
 will continue executing as long as the pattern it specifies continues to match
 the value.
 
@@ -16038,7 +16117,7 @@ seconds (2,000 milliseconds) after we start the program. For another, this
 program also never exits! Instead, it waits forever for new messages. You will
 need to shut it down using `ctrl`-`C`.
 
-[Code Within One Async Block Executes Linearly](#code-within-one-async-block-executes-linearly)
+#### [Code Within One Async Block Executes Linearly](#code-within-one-async-block-executes-linearly)
 
 Let’s start by examining why the messages come in all at once after the full
 delay, rather than coming in with delays between each one. Within a given async
@@ -16061,41 +16140,47 @@ what we’re trying *not* to do.
 
 With the updated code in Listing 17-11, the messages get printed at 500-millisecond intervals, rather than all in a rush after 2 seconds.
 
-[Moving Ownership Into an Async Block](#moving-ownership-into-an-async-block)
+#### [Moving Ownership Into an Async Block](#moving-ownership-into-an-async-block)
 
 The program still never exits, though, because of the way the `while let` loop
 interacts with `trpl::join`:
 
-- The future returned from `trpl::join`completes only once*both*futures passed to it have completed.
-- The `tx_fut`future completes once it finishes sleeping after sending the last message in`vals`.
-- The `rx_fut`future won’t complete until the`while let`loop ends.
-- The `while let`loop won’t end until awaiting`rx.recv`produces`None`.
-- Awaiting `rx.recv`will return`None`only once the other end of the channel is closed.
-- The channel will close only if we call `rx.close`or when the sender side,`tx`, is dropped.
-- We don’t call `rx.close`anywhere, and`tx`won’t be dropped until the outermost async block passed to`trpl::block_on`ends.
-- The block can’t end because it is blocked on `trpl::join`completing, which takes us back to the top of this list.
+- The future returned from `trpl::join` completes only once*both* futures
+passed to it have completed.
+- The `tx_fut` future completes once it finishes sleeping after sending the last
+message in`vals` .
+- The `rx_fut` future won’t complete until the`while let` loop ends.
+- The `while let` loop won’t end until awaiting`rx.recv` produces`None` .
+- Awaiting `rx.recv` will return`None` only once the other end of the channel
+is closed.
+- The channel will close only if we call `rx.close` or when the sender side,`tx` , is dropped.
+- We don’t call `rx.close` anywhere, and`tx` won’t be dropped until the
+outermost async block passed to`trpl::block_on` ends.
+- The block can’t end because it is blocked on `trpl::join` completing, which
+takes us back to the top of this list.
 
 Right now, the async block where we send the messages only *borrows* `tx`
 because sending a message doesn’t require ownership, but if we could *move*
 `tx` into that async block, it would be dropped once that block ends. In the
 [“Capturing References or Moving Ownership”](#capturing-references-or-moving-ownership)
 section in Chapter 13, you learned how to use the `move` keyword with closures,
-and, as discussed in the [“Using  move Closures with
+and, as discussed in the [“Using `move` Closures with
 Threads”](#using-move-closures-with-threads) section in Chapter 16, we often need to
 move data into closures when working with threads. The same basic dynamics
-apply to async blocks, so the 
+apply to async blocks, so the `move` keyword works with async blocks just as it
+does with closures.
 
-`move` keyword works with async blocks just as it
-does with closures.In Listing 17-12, we change the block used to send messages from `async` to
+In Listing 17-12, we change the block used to send messages from `async` to
 `async move`.
 
 When we run *this* version of the code, it shuts down gracefully after the last
 message is sent and received. Next, let’s see what would need to change to send
 data from more than one future.
 
-[Joining a Number of Futures with the ](#joining-a-number-of-futures-with-the-join-macro)`join!` Macro
+#### [Joining a Number of Futures with the `join!` Macro](#joining-a-number-of-futures-with-the-join-macro)
 
-`join!` MacroThis async channel is also a multiple-producer channel, so we can call `clone`
+`join!` Macro
+This async channel is also a multiple-producer channel, so we can call `clone`
 on `tx` if we want to send messages from multiple futures, as shown in Listing
 17-13.
 
@@ -16129,9 +16214,9 @@ received 'you'
 ```
 We’ve explored how to use message passing to send data between futures, how code within an async block runs sequentially, how to move ownership into an async block, and how to join multiple futures. Next, let’s discuss how and why to tell the runtime it can switch to another task.
 
-[Working With Any Number of Futures](#working-with-any-number-of-futures)
+# [Working With Any Number of Futures](#working-with-any-number-of-futures)
 
-[Yielding Control to the Runtime](#yielding-control-to-the-runtime)
+### [Yielding Control to the Runtime](#yielding-control-to-the-runtime)
 
 Recall from the [“Our First Async Program”](#our-first-async-program)
 section that at each await point, Rust gives a runtime a chance to pause the
@@ -16238,7 +16323,7 @@ measure to see what your code’s actual performance bottlenecks are. The
 underlying dynamic is important to keep in mind, though, if you *are* seeing a
 lot of work happening in serial that you expected to happen concurrently!
 
-[Building Our Own Async Abstractions](#building-our-own-async-abstractions)
+### [Building Our Own Async Abstractions](#building-our-own-async-abstractions)
 
 We can also compose futures together to create new patterns. For example, we can
 build a `timeout` function with async building blocks we already have. When
@@ -16252,8 +16337,11 @@ Let’s implement this! To begin, let’s think about the API for `timeout`:
 
 - It needs to be an async function itself so we can await it.
 - Its first parameter should be a future to run. We can make it generic to allow it to work with any future.
-- Its second parameter will be the maximum time to wait. If we use a `Duration`, that will make it easy to pass along to`trpl::sleep`.
-- It should return a `Result`. If the future completes successfully, the`Result`will be`Ok`with the value produced by the future. If the timeout elapses first, the`Result`will be`Err`with the duration that the timeout waited for.
+- Its second parameter will be the maximum time to wait. If we use a `Duration` ,
+that will make it easy to pass along to`trpl::sleep` .
+- It should return a `Result` . If the future completes successfully, the`Result` will be`Ok` with the value produced by the future. If the timeout
+elapses first, the`Result` will be`Err` with the duration that the timeout
+waited for.
 
 Listing 17-19 shows this declaration.
 
@@ -16293,9 +16381,7 @@ We’ve now seen a number of ways to work with multiple futures at the same time
 Up next, we’ll look at how we can work with multiple futures in a sequence over
 time with *streams*.
 
-[Streams: Futures in Sequence](#streams-futures-in-sequence-1)
-
-[Streams: Futures in Sequence](#streams-futures-in-sequence)
+# [Streams: Futures in Sequence](#streams-futures-in-sequence-1)
 
 Recall how we used the receiver for our async channel earlier in this chapter
 in the [“Message Passing”](#message-passing) section. The async
@@ -16310,18 +16396,18 @@ triggering too many network calls, set timeouts on sequences of long-running
 operations, or throttle user interface events to avoid doing needless work.
 
 We saw a sequence of items back in Chapter 13, when we looked at the Iterator
-trait in [“The Iterator Trait and the  next Method”](#the-iterator-trait-and-the-next-method) section, but there are two differences between iterators and the
+trait in [“The Iterator Trait and the `next` Method”](#the-iterator-trait-and-the-next-method) section, but there are two differences between iterators and the
 async channel receiver. The first difference is time: iterators are
 synchronous, while the channel receiver is asynchronous. The second difference
-is the API. When working directly with 
-
-`Iterator`, we call its synchronous
+is the API. When working directly with `Iterator`, we call its synchronous
 `next` method. With the `trpl::Receiver` stream in particular, we called an
 asynchronous `recv` method instead. Otherwise, these APIs feel very similar,
 and that similarity isn’t a coincidence. A stream is like an asynchronous form
 of iteration. Whereas the `trpl::Receiver` specifically waits to receive
 messages, though, the general-purpose stream API is much broader: it provides
-the next item the way `Iterator` does, but asynchronously.The similarity between iterators and streams in Rust means we can actually
+the next item the way `Iterator` does, but asynchronously.
+
+The similarity between iterators and streams in Rust means we can actually
 create a stream from any iterator. As with an iterator, we can work with a
 stream by calling its `next` method and then awaiting the output, as in Listing
 17-21, which won’t compile yet.
@@ -16377,9 +16463,7 @@ With all those pieces put together, this code works the way we want! What’s
 more, now that we have `StreamExt` in scope, we can use all of its utility
 methods, just as with iterators.
 
-[A Closer Look at the Traits for Async](#a-closer-look-at-the-traits-for-async-1)
-
-[A Closer Look at the Traits for Async](#a-closer-look-at-the-traits-for-async)
+# [A Closer Look at the Traits for Async](#a-closer-look-at-the-traits-for-async-1)
 
 Throughout the chapter, we’ve used the `Future`, `Stream`, and `StreamExt`
 traits in various ways. So far, though, we’ve avoided getting too far into the
@@ -16390,9 +16474,10 @@ along with the `Pin` type and the `Unpin` trait. In this section, we’ll dig in
 just enough to help in those scenarios, still leaving the *really* deep dive
 for other documentation.
 
-[The ](#the-future-trait)`Future` Trait
+### [The `Future` Trait](#the-future-trait)
 
-`Future` TraitLet’s start by taking a closer look at how the `Future` trait works. Here’s how
+`Future` Trait
+Let’s start by taking a closer look at how the `Future` trait works. Here’s how
 Rust defines it:
 
 ```
@@ -16494,9 +16579,10 @@ but the key is to see the basic mechanics of futures: a runtime *polls* each
 future it is responsible for, putting the future back to sleep when it is not
 yet ready.
 
-[The ](#the-pin-type-and-the-unpin-trait)`Pin` Type and the `Unpin` Trait
+### [The `Pin` Type and the `Unpin` Trait](#the-pin-type-and-the-unpin-trait)
 
-`Pin` Type and the `Unpin` TraitBack in Listing 17-13, we used the `trpl::join!` macro to await three
+`Pin` Type and the `Unpin` Trait
+Back in Listing 17-13, we used the `trpl::join!` macro to await three
 futures. However, it’s common to have a collection such as a vector containing
 some number futures that won’t be known until runtime. Let’s change Listing
 17-13 to the code in Listing 17-23 that puts the three futures into a vector
@@ -16580,9 +16666,10 @@ method where `self` has a type annotation. A type annotation for `self` works
 like type annotations for other function parameters but with two key
 differences:
 
-- It tells Rust what type `self`must be for the method to be called.
+- It tells Rust what type `self` must be for the method to be called.
 - It can’t be just any type. It’s restricted to the type on which the method is
-implemented, a reference or smart pointer to that type, or a `Pin`wrapping a reference to that type.
+implemented, a reference or smart pointer to that type, or a `Pin` wrapping a
+reference to that type.
 
 We’ll see more on this syntax in [Chapter 18](#object-oriented-programming-features). For now,
 it’s enough to know that if we want to poll a future to check whether it is
@@ -16659,7 +16746,7 @@ moved.
 Just as with `Send` and `Sync`, the compiler implements `Unpin` automatically
 for all types where it can prove it is safe. A special case, again similar to
 `Send` and `Sync`, is where `Unpin` is *not* implemented for a type. The
-notation for this is `impl !Unpin for `, where
+notation for this is `impl !Unpin for` , where
 *SomeType**SomeType**does* need to uphold
 those guarantees to be safe whenever a pointer to that type is used in a `Pin`.
 
@@ -16711,11 +16798,12 @@ if you’re interested in learning more, that’s a great place to start.
 If you want to understand how things work under the hood in even more detail,
 see Chapters [2](https://rust-lang.github.io/async-book/02_execution/01_chapter.html) and
 [4](https://rust-lang.github.io/async-book/04_pinning/01_chapter.html) of
-[ Asynchronous Programming in Rust](https://rust-lang.github.io/async-book/).
+[*Asynchronous Programming in Rust*](https://rust-lang.github.io/async-book/).
 
-[The ](#the-stream-trait)`Stream` Trait
+### [The `Stream` Trait](#the-stream-trait)
 
-`Stream` TraitNow that you have a deeper grasp on the `Future`, `Pin`, and `Unpin` traits, we
+`Stream` Trait
+Now that you have a deeper grasp on the `Future`, `Pin`, and `Unpin` traits, we
 can turn our attention to the `Stream` trait. As you learned earlier in the
 chapter, streams are similar to asynchronous iterators. Unlike `Iterator` and
 `Future`, however, `Stream` has no definition in the standard library as of
@@ -16788,7 +16876,8 @@ trait StreamExt: Stream {
 ```
 Note: The actual definition we used earlier in the chapter looks slightly different than this, because it supports versions of Rust that did not yet support using async functions in traits. As a result, it looks like this:
 
-`fn next(&mut self) -> Next<'_, Self> where Self: Unpin;`That `Next` type is a `struct` that implements `Future` and allows us to name
+`fn next(&mut self) -> Next<'_, Self> where Self: Unpin;`
+That `Next` type is a `struct` that implements `Future` and allows us to name
 the lifetime of the reference to `self` with `Next<'_, Self>`, so that `await`
 can work with this method.
 
@@ -16807,9 +16896,9 @@ to implement `Stream`, and then anyone who uses your data type can use
 
 That’s all we’re going to cover for the lower-level details on these traits. To wrap up, let’s consider how futures (including streams), tasks, and threads all fit together!
 
-[Futures, Tasks, and Threads](#futures-tasks-and-threads)
+# [Futures, Tasks, and Threads](#futures-tasks-and-threads)
 
-[Putting It All Together: Futures, Tasks, and Threads](#putting-it-all-together-futures-tasks-and-threads)
+## [Putting It All Together: Futures, Tasks, and Threads](#putting-it-all-together-futures-tasks-and-threads)
 
 As we saw in [Chapter 16](http://localhost:3000/ch16-00-concurrency.html), threads provide one approach to
 concurrency. We’ve seen another approach in this chapter: using async with
@@ -16855,8 +16944,12 @@ approach actually requires threads *and* tasks, and therefore futures.
 
 When thinking about which method to use when, consider these rules of thumb:
 
-- If the work is *very parallelizable*(that is, CPU-bound), such as processing a bunch of data where each part can be processed separately, threads are a better choice.
-- If the work is *very concurrent*(that is, I/O-bound), such as handling messages from a bunch of different sources that may come in at different intervals or different rates, async is a better choice.
+- If the work is *very parallelizable* (that is, CPU-bound), such as processing
+a bunch of data where each part can be processed separately, threads are a
+better choice.
+- If the work is *very concurrent* (that is, I/O-bound), such as handling
+messages from a bunch of different sources that may come in at different
+intervals or different rates, async is a better choice.
 
 And if you need both parallelism and concurrency, you don’t have to choose between threads and async. You can use them together freely, letting each play the part it’s best at. For example, Listing 17-25 shows a fairly common example of this kind of mix in real-world Rust code.
 
@@ -16870,7 +16963,7 @@ seen.
 
 To return to the scenario we opened the chapter with, imagine running a set of video encoding tasks using a dedicated thread (because video encoding is compute-bound) but notifying the UI that those operations are done with an async channel. There are countless examples of these kinds of combinations in real-world use cases.
 
-[Summary](#summary-16)
+## [Summary](#summary-16)
 
 This isn’t the last you’ll see of concurrency in this book. The project in
 [Chapter 21](#final-project-building-a-multithreaded-web-server) will apply these concepts in a more realistic
@@ -16881,7 +16974,7 @@ No matter which of these approaches you choose, Rust gives you the tools you nee
 
 Next, we’ll talk about idiomatic ways to model problems and structure solutions as your Rust programs get bigger. In addition, we’ll discuss how Rust’s idioms relate to those you might be familiar with from object-oriented programming.
 
-[Object-Oriented Programming Features](#object-oriented-programming-features)
+# [Object-Oriented Programming Features](#object-oriented-programming-features)
 
 Object-oriented programming (OOP) is a way of modeling programs. Objects as a
 programmatic concept were introduced in the programming language Simula in the
@@ -16895,29 +16988,27 @@ translate to idiomatic Rust. We’ll then show you how to implement an
 object-oriented design pattern in Rust and discuss the trade-offs of doing so
 versus implementing a solution using some of Rust’s strengths instead.
 
-[Characteristics of Object-Oriented Languages](#characteristics-of-object-oriented-languages-1)
-
-[Characteristics of Object-Oriented Languages](#characteristics-of-object-oriented-languages)
+# [Characteristics of Object-Oriented Languages](#characteristics-of-object-oriented-languages-1)
 
 There is no consensus in the programming community about what features a language must have to be considered object oriented. Rust is influenced by many programming paradigms, including OOP; for example, we explored the features that came from functional programming in Chapter 13. Arguably, OOP languages share certain common characteristics—namely, objects, encapsulation, and inheritance. Let’s look at what each of those characteristics means and whether Rust supports it.
 
-[Objects Contain Data and Behavior](#objects-contain-data-and-behavior)
+### [Objects Contain Data and Behavior](#objects-contain-data-and-behavior)
 
 The book *Design Patterns: Elements of Reusable Object-Oriented Software* by
 Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides (Addison-Wesley,
 1994), colloquially referred to as *The Gang of Four* book, is a catalog of
 object-oriented design patterns. It defines OOP in this way:
 
-Object-oriented programs are made up of objects. An
-
-objectpackages both data and the procedures that operate on that data. The procedures are typically calledmethodsoroperations.
+Object-oriented programs are made up of objects. An **object** packages both
+data and the procedures that operate on that data. The procedures are
+typically called **methods** or **operations**.
 
 Using this definition, Rust is object oriented: Structs and enums have data,
 and `impl` blocks provide methods on structs and enums. Even though structs and
 enums with methods aren’t *called* objects, they provide the same
 functionality, according to the Gang of Four’s definition of objects.
 
-[Encapsulation That Hides Implementation Details](#encapsulation-that-hides-implementation-details)
+### [Encapsulation That Hides Implementation Details](#encapsulation-that-hides-implementation-details)
 
 Another aspect commonly associated with OOP is the idea of *encapsulation*,
 which means that the implementation details of an object aren’t accessible to
@@ -16969,7 +17060,7 @@ If encapsulation is a required aspect for a language to be considered object
 oriented, then Rust meets that requirement. The option to use `pub` or not for
 different parts of code enables encapsulation of implementation details.
 
-[Inheritance as a Type System and as Code Sharing](#inheritance-as-a-type-system-and-as-code-sharing)
+### [Inheritance as a Type System and as Code Sharing](#inheritance-as-a-type-system-and-as-code-sharing)
 
 *Inheritance* is a mechanism whereby an object can inherit elements from
 another object’s definition, thus gaining the parent object’s data and behavior
@@ -16997,7 +17088,7 @@ child type to be used in the same places as the parent type. This is also
 called *polymorphism*, which means that you can substitute multiple objects for
 each other at runtime if they share certain characteristics.
 
-[Polymorphism](#polymorphism)
+### [Polymorphism](#polymorphism)
 
 To many people, polymorphism is synonymous with inheritance. But it’s actually a more general concept that refers to code that can work with data of multiple types. For inheritance, those types are generally subclasses.
 
@@ -17017,9 +17108,7 @@ of a program’s design.
 
 For these reasons, Rust takes the different approach of using trait objects instead of inheritance to achieve polymorphism at runtime. Let’s look at how trait objects work.
 
-[Using Trait Objects to Abstract over Shared Behavior](#using-trait-objects-to-abstract-over-shared-behavior-1)
-
-[Using Trait Objects to Abstract over Shared Behavior](#using-trait-objects-to-abstract-over-shared-behavior)
+# [Using Trait Objects to Abstract over Shared Behavior](#using-trait-objects-to-abstract-over-shared-behavior-1)
 
 In Chapter 8, we mentioned that one limitation of vectors is that they can
 store elements of only one type. We created a workaround in Listing 8-9 where
@@ -17056,7 +17145,7 @@ they were `Component` instances and call `draw` on them. But because Rust
 doesn’t have inheritance, we need another way to structure the `gui` library to
 allow users to create new types compatible with the library.
 
-[Defining a Trait for Common Behavior](#defining-a-trait-for-common-behavior)
+### [Defining a Trait for Common Behavior](#defining-a-trait-for-common-behavior)
 
 To implement the behavior that we want `gui` to have, we’ll define a trait
 named `Draw` that will have one method named `draw`. Then, we can define a
@@ -17066,7 +17155,7 @@ methods on that type at runtime. We create a trait object by specifying some
 sort of pointer, such as a reference or a `Box<T>` smart pointer, then the
 `dyn` keyword, and then specifying the relevant trait. (We’ll talk about the
 reason trait objects must use a pointer in [“Dynamically Sized Types and the
- Sized Trait”](#dynamically-sized-types-and-the-sized-trait) in Chapter 20.) We can use
+`Sized` Trait”](#dynamically-sized-types-and-the-sized-trait) in Chapter 20.) We can use
 trait objects in place of a generic or concrete type. Wherever we use a trait
 object, Rust’s type system will ensure at compile time that any value used in
 that context will implement the trait object’s trait. Consequently, we don’t
@@ -17110,7 +17199,7 @@ can hold a `Vec<T>` that contains a `Box<Button>` as well as a
 `Box<TextField>`. Let’s look at how this works, and then we’ll talk about the
 runtime performance implications.
 
-[Implementing the Trait](#implementing-the-trait)
+### [Implementing the Trait](#implementing-the-trait)
 
 Now we’ll add some types that implement the `Draw` trait. We’ll provide the
 `Button` type. Again, actually implementing a GUI library is beyond the scope
@@ -17179,7 +17268,7 @@ This error lets us know that either we’re passing something to `Screen` that w
 didn’t mean to pass and so should pass a different type, or we should implement
 `Draw` on `String` so that `Screen` is able to call `draw` on it.
 
-[Performing Dynamic Dispatch](#performing-dynamic-dispatch)
+### [Performing Dynamic Dispatch](#performing-dynamic-dispatch)
 
 Recall in [“Performance of Code Using
 Generics”](#performance-of-code-using-generics) in Chapter 10 our
@@ -17205,9 +17294,7 @@ rules are beyond the scope of this discussion, but you can read more about them
 flexibility in the code that we wrote in Listing 18-5 and were able to support
 in Listing 18-9, so it’s a trade-off to consider.
 
-[Implementing an Object-Oriented Design Pattern](#implementing-an-object-oriented-design-pattern-1)
-
-[Implementing an Object-Oriented Design Pattern](#implementing-an-object-oriented-design-pattern)
+# [Implementing an Object-Oriented Design Pattern](#implementing-an-object-oriented-design-pattern-1)
 
 The *state pattern* is an object-oriented design pattern. The crux of the
 pattern is that we define a set of states a value can have internally. The
@@ -17224,14 +17311,14 @@ First, we’re going to implement the state pattern in a more traditional object
 
 The final functionality will look like this:
 
-- A blog post starts as an empty draft.
-- When the draft is done, a review of the post is requested.
-- When the post is approved, it gets published.
-- Only published blog posts return content to print so that unapproved posts can’t accidentally be published.
+1. A blog post starts as an empty draft.
+2. When the draft is done, a review of the post is requested.
+3. When the post is approved, it gets published.
+4. Only published blog posts return content to print so that unapproved posts can’t accidentally be published.
 
 Any other changes attempted on a post should have no effect. For example, if we try to approve a draft blog post before we’ve requested a review, the post should remain an unpublished draft.
 
-[Attempting Traditional Object-Oriented Style](#attempting-traditional-object-oriented-style)
+### [Attempting Traditional Object-Oriented Style](#attempting-traditional-object-oriented-style)
 
 There are infinite ways to structure code to solve the same problem, each with different trade-offs. This section’s implementation is more of a traditional object-oriented style, which is possible to write in Rust, but doesn’t take advantage of some of Rust’s strengths. Later, we’ll demonstrate a different solution that still uses the object-oriented design pattern but is structured in a way that might look less familiar to programmers with object-oriented experience. We’ll compare the two solutions to experience the trade-offs of designing Rust code differently than code in other languages.
 
@@ -17261,9 +17348,10 @@ methods called by our library’s users on the `Post` instance, but they don’t
 have to manage the state changes directly. Also, users can’t make a mistake
 with the states, such as publishing a post before it’s reviewed.
 
-[Defining ](#defining-post-and-creating-a-new-instance)`Post` and Creating a New Instance
+#### [Defining `Post` and Creating a New Instance](#defining-post-and-creating-a-new-instance)
 
-`Post` and Creating a New InstanceLet’s get started on the implementation of the library! We know we need a
+`Post` and Creating a New Instance
+Let’s get started on the implementation of the library! We know we need a
 public `Post` struct that holds some content, so we’ll start with the
 definition of the struct and an associated public `new` function to create an
 instance of `Post`, as shown in Listing 18-12. We’ll also make a private
@@ -17287,7 +17375,7 @@ a draft. Because the `state` field of `Post` is private, there is no way to
 create a `Post` in any other state! In the `Post::new` function, we set the
 `content` field to a new, empty `String`.
 
-[Storing the Text of the Post Content](#storing-the-text-of-the-post-content)
+#### [Storing the Text of the Post Content](#storing-the-text-of-the-post-content)
 
 We saw in Listing 18-11 that we want to be able to call a method named
 `add_text` and pass it a `&str` that is then added as the text content of the
@@ -17304,7 +17392,7 @@ so it’s not part of the state pattern. The `add_text` method doesn’t interac
 with the `state` field at all, but it is part of the behavior we want to
 support.
 
-[Ensuring That the Content of a Draft Post Is Empty](#ensuring-that-the-content-of-a-draft-post-is-empty)
+#### [Ensuring That the Content of a Draft Post Is Empty](#ensuring-that-the-content-of-a-draft-post-is-empty)
 
 Even after we’ve called `add_text` and added some content to our post, we still
 want the `content` method to return an empty string slice because the post is
@@ -17319,7 +17407,7 @@ implementation.
 With this added `content` method, everything in Listing 18-11 through the first
 `assert_eq!` works as intended.
 
-[Requesting a Review, Which Changes the Post’s State](#requesting-a-review-which-changes-the-posts-state)
+#### [Requesting a Review, Which Changes the Post’s State](#requesting-a-review-which-changes-the-posts-state)
 
 Next, we need to add functionality to request a review of a post, which should
 change its state from `Draft` to `PendingReview`. Listing 18-15 shows this code.
@@ -17366,9 +17454,10 @@ slice. We can now have a `Post` in the `PendingReview` state as well as in the
 `Draft` state, but we want the same behavior in the `PendingReview` state.
 Listing 18-11 now works up to the second `assert_eq!` call!
 
-[Adding ](#adding-approve-to-change-contents-behavior)`approve` to Change `content`’s Behavior
+#### [Adding `approve` to Change `content`’s Behavior](#adding-approve-to-change-contents-behavior)
 
-`approve` to Change `content`’s BehaviorThe `approve` method will be similar to the `request_review` method: It will
+`approve` to Change `content`’s Behavior
+The `approve` method will be similar to the `request_review` method: It will
 set `state` to the value that the current state says it should have when that
 state is approved, as shown in Listing 18-16.
 
@@ -17430,7 +17519,7 @@ And we’re done—all of Listing 18-11 now works! We’ve implemented the state
 pattern with the rules of the blog post workflow. The logic related to the
 rules lives in the state objects rather than being scattered throughout `Post`.
 
-[Why Not An Enum?](#why-not-an-enum)
+### [Why Not An Enum?](#why-not-an-enum)
 
 You may have been wondering why we didn’t use an enum with the different
 possible post states as variants. That’s certainly a possible solution; try it
@@ -17439,7 +17528,7 @@ an enum is that every place that checks the value of the enum will need a
 `match` expression or similar to handle every possible variant. This could get
 more repetitive than this trait object solution.
 
-[Evaluating the State Pattern](#evaluating-the-state-pattern)
+#### [Evaluating the State Pattern](#evaluating-the-state-pattern)
 
 We’ve shown that Rust is capable of implementing the object-oriented state
 pattern to encapsulate the different kinds of behavior a post should have in
@@ -17460,9 +17549,12 @@ new struct and implement the trait methods on that one struct in one location.
 
 The implementation using the state pattern is easy to extend to add more functionality. To see the simplicity of maintaining code that uses the state pattern, try a few of these suggestions:
 
-- Add a `reject`method that changes the post’s state from`PendingReview`back to`Draft`.
-- Require two calls to `approve`before the state can be changed to`Published`.
-- Allow users to add text content only when a post is in the `Draft`state. Hint: have the state object responsible for what might change about the content but not responsible for modifying the`Post`.
+- Add a `reject` method that changes the post’s state from`PendingReview` back
+to`Draft` .
+- Require two calls to `approve` before the state can be changed to`Published` .
+- Allow users to add text content only when a post is in the `Draft` state.
+Hint: have the state object responsible for what might change about the
+content but not responsible for modifying the`Post` .
 
 One downside of the state pattern is that, because the states implement the
 transitions between states, some of the states are coupled to each other. If we
@@ -17493,7 +17585,7 @@ languages, we’re not taking as full advantage of Rust’s strengths as we coul
 Let’s look at some changes we can make to the `blog` crate that can make
 invalid states and transitions into compile-time errors.
 
-[Encoding States and Behavior as Types](#encoding-states-and-behavior-as-types)
+### [Encoding States and Behavior as Types](#encoding-states-and-behavior-as-types)
 
 We’ll show you how to rethink the state pattern to get a different set of trade-offs. Rather than encapsulating the states and transitions completely so that outside code has no knowledge of them, we’ll encode the states into different types. Consequently, Rust’s type-checking system will prevent attempts to use draft posts where only published posts are allowed by issuing a compiler error.
 
@@ -17569,13 +17661,13 @@ design.
 
 We’ve seen that even though Rust is capable of implementing object-oriented design patterns, other patterns, such as encoding state into the type system, are also available in Rust. These patterns have different trade-offs. Although you might be very familiar with object-oriented patterns, rethinking the problem to take advantage of Rust’s features can provide benefits, such as preventing some bugs at compile time. Object-oriented patterns won’t always be the best solution in Rust due to certain features, like ownership, that object-oriented languages don’t have.
 
-[Summary](#summary-17)
+## [Summary](#summary-17)
 
 Regardless of whether you think Rust is an object-oriented language after reading this chapter, you now know that you can use trait objects to get some object-oriented features in Rust. Dynamic dispatch can give your code some flexibility in exchange for a bit of runtime performance. You can use this flexibility to implement object-oriented patterns that can help your code’s maintainability. Rust also has other features, like ownership, that object-oriented languages don’t have. An object-oriented pattern won’t always be the best way to take advantage of Rust’s strengths, but it is an available option.
 
 Next, we’ll look at patterns, which are another of Rust’s features that enable lots of flexibility. We’ve looked at them briefly throughout the book but haven’t seen their full capability yet. Let’s go!
 
-[Patterns and Matching](#patterns-and-matching)
+# [Patterns and Matching](#patterns-and-matching)
 
 Patterns are a special syntax in Rust for matching against the structure of
 types, both complex and simple. Using patterns in conjunction with `match`
@@ -17601,24 +17693,24 @@ doesn’t, the code associated with the pattern won’t run.
 
 This chapter is a reference on all things related to patterns. We’ll cover the valid places to use patterns, the difference between refutable and irrefutable patterns, and the different kinds of pattern syntax that you might see. By the end of the chapter, you’ll know how to use patterns to express many concepts in a clear way.
 
-[All the Places Patterns Can Be Used](#all-the-places-patterns-can-be-used-1)
-
-[All the Places Patterns Can Be Used](#all-the-places-patterns-can-be-used)
+# [All the Places Patterns Can Be Used](#all-the-places-patterns-can-be-used-1)
 
 Patterns pop up in a number of places in Rust, and you’ve been using them a lot without realizing it! This section discusses all the places where patterns are valid.
 
-`match` Arms
+### [`match` Arms](#match-arms)
 
-`match` ArmsAs discussed in Chapter 6, we use patterns in the arms of `match` expressions.
+`match` Arms
+As discussed in Chapter 6, we use patterns in the arms of `match` expressions.
 Formally, `match` expressions are defined as the keyword `match`, a value to
 match on, and one or more match arms that consist of a pattern and an
 expression to run if the value matches that arm’s pattern, like this:
 
-`match `*VALUE* {
+`match` *VALUE* {
     *PATTERN* => *EXPRESSION*,
     *PATTERN* => *EXPRESSION*,
     *PATTERN* => *EXPRESSION*,
-}For example, here’s the `match` expression from Listing 6-5 that matches on an
+}
+For example, here’s the `match` expression from Listing 6-5 that matches on an
 `Option<i32>` value in the variable `x`:
 
 ```
@@ -17642,9 +17734,10 @@ useful when you want to ignore any value not specified, for example. We’ll
 cover the `_` pattern in more detail in [“Ignoring Values in a
 Pattern”](#ignoring-values-in-a-pattern) later in this chapter.
 
-`let` Statements
+### [`let` Statements](#let-statements)
 
-`let` StatementsPrior to this chapter, we had only explicitly discussed using patterns with
+`let` Statements
+Prior to this chapter, we had only explicitly discussed using patterns with
 `match` and `if let`, but in fact, we’ve used patterns in other places as well,
 including in `let` statements. For example, consider this straightforward
 variable assignment with `let`:
@@ -17661,7 +17754,7 @@ like this:
 
 ```
 ```
-`let `*PATTERN* = *EXPRESSION*;
+`let` *PATTERN* = *EXPRESSION*;
 In statements like `let x = 5;` with a variable name in the PATTERN slot, the
 variable name is just a particularly simple form of a pattern. Rust compares
 the expression against the pattern and assigns any names it finds. So, in the
@@ -17705,9 +17798,10 @@ is that we have too many variables in the pattern, the solution is to make the
 types match by removing variables so that the number of variables equals the
 number of elements in the tuple.
 
-[Conditional ](#conditional-if-let-expressions)`if let` Expressions
+### [Conditional `if let` Expressions](#conditional-if-let-expressions)
 
-`if let` ExpressionsIn Chapter 6, we discussed how to use `if let` expressions mainly as a shorter
+`if let` Expressions
+In Chapter 6, we discussed how to use `if let` expressions mainly as a shorter
 way to write the equivalent of a `match` that only matches one case.
 Optionally, `if let` can have a corresponding `else` containing code to run if
 the pattern in the `if let` doesn’t match.
@@ -17734,9 +17828,10 @@ for exhaustiveness, whereas with `match` expressions it does. If we omitted the
 last `else` block and therefore missed handling some cases, the compiler would
 not alert us to the possible logic bug.
 
-`while let` Conditional Loops
+### [`while let` Conditional Loops](#while-let-conditional-loops)
 
-`while let` Conditional LoopsSimilar in construction to `if let`, the `while let` conditional loop allows a
+`while let` Conditional Loops
+Similar in construction to `if let`, the `while let` conditional loop allows a
 `while` loop to run for as long as a pattern continues to match. In Listing
 19-4, we show a `while let` loop that waits on messages sent between threads,
 but in this case checking a `Result` instead of an `Option`.
@@ -17749,9 +17844,10 @@ though, we can also use `while let`, because the `recv` method returns an `Ok`
 each time a message arrives, as long as the sender exists, and then produces an
 `Err` once the sender side disconnects.
 
-`for` Loops
+### [`for` Loops](#for-loops)
 
-`for` LoopsIn a `for` loop, the value that directly follows the keyword `for` is a
+`for` Loops
+In a `for` loop, the value that directly follows the keyword `for` is a
 pattern. For example, in `for x in y`, the `x` is the pattern. Listing 19-5
 demonstrates how to use a pattern in a `for` loop to destructure, or break
 apart, a tuple as part of the `for` loop.
@@ -17772,7 +17868,7 @@ and the index for that value, placed into a tuple. The first value produced is
 the tuple `(0, 'a')`. When this value is matched to the pattern `(index, value)`, index will be `0` and value will be `'a'`, printing the first line of
 the output.
 
-[Function Parameters](#function-parameters)
+### [Function Parameters](#function-parameters)
 
 Function parameters can also be patterns. The code in Listing 19-6, which
 declares a function named `foo` that takes one parameter named `x` of type
@@ -17789,9 +17885,7 @@ We can also use patterns in closure parameter lists in the same way as in functi
 
 At this point, you’ve seen several ways to use patterns, but patterns don’t work the same in every place we can use them. In some places, the patterns must be irrefutable; in other circumstances, they can be refutable. We’ll discuss these two concepts next.
 
-[Refutability: Whether a Pattern Might Fail to Match](#refutability-whether-a-pattern-might-fail-to-match-1)
-
-[Refutability: Whether a Pattern Might Fail to Match](#refutability-whether-a-pattern-might-fail-to-match)
+# [Refutability: Whether a Pattern Might Fail to Match](#refutability-whether-a-pattern-might-fail-to-match-1)
 
 Patterns come in two forms: refutable and irrefutable. Patterns that will match
 for any possible value passed are *irrefutable*. An example would be `x` in the
@@ -17881,13 +17975,13 @@ this syntax isn’t particularly useful and could be replaced with a simpler
 
 Now that you know where to use patterns and the difference between refutable and irrefutable patterns, let’s cover all the syntax we can use to create patterns.
 
-[Pattern Syntax](#pattern-syntax-1)
+# [Pattern Syntax](#pattern-syntax-1)
 
-[Pattern Syntax](#pattern-syntax)
+## [Pattern Syntax](#pattern-syntax)
 
 In this section, we gather all the syntax that is valid in patterns and discuss why and when you might want to use each one.
 
-[Matching Literals](#matching-literals)
+### [Matching Literals](#matching-literals)
 
 As you saw in Chapter 6, you can match patterns against literals directly. The following code gives some examples:
 
@@ -17906,7 +18000,7 @@ This code prints `one` because the value in `x` is `1`. This syntax is useful
 when you want your code to take an action if it gets a particular concrete
 value.
 
-[Matching Named Variables](#matching-named-variables)
+### [Matching Named Variables](#matching-named-variables)
 
 Named variables are irrefutable patterns that match any value, and we’ve used
 them many times in this book. However, there is a complication when you use
@@ -17946,7 +18040,7 @@ variable, we would need to use a match guard conditional instead. We’ll talk
 about match guards later in the [“Adding Conditionals with Match
 Guards”](#adding-conditionals-with-match-guards) section.
 
-[Matching Multiple Patterns](#matching-multiple-patterns)
+### [Matching Multiple Patterns](#matching-multiple-patterns)
 
 In `match` expressions, you can match multiple patterns using the `|` syntax,
 which is the pattern *or* operator. For example, in the following code, we match
@@ -17966,9 +18060,10 @@ fn main() {
 ```
 This code prints `one or two`.
 
-[Matching Ranges of Values with ](#matching-ranges-of-values-with-)`..=`
+### [Matching Ranges of Values with `..=`](#matching-ranges-of-values-with-)
 
-`..=`The `..=` syntax allows us to match to an inclusive range of values. In the
+`..=`
+The `..=` syntax allows us to match to an inclusive range of values. In the
 following code, when a pattern matches any of the values within the given
 range, that arm will execute:
 
@@ -18004,11 +18099,11 @@ fn main() {
 ```
 Rust can tell that `'c'` is within the first pattern’s range and prints `early ASCII letter`.
 
-[Destructuring to Break Apart Values](#destructuring-to-break-apart-values)
+### [Destructuring to Break Apart Values](#destructuring-to-break-apart-values)
 
 We can also use patterns to destructure structs, enums, and tuples to use different parts of these values. Let’s walk through each value.
 
-[Structs](#structs)
+#### [Structs](#structs)
 
 Listing 19-12 shows a `Point` struct with two fields, `x` and `y`, that we can
 break apart using a pattern with a `let` statement.
@@ -18051,7 +18146,7 @@ Remember that a `match` expression stops checking arms once it has found the
 first matching pattern, so even though `Point { x: 0, y: 0 }` is on the `x` axis
 and the `y` axis, this code would only print `On the x axis at 0`.
 
-[Enums](#enums)
+#### [Enums](#enums)
 
 We’ve destructured enums in this book (for example, Listing 6-5 in Chapter 6),
 but we haven’t yet explicitly discussed that the pattern to destructure an enum
@@ -18078,7 +18173,7 @@ pattern is similar to the pattern we specify to match tuples. The number of
 variables in the pattern must match the number of elements in the variant we’re
 matching.
 
-[Nested Structs and Enums](#nested-structs-and-enums)
+#### [Nested Structs and Enums](#nested-structs-and-enums)
 
 So far, our examples have all been matching structs or enums one level deep,
 but matching can work on nested items too! For example, we can refactor the
@@ -18092,7 +18187,7 @@ arm also matches a `Message::ChangeColor` enum variant, but the inner enum
 matches `Color::Hsv` instead. We can specify these complex conditions in one
 `match` expression, even though two enums are involved.
 
-[Structs and Tuples](#structs-and-tuples)
+#### [Structs and Tuples](#structs-and-tuples)
 
 We can mix, match, and nest destructuring patterns in even more complex ways. The following example shows a complicated destructure where we nest structs and tuples inside a tuple and destructure all the primitive values out:
 
@@ -18109,7 +18204,7 @@ This code lets us break complex types into their component parts so that we can 
 
 Destructuring with patterns is a convenient way to use pieces of values, such as the value from each field in a struct, separately from each other.
 
-[Ignoring Values in a Pattern](#ignoring-values-in-a-pattern)
+### [Ignoring Values in a Pattern](#ignoring-values-in-a-pattern)
 
 You’ve seen that it’s sometimes useful to ignore values in a pattern, such as
 in the last arm of a `match`, to get a catch-all that doesn’t actually do
@@ -18119,9 +18214,10 @@ pattern (which you’ve seen), using the `_` pattern within another pattern,
 using a name that starts with an underscore, or using `..` to ignore remaining
 parts of a value. Let’s explore how and why to use each of these patterns.
 
-[An Entire Value with ](#an-entire-value-with-_)`_`
+#### [An Entire Value with `_`](#an-entire-value-with-_)
 
-`_`We’ve used the underscore as a wildcard pattern that will match any value but
+`_`
+We’ve used the underscore as a wildcard pattern that will match any value but
 not bind to the value. This is especially useful as the last arm in a `match`
 expression, but we can also use it in any pattern, including function
 parameters, as shown in Listing 19-17.
@@ -18131,9 +18227,10 @@ and will print `This code only uses the y parameter: 4`.
 
 In most cases when you no longer need a particular function parameter, you would change the signature so that it doesn’t include the unused parameter. Ignoring a function parameter can be especially useful in cases when, for example, you’re implementing a trait when you need a certain type signature but the function body in your implementation doesn’t need one of the parameters. You then avoid getting a compiler warning about unused function parameters, as you would if you used a name instead.
 
-[Parts of a Value with a Nested ](#parts-of-a-value-with-a-nested-_)`_`
+#### [Parts of a Value with a Nested `_`](#parts-of-a-value-with-a-nested-_)
 
-`_`We can also use `_` inside another pattern to ignore just part of a value, for
+`_`
+We can also use `_` inside another pattern to ignore just part of a value, for
 example, when we want to test for only part of a value but have no use for the
 other parts in the corresponding code we want to run. Listing 19-18 shows code
 responsible for managing a setting’s value. The business requirements are that
@@ -18156,9 +18253,10 @@ We can also use underscores in multiple places within one pattern to ignore part
 This code will print `Some numbers: 2, 8, 32`, and the values `4` and `16` will
 be ignored.
 
-[An Unused Variable by Starting Its Name with ](#an-unused-variable-by-starting-its-name-with-_)`_`
+#### [An Unused Variable by Starting Its Name with `_`](#an-unused-variable-by-starting-its-name-with-_)
 
-`_`If you create a variable but don’t use it anywhere, Rust will usually issue a warning because an unused variable could be a bug. However, sometimes it’s useful to be able to create a variable you won’t use yet, such as when you’re prototyping or just starting a project. In this situation, you can tell Rust not to warn you about the unused variable by starting the name of the variable with an underscore. In Listing 19-20, we create two unused variables, but when we compile this code, we should only get a warning about one of them.
+`_`
+If you create a variable but don’t use it anywhere, Rust will usually issue a warning because an unused variable could be a bug. However, sometimes it’s useful to be able to create a variable you won’t use yet, such as when you’re prototyping or just starting a project. In this situation, you can tell Rust not to warn you about the unused variable by starting the name of the variable with an underscore. In Listing 19-20, we create two unused variables, but when we compile this code, we should only get a warning about one of them.
 
 Here, we get a warning about not using the variable `y`, but we don’t get a
 warning about not using `_x`.
@@ -18175,9 +18273,10 @@ because `s` doesn’t get moved into `_`.
 
 This code works just fine because we never bind `s` to anything; it isn’t moved.
 
-[Remaining Parts of a Value with ](#remaining-parts-of-a-value-with-)`..`
+#### [Remaining Parts of a Value with `..`](#remaining-parts-of-a-value-with-)
 
-`..`With values that have many parts, we can use the `..` syntax to use specific
+`..`
+With values that have many parts, we can use the `..` syntax to use specific
 parts and ignore the rest, avoiding the need to list underscores for each
 ignored value. The `..` pattern ignores any parts of a value that we haven’t
 explicitly matched in the rest of the pattern. In Listing 19-23, we have a
@@ -18223,7 +18322,7 @@ ignore thereafter. This code could mean that we want to ignore `2`, bind
 The variable name `second` doesn’t mean anything special to Rust, so we get a
 compiler error because using `..` in two places like this is ambiguous.
 
-[Adding Conditionals with Match Guards](#adding-conditionals-with-match-guards)
+### [Adding Conditionals with Match Guards](#adding-conditionals-with-match-guards)
 
 A *match guard* is an additional `if` condition, specified after the pattern in
 a `match` arm, that must also match for that arm to be chosen. Match guards are
@@ -18298,9 +18397,10 @@ were applied only to the final value in the list of values specified using the
 `|` operator, the arm would have matched, and the program would have printed
 `yes`.
 
-[Using ](#using--bindings)`@` Bindings
+### [Using `@` Bindings](#using--bindings)
 
-`@` BindingsThe *at* operator `@` lets us create a variable that holds a value at the same
+`@` Bindings
+The *at* operator `@` lets us create a variable that holds a value at the same
 time we’re testing that value for a pattern match. In Listing 19-29, we want to
 test that a `Message::Hello` `id` field is within the range `3..=7`. We also
 want to bind the value to the variable `id` so that we can use it in the code
@@ -18325,7 +18425,7 @@ first two arms: Any value would match this pattern.
 
 Using `@` lets us test a value and save it in a variable within one pattern.
 
-[Summary](#summary-18)
+## [Summary](#summary-18)
 
 Rust’s patterns are very useful in distinguishing between different kinds of
 data. When used in `match` expressions, Rust ensures that your patterns cover
@@ -18336,7 +18436,7 @@ variables. We can create simple or complex patterns to suit our needs.
 
 Next, for the penultimate chapter of the book, we’ll look at some advanced aspects of a variety of Rust’s features.
 
-[Advanced Features](#advanced-features)
+# [Advanced Features](#advanced-features)
 
 By now, you’ve learned the most commonly used parts of the Rust programming language. Before we do one more project, in Chapter 21, we’ll look at a few aspects of the language you might run into every once in a while but may not use every day. You can use this chapter as a reference for when you encounter any unknowns. The features covered here are useful in very specific situations. Although you might not reach for them often, we want to make sure you have a grasp of all the features Rust has to offer.
 
@@ -18350,9 +18450,9 @@ In this chapter, we’ll cover:
 
 It’s a panoply of Rust features with something for everyone! Let’s dive in!
 
-[Unsafe Rust](#unsafe-rust-1)
+# [Unsafe Rust](#unsafe-rust-1)
 
-[Unsafe Rust](#unsafe-rust)
+## [Unsafe Rust](#unsafe-rust)
 
 All the code we’ve discussed so far has had Rust’s memory safety guarantees
 enforced at compile time. However, Rust has a second language hidden inside it
@@ -18371,18 +18471,18 @@ null pointer dereferencing.
 
 Another reason Rust has an unsafe alter ego is that the underlying computer hardware is inherently unsafe. If Rust didn’t let you do unsafe operations, you couldn’t do certain tasks. Rust needs to allow you to do low-level systems programming, such as directly interacting with the operating system or even writing your own operating system. Working with low-level systems programming is one of the goals of the language. Let’s explore what we can do with unsafe Rust and how to do it.
 
-[Performing Unsafe Superpowers](#performing-unsafe-superpowers)
+### [Performing Unsafe Superpowers](#performing-unsafe-superpowers)
 
 To switch to unsafe Rust, use the `unsafe` keyword and then start a new block
 that holds the unsafe code. You can take five actions in unsafe Rust that you
 can’t in safe Rust, which we call *unsafe superpowers*. Those superpowers
 include the ability to:
 
-- Dereference a raw pointer.
-- Call an unsafe function or method.
-- Access or modify a mutable static variable.
-- Implement an unsafe trait.
-- Access fields of `union`s.
+1. Dereference a raw pointer.
+2. Call an unsafe function or method.
+3. Access or modify a mutable static variable.
+4. Implement an unsafe trait.
+5. Access fields of `union` s.
 
 It’s important to understand that `unsafe` doesn’t turn off the borrow checker
 or disable any of Rust’s other safety checks: If you use a reference in unsafe
@@ -18412,7 +18512,7 @@ abstraction is safe.
 
 Let’s look at each of the five unsafe superpowers in turn. We’ll also look at some abstractions that provide a safe interface to unsafe code.
 
-[Dereferencing a Raw Pointer](#dereferencing-a-raw-pointer)
+### [Dereferencing a Raw Pointer](#dereferencing-a-raw-pointer)
 
 In Chapter 4, in the [“Dangling References”](#dangling-references) section, we mentioned that the compiler ensures that references are always
 valid. Unsafe Rust has two new types called *raw pointers* that are similar to
@@ -18468,7 +18568,7 @@ a data race. Be careful!
 
 With all of these dangers, why would you ever use raw pointers? One major use case is when interfacing with C code, as you’ll see in the next section. Another case is when building up safe abstractions that the borrow checker doesn’t understand. We’ll introduce unsafe functions and then look at an example of a safe abstraction that uses unsafe code.
 
-[Calling an Unsafe Function or Method](#calling-an-unsafe-function-or-method)
+### [Calling an Unsafe Function or Method](#calling-an-unsafe-function-or-method)
 
 The second type of operation you can perform in an unsafe block is calling
 unsafe functions. Unsafe functions and methods look exactly like regular
@@ -18516,7 +18616,7 @@ compiler will warn you if you forget. This helps us keep `unsafe` blocks as
 small as possible, as unsafe operations may not be needed across the whole
 function body.
 
-[Creating a Safe Abstraction over Unsafe Code](#creating-a-safe-abstraction-over-unsafe-code)
+#### [Creating a Safe Abstraction over Unsafe Code](#creating-a-safe-abstraction-over-unsafe-code)
 
 Just because a function contains unsafe code doesn’t mean we need to mark the
 entire function as unsafe. In fact, wrapping unsafe code in a safe function is
@@ -18603,9 +18703,10 @@ We don’t own the memory at this arbitrary location, and there is no guarantee
 that the slice this code creates contains valid `i32` values. Attempting to use
 `values` as though it’s a valid slice results in undefined behavior.
 
-[Using ](#using-extern-functions-to-call-external-code)`extern` Functions to Call External Code
+#### [Using `extern` Functions to Call External Code](#using-extern-functions-to-call-external-code)
 
-`extern` Functions to Call External CodeSometimes your Rust code might need to interact with code written in another
+`extern` Functions to Call External Code
+Sometimes your Rust code might need to interact with code written in another
 language. For this, Rust has the keyword `extern` that facilitates the creation
 and use of a *Foreign Function Interface (FFI)*, which is a way for a
 programming language to define functions and enable a different (foreign)
@@ -18637,7 +18738,7 @@ Marking a function as `safe` does not inherently make it safe! Instead, it is
 like a promise you are making to Rust that it is safe. It is still your
 responsibility to make sure that promise is kept!
 
-[Calling Rust Functions from Other Languages](#calling-rust-functions-from-other-languages)
+#### [Calling Rust Functions from Other Languages](#calling-rust-functions-from-other-languages)
 
 We can also use `extern` to create an interface that allows other languages to
 call Rust functions. Instead of creating a whole `extern` block, we add the
@@ -18665,7 +18766,7 @@ pub extern "C" fn call_from_c() {
 This usage of `extern` requires `unsafe` only in the attribute, not on the
 `extern` block.
 
-[Accessing or Modifying a Mutable Static Variable](#accessing-or-modifying-a-mutable-static-variable)
+### [Accessing or Modifying a Mutable Static Variable](#accessing-or-modifying-a-mutable-static-variable)
 
 In this book, we’ve not yet talked about global variables, which Rust does support but which can be problematic with Rust’s ownership rules. If two threads are accessing the same mutable global variable, it can cause a data race.
 
@@ -18715,7 +18816,7 @@ using them more obvious.
 
 With mutable data that is globally accessible, it’s difficult to ensure that there are no data races, which is why Rust considers mutable static variables to be unsafe. Where possible, it’s preferable to use the concurrency techniques and thread-safe smart pointers we discussed in Chapter 16 so that the compiler checks that data access from different threads is done safely.
 
-[Implementing an Unsafe Trait](#implementing-an-unsafe-trait)
+### [Implementing an Unsafe Trait](#implementing-an-unsafe-trait)
 
 We can use `unsafe` to implement an unsafe trait. A trait is unsafe when at
 least one of its methods has some invariant that the compiler can’t verify. We
@@ -18727,17 +18828,17 @@ By using `unsafe impl`, we’re promising that we’ll uphold the invariants tha
 the compiler can’t verify.
 
 As an example, recall the `Send` and `Sync` marker traits we discussed in the
-[“Extensible Concurrency with  Send and Sync”](#extensible-concurrency-with-send-and-sync-1)
+[“Extensible Concurrency with `Send` and `Sync`”](#extensible-concurrency-with-send-and-sync-1)
 section in Chapter 16: The compiler implements these traits automatically if
-our types are composed entirely of other types that implement 
-
-`Send` and
+our types are composed entirely of other types that implement `Send` and
 `Sync`. If we implement a type that contains a type that does not implement
 `Send` or `Sync`, such as raw pointers, and we want to mark that type as `Send`
 or `Sync`, we must use `unsafe`. Rust can’t verify that our type upholds the
 guarantees that it can be safely sent across threads or accessed from multiple
 threads; therefore, we need to do those checks manually and indicate as such
-with `unsafe`.[Accessing Fields of a Union](#accessing-fields-of-a-union)
+with `unsafe`.
+
+### [Accessing Fields of a Union](#accessing-fields-of-a-union)
 
 The final action that works only with `unsafe` is accessing fields of a union.
 A *union* is similar to a `struct`, but only one declared field is used in a
@@ -18746,7 +18847,7 @@ unions in C code. Accessing union fields is unsafe because Rust can’t guarante
 the type of the data currently being stored in the union instance. You can
 learn more about unions in [the Rust Reference](../reference/items/unions.html).
 
-[Using Miri to Check Unsafe Code](#using-miri-to-check-unsafe-code)
+### [Using Miri to Check Unsafe Code](#using-miri-to-check-unsafe-code)
 
 When writing unsafe code, you might want to check that what you have written
 actually is safe and correct. One of the best ways to do that is to use Miri,
@@ -18807,7 +18908,7 @@ this chapter and see what it says!
 
 You can learn more about Miri at [its GitHub repository](https://github.com/rust-lang/miri).
 
-[Using Unsafe Code Correctly](#using-unsafe-code-correctly)
+### [Using Unsafe Code Correctly](#using-unsafe-code-correctly)
 
 Using `unsafe` to use one of the five superpowers just discussed isn’t wrong or
 even frowned upon, but it is trickier to get `unsafe` code correct because the
@@ -18820,16 +18921,16 @@ you have written upholds Rust’s rules.
 For a much deeper exploration of how to work effectively with unsafe Rust, read
 Rust’s official guide for `unsafe`, [The Rustonomicon](https://doc.rust-lang.org/nomicon/).
 
-[Advanced Traits](#advanced-traits-1)
+# [Advanced Traits](#advanced-traits-1)
 
-[Advanced Traits](#advanced-traits)
+## [Advanced Traits](#advanced-traits)
 
 We first covered traits in the [“Defining Shared Behavior with
 Traits”](#defining-shared-behavior-with-traits-1) section in Chapter 10, but we didn’t discuss
 the more advanced details. Now that you know more about Rust, we can get into
 the nitty-gritty.
 
-[Defining Traits with Associated Types](#defining-traits-with-associated-types)
+### [Defining Traits with Associated Types](#defining-traits-with-associated-types)
 
 *Associated types* connect a type placeholder with a trait such that the trait
 method definitions can use these placeholder types in their signatures. The
@@ -18878,7 +18979,7 @@ call `next` on `Counter`.
 
 Associated types also become part of the trait’s contract: Implementors of the trait must provide a type to stand in for the associated type placeholder. Associated types often have a name that describes how the type will be used, and documenting the associated type in the API documentation is a good practice.
 
-[Using Default Generic Parameters and Operator Overloading](#using-default-generic-parameters-and-operator-overloading)
+### [Using Default Generic Parameters and Operator Overloading](#using-default-generic-parameters-and-operator-overloading)
 
 When we use generic type parameters, we can specify a default concrete type for
 the generic type. This eliminates the need for implementors of the trait to
@@ -18939,8 +19040,8 @@ value of the `Rhs` type parameter instead of using the default of `Self`.
 
 You’ll use default type parameters in two main ways:
 
-- To extend a type without breaking existing code
-- To allow customization in specific cases most users won’t need
+1. To extend a type without breaking existing code
+2. To allow customization in specific cases most users won’t need
 
 The standard library’s `Add` trait is an example of the second purpose:
 Usually, you’ll add two like types, but the `Add` trait provides the ability to
@@ -18951,7 +19052,7 @@ it easier to use the trait.
 
 The first purpose is similar to the second but in reverse: If you want to add a type parameter to an existing trait, you can give it a default to allow extension of the functionality of the trait without breaking the existing implementation code.
 
-[Disambiguating Between Identically Named Methods](#disambiguating-between-identically-named-methods)
+### [Disambiguating Between Identically Named Methods](#disambiguating-between-identically-named-methods)
 
 Nothing in Rust prevents a trait from having a method with the same name as another trait’s method, nor does Rust prevent you from implementing both traits on one type. It’s also possible to implement a method directly on the type with the same name as methods from traits.
 
@@ -19065,7 +19166,8 @@ A baby dog is called a puppy
 ```
 In general, fully qualified syntax is defined as follows:
 
-`<Type as Trait>::function(receiver_if_method, next_arg, ...);`For associated functions that aren’t methods, there would not be a `receiver`:
+`<Type as Trait>::function(receiver_if_method, next_arg, ...);`
+For associated functions that aren’t methods, there would not be a `receiver`:
 There would only be the list of other arguments. You could use fully qualified
 syntax everywhere that you call functions or methods. However, you’re allowed
 to omit any part of this syntax that Rust can figure out from other information
@@ -19073,7 +19175,7 @@ in the program. You only need to use this more verbose syntax in cases where
 there are multiple implementations that use the same name and Rust needs help
 to identify which implementation you want to call.
 
-[Using Supertraits](#using-supertraits)
+### [Using Supertraits](#using-supertraits)
 
 Sometimes you might write a trait definition that depends on another trait: For
 a type to implement the first trait, you want to require that type to also
@@ -19152,7 +19254,7 @@ Then, implementing the `OutlinePrint` trait on `Point` will compile
 successfully, and we can call `outline_print` on a `Point` instance to display
 it within an outline of asterisks.
 
-[Implementing External Traits with the Newtype Pattern](#implementing-external-traits-with-the-newtype-pattern)
+### [Implementing External Traits with the Newtype Pattern](#implementing-external-traits-with-the-newtype-pattern)
 
 In the [“Implementing a Trait on a Type”](#implementing-a-trait-on-a-type) section in Chapter 10, we mentioned the orphan rule that states
 we’re only allowed to implement a trait on a type if either the trait or the
@@ -19190,9 +19292,9 @@ behavior—we would have to implement just the methods we do want manually.
 
 This newtype pattern is also useful even when traits are not involved. Let’s switch focus and look at some advanced ways to interact with Rust’s type system.
 
-[Advanced Types](#advanced-types-1)
+# [Advanced Types](#advanced-types-1)
 
-[Advanced Types](#advanced-types)
+## [Advanced Types](#advanced-types)
 
 The Rust type system has some features that we’ve so far mentioned but haven’t
 yet discussed. We’ll start by discussing newtypes in general as we examine why
@@ -19200,7 +19302,7 @@ they are useful as types. Then, we’ll move on to type aliases, a feature
 similar to newtypes but with slightly different semantics. We’ll also discuss
 the `!` type and dynamically sized types.
 
-[Type Safety and Abstraction with the Newtype Pattern](#type-safety-and-abstraction-with-the-newtype-pattern)
+### [Type Safety and Abstraction with the Newtype Pattern](#type-safety-and-abstraction-with-the-newtype-pattern)
 
 This section assumes you’ve read the earlier section [“Implementing External
 Traits with the Newtype Pattern”](#implementing-external-traits-with-the-newtype-pattern). The newtype pattern
@@ -19225,7 +19327,7 @@ Hides Implementation
 Details”](#encapsulation-that-hides-implementation-details)
 section in Chapter 18.
 
-[Type Synonyms and Type Aliases](#type-synonyms-and-type-aliases)
+### [Type Synonyms and Type Aliases](#type-synonyms-and-type-aliases)
 
 Rust provides the ability to declare a *type alias* to give an existing type
 another name. For this we use the `type` keyword. For example, we can create
@@ -19261,7 +19363,8 @@ an error.
 
 The main use case for type synonyms is to reduce repetition. For example, we might have a lengthy type like this:
 
-`Box<dyn Fn() + Send + 'static>`Writing this lengthy type in function signatures and as type annotations all over the code can be tiresome and error-prone. Imagine having a project full of code like that in Listing 20-25.
+`Box<dyn Fn() + Send + 'static>`
+Writing this lengthy type in function signatures and as type annotations all over the code can be tiresome and error-prone. Imagine having a project full of code like that in Listing 20-25.
 
 A type alias makes this code more manageable by reducing the repetition. In
 Listing 20-26, we’ve introduced an alias named `Thunk` for the verbose type and
@@ -19323,7 +19426,7 @@ us a consistent interface across all of `std::io`. Because it’s an alias, it�
 just another `Result<T, E>`, which means we can use any methods that work on
 `Result<T, E>` with it, as well as special syntax like the `?` operator.
 
-[The Never Type That Never Returns](#the-never-type-that-never-returns)
+### [The Never Type That Never Returns](#the-never-type-that-never-returns)
 
 Rust has a special type named `!` that’s known in type theory lingo as the
 *empty type* because it has no values. We prefer to call it the *never type*
@@ -19342,12 +19445,12 @@ so `bar` can never possibly return.
 
 But what use is a type you can never create values for? Recall the code from Listing 2-5, part of the number-guessing game; we’ve reproduced a bit of it here in Listing 20-27.
 
-At the time, we skipped over some details in this code. In [“The  match
+At the time, we skipped over some details in this code. In [“The `match`
 Control Flow Construct”](#the-match-control-flow-construct)
-section in Chapter 6, we discussed that 
+section in Chapter 6, we discussed that `match` arms must all return the same
+type. So, for example, the following code doesn’t work:
 
-`match` arms must all return the same
-type. So, for example, the following code doesn’t work:```
+```
 fn main() {
     let guess = "3";
     let guess = match guess.trim().parse() {
@@ -19411,9 +19514,10 @@ Here, the loop never ends, so `!` is the value of the expression. However, this
 wouldn’t be true if we included a `break`, because the loop would terminate
 when it got to the `break`.
 
-[Dynamically Sized Types and the ](#dynamically-sized-types-and-the-sized-trait)`Sized` Trait
+### [Dynamically Sized Types and the `Sized` Trait](#dynamically-sized-types-and-the-sized-trait)
 
-`Sized` TraitRust needs to know certain details about its types, such as how much space to
+`Sized` Trait
+Rust needs to know certain details about its types, such as how much space to
 allocate for a value of a particular type. This leaves one corner of its type
 system a little confusing at first: the concept of *dynamically sized types*.
 Sometimes referred to as *DSTs* or *unsized types*, these types let us write
@@ -19496,13 +19600,11 @@ pointer. In this case, we’ve chosen a reference.
 
 Next, we’ll talk about functions and closures!
 
-[Advanced Functions and Closures](#advanced-functions-and-closures-1)
-
-[Advanced Functions and Closures](#advanced-functions-and-closures)
+# [Advanced Functions and Closures](#advanced-functions-and-closures-1)
 
 This section explores some advanced features related to functions and closures, including function pointers and returning closures.
 
-[Function Pointers](#function-pointers)
+### [Function Pointers](#function-pointers)
 
 We’ve talked about how to pass closures to functions; you can also pass regular
 functions to functions! This technique is useful when you want to pass a
@@ -19567,7 +19669,7 @@ that `map` is called on by using the initializer function of `Status::Value`.
 Some people prefer this style and some people prefer to use closures. They
 compile to the same code, so use whichever style is clearer to you.
 
-[Returning Closures](#returning-closures)
+### [Returning Closures](#returning-closures)
 
 Closures are represented by traits, which means you can’t return closures
 directly. In most cases where you might want to return a trait, you can instead
@@ -19621,7 +19723,7 @@ write ourselves. So, even though these functions return closures that implement
 the same trait, `Fn(i32) -> i32`, the opaque types Rust generates for each are
 distinct. (This is similar to how Rust produces different concrete types for
 distinct async blocks even when they have the same output type, as we saw in
-[“The  Pin Type and the Unpin Trait”](#working-with-any-number-of-futures) in
+[“The `Pin` Type and the `Unpin` Trait”](#working-with-any-number-of-futures) in
 Chapter 17.) We have seen a solution to this problem a few times now: We can
 use a trait object, as in Listing 20-34.
 
@@ -19631,22 +19733,23 @@ Behavior”](#using-trait-objects-to-abstract-over-shared-behavior-1) in Chapter
 
 Next, let’s look at macros!
 
-[Macros](#macros-1)
+# [Macros](#macros-1)
 
-[Macros](#macros)
+## [Macros](#macros)
 
 We’ve used macros like `println!` throughout this book, but we haven’t fully
 explored what a macro is and how it works. The term *macro* refers to a family
 of features in Rust—declarative macros with `macro_rules!` and three kinds of
 procedural macros:
 
-- Custom `#[derive]`macros that specify code added with the`derive`attribute used on structs and enums
+- Custom `#[derive]` macros that specify code added with the`derive` attribute
+used on structs and enums
 - Attribute-like macros that define custom attributes usable on any item
 - Function-like macros that look like function calls but operate on the tokens specified as their argument
 
 We’ll talk about each of these in turn, but first, let’s look at why we even need macros when we already have functions.
 
-[The Difference Between Macros and Functions](#the-difference-between-macros-and-functions)
+### [The Difference Between Macros and Functions](#the-difference-between-macros-and-functions)
 
 Fundamentally, macros are a way of writing code that writes other code, which
 is known as *metaprogramming*. In Appendix C, we discuss the `derive`
@@ -19670,7 +19773,7 @@ Another important difference between macros and functions is that you must
 define macros or bring them into scope *before* you call them in a file, as
 opposed to functions you can define anywhere and call anywhere.
 
-[Declarative Macros for General Metaprogramming](#declarative-macros-for-general-metaprogramming)
+### [Declarative Macros for General Metaprogramming](#declarative-macros-for-general-metaprogramming)
 
 The most widely used form of macros in Rust is the *declarative macro*. These
 are also sometimes referred to as “macros by example,” “`macro_rules!` macros,”
@@ -19767,7 +19870,7 @@ To learn more about how to write macros, consult the online documentation or
 other resources, such as [“The Little Book of Rust Macros”](https://veykril.github.io/tlborm/) started by
 Daniel Keep and continued by Lukas Wirth.
 
-[Procedural Macros for Generating Code from Attributes](#procedural-macros-for-generating-code-from-attributes)
+### [Procedural Macros for Generating Code from Attributes](#procedural-macros-for-generating-code-from-attributes)
 
 The second form of macros is the procedural macro, which acts more like a
 function (and is a type of procedure). *Procedural macros* accept some code as
@@ -19795,9 +19898,10 @@ Let’s look at the different kinds of procedural macros. We’ll start with a
 custom `derive` macro and then explain the small dissimilarities that make the
 other forms different.
 
-[Custom ](#custom-derive-macros)`derive` Macros
+### [Custom `derive` Macros](#custom-derive-macros)
 
-`derive` MacrosLet’s create a crate named `hello_macro` that defines a trait named
+`derive` Macros
+Let’s create a crate named `hello_macro` that defines a trait named
 `HelloMacro` with one associated function named `hello_macro`. Rather than
 making our users implement the `HelloMacro` trait for each of their types,
 we’ll provide a procedural macro so that users can annotate their type with
@@ -19865,16 +19969,13 @@ procedural macro crate you see or create. The code you specify in the body of
 the inner function (`impl_hello_macro` in this case) will be different
 depending on your procedural macro’s purpose.
 
-We’ve introduced three new crates: `proc_macro`, [ syn](https://crates.io/crates/syn),
-and 
-
-[. The](https://crates.io/crates/quote)
-
-`quote``proc_macro` crate comes with Rust,
+We’ve introduced three new crates: `proc_macro`, [`syn`](https://crates.io/crates/syn),
+and [`quote`](https://crates.io/crates/quote). The `proc_macro` crate comes with Rust,
 so we didn’t need to add that to the dependencies in *Cargo.toml*. The
-
 `proc_macro` crate is the compiler’s API that allows us to read and manipulate
-Rust code from our code.The `syn` crate parses Rust code from a string into a data structure that we
+Rust code from our code.
+
+The `syn` crate parses Rust code from a string into a data structure that we
 can perform operations on. The `quote` crate turns `syn` data structures back
 into Rust code. These crates make it much simpler to parse any sort of Rust
 code we might want to handle: Writing a full parser for Rust code is no simple
@@ -19895,8 +19996,8 @@ struct we get from parsing the `struct Pancakes;` string.
 
 The fields of this struct show that the Rust code we’ve parsed is a unit struct
 with the `ident` (*identifier*, meaning the name) of `Pancakes`. There are more
-fields on this struct for describing all sorts of Rust code; check the [ syn
-documentation for DeriveInput](https://docs.rs/syn/2.0/syn/struct.DeriveInput.html) for more information.
+fields on this struct for describing all sorts of Rust code; check the [`syn`
+documentation for `DeriveInput`](https://docs.rs/syn/2.0/syn/struct.DeriveInput.html) for more information.
 
 Soon we’ll define the `impl_hello_macro` function, which is where we’ll build
 the new Rust code we want to include. But before we do, note that the output
@@ -19934,7 +20035,7 @@ returns a value of the required `TokenStream` type.
 The `quote!` macro also provides some very cool templating mechanics: We can
 enter `#name`, and `quote!` will replace it with the value in the variable
 `name`. You can even do some repetition similar to the way regular macros work.
-Check out [the  quote crate’s docs](https://docs.rs/quote) for a thorough introduction.
+Check out [the `quote` crate’s docs](https://docs.rs/quote) for a thorough introduction.
 
 We want our procedural macro to generate an implementation of our `HelloMacro`
 trait for the type the user annotated, which we can get by using `#name`. The
@@ -19975,7 +20076,7 @@ trait implementation.
 Next, let’s explore how the other kinds of procedural macros differ from custom
 `derive` macros.
 
-[Attribute-Like Macros](#attribute-like-macros)
+### [Attribute-Like Macros](#attribute-like-macros)
 
 Attribute-like macros are similar to custom `derive` macros, but instead of
 generating code for the `derive` attribute, they allow you to create new
@@ -20004,7 +20105,7 @@ Other than that, attribute-like macros work the same way as custom `derive`
 macros: You create a crate with the `proc-macro` crate type and implement a
 function that generates the code you want!
 
-[Function-Like Macros](#function-like-macros)
+### [Function-Like Macros](#function-like-macros)
 
 Function-like macros define macros that look like function calls. Similarly to
 `macro_rules!` macros, they’re more flexible than functions; for example, they
@@ -20016,7 +20117,8 @@ manipulates that `TokenStream` using Rust code as the other two types of
 procedural macros do. An example of a function-like macro is an `sql!` macro
 that might be called like so:
 
-`let sql = sql!(SELECT * FROM posts WHERE id=1);`This macro would parse the SQL statement inside it and check that it’s
+`let sql = sql!(SELECT * FROM posts WHERE id=1);`
+This macro would parse the SQL statement inside it and check that it’s
 syntactically correct, which is much more complex processing than a
 `macro_rules!` macro can do. The `sql!` macro would be defined like this:
 
@@ -20028,13 +20130,13 @@ This definition is similar to the custom `derive` macro’s signature: We receiv
 the tokens that are inside the parentheses and return the code we wanted to
 generate.
 
-[Summary](#summary-19)
+## [Summary](#summary-19)
 
 Whew! Now you have some Rust features in your toolbox that you likely won’t use often, but you’ll know they’re available in very particular circumstances. We’ve introduced several complex topics so that when you encounter them in error message suggestions or in other people’s code, you’ll be able to recognize these concepts and syntax. Use this chapter as a reference to guide you to solutions.
 
 Next, we’ll put everything we’ve discussed throughout the book into practice and do one more project!
 
-[Final Project: Building a Multithreaded Web Server](#final-project-building-a-multithreaded-web-server)
+# [Final Project: Building a Multithreaded Web Server](#final-project-building-a-multithreaded-web-server)
 
 It’s been a long journey, but we’ve reached the end of the book. In this chapter, we’ll build one more project together to demonstrate some of the concepts we covered in the final chapters, as well as recap some earlier lessons.
 
@@ -20042,11 +20144,11 @@ For our final project, we’ll make a web server that says “Hello!” and look
 
 Here is our plan for building the web server:
 
-- Learn a bit about TCP and HTTP.
-- Listen for TCP connections on a socket.
-- Parse a small number of HTTP requests.
-- Create a proper HTTP response.
-- Improve the throughput of our server with a thread pool.
+1. Learn a bit about TCP and HTTP.
+2. Listen for TCP connections on a socket.
+3. Parse a small number of HTTP requests.
+4. Create a proper HTTP response.
+5. Improve the throughput of our server with a thread pool.
 
 Before we get started, we should mention two details. First, the method we’ll
 use won’t be the best way to build a web server with Rust. Community members
@@ -20062,9 +20164,7 @@ Second, we will not be using async and await here. Building a thread pool is a b
 
 We’ll therefore write the basic HTTP server and thread pool manually so that you can learn the general ideas and techniques behind the crates you might use in the future.
 
-[Building a Single-Threaded Web Server](#building-a-single-threaded-web-server-1)
-
-[Building a Single-Threaded Web Server](#building-a-single-threaded-web-server)
+# [Building a Single-Threaded Web Server](#building-a-single-threaded-web-server-1)
 
 We’ll start by getting a single-threaded web server working. Before we begin, let’s look at a quick overview of the protocols involved in building web servers. The details of these protocols are beyond the scope of this book, but a brief overview will give you the information you need.
 
@@ -20076,7 +20176,7 @@ contents of those requests and responses are defined by the protocols.
 
 TCP is the lower-level protocol that describes the details of how information gets from one server to another but doesn’t specify what that information is. HTTP builds on top of TCP by defining the contents of the requests and responses. It’s technically possible to use HTTP with other protocols, but in the vast majority of cases, HTTP sends its data over TCP. We’ll work with the raw bytes of TCP and HTTP requests and responses.
 
-[Listening to the TCP Connection](#listening-to-the-tcp-connection)
+### [Listening to the TCP Connection](#listening-to-the-tcp-connection)
 
 Our web server needs to listen to a TCP connection, so that’s the first part
 we’ll work on. The standard library offers a `std::net` module that lets us do
@@ -20170,7 +20270,7 @@ you’re done running a particular version of the code. Then, restart the progra
 by invoking the `cargo run` command after you’ve made each set of code changes
 to make sure you’re running the newest code.
 
-[Reading the Request](#reading-the-request)
+### [Reading the Request](#reading-the-request)
 
 Let’s implement the functionality to read the request from the browser! To
 separate the concerns of first getting a connection and then taking some action
@@ -20236,7 +20336,7 @@ from our program.
 
 Let’s break down this request data to understand what the browser is asking of our program.
 
-[Looking More Closely at an HTTP Request](#looking-more-closely-at-an-http-request)
+### [Looking More Closely at an HTTP Request](#looking-more-closely-at-an-http-request)
 
 HTTP is a text-based protocol, and a request takes this format:
 
@@ -20276,7 +20376,7 @@ address, such as *127.0.0.1:7878/test*, to see how the request data changes.
 
 Now that we know what the browser is asking for, let’s send back some data!
 
-[Writing a Response](#writing-a-response)
+### [Writing a Response](#writing-a-response)
 
 We’re going to implement sending data in response to a client request. Responses have the following format:
 
@@ -20315,7 +20415,7 @@ output from Cargo. When you load *127.0.0.1:7878* in a web browser, you should
 get a blank page instead of an error. You’ve just handcoded receiving an HTTP
 request and sending a response!
 
-[Returning Real HTML](#returning-real-html)
+### [Returning Real HTML](#returning-real-html)
 
 Let’s implement the functionality for returning more than a blank page. Create
 the new file *hello.html* in the root of your project directory, not in the
@@ -20348,7 +20448,7 @@ does not do what most web servers do. We want to customize our responses
 depending on the request and only send back the HTML file for a well-formed
 request to */*.
 
-[Validating the Request and Selectively Responding](#validating-the-request-and-selectively-responding)
+### [Validating the Request and Selectively Responding](#validating-the-request-and-selectively-responding)
 
 Right now, our web server will return the HTML in the file no matter what the
 client requested. Let’s add functionality to check that the browser is
@@ -20393,7 +20493,7 @@ With these changes, run your server again. Requesting *127.0.0.1:7878* should
 return the contents of *hello.html*, and any other request, like
 *127.0.0.1:7878/foo*, should return the error HTML from *404.html*.
 
-[Refactoring](#refactoring)
+### [Refactoring](#refactoring)
 
 At the moment, the `if` and `else` blocks have a lot of repetition: They’re
 both reading files and writing the contents of the files to the stream. The
@@ -20420,13 +20520,13 @@ Awesome! We now have a simple web server in approximately 40 lines of Rust code 
 
 Currently, our server runs in a single thread, meaning it can only serve one request at a time. Let’s examine how that can be a problem by simulating some slow requests. Then, we’ll fix it so that our server can handle multiple requests at once.
 
-[From Single-Threaded to Multithreaded Server](#from-single-threaded-to-multithreaded-server-1)
+# [From Single-Threaded to Multithreaded Server](#from-single-threaded-to-multithreaded-server-1)
 
-[From a Single-Threaded to a Multithreaded Server](#from-a-single-threaded-to-a-multithreaded-server)
+## [From a Single-Threaded to a Multithreaded Server](#from-a-single-threaded-to-a-multithreaded-server)
 
 Right now, the server will process each request in turn, meaning it won’t process a second connection until the first connection is finished processing. If the server received more and more requests, this serial execution would be less and less optimal. If the server receives a request that takes a long time to process, subsequent requests will have to wait until the long request is finished, even if the new requests can be processed quickly. We’ll need to fix this, but first we’ll look at the problem in action.
 
-[Simulating a Slow Request](#simulating-a-slow-request)
+### [Simulating a Slow Request](#simulating-a-slow-request)
 
 We’ll look at how a slowly processing request can affect other requests made to
 our current server implementation. Listing 21-10 implements handling a request
@@ -20453,7 +20553,7 @@ has slept for its full five seconds before loading.
 
 There are multiple techniques we could use to avoid requests backing up behind a slow request, including using async as we did Chapter 17; the one we’ll implement is a thread pool.
 
-[Improving Throughput with a Thread Pool](#improving-throughput-with-a-thread-pool)
+### [Improving Throughput with a Thread Pool](#improving-throughput-with-a-thread-pool)
 
 A *thread pool* is a group of spawned threads that are ready and waiting to
 handle a task. When the program receives a new task, it assigns one of the
@@ -20471,17 +20571,18 @@ threads waiting in the pool. Requests that come in are sent to the pool for
 processing. The pool will maintain a queue of incoming requests. Each of the
 threads in the pool will pop off a request from this queue, handle the request,
 and then ask the queue for another request. With this design, we can process up
-to * N* requests concurrently, where 
+to *`N`* requests concurrently, where *`N`* is the number of threads. If each
+thread is responding to a long-running request, subsequent requests can still
+back up in the queue, but we’ve increased the number of long-running requests
+we can handle before reaching that point.
 
-*is the number of threads. If each thread is responding to a long-running request, subsequent requests can still back up in the queue, but we’ve increased the number of long-running requests we can handle before reaching that point.*
-
-`N`This technique is just one of many ways to improve the throughput of a web server. Other options you might explore are the fork/join model, the single-threaded async I/O model, and the multithreaded async I/O model. If you’re interested in this topic, you can read more about other solutions and try to implement them; with a low-level language like Rust, all of these options are possible.
+This technique is just one of many ways to improve the throughput of a web server. Other options you might explore are the fork/join model, the single-threaded async I/O model, and the multithreaded async I/O model. If you’re interested in this topic, you can read more about other solutions and try to implement them; with a low-level language like Rust, all of these options are possible.
 
 Before we begin implementing a thread pool, let’s talk about what using the pool should look like. When you’re trying to design code, writing the client interface first can help guide your design. Write the API of the code so that it’s structured in the way you want to call it; then, implement the functionality within that structure rather than implementing the functionality and then designing the public API.
 
 Similar to how we used test-driven development in the project in Chapter 12, we’ll use compiler-driven development here. We’ll write the code that calls the functions we want, and then we’ll look at errors from the compiler to determine what we should change next to get the code to work. Before we do that, however, we’ll explore the technique we’re not going to use as a starting point.
 
-[Spawning a Thread for Each Request](#spawning-a-thread-for-each-request)
+#### [Spawning a Thread for Each Request](#spawning-a-thread-for-each-request)
 
 First, let’s explore how our code might look if it did create a new thread for every connection. As mentioned earlier, this isn’t our final plan due to the problems with potentially spawning an unlimited number of threads, but it is a starting point to get a working multithreaded server first. Then, we’ll add the thread pool as an improvement, and contrasting the two solutions will be easier.
 
@@ -20497,7 +20598,7 @@ new threads without any limit.
 
 You may also recall from Chapter 17 that this is exactly the kind of situation where async and await really shine! Keep that in mind as we build the thread pool and think about how things would look different or the same with async.
 
-[Creating a Finite Number of Threads](#creating-a-finite-number-of-threads)
+#### [Creating a Finite Number of Threads](#creating-a-finite-number-of-threads)
 
 We want our thread pool to work in a similar, familiar way so that switching
 from threads to a thread pool doesn’t require large changes to the code that
@@ -20511,9 +20612,10 @@ should run for each stream. We need to implement `pool.execute` so that it
 takes the closure and gives it to a thread in the pool to run. This code won’t
 yet compile, but we’ll try so that the compiler can guide us in how to fix it.
 
-[Building ](#building-threadpool-using-compiler-driven-development)`ThreadPool` Using Compiler-Driven Development
+#### [Building `ThreadPool` Using Compiler-Driven Development](#building-threadpool-using-compiler-driven-development)
 
-`ThreadPool` Using Compiler-Driven DevelopmentMake the changes in Listing 21-12 to *src/main.rs*, and then let’s use the
+`ThreadPool` Using Compiler-Driven Development
+Make the changes in Listing 21-12 to *src/main.rs*, and then let’s use the
 compiler errors from `cargo check` to drive our development. Here is the first
 error we get:
 
@@ -20643,9 +20745,10 @@ want.
 
 Consider: What would be different here if we were going to execute a future instead of a closure?
 
-[Validating the Number of Threads in ](#validating-the-number-of-threads-in-new)`new`
+#### [Validating the Number of Threads in `new`](#validating-the-number-of-threads-in-new)
 
-`new`We aren’t doing anything with the parameters to `new` and `execute`. Let’s
+`new`
+We aren’t doing anything with the parameters to `new` and `execute`. Let’s
 implement the bodies of these functions with the behavior we want. To start,
 let’s think about `new`. Earlier we chose an unsigned type for the `size`
 parameter because a pool with a negative number of threads makes no sense.
@@ -20667,7 +20770,8 @@ thread pool without any threads should be an unrecoverable error. If you’re
 feeling ambitious, try to write a function named `build` with the following
 signature to compare with the `new` function:
 
-`pub fn build(size: usize) -> Result<ThreadPool, PoolCreationError> {`[Creating Space to Store the Threads](#creating-space-to-store-the-threads)
+`pub fn build(size: usize) -> Result<ThreadPool, PoolCreationError> {`
+#### [Creating Space to Store the Threads](#creating-space-to-store-the-threads)
 
 Now that we have a way to know we have a valid number of threads to store in
 the pool, we can create those threads and store them in the `ThreadPool` struct
@@ -20705,9 +20809,10 @@ which resizes itself as elements are inserted.
 
 When you run `cargo check` again, it should succeed.
 
-[Sending Code from the ](#sending-code-from-the-threadpool-to-a-thread)`ThreadPool` to a Thread
+#### [Sending Code from the `ThreadPool` to a Thread](#sending-code-from-the-threadpool-to-a-thread)
 
-`ThreadPool` to a ThreadWe left a comment in the `for` loop in Listing 21-14 regarding the creation of
+`ThreadPool` to a Thread
+We left a comment in the `for` loop in Listing 21-14 regarding the creation of
 threads. Here, we’ll look at how we actually create threads. The standard
 library provides `thread::spawn` as a way to create threads, and
 `thread::spawn` expects to get some code the thread should run as soon as the
@@ -20736,10 +20841,12 @@ Here is the new process that will happen when we create a `ThreadPool`. We’ll
 implement the code that sends the closure to the thread after we have `Worker`
 set up in this way:
 
-- Define a `Worker`struct that holds an`id`and a`JoinHandle<()>`.
-- Change `ThreadPool`to hold a vector of`Worker`instances.
-- Define a `Worker::new`function that takes an`id`number and returns a`Worker`instance that holds the`id`and a thread spawned with an empty closure.
-- In `ThreadPool::new`, use the`for`loop counter to generate an`id`, create a new`Worker`with that`id`, and store the`Worker`in the vector.
+1. Define a `Worker` struct that holds an`id` and a`JoinHandle<()>` .
+2. Change `ThreadPool` to hold a vector of`Worker` instances.
+3. Define a `Worker::new` function that takes an`id` number and returns a`Worker` instance that holds the`id` and a thread spawned with an empty
+closure.
+4. In `ThreadPool::new` , use the`for` loop counter to generate an`id` , create
+a new`Worker` with that`id` , and store the`Worker` in the vector.
 
 If you’re up for a challenge, try implementing these changes on your own before looking at the code in Listing 21-15.
 
@@ -20761,15 +20868,14 @@ enough system resources, `thread::spawn` will panic. That will cause our
 whole server to panic, even though the creation of some threads might
 succeed. For simplicity’s sake, this behavior is fine, but in a production
 thread pool implementation, you’d likely want to use
-[ std::thread::Builder](../std/thread/struct.Builder.html) and its
+[`std::thread::Builder`](../std/thread/struct.Builder.html) and its
+[`spawn`](../std/thread/struct.Builder.html#method.spawn) method that returns `Result` instead.
 
-[method that returns](../std/thread/struct.Builder.html#method.spawn)
-
-`spawn``Result` instead.This code will compile and will store the number of `Worker` instances we
+This code will compile and will store the number of `Worker` instances we
 specified as an argument to `ThreadPool::new`. But we’re *still* not processing
 the closure that we get in `execute`. Let’s look at how to do that next.
 
-[Sending Requests to Threads via Channels](#sending-requests-to-threads-via-channels)
+#### [Sending Requests to Threads via Channels](#sending-requests-to-threads-via-channels)
 
 The next problem we’ll tackle is that the closures given to `thread::spawn` do
 absolutely nothing. Currently, we get the closure we want to execute in the
@@ -20784,11 +20890,14 @@ two threads—would be perfect for this use case. We’ll use a channel to funct
 as the queue of jobs, and `execute` will send a job from the `ThreadPool` to
 the `Worker` instances, which will send the job to its thread. Here is the plan:
 
-- The `ThreadPool`will create a channel and hold on to the sender.
-- Each `Worker`will hold on to the receiver.
-- We’ll create a new `Job`struct that will hold the closures we want to send down the channel.
-- The `execute`method will send the job it wants to execute through the sender.
-- In its thread, the `Worker`will loop over its receiver and execute the closures of any jobs it receives.
+1. The `ThreadPool` will create a channel and hold on to the sender.
+2. Each `Worker` will hold on to the receiver.
+3. We’ll create a new `Job` struct that will hold the closures we want to send
+down the channel.
+4. The `execute` method will send the job it wants to execute through the
+sender.
+5. In its thread, the `Worker` will loop over its receiver and execute the
+closures of any jobs it receives.
 
 Let’s start by creating a channel in `ThreadPool::new` and holding the sender
 in the `ThreadPool` instance, as shown in Listing 21-16. The `Job` struct
@@ -20860,9 +20969,10 @@ new `Worker`, we clone the `Arc` to bump the reference count so that the
 
 With these changes, the code compiles! We’re getting there!
 
-[Implementing the ](#implementing-the-execute-method)`execute` Method
+#### [Implementing the `execute` Method](#implementing-the-execute-method)
 
-`execute` MethodLet’s finally implement the `execute` method on `ThreadPool`. We’ll also change
+`execute` Method
+Let’s finally implement the `execute` method on `ThreadPool`. We’ll also change
 `Job` from a struct to a type alias for a trait object that holds the type of
 closure that `execute` receives. As discussed in the [“Type Synonyms and Type
 Aliases”](#type-synonyms-and-type-aliases) section in Chapter 20, type aliases
@@ -20972,9 +21082,7 @@ sign are immediately dropped when the `let` statement ends. However, `while let`
 the associated block. In Listing 21-21, the lock remains held for the duration
 of the call to `job()`, meaning other `Worker` instances cannot receive jobs.
 
-[Graceful Shutdown and Cleanup](#graceful-shutdown-and-cleanup-1)
-
-[Graceful Shutdown and Cleanup](#graceful-shutdown-and-cleanup)
+# [Graceful Shutdown and Cleanup](#graceful-shutdown-and-cleanup-1)
 
 The code in Listing 21-20 is responding to requests asynchronously through the
 use of a thread pool, as we intended. We get some warnings about the `workers`,
@@ -20993,9 +21101,10 @@ its thread pool.
 
 One thing to notice as we go: None of this affects the parts of the code that handle executing the closures, so everything here would be the same if we were using a thread pool for an async runtime.
 
-[Implementing the ](#implementing-the-drop-trait-on-threadpool)`Drop` Trait on `ThreadPool`
+### [Implementing the `Drop` Trait on `ThreadPool`](#implementing-the-drop-trait-on-threadpool)
 
-`Drop` Trait on `ThreadPool`Let’s start with implementing `Drop` on our thread pool. When the pool is
+`Drop` Trait on `ThreadPool`
+Let’s start with implementing `Drop` on our thread pool. When the pool is
 dropped, our threads should all join to make sure they finish their work.
 Listing 21-22 shows a first attempt at a `Drop` implementation; this code won’t
 quite work yet.
@@ -21053,7 +21162,7 @@ So, we need to update the `ThreadPool` `drop` implementation like this:
 
 This resolves the compiler error and does not require any other changes to our code. Note that, because drop can be called when panicking, the unwrap could also panic and cause a double panic, which immediately crashes the program and ends any cleanup in progress. This is fine for an example program, but it isn’t recommended for production code.
 
-[Signaling to the Threads to Stop Listening for Jobs](#signaling-to-the-threads-to-stop-listening-for-jobs)
+### [Signaling to the Threads to Stop Listening for Jobs](#signaling-to-the-threads-to-stop-listening-for-jobs)
 
 With all the changes we’ve made, our code compiles without any warnings.
 However, the bad news is that this code doesn’t function the way we want it to
@@ -21130,23 +21239,25 @@ Here’s the full code for reference:
 
 We could do more here! If you want to continue enhancing this project, here are some ideas:
 
-- Add more documentation to `ThreadPool`and its public methods.
+- Add more documentation to `ThreadPool` and its public methods.
 - Add tests of the library’s functionality.
-- Change calls to `unwrap`to more robust error handling.
-- Use `ThreadPool`to perform some task other than serving web requests.
-- Find a thread pool crate on [crates.io](https://crates.io/)and implement a similar web server using the crate instead. Then, compare its API and robustness to the thread pool we implemented.
+- Change calls to `unwrap` to more robust error handling.
+- Use `ThreadPool` to perform some task other than serving web requests.
+- Find a thread pool crate on [crates.io](https://crates.io/) and implement a
+similar web server using the crate instead. Then, compare its API and
+robustness to the thread pool we implemented.
 
-[Summary](#summary-20)
+## [Summary](#summary-20)
 
 Well done! You’ve made it to the end of the book! We want to thank you for joining us on this tour of Rust. You’re now ready to implement your own Rust projects and help with other people’s projects. Keep in mind that there is a welcoming community of other Rustaceans who would love to help you with any challenges you encounter on your Rust journey.
 
-[Appendix](#appendix)
+# [Appendix](#appendix)
 
 The following sections contain reference material you may find useful in your Rust journey.
 
-[A - Keywords](#a---keywords)
+# [A - Keywords](#a---keywords)
 
-[Appendix A: Keywords](#appendix-a-keywords)
+## [Appendix A: Keywords](#appendix-a-keywords)
 
 The following lists contain keywords that are reserved for current or future
 use by the Rust language. As such, they cannot be used as identifiers (except
@@ -21155,51 +21266,56 @@ Identifiers”](#raw-identifiers) section). *Identifiers* are names
 of functions, variables, parameters, struct fields, modules, crates, constants,
 macros, static values, attributes, types, traits, or lifetimes.
 
-[Keywords Currently in Use](#keywords-currently-in-use)
+### [Keywords Currently in Use](#keywords-currently-in-use)
 
 The following is a list of keywords currently in use, with their functionality described.
 
-- `as`- `use`statements.
-- `async`- `Future`instead of blocking the current thread.
-- `await`- `Future`is ready.
-- `break`
-- `const`
-- `continue`
-- `crate`
-- `dyn`
-- `else`- `if`and- `if let`control flow constructs.
-- `enum`
-- `extern`
-- `false`
-- `fn`
-- `for`
-- `if`
-- `impl`
-- `in`- `for`loop syntax.
-- `let`
-- `loop`
-- `match`
-- `mod`
-- `move`
-- `mut`
-- `pub`- `impl`blocks, or modules.
-- `ref`
-- `return`
-- `Self`
-- `self`
-- `static`
-- `struct`
-- `super`
-- `trait`
-- `true`
-- `type`
-- `union`- [union](../reference/items/unions.html); is a keyword only when used in a union declaration.
-- `unsafe`
-- `use`
-- `where`
-- `while`
+- **`as`** : Perform primitive casting, disambiguate the specific trait
+containing an item, or rename items in`use` statements.
+- **`async`** : Return a`Future` instead of blocking the current thread.
+- **`await`** : Suspend execution until the result of a`Future` is ready.
+- **`break`** : Exit a loop immediately.
+- **`const`** : Define constant items or constant raw pointers.
+- **`continue`** : Continue to the next loop iteration.
+- **`crate`** : In a module path, refers to the crate root.
+- **`dyn`** : Dynamic dispatch to a trait object.
+- **`else`** : Fallback for`if` and`if let` control flow constructs.
+- **`enum`** : Define an enumeration.
+- **`extern`** : Link an external function or variable.
+- **`false`** : Boolean false literal.
+- **`fn`** : Define a function or the function pointer type.
+- **`for`** : Loop over items from an iterator, implement a trait, or specify a
+higher ranked lifetime.
+- **`if`** : Branch based on the result of a conditional expression.
+- **`impl`** : Implement inherent or trait functionality.
+- **`in`** : Part of`for` loop syntax.
+- **`let`** : Bind a variable.
+- **`loop`** : Loop unconditionally.
+- **`match`** : Match a value to patterns.
+- **`mod`** : Define a module.
+- **`move`** : Make a closure take ownership of all its captures.
+- **`mut`** : Denote mutability in references, raw pointers, or pattern bindings.
+- **`pub`** : Denote public visibility in struct fields,`impl` blocks, or
+modules.
+- **`ref`** : Bind by reference.
+- **`return`** : Return from function.
+- **`Self`** : A type alias for the type we are defining or implementing.
+- **`self`** : Method subject or current module.
+- **`static`** : Global variable or lifetime lasting the entire program
+execution.
+- **`struct`** : Define a structure.
+- **`super`** : Parent module of the current module.
+- **`trait`** : Define a trait.
+- **`true`** : Boolean true literal.
+- **`type`** : Define a type alias or associated type.
+- **`union`** : Define a[union](../reference/items/unions.html) ; is a keyword only when
+used in a union declaration.
+- **`unsafe`** : Denote unsafe code, functions, traits, or implementations.
+- **`use`** : Bring symbols into scope.
+- **`where`** : Denote clauses that constrain a type.
+- **`while`** : Loop conditionally based on the result of an expression.
 
-[Keywords Reserved for Future Use](#keywords-reserved-for-future-use)
+### [Keywords Reserved for Future Use](#keywords-reserved-for-future-use)
 
 The following keywords do not yet have any functionality but are reserved by Rust for potential future use:
 
@@ -21218,7 +21334,7 @@ The following keywords do not yet have any functionality but are reserved by Rus
 - `virtual`
 - `yield`
 
-[Raw Identifiers](#raw-identifiers)
+### [Raw Identifiers](#raw-identifiers)
 
 *Raw identifiers* are the syntax that lets you use keywords where they wouldn’t
 normally be allowed. You use a raw identifier by prefixing a keyword with `r#`.
@@ -21270,76 +21386,76 @@ edition and has a `try` function, you’ll need to use the raw identifier syntax
 `r#try` in this case, to call that function from your code on later editions.
 See [Appendix E](#e---editions) for more information on editions.
 
-[B - Operators and Symbols](#b---operators-and-symbols)
+# [B - Operators and Symbols](#b---operators-and-symbols)
 
-[Appendix B: Operators and Symbols](#appendix-b-operators-and-symbols)
+## [Appendix B: Operators and Symbols](#appendix-b-operators-and-symbols)
 
 This appendix contains a glossary of Rust’s syntax, including operators and other symbols that appear by themselves or in the context of paths, generics, trait bounds, macros, attributes, comments, tuples, and brackets.
 
-[Operators](#operators)
+### [Operators](#operators)
 
 Table B-1 contains the operators in Rust, an example of how the operator would appear in context, a short explanation, and whether that operator is overloadable. If an operator is overloadable, the relevant trait to use to overload that operator is listed.
 
 | Operator | Example | Explanation | Overloadable? | 
 |---|---|---|---|
-| `!` | `ident!(...)`,`ident!{...}`,`ident![...]` | Macro expansion | |
+| `!` | `ident!(...)` ,`ident!{...}` ,`ident![...]` | Macro expansion |  | 
 | `!` | `!expr` | Bitwise or logical complement | `Not` | 
 | `!=` | `expr != expr` | Nonequality comparison | `PartialEq` | 
 | `%` | `expr % expr` | Arithmetic remainder | `Rem` | 
 | `%=` | `var %= expr` | Arithmetic remainder and assignment | `RemAssign` | 
-| `&` | `&expr`,`&mut expr` | Borrow | |
-| `&` | `&type`,`&mut type`,`&'a type`,`&'a mut type` | Borrowed pointer type | |
+| `&` | `&expr` ,`&mut expr` | Borrow |  | 
+| `&` | `&type` ,`&mut type` ,`&'a type` ,`&'a mut type` | Borrowed pointer type |  | 
 | `&` | `expr & expr` | Bitwise AND | `BitAnd` | 
 | `&=` | `var &= expr` | Bitwise AND and assignment | `BitAndAssign` | 
-| `&&` | `expr && expr` | Short-circuiting logical AND | |
+| `&&` | `expr && expr` | Short-circuiting logical AND |  | 
 | `*` | `expr * expr` | Arithmetic multiplication | `Mul` | 
 | `*=` | `var *= expr` | Arithmetic multiplication and assignment | `MulAssign` | 
 | `*` | `*expr` | Dereference | `Deref` | 
-| `*` | `*const type`,`*mut type` | Raw pointer | |
-| `+` | `trait + trait`,`'a + trait` | Compound type constraint | |
+| `*` | `*const type` ,`*mut type` | Raw pointer |  | 
+| `+` | `trait + trait` ,`'a + trait` | Compound type constraint |  | 
 | `+` | `expr + expr` | Arithmetic addition | `Add` | 
 | `+=` | `var += expr` | Arithmetic addition and assignment | `AddAssign` | 
-| `,` | `expr, expr` | Argument and element separator | |
+| `,` | `expr, expr` | Argument and element separator |  | 
 | `-` | `- expr` | Arithmetic negation | `Neg` | 
 | `-` | `expr - expr` | Arithmetic subtraction | `Sub` | 
 | `-=` | `var -= expr` | Arithmetic subtraction and assignment | `SubAssign` | 
-| `->` | `fn(...) -> type`,`|…| -> type` | Function and closure return type | |
-| `.` | `expr.ident` | Field access | |
-| `.` | `expr.ident(expr, ...)` | Method call | |
-| `.` | `expr.0`,`expr.1`, and so on | Tuple indexing | |
-| `..` | `..`,`expr..`,`..expr`,`expr..expr` | Right-exclusive range literal | `PartialOrd` | 
-| `..=` | `..=expr`,`expr..=expr` | Right-inclusive range literal | `PartialOrd` | 
-| `..` | `..expr` | Struct literal update syntax | |
-| `..` | `variant(x, ..)`,`struct_type { x, .. }` | “And the rest” pattern binding | |
-| `...` | `expr...expr` | (Deprecated, use `..=`instead) In a pattern: inclusive range pattern | |
+| `->` | `fn(...) -> type` ,`\|…\| -> type` | Function and closure return type |  | 
+| `.` | `expr.ident` | Field access |  | 
+| `.` | `expr.ident(expr, ...)` | Method call |  | 
+| `.` | `expr.0` ,`expr.1` , and so on | Tuple indexing |  | 
+| `..` | `..` ,`expr..` ,`..expr` ,`expr..expr` | Right-exclusive range literal | `PartialOrd` | 
+| `..=` | `..=expr` ,`expr..=expr` | Right-inclusive range literal | `PartialOrd` | 
+| `..` | `..expr` | Struct literal update syntax |  | 
+| `..` | `variant(x, ..)` ,`struct_type { x, .. }` | “And the rest” pattern binding |  | 
+| `...` | `expr...expr` | (Deprecated, use `..=` instead) In a pattern: inclusive range pattern |  | 
 | `/` | `expr / expr` | Arithmetic division | `Div` | 
 | `/=` | `var /= expr` | Arithmetic division and assignment | `DivAssign` | 
-| `:` | `pat: type`,`ident: type` | Constraints | |
-| `:` | `ident: expr` | Struct field initializer | |
-| `:` | `'a: loop {...}` | Loop label | |
-| `;` | `expr;` | Statement and item terminator | |
-| `;` | `[...; len]` | Part of fixed-size array syntax | |
+| `:` | `pat: type` ,`ident: type` | Constraints |  | 
+| `:` | `ident: expr` | Struct field initializer |  | 
+| `:` | `'a: loop {...}` | Loop label |  | 
+| `;` | `expr;` | Statement and item terminator |  | 
+| `;` | `[...; len]` | Part of fixed-size array syntax |  | 
 | `<<` | `expr << expr` | Left-shift | `Shl` | 
 | `<<=` | `var <<= expr` | Left-shift and assignment | `ShlAssign` | 
 | `<` | `expr < expr` | Less than comparison | `PartialOrd` | 
 | `<=` | `expr <= expr` | Less than or equal to comparison | `PartialOrd` | 
-| `=` | `var = expr`,`ident = type` | Assignment/equivalence | |
+| `=` | `var = expr` ,`ident = type` | Assignment/equivalence |  | 
 | `==` | `expr == expr` | Equality comparison | `PartialEq` | 
-| `=>` | `pat => expr` | Part of match arm syntax | |
+| `=>` | `pat => expr` | Part of match arm syntax |  | 
 | `>` | `expr > expr` | Greater than comparison | `PartialOrd` | 
 | `>=` | `expr >= expr` | Greater than or equal to comparison | `PartialOrd` | 
 | `>>` | `expr >> expr` | Right-shift | `Shr` | 
 | `>>=` | `var >>= expr` | Right-shift and assignment | `ShrAssign` | 
-| `@` | `ident @ pat` | Pattern binding | |
+| `@` | `ident @ pat` | Pattern binding |  | 
 | `^` | `expr ^ expr` | Bitwise exclusive OR | `BitXor` | 
 | `^=` | `var ^= expr` | Bitwise exclusive OR and assignment | `BitXorAssign` | 
-| `|` | `pat | pat` | Pattern alternatives | |
-| `|` | `expr | expr` | Bitwise OR | `BitOr` | 
-| `|=` | `var |= expr` | Bitwise OR and assignment | `BitOrAssign` | 
-| `||` | `expr || expr` | Short-circuiting logical OR | |
-| `?` | `expr?` | Error propagation | 
+| `\|` | `pat \| pat` | Pattern alternatives |  | 
+| `\|` | `expr \| expr` | Bitwise OR | `BitOr` | 
+| `\|=` | `var \|= expr` | Bitwise OR and assignment | `BitOrAssign` | 
+| `\|\|` | `expr \|\| expr` | Short-circuiting logical OR |  | 
+| `?` | `expr?` | Error propagation |  | 
 
-[Non-operator Symbols](#non-operator-symbols)
+### [Non-operator Symbols](#non-operator-symbols)
 
 The following tables contain all symbols that don’t function as operators; that is, they don’t behave like a function or method call.
 
@@ -21348,14 +21464,14 @@ Table B-2 shows symbols that appear on their own and are valid in a variety of l
 | Symbol | Explanation | 
 |---|---|
 | `'ident` | Named lifetime or loop label | 
-| Digits immediately followed by `u8`,`i32`,`f64`,`usize`, and so on | Numeric literal of specific type | 
+| Digits immediately followed by `u8` ,`i32` ,`f64` ,`usize` , and so on | Numeric literal of specific type | 
 | `"..."` | String literal | 
-| `r"..."`,`r#"..."#`,`r##"..."##`, and so on | Raw string literal; escape characters not processed | 
+| `r"..."` ,`r#"..."#` ,`r##"..."##` , and so on | Raw string literal; escape characters not processed | 
 | `b"..."` | Byte string literal; constructs an array of bytes instead of a string | 
-| `br"..."`,`br#"..."#`,`br##"..."##`, and so on | Raw byte string literal; combination of raw and byte string literal | 
+| `br"..."` ,`br#"..."#` ,`br##"..."##` , and so on | Raw byte string literal; combination of raw and byte string literal | 
 | `'...'` | Character literal | 
 | `b'...'` | ASCII byte literal | 
-| `|…| expr` | Closure | 
+| `\|…\| expr` | Closure | 
 | `!` | Always-empty bottom type for diverging functions | 
 | `_` | “Ignored” pattern binding; also used to make integer literals readable | 
 
@@ -21367,8 +21483,8 @@ Table B-3 shows symbols that appear in the context of a path through the module 
 | `::path` | Path relative to the crate root (that is, an explicitly absolute path) | 
 | `self::path` | Path relative to the current module (that is, an explicitly relative path) | 
 | `super::path` | Path relative to the parent of the current module | 
-| `type::ident`,`<type as trait>::ident` | Associated constants, functions, and types | 
-| `<type>::...` | Associated item for a type that cannot be directly named (for example, `<&T>::...`,`<[T]>::...`, and so on) | 
+| `type::ident` ,`<type as trait>::ident` | Associated constants, functions, and types | 
+| `<type>::...` | Associated item for a type that cannot be directly named (for example, `<&T>::...` ,`<[T]>::...` , and so on) | 
 | `trait::method(...)` | Disambiguating a method call by naming the trait that defines it | 
 | `type::method(...)` | Disambiguating a method call by naming the type for which it’s defined | 
 | `<type as trait>::method(...)` | Disambiguating a method call by naming the trait and type | 
@@ -21377,25 +21493,25 @@ Table B-4 shows symbols that appear in the context of using generic type paramet
 
 | Symbol | Explanation | 
 |---|---|
-| `path<...>` | Specifies parameters to a generic type in a type (for example, `Vec<u8>`) | 
-| `path::<...>`,`method::<...>` | Specifies parameters to a generic type, function, or method in an expression; often referred to as turbofish(for example,`"42".parse::<i32>()`) | 
+| `path<...>` | Specifies parameters to a generic type in a type (for example, `Vec<u8>` ) | 
+| `path::<...>` ,`method::<...>` | Specifies parameters to a generic type, function, or method in an expression; often referred to as *turbofish* (for example,`"42".parse::<i32>()` ) | 
 | `fn ident<...> ...` | Define generic function | 
 | `struct ident<...> ...` | Define generic structure | 
 | `enum ident<...> ...` | Define generic enumeration | 
 | `impl<...> ...` | Define generic implementation | 
 | `for<...> type` | Higher ranked lifetime bounds | 
-| `type<ident=type>` | A generic type where one or more associated types have specific assignments (for example, `Iterator<Item=T>`) | 
+| `type<ident=type>` | A generic type where one or more associated types have specific assignments (for example, `Iterator<Item=T>` ) | 
 
 Table B-5 shows symbols that appear in the context of constraining generic type parameters with trait bounds.
 
 | Symbol | Explanation | 
 |---|---|
-| `T: U` | Generic parameter `T`constrained to types that implement`U` | 
-| `T: 'a` | Generic type `T`must outlive lifetime`'a`(meaning the type cannot transitively contain any references with lifetimes shorter than`'a`) | 
-| `T: 'static` | Generic type `T`contains no borrowed references other than`'static`ones | 
-| `'b: 'a` | Generic lifetime `'b`must outlive lifetime`'a` | 
+| `T: U` | Generic parameter `T` constrained to types that implement`U` | 
+| `T: 'a` | Generic type `T` must outlive lifetime`'a` (meaning the type cannot transitively contain any references with lifetimes shorter than`'a` ) | 
+| `T: 'static` | Generic type `T` contains no borrowed references other than`'static` ones | 
+| `'b: 'a` | Generic lifetime `'b` must outlive lifetime`'a` | 
 | `T: ?Sized` | Allow generic type parameter to be a dynamically sized type | 
-| `'a + trait`,`trait + trait` | Compound type constraint | 
+| `'a + trait` ,`trait + trait` | Compound type constraint | 
 
 Table B-6 shows symbols that appear in the context of calling or defining macros and specifying attributes on an item.
 
@@ -21406,7 +21522,7 @@ Table B-6 shows symbols that appear in the context of calling or defining macros
 | `$ident` | Macro substitution | 
 | `$ident:kind` | Macro metavariable | 
 | `$(...)...` | Macro repetition | 
-| `ident!(...)`,`ident!{...}`,`ident![...]` | Macro invocation | 
+| `ident!(...)` ,`ident!{...}` ,`ident![...]` | Macro invocation | 
 
 Table B-7 shows symbols that create comments.
 
@@ -21429,7 +21545,7 @@ Table B-8 shows the contexts in which parentheses are used.
 | `(type,)` | Single-element tuple type | 
 | `(expr, ...)` | Tuple expression | 
 | `(type, ...)` | Tuple type | 
-| `expr(expr, ...)` | Function call expression; also used to initialize tuple `struct`s and tuple`enum`variants | 
+| `expr(expr, ...)` | Function call expression; also used to initialize tuple `struct` s and tuple`enum` variants | 
 
 Table B-9 shows the contexts in which curly brackets are used.
 
@@ -21443,14 +21559,14 @@ Table B-10 shows the contexts in which square brackets are used.
 | Context | Explanation | 
 |---|---|
 | `[...]` | Array literal | 
-| `[expr; len]` | Array literal containing `len`copies of`expr` | 
-| `[type; len]` | Array type containing `len`instances of`type` | 
-| `expr[expr]` | Collection indexing; overloadable ( `Index`,`IndexMut`) | 
-| `expr[..]`,`expr[a..]`,`expr[..b]`,`expr[a..b]` | Collection indexing pretending to be collection slicing, using `Range`,`RangeFrom`,`RangeTo`, or`RangeFull`as the “index” | 
+| `[expr; len]` | Array literal containing `len` copies of`expr` | 
+| `[type; len]` | Array type containing `len` instances of`type` | 
+| `expr[expr]` | Collection indexing; overloadable ( `Index` ,`IndexMut` ) | 
+| `expr[..]` ,`expr[a..]` ,`expr[..b]` ,`expr[a..b]` | Collection indexing pretending to be collection slicing, using `Range` ,`RangeFrom` ,`RangeTo` , or`RangeFull` as the “index” | 
 
-[C - Derivable Traits](#c---derivable-traits)
+# [C - Derivable Traits](#c---derivable-traits)
 
-[Appendix C: Derivable Traits](#appendix-c-derivable-traits)
+## [Appendix C: Derivable Traits](#appendix-c-derivable-traits)
 
 In various places in the book, we’ve discussed the `derive` attribute, which
 you can apply to a struct or enum definition. The `derive` attribute generates
@@ -21461,7 +21577,7 @@ In this appendix, we provide a reference of all the traits in the standard
 library that you can use with `derive`. Each section covers:
 
 - What operators and methods deriving this trait will enable
-- What the implementation of the trait provided by `derive`does
+- What the implementation of the trait provided by `derive` does
 - What implementing the trait signifies about the type
 - The conditions in which you’re allowed or not allowed to implement the trait
 - Examples of operations that require the trait
@@ -21485,12 +21601,13 @@ it can’t provide appropriate default behavior for you.
 The list of derivable traits provided in this appendix is not comprehensive:
 Libraries can implement `derive` for their own traits, making the list of
 traits you can use `derive` with truly open ended. Implementing `derive`
-involves using a procedural macro, which is covered in the [“Custom  derive
+involves using a procedural macro, which is covered in the [“Custom `derive`
 Macros”](#custom-derive-macros) section in Chapter 20.
 
-`Debug` for Programmer Output
+### [`Debug` for Programmer Output](#debug-for-programmer-output)
 
-`Debug` for Programmer OutputThe `Debug` trait enables debug formatting in format strings, which you
+`Debug` for Programmer Output
+The `Debug` trait enables debug formatting in format strings, which you
 indicate by adding `:?` within `{}` placeholders.
 
 The `Debug` trait allows you to print instances of a type for debugging
@@ -21502,9 +21619,10 @@ macro. This macro prints the values of instances given as arguments if the
 equality assertion fails so that programmers can see why the two instances
 weren’t equal.
 
-`PartialEq` and `Eq` for Equality Comparisons
+### [`PartialEq` and `Eq` for Equality Comparisons](#partialeq-and-eq-for-equality-comparisons)
 
-`PartialEq` and `Eq` for Equality ComparisonsThe `PartialEq` trait allows you to compare instances of a type to check for
+`PartialEq` and `Eq` for Equality Comparisons
+The `PartialEq` trait allows you to compare instances of a type to check for
 equality and enables use of the `==` and `!=` operators.
 
 Deriving `PartialEq` implements the `eq` method. When `PartialEq` is derived on
@@ -21526,9 +21644,10 @@ instances of the not-a-number (`NaN`) value are not equal to each other.
 An example of when `Eq` is required is for keys in a `HashMap<K, V>` so that
 the `HashMap<K, V>` can tell whether two keys are the same.
 
-`PartialOrd` and `Ord` for Ordering Comparisons
+### [`PartialOrd` and `Ord` for Ordering Comparisons](#partialord-and-ord-for-ordering-comparisons)
 
-`PartialOrd` and `Ord` for Ordering ComparisonsThe `PartialOrd` trait allows you to compare instances of a type for sorting
+`PartialOrd` and `Ord` for Ordering Comparisons
+The `PartialOrd` trait allows you to compare instances of a type for sorting
 purposes. A type that implements `PartialOrd` can be used with the `<`, `>`,
 `<=`, and `>=` operators. You can only apply the `PartialOrd` trait to types
 that also implement `PartialEq`.
@@ -21560,9 +21679,10 @@ implementation for `partial_cmp` does with `PartialOrd`.
 An example of when `Ord` is required is when storing values in a `BTreeSet<T>`,
 a data structure that stores data based on the sort order of the values.
 
-`Clone` and `Copy` for Duplicating Values
+### [`Clone` and `Copy` for Duplicating Values](#clone-and-copy-for-duplicating-values)
 
-`Clone` and `Copy` for Duplicating ValuesThe `Clone` trait allows you to explicitly create a deep copy of a value, and
+`Clone` and `Copy` for Duplicating Values
+The `Clone` trait allows you to explicitly create a deep copy of a value, and
 the duplication process might involve running arbitrary code and copying heap
 data. See the [“Variables and Data Interacting with
 Clone”](#variables-and-data-interacting-with-clone) section in
@@ -21599,9 +21719,10 @@ the code more concise.
 Everything possible with `Copy` you can also accomplish with `Clone`, but the
 code might be slower or have to use `clone` in places.
 
-`Hash` for Mapping a Value to a Value of Fixed Size
+### [`Hash` for Mapping a Value to a Value of Fixed Size](#hash-for-mapping-a-value-to-a-value-of-fixed-size)
 
-`Hash` for Mapping a Value to a Value of Fixed SizeThe `Hash` trait allows you to take an instance of a type of arbitrary size and
+`Hash` for Mapping a Value to a Value of Fixed Size
+The `Hash` trait allows you to take an instance of a type of arbitrary size and
 map that instance to a value of fixed size using a hash function. Deriving
 `Hash` implements the `hash` method. The derived implementation of the `hash`
 method combines the result of calling `hash` on each of the parts of the type,
@@ -21610,9 +21731,10 @@ meaning all fields or values must also implement `Hash` to derive `Hash`.
 An example of when `Hash` is required is in storing keys in a `HashMap<K, V>`
 to store data efficiently.
 
-`Default` for Default Values
+### [`Default` for Default Values](#default-for-default-values)
 
-`Default` for Default ValuesThe `Default` trait allows you to create a default value for a type. Deriving
+`Default` for Default Values
+The `Default` trait allows you to create a default value for a type. Deriving
 `Default` implements the `default` function. The derived implementation of the
 `default` function calls the `default` function on each part of the type,
 meaning all fields or values in the type must also implement `Default` to
@@ -21630,15 +21752,16 @@ The `Default` trait is required when you use the method `unwrap_or_default` on
 `unwrap_or_default` will return the result of `Default::default` for the type
 `T` stored in the `Option<T>`.
 
-[D - Useful Development Tools](#d---useful-development-tools)
+# [D - Useful Development Tools](#d---useful-development-tools)
 
-[Appendix D: Useful Development Tools](#appendix-d-useful-development-tools)
+## [Appendix D: Useful Development Tools](#appendix-d-useful-development-tools)
 
 In this appendix, we talk about some useful development tools that the Rust project provides. We’ll look at automatic formatting, quick ways to apply warning fixes, a linter, and integrating with IDEs.
 
-[Automatic Formatting with ](#automatic-formatting-with-rustfmt)`rustfmt`
+### [Automatic Formatting with `rustfmt`](#automatic-formatting-with-rustfmt)
 
-`rustfmt`The `rustfmt` tool reformats your code according to the community code style.
+`rustfmt`
+The `rustfmt` tool reformats your code according to the community code style.
 Many collaborative projects use `rustfmt` to prevent arguments about which
 style to use when writing Rust: Everyone formats their code using the tool.
 
@@ -21655,9 +21778,10 @@ Running this command reformats all the Rust code in the current crate. This
 should only change the code style, not the code semantics. For more information
 on `rustfmt`, see [its documentation](https://github.com/rust-lang/rustfmt).
 
-[Fix Your Code with ](#fix-your-code-with-rustfix)`rustfix`
+### [Fix Your Code with `rustfix`](#fix-your-code-with-rustfix)
 
-`rustfix`The `rustfix` tool is included with Rust installations and can automatically
+`rustfix`
+The `rustfix` tool is included with Rust installations and can automatically
 fix compiler warnings that have a clear way to correct the problem that’s
 likely what you want. You’ve probably seen compiler warnings before. For
 example, consider this code:
@@ -21711,7 +21835,7 @@ The variable `x` is now immutable, and the warning no longer appears.
 You can also use the `cargo fix` command to transition your code between
 different Rust editions. Editions are covered in [Appendix E](#e---editions).
 
-[More Lints with Clippy](#more-lints-with-clippy)
+### [More Lints with Clippy](#more-lints-with-clippy)
 
 The Clippy tool is a collection of lints to analyze your code so that you can catch common mistakes and improve your Rust code. Clippy is included with standard Rust installations.
 
@@ -21743,15 +21867,13 @@ The following code doesn’t result in any errors or warnings from Clippy:
 
 For more information on Clippy, see [its documentation](https://github.com/rust-lang/rust-clippy).
 
-[IDE Integration Using ](#ide-integration-using-rust-analyzer)`rust-analyzer`
+### [IDE Integration Using `rust-analyzer`](#ide-integration-using-rust-analyzer)
 
-`rust-analyzer`To help with IDE integration, the Rust community recommends using
-[ rust-analyzer](https://rust-analyzer.github.io). This tool is a set of
-compiler-centric utilities that speak 
-
-[Language Server Protocol](http://langserver.org/), which is a specification for IDEs and programming languages to communicate with each other. Different clients can use
-
-`rust-analyzer`, such as
+`rust-analyzer`
+To help with IDE integration, the Rust community recommends using
+[`rust-analyzer`](https://rust-analyzer.github.io). This tool is a set of
+compiler-centric utilities that speak [Language Server Protocol](http://langserver.org/), which is a specification for IDEs and programming languages to
+communicate with each other. Different clients can use `rust-analyzer`, such as
 [the Rust analyzer plug-in for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer).
 
 Visit the `rust-analyzer` project’s [home page](https://rust-analyzer.github.io)
@@ -21759,9 +21881,9 @@ for installation instructions, then install the language server support in your
 particular IDE. Your IDE will gain capabilities such as autocompletion, jump to
 definition, and inline errors.
 
-[E - Editions](#e---editions)
+# [E - Editions](#e---editions)
 
-[Appendix E: Editions](#appendix-e-editions)
+## [Appendix E: Editions](#appendix-e-editions)
 
 In Chapter 1, you saw that `cargo new` adds a bit of metadata to your
 *Cargo.toml* file about an edition. This appendix talks about what that means!
@@ -21791,23 +21913,23 @@ All Rust compiler versions support any edition that existed prior to that compil
 
 To be clear: Most features will be available on all editions. Developers using any Rust edition will continue to see improvements as new stable releases are made. However, in some cases, mainly when new keywords are added, some new features might only be available in later editions. You will need to switch editions if you want to take advantage of such features.
 
-For more details, see [ The Rust Edition Guide](https://doc.rust-lang.org/stable/edition-guide). This is a
+For more details, see [*The Rust Edition Guide*](https://doc.rust-lang.org/stable/edition-guide). This is a
 complete book that enumerates the differences between editions and explains how
-to automatically upgrade your code to a new edition via 
+to automatically upgrade your code to a new edition via `cargo fix`.
 
-`cargo fix`.[F - Translations of the Book](#f---translations-of-the-book)
+# [F - Translations of the Book](#f---translations-of-the-book)
 
-[Appendix F: Translations of the Book](#appendix-f-translations-of-the-book)
+## [Appendix F: Translations of the Book](#appendix-f-translations-of-the-book)
 
 For resources in languages other than English. Most are still in progress; see
 [the Translations label](https://github.com/rust-lang/book/issues?q=is%3Aopen+is%3Aissue+label%3ATranslations) to help or let us know about a new translation!
 
-- [Português](https://github.com/rust-br/rust-book-pt-br)(BR)
-- [Português](https://github.com/nunojesus/rust-book-pt-pt)(PT)
-- 简体中文: [KaiserY/trpl-zh-cn](https://github.com/KaiserY/trpl-zh-cn),[gnu4cn/rust-lang-Zh_CN](https://github.com/gnu4cn/rust-lang-Zh_CN)
+- [Português](https://github.com/rust-br/rust-book-pt-br) (BR)
+- [Português](https://github.com/nunojesus/rust-book-pt-pt) (PT)
+- 简体中文: [KaiserY/trpl-zh-cn](https://github.com/KaiserY/trpl-zh-cn) ,[gnu4cn/rust-lang-Zh_CN](https://github.com/gnu4cn/rust-lang-Zh_CN)
 - [正體中文](https://github.com/rust-tw/book-tw)
 - [Українська](https://rust-lang-ua.github.io/rustbook_ukrainian)
-- [Español](https://github.com/thecodix/book),- [alternate](https://github.com/ManRR/rust-book-es),- [Español por RustLangES](https://github.com/RustLangES/rust-book-es)
+- [Español](https://github.com/thecodix/book) ,[alternate](https://github.com/ManRR/rust-book-es) ,[Español por RustLangES](https://github.com/RustLangES/rust-book-es)
 - [Русский](https://github.com/rust-lang-ru/book)
 - [한국어](https://github.com/rust-kr/doc.rust-kr.org)
 - [日本語](https://github.com/rust-lang-ja/book-ja)
@@ -21818,7 +21940,7 @@ For resources in languages other than English. Most are still in progress; see
 - [Esperanto](https://github.com/psychoslave/Rust-libro)
 - [ελληνική](https://github.com/TChatzigiannakis/rust-book-greek)
 - [Svenska](https://github.com/sebras/book)
-- [Farsi](https://github.com/RustFarsi/book),- [Persian (FA)](https://github.com/persian-rust/book)
+- [Farsi](https://github.com/RustFarsi/book) ,[Persian (FA)](https://github.com/persian-rust/book)
 - [Deutsch](https://github.com/rust-lang-de/rustbook-de)
 - [हिंदी](https://github.com/venkatarun95/rust-book-hindi)
 - [ไทย](https://github.com/rust-lang-th/book-th)
@@ -21828,13 +21950,13 @@ For resources in languages other than English. Most are still in progress; see
 - [Italiano](https://nixxo.github.io/rust-lang-book-it/)
 - [বাংলা](https://github.com/IsmailHosenIsmailJames/rust-book-bn)
 
-[G - How Rust is Made and “Nightly Rust”](#g---how-rust-is-made-and-nightly-rust)
+# [G - How Rust is Made and “Nightly Rust”](#g---how-rust-is-made-and-nightly-rust)
 
-[Appendix G - How Rust is Made and “Nightly Rust”](#appendix-g---how-rust-is-made-and-nightly-rust)
+## [Appendix G - How Rust is Made and “Nightly Rust”](#appendix-g---how-rust-is-made-and-nightly-rust)
 
 This appendix is about how Rust is made and how that affects you as a Rust developer.
 
-[Stability Without Stagnation](#stability-without-stagnation)
+### [Stability Without Stagnation](#stability-without-stagnation)
 
 As a language, Rust cares a *lot* about the stability of your code. We want
 Rust to be a rock-solid foundation you can build on, and if things were
@@ -21844,7 +21966,7 @@ their release, when we can no longer change things.
 
 Our solution to this problem is what we call “stability without stagnation”, and our guiding principle is this: you should never have to fear upgrading to a new version of stable Rust. Each upgrade should be painless, but should also bring you new features, fewer bugs, and faster compile times.
 
-[Choo, Choo! Release Channels and Riding the Trains](#choo-choo-release-channels-and-riding-the-trains)
+### [Choo, Choo! Release Channels and Riding the Trains](#choo-choo-release-channels-and-riding-the-trains)
 
 Rust development operates on a *train schedule*. That is, all development is
 done in the main branch of the Rust repository. Releases follow a software
@@ -21920,11 +22042,11 @@ work as expected, you can report it to the team and get it fixed before the
 next stable release happens! Breakage in a beta release is relatively rare, but
 `rustc` is still a piece of software, and bugs do exist.
 
-[Maintenance time](#maintenance-time)
+### [Maintenance time](#maintenance-time)
 
 The Rust project supports the most recent stable version. When a new stable version is released, the old version reaches its end of life (EOL). This means each version is supported for six weeks.
 
-[Unstable Features](#unstable-features)
+### [Unstable Features](#unstable-features)
 
 There’s one more catch with this release model: unstable features. Rust uses a
 technique called “feature flags” to determine what features are enabled in a
@@ -21938,7 +22060,7 @@ If you’re using a beta or stable release of Rust, you can’t use any feature 
 
 This book only contains information about stable features, as in-progress features are still changing, and surely they’ll be different between when this book was written and when they get enabled in stable builds. You can find documentation for nightly-only features online.
 
-[Rustup and the Role of Rust Nightly](#rustup-and-the-role-of-rust-nightly)
+### [Rustup and the Role of Rust Nightly](#rustup-and-the-role-of-rust-nightly)
 
 Rustup makes it easy to change between different release channels of Rust, on a global or per-project basis. By default, you’ll have stable Rust installed. To install nightly, for example:
 
@@ -21970,7 +22092,7 @@ Now, every time you call `rustc` or `cargo` inside of
 Rust, rather than your default of stable Rust. This comes in handy when you
 have a lot of Rust projects!
 
-[The RFC Process and Teams](#the-rfc-process-and-teams)
+### [The RFC Process and Teams](#the-rfc-process-and-teams)
 
 So how do you learn about these new features? Rust’s development model follows
 a *Request For Comments (RFC) process*. If you’d like an improvement in Rust,

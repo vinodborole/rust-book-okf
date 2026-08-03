@@ -2,10 +2,10 @@
 type: Web Page
 title: Packages, Crates, and Modules - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch07-00-managing-growing-projects-with-packages-crates-and-modules.html
-timestamp: '2026-07-13T09:33:08.854356+00:00'
+timestamp: '2026-08-03T09:51:37.355491+00:00'
 ---
 
-[Packages, Crates, and Modules](#packages-crates-and-modules)
+# [Packages, Crates, and Modules](#packages-crates-and-modules)
 
 As you write large programs, organizing your code will become increasingly important. By grouping related functionality and separating code with distinct features, you’ll clarify where to find code that implements a particular feature and where to go to change how a feature works.
 
@@ -27,10 +27,11 @@ organization, including which details are exposed, which details are private,
 and what names are in each scope in your programs. These features, sometimes
 collectively referred to as the *module system*, include:
 
-- **Packages**: A Cargo feature that lets you build, test, and share crates
-- **Crates**: A tree of modules that produces a library or executable
-- **Modules and use**: Let you control the organization, scope, and privacy of paths
-- **Paths**: A way of naming an item, such as a struct, function, or module
+- **Packages** : A Cargo feature that lets you build, test, and share crates
+- **Crates** : A tree of modules that produces a library or executable
+- **Modules and use** : Let you control the organization, scope, and privacy of
+paths
+- **Paths** : A way of naming an item, such as a struct, function, or module
 
 In this chapter, we’ll cover all these features, discuss how they interact, and explain how to use them to manage scope. By the end, you should have a solid understanding of the module system and be able to work with scopes like a pro!
 

@@ -3,10 +3,10 @@ type: Web Page
 title: 'Final Project: Building a Multithreaded Web Server - The Rust Programming
   Language'
 resource: https://doc.rust-lang.org/stable/book/ch21-00-final-project-a-web-server.html
-timestamp: '2026-07-13T09:33:08.854356+00:00'
+timestamp: '2026-08-03T09:51:37.355491+00:00'
 ---
 
-[Final Project: Building a Multithreaded Web Server](#final-project-building-a-multithreaded-web-server)
+# [Final Project: Building a Multithreaded Web Server](#final-project-building-a-multithreaded-web-server)
 
 It’s been a long journey, but we’ve reached the end of the book. In this chapter, we’ll build one more project together to demonstrate some of the concepts we covered in the final chapters, as well as recap some earlier lessons.
 
@@ -14,11 +14,11 @@ For our final project, we’ll make a web server that says “Hello!” and look
 
 Here is our plan for building the web server:
 
-- Learn a bit about TCP and HTTP.
-- Listen for TCP connections on a socket.
-- Parse a small number of HTTP requests.
-- Create a proper HTTP response.
-- Improve the throughput of our server with a thread pool.
+1. Learn a bit about TCP and HTTP.
+2. Listen for TCP connections on a socket.
+3. Parse a small number of HTTP requests.
+4. Create a proper HTTP response.
+5. Improve the throughput of our server with a thread pool.
 
 Before we get started, we should mention two details. First, the method we’ll
 use won’t be the best way to build a web server with Rust. Community members

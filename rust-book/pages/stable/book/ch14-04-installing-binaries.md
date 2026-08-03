@@ -2,12 +2,13 @@
 type: Web Page
 title: Installing Binaries with cargo install - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch14-04-installing-binaries.html
-timestamp: '2026-07-13T09:33:08.854356+00:00'
+timestamp: '2026-08-03T09:51:37.355491+00:00'
 ---
 
-[Installing Binaries with ](#installing-binaries-with-cargo-install)`cargo install`
+## [Installing Binaries with `cargo install`](#installing-binaries-with-cargo-install)
 
-`cargo install`The `cargo install` command allows you to install and use binary crates
+`cargo install`
+The `cargo install` command allows you to install and use binary crates
 locally. This isn’t intended to replace system packages; it’s meant to be a
 convenient way for Rust developers to install tools that others have shared on
 [crates.io](https://crates.io/). Note that you can only install

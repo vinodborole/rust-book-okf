@@ -2,10 +2,10 @@
 type: Web Page
 title: Enums and Pattern Matching - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch06-00-enums.html
-timestamp: '2026-07-13T09:33:08.854356+00:00'
+timestamp: '2026-08-03T09:51:37.355491+00:00'
 ---
 
-[Enums and Pattern Matching](#enums-and-pattern-matching)
+# [Enums and Pattern Matching](#enums-and-pattern-matching)
 
 In this chapter, we’ll look at enumerations, also referred to as *enums*.
 Enums allow you to define a type by enumerating its possible variants. First

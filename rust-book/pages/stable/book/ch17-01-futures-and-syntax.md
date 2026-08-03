@@ -2,10 +2,10 @@
 type: Web Page
 title: Futures and the Async Syntax - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch17-01-futures-and-syntax.html
-timestamp: '2026-07-13T09:33:08.854356+00:00'
+timestamp: '2026-08-03T09:51:37.355491+00:00'
 ---
 
-[Futures and the Async Syntax](#futures-and-the-async-syntax)
+## [Futures and the Async Syntax](#futures-and-the-async-syntax)
 
 The key elements of asynchronous programming in Rust are *futures* and Rust’s
 `async` and `await` keywords.
@@ -42,21 +42,20 @@ forward.
 
 This may all feel a bit abstract, so let’s write our first async program: a little web scraper. We’ll pass in two URLs from the command line, fetch both of them concurrently, and return the result of whichever one finishes first. This example will have a fair bit of new syntax, but don’t worry—we’ll explain everything you need to know as we go.
 
-[Our First Async Program](#our-first-async-program)
+## [Our First Async Program](#our-first-async-program)
 
 To keep the focus of this chapter on learning async rather than juggling parts
 of the ecosystem, we’ve created the `trpl` crate (`trpl` is short for “The Rust
 Programming Language”). It re-exports all the types, traits, and functions
-you’ll need, primarily from the [ futures](https://crates.io/crates/futures) and
-
-[crates. The](https://tokio.rs)
-
-`tokio``futures` crate is an official home
+you’ll need, primarily from the [`futures`](https://crates.io/crates/futures) and
+[`tokio`](https://tokio.rs) crates. The `futures` crate is an official home
 for Rust experimentation for async code, and it’s actually where the `Future`
 trait was originally designed. Tokio is the most widely used async runtime in
 Rust today, especially for web applications. There are other great runtimes out
 there, and they may be more suitable for your purposes. We use the `tokio`
-crate under the hood for `trpl` because it’s well tested and widely used.In some cases, `trpl` also renames or wraps the original APIs to keep you
+crate under the hood for `trpl` because it’s well tested and widely used.
+
+In some cases, `trpl` also renames or wraps the original APIs to keep you
 focused on the details relevant to this chapter. If you want to understand what
 the crate does, we encourage you to check out [its source code](https://github.com/rust-lang/book/tree/main/packages/trpl).
 You’ll be able to see what crate each re-export comes from, and we’ve left
@@ -75,7 +74,7 @@ program. We’ll build a little command line tool that fetches two web pages,
 pulls the `<title>` element from each, and prints out the title of whichever
 page finishes that whole process first.
 
-[Defining the page_title Function](#defining-the-page_title-function)
+### [Defining the page_title Function](#defining-the-page_title-function)
 
 Let’s start by writing a function that takes one page URL as a parameter, makes
 a request to it, and returns the text of the `<title>` element (see Listing
@@ -162,16 +161,20 @@ fn page_title(url: &str) -> impl Future<Output = Option<String>> {
 ```
 Let’s walk through each part of the transformed version:
 
-- It uses the `impl Trait`syntax we discussed back in Chapter 10 in the[“Traits as Parameters”](ch10-02-traits.html#traits-as-parameters)section.
-- The returned value implements the `Future`trait with an associated type of`Output`. Notice that the`Output`type is`Option<String>`, which is the same as the original return type from the`async fn`version of`page_title`.
+- It uses the `impl Trait` syntax we discussed back in Chapter 10 in the[“Traits as Parameters”](ch10-02-traits.html#traits-as-parameters) section.
+- The returned value implements the `Future` trait with an associated type of`Output` . Notice that the`Output` type is`Option<String>` , which is the
+same as the original return type from the`async fn` version of`page_title` .
 - All of the code called in the body of the original function is wrapped in
-an `async move`block. Remember that blocks are expressions. This whole block is the expression returned from the function.
-- This async block produces a value with the type `Option<String>`, as just described. That value matches the`Output`type in the return type. This is just like other blocks you have seen.
-- The new function body is an `async move`block because of how it uses the`url`parameter. (We’ll talk much more about`async`versus`async move`later in the chapter.)
+an `async move` block. Remember that blocks are expressions. This whole block
+is the expression returned from the function.
+- This async block produces a value with the type `Option<String>` , as just
+described. That value matches the`Output` type in the return type. This is
+just like other blocks you have seen.
+- The new function body is an `async move` block because of how it uses the`url` parameter. (We’ll talk much more about`async` versus`async move` later in the chapter.)
 
 Now we can call `page_title` in `main`.
 
-[Executing an Async Function with a Runtime](#executing-an-async-function-with-a-runtime)
+### [Executing an Async Function with a Runtime](#executing-an-async-function-with-a-runtime)
 
 To start, we’ll get the title for a single page, shown in Listing 17-3. Unfortunately, this code doesn’t compile yet.
 
@@ -266,7 +269,7 @@ function that runs a future to completion the way `trpl::block_on` does.
 
 Now let’s put these pieces together and see how we can write concurrent code.
 
-[Racing Two URLs Against Each Other Concurrently](#racing-two-urls-against-each-other-concurrently)
+### [Racing Two URLs Against Each Other Concurrently](#racing-two-urls-against-each-other-concurrently)
 
 In Listing 17-5, we call `page_title` with two different URLs passed in from the
 command line and race them by selecting whichever future finishes first.

@@ -3,10 +3,10 @@ type: Web Page
 title: 'Refutability: Whether a Pattern Might Fail to Match - The Rust Programming
   Language'
 resource: https://doc.rust-lang.org/stable/book/ch19-02-refutability.html
-timestamp: '2026-07-13T09:33:08.854356+00:00'
+timestamp: '2026-08-03T09:51:37.355491+00:00'
 ---
 
-[Refutability: Whether a Pattern Might Fail to Match](#refutability-whether-a-pattern-might-fail-to-match)
+## [Refutability: Whether a Pattern Might Fail to Match](#refutability-whether-a-pattern-might-fail-to-match)
 
 Patterns come in two forms: refutable and irrefutable. Patterns that will match
 for any possible value passed are *irrefutable*. An example would be `x` in the

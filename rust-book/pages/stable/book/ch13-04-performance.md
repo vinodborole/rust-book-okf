@@ -2,10 +2,10 @@
 type: Web Page
 title: Performance in Loops vs. Iterators - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch13-04-performance.html
-timestamp: '2026-07-13T09:33:08.854356+00:00'
+timestamp: '2026-08-03T09:51:37.355491+00:00'
 ---
 
-[Performance in Loops vs. Iterators](#performance-in-loops-vs-iterators)
+## [Performance in Loops vs. Iterators](#performance-in-loops-vs-iterators)
 
 To determine whether to use loops or iterators, you need to know which
 implementation is faster: the version of the `search` function with an explicit
@@ -36,7 +36,7 @@ In general, C++ implementations obey the zero-overhead principle: What you don�
 
 In many cases, Rust code using iterators compiles to the same assembly you’d write by hand. Optimizations such as loop unrolling and eliminating bounds checking on array access apply and make the resultant code extremely efficient. Now that you know this, you can use iterators and closures without fear! They make code seem like it’s higher level but don’t impose a runtime performance penalty for doing so.
 
-[Summary](#summary)
+## [Summary](#summary)
 
 Closures and iterators are Rust features inspired by functional programming language ideas. They contribute to Rust’s capability to clearly express high-level ideas at low-level performance. The implementations of closures and iterators are such that runtime performance is not affected. This is part of Rust’s goal to strive to provide zero-cost abstractions.
 

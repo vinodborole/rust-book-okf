@@ -2,10 +2,10 @@
 type: Web Page
 title: Defining an Enum - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch06-01-defining-an-enum.html
-timestamp: '2026-07-13T09:33:08.854356+00:00'
+timestamp: '2026-08-03T09:51:37.355491+00:00'
 ---
 
-[Defining an Enum](#defining-an-enum)
+## [Defining an Enum](#defining-an-enum)
 
 Where structs give you a way of grouping together related fields and data, like
 a `Rectangle` with its `width` and `height`, enums give you a way of saying a
@@ -41,7 +41,7 @@ fn route(ip_kind: IpAddrKind) {}
 ```
 `IpAddrKind` is now a custom data type that we can use elsewhere in our code.
 
-[Enum Values](#enum-values)
+### [Enum Values](#enum-values)
 
 We can create instances of each of the two variants of `IpAddrKind` like this:
 
@@ -181,10 +181,10 @@ Let’s look at another example of an enum in Listing 6-2: This one has a wide v
 
 This enum has four variants with different types:
 
-- `Quit`: Has no data associated with it at all
-- `Move`: Has named fields, like a struct does
-- `Write`: Includes a single- `String`
-- `ChangeColor`: Includes three- `i32`values
+- `Quit` : Has no data associated with it at all
+- `Move` : Has named fields, like a struct does
+- `Write` : Includes a single`String`
+- `ChangeColor` : Includes three`i32` values
 
 Defining an enum with variants such as the ones in Listing 6-2 is similar to
 defining different kinds of struct definitions, except the enum doesn’t use the
@@ -235,9 +235,10 @@ body of the `call` method when `m.call()` runs.
 Let’s look at another enum in the standard library that is very common and
 useful: `Option`.
 
-[The ](#the-option-enum)`Option` Enum
+### [The `Option` Enum](#the-option-enum)
 
-`Option` EnumThis section explores a case study of `Option`, which is another enum defined
+`Option` Enum
+This section explores a case study of `Option`, which is another enum defined
 by the standard library. The `Option` type encodes the very common scenario in
 which a value could be something, or it could be nothing.
 

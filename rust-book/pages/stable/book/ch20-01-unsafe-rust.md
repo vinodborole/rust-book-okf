@@ -2,10 +2,10 @@
 type: Web Page
 title: Unsafe Rust - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch20-01-unsafe-rust.html
-timestamp: '2026-07-13T09:33:08.854356+00:00'
+timestamp: '2026-08-03T09:51:37.355491+00:00'
 ---
 
-[Unsafe Rust](#unsafe-rust)
+## [Unsafe Rust](#unsafe-rust)
 
 All the code we’ve discussed so far has had Rust’s memory safety guarantees
 enforced at compile time. However, Rust has a second language hidden inside it
@@ -24,18 +24,18 @@ null pointer dereferencing.
 
 Another reason Rust has an unsafe alter ego is that the underlying computer hardware is inherently unsafe. If Rust didn’t let you do unsafe operations, you couldn’t do certain tasks. Rust needs to allow you to do low-level systems programming, such as directly interacting with the operating system or even writing your own operating system. Working with low-level systems programming is one of the goals of the language. Let’s explore what we can do with unsafe Rust and how to do it.
 
-[Performing Unsafe Superpowers](#performing-unsafe-superpowers)
+### [Performing Unsafe Superpowers](#performing-unsafe-superpowers)
 
 To switch to unsafe Rust, use the `unsafe` keyword and then start a new block
 that holds the unsafe code. You can take five actions in unsafe Rust that you
 can’t in safe Rust, which we call *unsafe superpowers*. Those superpowers
 include the ability to:
 
-- Dereference a raw pointer.
-- Call an unsafe function or method.
-- Access or modify a mutable static variable.
-- Implement an unsafe trait.
-- Access fields of `union`s.
+1. Dereference a raw pointer.
+2. Call an unsafe function or method.
+3. Access or modify a mutable static variable.
+4. Implement an unsafe trait.
+5. Access fields of `union` s.
 
 It’s important to understand that `unsafe` doesn’t turn off the borrow checker
 or disable any of Rust’s other safety checks: If you use a reference in unsafe
@@ -65,7 +65,7 @@ abstraction is safe.
 
 Let’s look at each of the five unsafe superpowers in turn. We’ll also look at some abstractions that provide a safe interface to unsafe code.
 
-[Dereferencing a Raw Pointer](#dereferencing-a-raw-pointer)
+### [Dereferencing a Raw Pointer](#dereferencing-a-raw-pointer)
 
 In Chapter 4, in the [“Dangling References”](ch04-02-references-and-borrowing.html#dangling-references) section, we mentioned that the compiler ensures that references are always
 valid. Unsafe Rust has two new types called *raw pointers* that are similar to
@@ -121,7 +121,7 @@ a data race. Be careful!
 
 With all of these dangers, why would you ever use raw pointers? One major use case is when interfacing with C code, as you’ll see in the next section. Another case is when building up safe abstractions that the borrow checker doesn’t understand. We’ll introduce unsafe functions and then look at an example of a safe abstraction that uses unsafe code.
 
-[Calling an Unsafe Function or Method](#calling-an-unsafe-function-or-method)
+### [Calling an Unsafe Function or Method](#calling-an-unsafe-function-or-method)
 
 The second type of operation you can perform in an unsafe block is calling
 unsafe functions. Unsafe functions and methods look exactly like regular
@@ -169,7 +169,7 @@ compiler will warn you if you forget. This helps us keep `unsafe` blocks as
 small as possible, as unsafe operations may not be needed across the whole
 function body.
 
-[Creating a Safe Abstraction over Unsafe Code](#creating-a-safe-abstraction-over-unsafe-code)
+#### [Creating a Safe Abstraction over Unsafe Code](#creating-a-safe-abstraction-over-unsafe-code)
 
 Just because a function contains unsafe code doesn’t mean we need to mark the
 entire function as unsafe. In fact, wrapping unsafe code in a safe function is
@@ -256,9 +256,10 @@ We don’t own the memory at this arbitrary location, and there is no guarantee
 that the slice this code creates contains valid `i32` values. Attempting to use
 `values` as though it’s a valid slice results in undefined behavior.
 
-[Using ](#using-extern-functions-to-call-external-code)`extern` Functions to Call External Code
+#### [Using `extern` Functions to Call External Code](#using-extern-functions-to-call-external-code)
 
-`extern` Functions to Call External CodeSometimes your Rust code might need to interact with code written in another
+`extern` Functions to Call External Code
+Sometimes your Rust code might need to interact with code written in another
 language. For this, Rust has the keyword `extern` that facilitates the creation
 and use of a *Foreign Function Interface (FFI)*, which is a way for a
 programming language to define functions and enable a different (foreign)
@@ -290,7 +291,7 @@ Marking a function as `safe` does not inherently make it safe! Instead, it is
 like a promise you are making to Rust that it is safe. It is still your
 responsibility to make sure that promise is kept!
 
-[Calling Rust Functions from Other Languages](#calling-rust-functions-from-other-languages)
+#### [Calling Rust Functions from Other Languages](#calling-rust-functions-from-other-languages)
 
 We can also use `extern` to create an interface that allows other languages to
 call Rust functions. Instead of creating a whole `extern` block, we add the
@@ -318,7 +319,7 @@ pub extern "C" fn call_from_c() {
 This usage of `extern` requires `unsafe` only in the attribute, not on the
 `extern` block.
 
-[Accessing or Modifying a Mutable Static Variable](#accessing-or-modifying-a-mutable-static-variable)
+### [Accessing or Modifying a Mutable Static Variable](#accessing-or-modifying-a-mutable-static-variable)
 
 In this book, we’ve not yet talked about global variables, which Rust does support but which can be problematic with Rust’s ownership rules. If two threads are accessing the same mutable global variable, it can cause a data race.
 
@@ -368,7 +369,7 @@ using them more obvious.
 
 With mutable data that is globally accessible, it’s difficult to ensure that there are no data races, which is why Rust considers mutable static variables to be unsafe. Where possible, it’s preferable to use the concurrency techniques and thread-safe smart pointers we discussed in Chapter 16 so that the compiler checks that data access from different threads is done safely.
 
-[Implementing an Unsafe Trait](#implementing-an-unsafe-trait)
+### [Implementing an Unsafe Trait](#implementing-an-unsafe-trait)
 
 We can use `unsafe` to implement an unsafe trait. A trait is unsafe when at
 least one of its methods has some invariant that the compiler can’t verify. We
@@ -380,17 +381,17 @@ By using `unsafe impl`, we’re promising that we’ll uphold the invariants tha
 the compiler can’t verify.
 
 As an example, recall the `Send` and `Sync` marker traits we discussed in the
-[“Extensible Concurrency with  Send and Sync”](ch16-04-extensible-concurrency-sync-and-send.html)
+[“Extensible Concurrency with `Send` and `Sync`”](ch16-04-extensible-concurrency-sync-and-send.html)
 section in Chapter 16: The compiler implements these traits automatically if
-our types are composed entirely of other types that implement 
-
-`Send` and
+our types are composed entirely of other types that implement `Send` and
 `Sync`. If we implement a type that contains a type that does not implement
 `Send` or `Sync`, such as raw pointers, and we want to mark that type as `Send`
 or `Sync`, we must use `unsafe`. Rust can’t verify that our type upholds the
 guarantees that it can be safely sent across threads or accessed from multiple
 threads; therefore, we need to do those checks manually and indicate as such
-with `unsafe`.[Accessing Fields of a Union](#accessing-fields-of-a-union)
+with `unsafe`.
+
+### [Accessing Fields of a Union](#accessing-fields-of-a-union)
 
 The final action that works only with `unsafe` is accessing fields of a union.
 A *union* is similar to a `struct`, but only one declared field is used in a
@@ -399,7 +400,7 @@ unions in C code. Accessing union fields is unsafe because Rust can’t guarante
 the type of the data currently being stored in the union instance. You can
 learn more about unions in [the Rust Reference](../reference/items/unions.html).
 
-[Using Miri to Check Unsafe Code](#using-miri-to-check-unsafe-code)
+### [Using Miri to Check Unsafe Code](#using-miri-to-check-unsafe-code)
 
 When writing unsafe code, you might want to check that what you have written
 actually is safe and correct. One of the best ways to do that is to use Miri,
@@ -460,7 +461,7 @@ this chapter and see what it says!
 
 You can learn more about Miri at [its GitHub repository](https://github.com/rust-lang/miri).
 
-[Using Unsafe Code Correctly](#using-unsafe-code-correctly)
+### [Using Unsafe Code Correctly](#using-unsafe-code-correctly)
 
 Using `unsafe` to use one of the five superpowers just discussed isn’t wrong or
 even frowned upon, but it is trickier to get `unsafe` code correct because the

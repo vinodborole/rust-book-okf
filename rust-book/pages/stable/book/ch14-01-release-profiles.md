@@ -2,10 +2,10 @@
 type: Web Page
 title: Customizing Builds with Release Profiles - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch14-01-release-profiles.html
-timestamp: '2026-07-13T09:33:08.854356+00:00'
+timestamp: '2026-08-03T09:51:37.355491+00:00'
 ---
 
-[Customizing Builds with Release Profiles](#customizing-builds-with-release-profiles)
+## [Customizing Builds with Release Profiles](#customizing-builds-with-release-profiles)
 
 In Rust, *release profiles* are predefined, customizable profiles with
 different configurations that allow a programmer to have more control over

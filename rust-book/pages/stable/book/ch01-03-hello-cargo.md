@@ -2,10 +2,10 @@
 type: Web Page
 title: Hello, Cargo! - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch01-03-hello-cargo.html
-timestamp: '2026-07-13T09:33:08.854356+00:00'
+timestamp: '2026-08-03T09:51:37.355491+00:00'
 ---
 
-[Hello, Cargo!](#hello-cargo)
+## [Hello, Cargo!](#hello-cargo)
 
 Cargo is Rust’s build system and package manager. Most Rustaceans use this tool
 to manage their Rust projects because Cargo handles a lot of tasks for you,
@@ -28,7 +28,7 @@ $ cargo --version
 If you see a version number, you have it! If you see an error, such as `command not found`, look at the documentation for your method of installation to
 determine how to install Cargo separately.
 
-[Creating a Project with Cargo](#creating-a-project-with-cargo)
+### [Creating a Project with Cargo](#creating-a-project-with-cargo)
 
 Let’s create a new project using Cargo and look at how it differs from our
 original “Hello, world!” project. Navigate back to your *projects* directory
@@ -58,9 +58,8 @@ the `--vcs` flag. Run `cargo new --help` to see the available options.
 Open *Cargo.toml* in your text editor of choice. It should look similar to the
 code in Listing 1-2.
 
-This file is in the [ TOML](https://toml.io) (
-
-*Tom’s Obvious, Minimal Language*) format, which is Cargo’s configuration format.
+This file is in the [*TOML*](https://toml.io) (*Tom’s Obvious, Minimal
+Language*) format, which is Cargo’s configuration format.
 
 The first line, `[package]`, is a section heading that indicates that the
 following statements are configuring a package. As we add more information to
@@ -101,7 +100,7 @@ project code into the *src* directory and create an appropriate *Cargo.toml*
 file. One easy way to get that *Cargo.toml* file is to run `cargo init`, which
 will create it for you automatically.
 
-[Building and Running a Cargo Project](#building-and-running-a-cargo-project)
+### [Building and Running a Cargo Project](#building-and-running-a-cargo-project)
 
 Now let’s look at what’s different when we build and run the “Hello, world!”
 program with Cargo! From your *hello_cargo* directory, build your project by
@@ -170,17 +169,17 @@ ready to use the executable.
 
 Let’s recap what we’ve learned so far about Cargo:
 
-- We can create a project using `cargo new`.
-- We can build a project using `cargo build`.
-- We can build and run a project in one step using `cargo run`.
+- We can create a project using `cargo new` .
+- We can build a project using `cargo build` .
+- We can build and run a project in one step using `cargo run` .
 - We can build a project without producing a binary to check for errors using
-`cargo check`.
+`cargo check` .
 - Instead of saving the result of the build in the same directory as our code,
-Cargo stores it in the *target/debug*directory.
+Cargo stores it in the *target/debug* directory.
 
 An additional advantage of using Cargo is that the commands are the same no matter which operating system you’re working on. So, at this point, we’ll no longer provide specific instructions for Linux and macOS versus Windows.
 
-[Building for Release](#building-for-release)
+### [Building for Release](#building-for-release)
 
 When your project is finally ready for release, you can use `cargo build --release` to compile it with optimizations. This command will create an
 executable in *target/release* instead of *target/debug*. The optimizations
@@ -192,7 +191,7 @@ repeatedly and that will run as fast as possible. If you’re benchmarking your
 code’s running time, be sure to run `cargo build --release` and benchmark with
 the executable in *target/release*.
 
-[Leveraging Cargo’s Conventions](#leveraging-cargos-conventions)
+### [Leveraging Cargo’s Conventions](#leveraging-cargos-conventions)
 
 With simple projects, Cargo doesn’t provide a lot of value over just using
 `rustc`, but it will prove its worth as your programs become more intricate.
@@ -211,14 +210,14 @@ $ cargo build
 ```
 For more information about Cargo, check out [its documentation](https://doc.rust-lang.org/cargo/).
 
-[Summary](#summary)
+## [Summary](#summary)
 
 You’re already off to a great start on your Rust journey! In this chapter, you learned how to:
 
-- Install the latest stable version of Rust using `rustup`.
+- Install the latest stable version of Rust using `rustup` .
 - Update to a newer Rust version.
 - Open locally installed documentation.
-- Write and run a “Hello, world!” program using `rustc`directly.
+- Write and run a “Hello, world!” program using `rustc` directly.
 - Create and run a new project using the conventions of Cargo.
 
 This is a great time to build a more substantial program to get used to reading and writing Rust code. So, in Chapter 2, we’ll build a guessing game program. If you would rather start by learning how common programming concepts work in Rust, see Chapter 3 and then return to Chapter 2.

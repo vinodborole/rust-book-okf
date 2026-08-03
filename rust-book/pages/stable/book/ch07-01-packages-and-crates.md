@@ -2,10 +2,10 @@
 type: Web Page
 title: Packages and Crates - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch07-01-packages-and-crates.html
-timestamp: '2026-07-13T09:33:08.854356+00:00'
+timestamp: '2026-08-03T09:51:37.355491+00:00'
 ---
 
-[Packages and Crates](#packages-and-crates)
+## [Packages and Crates](#packages-and-crates)
 
 The first parts of the module system we’ll cover are packages and crates.
 

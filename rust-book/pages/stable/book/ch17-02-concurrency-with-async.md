@@ -2,10 +2,10 @@
 type: Web Page
 title: Applying Concurrency with Async - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch17-02-concurrency-with-async.html
-timestamp: '2026-07-13T09:33:08.854356+00:00'
+timestamp: '2026-08-03T09:51:37.355491+00:00'
 ---
 
-[Applying Concurrency with Async](#applying-concurrency-with-async)
+## [Applying Concurrency with Async](#applying-concurrency-with-async)
 
 In this section, we’ll apply async to some of the same concurrency challenges we tackled with threads in Chapter 16. Because we already talked about a lot of the key ideas there, in this section we’ll focus on what’s different between threads and futures.
 
@@ -15,16 +15,17 @@ different. Even when the APIs *look* similar between threads and async, they
 often have different behavior—and they nearly always have different performance
 characteristics.
 
-[Creating a New Task with ](#creating-a-new-task-with-spawn_task)`spawn_task`
+### [Creating a New Task with `spawn_task`](#creating-a-new-task-with-spawn_task)
 
-`spawn_task`The first operation we tackled in the [“Creating a New Thread with
- spawn”](ch16-01-threads.html#creating-a-new-thread-with-spawn) section in Chapter 16 was counting up on
-two separate threads. Let’s do the same using async. The 
-
-`trpl` crate supplies
+`spawn_task`
+The first operation we tackled in the [“Creating a New Thread with
+`spawn`”](ch16-01-threads.html#creating-a-new-thread-with-spawn) section in Chapter 16 was counting up on
+two separate threads. Let’s do the same using async. The `trpl` crate supplies
 a `spawn_task` function that looks very similar to the `thread::spawn` API, and
 a `sleep` function that is an async version of the `thread::sleep` API. We can
-use these together to implement the counting example, as shown in Listing 17-6.As our starting point, we set up our `main` function with `trpl::block_on` so
+use these together to implement the counting example, as shown in Listing 17-6.
+
+As our starting point, we set up our `main` function with `trpl::block_on` so
 that our top-level function can be async.
 
 Note: From this point forward in the chapter, every example will include this
@@ -134,7 +135,7 @@ Try some of these variations on awaiting the futures and see what they do:
 For an extra challenge, see if you can figure out what the output will be in
 each case *before* running the code!
 
-[Sending Data Between Two Tasks Using Message Passing](#sending-data-between-two-tasks-using-message-passing)
+### [Sending Data Between Two Tasks Using Message Passing](#sending-data-between-two-tasks-using-message-passing)
 
 Sharing data between futures will also be familiar: we’ll use message passing
 again, but this time with async versions of the types and functions. We’ll take
@@ -181,7 +182,7 @@ In Listing 16-10, we used a `for` loop to process all the items received from a
 synchronous channel. Rust doesn’t yet have a way to use a `for` loop with an
 *asynchronously produced* series of items, however, so we need to use a loop we
 haven’t seen before: the `while let` conditional loop. This is the loop version
-of the `if let` construct we saw back in the [“Concise Control Flow with  if let and let...else”](ch06-03-if-let.html) section in Chapter 6. The loop
+of the `if let` construct we saw back in the [“Concise Control Flow with `if let` and `let...else`”](ch06-03-if-let.html) section in Chapter 6. The loop
 will continue executing as long as the pattern it specifies continues to match
 the value.
 
@@ -205,7 +206,7 @@ seconds (2,000 milliseconds) after we start the program. For another, this
 program also never exits! Instead, it waits forever for new messages. You will
 need to shut it down using `ctrl`-`C`.
 
-[Code Within One Async Block Executes Linearly](#code-within-one-async-block-executes-linearly)
+#### [Code Within One Async Block Executes Linearly](#code-within-one-async-block-executes-linearly)
 
 Let’s start by examining why the messages come in all at once after the full
 delay, rather than coming in with delays between each one. Within a given async
@@ -228,41 +229,47 @@ what we’re trying *not* to do.
 
 With the updated code in Listing 17-11, the messages get printed at 500-millisecond intervals, rather than all in a rush after 2 seconds.
 
-[Moving Ownership Into an Async Block](#moving-ownership-into-an-async-block)
+#### [Moving Ownership Into an Async Block](#moving-ownership-into-an-async-block)
 
 The program still never exits, though, because of the way the `while let` loop
 interacts with `trpl::join`:
 
-- The future returned from `trpl::join`completes only once*both*futures passed to it have completed.
-- The `tx_fut`future completes once it finishes sleeping after sending the last message in`vals`.
-- The `rx_fut`future won’t complete until the`while let`loop ends.
-- The `while let`loop won’t end until awaiting`rx.recv`produces`None`.
-- Awaiting `rx.recv`will return`None`only once the other end of the channel is closed.
-- The channel will close only if we call `rx.close`or when the sender side,`tx`, is dropped.
-- We don’t call `rx.close`anywhere, and`tx`won’t be dropped until the outermost async block passed to`trpl::block_on`ends.
-- The block can’t end because it is blocked on `trpl::join`completing, which takes us back to the top of this list.
+- The future returned from `trpl::join` completes only once*both* futures
+passed to it have completed.
+- The `tx_fut` future completes once it finishes sleeping after sending the last
+message in`vals` .
+- The `rx_fut` future won’t complete until the`while let` loop ends.
+- The `while let` loop won’t end until awaiting`rx.recv` produces`None` .
+- Awaiting `rx.recv` will return`None` only once the other end of the channel
+is closed.
+- The channel will close only if we call `rx.close` or when the sender side,`tx` , is dropped.
+- We don’t call `rx.close` anywhere, and`tx` won’t be dropped until the
+outermost async block passed to`trpl::block_on` ends.
+- The block can’t end because it is blocked on `trpl::join` completing, which
+takes us back to the top of this list.
 
 Right now, the async block where we send the messages only *borrows* `tx`
 because sending a message doesn’t require ownership, but if we could *move*
 `tx` into that async block, it would be dropped once that block ends. In the
 [“Capturing References or Moving Ownership”](ch13-01-closures.html#capturing-references-or-moving-ownership)
 section in Chapter 13, you learned how to use the `move` keyword with closures,
-and, as discussed in the [“Using  move Closures with
+and, as discussed in the [“Using `move` Closures with
 Threads”](ch16-01-threads.html#using-move-closures-with-threads) section in Chapter 16, we often need to
 move data into closures when working with threads. The same basic dynamics
-apply to async blocks, so the 
+apply to async blocks, so the `move` keyword works with async blocks just as it
+does with closures.
 
-`move` keyword works with async blocks just as it
-does with closures.In Listing 17-12, we change the block used to send messages from `async` to
+In Listing 17-12, we change the block used to send messages from `async` to
 `async move`.
 
 When we run *this* version of the code, it shuts down gracefully after the last
 message is sent and received. Next, let’s see what would need to change to send
 data from more than one future.
 
-[Joining a Number of Futures with the ](#joining-a-number-of-futures-with-the-join-macro)`join!` Macro
+#### [Joining a Number of Futures with the `join!` Macro](#joining-a-number-of-futures-with-the-join-macro)
 
-`join!` MacroThis async channel is also a multiple-producer channel, so we can call `clone`
+`join!` Macro
+This async channel is also a multiple-producer channel, so we can call `clone`
 on `tx` if we want to send messages from multiple futures, as shown in Listing
 17-13.
 

@@ -2,17 +2,17 @@
 type: Web Page
 title: Advanced Traits - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch20-02-advanced-traits.html
-timestamp: '2026-07-13T09:33:08.854356+00:00'
+timestamp: '2026-08-03T09:51:37.355491+00:00'
 ---
 
-[Advanced Traits](#advanced-traits)
+## [Advanced Traits](#advanced-traits)
 
 We first covered traits in the [“Defining Shared Behavior with
 Traits”](ch10-02-traits.html) section in Chapter 10, but we didn’t discuss
 the more advanced details. Now that you know more about Rust, we can get into
 the nitty-gritty.
 
-[Defining Traits with Associated Types](#defining-traits-with-associated-types)
+### [Defining Traits with Associated Types](#defining-traits-with-associated-types)
 
 *Associated types* connect a type placeholder with a trait such that the trait
 method definitions can use these placeholder types in their signatures. The
@@ -61,7 +61,7 @@ call `next` on `Counter`.
 
 Associated types also become part of the trait’s contract: Implementors of the trait must provide a type to stand in for the associated type placeholder. Associated types often have a name that describes how the type will be used, and documenting the associated type in the API documentation is a good practice.
 
-[Using Default Generic Parameters and Operator Overloading](#using-default-generic-parameters-and-operator-overloading)
+### [Using Default Generic Parameters and Operator Overloading](#using-default-generic-parameters-and-operator-overloading)
 
 When we use generic type parameters, we can specify a default concrete type for
 the generic type. This eliminates the need for implementors of the trait to
@@ -122,8 +122,8 @@ value of the `Rhs` type parameter instead of using the default of `Self`.
 
 You’ll use default type parameters in two main ways:
 
-- To extend a type without breaking existing code
-- To allow customization in specific cases most users won’t need
+1. To extend a type without breaking existing code
+2. To allow customization in specific cases most users won’t need
 
 The standard library’s `Add` trait is an example of the second purpose:
 Usually, you’ll add two like types, but the `Add` trait provides the ability to
@@ -134,7 +134,7 @@ it easier to use the trait.
 
 The first purpose is similar to the second but in reverse: If you want to add a type parameter to an existing trait, you can give it a default to allow extension of the functionality of the trait without breaking the existing implementation code.
 
-[Disambiguating Between Identically Named Methods](#disambiguating-between-identically-named-methods)
+### [Disambiguating Between Identically Named Methods](#disambiguating-between-identically-named-methods)
 
 Nothing in Rust prevents a trait from having a method with the same name as another trait’s method, nor does Rust prevent you from implementing both traits on one type. It’s also possible to implement a method directly on the type with the same name as methods from traits.
 
@@ -248,7 +248,8 @@ A baby dog is called a puppy
 ```
 In general, fully qualified syntax is defined as follows:
 
-`<Type as Trait>::function(receiver_if_method, next_arg, ...);`For associated functions that aren’t methods, there would not be a `receiver`:
+`<Type as Trait>::function(receiver_if_method, next_arg, ...);`
+For associated functions that aren’t methods, there would not be a `receiver`:
 There would only be the list of other arguments. You could use fully qualified
 syntax everywhere that you call functions or methods. However, you’re allowed
 to omit any part of this syntax that Rust can figure out from other information
@@ -256,7 +257,7 @@ in the program. You only need to use this more verbose syntax in cases where
 there are multiple implementations that use the same name and Rust needs help
 to identify which implementation you want to call.
 
-[Using Supertraits](#using-supertraits)
+### [Using Supertraits](#using-supertraits)
 
 Sometimes you might write a trait definition that depends on another trait: For
 a type to implement the first trait, you want to require that type to also
@@ -335,7 +336,7 @@ Then, implementing the `OutlinePrint` trait on `Point` will compile
 successfully, and we can call `outline_print` on a `Point` instance to display
 it within an outline of asterisks.
 
-[Implementing External Traits with the Newtype Pattern](#implementing-external-traits-with-the-newtype-pattern)
+### [Implementing External Traits with the Newtype Pattern](#implementing-external-traits-with-the-newtype-pattern)
 
 In the [“Implementing a Trait on a Type”](ch10-02-traits.html#implementing-a-trait-on-a-type) section in Chapter 10, we mentioned the orphan rule that states
 we’re only allowed to implement a trait on a type if either the trait or the

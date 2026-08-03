@@ -2,10 +2,10 @@
 type: Web Page
 title: Futures, Tasks, and Threads - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch17-06-futures-tasks-threads.html
-timestamp: '2026-07-13T09:33:08.854356+00:00'
+timestamp: '2026-08-03T09:51:37.355491+00:00'
 ---
 
-[Putting It All Together: Futures, Tasks, and Threads](#putting-it-all-together-futures-tasks-and-threads)
+## [Putting It All Together: Futures, Tasks, and Threads](#putting-it-all-together-futures-tasks-and-threads)
 
 As we saw in [Chapter 16](http://localhost:3000/ch16-00-concurrency.html), threads provide one approach to
 concurrency. We’ve seen another approach in this chapter: using async with
@@ -51,8 +51,12 @@ approach actually requires threads *and* tasks, and therefore futures.
 
 When thinking about which method to use when, consider these rules of thumb:
 
-- If the work is *very parallelizable*(that is, CPU-bound), such as processing a bunch of data where each part can be processed separately, threads are a better choice.
-- If the work is *very concurrent*(that is, I/O-bound), such as handling messages from a bunch of different sources that may come in at different intervals or different rates, async is a better choice.
+- If the work is *very parallelizable* (that is, CPU-bound), such as processing
+a bunch of data where each part can be processed separately, threads are a
+better choice.
+- If the work is *very concurrent* (that is, I/O-bound), such as handling
+messages from a bunch of different sources that may come in at different
+intervals or different rates, async is a better choice.
 
 And if you need both parallelism and concurrency, you don’t have to choose between threads and async. You can use them together freely, letting each play the part it’s best at. For example, Listing 17-25 shows a fairly common example of this kind of mix in real-world Rust code.
 
@@ -66,7 +70,7 @@ seen.
 
 To return to the scenario we opened the chapter with, imagine running a set of video encoding tasks using a dedicated thread (because video encoding is compute-bound) but notifying the UI that those operations are done with an async channel. There are countless examples of these kinds of combinations in real-world use cases.
 
-[Summary](#summary)
+## [Summary](#summary)
 
 This isn’t the last you’ll see of concurrency in this book. The project in
 [Chapter 21](ch21-00-final-project-a-web-server.html) will apply these concepts in a more realistic

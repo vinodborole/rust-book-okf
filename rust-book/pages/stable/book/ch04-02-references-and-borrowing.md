@@ -2,10 +2,10 @@
 type: Web Page
 title: References and Borrowing - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch04-02-references-and-borrowing.html
-timestamp: '2026-07-13T09:33:08.854356+00:00'
+timestamp: '2026-08-03T09:51:37.355491+00:00'
 ---
 
-[References and Borrowing](#references-and-borrowing)
+## [References and Borrowing](#references-and-borrowing)
 
 The issue with the tuple code in Listing 4-5 is that we have to return the
 `String` to the calling function so that we can still use the `String` after
@@ -93,7 +93,7 @@ error: could not compile `ownership` (bin "ownership") due to 1 previous error
 ```
 Just as variables are immutable by default, so are references. We’re not allowed to modify something we have a reference to.
 
-[Mutable References](#mutable-references)
+### [Mutable References](#mutable-references)
 
 We can fix the code from Listing 4-6 to allow us to modify a borrowed value
 with just a few small tweaks that use, instead, a *mutable reference*:
@@ -215,7 +215,7 @@ the scope.
 
 Even though borrowing errors may be frustrating at times, remember that it’s the Rust compiler pointing out a potential bug early (at compile time rather than at runtime) and showing you exactly where the problem is. Then, you don’t have to track down why your data isn’t what you thought it was.
 
-[Dangling References](#dangling-references)
+### [Dangling References](#dangling-references)
 
 In languages with pointers, it’s easy to erroneously create a *dangling
 pointer*—a pointer that references a location in memory that may have been
@@ -278,11 +278,12 @@ fn no_dangle() -> String {
 ```
 This works without any problems. Ownership is moved out, and nothing is deallocated.
 
-[The Rules of References](#the-rules-of-references)
+### [The Rules of References](#the-rules-of-references)
 
 Let’s recap what we’ve discussed about references:
 
-- At any given time, you can have *either*one mutable reference*or*any number of immutable references.
+- At any given time, you can have *either* one mutable reference*or* any
+number of immutable references.
 - References must always be valid.
 
 Next, we’ll look at a different kind of reference: slices.

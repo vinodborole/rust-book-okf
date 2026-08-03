@@ -2,10 +2,10 @@
 type: Web Page
 title: Data Types - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch03-02-data-types.html
-timestamp: '2026-07-13T09:33:08.854356+00:00'
+timestamp: '2026-08-03T09:51:37.355491+00:00'
 ---
 
-[Data Types](#data-types)
+## [Data Types](#data-types)
 
 Every value in Rust is of a certain *data type*, which tells Rust what kind of
 data is being specified so that it knows how to work with that data. We’ll look
@@ -48,13 +48,13 @@ error: could not compile `no_type_annotations` (bin "no_type_annotations") due t
 ```
 You’ll see different type annotations for other data types.
 
-[Scalar Types](#scalar-types)
+### [Scalar Types](#scalar-types)
 
 A *scalar* type represents a single value. Rust has four primary scalar types:
 integers, floating-point numbers, Booleans, and characters. You may recognize
 these from other programming languages. Let’s jump into how they work in Rust.
 
-[Integer Types](#integer-types)
+#### [Integer Types](#integer-types)
 
 An *integer* is a number without a fractional component. We used one integer
 type in Chapter 2, the `u32` type. This type declaration indicates that the
@@ -81,11 +81,11 @@ the sign matters, a number is shown with a plus sign or a minus sign; however,
 when it’s safe to assume the number is positive, it’s shown with no sign.
 Signed numbers are stored using [two’s complement](https://en.wikipedia.org/wiki/Two%27s_complement) representation.
 
-Each signed variant can store numbers from −(2n − 1) to 2n −
-1 − 1 inclusive, where *n* is the number of bits that variant uses. So, an
-`i8` can store numbers from −(27) to 27 − 1, which equals
-−128 to 127. Unsigned variants can store numbers from 0 to 2n − 1,
-so a `u8` can store numbers from 0 to 28 − 1, which equals 0 to 255.
+Each signed variant can store numbers from −(2<sup>n − 1</sup>) to 2<sup>n −
+1</sup> − 1 inclusive, where *n* is the number of bits that variant uses. So, an
+`i8` can store numbers from −(2<sup>7</sup>) to 2<sup>7</sup> − 1, which equals
+−128 to 127. Unsigned variants can store numbers from 0 to 2<sup>n</sup> − 1,
+so a `u8` can store numbers from 0 to 2<sup>8</sup> − 1, which equals 0 to 255.
 
 Additionally, the `isize` and `usize` types depend on the architecture of the
 computer your program is running on: 64 bits if you’re on a 64-bit architecture
@@ -103,14 +103,14 @@ have the same value as if you had specified `1000`.
 | Hex | `0xff` | 
 | Octal | `0o77` | 
 | Binary | `0b1111_0000` | 
-| Byte ( `u8`only) | `b'A'` | 
+| Byte ( `u8` only) | `b'A'` | 
 
 So how do you know which type of integer to use? If you’re unsure, Rust’s
 defaults are generally good places to start: Integer types default to `i32`.
 The primary situation in which you’d use `isize` or `usize` is when indexing
 some sort of collection.
 
-[Integer Overflow](#integer-overflow)
+##### [Integer Overflow](#integer-overflow)
 
 Let’s say you have a variable of type `u8` that can hold values between 0 and
 255. If you try to change the variable to a value outside that range, such as
@@ -119,7 +119,7 @@ When you’re compiling in debug mode, Rust includes checks for integer overflow
 that cause your program to *panic* at runtime if this behavior occurs. Rust
 uses the term *panicking* when a program exits with an error; we’ll discuss
 panics in more depth in the [“Unrecoverable Errors with
- panic!”](ch09-01-unrecoverable-errors-with-panic.html) section in Chapter
+`panic!`”](ch09-01-unrecoverable-errors-with-panic.html) section in Chapter
 9.
 
 When you’re compiling in release mode with the `--release` flag, Rust does
@@ -133,13 +133,13 @@ have. Relying on integer overflow’s wrapping behavior is considered an error.
 
 To explicitly handle the possibility of overflow, you can use these families of methods provided by the standard library for primitive numeric types:
 
-- Wrap in all modes with the `wrapping_*`methods, such as`wrapping_add`.
-- Return the `None`value if there is overflow with the`checked_*`methods.
+- Wrap in all modes with the `wrapping_*` methods, such as`wrapping_add` .
+- Return the `None` value if there is overflow with the`checked_*` methods.
 - Return the value and a Boolean indicating whether there was overflow with
-the `overflowing_*`methods.
-- Saturate at the value’s minimum or maximum values with the `saturating_*`methods.
+the `overflowing_*` methods.
+- Saturate at the value’s minimum or maximum values with the `saturating_*` methods.
 
-[Floating-Point Types](#floating-point-types)
+#### [Floating-Point Types](#floating-point-types)
 
 Rust also has two primitive types for *floating-point numbers*, which are
 numbers with decimal points. Rust’s floating-point types are `f32` and `f64`,
@@ -159,7 +159,7 @@ fn main() {
 ```
 Floating-point numbers are represented according to the IEEE-754 standard.
 
-[Numeric Operations](#numeric-operations)
+#### [Numeric Operations](#numeric-operations)
 
 Rust supports the basic mathematical operations you’d expect for all the number
 types: addition, subtraction, multiplication, division, and remainder. Integer
@@ -188,7 +188,7 @@ to a single value, which is then bound to a variable. [Appendix
 B](appendix-02-operators.html) contains a list of all operators that Rust
 provides.
 
-[The Boolean Type](#the-boolean-type)
+#### [The Boolean Type](#the-boolean-type)
 
 As in most other programming languages, a Boolean type in Rust has two possible
 values: `true` and `false`. Booleans are one byte in size. The Boolean type in
@@ -206,7 +206,7 @@ The main way to use Boolean values is through conditionals, such as an `if`
 expression. We’ll cover how `if` expressions work in Rust in the [“Control
 Flow”](ch03-05-control-flow.html#control-flow) section.
 
-[The Character Type](#the-character-type)
+#### [The Character Type](#the-character-type)
 
 Rust’s `char` type is the language’s most primitive alphabetic type. Here are
 some examples of declaring `char` values:
@@ -231,12 +231,12 @@ so your human intuition for what a “character” is may not match up with what
 `char` is in Rust. We’ll discuss this topic in detail in [“Storing UTF-8
 Encoded Text with Strings”](ch08-02-strings.html#storing-utf-8-encoded-text-with-strings) in Chapter 8.
 
-[Compound Types](#compound-types)
+### [Compound Types](#compound-types)
 
 *Compound types* can group multiple values into one type. Rust has two
 primitive compound types: tuples and arrays.
 
-[The Tuple Type](#the-tuple-type)
+#### [The Tuple Type](#the-tuple-type)
 
 A *tuple* is a general way of grouping together a number of values with a
 variety of types into one compound type. Tuples have a fixed length: Once
@@ -292,7 +292,7 @@ corresponding type are both written `()` and represent an empty value or an
 empty return type. Expressions implicitly return the unit value if they don’t
 return any other value.
 
-[The Array Type](#the-array-type)
+#### [The Array Type](#the-array-type)
 
 Another way to have a collection of multiple values is with an *array*. Unlike
 a tuple, every element of an array must have the same type. Unlike arrays in
@@ -349,7 +349,7 @@ The array named `a` will contain `5` elements that will all be set to the value
 `3` initially. This is the same as writing `let a = [3, 3, 3, 3, 3];` but in a
 more concise way.
 
-[Array Element Access](#array-element-access)
+#### [Array Element Access](#array-element-access)
 
 An array is a single chunk of memory of a known, fixed size that can be allocated on the stack. You can access elements of an array using indexing, like this:
 
@@ -366,7 +366,7 @@ In this example, the variable named `first` will get the value `1` because that
 is the value at index `[0]` in the array. The variable named `second` will get
 the value `2` from index `[1]` in the array.
 
-[Invalid Array Element Access](#invalid-array-element-access)
+#### [Invalid Array Element Access](#invalid-array-element-access)
 
 Let’s see what happens if you try to access an element of an array that is past the end of the array. Say you run this code, similar to the guessing game in Chapter 2, to get an array index from the user:
 

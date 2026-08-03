@@ -2,14 +2,14 @@
 type: Web Page
 title: Advanced Functions and Closures - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch20-04-advanced-functions-and-closures.html
-timestamp: '2026-07-13T09:33:08.854356+00:00'
+timestamp: '2026-08-03T09:51:37.355491+00:00'
 ---
 
-[Advanced Functions and Closures](#advanced-functions-and-closures)
+## [Advanced Functions and Closures](#advanced-functions-and-closures)
 
 This section explores some advanced features related to functions and closures, including function pointers and returning closures.
 
-[Function Pointers](#function-pointers)
+### [Function Pointers](#function-pointers)
 
 We’ve talked about how to pass closures to functions; you can also pass regular
 functions to functions! This technique is useful when you want to pass a
@@ -74,7 +74,7 @@ that `map` is called on by using the initializer function of `Status::Value`.
 Some people prefer this style and some people prefer to use closures. They
 compile to the same code, so use whichever style is clearer to you.
 
-[Returning Closures](#returning-closures)
+### [Returning Closures](#returning-closures)
 
 Closures are represented by traits, which means you can’t return closures
 directly. In most cases where you might want to return a trait, you can instead
@@ -128,7 +128,7 @@ write ourselves. So, even though these functions return closures that implement
 the same trait, `Fn(i32) -> i32`, the opaque types Rust generates for each are
 distinct. (This is similar to how Rust produces different concrete types for
 distinct async blocks even when they have the same output type, as we saw in
-[“The  Pin Type and the Unpin Trait”](ch17-03-more-futures.html) in
+[“The `Pin` Type and the `Unpin` Trait”](ch17-03-more-futures.html) in
 Chapter 17.) We have seen a solution to this problem a few times now: We can
 use a trait object, as in Listing 20-34.
 

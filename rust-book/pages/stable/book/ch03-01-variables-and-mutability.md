@@ -2,10 +2,10 @@
 type: Web Page
 title: Variables and Mutability - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch03-01-variables-and-mutability.html
-timestamp: '2026-07-13T09:33:08.854356+00:00'
+timestamp: '2026-08-03T09:51:37.355491+00:00'
 ---
 
-[Variables and Mutability](#variables-and-mutability)
+## [Variables and Mutability](#variables-and-mutability)
 
 As mentioned in the [“Storing Values with
 Variables”](ch02-00-guessing-game-tutorial.html#storing-values-with-variables) section, by default,
@@ -59,7 +59,7 @@ Compiler errors can be frustrating, but really they only mean your program
 isn’t safely doing what you want it to do yet; they do *not* mean that you’re
 not a good programmer! Experienced Rustaceans still get compiler errors.
 
-You received the error message `cannot assign twice to immutable variable `x`` because you tried to assign a second value to the immutable `x` variable.
+You received the error message `` cannot assign twice to immutable variable `x` `` because you tried to assign a second value to the immutable `x` variable.
 
 It’s important that we get compile-time errors when we attempt to change a
 value that’s designated as immutable, because this very situation can lead to
@@ -105,7 +105,7 @@ We’re allowed to change the value bound to `x` from `5` to `6` when `mut` is
 used. Ultimately, deciding whether to use mutability or not is up to you and
 depends on what you think is clearest in that particular situation.
 
-[Declaring Constants](#declaring-constants)
+### [Declaring Constants](#declaring-constants)
 
 Like immutable variables, *constants* are values that are bound to a name and
 are not allowed to change, but there are a few differences between constants
@@ -145,7 +145,7 @@ Constants are valid for the entire time a program runs, within the scope in whic
 
 Naming hardcoded values used throughout your program as constants is useful in conveying the meaning of that value to future maintainers of the code. It also helps to have only one place in your code that you would need to change if the hardcoded value needed to be updated in the future.
 
-[Shadowing](#shadowing)
+### [Shadowing](#shadowing)
 
 As you saw in the guessing game tutorial in [Chapter
 2](ch02-00-guessing-game-tutorial.html#comparing-the-guess-to-the-secret-number), you can declare a

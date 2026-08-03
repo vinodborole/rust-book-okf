@@ -2,10 +2,10 @@
 type: Web Page
 title: Smart Pointers - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch15-00-smart-pointers.html
-timestamp: '2026-07-13T09:33:08.854356+00:00'
+timestamp: '2026-08-03T09:51:37.355491+00:00'
 ---
 
-[Smart Pointers](#smart-pointers)
+# [Smart Pointers](#smart-pointers)
 
 A pointer is a general concept for a variable that contains an address in
 memory. This address refers to, or “points at,” some other data. The most
@@ -38,9 +38,10 @@ both of these traits and demonstrate why they’re important to smart pointers.
 
 Given that the smart pointer pattern is a general design pattern used frequently in Rust, this chapter won’t cover every existing smart pointer. Many libraries have their own smart pointers, and you can even write your own. We’ll cover the most common smart pointers in the standard library:
 
-- `Box<T>`, for allocating values on the heap
-- `Rc<T>`, a reference counting type that enables multiple ownership
-- `Ref<T>`and- `RefMut<T>`, accessed through- `RefCell<T>`, a type that enforces the borrowing rules at runtime instead of compile time
+- `Box<T>` , for allocating values on the heap
+- `Rc<T>` , a reference counting type that enables multiple ownership
+- `Ref<T>` and`RefMut<T>` , accessed through`RefCell<T>` , a type that enforces
+the borrowing rules at runtime instead of compile time
 
 In addition, we’ll cover the *interior mutability* pattern where an immutable
 type exposes an API for mutating an interior value. We’ll also discuss

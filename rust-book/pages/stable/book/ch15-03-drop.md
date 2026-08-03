@@ -2,12 +2,13 @@
 type: Web Page
 title: Running Code on Cleanup with the Drop Trait - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch15-03-drop.html
-timestamp: '2026-07-13T09:33:08.854356+00:00'
+timestamp: '2026-08-03T09:51:37.355491+00:00'
 ---
 
-[Running Code on Cleanup with the ](#running-code-on-cleanup-with-the-drop-trait)`Drop` Trait
+## [Running Code on Cleanup with the `Drop` Trait](#running-code-on-cleanup-with-the-drop-trait)
 
-`Drop` TraitThe second trait important to the smart pointer pattern is `Drop`, which lets
+`Drop` Trait
+The second trait important to the smart pointer pattern is `Drop`, which lets
 you customize what happens when a value is about to go out of scope. You can
 provide an implementation for the `Drop` trait on any type, and that code can
 be used to release resources like files or network connections.
@@ -121,7 +122,7 @@ CustomSmartPointer created
 Dropping CustomSmartPointer with data `some data`!
 CustomSmartPointer dropped before the end of main
 ```
-The text `Dropping CustomSmartPointer with data `some data`!` is printed
+The text ``Dropping CustomSmartPointer with data `some data`!`` is printed
 between the `CustomSmartPointer created` and `CustomSmartPointer dropped before the end of main` text, showing that the `drop` method code is called to drop
 `c` at that point.
 

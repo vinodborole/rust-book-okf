@@ -2,10 +2,10 @@
 type: Web Page
 title: Working With Any Number of Futures - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch17-03-more-futures.html
-timestamp: '2026-07-13T09:33:08.854356+00:00'
+timestamp: '2026-08-03T09:51:37.355491+00:00'
 ---
 
-[Yielding Control to the Runtime](#yielding-control-to-the-runtime)
+### [Yielding Control to the Runtime](#yielding-control-to-the-runtime)
 
 Recall from the [“Our First Async Program”](ch17-01-futures-and-syntax.html#our-first-async-program)
 section that at each await point, Rust gives a runtime a chance to pause the
@@ -112,7 +112,7 @@ measure to see what your code’s actual performance bottlenecks are. The
 underlying dynamic is important to keep in mind, though, if you *are* seeing a
 lot of work happening in serial that you expected to happen concurrently!
 
-[Building Our Own Async Abstractions](#building-our-own-async-abstractions)
+### [Building Our Own Async Abstractions](#building-our-own-async-abstractions)
 
 We can also compose futures together to create new patterns. For example, we can
 build a `timeout` function with async building blocks we already have. When
@@ -126,8 +126,11 @@ Let’s implement this! To begin, let’s think about the API for `timeout`:
 
 - It needs to be an async function itself so we can await it.
 - Its first parameter should be a future to run. We can make it generic to allow it to work with any future.
-- Its second parameter will be the maximum time to wait. If we use a `Duration`, that will make it easy to pass along to`trpl::sleep`.
-- It should return a `Result`. If the future completes successfully, the`Result`will be`Ok`with the value produced by the future. If the timeout elapses first, the`Result`will be`Err`with the duration that the timeout waited for.
+- Its second parameter will be the maximum time to wait. If we use a `Duration` ,
+that will make it easy to pass along to`trpl::sleep` .
+- It should return a `Result` . If the future completes successfully, the`Result` will be`Ok` with the value produced by the future. If the timeout
+elapses first, the`Result` will be`Err` with the duration that the timeout
+waited for.
 
 Listing 17-19 shows this declaration.
 

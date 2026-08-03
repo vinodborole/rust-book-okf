@@ -2,25 +2,27 @@
 type: Web Page
 title: All the Places Patterns Can Be Used - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch19-01-all-the-places-for-patterns.html
-timestamp: '2026-07-13T09:33:08.854356+00:00'
+timestamp: '2026-08-03T09:51:37.355491+00:00'
 ---
 
-[All the Places Patterns Can Be Used](#all-the-places-patterns-can-be-used)
+## [All the Places Patterns Can Be Used](#all-the-places-patterns-can-be-used)
 
 Patterns pop up in a number of places in Rust, and you’ve been using them a lot without realizing it! This section discusses all the places where patterns are valid.
 
-`match` Arms
+### [`match` Arms](#match-arms)
 
-`match` ArmsAs discussed in Chapter 6, we use patterns in the arms of `match` expressions.
+`match` Arms
+As discussed in Chapter 6, we use patterns in the arms of `match` expressions.
 Formally, `match` expressions are defined as the keyword `match`, a value to
 match on, and one or more match arms that consist of a pattern and an
 expression to run if the value matches that arm’s pattern, like this:
 
-`match `*VALUE* {
+`match` *VALUE* {
     *PATTERN* => *EXPRESSION*,
     *PATTERN* => *EXPRESSION*,
     *PATTERN* => *EXPRESSION*,
-}For example, here’s the `match` expression from Listing 6-5 that matches on an
+}
+For example, here’s the `match` expression from Listing 6-5 that matches on an
 `Option<i32>` value in the variable `x`:
 
 ```
@@ -44,9 +46,10 @@ useful when you want to ignore any value not specified, for example. We’ll
 cover the `_` pattern in more detail in [“Ignoring Values in a
 Pattern”](ch19-03-pattern-syntax.html#ignoring-values-in-a-pattern) later in this chapter.
 
-`let` Statements
+### [`let` Statements](#let-statements)
 
-`let` StatementsPrior to this chapter, we had only explicitly discussed using patterns with
+`let` Statements
+Prior to this chapter, we had only explicitly discussed using patterns with
 `match` and `if let`, but in fact, we’ve used patterns in other places as well,
 including in `let` statements. For example, consider this straightforward
 variable assignment with `let`:
@@ -63,7 +66,7 @@ like this:
 
 ```
 ```
-`let `*PATTERN* = *EXPRESSION*;
+`let` *PATTERN* = *EXPRESSION*;
 In statements like `let x = 5;` with a variable name in the PATTERN slot, the
 variable name is just a particularly simple form of a pattern. Rust compares
 the expression against the pattern and assigns any names it finds. So, in the
@@ -107,9 +110,10 @@ is that we have too many variables in the pattern, the solution is to make the
 types match by removing variables so that the number of variables equals the
 number of elements in the tuple.
 
-[Conditional ](#conditional-if-let-expressions)`if let` Expressions
+### [Conditional `if let` Expressions](#conditional-if-let-expressions)
 
-`if let` ExpressionsIn Chapter 6, we discussed how to use `if let` expressions mainly as a shorter
+`if let` Expressions
+In Chapter 6, we discussed how to use `if let` expressions mainly as a shorter
 way to write the equivalent of a `match` that only matches one case.
 Optionally, `if let` can have a corresponding `else` containing code to run if
 the pattern in the `if let` doesn’t match.
@@ -136,9 +140,10 @@ for exhaustiveness, whereas with `match` expressions it does. If we omitted the
 last `else` block and therefore missed handling some cases, the compiler would
 not alert us to the possible logic bug.
 
-`while let` Conditional Loops
+### [`while let` Conditional Loops](#while-let-conditional-loops)
 
-`while let` Conditional LoopsSimilar in construction to `if let`, the `while let` conditional loop allows a
+`while let` Conditional Loops
+Similar in construction to `if let`, the `while let` conditional loop allows a
 `while` loop to run for as long as a pattern continues to match. In Listing
 19-4, we show a `while let` loop that waits on messages sent between threads,
 but in this case checking a `Result` instead of an `Option`.
@@ -151,9 +156,10 @@ though, we can also use `while let`, because the `recv` method returns an `Ok`
 each time a message arrives, as long as the sender exists, and then produces an
 `Err` once the sender side disconnects.
 
-`for` Loops
+### [`for` Loops](#for-loops)
 
-`for` LoopsIn a `for` loop, the value that directly follows the keyword `for` is a
+`for` Loops
+In a `for` loop, the value that directly follows the keyword `for` is a
 pattern. For example, in `for x in y`, the `x` is the pattern. Listing 19-5
 demonstrates how to use a pattern in a `for` loop to destructure, or break
 apart, a tuple as part of the `for` loop.
@@ -174,7 +180,7 @@ and the index for that value, placed into a tuple. The first value produced is
 the tuple `(0, 'a')`. When this value is matched to the pattern `(index, value)`, index will be `0` and value will be `'a'`, printing the first line of
 the output.
 
-[Function Parameters](#function-parameters)
+### [Function Parameters](#function-parameters)
 
 Function parameters can also be patterns. The code in Listing 19-6, which
 declares a function named `foo` that takes one parameter named `x` of type

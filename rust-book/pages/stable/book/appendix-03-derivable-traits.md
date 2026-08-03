@@ -2,10 +2,10 @@
 type: Web Page
 title: C - Derivable Traits - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/appendix-03-derivable-traits.html
-timestamp: '2026-07-13T09:33:08.854356+00:00'
+timestamp: '2026-08-03T09:51:37.355491+00:00'
 ---
 
-[Appendix C: Derivable Traits](#appendix-c-derivable-traits)
+## [Appendix C: Derivable Traits](#appendix-c-derivable-traits)
 
 In various places in the book, we’ve discussed the `derive` attribute, which
 you can apply to a struct or enum definition. The `derive` attribute generates
@@ -16,7 +16,7 @@ In this appendix, we provide a reference of all the traits in the standard
 library that you can use with `derive`. Each section covers:
 
 - What operators and methods deriving this trait will enable
-- What the implementation of the trait provided by `derive`does
+- What the implementation of the trait provided by `derive` does
 - What implementing the trait signifies about the type
 - The conditions in which you’re allowed or not allowed to implement the trait
 - Examples of operations that require the trait
@@ -40,12 +40,13 @@ it can’t provide appropriate default behavior for you.
 The list of derivable traits provided in this appendix is not comprehensive:
 Libraries can implement `derive` for their own traits, making the list of
 traits you can use `derive` with truly open ended. Implementing `derive`
-involves using a procedural macro, which is covered in the [“Custom  derive
+involves using a procedural macro, which is covered in the [“Custom `derive`
 Macros”](ch20-05-macros.html#custom-derive-macros) section in Chapter 20.
 
-`Debug` for Programmer Output
+### [`Debug` for Programmer Output](#debug-for-programmer-output)
 
-`Debug` for Programmer OutputThe `Debug` trait enables debug formatting in format strings, which you
+`Debug` for Programmer Output
+The `Debug` trait enables debug formatting in format strings, which you
 indicate by adding `:?` within `{}` placeholders.
 
 The `Debug` trait allows you to print instances of a type for debugging
@@ -57,9 +58,10 @@ macro. This macro prints the values of instances given as arguments if the
 equality assertion fails so that programmers can see why the two instances
 weren’t equal.
 
-`PartialEq` and `Eq` for Equality Comparisons
+### [`PartialEq` and `Eq` for Equality Comparisons](#partialeq-and-eq-for-equality-comparisons)
 
-`PartialEq` and `Eq` for Equality ComparisonsThe `PartialEq` trait allows you to compare instances of a type to check for
+`PartialEq` and `Eq` for Equality Comparisons
+The `PartialEq` trait allows you to compare instances of a type to check for
 equality and enables use of the `==` and `!=` operators.
 
 Deriving `PartialEq` implements the `eq` method. When `PartialEq` is derived on
@@ -81,9 +83,10 @@ instances of the not-a-number (`NaN`) value are not equal to each other.
 An example of when `Eq` is required is for keys in a `HashMap<K, V>` so that
 the `HashMap<K, V>` can tell whether two keys are the same.
 
-`PartialOrd` and `Ord` for Ordering Comparisons
+### [`PartialOrd` and `Ord` for Ordering Comparisons](#partialord-and-ord-for-ordering-comparisons)
 
-`PartialOrd` and `Ord` for Ordering ComparisonsThe `PartialOrd` trait allows you to compare instances of a type for sorting
+`PartialOrd` and `Ord` for Ordering Comparisons
+The `PartialOrd` trait allows you to compare instances of a type for sorting
 purposes. A type that implements `PartialOrd` can be used with the `<`, `>`,
 `<=`, and `>=` operators. You can only apply the `PartialOrd` trait to types
 that also implement `PartialEq`.
@@ -115,9 +118,10 @@ implementation for `partial_cmp` does with `PartialOrd`.
 An example of when `Ord` is required is when storing values in a `BTreeSet<T>`,
 a data structure that stores data based on the sort order of the values.
 
-`Clone` and `Copy` for Duplicating Values
+### [`Clone` and `Copy` for Duplicating Values](#clone-and-copy-for-duplicating-values)
 
-`Clone` and `Copy` for Duplicating ValuesThe `Clone` trait allows you to explicitly create a deep copy of a value, and
+`Clone` and `Copy` for Duplicating Values
+The `Clone` trait allows you to explicitly create a deep copy of a value, and
 the duplication process might involve running arbitrary code and copying heap
 data. See the [“Variables and Data Interacting with
 Clone”](ch04-01-what-is-ownership.html#variables-and-data-interacting-with-clone) section in
@@ -154,9 +158,10 @@ the code more concise.
 Everything possible with `Copy` you can also accomplish with `Clone`, but the
 code might be slower or have to use `clone` in places.
 
-`Hash` for Mapping a Value to a Value of Fixed Size
+### [`Hash` for Mapping a Value to a Value of Fixed Size](#hash-for-mapping-a-value-to-a-value-of-fixed-size)
 
-`Hash` for Mapping a Value to a Value of Fixed SizeThe `Hash` trait allows you to take an instance of a type of arbitrary size and
+`Hash` for Mapping a Value to a Value of Fixed Size
+The `Hash` trait allows you to take an instance of a type of arbitrary size and
 map that instance to a value of fixed size using a hash function. Deriving
 `Hash` implements the `hash` method. The derived implementation of the `hash`
 method combines the result of calling `hash` on each of the parts of the type,
@@ -165,9 +170,10 @@ meaning all fields or values must also implement `Hash` to derive `Hash`.
 An example of when `Hash` is required is in storing keys in a `HashMap<K, V>`
 to store data efficiently.
 
-`Default` for Default Values
+### [`Default` for Default Values](#default-for-default-values)
 
-`Default` for Default ValuesThe `Default` trait allows you to create a default value for a type. Deriving
+`Default` for Default Values
+The `Default` trait allows you to create a default value for a type. Deriving
 `Default` implements the `default` function. The derived implementation of the
 `default` function calls the `default` function on each part of the type,
 meaning all fields or values in the type must also implement `Default` to

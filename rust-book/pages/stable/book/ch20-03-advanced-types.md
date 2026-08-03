@@ -2,10 +2,10 @@
 type: Web Page
 title: Advanced Types - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch20-03-advanced-types.html
-timestamp: '2026-07-13T09:33:08.854356+00:00'
+timestamp: '2026-08-03T09:51:37.355491+00:00'
 ---
 
-[Advanced Types](#advanced-types)
+## [Advanced Types](#advanced-types)
 
 The Rust type system has some features that we’ve so far mentioned but haven’t
 yet discussed. We’ll start by discussing newtypes in general as we examine why
@@ -13,7 +13,7 @@ they are useful as types. Then, we’ll move on to type aliases, a feature
 similar to newtypes but with slightly different semantics. We’ll also discuss
 the `!` type and dynamically sized types.
 
-[Type Safety and Abstraction with the Newtype Pattern](#type-safety-and-abstraction-with-the-newtype-pattern)
+### [Type Safety and Abstraction with the Newtype Pattern](#type-safety-and-abstraction-with-the-newtype-pattern)
 
 This section assumes you’ve read the earlier section [“Implementing External
 Traits with the Newtype Pattern”](ch20-02-advanced-traits.html#implementing-external-traits-with-the-newtype-pattern). The newtype pattern
@@ -38,7 +38,7 @@ Hides Implementation
 Details”](ch18-01-what-is-oo.html#encapsulation-that-hides-implementation-details)
 section in Chapter 18.
 
-[Type Synonyms and Type Aliases](#type-synonyms-and-type-aliases)
+### [Type Synonyms and Type Aliases](#type-synonyms-and-type-aliases)
 
 Rust provides the ability to declare a *type alias* to give an existing type
 another name. For this we use the `type` keyword. For example, we can create
@@ -74,7 +74,8 @@ an error.
 
 The main use case for type synonyms is to reduce repetition. For example, we might have a lengthy type like this:
 
-`Box<dyn Fn() + Send + 'static>`Writing this lengthy type in function signatures and as type annotations all over the code can be tiresome and error-prone. Imagine having a project full of code like that in Listing 20-25.
+`Box<dyn Fn() + Send + 'static>`
+Writing this lengthy type in function signatures and as type annotations all over the code can be tiresome and error-prone. Imagine having a project full of code like that in Listing 20-25.
 
 A type alias makes this code more manageable by reducing the repetition. In
 Listing 20-26, we’ve introduced an alias named `Thunk` for the verbose type and
@@ -136,7 +137,7 @@ us a consistent interface across all of `std::io`. Because it’s an alias, it�
 just another `Result<T, E>`, which means we can use any methods that work on
 `Result<T, E>` with it, as well as special syntax like the `?` operator.
 
-[The Never Type That Never Returns](#the-never-type-that-never-returns)
+### [The Never Type That Never Returns](#the-never-type-that-never-returns)
 
 Rust has a special type named `!` that’s known in type theory lingo as the
 *empty type* because it has no values. We prefer to call it the *never type*
@@ -155,12 +156,12 @@ so `bar` can never possibly return.
 
 But what use is a type you can never create values for? Recall the code from Listing 2-5, part of the number-guessing game; we’ve reproduced a bit of it here in Listing 20-27.
 
-At the time, we skipped over some details in this code. In [“The  match
+At the time, we skipped over some details in this code. In [“The `match`
 Control Flow Construct”](ch06-02-match.html#the-match-control-flow-construct)
-section in Chapter 6, we discussed that 
+section in Chapter 6, we discussed that `match` arms must all return the same
+type. So, for example, the following code doesn’t work:
 
-`match` arms must all return the same
-type. So, for example, the following code doesn’t work:```
+```
 fn main() {
     let guess = "3";
     let guess = match guess.trim().parse() {
@@ -224,9 +225,10 @@ Here, the loop never ends, so `!` is the value of the expression. However, this
 wouldn’t be true if we included a `break`, because the loop would terminate
 when it got to the `break`.
 
-[Dynamically Sized Types and the ](#dynamically-sized-types-and-the-sized-trait)`Sized` Trait
+### [Dynamically Sized Types and the `Sized` Trait](#dynamically-sized-types-and-the-sized-trait)
 
-`Sized` TraitRust needs to know certain details about its types, such as how much space to
+`Sized` Trait
+Rust needs to know certain details about its types, such as how much space to
 allocate for a value of a particular type. This leaves one corner of its type
 system a little confusing at first: the concept of *dynamically sized types*.
 Sometimes referred to as *DSTs* or *unsized types*, these types let us write

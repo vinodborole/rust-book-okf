@@ -2,17 +2,20 @@
 type: Web Page
 title: Paths for Referring to an Item in the Module Tree - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch07-03-paths-for-referring-to-an-item-in-the-module-tree.html
-timestamp: '2026-07-13T09:33:08.854356+00:00'
+timestamp: '2026-08-03T09:51:37.355491+00:00'
 ---
 
-[Paths for Referring to an Item in the Module Tree](#paths-for-referring-to-an-item-in-the-module-tree)
+## [Paths for Referring to an Item in the Module Tree](#paths-for-referring-to-an-item-in-the-module-tree)
 
 To show Rust where to find an item in a module tree, we use a path in the same way we use a path when navigating a filesystem. To call a function, we need to know its path.
 
 A path can take two forms:
 
-- An *absolute path*is the full path starting from a crate root; for code from an external crate, the absolute path begins with the crate name, and for code from the current crate, it starts with the literal`crate`.
-- A *relative path*starts from the current module and uses`self`,`super`, or an identifier in the current module.
+- An *absolute path* is the full path starting from a crate root; for code
+from an external crate, the absolute path begins with the crate name, and for
+code from the current crate, it starts with the literal`crate` .
+- A *relative path* starts from the current module and uses`self` ,`super` , or
+an identifier in the current module.
 
 Both absolute and relative paths are followed by one or more identifiers
 separated by double colons (`::`).
@@ -27,10 +30,10 @@ there’s another problem remaining that will prevent this example from compilin
 as is. We’ll explain why in a bit.
 
 The `eat_at_restaurant` function is part of our library crate’s public API, so
-we mark it with the `pub` keyword. In the [“Exposing Paths with the  pub
-Keyword”](ch07-03-paths-for-referring-to-an-item-in-the-module-tree.html#exposing-paths-with-the-pub-keyword) section, we’ll go into more detail about 
+we mark it with the `pub` keyword. In the [“Exposing Paths with the `pub`
+Keyword”](ch07-03-paths-for-referring-to-an-item-in-the-module-tree.html#exposing-paths-with-the-pub-keyword) section, we’ll go into more detail about `pub`.
 
-`pub`.The first time we call the `add_to_waitlist` function in `eat_at_restaurant`,
+The first time we call the `add_to_waitlist` function in `eat_at_restaurant`,
 we use an absolute path. The `add_to_waitlist` function is defined in the same
 crate as `eat_at_restaurant`, which means we can use the `crate` keyword to
 start an absolute path. We then include each of the successive modules until we
@@ -76,9 +79,10 @@ inner code you can change without breaking the outer code. However, Rust does
 give you the option to expose inner parts of child modules’ code to outer
 ancestor modules by using the `pub` keyword to make an item public.
 
-[Exposing Paths with the ](#exposing-paths-with-the-pub-keyword)`pub` Keyword
+### [Exposing Paths with the `pub` Keyword](#exposing-paths-with-the-pub-keyword)
 
-`pub` KeywordLet’s return to the error in Listing 7-4 that told us the `hosting` module is
+`pub` Keyword
+Let’s return to the error in Listing 7-4 that told us the `hosting` module is
 private. We want the `eat_at_restaurant` function in the parent module to have
 access to the `add_to_waitlist` function in the child module, so we mark the
 `hosting` module with the `pub` keyword, as shown in Listing 7-5.
@@ -130,7 +134,7 @@ managing changes to your public API to make it easier for people to depend on
 your crate. These considerations are beyond the scope of this book; if you’re
 interested in this topic, see [the Rust API Guidelines](https://rust-lang.github.io/api-guidelines/).
 
-[Best Practices for Packages with a Binary and a Library](#best-practices-for-packages-with-a-binary-and-a-library)
+#### [Best Practices for Packages with a Binary and a Library](#best-practices-for-packages-with-a-binary-and-a-library)
 
 We mentioned that a package can contain both a *src/main.rs* binary crate
 root as well as a *src/lib.rs* library crate root, and both crates will have
@@ -151,9 +155,10 @@ In [Chapter 12](ch12-00-an-io-project.html), we’ll demonstrate this organizati
 practice with a command line program that will contain both a binary crate
 and a library crate.
 
-[Starting Relative Paths with ](#starting-relative-paths-with-super)`super`
+### [Starting Relative Paths with `super`](#starting-relative-paths-with-super)
 
-`super`We can construct relative paths that begin in the parent module, rather than
+`super`
+We can construct relative paths that begin in the parent module, rather than
 the current module or the crate root, by using `super` at the start of the
 path. This is like starting a filesystem path with the `..` syntax that means
 to go to the parent directory. Using `super` allows us to reference an item
@@ -176,7 +181,7 @@ together should we decide to reorganize the crate’s module tree. Therefore, we
 used `super` so that we’ll have fewer places to update code in the future if
 this code gets moved to a different module.
 
-[Making Structs and Enums Public](#making-structs-and-enums-public)
+### [Making Structs and Enums Public](#making-structs-and-enums-public)
 
 We can also use `pub` to designate structs and enums as public, but there are a
 few extra details to the usage of `pub` with structs and enums. If we use `pub`

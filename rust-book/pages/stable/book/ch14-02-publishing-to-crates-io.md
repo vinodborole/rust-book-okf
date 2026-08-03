@@ -2,10 +2,10 @@
 type: Web Page
 title: Publishing a Crate to Crates.io - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch14-02-publishing-to-crates-io.html
-timestamp: '2026-07-13T09:33:08.854356+00:00'
+timestamp: '2026-08-03T09:51:37.355491+00:00'
 ---
 
-[Publishing a Crate to Crates.io](#publishing-a-crate-to-cratesio)
+## [Publishing a Crate to Crates.io](#publishing-a-crate-to-cratesio)
 
 We’ve used packages from [crates.io](https://crates.io/) as
 dependencies of our project, but you can also share your code with other people
@@ -15,7 +15,7 @@ your packages, so it primarily hosts code that is open source.
 
 Rust and Cargo have features that make your published package easier for people to find and use. We’ll talk about some of these features next and then explain how to publish a package.
 
-[Making Useful Documentation Comments](#making-useful-documentation-comments)
+### [Making Useful Documentation Comments](#making-useful-documentation-comments)
 
 Accurately documenting your packages will help other users know how and when to
 use them, so it’s worth investing the time to write documentation. In Chapter
@@ -44,19 +44,26 @@ crate’s dependencies) and open the result in a web browser. Navigate to the
 `add_one` function and you’ll see how the text in the documentation comments is
 rendered, as shown in Figure 14-1.
 
-[Commonly Used Sections](#commonly-used-sections)
+#### [Commonly Used Sections](#commonly-used-sections)
 
 We used the `# Examples` Markdown heading in Listing 14-1 to create a section
 in the HTML with the title “Examples.” Here are some other sections that crate
 authors commonly use in their documentation:
 
-- **Panics**: These are the scenarios in which the function being documented could panic. Callers of the function who don’t want their programs to panic should make sure they don’t call the function in these situations.
-- **Errors**: If the function returns a- `Result`, describing the kinds of errors that might occur and what conditions might cause those errors to be returned can be helpful to callers so that they can write code to handle the different kinds of errors in different ways.
-- **Safety**: If the function is- `unsafe`to call (we discuss unsafety in Chapter 20), there should be a section explaining why the function is unsafe and covering the invariants that the function expects callers to uphold.
+- **Panics** : These are the scenarios in which the function being documented
+could panic. Callers of the function who don’t want their programs to panic
+should make sure they don’t call the function in these situations.
+- **Errors** : If the function returns a`Result` , describing the kinds of
+errors that might occur and what conditions might cause those errors to be
+returned can be helpful to callers so that they can write code to handle the
+different kinds of errors in different ways.
+- **Safety** : If the function is`unsafe` to call (we discuss unsafety in
+Chapter 20), there should be a section explaining why the function is unsafe
+and covering the invariants that the function expects callers to uphold.
 
 Most documentation comments don’t need all of these sections, but this is a good checklist to remind you of the aspects of your code users will be interested in knowing about.
 
-[Documentation Comments as Tests](#documentation-comments-as-tests)
+#### [Documentation Comments as Tests](#documentation-comments-as-tests)
 
 Adding example code blocks in your documentation comments can help demonstrate
 how to use your library and has an additional bonus: Running `cargo test` will
@@ -76,7 +83,7 @@ Now, if we change either the function or the example so that the `assert_eq!`
 in the example panics, and run `cargo test` again, we’ll see that the doc tests
 catch that the example and the code are out of sync with each other!
 
-[Contained Item Comments](#contained-item-comments)
+#### [Contained Item Comments](#contained-item-comments)
 
 The style of doc comment `//!` adds documentation to the item that *contains*
 the comments rather than to the items *following* the comments. We typically
@@ -100,7 +107,7 @@ crate, as shown in Figure 14-2.
 
 Documentation comments within items are useful for describing crates and modules especially. Use them to explain the overall purpose of the container to help your users understand the crate’s organization.
 
-[Exporting a Convenient Public API](#exporting-a-convenient-public-api)
+### [Exporting a Convenient Public API](#exporting-a-convenient-public-api)
 
 The structure of your public API is a major consideration when publishing a crate. People who use your crate are less familiar with the structure than you are and might have difficulty finding the pieces they want to use if your crate has a large module hierarchy.
 
@@ -170,7 +177,7 @@ that internal structure from what you present to your users. Look at some of
 the code of crates you’ve installed to see if their internal structure differs
 from their public API.
 
-[Setting Up a Crates.io Account](#setting-up-a-cratesio-account)
+### [Setting Up a Crates.io Account](#setting-up-a-cratesio-account)
 
 Before you can publish any crates, you need to create an account on
 [crates.io](https://crates.io/) and get an API token. To do so,
@@ -190,7 +197,7 @@ This command will inform Cargo of your API token and store it locally in
 it with anyone else. If you do share it with anyone for any reason, you should
 revoke it and generate a new token on [crates.io](https://crates.io/).
 
-[Adding Metadata to a New Crate](#adding-metadata-to-a-new-crate)
+### [Adding Metadata to a New Crate](#adding-metadata-to-a-new-crate)
 
 Let’s say you have a crate you want to publish. Before publishing, you’ll need
 to add some metadata in the `[package]` section of the crate’s *Cargo.toml*
@@ -269,7 +276,7 @@ license = "MIT OR Apache-2.0"
 metadata you can specify to ensure that others can discover and use your crate
 more easily.
 
-[Publishing to Crates.io](#publishing-to-cratesio)
+### [Publishing to Crates.io](#publishing-to-cratesio)
 
 Now that you’ve created an account, saved your API token, chosen a name for
 your crate, and specified the required metadata, you’re ready to publish!
@@ -304,7 +311,7 @@ You may press ctrl-c to skip waiting; the crate should be available shortly.
 ```
 Congratulations! You’ve now shared your code with the Rust community, and anyone can easily add your crate as a dependency of their project.
 
-[Publishing a New Version of an Existing Crate](#publishing-a-new-version-of-an-existing-crate)
+### [Publishing a New Version of an Existing Crate](#publishing-a-new-version-of-an-existing-crate)
 
 When you’ve made changes to your crate and are ready to release a new version,
 you change the `version` value specified in your *Cargo.toml* file and
@@ -312,7 +319,7 @@ republish. Use the [Semantic Versioning rules](https://semver.org/) to decide wh
 appropriate next version number is, based on the kinds of changes you’ve made.
 Then, run `cargo publish` to upload the new version.
 
-[Deprecating Versions from Crates.io](#deprecating-versions-from-cratesio)
+### [Deprecating Versions from Crates.io](#deprecating-versions-from-cratesio)
 
 Although you can’t remove previous versions of a crate, you can prevent any future projects from adding them as a new dependency. This is useful when a crate version is broken for one reason or another. In such situations, Cargo supports yanking a crate version.
 

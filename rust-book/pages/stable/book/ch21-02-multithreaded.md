@@ -2,14 +2,14 @@
 type: Web Page
 title: From Single-Threaded to Multithreaded Server - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch21-02-multithreaded.html
-timestamp: '2026-07-13T09:33:08.854356+00:00'
+timestamp: '2026-08-03T09:51:37.355491+00:00'
 ---
 
-[From a Single-Threaded to a Multithreaded Server](#from-a-single-threaded-to-a-multithreaded-server)
+## [From a Single-Threaded to a Multithreaded Server](#from-a-single-threaded-to-a-multithreaded-server)
 
 Right now, the server will process each request in turn, meaning it won’t process a second connection until the first connection is finished processing. If the server received more and more requests, this serial execution would be less and less optimal. If the server receives a request that takes a long time to process, subsequent requests will have to wait until the long request is finished, even if the new requests can be processed quickly. We’ll need to fix this, but first we’ll look at the problem in action.
 
-[Simulating a Slow Request](#simulating-a-slow-request)
+### [Simulating a Slow Request](#simulating-a-slow-request)
 
 We’ll look at how a slowly processing request can affect other requests made to
 our current server implementation. Listing 21-10 implements handling a request
@@ -36,7 +36,7 @@ has slept for its full five seconds before loading.
 
 There are multiple techniques we could use to avoid requests backing up behind a slow request, including using async as we did Chapter 17; the one we’ll implement is a thread pool.
 
-[Improving Throughput with a Thread Pool](#improving-throughput-with-a-thread-pool)
+### [Improving Throughput with a Thread Pool](#improving-throughput-with-a-thread-pool)
 
 A *thread pool* is a group of spawned threads that are ready and waiting to
 handle a task. When the program receives a new task, it assigns one of the
@@ -54,17 +54,18 @@ threads waiting in the pool. Requests that come in are sent to the pool for
 processing. The pool will maintain a queue of incoming requests. Each of the
 threads in the pool will pop off a request from this queue, handle the request,
 and then ask the queue for another request. With this design, we can process up
-to * N* requests concurrently, where 
+to *`N`* requests concurrently, where *`N`* is the number of threads. If each
+thread is responding to a long-running request, subsequent requests can still
+back up in the queue, but we’ve increased the number of long-running requests
+we can handle before reaching that point.
 
-*is the number of threads. If each thread is responding to a long-running request, subsequent requests can still back up in the queue, but we’ve increased the number of long-running requests we can handle before reaching that point.*
-
-`N`This technique is just one of many ways to improve the throughput of a web server. Other options you might explore are the fork/join model, the single-threaded async I/O model, and the multithreaded async I/O model. If you’re interested in this topic, you can read more about other solutions and try to implement them; with a low-level language like Rust, all of these options are possible.
+This technique is just one of many ways to improve the throughput of a web server. Other options you might explore are the fork/join model, the single-threaded async I/O model, and the multithreaded async I/O model. If you’re interested in this topic, you can read more about other solutions and try to implement them; with a low-level language like Rust, all of these options are possible.
 
 Before we begin implementing a thread pool, let’s talk about what using the pool should look like. When you’re trying to design code, writing the client interface first can help guide your design. Write the API of the code so that it’s structured in the way you want to call it; then, implement the functionality within that structure rather than implementing the functionality and then designing the public API.
 
 Similar to how we used test-driven development in the project in Chapter 12, we’ll use compiler-driven development here. We’ll write the code that calls the functions we want, and then we’ll look at errors from the compiler to determine what we should change next to get the code to work. Before we do that, however, we’ll explore the technique we’re not going to use as a starting point.
 
-[Spawning a Thread for Each Request](#spawning-a-thread-for-each-request)
+#### [Spawning a Thread for Each Request](#spawning-a-thread-for-each-request)
 
 First, let’s explore how our code might look if it did create a new thread for every connection. As mentioned earlier, this isn’t our final plan due to the problems with potentially spawning an unlimited number of threads, but it is a starting point to get a working multithreaded server first. Then, we’ll add the thread pool as an improvement, and contrasting the two solutions will be easier.
 
@@ -80,7 +81,7 @@ new threads without any limit.
 
 You may also recall from Chapter 17 that this is exactly the kind of situation where async and await really shine! Keep that in mind as we build the thread pool and think about how things would look different or the same with async.
 
-[Creating a Finite Number of Threads](#creating-a-finite-number-of-threads)
+#### [Creating a Finite Number of Threads](#creating-a-finite-number-of-threads)
 
 We want our thread pool to work in a similar, familiar way so that switching
 from threads to a thread pool doesn’t require large changes to the code that
@@ -94,9 +95,10 @@ should run for each stream. We need to implement `pool.execute` so that it
 takes the closure and gives it to a thread in the pool to run. This code won’t
 yet compile, but we’ll try so that the compiler can guide us in how to fix it.
 
-[Building ](#building-threadpool-using-compiler-driven-development)`ThreadPool` Using Compiler-Driven Development
+#### [Building `ThreadPool` Using Compiler-Driven Development](#building-threadpool-using-compiler-driven-development)
 
-`ThreadPool` Using Compiler-Driven DevelopmentMake the changes in Listing 21-12 to *src/main.rs*, and then let’s use the
+`ThreadPool` Using Compiler-Driven Development
+Make the changes in Listing 21-12 to *src/main.rs*, and then let’s use the
 compiler errors from `cargo check` to drive our development. Here is the first
 error we get:
 
@@ -226,9 +228,10 @@ want.
 
 Consider: What would be different here if we were going to execute a future instead of a closure?
 
-[Validating the Number of Threads in ](#validating-the-number-of-threads-in-new)`new`
+#### [Validating the Number of Threads in `new`](#validating-the-number-of-threads-in-new)
 
-`new`We aren’t doing anything with the parameters to `new` and `execute`. Let’s
+`new`
+We aren’t doing anything with the parameters to `new` and `execute`. Let’s
 implement the bodies of these functions with the behavior we want. To start,
 let’s think about `new`. Earlier we chose an unsigned type for the `size`
 parameter because a pool with a negative number of threads makes no sense.
@@ -250,7 +253,8 @@ thread pool without any threads should be an unrecoverable error. If you’re
 feeling ambitious, try to write a function named `build` with the following
 signature to compare with the `new` function:
 
-`pub fn build(size: usize) -> Result<ThreadPool, PoolCreationError> {`[Creating Space to Store the Threads](#creating-space-to-store-the-threads)
+`pub fn build(size: usize) -> Result<ThreadPool, PoolCreationError> {`
+#### [Creating Space to Store the Threads](#creating-space-to-store-the-threads)
 
 Now that we have a way to know we have a valid number of threads to store in
 the pool, we can create those threads and store them in the `ThreadPool` struct
@@ -288,9 +292,10 @@ which resizes itself as elements are inserted.
 
 When you run `cargo check` again, it should succeed.
 
-[Sending Code from the ](#sending-code-from-the-threadpool-to-a-thread)`ThreadPool` to a Thread
+#### [Sending Code from the `ThreadPool` to a Thread](#sending-code-from-the-threadpool-to-a-thread)
 
-`ThreadPool` to a ThreadWe left a comment in the `for` loop in Listing 21-14 regarding the creation of
+`ThreadPool` to a Thread
+We left a comment in the `for` loop in Listing 21-14 regarding the creation of
 threads. Here, we’ll look at how we actually create threads. The standard
 library provides `thread::spawn` as a way to create threads, and
 `thread::spawn` expects to get some code the thread should run as soon as the
@@ -319,10 +324,12 @@ Here is the new process that will happen when we create a `ThreadPool`. We’ll
 implement the code that sends the closure to the thread after we have `Worker`
 set up in this way:
 
-- Define a `Worker`struct that holds an`id`and a`JoinHandle<()>`.
-- Change `ThreadPool`to hold a vector of`Worker`instances.
-- Define a `Worker::new`function that takes an`id`number and returns a`Worker`instance that holds the`id`and a thread spawned with an empty closure.
-- In `ThreadPool::new`, use the`for`loop counter to generate an`id`, create a new`Worker`with that`id`, and store the`Worker`in the vector.
+1. Define a `Worker` struct that holds an`id` and a`JoinHandle<()>` .
+2. Change `ThreadPool` to hold a vector of`Worker` instances.
+3. Define a `Worker::new` function that takes an`id` number and returns a`Worker` instance that holds the`id` and a thread spawned with an empty
+closure.
+4. In `ThreadPool::new` , use the`for` loop counter to generate an`id` , create
+a new`Worker` with that`id` , and store the`Worker` in the vector.
 
 If you’re up for a challenge, try implementing these changes on your own before looking at the code in Listing 21-15.
 
@@ -344,15 +351,14 @@ enough system resources, `thread::spawn` will panic. That will cause our
 whole server to panic, even though the creation of some threads might
 succeed. For simplicity’s sake, this behavior is fine, but in a production
 thread pool implementation, you’d likely want to use
-[ std::thread::Builder](../std/thread/struct.Builder.html) and its
+[`std::thread::Builder`](../std/thread/struct.Builder.html) and its
+[`spawn`](../std/thread/struct.Builder.html#method.spawn) method that returns `Result` instead.
 
-[method that returns](../std/thread/struct.Builder.html#method.spawn)
-
-`spawn``Result` instead.This code will compile and will store the number of `Worker` instances we
+This code will compile and will store the number of `Worker` instances we
 specified as an argument to `ThreadPool::new`. But we’re *still* not processing
 the closure that we get in `execute`. Let’s look at how to do that next.
 
-[Sending Requests to Threads via Channels](#sending-requests-to-threads-via-channels)
+#### [Sending Requests to Threads via Channels](#sending-requests-to-threads-via-channels)
 
 The next problem we’ll tackle is that the closures given to `thread::spawn` do
 absolutely nothing. Currently, we get the closure we want to execute in the
@@ -367,11 +373,14 @@ two threads—would be perfect for this use case. We’ll use a channel to funct
 as the queue of jobs, and `execute` will send a job from the `ThreadPool` to
 the `Worker` instances, which will send the job to its thread. Here is the plan:
 
-- The `ThreadPool`will create a channel and hold on to the sender.
-- Each `Worker`will hold on to the receiver.
-- We’ll create a new `Job`struct that will hold the closures we want to send down the channel.
-- The `execute`method will send the job it wants to execute through the sender.
-- In its thread, the `Worker`will loop over its receiver and execute the closures of any jobs it receives.
+1. The `ThreadPool` will create a channel and hold on to the sender.
+2. Each `Worker` will hold on to the receiver.
+3. We’ll create a new `Job` struct that will hold the closures we want to send
+down the channel.
+4. The `execute` method will send the job it wants to execute through the
+sender.
+5. In its thread, the `Worker` will loop over its receiver and execute the
+closures of any jobs it receives.
 
 Let’s start by creating a channel in `ThreadPool::new` and holding the sender
 in the `ThreadPool` instance, as shown in Listing 21-16. The `Job` struct
@@ -443,9 +452,10 @@ new `Worker`, we clone the `Arc` to bump the reference count so that the
 
 With these changes, the code compiles! We’re getting there!
 
-[Implementing the ](#implementing-the-execute-method)`execute` Method
+#### [Implementing the `execute` Method](#implementing-the-execute-method)
 
-`execute` MethodLet’s finally implement the `execute` method on `ThreadPool`. We’ll also change
+`execute` Method
+Let’s finally implement the `execute` method on `ThreadPool`. We’ll also change
 `Job` from a struct to a type alias for a trait object that holds the type of
 closure that `execute` receives. As discussed in the [“Type Synonyms and Type
 Aliases”](ch20-03-advanced-types.html#type-synonyms-and-type-aliases) section in Chapter 20, type aliases

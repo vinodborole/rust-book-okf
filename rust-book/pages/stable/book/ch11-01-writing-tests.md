@@ -2,10 +2,10 @@
 type: Web Page
 title: How to Write Tests - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch11-01-writing-tests.html
-timestamp: '2026-07-13T09:33:08.854356+00:00'
+timestamp: '2026-08-03T09:51:37.355491+00:00'
 ---
 
-[How to Write Tests](#how-to-write-tests)
+## [How to Write Tests](#how-to-write-tests)
 
 *Tests* are Rust functions that verify that the non-test code is functioning in
 the expected manner. The bodies of test functions typically perform these three
@@ -19,7 +19,7 @@ Let’s look at the features Rust provides specifically for writing tests that
 take these actions, which include the `test` attribute, a few macros, and the
 `should_panic` attribute.
 
-[Structuring Test Functions](#structuring-test-functions)
+### [Structuring Test Functions](#structuring-test-functions)
 
 At its simplest, a test in Rust is a function that’s annotated with the `test`
 attribute. Attributes are metadata about pieces of Rust code; one example is
@@ -145,9 +145,10 @@ had one test pass and one test fail.
 Now that you’ve seen what the test results look like in different scenarios,
 let’s look at some macros other than `panic!` that are useful in tests.
 
-[Checking Results with ](#checking-results-with-assert)`assert!`
+### [Checking Results with `assert!`](#checking-results-with-assert)
 
-`assert!`The `assert!` macro, provided by the standard library, is useful when you want
+`assert!`
+The `assert!` macro, provided by the standard library, is useful when you want
 to ensure that some condition in a test evaluates to `true`. We give the
 `assert!` macro an argument that evaluates to a Boolean. If the value is
 `true`, nothing happens and the test passes. If the value is `false`, the
@@ -322,9 +323,10 @@ Our tests caught the bug! Because `larger.width` is `8` and `smaller.width` is
 `5`, the comparison of the widths in `can_hold` now returns `false`: 8 is not
 less than 5.
 
-[Testing Equality with ](#testing-equality-with-assert_eq-and-assert_ne)`assert_eq!` and `assert_ne!`
+### [Testing Equality with `assert_eq!` and `assert_ne!`](#testing-equality-with-assert_eq-and-assert_ne)
 
-`assert_eq!` and `assert_ne!`A common way to verify functionality is to test for equality between the result
+`assert_eq!` and `assert_ne!`
+A common way to verify functionality is to test for equality between the result
 of the code under test and the value you expect the code to return. You could
 do this by using the `assert!` macro and passing it an expression using the
 `==` operator. However, this is such a common test that the standard library
@@ -407,7 +409,7 @@ we specify the arguments matters. However, in Rust, they’re called `left` and
 `right`, and the order in which we specify the value we expect and the value
 the code produces doesn’t matter. We could write the assertion in this test as
 `assert_eq!(4, result)`, which would result in the same failure message that
-displays `assertion `left == right` failed`.
+displays ``assertion `left == right` failed``.
 
 The `assert_ne!` macro will pass if the two values we give it are not equal and
 will fail if they are equal. This macro is most useful for cases when we’re not
@@ -430,18 +432,18 @@ Listing 5-12 in Chapter 5, this is usually as straightforward as adding the
 Appendix C, [“Derivable Traits,”](appendix-03-derivable-traits.html) for more
 details about these and other derivable traits.
 
-[Adding Custom Failure Messages](#adding-custom-failure-messages)
+### [Adding Custom Failure Messages](#adding-custom-failure-messages)
 
 You can also add a custom message to be printed with the failure message as
 optional arguments to the `assert!`, `assert_eq!`, and `assert_ne!` macros. Any
 arguments specified after the required arguments are passed along to the
-`format!` macro (discussed in [“Concatenating with  + or
-format!”](ch08-02-strings.html#concatenating-with--or-format) in Chapter 8), so you can pass a format string that contains 
-
-`{}`
+`format!` macro (discussed in [“Concatenating with `+` or
+`format!`”](ch08-02-strings.html#concatenating-with--or-format) in Chapter 8), so you can pass a format string that contains `{}`
 placeholders and values to go in those placeholders. Custom messages are useful
 for documenting what an assertion means; when a test fails, you’ll have a better
-idea of what the problem is with the code.For example, let’s say we have a function that greets people by name and we want to test that the name we pass into the function appears in the output:
+idea of what the problem is with the code.
+
+For example, let’s say we have a function that greets people by name and we want to test that the name we pass into the function appears in the output:
 
 Filename: src/lib.rs
 
@@ -546,9 +548,10 @@ error: test failed, to rerun pass `--lib`
 ```
 We can see the value we actually got in the test output, which would help us debug what happened instead of what we were expecting to happen.
 
-[Checking for Panics with ](#checking-for-panics-with-should_panic)`should_panic`
+### [Checking for Panics with `should_panic`](#checking-for-panics-with-should_panic)
 
-`should_panic`In addition to checking return values, it’s important to check that our code
+`should_panic`
+In addition to checking return values, it’s important to check that our code
 handles error conditions as we expect. For example, consider the `Guess` type
 that we created in Chapter 9, Listing 9-13. Other code that uses `Guess`
 depends on the guarantee that `Guess` instances will contain only values
@@ -700,9 +703,10 @@ The failure message indicates that this test did indeed panic as we expected,
 but the panic message did not include the expected string `less than or equal to 100`. The panic message that we did get in this case was `Guess value must be greater than or equal to 1, got 200`. Now we can start figuring out where
 our bug is!
 
-[Using ](#using-resultt-e-in-tests)`Result<T, E>` in Tests
+### [Using `Result<T, E>` in Tests](#using-resultt-e-in-tests)
 
-`Result<T, E>` in TestsAll of our tests so far panic when they fail. We can also write tests that use
+`Result<T, E>` in Tests
+All of our tests so far panic when they fail. We can also write tests that use
 `Result<T, E>`! Here’s the test from Listing 11-1, rewritten to use `Result<T, E>` and return an `Err` instead of panicking:
 
 ```

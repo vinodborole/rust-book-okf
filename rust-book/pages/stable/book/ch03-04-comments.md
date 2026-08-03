@@ -2,10 +2,10 @@
 type: Web Page
 title: Comments - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch03-04-comments.html
-timestamp: '2026-07-13T09:33:08.854356+00:00'
+timestamp: '2026-08-03T09:51:37.355491+00:00'
 ---
 
-[Comments](#comments)
+## [Comments](#comments)
 
 All programmers strive to make their code easy to understand, but sometimes
 extra explanation is warranted. In these cases, programmers leave *comments* in

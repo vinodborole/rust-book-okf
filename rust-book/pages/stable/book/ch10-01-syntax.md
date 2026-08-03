@@ -2,14 +2,14 @@
 type: Web Page
 title: Generic Data Types - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch10-01-syntax.html
-timestamp: '2026-07-13T09:33:08.854356+00:00'
+timestamp: '2026-08-03T09:51:37.355491+00:00'
 ---
 
-[Generic Data Types](#generic-data-types)
+## [Generic Data Types](#generic-data-types)
 
 We use generics to create definitions for items like function signatures or structs, which we can then use with many different concrete data types. Let’s first look at how to define functions, structs, enums, and methods using generics. Then, we’ll discuss how generics affect code performance.
 
-[In Function Definitions](#in-function-definitions)
+### [In Function Definitions](#in-function-definitions)
 
 When defining a function that uses generics, we place the generics in the signature of the function where we would usually specify the data types of the parameters and return value. Doing so makes our code more flexible and provides more functionality to callers of our function while preventing code duplication.
 
@@ -36,7 +36,8 @@ have to declare the type parameter name before we use it. To define the generic
 `largest` function, we place type name declarations inside angle brackets,
 `<>`, between the name of the function and the parameter list, like this:
 
-`fn largest<T>(list: &[T]) -> &T {`We read this definition as “The function `largest` is generic over some type
+`fn largest<T>(list: &[T]) -> &T {`
+We read this definition as “The function `largest` is generic over some type
 `T`.” This function has one parameter named `list`, which is a slice of values
 of type `T`. The `largest` function will return a reference to a value of the
 same type `T`.
@@ -77,7 +78,7 @@ help text’s suggestion and restrict the types valid for `T` to only those that
 implement `PartialOrd`. The listing will then compile, because the standard
 library implements `PartialOrd` on both `i32` and `char`.
 
-[In Struct Definitions](#in-struct-definitions)
+### [In Struct Definitions](#in-struct-definitions)
 
 We can also define structs to use a generic type parameter in one or more
 fields using the `<>` syntax. Listing 10-6 defines a `Point<T>` struct to hold
@@ -118,7 +119,7 @@ your code hard to read. If you’re finding you need lots of generic types in
 your code, it could indicate that your code needs restructuring into smaller
 pieces.
 
-[In Enum Definitions](#in-enum-definitions)
+### [In Enum Definitions](#in-enum-definitions)
 
 As we did with structs, we can define enums to hold generic data types in their
 variants. Let’s take another look at the `Option<T>` enum that the standard
@@ -163,7 +164,7 @@ the file was opened successfully and `E` was filled in with the type
 
 When you recognize situations in your code with multiple struct or enum definitions that differ only in the types of the values they hold, you can avoid duplication by using generic types instead.
 
-[In Method Definitions](#in-method-definitions)
+### [In Method Definitions](#in-method-definitions)
 
 We can implement methods on structs and enums (as we did in Chapter 5) and use
 generic types in their definitions too. Listing 10-9 shows the `Point<T>`
@@ -215,7 +216,7 @@ definition. Here, the generic parameters `X1` and `Y1` are declared after
 and `Y2` are declared after `fn mixup` because they’re only relevant to the
 method.
 
-[Performance of Code Using Generics](#performance-of-code-using-generics)
+### [Performance of Code Using Generics](#performance-of-code-using-generics)
 
 You might be wondering whether there is a runtime cost when using generic type parameters. The good news is that using generic types won’t make your program run any slower than it would with concrete types.
 

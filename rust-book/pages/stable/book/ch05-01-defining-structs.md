@@ -2,10 +2,10 @@
 type: Web Page
 title: Defining and Instantiating Structs - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch05-01-defining-structs.html
-timestamp: '2026-07-13T09:33:08.854356+00:00'
+timestamp: '2026-08-03T09:51:37.355491+00:00'
 ---
 
-[Defining and Instantiating Structs](#defining-and-instantiating-structs)
+## [Defining and Instantiating Structs](#defining-and-instantiating-structs)
 
 Structs are similar to tuples, discussed in [“The Tuple Type”](ch03-02-data-types.html#the-tuple-type) section, in that both hold multiple related values. Like tuples, the
 pieces of a struct can be different types. Unlike with tuples, in a struct
@@ -21,7 +21,7 @@ struct that stores information about a user account.
 
 To use a struct after we’ve defined it, we create an *instance* of that struct
 by specifying concrete values for each of the fields. We create an instance by
-stating the name of the struct and then add curly brackets containing * key: value* pairs, where the keys are the names of the fields and the values are the
+stating the name of the struct and then add curly brackets containing *`key: value`* pairs, where the keys are the names of the fields and the values are the
 data we want to store in those fields. We don’t have to specify the fields in
 the same order in which we declared them in the struct. In other words, the
 struct definition is like a general template for the type, and instances fill
@@ -45,7 +45,7 @@ fields, but having to repeat the `email` and `username` field names and
 variables is a bit tedious. If the struct had more fields, repeating each name
 would get even more annoying. Luckily, there’s a convenient shorthand!
 
-[Using the Field Init Shorthand](#using-the-field-init-shorthand)
+### [Using the Field Init Shorthand](#using-the-field-init-shorthand)
 
 Because the parameter names and the struct field names are exactly the same in
 Listing 5-4, we can use the *field init shorthand* syntax to rewrite
@@ -58,7 +58,7 @@ named `email`. We want to set the `email` field’s value to the value in the
 the `email` parameter have the same name, we only need to write `email` rather
 than `email: email`.
 
-[Creating Instances with Struct Update Syntax](#creating-instances-with-struct-update-syntax)
+### [Creating Instances with Struct Update Syntax](#creating-instances-with-struct-update-syntax)
 
 It’s often useful to create a new instance of a struct that includes most of the values from another instance of the same type, but changes some of them. You can do this using struct update syntax.
 
@@ -90,7 +90,7 @@ the behavior we discussed in the [“Stack-Only Data: Copy”](ch04-01-what-is-o
 section would apply. We can also still use `user1.email` in this example,
 because its value was not moved out of `user1`.
 
-[Creating Different Types with Tuple Structs](#creating-different-types-with-tuple-structs)
+### [Creating Different Types with Tuple Structs](#creating-different-types-with-tuple-structs)
 
 Rust also supports structs that look similar to tuples, called *tuple structs*.
 Tuple structs have the added meaning the struct name provides but don’t have
@@ -115,7 +115,7 @@ require you to name the type of the struct when you destructure them. For
 example, we would write `let Point(x, y, z) = origin;` to destructure the
 values in the `origin` point into variables named `x`, `y`, and `z`.
 
-[Defining Unit-Like Structs](#defining-unit-like-structs)
+### [Defining Unit-Like Structs](#defining-unit-like-structs)
 
 You can also define structs that don’t have any fields! These are called
 *unit-like structs* because they behave similarly to `()`, the unit type that
@@ -135,7 +135,7 @@ have a known result for testing purposes. We wouldn’t need any data to
 implement that behavior! You’ll see in Chapter 10 how to define traits and
 implement them on any type, including unit-like structs.
 
-[Ownership of Struct Data](#ownership-of-struct-data)
+### [Ownership of Struct Data](#ownership-of-struct-data)
 
 In the `User` struct definition in Listing 5-1, we used the owned `String`
 type rather than the `&str` string slice type. This is a deliberate choice

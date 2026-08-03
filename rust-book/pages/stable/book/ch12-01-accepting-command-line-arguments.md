@@ -2,10 +2,10 @@
 type: Web Page
 title: Accepting Command Line Arguments - The Rust Programming Language
 resource: https://doc.rust-lang.org/stable/book/ch12-01-accepting-command-line-arguments.html
-timestamp: '2026-07-13T09:33:08.854356+00:00'
+timestamp: '2026-08-03T09:51:37.355491+00:00'
 ---
 
-[Accepting Command Line Arguments](#accepting-command-line-arguments)
+## [Accepting Command Line Arguments](#accepting-command-line-arguments)
 
 Let’s create a new project with, as always, `cargo new`. We’ll call our project
 `minigrep` to distinguish it from the `grep` tool that you might already have
@@ -30,7 +30,7 @@ give it. Some existing libraries on [crates.io](https://crates.io/) can help
 with writing a program that accepts command line arguments, but because you’re
 just learning this concept, let’s implement this capability ourselves.
 
-[Reading the Argument Values](#reading-the-argument-values)
+### [Reading the Argument Values](#reading-the-argument-values)
 
 To enable `minigrep` to read the values of command line arguments we pass to
 it, we’ll need the `std::env::args` function provided in Rust’s standard
@@ -53,9 +53,10 @@ from `std::env`. It’s also less ambiguous than adding `use std::env::args` and
 then calling the function with just `args`, because `args` might easily be
 mistaken for a function that’s defined in the current module.
 
-[The ](#the-args-function-and-invalid-unicode)`args` Function and Invalid Unicode
+### [The `args` Function and Invalid Unicode](#the-args-function-and-invalid-unicode)
 
-`args` Function and Invalid UnicodeNote that `std::env::args` will panic if any argument contains invalid
+`args` Function and Invalid Unicode
+Note that `std::env::args` will panic if any argument contains invalid
 Unicode. If your program needs to accept arguments containing invalid
 Unicode, use `std::env::args_os` instead. That function returns an iterator
 that produces `OsString` values instead of `String` values. We’ve chosen to
@@ -100,7 +101,7 @@ print it in messages or change the behavior of the program based on what
 command line alias was used to invoke the program. But for the purposes of this
 chapter, we’ll ignore it and save only the two arguments we need.
 
-[Saving the Argument Values in Variables](#saving-the-argument-values-in-variables)
+### [Saving the Argument Values in Variables](#saving-the-argument-values-in-variables)
 
 The program is currently able to access the values specified as command line arguments. Now we need to save the values of the two arguments in variables so that we can use the values throughout the rest of the program. We do that in Listing 12-2.
 

@@ -2,7 +2,7 @@
   "generator": "okf-kit",
   "okf_version": "0.1",
   "root_url": "https://doc.rust-lang.org/book",
-  "updated_at": "2026-08-17T07:00:00.785262+00:00",
+  "updated_at": "2026-08-24T07:03:05.195655+00:00",
   "config": {
     "max_depth": 8,
     "max_pages": 120,
@@ -1254,7 +1254,7 @@
     ]
   ],
   "last_sync": {
-    "synced_at": "2026-08-17T07:00:00.730377+00:00",
+    "synced_at": "2026-08-24T07:03:05.174822+00:00",
     "added": 0,
     "changed": 0,
     "removed": 0,
